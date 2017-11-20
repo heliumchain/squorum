@@ -402,6 +402,7 @@ public:
         pchMessageStart[1] = 0x0a;
         pchMessageStart[2] = 0xc0;
         pchMessageStart[3] = 0x0e;
+        nDefaultPort = 19004;
         nSubsidyHalvingInterval = 150;
         nEnforceBlockUpgradeMajority = 750;
         nRejectBlockOutdatedMajority = 950;
@@ -410,8 +411,19 @@ public:
         nTargetTimespan = 24 * 60 * 60; // Helium: 1 day
         nTargetSpacing = 60;  // Helium: 1 minute
         bnProofOfWorkLimit = ~uint256(0) >> 1;
-        nDefaultPort = 19004;
+        nLastPOWBlock = 200000;
+        nMaturity = 100;
+        nMasternodeCountDrift = 4;
+//        nModifierUpdateBlock = 0; //approx Mon, 17 Apr 2017 04:00:00 GMT
+        nMaxMoneyOut = 43199500 * COIN;
+        nZerocoinStartHeight = 100000;
+        nZerocoinStartTime = 1501776000;
+//        nBlockEnforceSerialRange = 1; //Enforce serial range starting this block
+        nBlockRecalculateAccumulators = 999999999; //Trigger a recalculation of accumulators
+//        nBlockFirstFraudulent = 999999999; //First block that bad serials emerged
+        nBlockLastGoodCheckpoint = 999999999; //Last valid accumulator checkpoint
 
+        //! Modify the regtest genesis block so the timestamp is valid for a later start.
         genesis.nTime = 1535104494;
         genesis.nBits = 0x207fffff;
         genesis.nNonce = 3;
@@ -459,6 +471,7 @@ public:
         fDefaultConsistencyChecks = true;
         fRequireStandard = false;
         fMineBlocksOnDemand = true;
+        fSkipProofOfWorkCheck = true;
         fTestnetToBeDeprecatedFieldRPC = false;
     }
     const Checkpoints::CCheckpointData& Checkpoints() const
