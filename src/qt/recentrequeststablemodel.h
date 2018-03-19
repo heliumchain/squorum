@@ -53,7 +53,7 @@ private:
     Qt::SortOrder order;
 };
 
-/** Model for list of recently generated payment requests / pivx: URIs.
+/** Model for list of recently generated payment requests / helium: URIs.
  * Part of wallet model.
  */
 class RecentRequestsTableModel : public QAbstractTableModel
@@ -89,7 +89,7 @@ public:
     void addNewRequest(const std::string& recipient);
     void addNewRequest(RecentRequestEntry& recipient);
 
-public slots:
+public Q_SLOTS:
     void sort(int column, Qt::SortOrder order = Qt::AscendingOrder);
     void updateDisplayUnit();
 

@@ -6,7 +6,7 @@
 #define BITCOIN_QT_NOTIFICATOR_H
 
 #if defined(HAVE_CONFIG_H)
-#include "config/pivx-config.h"
+#include "config/bitcoin-config.h"
 #endif
 
 #include <QIcon>
@@ -39,7 +39,7 @@ public:
         Critical     /**< An error occurred */
     };
 
-public slots:
+public Q_SLOTS:
     /** Show notification message.
        @param[in] cls    general message class
        @param[in] title  title shown with message

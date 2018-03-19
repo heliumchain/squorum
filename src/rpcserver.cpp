@@ -2,6 +2,7 @@
 // Copyright (c) 2009-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
 // Copyright (c) 2015-2017 The PIVX developers
+// Copyright (c) 2018 The Helium developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -263,11 +264,11 @@ UniValue stop(const UniValue& params, bool fHelp)
     if (fHelp || params.size() > 1)
         throw runtime_error(
             "stop\n"
-            "\nStop PIVX server.");
+            "\nStop Helium server.");
     // Event loop will exit after current HTTP requests have been handled, so
     // this reply will get back to the client.
     StartShutdown();
-    return "PIVX server stopping";
+    return "Helium server stopping";
 }
 
 
@@ -352,35 +353,35 @@ static const CRPCCommand vRPCCommands[] =
         {"hidden", "setmocktime", &setmocktime, true, false, false},
 
         /* PIVX features */
-        {"pivx", "masternode", &masternode, true, true, false},
-        {"pivx", "listmasternodes", &listmasternodes, true, true, false},
-        {"pivx", "getmasternodecount", &getmasternodecount, true, true, false},
-        {"pivx", "masternodeconnect", &masternodeconnect, true, true, false},
-        {"pivx", "masternodecurrent", &masternodecurrent, true, true, false},
-        {"pivx", "masternodedebug", &masternodedebug, true, true, false},
-        {"pivx", "startmasternode", &startmasternode, true, true, false},
-        {"pivx", "createmasternodekey", &createmasternodekey, true, true, false},
-        {"pivx", "getmasternodeoutputs", &getmasternodeoutputs, true, true, false},
-        {"pivx", "listmasternodeconf", &listmasternodeconf, true, true, false},
-        {"pivx", "getmasternodestatus", &getmasternodestatus, true, true, false},
-        {"pivx", "getmasternodewinners", &getmasternodewinners, true, true, false},
-        {"pivx", "getmasternodescores", &getmasternodescores, true, true, false},
-        {"pivx", "mnbudget", &mnbudget, true, true, false},
-        {"pivx", "preparebudget", &preparebudget, true, true, false},
-        {"pivx", "submitbudget", &submitbudget, true, true, false},
-        {"pivx", "mnbudgetvote", &mnbudgetvote, true, true, false},
-        {"pivx", "getbudgetvotes", &getbudgetvotes, true, true, false},
-        {"pivx", "getnextsuperblock", &getnextsuperblock, true, true, false},
-        {"pivx", "getbudgetprojection", &getbudgetprojection, true, true, false},
-        {"pivx", "getbudgetinfo", &getbudgetinfo, true, true, false},
-        {"pivx", "mnbudgetrawvote", &mnbudgetrawvote, true, true, false},
-        {"pivx", "mnfinalbudget", &mnfinalbudget, true, true, false},
-        {"pivx", "checkbudgets", &checkbudgets, true, true, false},
-        {"pivx", "mnsync", &mnsync, true, true, false},
-        {"pivx", "spork", &spork, true, true, false},
-        {"pivx", "getpoolinfo", &getpoolinfo, true, true, false},
+        {"helium", "masternode", &masternode, true, true, false},
+        {"helium", "listmasternodes", &listmasternodes, true, true, false},
+        {"helium", "getmasternodecount", &getmasternodecount, true, true, false},
+        {"helium", "masternodeconnect", &masternodeconnect, true, true, false},
+        {"helium", "masternodecurrent", &masternodecurrent, true, true, false},
+        {"helium", "masternodedebug", &masternodedebug, true, true, false},
+        {"helium", "startmasternode", &startmasternode, true, true, false},
+        {"helium", "createmasternodekey", &createmasternodekey, true, true, false},
+        {"helium", "getmasternodeoutputs", &getmasternodeoutputs, true, true, false},
+        {"helium", "listmasternodeconf", &listmasternodeconf, true, true, false},
+        {"helium", "getmasternodestatus", &getmasternodestatus, true, true, false},
+        {"helium", "getmasternodewinners", &getmasternodewinners, true, true, false},
+        {"helium", "getmasternodescores", &getmasternodescores, true, true, false},
+        {"helium", "mnbudget", &mnbudget, true, true, false},
+        {"helium", "preparebudget", &preparebudget, true, true, false},
+        {"helium", "submitbudget", &submitbudget, true, true, false},
+        {"helium", "mnbudgetvote", &mnbudgetvote, true, true, false},
+        {"helium", "getbudgetvotes", &getbudgetvotes, true, true, false},
+        {"helium", "getnextsuperblock", &getnextsuperblock, true, true, false},
+        {"helium", "getbudgetprojection", &getbudgetprojection, true, true, false},
+        {"helium", "getbudgetinfo", &getbudgetinfo, true, true, false},
+        {"helium", "mnbudgetrawvote", &mnbudgetrawvote, true, true, false},
+        {"helium", "mnfinalbudget", &mnfinalbudget, true, true, false},
+        {"helium", "checkbudgets", &checkbudgets, true, true, false},
+        {"helium", "mnsync", &mnsync, true, true, false},
+        {"helium", "spork", &spork, true, true, false},
+        {"helium", "getpoolinfo", &getpoolinfo, true, true, false},
 #ifdef ENABLE_WALLET
-        {"pivx", "obfuscation", &obfuscation, false, false, true}, /* not threadSafe because of SendMoney */
+        {"helium", "obfuscation", &obfuscation, false, false, true}, /* not threadSafe because of SendMoney */
 
         /* Wallet */
         {"wallet", "addmultisigaddress", &addmultisigaddress, true, false, true},
@@ -405,6 +406,8 @@ static const CRPCCommand vRPCCommands[] =
         {"wallet", "getunconfirmedbalance", &getunconfirmedbalance, false, false, true},
         {"wallet", "getwalletinfo", &getwalletinfo, false, false, true},
         {"wallet", "importprivkey", &importprivkey, true, false, true},
+        {"wallet", "importspreadprivkey", &importspreadprivkey, true, false, true},
+        {"wallet", "makekeypair", &makekeypair, true, false, true},
         {"wallet", "importwallet", &importwallet, true, false, true},
         {"wallet", "importaddress", &importaddress, true, false, true},
         {"wallet", "keypoolrefill", &keypoolrefill, true, false, true},
@@ -607,7 +610,7 @@ std::vector<std::string> CRPCTable::listCommands() const
 
 std::string HelpExampleCli(string methodname, string args)
 {
-    return "> pivx-cli " + methodname + " " + args + "\n";
+    return "> helium-cli " + methodname + " " + args + "\n";
 }
 
 std::string HelpExampleRpc(string methodname, string args)
