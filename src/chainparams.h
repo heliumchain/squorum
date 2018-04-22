@@ -173,6 +173,8 @@ protected:
     int nBlockFirstFraudulent;
     int nBlockLastGoodCheckpoint;
     int nBlockEnforceInvalidUTXO;
+    CAmount nReward;
+
 };
 
 /**
