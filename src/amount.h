@@ -15,7 +15,8 @@ typedef int64_t CAmount;
 
 static const CAmount COIN = 100000000;
 static const CAmount CENT = 1000000;
-
+static const CAmount ledgerTotal = 8891432;
+static const CAmount treasuryDeposit = 432870.87949961;
 /** Type-safe wrapper class to for fee rates
  * (how much to pay based on transaction size)
  */
