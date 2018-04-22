@@ -2122,12 +2122,14 @@ int64_t GetBlockValue(int nHeight)
     int64_t nSubsidy = 0;
 
     if (Params().NetworkID() == CBaseChainParams::TESTNET) {
-        if (nHeight < 200 && nHeight > 0)
-            return 250000 * COIN;
+        // Set testnet PoW period reward
+        if (nHeight < 10000 && nHeight > 0)
+            return 25 * COIN;
     }
 
     if (nHeight == 0) {
-        nSubsidy = 8891432 * COIN;
+        // Mint the ledger total (minus treasury deposit) for disbursal
+        nSubsidy = (int64_t)(ledgerTotal - treasuryDeposit) /* (8891432 - 432870.87949961) */ * COIN;
     } else if (nHeight < 86400 && nHeight > 0) {
         nSubsidy = 250 * COIN;
     } else if (nHeight < (Params().NetworkID() == CBaseChainParams::TESTNET ? 145000 : 151200) && nHeight >= 86400) {
@@ -2168,6 +2170,11 @@ int64_t GetMasternodePayment(int nHeight, int64_t blockValue, int nMasternodeCou
         if (nHeight < 200)
             return 0;
     }
+
+    // FIXME: GJH
+    // Temporary hack to investigate initial PoW period
+    if (nHeight <= 10000)
+        ret = 0;
 
     if (nHeight <= 43200) {
         ret = blockValue / 5;
@@ -3262,11 +3269,12 @@ bool ConnectBlock(const CBlock& block, CValidationState& state, CBlockIndex* pin
 
     // Special case for the genesis block, skipping connection of its transactions
     // (its coinbase is unspendable)
+    /*
     if (block.GetHash() == Params().HashGenesisBlock()) {
         view.SetBestBlock(pindex->GetBlockHash());
         return true;
     }
-
+    */
     if (pindex->nHeight <= Params().LAST_POW_BLOCK() && block.IsProofOfStake())
         return state.DoS(100, error("ConnectBlock() : PoS period not active"),
             REJECT_INVALID, "PoS-early");
@@ -3289,16 +3297,11 @@ bool ConnectBlock(const CBlock& block, CValidationState& state, CBlockIndex* pin
     // Now that the whole chain is irreversibly beyond that time it is applied to all blocks except the
     // two in the chain that violate it. This prevents exploiting the issue against nodes in their
     // initial block download.
-    bool fEnforceBIP30 = (!pindex->phashBlock) || // Enforce on CreateNewBlock invocations which don't have a hash.
-                         !((pindex->nHeight == 91842 && pindex->GetBlockHash() == uint256("0x00000000000a4d0a398161ffc163c503763b1f4360639393e0e4c8e300e0caec")) ||
-                             (pindex->nHeight == 91880 && pindex->GetBlockHash() == uint256("0x00000000000743f190a18c5577a3c2d2a1f610ae9601ac046a38084ccb7cd721")));
-    if (fEnforceBIP30) {
-        BOOST_FOREACH (const CTransaction& tx, block.vtx) {
-            const CCoins* coins = view.AccessCoins(tx.GetHash());
-            if (coins && !coins->IsPruned())
-                return state.DoS(100, error("ConnectBlock() : tried to overwrite transaction"),
-                    REJECT_INVALID, "bad-txns-BIP30");
-        }
+    BOOST_FOREACH (const CTransaction& tx, block.vtx) {
+        const CCoins* coins = view.AccessCoins(tx.GetHash());
+        if (coins && !coins->IsPruned())
+            return state.DoS(100, error("ConnectBlock() : tried to overwrite transaction"),
+                REJECT_INVALID, "bad-txns-BIP30");
     }
 
     CCheckQueueControl<CScriptCheck> control(fScriptChecks && nScriptCheckThreads ? &scriptcheckqueue : NULL);
@@ -3424,17 +3427,20 @@ bool ConnectBlock(const CBlock& block, CValidationState& state, CBlockIndex* pin
     nTimeConnect += nTime1 - nTimeStart;
     LogPrint("bench", "      - Connect %u transactions: %.2fms (%.3fms/tx, %.3fms/txin) [%.2fs]\n", (unsigned)block.vtx.size(), 0.001 * (nTime1 - nTimeStart), 0.001 * (nTime1 - nTimeStart) / block.vtx.size(), nInputs <= 1 ? 0 : 0.001 * (nTime1 - nTimeStart) / (nInputs - 1), nTimeConnect * 0.000001);
 
-    //PoW phase redistributed fees to miner. PoS stage destroys fees.
-    CAmount nExpectedMint = GetBlockValue(pindex->pprev->nHeight);
-    if (block.IsProofOfWork())
-        nExpectedMint += nFees;
+    if (pindex->nHeight > 0) {
+        //PoW phase redistributed fees to miner. PoS stage destroys fees.
+        CAmount nExpectedMint = GetBlockValue(pindex->pprev->nHeight);
+        if (block.IsProofOfWork()) {
+            nExpectedMint += nFees;
+            LogPrintf("ExpectedMint : %s", FormatMoney(pindex->nMint));
+        }
 
-    //Check that the block does not overmint
-    if (!IsBlockValueValid(block, nExpectedMint, pindex->nMint)) {
-        return state.DoS(100, error("ConnectBlock() : reward pays too much (actual=%s vs limit=%s)",
-                FormatMoney(pindex->nMint), FormatMoney(nExpectedMint)), REJECT_INVALID, "bad-cb-amount");
+        //Check that the block does not overmint
+        if (!IsBlockValueValid(block, nExpectedMint, pindex->nMint)) {
+            return state.DoS(100, error("ConnectBlock() : reward pays too much (actual=%s vs limit=%s)",
+                    FormatMoney(pindex->nMint), FormatMoney(nExpectedMint)), REJECT_INVALID, "bad-cb-amount");
+        }
     }
-
     // Ensure that accumulator checkpoints are valid and in the same state as this instance of the chain
     AccumulatorMap mapAccumulators;
     if (!ValidateAccumulatorCheckpoint(block, pindex, mapAccumulators))
@@ -3452,7 +3458,7 @@ bool ConnectBlock(const CBlock& block, CValidationState& state, CBlockIndex* pin
         return true;
 
     // Write undo information to disk
-    if (pindex->GetUndoPos().IsNull() || !pindex->IsValid(BLOCK_VALID_SCRIPTS)) {
+    if (pindex->nHeight > 0 && (pindex->GetUndoPos().IsNull() || !pindex->IsValid(BLOCK_VALID_SCRIPTS))) {
         if (pindex->GetUndoPos().IsNull()) {
             CDiskBlockPos pos;
             if (!FindUndoPos(state, pindex->nFile, pos, ::GetSerializeSize(blockundo, SER_DISK, CLIENT_VERSION) + 40))

@@ -589,16 +589,21 @@ void BitcoinMiner(CWallet* pwallet, bool fProofOfStake)
         //
         unsigned int nTransactionsUpdatedLast = mempool.GetTransactionsUpdated();
         CBlockIndex* pindexPrev = chainActive.Tip();
-        if (!pindexPrev)
+        if (!pindexPrev) {
+            LogPrintf("HeliumMiner bailing, no pindexPrev\n");
             continue;
-
+        }
         unique_ptr<CBlockTemplate> pblocktemplate(CreateNewBlockWithKey(reservekey, pwallet, fProofOfStake));
-        if (!pblocktemplate.get())
+        if (!pblocktemplate.get()) {
+            LogPrintf("HeliumMiner bailing, no pblocktemplate got\n");
             continue;
-
+        } else {
+            LogPrintf("HeliumMiner proceeding with pblocktemplate.\n");
+        }
         CBlock* pblock = &pblocktemplate->block;
         IncrementExtraNonce(pblock, pindexPrev, nExtraNonce);
 
+        LogPrintf("HeliumMiner skipping PoS section 4\n");
         //Stake miner main
         if (fProofOfStake) {
             LogPrintf("CPUMiner : proof-of-stake block found %s \n", pblock->GetHash().ToString().c_str());
@@ -624,6 +629,7 @@ void BitcoinMiner(CWallet* pwallet, bool fProofOfStake)
         //
         int64_t nStart = GetTime();
         uint256 hashTarget = uint256().SetCompact(pblock->nBits);
+        LogPrintf("Running HeliumMiner with hashTarget %0x\n", hashTarget.GetCompact());
         while (true) {
             unsigned int nHashesDone = 0;
 
