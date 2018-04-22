@@ -289,7 +289,7 @@ bool ValidateAccumulatorCheckpoint(const CBlock& block, CBlockIndex* pindex, Acc
             return error("%s : accumulator does not match calculated value", __func__);
         }
     } else if (!fVerifyingBlocks) {
-        if (block.nAccumulatorCheckpoint != pindex->pprev->nAccumulatorCheckpoint)
+        if ((pindex->nHeight > 0) && (block.nAccumulatorCheckpoint != pindex->pprev->nAccumulatorCheckpoint))
             return error("%s : new accumulator checkpoint generated on a block that is not multiple of 10", __func__);
     }
 
