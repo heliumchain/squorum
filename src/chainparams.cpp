@@ -155,12 +155,12 @@ public:
         /** Height or Time Based Activations **/
         nLastPOWBlock = 10000;
         nModifierUpdateBlock = 999999999;
-        nZerocoinStartHeight = 999999999;
+        nZerocoinStartHeight = 10001;
         nZerocoinStartTime = 999999999; // October 17, 2017 4:30:00 AM
-        nBlockEnforceSerialRange = 0; //Enforce serial range starting this block
+        nBlockEnforceSerialRange = 1; //Enforce serial range starting this block
         nBlockRecalculateAccumulators = 0; //Trigger a recalculation of accumulators
-        nBlockFirstFraudulent = 0; //First block that bad serials emerged
-        nBlockLastGoodCheckpoint = 0; //Last valid accumulator checkpoint
+        nBlockFirstFraudulent = ~1; //First block that bad serials emerged
+        nBlockLastGoodCheckpoint = ~1; //Last valid accumulator checkpoint
         nBlockEnforceInvalidUTXO = 0; //Start enforcing the invalid UTXO's
         nReward = 432870.87949961 * COIN;
 
@@ -294,8 +294,8 @@ public:
         nZerocoinStartTime = 999999999;
         nBlockEnforceSerialRange = 1; //Enforce serial range starting this block
         nBlockRecalculateAccumulators = 999999999; //Trigger a recalculation of accumulators
-        nBlockFirstFraudulent = 999999999; //First block that bad serials emerged
-        nBlockLastGoodCheckpoint = 0; //Last valid accumulator checkpoint
+        nBlockFirstFraudulent = ~1; //First block that bad serials emerged
+        nBlockLastGoodCheckpoint = ~1; //Last valid accumulator checkpoint
         nBlockEnforceInvalidUTXO = 0; //Start enforcing the invalid UTXO's
         nReward = 10000 * COIN;
 
