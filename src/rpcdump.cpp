@@ -199,7 +199,6 @@ UniValue importspreadprivkey(const UniValue& params, bool fHelp)
 
     CPubKey pubkey = key.GetPubKey();
     assert(key.VerifyPubKey(pubkey));
-    CKeyID address = pubkey.GetID();
     CPrivKey privkey = key.GetPrivKey();
 
     // Create a new CKey and set its privkey as key (above), with compression enabled
