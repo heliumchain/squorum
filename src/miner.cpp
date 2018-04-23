@@ -101,13 +101,13 @@ CBlockTemplate* CreateNewBlock(const CScript& scriptPubKeyIn, CWallet* pwallet, 
     // Create new block
     unique_ptr<CBlockTemplate> pblocktemplate(new CBlockTemplate());
     if (!pblocktemplate.get())
-        return NULL;
+        return nullptr;
     CBlock* pblock = &pblocktemplate->block; // pointer for convenience
 
     // -regtest only: allow overriding block.nVersion with
     // -blockversion=N to test forking scenarios
     if (Params().MineBlocksOnDemand())
-        pblock->nVersion = GetArg("-blockversion", pblock->nVersion);
+        pblock->nVersion = static_cast<int32_t>(GetArg("-blockversion", pblock->nVersion));
 
     // Make sure to create the correct block version after zerocoin is enabled
     bool fZerocoinActive = GetAdjustedTime() >= Params().Zerocoin_StartTime();
@@ -154,19 +154,19 @@ CBlockTemplate* CreateNewBlock(const CScript& scriptPubKeyIn, CWallet* pwallet, 
     }
 
     // Largest block you're willing to create:
-    unsigned int nBlockMaxSize = GetArg("-blockmaxsize", DEFAULT_BLOCK_MAX_SIZE);
+    unsigned int nBlockMaxSize = static_cast<unsigned int>(GetArg("-blockmaxsize", DEFAULT_BLOCK_MAX_SIZE));
     // Limit to betweeen 1K and MAX_BLOCK_SIZE-1K for sanity:
     unsigned int nBlockMaxSizeNetwork = MAX_BLOCK_SIZE_CURRENT;
-    nBlockMaxSize = std::max((unsigned int)1000, std::min((nBlockMaxSizeNetwork - 1000), nBlockMaxSize));
+    nBlockMaxSize = std::max(static_cast<unsigned int>(1000), std::min((nBlockMaxSizeNetwork - 1000), nBlockMaxSize));
 
     // How much of the block should be dedicated to high-priority transactions,
     // included regardless of the fees they pay
-    unsigned int nBlockPrioritySize = GetArg("-blockprioritysize", DEFAULT_BLOCK_PRIORITY_SIZE);
+    unsigned int nBlockPrioritySize = static_cast<unsigned int>(GetArg("-blockprioritysize", DEFAULT_BLOCK_PRIORITY_SIZE));
     nBlockPrioritySize = std::min(nBlockMaxSize, nBlockPrioritySize);
 
     // Minimum block size you want to create; block will be filled with free transactions
     // until there are no more or the block reaches this size:
-    unsigned int nBlockMinSize = GetArg("-blockminsize", DEFAULT_BLOCK_MIN_SIZE);
+    unsigned int nBlockMinSize = static_cast<unsigned int>(GetArg("-blockminsize", DEFAULT_BLOCK_MIN_SIZE));
     nBlockMinSize = std::min(nBlockMaxSize, nBlockMinSize);
 
     // Collect memory pool transactions into the block
@@ -197,7 +197,7 @@ CBlockTemplate* CreateNewBlock(const CScript& scriptPubKeyIn, CWallet* pwallet, 
                 continue;
             }
 
-            COrphan* porphan = NULL;
+            COrphan* porphan = nullptr;
             double dPriority = 0;
             CAmount nTotalIn = 0;
             bool fMissingInputs = false;

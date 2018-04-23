@@ -2129,7 +2129,7 @@ int64_t GetBlockValue(int nHeight)
 
     if (nHeight == 0) {
         // Mint the ledger total (minus treasury deposit) for disbursal
-        nSubsidy = (int64_t)(ledgerTotal - treasuryDeposit) /* (8891432 - 432870.87949961) */ * COIN;
+        nSubsidy = (ledgerTotal - treasuryDeposit) /* (8891432 - 432870.87949961) */ * COIN;
     } else if (nHeight < 86400 && nHeight > 0) {
         nSubsidy = 250 * COIN;
     } else if (nHeight < (Params().NetworkID() == CBaseChainParams::TESTNET ? 145000 : 151200) && nHeight >= 86400) {
@@ -2139,23 +2139,23 @@ int64_t GetBlockValue(int nHeight)
     } else if (nHeight <= 302399 && nHeight > Params().LAST_POW_BLOCK()) {
         nSubsidy = 45 * COIN;
     } else if (nHeight <= 345599 && nHeight >= 302400) {
-        nSubsidy = 40.5 * COIN;
+        nSubsidy = static_cast<int64_t>(40.5 * COIN);
     } else if (nHeight <= 388799 && nHeight >= 345600) {
         nSubsidy = 36 * COIN;
     } else if (nHeight <= 431999 && nHeight >= 388800) {
-        nSubsidy = 31.5 * COIN;
+        nSubsidy = static_cast<int64_t>(31.5 * COIN);
     } else if (nHeight <= 475199 && nHeight >= 432000) {
         nSubsidy = 27 * COIN;
     } else if (nHeight <= 518399 && nHeight >= 475200) {
-        nSubsidy = 22.5 * COIN;
+        nSubsidy = static_cast<int64_t>(22.5 * COIN);
     } else if (nHeight <= 561599 && nHeight >= 518400) {
         nSubsidy = 18 * COIN;
     } else if (nHeight <= 604799 && nHeight >= 561600) {
-        nSubsidy = 13.5 * COIN;
+        nSubsidy = static_cast<int64_t>(13.5 * COIN);
     } else if (nHeight <= 647999 && nHeight >= 604800) {
         nSubsidy = 9 * COIN;
     } else if (nHeight >= 648000) {
-        nSubsidy = 4.5 * COIN;
+        nSubsidy = static_cast<int64_t>(4.5 * COIN);
     } else {
         nSubsidy = 0 * COIN;
     }
@@ -4424,7 +4424,7 @@ bool CheckBlock(const CBlock& block, CValidationState& state, bool fCheckPOW, bo
     // masternode payments / budgets
     CBlockIndex* pindexPrev = chainActive.Tip();
     int nHeight = 0;
-    if (pindexPrev != NULL) {
+    if (pindexPrev != nullptr) {
         if (pindexPrev->GetBlockHash() == block.hashPrevBlock) {
             nHeight = pindexPrev->nHeight + 1;
         } else { //out of order
