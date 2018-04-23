@@ -14,6 +14,7 @@
 #include "masternode-sync.h"
 #include "net.h"
 #include "pow.h"
+#include "script/script.h"
 #include "primitives/block.h"
 #include "primitives/transaction.h"
 #include "timedata.h"
@@ -178,6 +179,11 @@ CBlockTemplate* CreateNewBlock(const CScript& scriptPubKeyIn, CWallet* pwallet, 
         CBlockIndex* pindexPrev = chainActive.Tip();
         const int nHeight = pindexPrev->nHeight + 1;
         CCoinsViewCache view(pcoinsTip);
+
+        // Innocuous, these bindings will be overwritten when
+        // pindexPrev->nHeight > Params().LAST_POW_BLOCK()
+        txNew.vout[0].nValue = GetBlockValue(nHeight);
+        txNew.vin[0].scriptSig = CScript() << nHeight << OP_0;
 
         // Priority order to process transactions
         list<COrphan> vOrphan; // list memory doesn't move
