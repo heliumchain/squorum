@@ -69,7 +69,7 @@ static const Checkpoints::CCheckpointData data = {
 
 static Checkpoints::MapCheckpoints mapCheckpointsTestnet =
     boost::assign::map_list_of
-    (0, uint256("0x000007ab0c41b98c07c05a914c2737cb924ea320ff964b6a68975df9d12263b9"));
+    (0, uint256("0x000008b87c90b01507dedbbdc67cf5f8854d00933502ebee75b6eacbcf4815c4"));
 static const Checkpoints::CCheckpointData dataTestnet = {
     &mapCheckpointsTestnet,
     1520851782,
@@ -289,7 +289,7 @@ public:
         nMaturity = 15;
         nMasternodeCountDrift = 4;
         nModifierUpdateBlock = 51197; //approx Mon, 17 Apr 2017 04:00:00 GMT
-        nMaxMoneyOut = 210000 * COIN;
+        nMaxMoneyOut = 21000000 * COIN;
         nZerocoinStartHeight = 9999999;
         nZerocoinStartTime = 1530801782;
         nBlockEnforceSerialRange = 0; //Enforce serial range starting this block
@@ -297,12 +297,12 @@ public:
         nBlockFirstFraudulent = 999999999; //First block that bad serials emerged
         nBlockLastGoodCheckpoint = 0; //Last valid accumulator checkpoint
         nBlockEnforceInvalidUTXO = 0; //Start enforcing the invalid UTXO's
-        nReward = 10000 * COIN;
+        nReward = 432870.87949961 * COIN;
 
         //! Modify the testnet genesis block so the timestamp is valid for a later start.
         genesis = CreateGenesisBlock(
                     1520801782,                          // nTime
-                    1694927,                             // nNonce
+                    804143,                              // nNonce
                     0x1e0ffff0,                          // nBits
                     3,                                   // nVersion
                     treasuryDeposit,                     // genesisReward (treasury deposit)
@@ -330,7 +330,7 @@ public:
                 std::cout << " time: " << genesis.nTime;
                 std::cout << " hash: 0x" << genesis.GetHash().ToString().c_str();
                 std::cout << " merklehash: 0x"  << genesis.hashMerkleRoot.ToString().c_str() <<  "\n";
-                // Testnet --- nonce: 1694927 time: 1520801782 hash: 0x000007ab0c41b98c07c05a914c2737cb924ea320ff964b6a68975df9d12263b9 merklehash: 0xa911e17f757700907d75e02837c7f079160a63652a5e54161728f54a14a63b9a
+                // Testnet --- nonce: 804143 time: 1520801782 hash: 0x000008b87c90b01507dedbbdc67cf5f8854d00933502ebee75b6eacbcf4815c4 merklehash: 0xe2581d080f3f4dbbe6834c64ca8a7fd133b09e02e3ef87a35909fac0eaa8b075
             }
         } else {
             std::cout << "Testnet ---\n";
@@ -338,7 +338,7 @@ public:
             std::cout << " time: " << genesis.nTime << "\n";
             std::cout << " hash: " << genesis.GetHash().ToString().c_str() << "\n";
             std::cout << " merklehash: "  << genesis.hashMerkleRoot.ToString().c_str() << "\n";
-            assert(hashGenesisBlock == uint256("0xff76401c9ab020c724d1cac4aeb2c847e8912a2907d0b53423b14f2efda9966c"));
+            assert(hashGenesisBlock == uint256("0x000008b87c90b01507dedbbdc67cf5f8854d00933502ebee75b6eacbcf4815c4"));
             assert(genesis.hashMerkleRoot == uint256("0xe2581d080f3f4dbbe6834c64ca8a7fd133b09e02e3ef87a35909fac0eaa8b075"));
         }
 
