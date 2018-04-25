@@ -1462,7 +1462,7 @@ bool CheckTransaction(const CTransaction& tx, bool fZerocoinActive, bool fReject
     }
 
     if (tx.IsCoinBase()) {
-        int expectedScriptSigLength = chainActive.Height() > Params().LAST_POW_BLOCK() ? 2 : 1;
+        unsigned int expectedScriptSigLength = chainActive.Height() > Params().LAST_POW_BLOCK() ? 2 : 1;
         if (tx.vin[0].scriptSig.size() < expectedScriptSigLength || tx.vin[0].scriptSig.size() > 150)
             return state.DoS(100, error("CheckTransaction() : coinbase script size=%d", tx.vin[0].scriptSig.size()),
                 REJECT_INVALID, "bad-cb-length");
@@ -4318,6 +4318,7 @@ bool FindUndoPos(CValidationState& state, int nFile, CDiskBlockPos& pos, unsigne
 
 bool CheckBlockHeader(const CBlockHeader& block, CValidationState& state, bool fCheckPOW)
 {
+    LogPrint("debug", "CheckBlockHeader calling CheckProofOfWork with %0x vs %0x\n", block.nBits, block.GetHash().GetCompact());
     // Check proof of work matches claimed amount
     if (fCheckPOW && !CheckProofOfWork(block.GetHash(), block.nBits))
         return state.DoS(50, error("CheckBlockHeader() : proof of work failed"),
@@ -4343,6 +4344,8 @@ bool CheckBlock(const CBlock& block, CValidationState& state, bool fCheckPOW, bo
 
     // Check that the header is valid (particularly PoW).  This is mostly
     // redundant with the call in AcceptBlockHeader.
+
+    LogPrint("debug", "CheckBlock calling CheckBlockHeader\n");
     if (!CheckBlockHeader(block, state, block.IsProofOfWork()))
         return state.DoS(100, error("CheckBlock() : CheckBlockHeader failed"),
             REJECT_INVALID, "bad-header", true);
@@ -4488,7 +4491,7 @@ bool CheckBlock(const CBlock& block, CValidationState& state, bool fCheckPOW, bo
 
 bool CheckWork(const CBlock block, CBlockIndex* const pindexPrev)
 {
-    if (pindexPrev == NULL)
+    if (pindexPrev == nullptr)
         return error("%s : null pindexPrev for block %s", __func__, block.GetHash().ToString().c_str());
 
     unsigned int nBitsRequired = GetNextWorkRequired(pindexPrev, &block);
@@ -4897,6 +4900,7 @@ bool ProcessNewBlock(CValidationState& state, CNode* pfrom, CBlock* pblock, CDis
 
 bool TestBlockValidity(CValidationState& state, const CBlock& block, CBlockIndex* const pindexPrev, bool fCheckPOW, bool fCheckMerkleRoot)
 {
+    LogPrintf("Testing validity of %s\n", block.ToString().c_str());
     AssertLockHeld(cs_main);
     assert(pindexPrev == chainActive.Tip());
 
@@ -4906,12 +4910,16 @@ bool TestBlockValidity(CValidationState& state, const CBlock& block, CBlockIndex
     indexDummy.nHeight = pindexPrev->nHeight + 1;
 
     // NOTE: CheckBlockHeader is called by CheckBlock
+    LogPrint("debug", "Calling ContextualCheckBlockHeader\n");
     if (!ContextualCheckBlockHeader(block, state, pindexPrev))
         return false;
+    LogPrint("debug", "Calling CheckBlock\n");
     if (!CheckBlock(block, state, fCheckPOW, fCheckMerkleRoot))
         return false;
+    LogPrint("debug", "Calling ContextualCheckBlock\n");
     if (!ContextualCheckBlock(block, state, pindexPrev))
         return false;
+    LogPrint("debug", "Connecting block\n", block.ToString().c_str());
     if (!ConnectBlock(block, state, &indexDummy, viewNew, true))
         return false;
     assert(state.IsValid());

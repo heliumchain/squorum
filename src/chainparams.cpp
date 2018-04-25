@@ -146,14 +146,14 @@ public:
         nRejectBlockOutdatedMajority = 950;
         nToCheckBlockUpgradeMajority = 1000;
         nMinerThreads = 1;
-        nTargetTimespan = 24 * 60 * 60; // Helium: 1 day
-        nTargetSpacing = int64_t(2.5 * 60);  // Helium: 2 minutes 30 seconds
+        nTargetTimespan = 1 * 60; // Helium: 1 day
+        nTargetSpacing = 1 * 60;  // Helium: 1 minute
         nMaturity = 100;
         nMasternodeCountDrift = 20;
         nMaxMoneyOut = 21000000 * COIN;
 
         /** Height or Time Based Activations **/
-        nLastPOWBlock = 10000;
+        nLastPOWBlock = 100000;
         nModifierUpdateBlock = 999999999;
         nZerocoinStartHeight = 9999999;
         nZerocoinStartTime = 1530801782; // Later
@@ -169,7 +169,7 @@ public:
                     138356,                              // nNonce
                     0x1e0ffff0,                          // nBits
                     3,                                   // nVersion
-                   nReward,                              // genesisReward (treasury deposit)
+                   treasuryDeposit,                      // genesisReward (treasury deposit)
                    "Sapor5rpxvaGQ4cW8dptj3zW94MxuAwW4P", // first treasury address
                    "SeYn7AmvjB3Wr3QqdJK6UsW85dPKeEKmSg", // second treasury address
                    "Sbe6m4y6wGhUo6FoS6Sab2PxnScXm8HQTf"  // third treasury address
@@ -283,9 +283,9 @@ public:
         nRejectBlockOutdatedMajority = 75;
         nToCheckBlockUpgradeMajority = 100;
         nMinerThreads = 1;
-        nTargetTimespan = 24 * 60 * 60; // Helium: 1 day
-        nTargetSpacing = int64_t(2.5 * 60);  // Helium: 2 minutes 30 seconds
-        nLastPOWBlock = 10000;
+        nTargetTimespan = 1 * 60; // Helium: 1 day
+        nTargetSpacing = 1 * 60;  // Helium: 1 minute
+        nLastPOWBlock = 100000;
         nMaturity = 15;
         nMasternodeCountDrift = 4;
         nModifierUpdateBlock = 51197; //approx Mon, 17 Apr 2017 04:00:00 GMT
@@ -305,7 +305,7 @@ public:
                     1694927,                             // nNonce
                     0x1e0ffff0,                          // nBits
                     3,                                   // nVersion
-                    nReward,                             // genesisReward (treasury deposit)
+                    treasuryDeposit,                     // genesisReward (treasury deposit)
                    "msYBKKuARmcmMHmzMGxc8j8XYi8bqEeBJr", // first treasury address
                    "mfYcNVRnTNHDw6BwKPhk3Z8xXp4F8CEMtZ", // second treasury address
                    "mkGv2mrvZvKriZ1tzwQheHQzYyW5o9ir5J"  // third treasury address
@@ -338,8 +338,8 @@ public:
             std::cout << " time: " << genesis.nTime << "\n";
             std::cout << " hash: " << genesis.GetHash().ToString().c_str() << "\n";
             std::cout << " merklehash: "  << genesis.hashMerkleRoot.ToString().c_str() << "\n";
-            assert(hashGenesisBlock == uint256("0x000007ab0c41b98c07c05a914c2737cb924ea320ff964b6a68975df9d12263b9"));
-            assert(genesis.hashMerkleRoot == uint256("0xa911e17f757700907d75e02837c7f079160a63652a5e54161728f54a14a63b9a"));
+            assert(hashGenesisBlock == uint256("0xff76401c9ab020c724d1cac4aeb2c847e8912a2907d0b53423b14f2efda9966c"));
+            assert(genesis.hashMerkleRoot == uint256("0xe2581d080f3f4dbbe6834c64ca8a7fd133b09e02e3ef87a35909fac0eaa8b075"));
         }
 
         vFixedSeeds.clear();
@@ -402,8 +402,8 @@ public:
         nRejectBlockOutdatedMajority = 950;
         nToCheckBlockUpgradeMajority = 1000;
         nMinerThreads = 1;
-        nTargetTimespan = 24 * 60 * 60; // Helium: 1 day
-        nTargetSpacing = int64_t(2.5 * 60);  // Helium: 2 minutes 30 seconds
+        nTargetTimespan = 1 * 60; // Helium: 1 day
+        nTargetSpacing = 1 * 60;  // Helium: 1 minute
         bnProofOfWorkLimit = ~uint256(0) >> 1;
         nDefaultPort = 19004;
         nReward = 432870.87949961 * COIN;
@@ -414,7 +414,7 @@ public:
                     3,                                   // nNonce
                     0x207fffff,                          // nBits
                     3,                                   // nVersion
-                    nReward,                             // genesisReward (treasury deposit)
+                    treasuryDeposit,                     // genesisReward (treasury deposit)
                    "Spor5rpxvaGQ4cW8dptj3zW94MxuAwW4P", // first treasury address
                    "SeYn7AmvjB3Wr3QqdJK6UsW85dPKeEKmSg", // second treasury address
                    "Sbe6m4y6wGhUo6FoS6Sab2PxnScXm8HQTf"  // third treasury address

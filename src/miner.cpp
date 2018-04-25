@@ -151,7 +151,7 @@ CBlockTemplate* CreateNewBlock(const CScript& scriptPubKeyIn, CWallet* pwallet, 
         }
 
         if (!fStakeFound)
-            return NULL;
+            return nullptr;
     }
 
     // Largest block you're willing to create:
@@ -435,7 +435,7 @@ CBlockTemplate* CreateNewBlock(const CScript& scriptPubKeyIn, CWallet* pwallet, 
 
         nLastBlockTx = nBlockTx;
         nLastBlockSize = nBlockSize;
-        LogPrintf("CreateNewBlock(): total size %u\n", nBlockSize);
+        LogPrint("debug", "CreateNewBlock(): total size %u\n", nBlockSize);
 
         // Compute final coinbase transaction.
         pblock->vtx[0].vin[0].scriptSig = CScript() << nHeight << OP_0;
@@ -449,20 +449,21 @@ CBlockTemplate* CreateNewBlock(const CScript& scriptPubKeyIn, CWallet* pwallet, 
         if (!fProofOfStake)
             UpdateTime(pblock, pindexPrev);
         pblock->nBits = GetNextWorkRequired(pindexPrev, pblock);
+        LogPrint("debug", "CreateNewBlock using pblock=>nBits 0%x", pblock->nBits);
         pblock->nNonce = 0;
         uint256 nCheckpoint = 0;
         AccumulatorMap mapAccumulators;
         if(fZerocoinActive && !CalculateAccumulatorCheckpoint(nHeight, nCheckpoint, mapAccumulators)){
-            LogPrintf("%s: failed to get accumulator checkpoint\n", __func__);
+            LogPrint("debug", "%s: failed to get accumulator checkpoint\n", __func__);
         }
         pblock->nAccumulatorCheckpoint = nCheckpoint;
         pblocktemplate->vTxSigOps[0] = GetLegacySigOpCount(pblock->vtx[0]);
 
         CValidationState state;
         if (!TestBlockValidity(state, *pblock, pindexPrev, false, false)) {
-            LogPrintf("CreateNewBlock() : TestBlockValidity failed\n");
+            LogPrint("debug", "CreateNewBlock() : TestBlockValidity failed\n");
             mempool.clear();
-            return NULL;
+            return nullptr;
         }
     }
 
@@ -507,8 +508,8 @@ CBlockTemplate* CreateNewBlockWithKey(CReserveKey& reservekey, CWallet* pwallet,
 
 bool ProcessBlockFound(CBlock* pblock, CWallet& wallet, CReserveKey& reservekey)
 {
-    LogPrintf("%s\n", pblock->ToString());
-    LogPrintf("generated %s\n", FormatMoney(pblock->vtx[0].vout[0].nValue));
+    LogPrint("debug", "%s\n", pblock->ToString());
+    LogPrint("debug", "generated %s\n", FormatMoney(pblock->vtx[0].vout[0].nValue));
 
     // Found a solution
     {
@@ -547,7 +548,7 @@ bool fGenerateBitcoins = false;
 
 void BitcoinMiner(CWallet* pwallet, bool fProofOfStake)
 {
-    LogPrintf("HeliumMiner started\n");
+    LogPrint("debug", "HeliumMiner started\n");
     SetThreadPriority(THREAD_PRIORITY_LOWEST);
     RenameThread("helium-miner");
 
@@ -596,30 +597,30 @@ void BitcoinMiner(CWallet* pwallet, bool fProofOfStake)
         unsigned int nTransactionsUpdatedLast = mempool.GetTransactionsUpdated();
         CBlockIndex* pindexPrev = chainActive.Tip();
         if (!pindexPrev) {
-            LogPrintf("HeliumMiner bailing, no pindexPrev\n");
+            LogPrint("debug", "HeliumMiner bailing, no pindexPrev\n");
             continue;
         }
         unique_ptr<CBlockTemplate> pblocktemplate(CreateNewBlockWithKey(reservekey, pwallet, fProofOfStake));
         if (!pblocktemplate.get()) {
-            LogPrintf("HeliumMiner bailing, no pblocktemplate got\n");
+            LogPrint("debug", "HeliumMiner bailing, no pblocktemplate got\n");
             continue;
         } else {
-            LogPrintf("HeliumMiner proceeding with pblocktemplate.\n");
+            LogPrint("debug", "HeliumMiner proceeding with pblocktemplate.\n");
         }
         CBlock* pblock = &pblocktemplate->block;
         IncrementExtraNonce(pblock, pindexPrev, nExtraNonce);
 
-        LogPrintf("HeliumMiner skipping PoS section 4\n");
+        LogPrint("debug", "HeliumMiner skipping PoS section 4\n");
         //Stake miner main
         if (fProofOfStake) {
-            LogPrintf("CPUMiner : proof-of-stake block found %s \n", pblock->GetHash().ToString().c_str());
+            LogPrint("debug", "CPUMiner : proof-of-stake block found %s \n", pblock->GetHash().ToString().c_str());
 
             if (!pblock->SignBlock(*pwallet)) {
-                LogPrintf("BitcoinMiner(): Signing new block failed \n");
+                LogPrint("debug", "BitcoinMiner(): Signing new block failed \n");
                 continue;
             }
 
-            LogPrintf("CPUMiner : proof-of-stake block was signed %s \n", pblock->GetHash().ToString().c_str());
+            LogPrint("debug", "CPUMiner : proof-of-stake block was signed %s \n", pblock->GetHash().ToString().c_str());
             SetThreadPriority(THREAD_PRIORITY_NORMAL);
             ProcessBlockFound(pblock, *pwallet, reservekey);
             SetThreadPriority(THREAD_PRIORITY_LOWEST);
@@ -627,7 +628,7 @@ void BitcoinMiner(CWallet* pwallet, bool fProofOfStake)
             continue;
         }
 
-        LogPrintf("Running HeliumMiner with %u transactions in block (%u bytes)\n", pblock->vtx.size(),
+        LogPrint("debug", "Running HeliumMiner with %u transactions in block (%u bytes)\n", pblock->vtx.size(),
             ::GetSerializeSize(*pblock, SER_NETWORK, PROTOCOL_VERSION));
 
         //
@@ -635,7 +636,7 @@ void BitcoinMiner(CWallet* pwallet, bool fProofOfStake)
         //
         int64_t nStart = GetTime();
         uint256 hashTarget = uint256().SetCompact(pblock->nBits);
-        LogPrintf("Running HeliumMiner with hashTarget %0x\n", hashTarget.GetCompact());
+        LogPrint("debug", "Running HeliumMiner with hashTarget %0x\n", hashTarget.GetCompact());
         while (true) {
             unsigned int nHashesDone = 0;
 
@@ -646,8 +647,8 @@ void BitcoinMiner(CWallet* pwallet, bool fProofOfStake)
                 if (hash <= hashTarget) {
                     // Found a solution
                     SetThreadPriority(THREAD_PRIORITY_NORMAL);
-                    LogPrintf("BitcoinMiner:\n");
-                    LogPrintf("proof-of-work found  \n  hash: %s  \ntarget: %s\n", hash.GetHex(), hashTarget.GetHex());
+                    LogPrint("debug", "BitcoinMiner:\n");
+                    LogPrint("debug", "proof-of-work found  \n  hash: %s  \ntarget: %s\n", hash.GetHex(), hashTarget.GetHex());
                     ProcessBlockFound(pblock, *pwallet, reservekey);
                     SetThreadPriority(THREAD_PRIORITY_LOWEST);
 
@@ -682,7 +683,7 @@ void BitcoinMiner(CWallet* pwallet, bool fProofOfStake)
                         static int64_t nLogTime;
                         if (GetTime() - nLogTime > 30 * 60) {
                             nLogTime = GetTime();
-                            LogPrintf("hashmeter %6.0f khash/s\n", dHashesPerSec / 1000.0);
+                            LogPrint("debug", "hashmeter %6.0f khash/s\n", dHashesPerSec / 1000.0);
                         }
                     }
                 }
@@ -718,17 +719,17 @@ void static ThreadBitcoinMiner(void* parg)
         BitcoinMiner(pwallet, false);
         boost::this_thread::interruption_point();
     } catch (std::exception& e) {
-        LogPrintf("ThreadBitcoinMiner() exception");
+        LogPrint("debug", "ThreadBitcoinMiner() exception");
     } catch (...) {
-        LogPrintf("ThreadBitcoinMiner() exception");
+        LogPrint("debug", "ThreadBitcoinMiner() exception");
     }
 
-    LogPrintf("ThreadBitcoinMiner exiting\n");
+    LogPrint("debug", "ThreadBitcoinMiner exiting\n");
 }
 
 void GenerateBitcoins(bool fGenerate, CWallet* pwallet, int nThreads)
 {
-    static boost::thread_group* minerThreads = NULL;
+    static boost::thread_group* minerThreads = nullptr;
     fGenerateBitcoins = fGenerate;
 
     if (nThreads < 0) {
@@ -736,13 +737,13 @@ void GenerateBitcoins(bool fGenerate, CWallet* pwallet, int nThreads)
         if (Params().DefaultMinerThreads())
             nThreads = Params().DefaultMinerThreads();
         else
-            nThreads = boost::thread::hardware_concurrency();
+            nThreads = static_cast<int>(boost::thread::hardware_concurrency());
     }
 
-    if (minerThreads != NULL) {
+    if (minerThreads != nullptr) {
         minerThreads->interrupt_all();
         delete minerThreads;
-        minerThreads = NULL;
+        minerThreads = nullptr;
     }
 
     if (nThreads == 0 || !fGenerate)
