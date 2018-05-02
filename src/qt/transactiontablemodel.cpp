@@ -356,15 +356,15 @@ QString TransactionTableModel::formatTxType(const TransactionRecord* wtx) const
     case TransactionRecord::Obfuscated:
         return tr("Obfuscated");
     case TransactionRecord::ZerocoinMint:
-        return tr("Converted Piv to zHelium");
+        return tr("Converted Helium to zHelium");
     case TransactionRecord::ZerocoinSpend:
         return tr("Spent zHelium");
     case TransactionRecord::RecvFromZerocoinSpend:
-        return tr("Received Piv from zHelium");
+        return tr("Received Helium from zHelium");
     case TransactionRecord::ZerocoinSpend_Change_zHelium:
         return tr("Minted Change as zHelium from zHelium Spend");
     case TransactionRecord::ZerocoinSpend_FromMe:
-        return tr("Converted zHelium to Piv");
+        return tr("Converted zHelium to Helium");
 
     default:
         return QString();

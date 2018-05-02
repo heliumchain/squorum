@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>ZPivControlDialog</class>
- <widget class="QDialog" name="ZPivControlDialog">
+ <class>ZHeliumControlDialog</class>
+ <widget class="QDialog" name="ZHeliumControlDialog">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -57,14 +57,14 @@
         </widget>
        </item>
        <item row="1" column="0">
-        <widget class="QLabel" name="labelZPiv">
+        <widget class="QLabel" name="labelZHelium">
          <property name="text">
           <string>zHelium</string>
          </property>
         </widget>
        </item>
        <item row="1" column="1">
-        <widget class="QLabel" name="labelZPiv_int">
+        <widget class="QLabel" name="labelZHelium_int">
          <property name="text">
           <string>0</string>
          </property>
@@ -193,7 +193,7 @@
   <connection>
    <sender>buttonBox</sender>
    <signal>accepted()</signal>
-   <receiver>ZPivControlDialog</receiver>
+   <receiver>ZHeliumControlDialog</receiver>
    <slot>accept()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -209,7 +209,7 @@
   <connection>
    <sender>buttonBox</sender>
    <signal>rejected()</signal>
-   <receiver>ZPivControlDialog</receiver>
+   <receiver>ZHeliumControlDialog</receiver>
    <slot>reject()</slot>
    <hints>
     <hint type="sourcelabel">

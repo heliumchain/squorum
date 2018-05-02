@@ -46,7 +46,7 @@ public:
 
     void setModel(WalletModel* model);
     void showOutOfSyncWarning(bool fShow);
-    void setZPivControlLabels(int64_t nAmount, int nQuantity);
+    void setZHeliumControlLabels(int64_t nAmount, int nQuantity);
 
 public Q_SLOTS:
     void setBalance(const CAmount& balance, const CAmount& unconfirmedBalance, const CAmount& immatureBalance, 
@@ -100,7 +100,7 @@ private Q_SLOTS:
     void on_pushButtonMintReset_clicked();
     void on_pushButtonSpentReset_clicked();
     void on_pushButtonSpendzHLM_clicked();
-    void on_pushButtonZPivControl_clicked();
+    void on_pushButtonZHeliumControl_clicked();
     void on_pasteButton_clicked();
     void updateDisplayUnit();
     void updateAutomintStatus();

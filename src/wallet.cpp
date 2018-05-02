@@ -4877,7 +4877,7 @@ void CWallet::ReconsiderZerocoins(std::list<CZerocoinMint>& listMintsRestored)
 }
 
 
-void CWallet::ZPivBackupWallet()
+void CWallet::ZHeliumBackupWallet()
 {
     filesystem::path backupDir = GetDataDir() / "backups";
     filesystem::path backupPath;
@@ -4984,7 +4984,7 @@ string CWallet::MintZerocoin(CAmount nValue, CWalletTx& wtxNew, vector<CZerocoin
 
     //Create a backup of the wallet
     if (fBackupMints)
-        ZPivBackupWallet();
+        ZHeliumBackupWallet();
 
     return "";
 }
@@ -5006,7 +5006,7 @@ bool CWallet::SpendZerocoin(CAmount nAmount, int nSecurityLevel, CWalletTx& wtxN
     }
 
     if (fMintChange && fBackupMints)
-        ZPivBackupWallet();
+        ZHeliumBackupWallet();
 
     CWalletDB walletdb(pwalletMain->strWalletFile);
     if (!CommitTransaction(wtxNew, reserveKey)) {

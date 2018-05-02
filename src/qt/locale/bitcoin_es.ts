@@ -3805,7 +3805,7 @@ https://www.transifex.com/helium-project/helium-project-translations</translatio
     </message>
 </context>
 <context>
-    <name>ZPivControlDialog</name>
+    <name>ZHeliumControlDialog</name>
     <message>
         <source>0</source>
         <translation>0</translation>

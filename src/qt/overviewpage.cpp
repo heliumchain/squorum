@@ -211,7 +211,7 @@ void OverviewPage::setBalance(const CAmount& balance, const CAmount& unconfirmed
     }
     // HLM Balance
     CAmount nTotalBalance = balance + unconfirmedBalance;
-    CAmount pivAvailableBalance = balance - immatureBalance - nLockedBalance;
+    CAmount hlmAvailableBalance = balance - immatureBalance - nLockedBalance;
     CAmount nTotalWatchBalance = watchOnlyBalance + watchUnconfBalance + watchImmatureBalance;    
     CAmount nUnlockedBalance = nTotalBalance - nLockedBalance;
     // zHLM Balance
@@ -221,11 +221,11 @@ void OverviewPage::setBalance(const CAmount& balance, const CAmount& unconfirmed
     QString sPercentage = "";
     getPercentage(nUnlockedBalance, zerocoinBalance, sPercentage, szPercentage);
     // Combined balances
-    CAmount availableTotalBalance = pivAvailableBalance + matureZerocoinBalance;
+    CAmount availableTotalBalance = hlmAvailableBalance + matureZerocoinBalance;
     CAmount sumTotalBalance = nTotalBalance + zerocoinBalance;
 
     // HLM labels
-    ui->labelBalance->setText(BitcoinUnits::floorHtmlWithUnit(nDisplayUnit, pivAvailableBalance, false, BitcoinUnits::separatorAlways));
+    ui->labelBalance->setText(BitcoinUnits::floorHtmlWithUnit(nDisplayUnit, hlmAvailableBalance, false, BitcoinUnits::separatorAlways));
     ui->labelUnconfirmed->setText(BitcoinUnits::floorHtmlWithUnit(nDisplayUnit, unconfirmedBalance, false, BitcoinUnits::separatorAlways));
     ui->labelImmature->setText(BitcoinUnits::floorHtmlWithUnit(nDisplayUnit, immatureBalance, false, BitcoinUnits::separatorAlways));
     ui->labelLockedBalance->setText(BitcoinUnits::floorHtmlWithUnit(nDisplayUnit, nLockedBalance, false, BitcoinUnits::separatorAlways));
@@ -270,7 +270,7 @@ void OverviewPage::setBalance(const CAmount& balance, const CAmount& unconfirmed
     bool showSumAvailable = settingShowAllBalances || sumTotalBalance != availableTotalBalance;
     ui->labelBalanceTextz->setVisible(showSumAvailable);
     ui->labelBalancez->setVisible(showSumAvailable);
-    bool showHLMAvailable = settingShowAllBalances || pivAvailableBalance != nTotalBalance;
+    bool showHLMAvailable = settingShowAllBalances || hlmAvailableBalance != nTotalBalance;
     bool showWatchOnlyHLMAvailable = watchOnlyBalance != nTotalWatchBalance;
     bool showHLMPending = settingShowAllBalances || unconfirmedBalance != 0;
     bool showWatchOnlyHLMPending = watchUnconfBalance != 0;

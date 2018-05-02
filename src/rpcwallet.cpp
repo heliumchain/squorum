@@ -2485,7 +2485,7 @@ UniValue mintzerocoin(const UniValue& params, bool fHelp)
     if (fHelp || params.size() < 1 || params.size() > 2)
         throw runtime_error(
             "mintzerocoin amount ( UTXOs )\n"
-            "amount: (numeric, required) Enter an amount of Piv to convert to zHelium\n"
+            "amount: (numeric, required) Enter an amount of Helium to convert to zHelium\n"
             "UTXOs: (string, optional) A json array of objects. Each object needs the txid (string) and vout (numeric)\n"
             "     [           (json array of json objects)\n"
             "       {\n"

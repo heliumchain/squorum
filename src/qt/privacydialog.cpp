@@ -14,7 +14,7 @@
 #include "sendcoinsentry.h"
 #include "walletmodel.h"
 #include "coincontrol.h"
-#include "zpivcontroldialog.h"
+#include "zhlmcontroldialog.h"
 #include "spork.h"
 #include "askpassphrasedialog.h"
 
@@ -296,17 +296,17 @@ void PrivacyDialog::on_pushButtonSpendzHLM_clicked()
     sendzHLM();
 }
 
-void PrivacyDialog::on_pushButtonZPivControl_clicked()
+void PrivacyDialog::on_pushButtonZHeliumControl_clicked()
 {
     if (!walletModel || !walletModel->getOptionsModel())
         return;
 
-    ZPivControlDialog* zHeliumControl = new ZPivControlDialog(this);
+    ZHeliumControlDialog* zHeliumControl = new ZHeliumControlDialog(this);
     zHeliumControl->setModel(walletModel);
     zHeliumControl->exec();
 }
 
-void PrivacyDialog::setZPivControlLabels(int64_t nAmount, int nQuantity)
+void PrivacyDialog::setZHeliumControlLabels(int64_t nAmount, int nQuantity)
 {
     ui->labelzHeliumSelected_int->setText(QString::number(nAmount));
     ui->labelQuantitySelected_int->setText(QString::number(nQuantity));
@@ -416,8 +416,8 @@ void PrivacyDialog::sendzHLM()
 
     // use mints from zHelium selector if applicable
     vector<CZerocoinMint> vMintsSelected;
-    if (!ZPivControlDialog::listSelectedMints.empty()) {
-        vMintsSelected = ZPivControlDialog::GetSelectedMints();
+    if (!ZHeliumControlDialog::listSelectedMints.empty()) {
+        vMintsSelected = ZHeliumControlDialog::GetSelectedMints();
     }
 
     // Spend zHLM
@@ -463,7 +463,7 @@ void PrivacyDialog::sendzHLM()
     }
 
     // Clear zpiv selector in case it was used
-    ZPivControlDialog::listSelectedMints.clear();
+    ZHeliumControlDialog::listSelectedMints.clear();
     ui->labelzHeliumSelected_int->setText(QString("0"));
     ui->labelQuantitySelected_int->setText(QString("0"));
 
@@ -481,7 +481,7 @@ void PrivacyDialog::sendzHLM()
 
     CAmount nValueOut = 0;
     for (const CTxOut& txout: wtxNew.vout) {
-        strStats += tr("value out: ") + FormatMoney(txout.nValue).c_str() + " Piv, ";
+        strStats += tr("value out: ") + FormatMoney(txout.nValue).c_str() + " Helium, ";
         nValueOut += txout.nValue;
 
         strStats += tr("address: ");

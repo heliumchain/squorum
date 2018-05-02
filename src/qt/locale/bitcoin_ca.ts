@@ -1307,7 +1307,7 @@
     </message>
     </context>
 <context>
-    <name>ZPivControlDialog</name>
+    <name>ZHeliumControlDialog</name>
     </context>
 <context>
     <name>helium-core</name>

@@ -3,20 +3,20 @@
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include "zpivcontroldialog.h"
-#include "ui_zpivcontroldialog.h"
+#include "zhlmcontroldialog.h"
+#include "ui_zhlmcontroldialog.h"
 
 #include "main.h"
 #include "walletmodel.h"
 
 using namespace std;
 
-std::list<std::string> ZPivControlDialog::listSelectedMints;
-std::list<CZerocoinMint> ZPivControlDialog::listMints;
+std::list<std::string> ZHeliumControlDialog::listSelectedMints;
+std::list<CZerocoinMint> ZHeliumControlDialog::listMints;
 
-ZPivControlDialog::ZPivControlDialog(QWidget *parent) :
+ZHeliumControlDialog::ZHeliumControlDialog(QWidget *parent) :
     QDialog(parent),
-    ui(new Ui::ZPivControlDialog),
+    ui(new Ui::ZHeliumControlDialog),
     model(0)
 {
     ui->setupUi(this);
@@ -30,19 +30,19 @@ ZPivControlDialog::ZPivControlDialog(QWidget *parent) :
     connect(ui->pushButtonAll, SIGNAL(clicked()), this, SLOT(ButtonAllClicked()));
 }
 
-ZPivControlDialog::~ZPivControlDialog()
+ZHeliumControlDialog::~ZHeliumControlDialog()
 {
     delete ui;
 }
 
-void ZPivControlDialog::setModel(WalletModel *model)
+void ZHeliumControlDialog::setModel(WalletModel *model)
 {
     this->model = model;
     updateList();
 }
 
 //Update the tree widget
-void ZPivControlDialog::updateList()
+void ZHeliumControlDialog::updateList()
 {
     // need to prevent the slot from being called each time something is changed
     ui->treeWidget->blockSignals(true);
@@ -134,7 +134,7 @@ void ZPivControlDialog::updateList()
 }
 
 // Update the list when a checkbox is clicked
-void ZPivControlDialog::updateSelection(QTreeWidgetItem* item, int column)
+void ZHeliumControlDialog::updateSelection(QTreeWidgetItem* item, int column)
 {
     // only want updates from non top level items that are available to spend
     if (item->parent() && column == COLUMN_CHECKBOX && !item->isDisabled()){
@@ -157,7 +157,7 @@ void ZPivControlDialog::updateSelection(QTreeWidgetItem* item, int column)
 }
 
 // Update the Quantity and Amount display
-void ZPivControlDialog::updateLabels()
+void ZHeliumControlDialog::updateLabels()
 {
     int64_t nAmount = 0;
     for (const CZerocoinMint mint : listMints) {
@@ -167,14 +167,14 @@ void ZPivControlDialog::updateLabels()
     }
 
     //update this dialog's labels
-    ui->labelZPiv_int->setText(QString::number(nAmount));
+    ui->labelZHelium_int->setText(QString::number(nAmount));
     ui->labelQuantity_int->setText(QString::number(listSelectedMints.size()));
 
     //update PrivacyDialog labels
-    privacyDialog->setZPivControlLabels(nAmount, listSelectedMints.size());
+    privacyDialog->setZHeliumControlLabels(nAmount, listSelectedMints.size());
 }
 
-std::vector<CZerocoinMint> ZPivControlDialog::GetSelectedMints()
+std::vector<CZerocoinMint> ZHeliumControlDialog::GetSelectedMints()
 {
     std::vector<CZerocoinMint> listReturn;
     for (const CZerocoinMint mint : listMints) {
@@ -187,7 +187,7 @@ std::vector<CZerocoinMint> ZPivControlDialog::GetSelectedMints()
 }
 
 // select or deselect all of the mints
-void ZPivControlDialog::ButtonAllClicked()
+void ZHeliumControlDialog::ButtonAllClicked()
 {
     ui->treeWidget->blockSignals(true);
     Qt::CheckState state = Qt::Checked;
