@@ -14,7 +14,7 @@
 #include "sendcoinsentry.h"
 #include "walletmodel.h"
 #include "coincontrol.h"
-#include "zhlmcontroldialog.h"
+#include "zpivcontroldialog.h"
 #include "spork.h"
 #include "askpassphrasedialog.h"
 
@@ -292,17 +292,17 @@ void PrivacyDialog::on_pushButtonSpendzPIV_clicked()
     sendzPIV();
 }
 
-void PrivacyDialog::on_pushButtonZHeliumControl_clicked()
+void PrivacyDialog::on_pushButtonZPivControl_clicked()
 {
     if (!walletModel || !walletModel->getOptionsModel())
         return;
 
-    ZHeliumControlDialog* zHeliumControl = new ZHeliumControlDialog(this);
+    ZPivControlDialog* zHeliumControl = new ZPivControlDialog(this);
     zHeliumControl->setModel(walletModel);
     zHeliumControl->exec();
 }
 
-void PrivacyDialog::setZHeliumControlLabels(int64_t nAmount, int nQuantity)
+void PrivacyDialog::setZPivControlLabels(int64_t nAmount, int nQuantity)
 {
     ui->labelzHeliumSelected_int->setText(QString::number(nAmount));
     ui->labelQuantitySelected_int->setText(QString::number(nQuantity));

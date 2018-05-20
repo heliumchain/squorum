@@ -222,7 +222,7 @@ void OverviewPage::setBalance(const CAmount& balance, const CAmount& unconfirmed
     QString sPercentage = "";
     getPercentage(nUnlockedBalance, zerocoinBalance, sPercentage, szPercentage);
     // Combined balances
-    CAmount availableTotalBalance = hlmAvailableBalance + matureZerocoinBalance;
+    CAmount availableTotalBalance = pivAvailableBalance + matureZerocoinBalance;
     CAmount sumTotalBalance = nTotalBalance + zerocoinBalance;
 
     // PIV labels
