@@ -1,7 +1,7 @@
 // Copyright (c) 2010 Satoshi Nakamoto
 // Copyright (c) 2009-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
-// Copyright (c) 2015-2017 The PIVX developers
+// Copyright (c) 2015-2018 The PIVX developers
 // Copyright (c) 2018 The Helium developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
@@ -59,8 +59,8 @@ static Checkpoints::MapCheckpoints mapCheckpoints =
     (0, uint256("0x00000546ba134f98bbb5f8f317dd7e7c54c057456bea1e2614d4e6eba10073af"));
 static const Checkpoints::CCheckpointData data = {
     &mapCheckpoints,
-    1510948627, // * UNIX timestamp of last checkpoint block
-    1842739,    // * total number of transactions between genesis and last checkpoint
+    1525106065, // * UNIX timestamp of last checkpoint block
+    2498834,    // * total number of transactions between genesis and last checkpoint
                 //   (the tx=... number in the SetBestChain debug.log lines)
     2000        // * estimated number of transactions per day after checkpoint
 };
@@ -82,13 +82,23 @@ static const Checkpoints::CCheckpointData dataRegtest = {
     1520851782,
     0,
     100};
-libzerocoin::ZerocoinParams* CChainParams::Zerocoin_Params() const
+
+libzerocoin::ZerocoinParams* CChainParams::Zerocoin_Params(bool useModulusV1) const
 {
     assert(this);
-    static CBigNum bnTrustedModulus(zerocoinModulus);
-    static libzerocoin::ZerocoinParams ZCParams = libzerocoin::ZerocoinParams(bnTrustedModulus);
+    static CBigNum bnHexModulus = 0;
+    if (!bnHexModulus)
+        bnHexModulus.SetHex(zerocoinModulus);
+    static libzerocoin::ZerocoinParams ZCParamsHex = libzerocoin::ZerocoinParams(bnHexModulus);
+    static CBigNum bnDecModulus = 0;
+    if (!bnDecModulus)
+        bnDecModulus.SetDec(zerocoinModulus);
+    static libzerocoin::ZerocoinParams ZCParamsDec = libzerocoin::ZerocoinParams(bnDecModulus);
 
-    return &ZCParams;
+    if (useModulusV1)
+        return &ZCParamsHex;
+
+    return &ZCParamsDec;
 }
 
 class CMainParams : public CChainParams
@@ -132,6 +142,21 @@ public:
         nBlockFirstFraudulent = 891737; //First block that bad serials emerged
         nBlockLastGoodCheckpoint = 891730; //Last valid accumulator checkpoint
         nBlockEnforceInvalidUTXO = 902850; //Start enforcing the invalid UTXO's
+        nInvalidAmountFiltered = 268200*COIN; //Amount of invalid coins filtered through exchanges, that should be considered valid
+        nBlockZerocoinV2 = 1153160; //!> The block that zerocoin v2 becomes active - roughly Tuesday, May 8, 2018 4:00:00 AM GMT
+        nEnforceNewSporkKey = 1525158000; //!> Sporks signed after (GMT): Tuesday, May 1, 2018 7:00:00 AM GMT must use the new spork key
+        nRejectOldSporkKey = 1527811200; //!> Fully reject old spork key after (GMT): Friday, June 1, 2018 12:00:00 AM
+
+        /**
+         * Build the genesis block. Note that the output of the genesis coinbase cannot
+         * be spent as it did not originally exist in the database.
+         *
+         * CBlock(hash=00000ffd590b14, ver=1, hashPrevBlock=00000000000000, hashMerkleRoot=e0028e, nTime=1390095618, nBits=1e0ffff0, nNonce=28917698, vtx=1)
+         *   CTransaction(hash=e0028e, ver=1, vin.size=1, vout.size=1, nLockTime=0)
+         *     CTxIn(COutPoint(000000, -1), coinbase 04ffff001d01044c5957697265642030392f4a616e2f3230313420546865204772616e64204578706572696d656e7420476f6573204c6976653a204f76657273746f636b2e636f6d204973204e6f7720416363657074696e6720426974636f696e73)
+         *     CTxOut(nValue=50.00000000, scriptPubKey=0xA9037BAC7050C479B121CF)
+         *   vMerkleTree: e0028e
+         */
         const char* pszTimestamp = "Bitcoin Block #513069: 00000000000000000049f7a375c89a21aa05aa566546749f4a32607578b02bf9";
         CMutableTransaction txNew;
         txNew.vin.resize(1);
@@ -206,7 +231,8 @@ public:
         fHeadersFirstSyncingActive = false;
 
         nPoolMaxTransactions = 3;
-        strSporkKey = "04B433E6598390C992F4F022F20D3B4CBBE691652EE7C48243B81701CBDB7CC7D7BF0EE09E154E6FCBF2043D65AF4E9E97B89B5DBAF830D83B9B7F469A6C45A717";
+        strSporkKey = "0499A7AF4806FC6DE640D23BC5936C29B77ADF2174B4F45492727F897AE63CF8D27B2F05040606E0D14B547916379FA10716E344E745F880EDC037307186AA25B7";
+        strSporkKeyOld = "04B433E6598390C992F4F022F20D3B4CBBE691652EE7C48243B81701CBDB7CC7D7BF0EE09E154E6FCBF2043D65AF4E9E97B89B5DBAF830D83B9B7F469A6C45A717";
         strObfuscationPoolDummyAddress = "S87q2gC9j6nNrnzCsg4aY6bHMLsT9nUhEw";
         nStartMasternodePayments = 1403728576; //Wed, 25 Jun 2014 20:36:16 GMT
 
@@ -223,6 +249,8 @@ public:
         nRequiredAccumulation = 1;
         nDefaultSecurityLevel = 100; //full security level for accumulators
         nZerocoinHeaderVersion = 4; //Block headers must be this version once zerocoin is active
+        nZerocoinRequiredStakeDepth = 200; //The required confirmations for a zpiv to be stakable
+
         nBudget_Fee_Confirmations = 6; // Number of confirmations for the finalization fee
     }
 
@@ -267,6 +295,10 @@ public:
         nBlockFirstFraudulent = 9891737; //First block that bad serials emerged
         nBlockLastGoodCheckpoint = 9891730; //Last valid accumulator checkpoint
         nBlockEnforceInvalidUTXO = 9902850; //Start enforcing the invalid UTXO's
+        nInvalidAmountFiltered = 0; //Amount of invalid coins filtered through exchanges, that should be considered valid
+        nBlockZerocoinV2 = 444020; //!> The block that zerocoin v2 becomes active
+        nEnforceNewSporkKey = 1521604800; //!> Sporks signed after Wednesday, March 21, 2018 4:00:00 AM GMT must use the new spork key
+        nRejectOldSporkKey = 1522454400; //!> Reject old spork key after Saturday, March 31, 2018 12:00:00 AM GMT
 
         //! Modify the testnet genesis block so the timestamp is valid for a later start.
         genesis.nTime = 1520851782;
@@ -330,6 +362,7 @@ public:
 
         nPoolMaxTransactions = 2;
         strSporkKey = "";
+        strSporkKeyOld = "";
         strObfuscationPoolDummyAddress = "m57cqfGRkekRyDRNeJiLtYVEbvhXrNbmox";
         nStartMasternodePayments = 1420837558; //Fri, 09 Jan 2015 21:05:58 GMT
         nBudget_Fee_Confirmations = 3; // Number of confirmations for the finalization fee. We have to make this very short

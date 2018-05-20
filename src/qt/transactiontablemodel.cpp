@@ -1,4 +1,6 @@
 // Copyright (c) 2011-2014 The Bitcoin developers
+// Copyright (c) 2014-2016 The Dash developers
+// Copyright (c) 2016-2018 The PIVX developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -133,7 +135,7 @@ public:
                 {
                     parent->beginInsertRows(QModelIndex(), lowerIndex, lowerIndex + toInsert.size() - 1);
                     int insert_idx = lowerIndex;
-                    Q_FOREACH (const TransactionRecord& rec, toInsert) {
+                    foreach (const TransactionRecord& rec, toInsert) {
                         cachedWallet.insert(insert_idx, rec);
                         insert_idx += 1;
                     }
@@ -228,7 +230,7 @@ TransactionTableModel::~TransactionTableModel()
 void TransactionTableModel::updateAmountColumnTitle()
 {
     columns[Amount] = BitcoinUnits::getAmountColumnTitle(walletModel->getOptionsModel()->getDisplayUnit());
-    Q_EMIT headerDataChanged(Qt::Horizontal, Amount, Amount);
+    emit headerDataChanged(Qt::Horizontal, Amount, Amount);
 }
 
 void TransactionTableModel::updateTransaction(const QString& hash, int status, bool showTransaction)
@@ -245,8 +247,8 @@ void TransactionTableModel::updateConfirmations()
     // Invalidate status (number of confirmations) and (possibly) description
     //  for all rows. Qt is smart enough to only actually request the data for the
     //  visible rows.
-    Q_EMIT dataChanged(index(0, Status), index(priv->size() - 1, Status));
-    Q_EMIT dataChanged(index(0, ToAddress), index(priv->size() - 1, ToAddress));
+    emit dataChanged(index(0, Status), index(priv->size() - 1, Status));
+    emit dataChanged(index(0, ToAddress), index(priv->size() - 1, ToAddress));
 }
 
 int TransactionTableModel::rowCount(const QModelIndex& parent) const
@@ -342,7 +344,9 @@ QString TransactionTableModel::formatTxType(const TransactionRecord* wtx) const
     case TransactionRecord::SendToSelf:
         return tr("Payment to yourself");
     case TransactionRecord::StakeMint:
-        return tr("Minted");
+        return tr("HLM Stake");
+    case TransactionRecord::StakeZHLM:
+        return tr("zHLM Stake");
     case TransactionRecord::Generated:
         return tr("Mined");
     case TransactionRecord::ObfuscationDenominate:
@@ -356,15 +360,15 @@ QString TransactionTableModel::formatTxType(const TransactionRecord* wtx) const
     case TransactionRecord::Obfuscated:
         return tr("Obfuscated");
     case TransactionRecord::ZerocoinMint:
-        return tr("Converted Piv to zHelium");
+        return tr("Converted HLM to zHLM");
     case TransactionRecord::ZerocoinSpend:
-        return tr("Spent zHelium");
+        return tr("Spent zHLM");
     case TransactionRecord::RecvFromZerocoinSpend:
-        return tr("Received Piv from zHelium");
-    case TransactionRecord::ZerocoinSpend_Change_zHelium:
-        return tr("Minted Change as zHelium from zHelium Spend");
+        return tr("Received HLM from zHLM");
+    case TransactionRecord::ZerocoinSpend_Change_zPiv:
+        return tr("Minted Change as zHLM from zHLM Spend");
     case TransactionRecord::ZerocoinSpend_FromMe:
-        return tr("Converted zHelium to Piv");
+        return tr("Converted zHLM to HLM");
 
     default:
         return QString();
@@ -376,6 +380,7 @@ QVariant TransactionTableModel::txAddressDecoration(const TransactionRecord* wtx
     switch (wtx->type) {
     case TransactionRecord::Generated:
     case TransactionRecord::StakeMint:
+    case TransactionRecord::StakeZHLM:
     case TransactionRecord::MNReward:
         return QIcon(":/icons/tx_mined");
     case TransactionRecord::RecvWithObfuscation:
@@ -418,8 +423,10 @@ QString TransactionTableModel::formatTxToAddress(const TransactionRecord* wtx, b
     case TransactionRecord::SendToOther:
         return QString::fromStdString(wtx->address) + watchAddress;
     case TransactionRecord::ZerocoinMint:
-    case TransactionRecord::ZerocoinSpend_Change_zHelium:
-        return tr("zHelium Accumulator");
+    case TransactionRecord::ZerocoinSpend_Change_zHlm:
+        return tr("Anonymous (zHLM Transaction)");
+    case TransactionRecord::StakeZPIV:
+        return tr("Anonymous (zHLM Stake)");
     case TransactionRecord::SendToSelf:
     default:
         return tr("(n/a)") + watchAddress;
@@ -655,9 +662,9 @@ QModelIndex TransactionTableModel::index(int row, int column, const QModelIndex&
 
 void TransactionTableModel::updateDisplayUnit()
 {
-    // Q_EMIT dataChanged to update Amount column with the current unit
+    // emit dataChanged to update Amount column with the current unit
     updateAmountColumnTitle();
-    Q_EMIT dataChanged(index(0, Amount), index(priv->size() - 1, Amount));
+    emit dataChanged(index(0, Amount), index(priv->size() - 1, Amount));
 }
 
 // queue notifications to show a non freezing progress dialog e.g. for rescan

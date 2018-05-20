@@ -1,7 +1,8 @@
 // Copyright (c) 2011-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
-// Copyright (c) 2015-2017 The PIVX developers
+// Copyright (c) 2015-2018 The PIVX developers
 // Copyright (c) 2018 The Helium developers
+
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -93,10 +94,7 @@ QString TransactionDesc::toHTML(CWallet* wallet, CWalletTx& wtx, TransactionReco
     strHTML.reserve(4000);
     strHTML += "<html><font face='verdana, arial, helvetica, sans-serif'>";
 
-    int64_t nTime = wtx.GetTxTime();
-    CAmount nCredit = wtx.GetCredit(ISMINE_ALL);
-    CAmount nDebit = wtx.GetDebit(ISMINE_ALL);
-    CAmount nNet = nCredit - nDebit;
+    CAmount nNet = rec->credit + rec->debit;
 
     strHTML += "<b>" + tr("Status") + ":</b> " + FormatTxStatus(wtx);
     int nRequests = wtx.GetRequestCount();
@@ -108,7 +106,7 @@ QString TransactionDesc::toHTML(CWallet* wallet, CWalletTx& wtx, TransactionReco
     }
     strHTML += "<br>";
 
-    strHTML += "<b>" + tr("Date") + ":</b> " + (nTime ? GUIUtil::dateTimeStr(nTime) : "") + "<br>";
+    strHTML += "<b>" + tr("Date") + ":</b> " + (rec->time ? GUIUtil::dateTimeStr(rec->time) : "") + "<br>";
 
     //
     // From
@@ -155,7 +153,7 @@ QString TransactionDesc::toHTML(CWallet* wallet, CWalletTx& wtx, TransactionReco
     //
     // Amount
     //
-    if (wtx.IsCoinBase() && nCredit == 0) {
+    if (wtx.IsCoinBase() && rec->credit == 0) {
         //
         // Coinbase
         //
@@ -223,12 +221,12 @@ QString TransactionDesc::toHTML(CWallet* wallet, CWalletTx& wtx, TransactionReco
             if (fAllToMe) {
                 // Payment to self
                 CAmount nChange = wtx.GetChange();
-                CAmount nValue = nCredit - nChange;
+                CAmount nValue = rec->credit - nChange;
                 strHTML += "<b>" + tr("Total debit") + ":</b> " + BitcoinUnits::formatHtmlWithUnit(unit, -nValue) + "<br>";
                 strHTML += "<b>" + tr("Total credit") + ":</b> " + BitcoinUnits::formatHtmlWithUnit(unit, nValue) + "<br>";
             }
 
-            CAmount nTxFee = nDebit - wtx.GetValueOut();
+            CAmount nTxFee = rec->debit - wtx.GetValueOut();
             if (nTxFee > 0)
                 strHTML += "<b>" + tr("Transaction fee") + ":</b> " + BitcoinUnits::formatHtmlWithUnit(unit, -nTxFee) + "<br>";
         } else {
