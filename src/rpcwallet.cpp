@@ -2522,11 +2522,11 @@ UniValue getzerocoinbalance(const UniValue& params, bool fHelp)
     if (fHelp || params.size() != 0)
         throw runtime_error(
             "getzerocoinbalance\n"
-            "\nReturn the wallet's total zPIV balance.\n" +
+            "\nReturn the wallet's total zHLM balance.\n" +
             HelpRequiringPassphrase() + "\n"
 
             "\nResult:\n"
-            "amount         (numeric) Total zPIV balance.\n"
+            "amount         (numeric) Total zHLM balance.\n"
 
             "\nExamples:\n" +
             HelpExampleCli("getzerocoinbalance", "") + HelpExampleRpc("getzerocoinbalance", ""));
@@ -2550,7 +2550,7 @@ UniValue listmintedzerocoins(const UniValue& params, bool fHelp)
     if (fHelp || params.size() != 0)
         throw runtime_error(
             "listmintedzerocoins\n"
-            "\nList all zPIV mints in the wallet.\n" +
+            "\nList all zHLM mints in the wallet.\n" +
             HelpRequiringPassphrase() + "\n"
 
             "\nResult:\n"
@@ -2626,7 +2626,7 @@ UniValue listspentzerocoins(const UniValue& params, bool fHelp)
     if (fHelp || params.size() != 0)
         throw runtime_error(
             "listspentzerocoins\n"
-            "\nList all the spent zPIV mints in the wallet.\n" +
+            "\nList all the spent zHLM mints in the wallet.\n" +
             HelpRequiringPassphrase() + "\n"
 
             "\nResult:\n"
@@ -2918,7 +2918,7 @@ UniValue resetmintzerocoin(const UniValue& params, bool fHelp)
     LOCK2(cs_main, pwalletMain->cs_wallet);
 
     CWalletDB walletdb(pwalletMain->strWalletFile);
-    CzHLMTracker* zhlmTracker = pwalletMain->zhlmTracker.get();
+    CzPIVTracker* zpivTracker = pwalletMain->zpivTracker.get();
     set<CMintMeta> setMints = zpivTracker->ListMints(false, false, true);
     vector<CMintMeta> vMintsToFind(setMints.begin(), setMints.end());
     vector<CMintMeta> vMintsMissing;
@@ -2930,14 +2930,14 @@ UniValue resetmintzerocoin(const UniValue& params, bool fHelp)
     // update the meta data of mints that were marked for updating
     UniValue arrUpdated(UniValue::VARR);
     for (CMintMeta meta : vMintsToUpdate) {
-        zhlmTracker->UpdateState(meta);
+        zpivTracker->UpdateState(meta);
         arrUpdated.push_back(meta.hashPubcoin.GetHex());
     }
 
     // delete any mints that were unable to be located on the blockchain
     UniValue arrDeleted(UniValue::VARR);
     for (CMintMeta mint : vMintsMissing) {
-        zhlmTracker->Archive(mint);
+        zpivTracker->Archive(mint);
         arrDeleted.push_back(mint.hashPubcoin.GetHex());
     }
 
@@ -3076,7 +3076,7 @@ UniValue exportzerocoins(const UniValue& params, bool fHelp)
 
             "\nArguments:\n"
             "1. \"include_spent\"        (bool, required) Include mints that have already been spent\n"
-            "2. \"denomination\"         (integer, optional) Export a specific denomination of zPIV\n"
+            "2. \"denomination\"         (integer, optional) Export a specific denomination of zHLM\n"
 
             "\nResult:\n"
             "[                   (array of json object)\n"
@@ -3088,8 +3088,8 @@ UniValue exportzerocoins(const UniValue& params, bool fHelp)
             "    \"t\": \"txid\",    (string) The txid that the coin was minted in\n"
             "    \"h\": n,         (numeric) The height the tx was added to the blockchain\n"
             "    \"u\": used,      (boolean) Whether the mint has been spent\n"
-            "    \"v\": version,   (numeric) The version of the zPIV\n"
-            "    \"k\": \"privkey\"  (string) The zPIV private key (V2+ zPIV only)\n"
+            "    \"v\": version,   (numeric) The version of the zHLM\n"
+            "    \"k\": \"privkey\"  (string) The zHLM private key (V2+ zHLM only)\n"
             "  }\n"
             "  ,...\n"
             "]\n"
@@ -3286,11 +3286,11 @@ UniValue setzhlmseed(const UniValue& params, bool fHelp)
     if(fHelp || params.size() != 1)
         throw runtime_error(
             "setzhlmseed \"seed\"\n"
-            "\nSet the wallet's deterministic zhlm seed to a specific value.\n" +
+            "\nSet the wallet's deterministic zHLM seed to a specific value.\n" +
             HelpRequiringPassphrase() + "\n"
 
             "\nArguments:\n"
-            "1. \"seed\"        (string, required) The deterministic zpiv seed.\n"
+            "1. \"seed\"        (string, required) The deterministic zHLM seed.\n"
 
             "\nResult\n"
             "\"success\" : b,  (boolean) Whether the seed was successfully set.\n"
@@ -3304,7 +3304,7 @@ UniValue setzhlmseed(const UniValue& params, bool fHelp)
     uint256 seed;
     seed.SetHex(params[0].get_str());
 
-    CzHLMWallet* zwallet = pwalletMain->getZWallet();
+    CzPIVWallet* zwallet = pwalletMain->getZWallet();
     bool fSuccess = zwallet->SetMasterSeed(seed, true);
     if (fSuccess)
         zwallet->SyncWithChain();
@@ -3315,7 +3315,7 @@ UniValue setzhlmseed(const UniValue& params, bool fHelp)
     return ret;
 }
 
-UniValue getzpivseed(const UniValue& params, bool fHelp)
+UniValue getzhlmseed(const UniValue& params, bool fHelp)
 {
     if(fHelp || !params.empty())
         throw runtime_error(
@@ -3331,7 +3331,7 @@ UniValue getzpivseed(const UniValue& params, bool fHelp)
 
     EnsureWalletIsUnlocked();
 
-    CzHLMWallet* zwallet = pwalletMain->getZWallet();
+    CzPIVWallet* zwallet = pwalletMain->getZWallet();
     uint256 seed = zwallet->GetMasterSeed();
 
     UniValue ret(UniValue::VOBJ);
@@ -3355,7 +3355,7 @@ UniValue generatemintlist(const UniValue& params, bool fHelp)
             "\nResult:\n"
             "[\n"
             "  {\n"
-            "    \"count\": n,          (numeric) Deterministic Count.\n"
+            "    \"count\": n,          (numeric) Deterministic count.\n"
             "    \"value\": \"xxx\",    (string) Hex encoded pubcoin value.\n"
             "    \"randomness\": \"xxx\",   (string) Hex encoded randomness.\n"
             "    \"serial\": \"xxx\"        (string) Hex encoded Serial.\n"
@@ -3370,7 +3370,7 @@ UniValue generatemintlist(const UniValue& params, bool fHelp)
 
     int nCount = params[0].get_int();
     int nRange = params[1].get_int();
-    CzHLMWallet* zwallet = pwalletMain->zwalletMain;
+    CzPIVWallet* zwallet = pwalletMain->zwalletMain;
 
     UniValue arrRet(UniValue::VARR);
     for (int i = nCount; i < nCount + nRange; i++) {
@@ -3399,7 +3399,7 @@ UniValue dzhlmstate(const UniValue& params, bool fHelp) {
                         "\nExamples\n" +
                 HelpExampleCli("mintpoolstatus", "") + HelpExampleRpc("mintpoolstatus", ""));
 
-    CzHLMWallet* zwallet = pwalletMain->zwalletMain;
+    CzPIVWallet* zwallet = pwalletMain->zwalletMain;
     UniValue obj(UniValue::VOBJ);
     int nCount, nCountLastUsed;
     zwallet->GetState(nCount, nCountLastUsed);
@@ -3410,7 +3410,7 @@ UniValue dzhlmstate(const UniValue& params, bool fHelp) {
 }
 
 
-void static SearchThread(CzHLMWallet* zwallet, int nCountStart, int nCountEnd)
+void static SearchThread(CzPIVWallet* zwallet, int nCountStart, int nCountEnd)
 {
     LogPrintf("%s: start=%d end=%d\n", __func__, nCountStart, nCountEnd);
     CWalletDB walletDB(pwalletMain->strWalletFile);
@@ -3468,7 +3468,7 @@ UniValue searchdzhlm(const UniValue& params, bool fHelp)
 
     int nThreads = params[2].get_int();
 
-    CzHLMWallet* zwallet = pwalletMain->zwalletMain;
+    CzPIVWallet* zwallet = pwalletMain->zwalletMain;
 
     boost::thread_group* dzpivThreads = new boost::thread_group();
     int nRangePerThread = nRange / nThreads;
@@ -3483,7 +3483,7 @@ UniValue searchdzhlm(const UniValue& params, bool fHelp)
 
     dzpivThreads->join_all();
 
-    zwallet->RemoveMintsFromPool(pwalletMain->zhlmTracker->GetSerialHashes());
+    zwallet->RemoveMintsFromPool(pwalletMain->zpivTracker->GetSerialHashes());
     zwallet->SyncWithChain(false);
 
     //todo: better response

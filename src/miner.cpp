@@ -228,7 +228,7 @@ CBlockTemplate* CreateNewBlock(const CScript& scriptPubKeyIn, CWallet* pwallet, 
 
                     double nTimePriority = std::pow(GetAdjustedTime() - nTimeSeen, 6);
 
-                    // zHLM spends can have very large priority, use non-overflowing safe functions
+                    // zPIV spends can have very large priority, use non-overflowing safe functions
                     dPriority = double_safe_addition(dPriority, (nTimePriority * nConfs));
                     dPriority = double_safe_multiplication(dPriority, nTotalIn);
 
@@ -276,7 +276,7 @@ CBlockTemplate* CreateNewBlock(const CScript& scriptPubKeyIn, CWallet* pwallet, 
 
                 int nConf = nHeight - coins->nHeight;
 
-                // zHLM spends can have very large priority, use non-overflowing safe functions
+                // zPIV spends can have very large priority, use non-overflowing safe functions
                 dPriority = double_safe_addition(dPriority, ((double)nValueIn * nConf));
 
             }
@@ -349,7 +349,7 @@ CBlockTemplate* CreateNewBlock(const CScript& scriptPubKeyIn, CWallet* pwallet, 
             if (!view.HaveInputs(tx))
                 continue;
 
-            // double check that there are no double spent zHLM spends in this block or tx
+            // double check that there are no double spent zPIV spends in this block or tx
             if (tx.IsZerocoinSpend()) {
                 int nHeightTx = 0;
                 if (IsTransactionInChain(tx.GetHash(), nHeightTx))
@@ -371,7 +371,7 @@ CBlockTemplate* CreateNewBlock(const CScript& scriptPubKeyIn, CWallet* pwallet, 
                         vTxSerials.emplace_back(spend.getCoinSerialNumber());
                     }
                 }
-                //This zHLM serial has already been included in the block, do not add this tx.
+                //This zPIV serial has already been included in the block, do not add this tx.
                 if (fDoubleSerial)
                     continue;
             }
@@ -638,7 +638,7 @@ void BitcoinMiner(CWallet* pwallet, bool fProofOfStake)
 
         //Stake miner main
         if (fProofOfStake) {
-            LogPrintf("CPUMiner : proof-of-stake block found %s \n", pblock->GetHash().ToString().c_str());
+            LogPrintf("HeliumMiner : proof-of-stake block found %s \n", pblock->GetHash().ToString().c_str());
             if (pblock->IsZerocoinStake()) {
                 //Find the key associated with the zerocoin that is being staked
                 libzerocoin::CoinSpend spend = TxInToZerocoinSpend(pblock->vtx[1].vin[0]);
@@ -649,9 +649,9 @@ void BitcoinMiner(CWallet* pwallet, bool fProofOfStake)
                     continue;
                 }
 
-                //Sign block with the zHLM key
+                //Sign block with the zPIV key
                 if (!SignBlockWithKey(*pblock, key)) {
-                    LogPrintf("BitcoinMiner(): Signing new block with zHLM key failed \n");
+                    LogPrintf("HeliumMiner(): Signing new block with zHLM key failed \n");
                     continue;
                 }
             } else if (!SignBlock(*pblock, *pwallet)) {

@@ -308,10 +308,10 @@ QList<TransactionRecord> TransactionRecord::decomposeTransaction(const CWallet* 
     return parts;
 }
 
-bool IsZHLMType(TransactionRecord::Type type)
+bool IsZPIVType(TransactionRecord::Type type)
 {
     switch (type) {
-        case TransactionRecord::StakeZHLM:
+        case TransactionRecord::StakeZPIV:
         case TransactionRecord::ZerocoinMint:
         case TransactionRecord::ZerocoinSpend:
         case TransactionRecord::RecvFromZerocoinSpend:

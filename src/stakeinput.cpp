@@ -127,7 +127,7 @@ bool CZPivStake::CreateTxOuts(CWallet* pwallet, vector<CTxOut>& vout, CAmount nT
     libzerocoin::CoinDenomination denomStaked = libzerocoin::AmountToZerocoinDenomination(this->GetValue());
     CDeterministicMint dMint;
     if (!pwallet->CreateZPIVOutPut(denomStaked, outReward, dMint))
-        return error("%s: failed to create zPIV output", __func__);
+        return error("%s: failed to create zHLM output", __func__);
     vout.emplace_back(outReward);
 
     //Add new staked denom to our wallet
@@ -138,7 +138,7 @@ bool CZPivStake::CreateTxOuts(CWallet* pwallet, vector<CTxOut>& vout, CAmount nT
         CTxOut out;
         CDeterministicMint dMintReward;
         if (!pwallet->CreateZPIVOutPut(libzerocoin::CoinDenomination::ZQ_ONE, out, dMintReward))
-            return error("%s: failed to create zPIV output", __func__);
+            return error("%s: failed to create zHLM output", __func__);
         vout.emplace_back(out);
 
         if (!pwallet->DatabaseMint(dMintReward))

@@ -33,14 +33,14 @@ PrivacyDialog::PrivacyDialog(QWidget* parent) : QDialog(parent),
     nDisplayUnit = 0; // just make sure it's not unitialized
     ui->setupUi(this);
 
-    // "Spending 999999 zHLM ought to be enough for anybody." - Bill Gates, 2017
-    ui->zHLMpayAmount->setValidator( new QDoubleValidator(0.0, 21000000.0, 20, this) );
+    // "Spending 999999 dollars ought to be enough for anybody." - Bill Gates, 2017
+    ui->zPIVpayAmount->setValidator( new QDoubleValidator(0.0, 21000000.0, 20, this) );
     ui->labelMintAmountValue->setValidator( new QIntValidator(0, 999999, this) );
 
     // Default texts for (mini-) coincontrol
     ui->labelCoinControlQuantity->setText (tr("Coins automatically selected"));
     ui->labelCoinControlAmount->setText (tr("Coins automatically selected"));
-    ui->labelzHLMSyncStatus->setText("(" + tr("out of sync") + ")");
+    ui->labelzPIVSyncStatus->setText("(" + tr("out of sync") + ")");
 
     // Sunken frame for minting messages
     ui->TEMintStatus->setFrameStyle(QFrame::StyledPanel | QFrame::Sunken);
@@ -150,11 +150,11 @@ void PrivacyDialog::on_addressBookButton_clicked()
     dlg.setModel(walletModel->getAddressTableModel());
     if (dlg.exec()) {
         ui->payTo->setText(dlg.getReturnValue());
-        ui->zHLMpayAmount->setFocus();
+        ui->zPIVpayAmount->setFocus();
     }
 }
 
-void PrivacyDialog::on_pushButtonMintzHLM_clicked()
+void PrivacyDialog::on_pushButtonMintzPIV_clicked()
 {
     if (!walletModel || !walletModel->getOptionsModel())
         return;
@@ -172,7 +172,7 @@ void PrivacyDialog::on_pushButtonMintzHLM_clicked()
     // Request unlock if wallet was locked or unlocked for mixing:
     WalletModel::EncryptionStatus encStatus = walletModel->getEncryptionStatus();
     if (encStatus == walletModel->Locked) {
-        WalletModel::UnlockContext ctx(walletModel->requestUnlock(AskPassphraseDialog::Context::Mint_zHLM, true));
+        WalletModel::UnlockContext ctx(walletModel->requestUnlock(AskPassphraseDialog::Context::Mint_zPIV, true));
         if (!ctx.isValid()) {
             // Unlock wallet was cancelled
             ui->TEMintStatus->setPlainText(tr("Error: Your wallet is locked. Please enter the wallet passphrase first."));
@@ -264,7 +264,7 @@ void PrivacyDialog::on_pushButtonSpentReset_clicked()
     return;
 }
 
-void PrivacyDialog::on_pushButtonSpendzHLM_clicked()
+void PrivacyDialog::on_pushButtonSpendzPIV_clicked()
 {
 
     if (!walletModel || !walletModel->getOptionsModel() || !pwalletMain)
@@ -279,17 +279,17 @@ void PrivacyDialog::on_pushButtonSpendzHLM_clicked()
     // Request unlock if wallet was locked or unlocked for mixing:
     WalletModel::EncryptionStatus encStatus = walletModel->getEncryptionStatus();
     if (encStatus == walletModel->Locked || encStatus == walletModel->UnlockedForAnonymizationOnly) {
-        WalletModel::UnlockContext ctx(walletModel->requestUnlock(AskPassphraseDialog::Context::Send_zHLM, true));
+        WalletModel::UnlockContext ctx(walletModel->requestUnlock(AskPassphraseDialog::Context::Send_zPIV, true));
         if (!ctx.isValid()) {
             // Unlock wallet was cancelled
             return;
         }
-        // Wallet is unlocked now, sedn zHLM
-        sendzHLM();
+        // Wallet is unlocked now, sedn zPIV
+        sendzPIV();
         return;
     }
-    // Wallet already unlocked or not encrypted at all, send zHLM
-    sendzHLM();
+    // Wallet already unlocked or not encrypted at all, send zPIV
+    sendzPIV();
 }
 
 void PrivacyDialog::on_pushButtonZPivControl_clicked()
@@ -313,7 +313,7 @@ static inline int64_t roundint64(double d)
     return (int64_t)(d > 0 ? d + 0.5 : d - 0.5);
 }
 
-void PrivacyDialog::sendzHLM()
+void PrivacyDialog::sendzPIV()
 {
     QSettings settings;
 
@@ -324,31 +324,31 @@ void PrivacyDialog::sendzHLM()
     }
     else{
         if (!address.IsValid()) {
-            QMessageBox::warning(this, tr("Spend Zerocoin"), tr("Invalid Helium Address"), QMessageBox::Ok, QMessageBox::Ok);
+            QMessageBox::warning(this, tr("Spend Zerocoin"), tr("Invalid Address"), QMessageBox::Ok, QMessageBox::Ok);
             ui->payTo->setFocus();
             return;
         }
     }
 
     // Double is allowed now
-    double dAmount = ui->zHLMpayAmount->text().toDouble();
+    double dAmount = ui->zPIVpayAmount->text().toDouble();
     CAmount nAmount = roundint64(dAmount* COIN);
 
     // Check amount validity
     if (!MoneyRange(nAmount) || nAmount <= 0.0) {
         QMessageBox::warning(this, tr("Spend Zerocoin"), tr("Invalid Send Amount"), QMessageBox::Ok, QMessageBox::Ok);
-        ui->zHLMpayAmount->setFocus();
+        ui->zPIVpayAmount->setFocus();
         return;
     }
 
-    // Convert change to zHLM
+    // Convert change to zPIV
     bool fMintChange = ui->checkBoxMintChange->isChecked();
 
     // Persist minimize change setting
     fMinimizeChange = ui->checkBoxMinimizeChange->isChecked();
     settings.setValue("fMinimizeChange", fMinimizeChange);
 
-    // Warn for additional fees if amount is not an integer and change as zHLM is requested
+    // Warn for additional fees if amount is not an integer and change as zPIV is requested
     bool fWholeNumber = floor(dAmount) == dAmount;
     double dzFee = 0.0;
 
@@ -365,7 +365,7 @@ void PrivacyDialog::sendzHLM()
 
         if (retval != QMessageBox::Yes) {
             // Sending canceled
-            ui->zHLMpayAmount->setFocus();
+            ui->zPIVpayAmount->setFocus();
             return;
         }
     }
@@ -410,7 +410,7 @@ void PrivacyDialog::sendzHLM()
     ui->TEMintStatus->setPlainText(tr("Spending Zerocoin.\nComputationally expensive, might need several minutes depending on the selected Security Level and your hardware. \nPlease be patient..."));
     ui->TEMintStatus->repaint();
 
-    // use mints from zHLM selector if applicable
+    // use mints from zPIV selector if applicable
     vector<CMintMeta> vMintsToFetch;
     vector<CZerocoinMint> vMintsSelected;
     if (!ZPivControlDialog::setSelectedMints.empty()) {
@@ -436,7 +436,7 @@ void PrivacyDialog::sendzHLM()
         }
     }
 
-    // Spend zHLM
+    // Spend zPIV
     CWalletTx wtxNew;
     CZerocoinSpendReceipt receipt;
     bool fSuccess = false;
@@ -459,7 +459,7 @@ void PrivacyDialog::sendzHLM()
         }
 
         int nNeededSpends = receipt.GetNeededSpends(); // Number of spends we would need for this transaction
-        const int nMaxSpends = Params().Zerocoin_MaxSpendsPerTransaction(); // Maximum possible spends for one zHLM transaction
+        const int nMaxSpends = Params().Zerocoin_MaxSpendsPerTransaction(); // Maximum possible spends for one zPIV transaction
         if (nNeededSpends > nMaxSpends) {
             QString strStatusMessage = tr("Too much inputs (") + QString::number(nNeededSpends, 10) + tr(") needed. \nMaximum allowed: ") + QString::number(nMaxSpends, 10);
             strStatusMessage += tr("\nEither mint higher denominations (so fewer inputs are needed) or reduce the amount to spend.");
@@ -470,14 +470,14 @@ void PrivacyDialog::sendzHLM()
             QMessageBox::warning(this, tr("Spend Zerocoin"), receipt.GetStatusMessage().c_str(), QMessageBox::Ok, QMessageBox::Ok);
             ui->TEMintStatus->setPlainText(tr("Spend Zerocoin failed with status = ") +QString::number(receipt.GetStatus(), 10) + "\n" + "Message: " + QString::fromStdString(receipt.GetStatusMessage()));
         }
-        ui->zHLMpayAmount->setFocus();
+        ui->zPIVpayAmount->setFocus();
         ui->TEMintStatus->repaint();
         ui->TEMintStatus->verticalScrollBar()->setValue(ui->TEMintStatus->verticalScrollBar()->maximum()); // Automatically scroll to end of text
         return;
     }
 
     if (walletModel && walletModel->getAddressTableModel()) {
-        // If zHLM was spent successfully update the addressbook with the label
+        // If zPIV was spent successfully update the addressbook with the label
         std::string labelText = ui->addAsLabel->text().toStdString();
         if (!labelText.empty())
             walletModel->updateAddressBookLabels(address.Get(), labelText, "send");
@@ -486,8 +486,8 @@ void PrivacyDialog::sendzHLM()
     }
 
     // Clear zpiv selector in case it was used
-    ZHlmControlDialog::setSelectedMints.clear();
-    ui->labelzHlmSelected_int->setText(QString("0"));
+    ZPivControlDialog::setSelectedMints.clear();
+    ui->labelzPivSelected_int->setText(QString("0"));
     ui->labelQuantitySelected_int->setText(QString("0"));
 
     // Some statistics for entertainment
@@ -495,7 +495,7 @@ void PrivacyDialog::sendzHLM()
     CAmount nValueIn = 0;
     int nCount = 0;
     for (CZerocoinSpend spend : receipt.GetSpends()) {
-        strStats += tr("zHLM Spend #: ") + QString::number(nCount) + ", ";
+        strStats += tr("zPIV Spend #: ") + QString::number(nCount) + ", ";
         strStats += tr("denomination: ") + QString::number(spend.GetDenomination()) + ", ";
         strStats += tr("serial: ") + spend.GetSerial().ToString().c_str() + "\n";
         strStats += tr("Spend is 1 of : ") + QString::number(spend.GetMintCount()) + " mints in the accumulator\n";
@@ -526,7 +526,7 @@ void PrivacyDialog::sendzHLM()
     strReturn += strStats;
 
     // Clear amount to avoid double spending when accidentally clicking twice
-    ui->zHLMpayAmount->setText ("0");
+    ui->zPIVpayAmount->setText ("0");
 
     ui->TEMintStatus->setPlainText(strReturn);
     ui->TEMintStatus->repaint();
@@ -701,7 +701,7 @@ void PrivacyDialog::setBalance(const CAmount& balance, const CAmount& unconfirme
 
     ui->labelzAvailableAmount->setText(QString::number(zerocoinBalance/COIN) + QString(" zHLM "));
     ui->labelzAvailableAmount_2->setText(QString::number(matureZerocoinBalance/COIN) + QString(" zHLM "));
-    ui->labelzHLMAmountValue->setText(BitcoinUnits::floorHtmlWithUnit(nDisplayUnit, balance - immatureBalance - nLockedBalance, false, BitcoinUnits::separatorAlways));
+    ui->labelzPIVAmountValue->setText(BitcoinUnits::floorHtmlWithUnit(nDisplayUnit, balance - immatureBalance - nLockedBalance, false, BitcoinUnits::separatorAlways));
 
     // Display AutoMint status
     updateAutomintStatus();
@@ -760,7 +760,7 @@ void PrivacyDialog::updateDisplayUnit()
 
 void PrivacyDialog::showOutOfSyncWarning(bool fShow)
 {
-    ui->labelzHLMSyncStatus->setVisible(fShow);
+    ui->labelzPIVSyncStatus->setVisible(fShow);
 }
 
 void PrivacyDialog::keyPressEvent(QKeyEvent* event)
@@ -804,7 +804,7 @@ void PrivacyDialog::updateSPORK16Status()
     } else if (!fMaintenanceMode && !fButtonsEnabled) {
         // Mint zPIV
         ui->pushButtonMintzPIV->setEnabled(true);
-        ui->pushButtonMintzPIV->setToolTip(tr("PrivacyDialog", "Enter an amount of Helium to convert to zHLM", 0));
+        ui->pushButtonMintzPIV->setToolTip(tr("PrivacyDialog", "Enter an amount of HLM to convert to zHLM", 0));
 
         // Spend zPIV
         ui->pushButtonSpendzPIV->setEnabled(true);

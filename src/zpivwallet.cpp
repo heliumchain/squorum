@@ -29,10 +29,10 @@ CzPIVWallet::CzPIVWallet(std::string strWalletFile)
             hashSeed = Hash(seed.begin(), seed.end());
             if (pwalletMain->AddDeterministicSeed(seed)) {
                 if (walletdb.EraseZPIVSeed_deprecated()) {
-                    LogPrintf("%s: Updated zPIV seed databasing\n", __func__);
+                    LogPrintf("%s: Updated zHLM seed databasing\n", __func__);
                     fFirstRun = false;
                 } else {
-                    LogPrintf("%s: failed to remove old zpiv seed\n", __func__);
+                    LogPrintf("%s: failed to remove old zHLM seed\n", __func__);
                 }
             }
         }

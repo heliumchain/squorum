@@ -74,7 +74,7 @@ using namespace std;
 
 #ifdef ENABLE_WALLET
 CWallet* pwalletMain = NULL;
-CzHLMWallet* zwalletMain = NULL;
+CzPIVWallet* zwalletMain = NULL;
 int nWalletBackups = 10;
 #endif
 volatile bool fFeeEstimatesInitialized = false;
@@ -1497,7 +1497,7 @@ bool AppInit2(boost::thread_group& threadGroup, CScheduler& scheduler)
                         RecalculateZPIVMinted();
                         RecalculateZPIVSpent();
                     }
-                    RecalculateHLMSupply(1);
+                    RecalculatePIVSupply(1);
                 }
 
                 // Force recalculation of accumulators.
@@ -1655,7 +1655,7 @@ bool AppInit2(boost::thread_group& threadGroup, CScheduler& scheduler)
 
         LogPrintf("%s", strErrors.str());
         LogPrintf(" wallet      %15dms\n", GetTimeMillis() - nStart);
-        zwalletMain = new CzHLMWallet(pwalletMain->strWalletFile);
+        zwalletMain = new CzPIVWallet(pwalletMain->strWalletFile);
         pwalletMain->setZWallet(zwalletMain);
 
         RegisterValidationInterface(pwalletMain);
@@ -1702,11 +1702,11 @@ bool AppInit2(boost::thread_group& threadGroup, CScheduler& scheduler)
         }
         fVerifyingBlocks = false;
 
-        //Inititalize zHLMWallet
+        //Inititalize zPIVWallet
         uiInterface.InitMessage(_("Syncing zHLM wallet..."));
 
         bool fEnableZPivBackups = GetBoolArg("-backupzhlm", true);
-        pwalletMain->setZPivAutoBackups(fEnableZHlmBackups);
+        pwalletMain->setZPivAutoBackups(fEnableZPivBackups);
 
         //Load zerocoin mint hashes to memory
         pwalletMain->zpivTracker->Init();
@@ -1893,8 +1893,8 @@ bool AppInit2(boost::thread_group& threadGroup, CScheduler& scheduler)
        is convertable to another.
 
        For example:
-       1HLM+1000 == (.1HLM+100)*10
-       10HLM+10000 == (1HLM+1000)*10
+       1PIV+1000 == (.1PIV+100)*10
+       10PIV+10000 == (1PIV+1000)*10
     */
     obfuScationDenominations.push_back((10000 * COIN) + 10000000);
     obfuScationDenominations.push_back((1000 * COIN) + 1000000);

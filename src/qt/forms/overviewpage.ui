@@ -438,7 +438,7 @@
                         </widget>
                        </item>
                        <item>
-                        <widget class="QLabel" name="labelHLMPercent">
+                        <widget class="QLabel" name="labelPIVPercent">
                          <property name="text">
                           <string notr="true">0 %</string>
                          </property>
@@ -857,7 +857,7 @@
                         </widget>
                        </item>
                        <item>
-                        <widget class="QLabel" name="labelzHLMPercent">
+                        <widget class="QLabel" name="labelzPIVPercent">
                          <property name="text">
                           <string notr="true">0 %</string>
                          </property>

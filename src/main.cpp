@@ -1258,7 +1258,7 @@ bool ContextualCheckZerocoinMint(const CTransaction& tx, const PublicCoin& coin,
 
 bool ContextualCheckZerocoinSpend(const CTransaction& tx, const CoinSpend& spend, CBlockIndex* pindex, const uint256& hashBlock)
 {
-    //Check to see if the zHLM is properly signed
+    //Check to see if the zPIV is properly signed
     if (pindex->nHeight >= Params().Zerocoin_Block_V2_Start()) {
         if (!spend.HasValidSignature())
             return error("%s: V2 zHLM spend does not have a valid signature", __func__);
@@ -1600,7 +1600,7 @@ bool AcceptToMemoryPool(CTxMemPool& pool, CValidationState& state, const CTransa
                 CoinSpend spend = TxInToZerocoinSpend(txIn);
                 if (!ContextualCheckZerocoinSpend(tx, spend, chainActive.Tip(), 0))
                     return state.Invalid(error("%s: ContextualCheckZerocoinSpend failed for tx %s", __func__,
-                                               tx.GetHash().GetHex()), REJECT_INVALID, "bad-txns-invalid-zhlm");
+                                               tx.GetHash().GetHex()), REJECT_INVALID, "bad-txns-invalid-zpiv");
             }
         } else {
             LOCK(pool.cs);
@@ -1628,7 +1628,7 @@ bool AcceptToMemoryPool(CTxMemPool& pool, CValidationState& state, const CTransa
                 }
             }
 
-            // Check that zHLM mints are not already known
+            // Check that zPIV mints are not already known
             if (tx.IsZerocoinMint()) {
                 for (auto& out : tx.vout) {
                     if (!out.IsZerocoinMint())
@@ -2410,7 +2410,7 @@ int64_t GetMasternodePayment(int nHeight, int64_t blockValue, int nMasternodeCou
     } else if (nHeight < Params().Zerocoin_Block_V2_Start()) {
         return GetSeeSaw(blockValue, nMasternodeCount, nHeight);
     } else {
-        //When zHLM is staked, masternode only gets 2 HLM
+        //When zPIV is staked, masternode only gets 2 PIV
         ret = 3 * COIN;
         if (isZPIVStake)
             ret = 2 * COIN;
@@ -2966,7 +2966,7 @@ void RecalculateZPIVSpent()
         if (pindex->nHeight % 1000 == 0)
             LogPrintf("%s : block %d...\n", __func__, pindex->nHeight);
 
-        //Rewrite zHLM supply
+        //Rewrite zPIV supply
         CBlock block;
         assert(ReadBlockFromDisk(block, pindex));
 
@@ -2975,13 +2975,13 @@ void RecalculateZPIVSpent()
         //Reset the supply to previous block
         pindex->mapZerocoinSupply = pindex->pprev->mapZerocoinSupply;
 
-        //Add mints to zHLM supply
+        //Add mints to zPIV supply
         for (auto denom : libzerocoin::zerocoinDenomList) {
             long nDenomAdded = count(pindex->vMintDenominationsInBlock.begin(), pindex->vMintDenominationsInBlock.end(), denom);
             pindex->mapZerocoinSupply.at(denom) += nDenomAdded;
         }
 
-        //Remove spends from zHLM supply
+        //Remove spends from zPIV supply
         for (auto denom : listDenomsSpent)
             pindex->mapZerocoinSupply.at(denom)--;
 
@@ -2995,7 +2995,7 @@ void RecalculateZPIVSpent()
     }
 }
 
-bool RecalculateHLMSupply(int nHeightStart)
+bool RecalculatePIVSupply(int nHeightStart)
 {
     if (nHeightStart > chainActive.Height())
         return false;
@@ -3290,7 +3290,7 @@ bool ConnectBlock(const CBlock& block, CValidationState& state, CBlockIndex* pin
                     return state.DoS(100, error("%s: failed to add block %s with invalid zerocoinspend", __func__, tx.GetHash().GetHex()), REJECT_INVALID);
             }
 
-            // Check that zHLM mints are not already known
+            // Check that zPIV mints are not already known
             if (tx.IsZerocoinMint()) {
                 for (auto& out : tx.vout) {
                     if (!out.IsZerocoinMint())
@@ -3319,7 +3319,7 @@ bool ConnectBlock(const CBlock& block, CValidationState& state, CBlockIndex* pin
                 }
             }
 
-            // Check that zHLM mints are not already known
+            // Check that zPIV mints are not already known
             if (tx.IsZerocoinMint()) {
                 for (auto& out : tx.vout) {
                     if (!out.IsZerocoinMint())
@@ -3369,10 +3369,10 @@ bool ConnectBlock(const CBlock& block, CValidationState& state, CBlockIndex* pin
     if (pindex->nHeight == Params().Zerocoin_Block_RecalculateAccumulators() + 1) {
         RecalculateZPIVMinted();
         RecalculateZPIVSpent();
-        RecalculateHLMSupply(Params().Zerocoin_StartHeight());
+        RecalculatePIVSupply(Params().Zerocoin_StartHeight());
     }
 
-    //Track zHLM money supply in the block index
+    //Track zPIV money supply in the block index
     if (!UpdateZPIVSupply(block, pindex))
         return state.DoS(100, error("%s: Failed to calculate new zHLM supply for block=%s height=%d", __func__,
                                     block.GetHash().GetHex(), pindex->nHeight), REJECT_INVALID);
@@ -3436,7 +3436,7 @@ bool ConnectBlock(const CBlock& block, CValidationState& state, CBlockIndex* pin
         setDirtyBlockIndex.insert(pindex);
     }
 
-    //Record zHLM serials
+    //Record zPIV serials
     set<uint256> setAddedTx;
     for (pair<CoinSpend, uint256> pSpend : vSpends) {
         //record spend to database
@@ -3583,7 +3583,7 @@ void static UpdateTip(CBlockIndex* pindexNew)
 {
     chainActive.SetTip(pindexNew);
 
-    // If turned on AutoZeromint will automatically convert HLM to zHLM
+    // If turned on AutoZeromint will automatically convert PIV to zPIV
     if (pwalletMain->isZeromintEnabled ())
         pwalletMain->AutoZeromint ();
 
@@ -4449,7 +4449,7 @@ bool CheckBlock(const CBlock& block, CValidationState& state, bool fCheckPOW, bo
         if (!CheckTransaction(tx, fZerocoinActive, chainActive.Height() + 1 >= Params().Zerocoin_Block_EnforceSerialRange(), state))
             return error("CheckBlock() : CheckTransaction failed");
 
-        // double check that there are no double spent zHLM spends in this block
+        // double check that there are no double spent zPIV spends in this block
         if (tx.IsZerocoinSpend()) {
             for (const CTxIn txIn : tx.vin) {
                 if (txIn.scriptSig.IsZerocoinSpend()) {
@@ -4664,8 +4664,8 @@ bool ContextualCheckZerocoinStake(int nHeight, CStakeInput* stake)
     if (nHeight < Params().Zerocoin_Block_V2_Start())
         return error("%s: zHLM stake block is less than allowed start height", __func__);
 
-    if (CZHlmStake* zHLM = dynamic_cast<CZHlmStake*>(stake)) {
-        CBlockIndex* pindexFrom = zHLM->GetIndexFrom();
+    if (CZPivStake* zPIV = dynamic_cast<CZPivStake*>(stake)) {
+        CBlockIndex* pindexFrom = zPIV->GetIndexFrom();
         if (!pindexFrom)
             return error("%s: failed to get index associated with zHLM stake checksum", __func__);
 
@@ -4674,8 +4674,8 @@ bool ContextualCheckZerocoinStake(int nHeight, CStakeInput* stake)
 
         //The checksum needs to be the exact checksum from 200 blocks ago
         uint256 nCheckpoint200 = chainActive[nHeight - Params().Zerocoin_RequiredStakeDepth()]->nAccumulatorCheckpoint;
-        uint32_t nChecksum200 = ParseChecksum(nCheckpoint200, libzerocoin::AmountToZerocoinDenomination(zHLM->GetValue()));
-        if (nChecksum200 != zHLM->GetChecksum())
+        uint32_t nChecksum200 = ParseChecksum(nCheckpoint200, libzerocoin::AmountToZerocoinDenomination(zPIV->GetValue()));
+        if (nChecksum200 != zPIV->GetChecksum())
             return error("%s: accumulator checksum is different than the block 200 blocks previous. stake=%d block200=%d", __func__, zPIV->GetChecksum(), nChecksum200);
     } else {
         return error("%s: dynamic_cast of stake ptr failed", __func__);
@@ -4726,7 +4726,7 @@ bool AcceptBlock(CBlock& block, CValidationState& state, CBlockIndex** ppindex, 
         if (!stake)
             return error("%s: null stake ptr", __func__);
 
-        if (stake->IsZHLM() && !ContextualCheckZerocoinStake(pindexPrev->nHeight, stake.get()))
+        if (stake->IsZPIV() && !ContextualCheckZerocoinStake(pindexPrev->nHeight, stake.get()))
             return state.DoS(100, error("%s: staked zHLM fails context checks", __func__));
 
         uint256 hash = block.GetHash();

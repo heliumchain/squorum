@@ -86,12 +86,12 @@ enum AvailableCoinsType {
     ALL_COINS = 1,
     ONLY_DENOMINATED = 2,
     ONLY_NOT10000IFMN = 3,
-    ONLY_NONDENOMINATED_NOT10000IFMN = 4, // ONLY_NONDENOMINATED and not 10000 HLM at the same time
+    ONLY_NONDENOMINATED_NOT10000IFMN = 4, // ONLY_NONDENOMINATED and not 10000 PIV at the same time
     ONLY_10000 = 5,                        // find masternode outputs including locked ones (use with caution)
     STAKABLE_COINS = 6                          // UTXO's that are valid for staking
 };
 
-// Possible states for zHLM send
+// Possible states for zPIV send
 enum ZerocoinSpendStatus {
     ZPIV_SPEND_OKAY = 0,                            // No error
     ZPIV_SPEND_ERROR = 1,                           // Unspecified class of errors, more details are (hopefully) in the returning text

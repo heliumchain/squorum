@@ -77,7 +77,7 @@ AskPassphraseDialog::AskPassphraseDialog(Mode mode, QWidget* parent, WalletModel
     }
 
     // Set checkbox "For anonymization, automint, and staking only" depending on from where we were called
-    if (context == Context::Unlock_Menu || context == Context::Mint_zHLM || context == Context::BIP_38) {
+    if (context == Context::Unlock_Menu || context == Context::Mint_zPIV || context == Context::BIP_38) {
         ui->anonymizationCheckBox->setChecked(true);
     }
     else {
@@ -85,7 +85,7 @@ AskPassphraseDialog::AskPassphraseDialog(Mode mode, QWidget* parent, WalletModel
     }
 
     // It doesn't make sense to show the checkbox for sending HLM because you wouldn't check it anyway.
-    if (context == Context::Send_HLM || context == Context::Send_zHLM) {
+    if (context == Context::Send_PIV || context == Context::Send_zPIV) {
         ui->anonymizationCheckBox->hide();
     }
 
@@ -135,7 +135,7 @@ void AskPassphraseDialog::accept()
                         "<qt>" +
                             tr("Helium will close now to finish the encryption process. "
                                "Remember that encrypting your wallet cannot fully protect "
-                               "your HLMs from being stolen by malware infecting your computer.") +
+                               "your coins from being stolen by malware infecting your computer.") +
                             "<br><br><b>" +
                             tr("IMPORTANT: Any previous backups you have made of your wallet file "
                                "should be replaced with the newly generated, encrypted wallet file. "

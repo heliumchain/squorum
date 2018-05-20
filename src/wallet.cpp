@@ -2317,13 +2317,13 @@ bool CWallet::SelectCoins(const CAmount& nTargetValue, set<pair<const CWalletTx*
         return (nValueRet >= nTargetValue);
     }
 
-    //if we're doing only denominated, we need to round up to the nearest .1 HLM
+    //if we're doing only denominated, we need to round up to the nearest .1 PIV
     if (coin_type == ONLY_DENOMINATED) {
         // Make outputs by looping through denominations, from large to small
         BOOST_FOREACH (CAmount v, obfuScationDenominations) {
             BOOST_FOREACH (const COutput& out, vCoins) {
                 if (out.tx->vout[out.i].nValue == v                                               //make sure it's the denom we're looking for
-                    && nValueRet + out.tx->vout[out.i].nValue < nTargetValue + (0.1 * COIN) + 100 //round the amount up to .1 HLM over
+                    && nValueRet + out.tx->vout[out.i].nValue < nTargetValue + (0.1 * COIN) + 100 //round the amount up to .1 PIV over
                     ) {
                     CTxIn vin = CTxIn(out.tx->GetHash(), out.i);
                     int rounds = GetInputObfuscationRounds(vin);
@@ -2385,12 +2385,12 @@ bool CWallet::SelectCoinsByDenominations(int nDenom, CAmount nValueMin, CAmount 
 
             // Function returns as follows:
             //
-            // bit 0 - 10000 HLM+1 ( bit on if present )
-            // bit 1 - 1000 HLM+1
-            // bit 2 - 100 HLM+1
-            // bit 3 - 10 HLM+1
-            // bit 4 - 1 HLM+1
-            // bit 5 - .1 HLM+1
+            // bit 0 - 10000 PIV+1 ( bit on if present )
+            // bit 1 - 1000 PIV+1
+            // bit 2 - 100 PIV+1
+            // bit 3 - 10 PIV+1
+            // bit 4 - 1 PIV+1
+            // bit 5 - .1 PIV+1
 
             CTxIn vin = CTxIn(out.tx->GetHash(), out.i);
 
@@ -3995,13 +3995,13 @@ void CWallet::AutoZeromint()
     CAmount nMintAmount = 0;
     CAmount nToMintAmount = 0;
 
-    // zHLM are integers > 0, so we can't mint 10% of 9 HLM
+    // zPIV are integers > 0, so we can't mint 10% of 9 PIV
     if (nBalance < 10){
         LogPrint("zero", "CWallet::AutoZeromint(): available balance (%ld) too small for minting zHLM\n", nBalance);
         return;
     }
 
-    // Percentage of zHLM we already have
+    // Percentage of zPIV we already have
     double dPercentage = 100 * (double)nZerocoinBalance / (double)(nZerocoinBalance + nBalance);
 
     // Check if minting is actually needed
@@ -4011,16 +4011,16 @@ void CWallet::AutoZeromint()
         return;
     }
 
-    // zHLM amount needed for the target percentage
+    // zPIV amount needed for the target percentage
     nToMintAmount = ((nZerocoinBalance + nBalance) * nZeromintPercentage / 100);
 
-    // zHLM amount missing from target (must be minted)
+    // zPIV amount missing from target (must be minted)
     nToMintAmount = (nToMintAmount - nZerocoinBalance) / COIN;
 
-    // Use the biggest denomination smaller than the needed zHLM We'll only mint exact denomination to make minting faster.
+    // Use the biggest denomination smaller than the needed zPIV We'll only mint exact denomination to make minting faster.
     // Exception: for big amounts use 6666 (6666 = 1*5000 + 1*1000 + 1*500 + 1*100 + 1*50 + 1*10 + 1*5 + 1) to create all
     // possible denominations to avoid having 5000 denominations only.
-    // If a preferred denomination is used (means nPreferredDenom != 0) do nothing until we have enough HLM to mint this denomination
+    // If a preferred denomination is used (means nPreferredDenom != 0) do nothing until we have enough PIV to mint this denomination
 
     if (nPreferredDenom > 0){
         if (nToMintAmount >= nPreferredDenom)
@@ -4546,7 +4546,7 @@ bool CWallet::CreateZerocoinMintTransaction(const CAmount nValue, CMutableTransa
             reservekey->ReturnKey();
     }
 
-    // Sign if these are pivx outputs - NOTE that zHLM outputs are signed later in SoK
+    // Sign if these are pivx outputs - NOTE that zPIV outputs are signed later in SoK
     if (!isZCSpendChange) {
         int nIn = 0;
         for (const std::pair<const CWalletTx*, unsigned int>& coin : setCoins) {
@@ -4713,7 +4713,7 @@ bool CWallet::CreateZerocoinSpendTransaction(CAmount nValue, int nSecurityLevel,
     CAmount nValueSelected = 0;
     int nCoinsReturned = 0; // Number of coins returned in change from function below (for debug)
     int nNeededSpends = 0;  // Number of spends which would be needed if selection failed
-    const int nMaxSpends = Params().Zerocoin_MaxSpendsPerTransaction(); // Maximum possible spends for one zHLM transaction
+    const int nMaxSpends = Params().Zerocoin_MaxSpendsPerTransaction(); // Maximum possible spends for one zPIV transaction
     vector<CMintMeta> vMintsToFetch;
     if (vSelectedMints.empty()) {
         setMints = zpivTracker->ListMints(true, true, true); // need to find mints to spend
@@ -4729,7 +4729,7 @@ bool CWallet::CreateZerocoinSpendTransaction(CAmount nValue, int nSecurityLevel,
         if(!fWholeNumber)
             nValueToSelect = static_cast<CAmount>(ceil(dValue) * COIN);
 
-        // Select the zHLM mints to use in this spend
+        // Select the zPIV mints to use in this spend
         std::map<libzerocoin::CoinDenomination, CAmount> DenomMap = GetMyZerocoinDistribution();
         list<CMintMeta> listMints(setMints.begin(), setMints.end());
         vMintsToFetch = SelectMintsFromList(nValueToSelect, nValueSelected, nMaxSpends, fMinimizeChange,
@@ -4940,7 +4940,7 @@ string CWallet::ResetMintZerocoin()
             LogPrintf("%s: failed to archive mint\n", __func__);
     }
 
-    NotifyzHLMReset();
+    NotifyzPIVReset();
 
     string strResult = _("ResetMintZerocoin finished: ") + to_string(updates) + _(" mints updated, ") + to_string(deletions) + _(" mints deleted\n");
     return strResult;
@@ -4980,7 +4980,7 @@ string CWallet::ResetSpentZerocoin()
         }
     }
 
-    NotifyzHLMReset();
+    NotifyzPIVReset();
 
     string strResult = _("ResetSpentZerocoin finished: ") + to_string(removed) + _(" unconfirmed transactions removed\n");
     return strResult;
@@ -5254,7 +5254,7 @@ bool CWallet::SpendZerocoin(CAmount nAmount, int nSecurityLevel, CWalletTx& wtxN
         zpivTracker->Add(dMint, true);
     }
 
-    receipt.SetStatus("Spend Successful", ZPIV_SPEND_OKAY);  // When we reach this point spending zHLM was successful
+    receipt.SetStatus("Spend Successful", ZPIV_SPEND_OKAY);  // When we reach this point spending zPIV was successful
 
     return true;
 }

@@ -12,7 +12,7 @@
 #include "spork.h"
 
 //
-// Bootup the Masternode, look for a 10000 HLM input and register on the network
+// Bootup the Masternode, look for a 10000 PIV input and register on the network
 //
 void CActiveMasternode::ManageStatus()
 {

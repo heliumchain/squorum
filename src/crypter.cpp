@@ -401,7 +401,7 @@ bool CCryptoKeyStore::AddDeterministicSeed(const uint256& seed)
         if (db.WriteZPIVSeed(hashSeed, ToByteVector(seed))) {
             return true;
         }
-        strErr = "save zpivseed to wallet";
+        strErr = "save zerocoinseed to wallet";
     }
                 //the use case for this is no password set seed, mint dzPIV,
 
