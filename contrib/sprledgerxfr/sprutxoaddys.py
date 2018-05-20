@@ -13,9 +13,9 @@ class TestCatchUp(unittest.TestCase):
 
     @unittest.skip("Passed, skipping")
     def test_check_bittrex(self):
-    for i in bittrex_addys.bittrex_addys:
-        if i[0] in spr_addys.spr_addys:
-            print("{}: {}".format(i[0], spr_addys.spr_addys[i[0]]))
+        for i in bittrex_addys.bittrex_addys:
+            if i[0] in spr_addys.spr_addys:
+                print("{}: {}".format(i[0], spr_addys.spr_addys[i[0]]))
 
     # @unittest.skip("Passed, skipping")
     def test_create_tx(sekf):
