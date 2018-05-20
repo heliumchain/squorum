@@ -1,8 +1,9 @@
 // Copyright (c) 2010 Satoshi Nakamoto
 // Copyright (c) 2009-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
-// Copyright (c) 2015-2017 The PIVX developers
+// Copyright (c) 2015-2018 The PIVX developers
 // Copyright (c) 2018 The Helium developers
+
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -299,6 +300,7 @@ static const CRPCCommand vRPCCommands[] =
 
         /* Block chain and UTXO */
         {"blockchain", "findserial", &findserial, true, false, false},
+        {"blockchain", "getaccumulatorvalues", &getaccumulatorvalues, true, false, false},
         {"blockchain", "getblockchaininfo", &getblockchaininfo, true, false, false},
         {"blockchain", "getbestblockhash", &getbestblockhash, true, false, false},
         {"blockchain", "getblockcount", &getblockcount, true, false, false},
@@ -308,7 +310,6 @@ static const CRPCCommand vRPCCommands[] =
         {"blockchain", "getchaintips", &getchaintips, true, false, false},
         {"blockchain", "getdifficulty", &getdifficulty, true, false, false},
         {"blockchain", "getfeeinfo", &getfeeinfo, true, false, false},
-        {"blockchain", "getinvalid", &getinvalid, true, true, false},
         {"blockchain", "getmempoolinfo", &getmempoolinfo, true, true, false},
         {"blockchain", "getrawmempool", &getrawmempool, true, false, false},
         {"blockchain", "gettxout", &gettxout, true, false, false},
@@ -357,6 +358,9 @@ static const CRPCCommand vRPCCommands[] =
         {"helium", "listmasternodes", &listmasternodes, true, true, false},
         {"helium", "getmasternodecount", &getmasternodecount, true, true, false},
         {"helium", "masternodeconnect", &masternodeconnect, true, true, false},
+        {"helium", "createmasternodebroadcast", &createmasternodebroadcast, true, true, false},
+        {"helium", "decodemasternodebroadcast", &decodemasternodebroadcast, true, true, false},
+        {"helium", "relaymasternodebroadcast", &relaymasternodebroadcast, true, true, false},
         {"helium", "masternodecurrent", &masternodecurrent, true, true, false},
         {"helium", "masternodedebug", &masternodedebug, true, true, false},
         {"helium", "startmasternode", &startmasternode, true, true, false},
@@ -380,9 +384,8 @@ static const CRPCCommand vRPCCommands[] =
         {"helium", "mnsync", &mnsync, true, true, false},
         {"helium", "spork", &spork, true, true, false},
         {"helium", "getpoolinfo", &getpoolinfo, true, true, false},
-#ifdef ENABLE_WALLET
-        {"helium", "obfuscation", &obfuscation, false, false, true}, /* not threadSafe because of SendMoney */
 
+#ifdef ENABLE_WALLET
         /* Wallet */
         {"wallet", "addmultisigaddress", &addmultisigaddress, true, false, true},
         {"wallet", "autocombinerewards", &autocombinerewards, false, false, true},
@@ -446,7 +449,12 @@ static const CRPCCommand vRPCCommands[] =
         {"zerocoin", "importzerocoins", &importzerocoins, false, false, true},
         {"zerocoin", "exportzerocoins", &exportzerocoins, false, false, true},
         {"zerocoin", "reconsiderzerocoins", &reconsiderzerocoins, false, false, true},
-        {"zerocoin", "getspentzerocoinamount", &getspentzerocoinamount, false, false, false}
+        {"zerocoin", "getspentzerocoinamount", &getspentzerocoinamount, false, false, false},
+        {"zerocoin", "getzerocoinseed", &getzerocoinseed, false, false, true},
+        {"zerocoin", "setzerocoinseed", &setzerocoinseed, false, false, true},
+        {"zerocoin", "generatemintlist", &generatemintlist, false, false, true},
+        {"zerocoin", "searchdzpiv", &searchdzpiv, false, false, true},
+        {"zerocoin", "dzpivstate", &dzpivstate, false, false, true}
 
 #endif // ENABLE_WALLET
 };
