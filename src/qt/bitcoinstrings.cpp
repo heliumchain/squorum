@@ -58,7 +58,7 @@ QT_TRANSLATE_NOOP("bitcoin-core", ""
 QT_TRANSLATE_NOOP("bitcoin-core", ""
 "Enable SwiftX, show confirmations for locked transactions (bool, default: %s)"),
 QT_TRANSLATE_NOOP("bitcoin-core", ""
-"Enable automatic wallet backups triggered after each zHelium minting (0-1, "
+"Enable automatic wallet backups triggered after each zHLM minting (0-1, "
 "default: %u)"),
 QT_TRANSLATE_NOOP("bitcoin-core", ""
 "Enable spork administration functionality with the appropriate private key."),

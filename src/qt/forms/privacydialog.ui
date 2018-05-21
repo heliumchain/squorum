@@ -610,14 +610,14 @@
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLabel" name="labelzHeliumSelected">
+                         <widget class="QLabel" name="labelzPivSelected">
                           <property name="text">
                            <string>zHLM Selected:</string>
                           </property>
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLabel" name="labelzHeliumSelected_int">
+                         <widget class="QLabel" name="labelzPivSelected_int">
                           <property name="text">
                            <string>0</string>
                           </property>

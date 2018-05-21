@@ -103,7 +103,7 @@ void SelectBaseParams(CBaseChainParams::Network network)
 CBaseChainParams::Network NetworkIdFromCommandLine()
 {
     bool fRegTest = GetBoolArg("-regtest", false);
-    // FOXME: GJH - force testnet
+    // FIXME: GJH - force testnet
     // bool fTestNet = GetBoolArg("-testnet", false);
     bool fTestNet = GetBoolArg("-testnet", true);
 

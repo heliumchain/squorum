@@ -297,14 +297,14 @@ void PrivacyDialog::on_pushButtonZPivControl_clicked()
     if (!walletModel || !walletModel->getOptionsModel())
         return;
 
-    ZPivControlDialog* zHeliumControl = new ZPivControlDialog(this);
-    zHeliumControl->setModel(walletModel);
-    zHeliumControl->exec();
+    ZPivControlDialog* zPivControl = new ZPivControlDialog(this);
+    zPivControl->setModel(walletModel);
+    zPivControl->exec();
 }
 
 void PrivacyDialog::setZPivControlLabels(int64_t nAmount, int nQuantity)
 {
-    ui->labelzHeliumSelected_int->setText(QString::number(nAmount));
+    ui->labelzPivSelected_int->setText(QString::number(nAmount));
     ui->labelQuantitySelected_int->setText(QString::number(nQuantity));
 }
 
