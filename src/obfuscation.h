@@ -1,6 +1,5 @@
 // Copyright (c) 2014-2015 The Dash developers
 // Copyright (c) 2015-2017 The PIVX developers
-// Copyright (c) 2018 The Helium developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -248,7 +247,7 @@ public:
 class CObfuScationSigner
 {
 public:
-    /// Is the inputs associated with this public key? (and there is 10000 HLM - checking if valid masternode)
+    /// Is the inputs associated with this public key? (and there is 10000 PIV - checking if valid masternode)
     bool IsVinAssociatedWithPubkey(CTxIn& vin, CPubKey& pubkey);
     /// Set the private/public key values, returns true if successful
     bool GetKeysFromSecret(std::string strSecret, CKey& keyRet, CPubKey& pubkeyRet);
@@ -494,7 +493,7 @@ public:
 
     void GetDenominationsToString(int nDenom, std::string& strDenom);
 
-    /// Get the denominations for a specific amount of coins.
+    /// Get the denominations for a specific amount of pivx.
     int GetDenominationsByAmount(CAmount nAmount, int nDenomTarget = 0); // is not used anymore?
     int GetDenominationsByAmounts(std::vector<CAmount>& vecAmount);
 
