@@ -2317,8 +2317,8 @@ public:
         nRejectBlockOutdatedMajority = 950;
         nToCheckBlockUpgradeMajority = 1000;
         nMinerThreads = 1;
-        nTargetTimespan = 1 * 60; // Helium: 1 day
-        nTargetSpacing = 1 * 60;  // Helium: 1 minute
+        nTargetTimespan = 24 * 60 * 60; // Helium: 1 day
+        nTargetSpacing = 60;  // Helium: 1 minute
         nMaturity = 100;
         nMasternodeCountDrift = 20;
         nMaxMoneyOut = 21000000 * COIN;
@@ -2462,8 +2462,8 @@ public:
         nRejectBlockOutdatedMajority = 75;
         nToCheckBlockUpgradeMajority = 100;
         nMinerThreads = 1;
-        nTargetTimespan = 1 * 60; // Helium: 1 day
-        nTargetSpacing = 1 * 60;  // Helium: 1 minute
+        nTargetTimespan = 24 * 60 * 60; // Helium: 1 day
+        nTargetSpacing = 60;  // Helium: 1 minute
         nLastPOWBlock = 100000;
         nMaturity = 15;
         nMasternodeCountDrift = 4;
@@ -2586,8 +2586,8 @@ public:
         nRejectBlockOutdatedMajority = 950;
         nToCheckBlockUpgradeMajority = 1000;
         nMinerThreads = 1;
-        nTargetTimespan = 1 * 60; // Helium: 1 day
-        nTargetSpacing = 1 * 60;  // Helium: 1 minute
+        nTargetTimespan = 24 * 60 * 60; // Helium: 1 day
+        nTargetSpacing = 60;  // Helium: 1 minute
         bnProofOfWorkLimit = ~uint256(0) >> 1;
         nDefaultPort = 19004;
         nReward = 432870.87949961 * COIN;
