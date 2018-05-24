@@ -29,6 +29,7 @@ unsigned int getIntervalVersion(bool fTestNet)
         return MODIFIER_INTERVAL;
 }
 
+/* FIXME: GJH PIVX-specific checkpoint value */
 // Hard checkpoints of stake modifiers to ensure they are deterministic
 static std::map<int, unsigned int> mapStakeModifierCheckpoints =
     boost::assign::map_list_of(0, 0xfd11f4e7u);
@@ -94,24 +95,32 @@ static bool SelectBlockFromCandidates(
         if (fSelected && pindex->GetBlockTime() > nSelectionIntervalStop)
             break;
 
+        /* FIXME: GJH Inappropriate for Helium
         //if the lowest block height (vSortedByTimestamp[0]) is >= switch height, use new modifier calc
         if (fFirstRun){
             fModifierV2 = pindex->nHeight >= Params().ModifierUpgradeBlock();
             fFirstRun = false;
         }
+        */
 
         if (mapSelectedBlocks.count(pindex->GetBlockHash()) > 0)
             continue;
 
+        /* FIXME: GJH Inappropriate for Helium
         // compute the selection hash by hashing an input that is unique to that block
         uint256 hashProof;
         if(fModifierV2)
             hashProof = pindex->GetBlockHash();
         else
             hashProof = pindex->IsProofOfStake() ? 0 : pindex->GetBlockHash();
+        */
+        uint256 hashProof ;
 
         CDataStream ss(SER_GETHASH, 0);
+        /* FIXME: GJH Inappropriate for Helium
         ss << hashProof << nStakeModifierPrev;
+        */
+        ss << pindex->GetBlockHash() << nStakeModifierPrev;
         uint256 hashSelection = Hash(ss.begin(), ss.end());
 
         // the selection hash is divided by 2**32 so that proof-of-stake block
