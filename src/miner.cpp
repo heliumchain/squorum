@@ -26,7 +26,7 @@
 #endif
 #include "validationinterface.h"
 #include "masternode-payments.h"
-#include "accumulators.h"
+#include "zhlm/accumulators.h"
 #include "blocksignature.h"
 #include "spork.h"
 #include "invalid.h"

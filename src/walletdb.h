@@ -11,10 +11,10 @@
 #include "db.h"
 #include "key.h"
 #include "keystore.h"
-#include "primitives/zerocoin.h"
+#include "zhlm/zerocoin.h"
 #include "libzerocoin/Accumulator.h"
 #include "libzerocoin/Denominations.h"
-#include "zhlmtracker.h"
+#include "zhlm/zhlmtracker.h"
 
 #include <list>
 #include <stdint.h>

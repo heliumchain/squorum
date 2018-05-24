@@ -17,7 +17,7 @@
 #include "util.h"
 #include "utiltime.h"
 #include "wallet.h"
-#include <primitives/deterministicmint.h>
+#include <zhlm/deterministicmint.h>
 
 #include <boost/filesystem.hpp>
 #include <boost/foreach.hpp>

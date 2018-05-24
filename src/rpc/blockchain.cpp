@@ -14,11 +14,10 @@
 #include "txdb.h"
 #include "util.h"
 #include "utilmoneystr.h"
-#include "accumulatormap.h"
-#include "accumulators.h"
+#include "zhlm/accumulatormap.h"
+#include "zhlm/accumulators.h"
 #include "wallet.h"
 #include "zhlmchain.h"
-
 #include <stdint.h>
 #include <fstream>
 #include <iostream>

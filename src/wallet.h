@@ -19,14 +19,14 @@
 #include "main.h"
 #include "primitives/block.h"
 #include "primitives/transaction.h"
-#include "primitives/zerocoin.h"
+#include "zhlm/zerocoin.h"
 #include "ui_interface.h"
 #include "util.h"
 #include "validationinterface.h"
 #include "wallet_ismine.h"
 #include "walletdb.h"
-#include "zhlmwallet.h"
-#include "zhlmtracker.h"
+#include "zhlm/zhlmwallet.h"
+#include "zhlm/zhlmtracker.h"
 
 #include <algorithm>
 #include <map>

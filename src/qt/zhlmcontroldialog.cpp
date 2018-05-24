@@ -5,7 +5,7 @@
 #include "zhlmcontroldialog.h"
 #include "ui_zhlmcontroldialog.h"
 
-#include "accumulators.h"
+#include "zhlm/accumulators.h"
 #include "main.h"
 #include "walletmodel.h"
 

@@ -2,9 +2,9 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include "accumulators.h"
+#include "zhlm/accumulators.h"
 #include "chain.h"
-#include "primitives/deterministicmint.h"
+#include "zhlm/deterministicmint.h"
 #include "main.h"
 #include "stakeinput.h"
 #include "wallet.h"
