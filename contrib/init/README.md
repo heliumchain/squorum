@@ -1,10 +1,10 @@
 Sample configuration files for:
 
-SystemD: pivxd.service
-Upstart: pivxd.conf
-OpenRC:  pivxd.openrc
-         pivxd.openrcconf
-CentOS:  pivxd.init
+SystemD: heliumd.service
+Upstart: heliumd.conf
+OpenRC:  heliumd.openrc
+         heliumd.openrcconf
+CentOS:  heliumd.init
 
 have been made available to assist packagers in creating node packages here.
 
