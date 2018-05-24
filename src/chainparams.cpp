@@ -2324,14 +2324,15 @@ public:
         nMaxMoneyOut = 21000000 * COIN;
 
         /** Height or Time Based Activations **/
-        nLastPOWBlock = 100000; // (PIVX: 259200)
+        nLastPOWBlock = 200; // (PIVX: 259200)
+        //if the lowest block height (vSortedByTimestamp[0]) is >= switch height, use new modifier calc
         nModifierUpdateBlock = 999999999; // (PIVX: 615800)
-        nZerocoinStartHeight = 9999999; // (PIVX: 863787, Phore 90000)
-        nZerocoinStartTime = 1530801782; // Later
-        nBlockEnforceSerialRange = 0; //Enforce serial range starting this block (Phore 90003)
-        nBlockRecalculateAccumulators = 0; // (PIVX: 895400, Phore 90005) //Trigger a recalculation of accumulators
-        nBlockFirstFraudulent = 999999999; // (PIVX: 908000, Phore 90002) //First block that bad serials emerged
-        nBlockLastGoodCheckpoint = 0; // (PIVX: 891730, Phore 90005) //Last valid accumulator checkpoint
+        nZerocoinStartHeight = 90000; // (PIVX: 863787, Phore 90000)
+        nZerocoinStartTime = 1530801782; // Later FIXME: change date to match nZerocoinStartHeight
+        nBlockEnforceSerialRange = 90003; //Enforce serial range starting this block (Phore 90003)
+        nBlockRecalculateAccumulators = 90005; // (PIVX: 895400, Phore 90005) //Trigger a recalculation of accumulators
+        nBlockFirstFraudulent = 90002; // (PIVX: 908000, Phore 90002) //First block that bad serials emerged
+        nBlockLastGoodCheckpoint = 90005; // (PIVX: 891730, Phore 90005) //Last valid accumulator checkpoint
         nBlockEnforceInvalidUTXO = 0; // (PIVX: 902850) //Start enforcing the invalid UTXO's
         nInvalidAmountFiltered = 268200*COIN; // (PIVX: 268200) //Amount of invalid coins filtered through exchanges, that should be considered valid
         nBlockZerocoinV2 = 1153160; // (PIVX: 1153160) //!> The block that zerocoin v2 becomes active - roughly Tuesday, May 8, 2018 4:00:00 AM GMT
