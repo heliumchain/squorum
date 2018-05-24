@@ -1117,7 +1117,6 @@ bool BlockToPubcoinList(const CBlock& block, list<PublicCoin>& listPubcoins, boo
             PublicCoin pubCoin(Params().Zerocoin_Params(false));
             if(!TxOutToPublicCoin(txOut, pubCoin, state))
                 return false;
-            */
 
             listPubcoins.emplace_back(pubCoin);
         }
