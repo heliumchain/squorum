@@ -47,6 +47,7 @@ QT_FORMS_UI = \
   qt/forms/blockexplorer.ui \
   qt/forms/obfuscationconfig.ui \
   qt/forms/editaddressdialog.ui \
+  qt/forms/governancepage.ui \
   qt/forms/helpmessagedialog.ui \
   qt/forms/intro.ui \
   qt/forms/masternodelist.ui \
@@ -82,6 +83,7 @@ QT_MOC_CPP = \
   qt/moc_csvmodelwriter.cpp \
   qt/moc_obfuscationconfig.cpp \
   qt/moc_editaddressdialog.cpp \
+  qt/moc_governancepage.cpp \
   qt/moc_guiutil.cpp \
   qt/moc_intro.cpp \
   qt/moc_macdockiconhandler.cpp \
@@ -156,6 +158,7 @@ BITCOIN_QT_H = \
   qt/csvmodelwriter.h \
   qt/obfuscationconfig.h \
   qt/editaddressdialog.h \
+  qt/governancepage.h \
   qt/guiconstants.h \
   qt/guiutil.h \
   qt/intro.h \
@@ -262,7 +265,9 @@ RES_ICONS = \
   qt/res/icons/unit_uhelium.png \
   qt/res/icons/unit_thelium.png \
   qt/res/icons/unit_tmhelium.png \
-  qt/res/icons/unit_tuhelium.png
+  qt/res/icons/unit_tuhelium.png \
+  qt/res/icons/yesvote.png \
+  qt/res/icons/novote.png
 
 BITCOIN_QT_BASE_CPP = \
   qt/bantablemodel.cpp \
@@ -301,6 +306,7 @@ BITCOIN_QT_WALLET_CPP = \
   qt/coincontroltreewidget.cpp \
   qt/obfuscationconfig.cpp \
   qt/editaddressdialog.cpp \
+  qt/governancepage.cpp \
   qt/masternodelist.cpp \
   qt/multisenddialog.cpp \
   qt/multisigdialog.cpp\
