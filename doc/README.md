@@ -1,40 +1,40 @@
-PIVX Core
+Helium Core
 =====================
 
 Setup
 ---------------------
-[PIVX Core](http://pivx.org/wallet) is the original PIVX client and it builds the backbone of the network. However, it downloads and stores the entire history of PIVX transactions; depending on the speed of your computer and network connection, the synchronization process can take anywhere from a few hours to a day or more. Thankfully you only have to do this once.
+[Helium Core](http://heliumpay.com/wallet) is the original Helium client and it builds the backbone of the network. However, it downloads and stores the entire history of Helium transactions; depending on the speed of your computer and network connection, the synchronization process can take anywhere from a few hours to a day or more. Thankfully you only have to do this once.
 
 Running
 ---------------------
-The following are some helpful notes on how to run PIVX on your native platform.
+The following are some helpful notes on how to run Helium on your native platform.
 
 ### Unix
 
 Unpack the files into a directory and run:
 
-- bin/32/pivx-qt (GUI, 32-bit) or bin/32/pivxd (headless, 32-bit)
-- bin/64/pivx-qt (GUI, 64-bit) or bin/64/pivxd (headless, 64-bit)
+- bin/32/helium-qt (GUI, 32-bit) or bin/32/heliumd (headless, 32-bit)
+- bin/64/helium-qt (GUI, 64-bit) or bin/64/heliumd (headless, 64-bit)
 
 ### Windows
 
-Unpack the files into a directory, and then run pivx-qt.exe.
+Unpack the files into a directory, and then run helium-qt.exe.
 
 ### OSX
 
-Drag PIVX-Qt to your applications folder, and then run PIVX-Qt.
+Drag Helium-Qt to your applications folder, and then run Helium-Qt.
 
 ### Need Help?
 
-* See the documentation at the [PIVX Wiki](https://en.bitcoin.it/wiki/Main_Page) ***TODO***
+* See the documentation at the [Helium Wiki](https://en.bitcoin.it/wiki/Main_Page) ***TODO***
 for help and more information.
-* Ask for help on [BitcoinTalk](https://bitcointalk.org/index.php?topic=1262920.0) or on the [PIVX Forum](http://forum.pivx.org/).
-* Join our Discord server [Discord Server](https://discord.pivx.org)
-* Join one of our Slack groups [PIVX Slack Groups](https://pivx.org/slack-logins/) (Main community is replaced by Discord).
+* Ask for help on [BitcoinTalk](https://bitcointalk.org/index.php?topic=1262920.0) or on the [Helium Forum](http://forum.heliumlabs.org/).
+* Join our Discord server [Discord Server](https://discord.heliumpay.com)
+* Join one of our Slack groups [Helium Slack Groups](https://heliumpay.com/slack-logins/) (Main community is replaced by Discord).
 
 Building
 ---------------------
-The following are developer notes on how to build PIVX on your native platform. They are not complete guides, but include notes on the necessary libraries, compile flags, etc.
+The following are developer notes on how to build Helium on your native platform. They are not complete guides, but include notes on the necessary libraries, compile flags, etc.
 
 - [OSX Build Notes](build-osx.md)
 - [Unix Build Notes](build-unix.md)
@@ -42,7 +42,7 @@ The following are developer notes on how to build PIVX on your native platform. 
 
 Development
 ---------------------
-The Pivx repo's [root README](https://github.com/PIVX-Project/PIVX/blob/master/README.md) contains relevant information on the development process and automated testing.
+The Pivx repo's [root README](https://github.com/Helium-Project/Helium/blob/master/README.md) contains relevant information on the development process and automated testing.
 
 - [Developer Notes](developer-notes.md)
 - [Multiwallet Qt Development](multiwallet-qt.md)
@@ -56,8 +56,8 @@ The Pivx repo's [root README](https://github.com/PIVX-Project/PIVX/blob/master/R
 
 ### Resources
 
-* Discuss on the [BitcoinTalk](https://bitcointalk.org/index.php?topic=1262920.0) or the [PIVX](http://forum.pivx.org/) forum.
-* Join the [PIVX-Dev](https://pivx-dev.slack.com/) Slack group ([Sign-Up](https://pivx-dev.herokuapp.com/)).
+* Discuss on the [BitcoinTalk](https://bitcointalk.org/index.php?topic=1262920.0) or the [Helium](http://forum.heliumlabs.org/) forum.
+* Join the [Helium-Dev](https://helium-dev.slack.com/) Slack group ([Sign-Up](https://helium-dev.herokuapp.com/)).
 
 ### Miscellaneous
 - [Assets Attribution](assets-attribution.md)
