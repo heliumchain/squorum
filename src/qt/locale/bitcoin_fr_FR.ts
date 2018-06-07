@@ -1801,7 +1801,7 @@ Veuillez vérifier l'adresse et réessayer.</translation>
     </message>
     </context>
 <context>
-    <name>ZPivControlDialog</name>
+    <name>ZHeliumControlDialog</name>
     <message>
         <source>0</source>
         <translation>0</translation>

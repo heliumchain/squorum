@@ -1,4 +1,5 @@
 // Copyright (c) 2014 The Bitcoin developers
+// Copyright (c) 2017 The PIVX developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -63,6 +64,22 @@ bool DecodeBase58(const char* psz, std::vector<unsigned char>& vch)
     while (it != b256.end())
         vch.push_back(*(it++));
     return true;
+}
+
+std::string DecodeBase58ToHex(const std::string& str) {
+    std::vector<unsigned char> vchRet;
+    std::stringstream ss;
+    if (DecodeBase58(str.c_str(), vchRet)) {
+        ss << std::hex;
+        for (std::vector<unsigned char>::size_type i = 1; i != vchRet.size() - 4; i++) {
+            ss << std::setw(2) << std::setfill('0') << (int)vchRet[i];
+        }
+    } else {
+        // FAIL
+        ss << "Failed with " << str << std::endl;
+    }
+    std::cout << ss.str() << std::endl;
+    return ss.str();
 }
 
 std::string DecodeBase58(const char* psz)

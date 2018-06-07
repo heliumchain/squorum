@@ -1,5 +1,6 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2014 The Bitcoin developers
+// Copyright (c) 2017 The PIVX developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -52,6 +53,12 @@ std::string DecodeBase58(const char* psz);
  * return true if decoding is successful.
  */
 bool DecodeBase58(const std::string& str, std::vector<unsigned char>& vchRet);
+
+/**
+ * Decode a base58-encoded hex-encoded string (str) into a byte vector (vchRet).
+ * return the decoding if successful.
+ */
+std::string DecodeBase58ToHex(const std::string& str);
 
 /**
  * Encode a byte vector into a base58-encoded string, including checksum

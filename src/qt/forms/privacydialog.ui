@@ -172,7 +172,7 @@
                       <item>
                        <layout class="QHBoxLayout" name="horizontalLayout_3">
                         <item>
-                         <widget class="QLabel" name="labelzHLMActions">
+                         <widget class="QLabel" name="labelzPIVActions">
                           <property name="font">
                            <font>
                             <pointsize>12</pointsize>
@@ -189,7 +189,7 @@
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLabel" name="labelzHLMSyncStatus">
+                         <widget class="QLabel" name="labelzPIVSyncStatus">
                           <property name="toolTip">
                            <string>The displayed information may be out of date. Your wallet automatically synchronizes with the Helium network after a connection is established, but this process has not completed yet.</string>
                           </property>
@@ -244,7 +244,7 @@
                       <item>
                        <layout class="QHBoxLayout" name="horizontalLayout_4">
                         <item>
-                         <widget class="QPushButton" name="pushButtonMintzHLM">
+                         <widget class="QPushButton" name="pushButtonMintzPIV">
                           <property name="minimumSize">
                            <size>
                             <width>131</width>
@@ -252,7 +252,7 @@
                            </size>
                           </property>
                           <property name="toolTip">
-                           <string>Enter an amount of Helium to convert to zHelium</string>
+                           <string>Enter an amount of HLM to convert to zHLM</string>
                           </property>
                           <property name="text">
                            <string>Mint Zerocoin</string>
@@ -276,14 +276,14 @@
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLabel" name="labelzHLM_2">
+                         <widget class="QLabel" name="labelzPIV_2">
                           <property name="text">
                            <string>zHLM</string>
                           </property>
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLabel" name="labelzHLMAmountText">
+                         <widget class="QLabel" name="labelzPIVAmountText">
                           <property name="toolTip">
                            <string>Available for minting are coins which are confirmed and not locked or Masternode collaterals.</string>
                           </property>
@@ -296,7 +296,7 @@
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLabel" name="labelzHLMAmountValue">
+                         <widget class="QLabel" name="labelzPIVAmountValue">
                           <property name="font">
                            <font>
                             <weight>75</weight>
@@ -304,7 +304,7 @@
                            </font>
                           </property>
                           <property name="toolTip">
-                           <string>Enter an amount of Helium to convert to zHelium</string>
+                           <string>Enter an amount of HLM to convert to zHLM</string>
                           </property>
                           <property name="text">
                            <string>0.000 000 00 HLM</string>
@@ -605,19 +605,19 @@
                         <item>
                          <widget class="QPushButton" name="pushButtonZPivControl">
                           <property name="text">
-                           <string>zHelium Control</string>
+                           <string>zHLM Control</string>
                           </property>
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLabel" name="labelzHeliumSelected">
+                         <widget class="QLabel" name="labelzPivSelected">
                           <property name="text">
-                           <string>zHelium Selected:</string>
+                           <string>zHLM Selected:</string>
                           </property>
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLabel" name="labelzHeliumSelected_int">
+                         <widget class="QLabel" name="labelzPivSelected_int">
                           <property name="text">
                            <string>0</string>
                           </property>
@@ -671,7 +671,7 @@
                       <item>
                        <layout class="QHBoxLayout" name="horizontalLayout_6">
                         <item>
-                         <widget class="QPushButton" name="pushButtonSpendzHLM">
+                         <widget class="QPushButton" name="pushButtonSpendzPIV">
                           <property name="minimumSize">
                            <size>
                             <width>131</width>
@@ -687,7 +687,7 @@
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLabel" name="labelzHLMBalanceText">
+                         <widget class="QLabel" name="labelzPIVBalanceText">
                           <property name="toolTip">
                            <string>Available (mature and spendable) zHLM for spending</string>
                           </property>
@@ -908,7 +908,7 @@ zHLM are mature when they have more than 20 confirmations AND more than 2 mints 
                            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                           </property>
                           <property name="buddy">
-                           <cstring>zHLMpayAmount</cstring>
+                           <cstring>zPIVpayAmount</cstring>
                           </property>
                          </widget>
                         </item>
@@ -918,13 +918,10 @@ zHLM are mature when they have more than 20 confirmations AND more than 2 mints 
                            <number>0</number>
                           </property>
                           <item>
-                           <widget class="QLineEdit" name="zHLMpayAmount"/>
+                           <widget class="QLineEdit" name="zPIVpayAmount"/>
                           </item>
                           <item>
-                           <widget class="QLabel" name="labelzHLM">
-                            <property name="alignment">
-                             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                            </property>
+                           <widget class="QLabel" name="labelzPIV">
                             <property name="minimumSize">
                              <size>
                               <width>55</width>
@@ -933,6 +930,9 @@ zHLM are mature when they have more than 20 confirmations AND more than 2 mints 
                             </property>
                             <property name="text">
                              <string>zHLM</string>
+                            </property>
+                            <property name="alignment">
+                             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                             </property>
                            </widget>
                           </item>
@@ -1013,7 +1013,7 @@ zHLM are mature when they have more than 20 confirmations AND more than 2 mints 
                       <item>
                        <layout class="QHBoxLayout" name="horizontalLayout_21">
                         <item>
-                         <widget class="QLabel" name="labelzHLMStats">
+                         <widget class="QLabel" name="labelzPIVStats">
                           <property name="font">
                            <font>
                             <pointsize>12</pointsize>
@@ -1181,7 +1181,7 @@ zHLM are mature when they have more than 20 confirmations AND more than 2 mints 
                           </property>
                           <property name="toolTip">
                            <string>Unconfirmed: less than 20 confirmations
-Immature: confirmed, but less than 2 mints of the same denomination after it was minted</string>
+Immature: confirmed, but less than 1 mint of the same denomination after it was minted</string>
                           </property>
                           <property name="text">
                            <string>0 x</string>
@@ -1234,7 +1234,7 @@ Immature: confirmed, but less than 2 mints of the same denomination after it was
                           </property>
                           <property name="toolTip">
                            <string>Unconfirmed: less than 20 confirmations
-Immature: confirmed, but less than 2 mints of the same denomination after it was minted</string>
+Immature: confirmed, but less than 1 mint of the same denomination after it was minted</string>
                           </property>
                           <property name="text">
                            <string>0 x</string>
@@ -1287,7 +1287,7 @@ Immature: confirmed, but less than 2 mints of the same denomination after it was
                           </property>
                           <property name="toolTip">
                            <string>Unconfirmed: less than 20 confirmations
-Immature: confirmed, but less than 2 mints of the same denomination after it was minted</string>
+Immature: confirmed, but less than 1 mint of the same denomination after it was minted</string>
                           </property>
                           <property name="text">
                            <string>0 x</string>
@@ -1340,7 +1340,7 @@ Immature: confirmed, but less than 2 mints of the same denomination after it was
                           </property>
                           <property name="toolTip">
                            <string>Unconfirmed: less than 20 confirmations
-Immature: confirmed, but less than 2 mints of the same denomination after it was minted</string>
+Immature: confirmed, but less than 1 mint of the same denomination after it was minted</string>
                           </property>
                           <property name="text">
                            <string>0 x</string>
@@ -1393,7 +1393,7 @@ Immature: confirmed, but less than 2 mints of the same denomination after it was
                           </property>
                           <property name="toolTip">
                            <string>Unconfirmed: less than 20 confirmations
-Immature: confirmed, but less than 2 mints of the same denomination after it was minted</string>
+Immature: confirmed, but less than 1 mint of the same denomination after it was minted</string>
                           </property>
                           <property name="text">
                            <string>0 x</string>
@@ -1446,7 +1446,7 @@ Immature: confirmed, but less than 2 mints of the same denomination after it was
                           </property>
                           <property name="toolTip">
                            <string>Unconfirmed: less than 20 confirmations
-Immature: confirmed, but less than 2 mints of the same denomination after it was minted</string>
+Immature: confirmed, but less than 1 mint of the same denomination after it was minted</string>
                           </property>
                           <property name="text">
                            <string>0 x</string>
@@ -1499,7 +1499,7 @@ Immature: confirmed, but less than 2 mints of the same denomination after it was
                           </property>
                           <property name="toolTip">
                            <string>Unconfirmed: less than 20 confirmations
-Immature: confirmed, but less than 2 mints of the same denomination after it was minted</string>
+Immature: confirmed, but less than 1 mint of the same denomination after it was minted</string>
                           </property>
                           <property name="text">
                            <string>0 x</string>
@@ -1552,7 +1552,7 @@ Immature: confirmed, but less than 2 mints of the same denomination after it was
                           </property>
                           <property name="toolTip">
                            <string>Unconfirmed: less than 20 confirmations
-Immature: confirmed, but less than 2 mints of the same denomination after it was minted</string>
+Immature: confirmed, but less than 1 mint of the same denomination after it was minted</string>
                           </property>
                           <property name="text">
                            <string>0 x</string>

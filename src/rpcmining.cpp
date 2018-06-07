@@ -1,8 +1,9 @@
 // Copyright (c) 2010 Satoshi Nakamoto
 // Copyright (c) 2009-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
-// Copyright (c) 2015-2017 The PIVX developers
+// Copyright (c) 2015-2018 The PIVX developers
 // Copyright (c) 2018 The Helium developers
+
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -81,9 +82,11 @@ UniValue getnetworkhashps(const UniValue& params, bool fHelp)
             "\nReturns the estimated network hashes per second based on the last n blocks.\n"
             "Pass in [blocks] to override # of blocks, -1 specifies since last difficulty change.\n"
             "Pass in [height] to estimate the network speed at the time when a certain block was found.\n"
+
             "\nArguments:\n"
             "1. blocks     (numeric, optional, default=120) The number of blocks, or -1 for blocks since last difficulty change.\n"
             "2. height     (numeric, optional, default=-1) To estimate at the time of the given height.\n"
+
             "\nResult:\n"
             "x             (numeric) Hashes per second estimated\n"
             "\nExamples:\n" +
@@ -102,8 +105,10 @@ UniValue getgenerate(const UniValue& params, bool fHelp)
             "\nReturn if the server is set to generate coins or not. The default is false.\n"
             "It is set with the command line argument -gen (or helium.conf setting gen)\n"
             "It can also be set with the setgenerate call.\n"
+
             "\nResult\n"
             "true|false      (boolean) If the server is set to generate coins or not\n"
+
             "\nExamples:\n" +
             HelpExampleCli("getgenerate", "") + HelpExampleRpc("getgenerate", ""));
 
@@ -120,12 +125,15 @@ UniValue setgenerate(const UniValue& params, bool fHelp)
             "\nSet 'generate' true or false to turn generation on or off.\n"
             "Generation is limited to 'genproclimit' processors, -1 is unlimited.\n"
             "See the getgenerate call for the current setting.\n"
+
             "\nArguments:\n"
             "1. generate         (boolean, required) Set to true to turn on generation, false to turn off.\n"
             "2. genproclimit     (numeric, optional) Set the processor limit for when generation is on. Can be -1 for unlimited.\n"
             "                    Note: in -regtest mode, genproclimit controls how many blocks are generated immediately.\n"
+
             "\nResult\n"
             "[ blockhashes ]     (array, -regtest only) hashes of blocks generated\n"
+
             "\nExamples:\n"
             "\nSet the generation on with a limit of one processor\n" +
             HelpExampleCli("setgenerate", "true 1") +
@@ -201,8 +209,10 @@ UniValue gethashespersec(const UniValue& params, bool fHelp)
             "gethashespersec\n"
             "\nReturns a recent hashes per second performance measurement while generating.\n"
             "See the getgenerate and setgenerate calls to turn generation on and off.\n"
+
             "\nResult:\n"
             "n            (numeric) The recent hashes per second when generation is on (will return 0 if generation is off)\n"
+
             "\nExamples:\n" +
             HelpExampleCli("gethashespersec", "") + HelpExampleRpc("gethashespersec", ""));
 
@@ -219,6 +229,7 @@ UniValue getmininginfo(const UniValue& params, bool fHelp)
         throw runtime_error(
             "getmininginfo\n"
             "\nReturns a json object containing mining-related information."
+
             "\nResult:\n"
             "{\n"
             "  \"blocks\": nnn,             (numeric) The current block\n"
@@ -233,6 +244,7 @@ UniValue getmininginfo(const UniValue& params, bool fHelp)
             "  \"testnet\": true|false      (boolean) If using testnet or not\n"
             "  \"chain\": \"xxxx\",         (string) current network name as defined in BIP70 (main, test, regtest)\n"
             "}\n"
+
             "\nExamples:\n" +
             HelpExampleCli("getmininginfo", "") + HelpExampleRpc("getmininginfo", ""));
 
@@ -264,6 +276,7 @@ UniValue prioritisetransaction(const UniValue& params, bool fHelp)
         throw runtime_error(
             "prioritisetransaction <txid> <priority delta> <fee delta>\n"
             "Accepts the transaction into mined blocks at a higher (or lower) priority\n"
+
             "\nArguments:\n"
             "1. \"txid\"       (string, required) The transaction id.\n"
             "2. priority delta (numeric, required) The priority to add or subtract.\n"
@@ -272,8 +285,10 @@ UniValue prioritisetransaction(const UniValue& params, bool fHelp)
             "3. fee delta      (numeric, required) The fee value (in upiv) to add (or subtract, if negative).\n"
             "                  The fee is not actually paid, only the algorithm for selecting transactions into a block\n"
             "                  considers the transaction as it would have paid a higher (or lower) fee.\n"
+
             "\nResult\n"
             "true              (boolean) Returns true\n"
+
             "\nExamples:\n" +
             HelpExampleCli("prioritisetransaction", "\"txid\" 0.0 10000") + HelpExampleRpc("prioritisetransaction", "\"txid\", 0.0, 10000"));
 
@@ -447,11 +462,7 @@ UniValue getblocktemplate(const UniValue& params, bool fHelp)
             nTransactionsUpdatedLastLP = nTransactionsUpdatedLast;
         }
 
-// Release the wallet and main lock while waiting
-#ifdef ENABLE_WALLET
-        if (pwalletMain)
-            LEAVE_CRITICAL_SECTION(pwalletMain->cs_wallet);
-#endif
+        // Release the wallet and main lock while waiting
         LEAVE_CRITICAL_SECTION(cs_main);
         {
             checktxtime = boost::get_system_time() + boost::posix_time::minutes(1);
@@ -467,10 +478,6 @@ UniValue getblocktemplate(const UniValue& params, bool fHelp)
             }
         }
         ENTER_CRITICAL_SECTION(cs_main);
-#ifdef ENABLE_WALLET
-        if (pwalletMain)
-            ENTER_CRITICAL_SECTION(pwalletMain->cs_wallet);
-#endif
 
         if (!IsRPCRunning())
             throw JSONRPCError(RPC_CLIENT_NOT_CONNECTED, "Shutting down");
@@ -627,7 +634,9 @@ UniValue submitblock(const UniValue& params, bool fHelp)
             "    {\n"
             "      \"workid\" : \"id\"    (string, optional) if the server provided a workid, it MUST be included with submissions\n"
             "    }\n"
+
             "\nResult:\n"
+
             "\nExamples:\n" +
             HelpExampleCli("submitblock", "\"mydata\"") + HelpExampleRpc("submitblock", "\"mydata\""));
 
@@ -677,13 +686,16 @@ UniValue estimatefee(const UniValue& params, bool fHelp)
             "\nEstimates the approximate fee per kilobyte\n"
             "needed for a transaction to begin confirmation\n"
             "within nblocks blocks.\n"
+
             "\nArguments:\n"
             "1. nblocks     (numeric)\n"
+
             "\nResult:\n"
             "n :    (numeric) estimated fee-per-kilobyte\n"
             "\n"
             "-1.0 is returned if not enough transactions and\n"
             "blocks have been observed to make an estimate.\n"
+
             "\nExample:\n" +
             HelpExampleCli("estimatefee", "6"));
 
@@ -708,13 +720,16 @@ UniValue estimatepriority(const UniValue& params, bool fHelp)
             "\nEstimates the approximate priority\n"
             "a zero-fee transaction needs to begin confirmation\n"
             "within nblocks blocks.\n"
+
             "\nArguments:\n"
             "1. nblocks     (numeric)\n"
+
             "\nResult:\n"
             "n :    (numeric) estimated priority\n"
             "\n"
             "-1.0 is returned if not enough transactions and\n"
             "blocks have been observed to make an estimate.\n"
+
             "\nExample:\n" +
             HelpExampleCli("estimatepriority", "6"));
 

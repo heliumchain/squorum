@@ -4278,7 +4278,7 @@ Bitte haben Sie Geduld...</translation>
     </message>
 </context>
 <context>
-    <name>ZPivControlDialog</name>
+    <name>ZHeliumControlDialog</name>
     <message>
         <source>Select zHelium to Spend</source>
         <translation>Auswahl zHLM als Ausgabe</translation>
