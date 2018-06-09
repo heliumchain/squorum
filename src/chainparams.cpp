@@ -2328,7 +2328,7 @@ public:
         //if the lowest block height (vSortedByTimestamp[0]) is >= switch height, use new modifier calc
         // nModifierUpdateBlock = 0; // (PIVX: 615800)
         nZerocoinStartHeight = 90000; // (PIVX: 863787, Phore 90000)
-        nZerocoinStartTime = 1530801782; // Later FIXME: change date to match nZerocoinStartHeight
+        nZerocoinStartTime = 1730801782; // Tue  5 Nov 10:16:22 GMT 2024
         // nBlockEnforceSerialRange = 90003; //Enforce serial range starting this block (Phore 90003)
         nBlockRecalculateAccumulators = 90005; // (PIVX: 895400, Phore 90005) //Trigger a recalculation of accumulators
         // nBlockFirstFraudulent = 90002; // (PIVX: 908000, Phore 90002) //First block that bad serials emerged
