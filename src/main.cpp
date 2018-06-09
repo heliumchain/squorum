@@ -4058,7 +4058,8 @@ bool CheckBlock(const CBlock& block, CValidationState& state, bool fCheckPOW, bo
     // redundant with the call in AcceptBlockHeader.
 
     LogPrint("debug", "CheckBlock calling CheckBlockHeader\n");
-    if (!CheckBlockHeader(block, state, fCheckPOW))
+    /* FXME: GJH do not ignore fCheckPow setting */
+    if (!CheckBlockHeader(block, state, (fCheckPOW && block.IsProofOfWork())))
         return state.DoS(100, error("CheckBlock() : CheckBlockHeader failed"),
             REJECT_INVALID, "bad-header", true);
 
