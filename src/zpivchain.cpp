@@ -57,8 +57,8 @@ bool BlockToPubcoinList(const CBlock& block, std::list<libzerocoin::PublicCoin>&
             if (!fValid)
                 continue;
         }
-        */
         uint256 txHash = tx.GetHash();
+        */
         for (unsigned int i = 0; i < tx.vout.size(); i++) {
             /* FIXME: GJH Inappropriate for Helium
             //Filter out mints that use invalid outpoints - edge case: invalid spend with minted change
@@ -101,8 +101,8 @@ bool BlockToZerocoinMintList(const CBlock& block, std::list<CZerocoinMint>& vMin
             if (!fValid)
                 continue;
         }
-        */
         uint256 txHash = tx.GetHash();
+        */
         for (unsigned int i = 0; i < tx.vout.size(); i++) {
             /* FIXME: GJH Inappropriate for Helium
             //Filter out mints that use invalid outpoints - edge case: invalid spend with minted change
