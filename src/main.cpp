@@ -1816,39 +1816,15 @@ double ConvertBitsToDouble(unsigned int nBits)
 int64_t GetBlockValue(int nHeight)
 {
     if (Params().NetworkID() == CBaseChainParams::TESTNET) {
-        // Set testnet PoW period reward
+        /* FIXME: GJH Set testnet PoW period reward */
         if (nHeight < 10000 && nHeight > 0)
             return 25 * COIN;
     }
 
+    /* FIXME: GJH Particularise block reward scheme */
     int64_t nSubsidy = 0;
-    if (nHeight == 0) {
-        // Mint the ledger total (minus treasury deposit) for disbursal
-        nSubsidy = (ledgerTotal - treasuryDeposit); // (8891432 * COIN) - (432870.87949961 * COIN)
-    } else if (nHeight < 86400 && nHeight > 0) {
-        nSubsidy = 250 * COIN;
-    } else if (nHeight < (Params().NetworkID() == CBaseChainParams::TESTNET ? 145000 : 151200) && nHeight >= 86400) {
-        nSubsidy = 225 * COIN;
-    } else if (nHeight <= Params().LAST_POW_BLOCK() && nHeight >= 151200) {
-        nSubsidy = 45 * COIN;
-    } else if (nHeight <= 302399 && nHeight > Params().LAST_POW_BLOCK()) {
-        nSubsidy = 45 * COIN;
-    } else if (nHeight <= 345599 && nHeight >= 302400) {
-        nSubsidy = static_cast<int64_t>(40.5 * COIN);
-    } else if (nHeight <= 388799 && nHeight >= 345600) {
-        nSubsidy = 36 * COIN;
-    } else if (nHeight <= 431999 && nHeight >= 388800) {
-        nSubsidy = static_cast<int64_t>(31.5 * COIN);
-    } else if (nHeight <= 475199 && nHeight >= 432000) {
-        nSubsidy = 27 * COIN;
-    } else if (nHeight <= 518399 && nHeight >= 475200) {
-        nSubsidy = static_cast<int64_t>(22.5 * COIN);
-    } else if (nHeight <= 561599 && nHeight >= 518400) {
-        nSubsidy = 18 * COIN;
-    } else if (nHeight <= 604799 && nHeight >= 561600) {
-        nSubsidy = static_cast<int64_t>(13.5 * COIN);
-    } else if (nHeight <= 647999 && nHeight >= 604800) {
-        nSubsidy = 9 * COIN;
+    if (nHeight <= Params().LAST_POW_BLOCK()) {
+        nSubsidy = 10000 * COIN;
     } else if (nHeight < Params().Zerocoin_Block_V2_Start()) {
         nSubsidy = 4.5 * COIN;
     } else {
@@ -1868,6 +1844,7 @@ CAmount GetSeeSaw(const CAmount& blockValue, int nMasternodeCount, int nHeight)
     }
 
     int64_t nMoneySupply = chainActive.Tip()->nMoneySupply;
+    /* FIXME: GJH PIVX-specific masternode collateral of 10000 */
     int64_t mNodeCoins = nMasternodeCount * 10000 * COIN;
 
     // Use this log to compare the masternode count for different clients
@@ -1877,6 +1854,7 @@ CAmount GetSeeSaw(const CAmount& blockValue, int nMasternodeCount, int nHeight)
         LogPrintf("GetMasternodePayment(): moneysupply=%s, nodecoins=%s \n", FormatMoney(nMoneySupply).c_str(),
                   FormatMoney(mNodeCoins).c_str());
 
+    /* FIXME: GJH PIVX-specific masternode "seesaw" reward schedule */
     CAmount ret = 0;
     if (mNodeCoins == 0) {
         ret = 0;
@@ -2101,11 +2079,11 @@ int64_t GetMasternodePayment(int nHeight, int64_t blockValue, int nMasternodeCou
             return 0;
     }
 
-    // FIXME: GJH
-    // Temporary hack to investigate initial PoW period
+    /* FIXME: GJH Temporary hack to investigate initial PoW period */
     if (nHeight <= 10000)
         ret = 0;
 
+    /* FIXME: GJH Particularise masternode payment schedule */
     if (nHeight <= 43200) {
         ret = blockValue / 5;
     } else if (nHeight < 86400 && nHeight > 43200) {
@@ -2134,6 +2112,7 @@ bool IsInitialBlockDownload()
     static bool lockIBDState = false;
     if (lockIBDState)
         return false;
+    /* FIXME: GJH PIVX-specific block heights/times */
     bool state = (chainActive.Height() < pindexBestHeader->nHeight - 24 * 6 ||
                   pindexBestHeader->GetBlockTime() < GetTime() - 6 * 60 * 60); // ~144 blocks behind -> 2 x fork detection time
     if (!state)
@@ -2758,7 +2737,7 @@ bool RecalculatePIVSupply(int nHeightStart)
         if (pindex->nHeight == Params().Zerocoin_Block_RecalculateAccumulators()) {
             LogPrintf("%s : Original money supply=%s\n", __func__, FormatMoney(pindex->nMoneySupply));
 
-            /* FIXME: Inappropriate for Helium
+            /* FIXME: GJH Inappropriate for Helium
             pindex->nMoneySupply += Params().InvalidAmountFiltered();
             LogPrintf("%s : Adding filtered funds to supply + %s : supply=%s\n", __func__, FormatMoney(Params().InvalidAmountFiltered()), FormatMoney(pindex->nMoneySupply));
             */
@@ -4058,7 +4037,7 @@ bool CheckBlock(const CBlock& block, CValidationState& state, bool fCheckPOW, bo
     // redundant with the call in AcceptBlockHeader.
 
     LogPrint("debug", "CheckBlock calling CheckBlockHeader\n");
-    /* FXME: GJH do not ignore fCheckPow setting */
+    /* FIXME: GJH do not ignore fCheckPow setting */
     if (!CheckBlockHeader(block, state, (fCheckPOW && block.IsProofOfWork())))
         return state.DoS(100, error("CheckBlock() : CheckBlockHeader failed"),
             REJECT_INVALID, "bad-header", true);
