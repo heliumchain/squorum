@@ -2384,7 +2384,9 @@ public:
         }
 
 
-        vSeeds.push_back(CDNSSeedData("Minkiz", "minkiz.co"));           // Single node address
+        vSeeds.push_back(CDNSSeedData("HELMN01", "helmn01.quravo.com"));           // Single node address
+        vSeeds.push_back(CDNSSeedData("HELMN02", "helmn02.quravo.com"));           // Single node address
+        vSeeds.push_back(CDNSSeedData("HELMN03", "helmn03.quravo.com"));           // Single node address
 
         // Helium addresses start with 'S'
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,63);
