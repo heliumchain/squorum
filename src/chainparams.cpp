@@ -2319,13 +2319,13 @@ public:
         nMinerThreads = 1;
         nTargetTimespan = 24 * 60 * 60; // Helium: 1 day
         nTargetSpacing = 60;  // Helium: 1 minute
-        // nMaturity = 100;
-        nMaturity = 20; // Reduced maturation period to assist staking trial
+        nMaturity = 100;
+        //nMaturity = 20; // Reduced maturation period to assist staking trial
         nMasternodeCountDrift = 20;
         nMaxMoneyOut = 21000000 * COIN;
 
         /** Height or Time Based Activations **/
-        nLastPOWBlock = 2880; // 2 days @ 1440 per day (PIVX: 259200, Phore 200)
+        nLastPOWBlock = 500; // nh - changed back to 500 - trial success - 2 days @ 1440 per day (PIVX: 259200, Phore 200)
         //if the lowest block height (vSortedByTimestamp[0]) is >= switch height, use new modifier calc
         // nModifierUpdateBlock = 0; // (PIVX: 615800)
         nZerocoinStartHeight = 999999; // (PIVX: 863787, Phore 90000)
