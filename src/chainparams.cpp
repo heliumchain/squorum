@@ -2529,7 +2529,13 @@ public:
 
         vFixedSeeds.clear();
         vSeeds.clear();
-        vSeeds.push_back(CDNSSeedData("Minkiz", "minkiz.co"));
+        //vSeeds.push_back(CDNSSeedData("Minkiz", "minkiz.co"));
+        vSeeds.push_back(CDNSSeedData("heliumna01", "heliumna01.quravo.com"));
+        vSeeds.push_back(CDNSSeedData("heliumna02", "heliumna02.quravo.com"));
+        vSeeds.push_back(CDNSSeedData("heliumna03", "heliumna03.quravo.com"));
+        vSeeds.push_back(CDNSSeedData("heliumeu01", "heliumeu01.quravo.com"));
+        vSeeds.push_back(CDNSSeedData("heliumap01", "heliumap01.quravo.com"));
+        //vSeeds.push_back(CDNSSeedData("heliumsa01", "heliumsa01.quravo.com"));
 
         // Testnet Helium addresses start with 'm' or 'n'
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,111);
