@@ -1823,8 +1823,10 @@ int64_t GetBlockValue(int nHeight)
 
     /* FIXME: GJH Particularise block reward scheme  - NH put it back to be fore trial - commetned out trial*/
     int64_t nSubsidy = 0;
-    if (nHeight == 0) {
+    if (nHeight <= Params().LAST_POW_BLOCK()) {
+        nSubsidy = 1000 * COIN;
         // Mint the ledger total (minus treasury deposit) for disbursal
+   /* if (nHeight == 0) {
         nSubsidy = (ledgerTotal - treasuryDeposit); // (8891432 * COIN) - (432870.87949961 * COIN)
     } else if (nHeight < 86400 && nHeight > 0) {
         nSubsidy = 250 * COIN;
@@ -1849,11 +1851,8 @@ int64_t GetBlockValue(int nHeight)
     } else if (nHeight <= 604799 && nHeight >= 561600) {
         nSubsidy = static_cast<int64_t>(13.5 * COIN);
     } else if (nHeight <= 647999 && nHeight >= 604800) {
-        nSubsidy = 9 * COIN;
+        nSubsidy = 9 * COIN;*/
 
-    /* NH - commented out portion about trial */
-    //if (nHeight <= Params().LAST_POW_BLOCK()) {
-    //    nSubsidy = 10000 * COIN;
     } else if (nHeight < Params().Zerocoin_Block_V2_Start()) {
         nSubsidy = 4.5 * COIN;
     } else {
@@ -2110,8 +2109,8 @@ int64_t GetMasternodePayment(int nHeight, int64_t blockValue, int nMasternodeCou
 
     /* FIXME: GJH Temporary hack to investigate initial PoW period */
     /* Commented out - NH */
-    //if (nHeight <= 10000)
-    //    ret = 0;
+    if (nHeight <= 1000)
+        ret = 0;
 
     /* FIXME: GJH Particularise masternode payment schedule */
     if (nHeight <= 43200) {
