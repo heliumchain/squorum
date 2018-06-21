@@ -200,7 +200,7 @@ UniValue importspreadprivkey(const UniValue& params, bool fHelp)
     CBitcoinSecret secret;
     bool fGood = secret.SetString(strSecret);
 
-    if (!fGood) throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid pstd::string base58string = test[1].get_str();rivate key encoding");
+    if (!fGood) throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid private key encoding");
 
     CKey key = secret.GetKey();
     if (!key.IsValid()) throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Private key outside allowed range");
