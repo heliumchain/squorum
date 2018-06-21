@@ -2319,13 +2319,13 @@ public:
         nMinerThreads = 1;
         nTargetTimespan = 24 * 60 * 60; // Helium: 1 day
         nTargetSpacing = 60;  // Helium: 1 minute
-        // nMaturity = 100;
+        //nMaturity = 100;
         nMaturity = 20; // Reduced maturation period to assist staking trial
         nMasternodeCountDrift = 20;
         nMaxMoneyOut = 21000000 * COIN;
 
         /** Height or Time Based Activations **/
-        nLastPOWBlock = 200; // 2 days @ 1440 per day (PIVX: 259200, Phore 200)
+        nLastPOWBlock = 300; // nh - changed to 300 - trial success - 2 days @ 1440 per day (PIVX: 259200, Phore 200)
         //if the lowest block height (vSortedByTimestamp[0]) is >= switch height, use new modifier calc
         // nModifierUpdateBlock = 0; // (PIVX: 615800)
         nZerocoinStartHeight = 999999; // (PIVX: 863787, Phore 90000)
@@ -2384,7 +2384,6 @@ public:
         }
 
 
-        //vSeeds.push_back(CDNSSeedData("Minkiz", "minkiz.co"));           // Single node address
         vSeeds.push_back(CDNSSeedData("heliumna01", "heliumna01.quravo.com"));
         vSeeds.push_back(CDNSSeedData("heliumna02", "heliumna02.quravo.com"));
         //vSeeds.push_back(CDNSSeedData("heliumna03", "heliumna03.quravo.com"));
@@ -2533,7 +2532,13 @@ public:
 
         vFixedSeeds.clear();
         vSeeds.clear();
-        vSeeds.push_back(CDNSSeedData("Minkiz", "minkiz.co"));
+        //vSeeds.push_back(CDNSSeedData("Minkiz", "minkiz.co"));
+        vSeeds.push_back(CDNSSeedData("heliumna01", "heliumna01.quravo.com"));
+        vSeeds.push_back(CDNSSeedData("heliumna02", "heliumna02.quravo.com"));
+        vSeeds.push_back(CDNSSeedData("heliumna03", "heliumna03.quravo.com"));
+        vSeeds.push_back(CDNSSeedData("heliumeu01", "heliumeu01.quravo.com"));
+        vSeeds.push_back(CDNSSeedData("heliumap01", "heliumap01.quravo.com"));
+        //vSeeds.push_back(CDNSSeedData("heliumsa01", "heliumsa01.quravo.com"));
 
         // Testnet Helium addresses start with 'm' or 'n'
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,111);
