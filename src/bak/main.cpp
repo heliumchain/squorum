@@ -1824,7 +1824,7 @@ int64_t GetBlockValue(int nHeight)
     /* FIXME: GJH Particularise block reward scheme */
     int64_t nSubsidy = 0;
     if (nHeight <= Params().LAST_POW_BLOCK()) {
-        nSubsidy = 10000 * COIN;
+        nSubsidy = 1000 * COIN;
     } else if (nHeight < Params().Zerocoin_Block_V2_Start()) {
         nSubsidy = 4.5 * COIN;
     } else {
@@ -1845,7 +1845,7 @@ CAmount GetSeeSaw(const CAmount& blockValue, int nMasternodeCount, int nHeight)
 
     int64_t nMoneySupply = chainActive.Tip()->nMoneySupply;
     /* FIXME: GJH PIVX-specific masternode collateral of 10000 */
-    int64_t mNodeCoins = nMasternodeCount * MASTERNODE_COLLATERAL_AMOUNT * COIN;
+    int64_t mNodeCoins = nMasternodeCount * 1000 * COIN;
 
     // Use this log to compare the masternode count for different clients
     //LogPrintf("Adjusting seesaw at height %d with %d masternodes (without drift: %d) at %ld\n", nHeight, nMasternodeCount, nMasternodeCount - Params().MasternodeCountDrift(), GetTime());
