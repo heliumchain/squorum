@@ -2319,8 +2319,8 @@ public:
         nMinerThreads = 1;
         nTargetTimespan = 24 * 60 * 60; // Helium: 1 day
         nTargetSpacing = 60;  // Helium: 1 minute
-        // nMaturity = 100;
-        nMaturity = 20; // Reduced maturation period to assist staking trial
+        nMaturity = 100;
+        //nMaturity = 20; // Reduced maturation period to assist staking trial
         nMasternodeCountDrift = 20;
         nMaxMoneyOut = 21000000 * COIN;
 
