@@ -305,9 +305,9 @@ RPCConsole::RPCConsole(QWidget* parent) : QDialog(parent),
     }
 
     if(!strzPIVPathCustom.empty()) {
-        ui->wallet_customzpivbackuppath->setText(QString::fromStdString(strzPIVPathCustom));
-        ui->wallet_customzpivbackuppath_label->setVisible(true);
-        ui->wallet_customzpivbackuppath->setVisible(true);
+        ui->wallet_customzhlmbackuppath->setText(QString::fromStdString(strzPIVPathCustom));
+        ui->wallet_customzhlmbackuppath_label->setVisible(true);
+        ui->wallet_customzhlmbackuppath->setVisible(true);
     }
 
     if((!strPathCustom.empty() || !strzPIVPathCustom.empty()) && nCustomBackupThreshold > 0) {

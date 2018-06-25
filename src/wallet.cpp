@@ -2084,7 +2084,7 @@ bool CWallet::SelectStakeCoins(std::list<std::unique_ptr<CStakeInput> >& listInp
     vector<COutput> vCoins;
     AvailableCoins(vCoins, true, NULL, false, STAKABLE_COINS);
     CAmount nAmountSelected = 0;
-    if (GetBoolArg("-pivstake", true)) {
+    if (GetBoolArg("-hlmstake", true)) {
         for (const COutput &out : vCoins) {
             //make sure not to outrun target amount
             if (nAmountSelected + out.tx->vout[out.i].nValue > nTargetAmount)
@@ -2116,7 +2116,7 @@ bool CWallet::SelectStakeCoins(std::list<std::unique_ptr<CStakeInput> >& listInp
     }
 
     //zPIV
-    if (GetBoolArg("-zpivstake", true) && chainActive.Height() > Params().Zerocoin_Block_V2_Start() && !IsSporkActive(SPORK_16_ZEROCOIN_MAINTENANCE_MODE)) {
+    if (GetBoolArg("-zhlmstake", true) && chainActive.Height() > Params().Zerocoin_Block_V2_Start() && !IsSporkActive(SPORK_16_ZEROCOIN_MAINTENANCE_MODE)) {
         //Only update zPIV set once per update interval
         bool fUpdate = false;
         static int64_t nTimeLastUpdate = 0;
@@ -5099,8 +5099,8 @@ void CWallet::ZPivBackupWallet()
 
     BackupWallet(*this, backupPath.string());
 
-    if(!GetArg("-zpivbackuppath", "").empty()) {
-        filesystem::path customPath(GetArg("-zpivbackuppath", ""));
+    if(!GetArg("-zhlmbackuppath", "").empty()) {
+        filesystem::path customPath(GetArg("-zhlmbackuppath", ""));
         filesystem::create_directories(customPath);
 
         if(!customPath.has_extension()) {

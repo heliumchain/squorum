@@ -54,7 +54,7 @@
 #define HAVE_BOOST_THREAD /**/
 
 /* define if the Boost::Unit_Test_Framework library is available */
-/* #undef HAVE_BOOST_UNIT_TEST_FRAMEWORK */
+#define HAVE_BOOST_UNIT_TEST_FRAMEWORK /**/
 
 /* Define this symbol if the consensus lib has been built */
 #define HAVE_CONSENSUS_LIB 1
