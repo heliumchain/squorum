@@ -1,4 +1,5 @@
 sudo: required
+language: bash
 dist: trusty
 os: linux
 language: minimal
