@@ -1816,6 +1816,10 @@ double ConvertBitsToDouble(unsigned int nBits)
 int64_t GetBlockValue(int nHeight)
 {
     if (Params().NetworkID() == CBaseChainParams::TESTNET) {
+	// set testnet PoW period reward
+        if (nHeight < 10000 && nHeight > 0)
+            return 25 * COIN;
+    }
     int64_t nSubsidy = 0;
     if (nHeight == 0) {
         // Mint the ledger total (minus treasury deposit) for disbursal
