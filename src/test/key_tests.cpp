@@ -173,19 +173,25 @@ BOOST_AUTO_TEST_CASE(key_test1)
     BOOST_CHECK(key1.Sign(hashMsg, detsig));
     BOOST_CHECK(key1C.Sign(hashMsg, detsigc));
     BOOST_CHECK(detsig == detsigc);
-    BOOST_CHECK(detsig == ParseHex("30450221009071d4fead181ea197d6a23106c48ee5de25e023b38afaf71c170e3088e5238a02200dcbc7f1aad626a5ee812e08ef047114642538e423a94b4bd6a272731cf500d0"));
+    // printf("detsig: %s\n", HexStr(detsig).c_str());
+    BOOST_CHECK(detsig == ParseHex("30450221009f32d2b608da39d2827e74c2c6cca68cd96e467679ba979ae3430cb0f85e23490220164675af54707dfd84e0d930a3ee3b4ed81bc092d58a1435deecfde4ce5fdb4a"));
     BOOST_CHECK(key2.Sign(hashMsg, detsig));
     BOOST_CHECK(key2C.Sign(hashMsg, detsigc));
     BOOST_CHECK(detsig == detsigc);
-    BOOST_CHECK(detsig == ParseHex("304402204f304f1b05599f88bc517819f6d43c69503baea5f253c55ea2d791394f7ce0de02204f23c0d4c1f4d7a89bf130fed755201d22581911a8a44cf594014794231d325a"));
+    // printf("detsig: %s\n", HexStr(detsig).c_str());
+    BOOST_CHECK(detsig == ParseHex("304502210092211d02512027ba20c5a15903f36e36362b9e057f60bff578d06fabd802ab8d02205beadb34791a047aa902c9461993c02df6b40ca65bcd1f66eee27ab9aa20852c"));
     BOOST_CHECK(key1.SignCompact(hashMsg, detsig));
     BOOST_CHECK(key1C.SignCompact(hashMsg, detsigc));
-    BOOST_CHECK(detsig == ParseHex("1b9071d4fead181ea197d6a23106c48ee5de25e023b38afaf71c170e3088e5238a0dcbc7f1aad626a5ee812e08ef047114642538e423a94b4bd6a272731cf500d0"));
-    BOOST_CHECK(detsigc == ParseHex("1f9071d4fead181ea197d6a23106c48ee5de25e023b38afaf71c170e3088e5238a0dcbc7f1aad626a5ee812e08ef047114642538e423a94b4bd6a272731cf500d0"));
+    // printf("detsig: %s\n", HexStr(detsig).c_str());
+    // printf("detsigc: %s\n", HexStr(detsigc).c_str());
+    BOOST_CHECK(detsig == ParseHex("1c9f32d2b608da39d2827e74c2c6cca68cd96e467679ba979ae3430cb0f85e2349164675af54707dfd84e0d930a3ee3b4ed81bc092d58a1435deecfde4ce5fdb4a"));
+    BOOST_CHECK(detsigc == ParseHex("209f32d2b608da39d2827e74c2c6cca68cd96e467679ba979ae3430cb0f85e2349164675af54707dfd84e0d930a3ee3b4ed81bc092d58a1435deecfde4ce5fdb4a"));
     BOOST_CHECK(key2.SignCompact(hashMsg, detsig));
     BOOST_CHECK(key2C.SignCompact(hashMsg, detsigc));
-    BOOST_CHECK(detsig == ParseHex("1b4f304f1b05599f88bc517819f6d43c69503baea5f253c55ea2d791394f7ce0de4f23c0d4c1f4d7a89bf130fed755201d22581911a8a44cf594014794231d325a"));
-    BOOST_CHECK(detsigc == ParseHex("1f4f304f1b05599f88bc517819f6d43c69503baea5f253c55ea2d791394f7ce0de4f23c0d4c1f4d7a89bf130fed755201d22581911a8a44cf594014794231d325a"));
+    // printf("detsig: %s\n", HexStr(detsig).c_str());
+    // printf("detsigc: %s\n", HexStr(detsigc).c_str());
+    BOOST_CHECK(detsig == ParseHex("1c92211d02512027ba20c5a15903f36e36362b9e057f60bff578d06fabd802ab8d5beadb34791a047aa902c9461993c02df6b40ca65bcd1f66eee27ab9aa20852c"));
+    BOOST_CHECK(detsigc == ParseHex("2092211d02512027ba20c5a15903f36e36362b9e057f60bff578d06fabd802ab8d5beadb34791a047aa902c9461993c02df6b40ca65bcd1f66eee27ab9aa20852c"));
 }
 
 BOOST_AUTO_TEST_SUITE_END()
