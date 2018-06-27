@@ -8,4 +8,4 @@ HeliumChain is an open source crypto-currency focused on fast private transactio
 - Fast transactions featuring guaranteed zero confirmation transactions, we call it _SwiftX_.
 - Decentralized blockchain voting utilizing Masternode technology to form a DAO. The blockchain will distribute monthly treasury funds based on successful proposals submitted by the community and voted on by the DAO.
 
-More information at [heliumlabs.org](http://www.heliumlabs.org) Visit our ANN thread at [BitcoinTalk](https://bitcointalk.org/index.php?topic=1809278.0)
+More information at [heliumlabs.org](http://www.heliumlabs.org) [Helium FAQ](https://www.heliumlabs.org/docs/frequently-asked-questions) Visit our ANN thread at [BitcoinTalk](https://bitcointalk.org/index.php?topic=1809278.0)
