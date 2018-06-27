@@ -79,7 +79,6 @@ std::string DecodeBase58ToHex(const std::string& str) {
         // FAIL
         ss << "Failed with " << str << std::endl;
     }
-    std::cout << ss.str() << std::endl;
     return ss.str();
 }
 

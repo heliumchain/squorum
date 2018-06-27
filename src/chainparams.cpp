@@ -2374,11 +2374,11 @@ public:
 
             }
         } else {
-            std::cout << "Mainnet ---\n";
-            std::cout << " nonce: " << genesis.nNonce <<  "\n";
-            std::cout << " time: " << genesis.nTime << "\n";
-            std::cout << " hash: 0x" << genesis.GetHash().ToString().c_str() << "\n";
-            std::cout << " merklehash: 0x"  << genesis.hashMerkleRoot.ToString().c_str() << "\n";
+            LogPrintf("Mainnet ---\n");
+            LogPrintf(" nonce: %u\n", genesis.nNonce);
+            LogPrintf(" time: %u\n", genesis.nTime);
+            LogPrintf(" hash: 0x%s\n", genesis.GetHash().ToString().c_str());
+            LogPrintf(" merklehash: 0x%s\n", genesis.hashMerkleRoot.ToString().c_str());
             assert(hashGenesisBlock == uint256("0x00000fced0069e24bddebd9f3c38170de47723aaa34a0cdaa0b51f0d0331fa56"));
             assert(genesis.hashMerkleRoot == uint256("0x5d50731c9be308a0290ef71f5728c19b2bd1febfecfc826068e5f63b61303e76"));
         }
@@ -2521,11 +2521,11 @@ public:
                 // Testnet --- nonce: 30344 time: 1520801782 hash: 0x00000b6596ee903b6517617da3370632e97b6a55d696ba5befe3af636f0f0e38 merklehash: 0xd3c868e9fdca66ace15ff93f5e5e67a43ee840b83b5806153b843791f2f814da
             }
         } else {
-            std::cout << "Testnet ---\n";
-            std::cout << " nonce: " << genesis.nNonce <<  "\n";
-            std::cout << " time: " << genesis.nTime << "\n";
-            std::cout << " hash: " << genesis.GetHash().ToString().c_str() << "\n";
-            std::cout << " merklehash: "  << genesis.hashMerkleRoot.ToString().c_str() << "\n";
+            LogPrintf("Testnet ---\n");
+            LogPrintf(" nonce: %u\n", genesis.nNonce);
+            LogPrintf(" time: %u\n", genesis.nTime);
+            LogPrintf(" hash: 0x%s\n", genesis.GetHash().ToString().c_str());
+            LogPrintf(" merklehash: 0x%s\n", genesis.hashMerkleRoot.ToString().c_str());
             assert(hashGenesisBlock == uint256("0x00000b6596ee903b6517617da3370632e97b6a55d696ba5befe3af636f0f0e38"));
             assert(genesis.hashMerkleRoot == uint256("0xd3c868e9fdca66ace15ff93f5e5e67a43ee840b83b5806153b843791f2f814da"));
         }
@@ -2630,11 +2630,11 @@ public:
                 // Regtestnet --- nonce: 3 time: 1520801782 hash: 0x7b4b6b3859e64b34e2cc09135630c13de3a0cead41b3cd07c91cd843f7f17139 merklehash: 0xb111711ac77b7eaee69ec5142614c6381de336ea127977c94ba90335e0d93b41
             }
         } else {
-            std::cout << "Regtestnet ---\n";
-            std::cout << " nonce: " << genesis.nNonce <<  "\n";
-            std::cout << " time: " << genesis.nTime << "\n";
-            std::cout << " hash: 0x" << genesis.GetHash().ToString().c_str() << "\n";
-            std::cout << " merklehash: 0x"  << genesis.hashMerkleRoot.ToString().c_str() << "\n";
+            LogPrintf("Regtestnet ---\n");
+            LogPrintf(" nonce: %u\n", genesis.nNonce);
+            LogPrintf(" time: %u\n", genesis.nTime);
+            LogPrintf(" hash: 0x%s\n", genesis.GetHash().ToString().c_str());
+            LogPrintf(" merklehash: 0x%s\n", genesis.hashMerkleRoot.ToString().c_str());
             assert(hashGenesisBlock == uint256("0x7b4b6b3859e64b34e2cc09135630c13de3a0cead41b3cd07c91cd843f7f17139"));
             assert(genesis.hashMerkleRoot == uint256("0xb111711ac77b7eaee69ec5142614c6381de336ea127977c94ba90335e0d93b41"));
         }
