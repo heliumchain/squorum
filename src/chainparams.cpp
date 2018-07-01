@@ -2347,9 +2347,9 @@ public:
                     0x1e0ffff0,                          // nBits
                     3,                                   // nVersion
                    treasuryDeposit,                      // genesisReward (treasury deposit)
-                   "SbWxpkvH6ifPxiVtFn84JyeyqoDjPjaEYn", // first treasury address
-                   "ST7pgLGfwgzQFUztS2wbyF7fLhZQqfCgwG", // second treasury address
-                   "SQVLNuWTUkURNFdsPCmaoYKJJbtKHJjPe7"  // third treasury address
+                   "Sapor5rpxvaGQ4cW8dptj3zW94MxuAwW4P", // first treasury address
+                   "SeYn7AmvjB3Wr3QqdJK6UsW85dPKeEKmSg", // second treasury address
+                   "Sbe6m4y6wGhUo6FoS6Sab2PxnScXm8HQTf"  // third treasury address
                     );
 
         hashGenesisBlock = genesis.GetHash();
@@ -2605,9 +2605,9 @@ public:
                     0x207fffff,                          // nBits
                     3,                                   // nVersion
                     treasuryDeposit,                     // genesisReward (treasury deposit)
-                   "SbWxpkvH6ifPxiVtFn84JyeyqoDjPjaEYn", // first treasury address
-                   "ST7pgLGfwgzQFUztS2wbyF7fLhZQqfCgwG", // second treasury address
-                   "SQVLNuWTUkURNFdsPCmaoYKJJbtKHJjPe7"  // third treasury address
+                   "Spor5rpxvaGQ4cW8dptj3zW94MxuAwW4P", // first treasury address
+                   "SeYn7AmvjB3Wr3QqdJK6UsW85dPKeEKmSg", // second treasury address
+                   "Sbe6m4y6wGhUo6FoS6Sab2PxnScXm8HQTf"  // third treasury address
                     );
 
         hashGenesisBlock = genesis.GetHash();
