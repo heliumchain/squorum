@@ -2347,7 +2347,7 @@ public:
                     0x1e0ffff0,                          // nBits
                     3,                                   // nVersion
                    treasuryDeposit,                      // genesisReward (treasury deposit)
-                   "Sapor5rpxvaGQ4cW8dptj3zW94MxuAwW4P", // first treasury address
+                   "SbWxpkvH6ifPxiVtFn84JyeyqoDjPjaEYn", // first treasury address
                    "ST7pgLGfwgzQFUztS2wbyF7fLhZQqfCgwG", // second treasury address
                    "SQVLNuWTUkURNFdsPCmaoYKJJbtKHJjPe7"  // third treasury address
                     );
