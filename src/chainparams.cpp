@@ -2329,7 +2329,7 @@ public:
         nLastPOWBlock = 20160; // 14 days @ 1440 per day (PIVX: 259200, Phore 200)
         //if the lowest block height (vSortedByTimestamp[0]) is >= switch height, use new modifier calc
         // nModifierUpdateBlock = 0; // (PIVX: 615800)
-        nZerocoinStartHeight = 9999999999999; // (PIVX: 863787, Phore 90000)
+        nZerocoinStartHeight = 999999999; // (PIVX: 863787, Phore 90000)
         nZerocoinStartTime = 1730801782; // Tue  5 Nov 10:16:22 GMT 2024
         // nBlockEnforceSerialRange = 90003; //Enforce serial range starting this block (Phore 90003)
         nBlockRecalculateAccumulators = 999999; // (PIVX: 895400, Phore 90005) //Trigger a recalculation of accumulators
@@ -2386,12 +2386,9 @@ public:
 
 
         vSeeds.push_back(CDNSSeedData("Minkiz", "minkiz.co"));           // GJH Node
-        vSeeds.push_back(CDNSSeedData("heliumna01", "heliumna01.heliumchain.org")); // FIXME - NH Nodes - need to change domain name
-        vSeeds.push_back(CDNSSeedData("heliumna02", "heliumna02.heliumchain.org"));
+        vSeeds.push_back(CDNSSeedData("heliumna01", "heliumna01.heliumchain.org")); 
         vSeeds.push_back(CDNSSeedData("heliumeu01", "heliumeu01.heliumchain.org"));
-        vSeeds.push_back(CDNSSeedData("heliumeu02", "heliumeu02.heliumchain.org"));
         vSeeds.push_back(CDNSSeedData("heliumap01", "heliumap01.heliumchain.org"));
-        vSeeds.push_back(CDNSSeedData("heliumsa01", "heliumsa01.heliumchain.org"));
 
         // Helium addresses start with 'S'
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,63);
