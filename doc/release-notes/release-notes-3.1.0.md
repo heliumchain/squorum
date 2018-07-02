@@ -1,8 +1,8 @@
-Helium Core version *3.1.0* is now available from:  <https://github.com/gjhiggins/diproton/releases>
+Helium Core version *3.1.0* is now available from:  <https://github.com/heliumchain/helium/releases>
 
 This is a new major version release, including various bug fixes and performance improvements, as well as updated translations.
 
-Please report bugs using the issue tracker at github: <https://github.com/gjhiggins/diproton/issues>
+Please report bugs using the issue tracker at github: <https://github.com/heliumchain/helium/issues>
 
 
 Mandatory Update

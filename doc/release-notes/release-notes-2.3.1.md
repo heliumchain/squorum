@@ -1,13 +1,13 @@
 Helium Core version 2.3.1 is now available from:
 
-  <https://github.com/gjhiggins/diproton/releases>
+  <https://github.com/heliumchain/helium/releases>
 
 This is a new minor version release, including various bug fixes and
 performance improvements, as well as updated translations.
 
 Please report bugs using the issue tracker at github:
 
-  <https://github.com/gjhiggins/diproton/issues>
+  <https://github.com/heliumchain/helium/issues>
 
 How to Upgrade
 ==============

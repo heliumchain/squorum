@@ -24,7 +24,7 @@ If you're using the automated script (found in [contrib/gitian-build.sh](/contri
 Check out the source code in the following directory hierarchy.
 
     cd /path/to/your/toplevel/build
-    git clone https://github.com/gjhiggins/diproton
+    git clone https://github.com/heliumchain/helium
     git clone https://github.com/devrandom/gitian-builder.git
 
 ### Helium maintainers/release engineers, suggestion for writing release notes

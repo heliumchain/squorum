@@ -1,8 +1,8 @@
-Helium Core version *3.1.0.1* is now available from:  <https://github.com/gjhiggins/diproton/releases>
+Helium Core version *3.1.0.1* is now available from:  <https://github.com/heliumchain/helium/releases>
 
 This is a new bugfix release, specifically addressing a bug with windows OS masternode control wallets. Users upgrading to this version are encouraged to also read the detailed release notes for the previous [3.1.0](https://github.com/Helium-Project/Helium/releases/tag/v3.1.0) release as information will not be duplicated here.
 
-Please report bugs using the issue tracker at github: <https://github.com/gjhiggins/diproton/issues>
+Please report bugs using the issue tracker at github: <https://github.com/heliumchain/helium/issues>
 
 How to Upgrade
 ==============

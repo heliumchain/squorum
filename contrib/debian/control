@@ -23,8 +23,8 @@ Build-Depends: debhelper,
  libprotobuf-dev, protobuf-compiler
 Standards-Version: 3.9.2
 Homepage: http://www.heliumpay.com
-Vcs-Git: git://github.com/gjhiggins/diproton
-Vcs-Browser: http://github.com/gjhiggins/diproton
+Vcs-Git: git://github.com/heliumchain/helium
+Vcs-Browser: http://github.com/heliumchain/helium
 
 Package: heliumd
 Architecture: any
