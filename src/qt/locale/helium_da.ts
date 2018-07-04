@@ -608,10 +608,6 @@
         <source>&amp;Command-line options</source>
         <translation>&amp;Kommandolinieparametre</translation>
     </message>
-    <message numerus="yes">
-        <source>Processed %n blocks of transaction history.</source>
-        <translation><numerusform>Behandlet %n blok af transaktionshistorik.</numerusform><numerusform>Behandlet %n blokke af transaktionshistorik.</numerusform></translation>
-    </message>
     <message>
         <source>Synchronizing additional data: %p%</source>
         <translation>Synkroniserer yderligere data %p%</translation>
@@ -736,10 +732,6 @@
         <source>Helium Core client</source>
         <translation>Helium kerneklient</translation>
     </message>
-    <message numerus="yes">
-        <source>%n active connection(s) to Helium network</source>
-        <translation><numerusform>%n aktiv forbindelse til Helium-netværk</numerusform><numerusform>%n aktiv forbindelse(s) til Helium netværk</numerusform></translation>
-    </message>
     <message>
         <source>Synchronizing with network...</source>
         <translation>Synkroniserer med netværket</translation>
@@ -760,25 +752,9 @@
         <source>Up to date</source>
         <translation>Opdateret!</translation>
     </message>
-    <message numerus="yes">
-        <source>%n hour(s)</source>
-        <translation><numerusform>%n timer</numerusform><numerusform>%n timer</numerusform></translation>
-    </message>
-    <message numerus="yes">
-        <source>%n day(s)</source>
-        <translation><numerusform>%n dage</numerusform><numerusform>%n dage</numerusform></translation>
-    </message>
-    <message numerus="yes">
-        <source>%n week(s)</source>
-        <translation><numerusform>%n uger</numerusform><numerusform>%n uger</numerusform></translation>
-    </message>
     <message>
         <source>%1 and %2</source>
         <translation>%1 og %2</translation>
-    </message>
-    <message numerus="yes">
-        <source>%n year(s)</source>
-        <translation><numerusform>%n år</numerusform><numerusform>%n år</numerusform></translation>
     </message>
     <message>
         <source>Catching up...</source>
@@ -864,7 +840,7 @@ Adresse: %4
         <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;locked&lt;/b&gt;</source>
         <translation>Tegnebogen er &lt;b&gt;krypteret og låst&lt;/b&gt;</translation>
     </message>
-</context>
+    </context>
 <context>
     <name>BlockExplorer</name>
     <message>
@@ -1225,6 +1201,17 @@ Adresse: %4
     </message>
 </context>
 <context>
+    <name>GovernancePage</name>
+    <message>
+        <source>Form</source>
+        <translation>Formular</translation>
+    </message>
+    <message>
+        <source>0</source>
+        <translation>0</translation>
+    </message>
+    </context>
+<context>
     <name>HelpMessageDialog</name>
     <message>
         <source>version</source>
@@ -1542,48 +1529,26 @@ Multisend vil ikke fungere med mindre systemet er aktiveret.</translation>
         <translation>(ingen opmærknig)</translation>
     </message>
     <message>
-        <source>The entered address:
-</source>
-        <translation>Den indtastede adresse:
-</translation>
-    </message>
-    <message>
-        <source> is invalid.
-Please check the address and try again.</source>
-        <translation>er ikke gyldig. 
-Kontroller adressen og prøv igen.</translation>
-    </message>
-    <message>
-        <source>The total amount of your MultiSend vector is over 100% of your stake reward
-</source>
+        <source>The total amount of your MultiSend vector is over 100% of your stake reward</source>
         <translation>Den totale sum af Deres Multisendgruppe er over 100% af Deres indskudsbelønning
 </translation>
     </message>
     <message>
-        <source>Please Enter 1 - 100 for percent.</source>
-        <translation>Indtast en procentsats 1-100 </translation>
-    </message>
-    <message>
-        <source>Saved the MultiSend to memory, but failed saving properties to the database.
-</source>
+        <source>Saved the MultiSend to memory, but failed saving properties to the database.</source>
         <translation>Gemt MultiSend til hukommelse, men fejlede gemme egenskaber til databasen.
 </translation>
     </message>
     <message>
-        <source>MultiSend Vector
-</source>
-        <translation>Multisendgruppe
-</translation>
+        <source>Removed %1</source>
+        <translation>Fjernet %1</translation>
     </message>
     <message>
-        <source>Removed </source>
-        <translation>Fjernet</translation>
+        <source>Could not locate address</source>
+        <translation>Kunne ikke finde adresse</translation>
     </message>
     <message>
-        <source>Could not locate address
-</source>
-        <translation>Kunne ikke finde adresse
-</translation>
+        <source>Please Enter 1 - 100 for percent.</source>
+        <translation>Indtast en procentsats 1-100 </translation>
     </message>
 </context>
 <context>
@@ -1755,73 +1720,6 @@ Vær tålmodig efter at du har klikket på import.</translation>
     <message>
         <source>Maximum (15)</source>
         <translation>Maksimum (15)</translation>
-    </message>
-</context>
-<context>
-    <name>ObfuscationConfig</name>
-    <message>
-        <source>Configure Obfuscation</source>
-        <translation>Konfigurer tilslørin</translation>
-    </message>
-    <message>
-        <source>Basic Privacy</source>
-        <translation>Grundlæggende tilsløret </translation>
-    </message>
-    <message>
-        <source>High Privacy</source>
-        <translation>Grundigt tilsløret</translation>
-    </message>
-    <message>
-        <source>Maximum Privacy</source>
-        <translation>Meget grundigt tilsløret</translation>
-    </message>
-    <message>
-        <source>Please select a privacy level.</source>
-        <translation>Vælg tilsløringsniveau</translation>
-    </message>
-    <message>
-        <source>Use 2 separate masternodes to mix funds up to 10000 HLM</source>
-        <translation>Brug 2 separate masternoder for at tilsløre beløb op til 10000 HLM</translation>
-    </message>
-    <message>
-        <source>Use 8 separate masternodes to mix funds up to 10000 HLM</source>
-        <translation>Brug 8 separate masternoder for at tilsløre op til 10000 HLM</translation>
-    </message>
-    <message>
-        <source>Use 16 separate masternodes</source>
-        <translation>Brug 16 separate masternoder</translation>
-    </message>
-    <message>
-        <source>This option is the quickest and will cost about ~0.025 HLM to anonymize 10000 HLM</source>
-        <translation>Dette valg er det hurtigste og vil koste i omegnen af 0.025 HLM for at anonymiser 10000 HLM</translation>
-    </message>
-    <message>
-        <source>This option is moderately fast and will cost about 0.05 HLM to anonymize 10000 HLM</source>
-        <translation>Dette valg er relativt hurtigt og vil koste i omegnen af 0.05 HLM for at anonymiser 10000 HLM</translation>
-    </message>
-    <message>
-        <source>This is the slowest and most secure option. Using maximum anonymity will cost</source>
-        <translation>Denne mulighed er den langsomste og det mest sikre valg. Valg af maksimal tilsløring vil koste</translation>
-    </message>
-    <message>
-        <source>0.1 HLM per 10000 HLM you anonymize.</source>
-        <translation>0.1 pr 10000 HLM for at tilsløre.</translation>
-    </message>
-    <message>
-        <source>Obfuscation Configuration</source>
-        <translation>Tilsløringskonfiguration</translation>
-    </message>
-    <message>
-        <source>Obfuscation was successfully set to basic (%1 and 2 rounds). You can change this at any time by opening Helium's configuration screen.</source>
-        <translation>Tilsløring blev sat til grundlæggende (%1 og 2 gennemløb) De kan ændre dette hvornår De vil ved at åbne Helium konfigurationsbillede.</translation>
-    </message>
-    <message>
-        <source>Obfuscation was successfully set to high (%1 and 8 rounds). You can change this at any time by opening Helium's configuration screen.</source>
-        <translation>Tilsløring blev sat til høj (%1 og 8 gennemløb) De kan ændre dette hvornår De vil ved at åbne Helium konfigurationsbillede.</translation>
-    </message>
-    <message>
-        <source>Obfuscation was successfully set to maximum (%1 and 16 rounds). You can change this at any time by opening Helium's configuration screen.</source>
-        <translation>Tilsløring blev sat til maksimum (%1 og 16 gennemløb) De kan ændre dette hvornår De vil ved at åbne Helium konfigurationsbillede.</translation>
     </message>
 </context>
 <context>
@@ -2028,10 +1926,6 @@ https://www.transifex.com/heliumchain/helium-project-translations</translation>
         <translation>Brugers tema:</translation>
     </message>
     <message>
-        <source>&amp;Unit to show amounts in:</source>
-        <translation>&amp;Enhed som beløb vises i</translation>
-    </message>
-    <message>
         <source>Choose the default subdivision unit to show in the interface and when sending coins.</source>
         <translation>Vælg standard inddelingsenhed der vises når der afsendes mønter</translation>
     </message>
@@ -2161,6 +2055,18 @@ https://www.transifex.com/heliumchain/helium-project-translations</translation>
     <message>
         <source>zHLM Balance</source>
         <translation>zHLM-saldo</translation>
+    </message>
+    <message>
+        <source>Mature: more than 20 confirmation and more than 1 mint of the same denomination after it was minted.
+These zHLM are spendable.</source>
+        <translation>Ældre: mere end 20 bekræftelser og mere end 1 minutter med samme betegnelse, efter at den blev minted
+Disse zHLM kan bruges.</translation>
+    </message>
+    <message>
+        <source>Unconfirmed: less than 20 confirmations
+Immature: confirmed, but less than 1 mint of the same denomination after it was minted</source>
+        <translation>Ubekræftet: mindre end 20 bekræftelser
+Uplettet: bekræftet, men mindre end 1 minutter med samme betegnelse, efter at den blev mønnet</translation>
     </message>
     <message>
         <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Helium network after a connection is established, but this process has not completed yet.</source>
@@ -2381,36 +2287,12 @@ For at aktivere AutoMint-ændring 'enablezeromint = 0' til 'enablezeromint = 1' 
         <translation>zHLM</translation>
     </message>
     <message>
-        <source>Available for minting are coins which are confirmed and not locked or Masternode collaterals.</source>
-        <translation>Til rådighed for mintning er mønter, som er bekræftet og ikke låst eller Masternode collaterals.</translation>
-    </message>
-    <message>
-        <source>Available for Minting:</source>
-        <translation>Til rådighed til Minting:</translation>
-    </message>
-    <message>
-        <source>0.000 000 00 HLM</source>
-        <translation>0.000 000 00 HLM</translation>
-    </message>
-    <message>
         <source>Reset Zerocoin Wallet DB. Deletes transactions that did not make it into the blockchain.</source>
         <translation>Nulstil Zerocoin Wallet DB. Sletter transaktioner, der ikke gjorde det i blokkæden.</translation>
     </message>
     <message>
         <source>Reset</source>
         <translation>Nulstil</translation>
-    </message>
-    <message>
-        <source>Coin Control...</source>
-        <translation>Møntkontrol...</translation>
-    </message>
-    <message>
-        <source>Quantity:</source>
-        <translation>Antal:</translation>
-    </message>
-    <message>
-        <source>Amount:</source>
-        <translation>Beløb</translation>
     </message>
     <message>
         <source>Rescan the complete blockchain for  Zerocoin mints and their meta-data.</source>
@@ -2427,6 +2309,14 @@ For at aktivere AutoMint-ændring 'enablezeromint = 0' til 'enablezeromint = 1' 
     <message>
         <source>PRIVACY</source>
         <translation>PRIVATLIV</translation>
+    </message>
+    <message>
+        <source>zHLM Control</source>
+        <translation>zHLM Control</translation>
+    </message>
+    <message>
+        <source>zHLM Selected:</source>
+        <translation>zHLM Selected:</translation>
     </message>
     <message>
         <source>Quantity Selected:</source>
@@ -2459,18 +2349,6 @@ zHLM er modne, når de har mere end 20 bekræftelser OG mere end 2 minutter med 
     <message>
         <source>0 zHLM</source>
         <translation>0 zHLM</translation>
-    </message>
-    <message>
-        <source>Security Level for Zerocoin Transactions. More is better, but needs more time and resources.</source>
-        <translation>Sikkerhedsniveau for Zerocoin Transaktioner. Mere er bedre, men har brug for mere tid og ressourcer.</translation>
-    </message>
-    <message>
-        <source>Security Level:</source>
-        <translation>Sikkerhedsniveau:</translation>
-    </message>
-    <message>
-        <source>Security Level 1 - 100 (default: 42)</source>
-        <translation>Sikkerhedsniveau 1 - 100 (standard: 42)</translation>
     </message>
     <message>
         <source>Pay &amp;To:</source>
@@ -2543,6 +2421,12 @@ zHLM er modne, når de har mere end 20 bekræftelser OG mere end 2 minutter med 
     <message>
         <source>Denom. with value 1:</source>
         <translation>DENOM. med værdi 1:</translation>
+    </message>
+    <message>
+        <source>Unconfirmed: less than 20 confirmations
+Immature: confirmed, but less than 1 mint of the same denomination after it was minted</source>
+        <translation>Ubekræftet: mindre end 20 bekræftelser
+Uplettet: bekræftet, men mindre end 1 minutter med samme betegnelse, efter at den blev mønnet</translation>
     </message>
     <message>
         <source>Show the current status of automatic zHLM minting.
@@ -2730,12 +2614,18 @@ For at ændre procentdelen (ingen genstart kræves):.
         <translation>Mint Status: Okay</translation>
     </message>
     <message>
-        <source>Copy quantity</source>
-        <translation>Kopiér antal</translation>
+        <source>Starting ResetMintZerocoin: rescanning complete blockchain, this will need up to 30 minutes depending on your hardware.
+Please be patient...</source>
+        <translation>Starter ResetMintZerocoin: Genskanning af komplet blockchain, dette vil tage op til 30 minutter afhængigt af din hardware.
+Vær tålmodig...</translation>
     </message>
     <message>
-        <source>Copy amount</source>
-        <translation>Kopiér beløb</translation>
+        <source>zHLM Spend #: </source>
+        <translation>zHLM Spend #: </translation>
+    </message>
+    <message>
+        <source>zHLM Mint</source>
+        <translation>zHLM Mint</translation>
     </message>
     <message>
         <source> &lt;b&gt;enabled&lt;/b&gt;.</source>
@@ -2826,38 +2716,6 @@ For at ændre procentdelen (ingen genstart kræves):.
         <translation>Denom. &lt;b&gt;5000&lt;/b&gt;:</translation>
     </message>
     <message>
-        <source>Error: Your wallet is locked. Please enter the wallet passphrase first.</source>
-        <translation>Fejl: Din tegnebog er låst. Indtast venligst lommebrevets kodeord først.</translation>
-    </message>
-    <message>
-        <source>Message: Enter an amount &gt; 0.</source>
-        <translation>Meddelelse: Indtast et beløb&gt; 0.</translation>
-    </message>
-    <message>
-        <source>Minting </source>
-        <translation>Minting</translation>
-    </message>
-    <message>
-        <source>Successfully minted </source>
-        <translation>Mynt succesfuldt</translation>
-    </message>
-    <message>
-        <source> zHLM in </source>
-        <translation> zHLM i</translation>
-    </message>
-    <message>
-        <source> sec. Used denominations:
-</source>
-        <translation>sek. Brugte betegnelser:.
-</translation>
-    </message>
-    <message>
-        <source>Starting ResetMintZerocoin: rescanning complete blockchain, this will need up to 30 minutes depending on your hardware. 
-Please be patient...</source>
-        <translation>Starter ResetMintZerocoin: Genskanning af komplet blockchain, dette vil tage op til 30 minutter afhængigt af din hardware.
-Vær tålmodig...</translation>
-    </message>
-    <message>
         <source>Duration: </source>
         <translation>Varighed:</translation>
     </message>
@@ -2900,36 +2758,12 @@ Vær tålmodig...</translation>
         <translation>til en nyligt genereret (ubrugt og derfor anonym) lokal adresse &lt;br /&gt;</translation>
     </message>
     <message>
-        <source>with Security Level </source>
-        <translation>med sikkerhedsniveau</translation>
-    </message>
-    <message>
         <source>Confirm send coins</source>
         <translation>Bekræft at De vil sende mønter</translation>
     </message>
     <message>
-        <source>Spending Zerocoin.
-Computationally expensive, might need several minutes depending on the selected Security Level and your hardware. 
-Please be patient...</source>
-        <translation>Tilbringe Zerocoin
-Computationally dyrt, kan have brug for flere minutter afhængigt af det valgte sikkerhedsniveau og din hardware.
-Vær tålmodig..</translation>
-    </message>
-    <message>
-        <source>Too much inputs (</source>
-        <translation>For mange input (</translation>
-    </message>
-    <message>
-        <source>) needed. 
-Maximum allowed: </source>
-        <translation>) havde brug for. 
-Maksimum tilladt:</translation>
-    </message>
-    <message>
-        <source>
-Either mint higher denominations (so fewer inputs are needed) or reduce the amount to spend.</source>
-        <translation>
-Enten mint højere nomineringer (så færre input er nødvendige) eller reducere det beløb, der skal bruges.</translation>
+        <source>Failed to fetch mint associated with serial hash</source>
+        <translation>Kunne ikke hente mynte i forbindelse med seriel hash</translation>
     </message>
     <message>
         <source>Spend Zerocoin failed with status = </source>
@@ -2968,6 +2802,9 @@ Enten mint højere nomineringer (så færre input er nødvendige) eller reducere
         <translation>Gebyr:</translation>
     </message>
 </context>
+<context>
+    <name>ProposalFrame</name>
+    </context>
 <context>
     <name>QObject</name>
     <message>
@@ -3018,7 +2855,11 @@ Enten mint højere nomineringer (så færre input er nødvendige) eller reducere
         <source>%1 ms</source>
         <translation>%1 ms</translation>
     </message>
-</context>
+    <message>
+        <source>Helium Core</source>
+        <translation>Helium kerne</translation>
+    </message>
+    </context>
 <context>
     <name>QRImageWidget</name>
     <message>
@@ -3245,6 +3086,18 @@ Enten mint højere nomineringer (så færre input er nødvendige) eller reducere
         <translation>Tidsforskydning</translation>
     </message>
     <message>
+        <source>Custom Backup Path:</source>
+        <translation>Brugerdefineret Backup-sti:</translation>
+    </message>
+    <message>
+        <source>Custom zHLM Backup Path:</source>
+        <translation>Brugerdefineret zHLM Backup-sti:</translation>
+    </message>
+    <message>
+        <source>Custom Backups Threshold:</source>
+        <translation>Brugerdefineret sikkerhedskopieringstærskel:</translation>
+    </message>
+    <message>
         <source>Salvage wallet</source>
         <translation>Opsumer tegnebog</translation>
     </message>
@@ -3369,10 +3222,6 @@ Enten mint højere nomineringer (så færre input er nødvendige) eller reducere
         <translation>Bekræft resync Blockchain</translation>
     </message>
     <message>
-        <source>Use up and down arrows to navigate history, and &lt;b&gt;Ctrl-L&lt;/b&gt; to clear screen.</source>
-        <translation>Brug piltasterne for at navigere rundt i historiedata, og &lt;b&gt;Ctrl-L&lt;/b&gt; for at tømme skærmen.</translation>
-    </message>
-    <message>
         <source>Type &lt;b&gt;help&lt;/b&gt; for an overview of available commands.</source>
         <translation>Tast &lt;b&gt;help&gt; for at få en oversigt over tilgængelige kommandoer</translation>
     </message>
@@ -3444,6 +3293,14 @@ Enten mint højere nomineringer (så færre input er nødvendige) eller reducere
         <translation>Valgfri opmærkning som tilknyttes den nye modtageradresse.</translation>
     </message>
     <message>
+        <source>&amp;Address:</source>
+        <translation>&amp;adresse</translation>
+    </message>
+    <message>
+        <source>A&amp;mount:</source>
+        <translation>A&amp;mount</translation>
+    </message>
+    <message>
         <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Helium network.</source>
         <translation>Valgfri besked som vedhæftes betalingsanmodnigen, og som bliver vist når anmodningen åbnes. Note: Beskeden fremsendes ikke sammen med betalingen, når denne sendes ud på Helium netværket.</translation>
     </message>
@@ -3466,10 +3323,6 @@ Enten mint højere nomineringer (så færre input er nødvendige) eller reducere
     <message>
         <source>An optional amount to request. Leave this empty or zero to not request a specific amount.</source>
         <translation>Beløbsfeltet er valgfrit. Efterlad det tomt, eller med værdien 0 for at anmode om et beløb, som afsenderen bestemmer.</translation>
-    </message>
-    <message>
-        <source>&amp;Amount:</source>
-        <translation>&amp;Beløb</translation>
     </message>
     <message>
         <source>&amp;Request payment</source>
@@ -3514,6 +3367,10 @@ Enten mint højere nomineringer (så færre input er nødvendige) eller reducere
     <message>
         <source>Copy amount</source>
         <translation>Kopiér beløb</translation>
+    </message>
+    <message>
+        <source>Copy address</source>
+        <translation>Kopiér adresse</translation>
     </message>
 </context>
 <context>
@@ -3584,6 +3441,10 @@ Enten mint højere nomineringer (så færre input er nødvendige) eller reducere
     <message>
         <source>Message</source>
         <translation>Besked</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Adresse</translation>
     </message>
     <message>
         <source>Amount</source>
@@ -3867,10 +3728,6 @@ Enten mint højere nomineringer (så færre input er nødvendige) eller reducere
     <message>
         <source>A fee %1 times higher than %2 per kB is considered an insanely high fee.</source>
         <translation>Et gebyr %1 gange højere end %2 pr. kilobyte er vanvittigt højt.</translation>
-    </message>
-    <message numerus="yes">
-        <source>Estimated to begin confirmation within %n block(s).</source>
-        <translation><numerusform>Forventer bekræftelse indenfor %n blokke</numerusform><numerusform>Forventer bekræftelse indenfor %n blokke</numerusform></translation>
     </message>
     <message>
         <source>The recipient address is not valid, please recheck.</source>
@@ -4194,10 +4051,6 @@ Enten mint højere nomineringer (så færre input er nødvendige) eller reducere
 </context>
 <context>
     <name>TransactionDesc</name>
-    <message numerus="yes">
-        <source>Open for %n more block(s)</source>
-        <translation><numerusform>Åbn for %n flere blokke</numerusform><numerusform>Åbn for %n flere blokke</numerusform></translation>
-    </message>
     <message>
         <source>Open until %1</source>
         <translation>Åbn frem til %1</translation>
@@ -4258,10 +4111,6 @@ Enten mint højere nomineringer (så færre input er nødvendige) eller reducere
         <source>, has not been successfully broadcast yet</source>
         <translation>, er ikke udsendt endnu</translation>
     </message>
-    <message numerus="yes">
-        <source>, broadcast through %n node(s)</source>
-        <translation><numerusform>, sendt gennem %n noder</numerusform><numerusform>, sendt gennem %n noder</numerusform></translation>
-    </message>
     <message>
         <source>Date</source>
         <translation>Dato</translation>
@@ -4301,10 +4150,6 @@ Enten mint højere nomineringer (så færre input er nødvendige) eller reducere
     <message>
         <source>Credit</source>
         <translation>Kredit</translation>
-    </message>
-    <message numerus="yes">
-        <source>matures in %n more block(s)</source>
-        <translation><numerusform>Modnes efter %n blokke</numerusform><numerusform>Modnes efter %n blokke</numerusform></translation>
     </message>
     <message>
         <source>not accepted</source>
@@ -4404,10 +4249,6 @@ Enten mint højere nomineringer (så færre input er nødvendige) eller reducere
         <source>Address</source>
         <translation>Adresse</translation>
     </message>
-    <message numerus="yes">
-        <source>Open for %n more block(s)</source>
-        <translation><numerusform>Åbn for %n flere blokke</numerusform><numerusform>Åbn for %n flere blokke</numerusform></translation>
-    </message>
     <message>
         <source>Open until %1</source>
         <translation>Åbn frem til %1</translation>
@@ -4457,6 +4298,14 @@ Enten mint højere nomineringer (så færre input er nødvendige) eller reducere
         <translation>Modtaget via tilsløring</translation>
     </message>
     <message>
+        <source>HLM Stake</source>
+        <translation>HLM Stake</translation>
+    </message>
+    <message>
+        <source>zHLM Stake</source>
+        <translation>zHLM Stake</translation>
+    </message>
+    <message>
         <source>Obfuscation Denominate</source>
         <translation>Tilslør designerede</translation>
     </message>
@@ -4471,6 +4320,34 @@ Enten mint højere nomineringer (så færre input er nødvendige) eller reducere
     <message>
         <source>Obfuscation Create Denominations</source>
         <translation>Opret tilsløret designering</translation>
+    </message>
+    <message>
+        <source>Converted HLM to zHLM</source>
+        <translation>Konverteret HLM til zHLM</translation>
+    </message>
+    <message>
+        <source>Spent zHLM</source>
+        <translation>Brugt zHlm</translation>
+    </message>
+    <message>
+        <source>Received HLM from zHLM</source>
+        <translation>Modtaget Hlm fra zHlm</translation>
+    </message>
+    <message>
+        <source>Minted Change as zHLM from zHLM Spend</source>
+        <translation>Minted Change som zHLM fra zHLM Spend</translation>
+    </message>
+    <message>
+        <source>Converted zHLM to HLM</source>
+        <translation>Konverteret HLM til zHLM</translation>
+    </message>
+    <message>
+        <source>Anonymous (zHLM Transaction)</source>
+        <translation>Anonym (zHLM Transaction)</translation>
+    </message>
+    <message>
+        <source>Anonymous (zHLM Stake)</source>
+        <translation>Anonym (zHLM Stake)</translation>
     </message>
     <message>
         <source>Sent to</source>
@@ -4680,6 +4557,14 @@ Enten mint højere nomineringer (så færre input er nødvendige) eller reducere
         <translation>Eksporteret!</translation>
     </message>
     <message>
+        <source>Received HLM from zHLM</source>
+        <translation>Modtaget Hlm fra zHlm</translation>
+    </message>
+    <message>
+        <source>Zerocoin Spend, Change in zHLM</source>
+        <translation>Zerocoin Spend, Ændring i zHLM</translation>
+    </message>
+    <message>
         <source>The transaction history was successfully saved to %1.</source>
         <translation>Transaktionshistorikken blev gemt i %1</translation>
     </message>
@@ -4747,6 +4632,10 @@ Enten mint højere nomineringer (så færre input er nødvendige) eller reducere
 <context>
     <name>ZHlmControlDialog</name>
     <message>
+        <source>Select zHLM to Spend</source>
+        <translation>Vælg zHLM for at bruge</translation>
+    </message>
+    <message>
         <source>Quantity</source>
         <translation>Antal</translation>
     </message>
@@ -4762,11 +4651,7 @@ Enten mint højere nomineringer (så færre input er nødvendige) eller reducere
         <source>Select/Deselect All</source>
         <translation>Vælg / Fravælg alle</translation>
     </message>
-    <message>
-        <source>Is Spendable</source>
-        <translation>Kan tilbringes</translation>
-    </message>
-</context>
+    </context>
 <context>
     <name>helium-core</name>
     <message>
@@ -4814,9 +4699,25 @@ Enten mint højere nomineringer (så færre input er nødvendige) eller reducere
         <translation>Slet alle tegnebogens transaktioner og genskab kun fra blokkæden ved at tilføje -rescan i forbindes med opstart.</translation>
     </message>
     <message>
+        <source>Delete all zerocoin spends and mints that have been recorded to the blockchain database and reindex them (0-1, default: %u)</source>
+        <translation>Slet alle zerocoin-udgifter og minter, der er blevet sendt til blockchain-databasen og geninddrive dem (0-1, standard: %u)</translation>
+    </message>
+    <message>
         <source>Distributed under the MIT software license, see the accompanying file COPYING or &lt;http://www.opensource.org/licenses/mit-license.php&gt;.</source>
         <translation>Distribueret under MIT software licensen. Se den vedlaget fil COPYING eller 
 &lt;http://www.opensource.org/licenses/mit-license.php&gt;. </translation>
+    </message>
+    <message>
+        <source>Enable automatic wallet backups triggered after each zHLM minting (0-1, default: %u)</source>
+        <translation>Aktivér automatiske wallet-sikkerhedskopier udløst efter hver zHlm-mintning (0-1, standard: %u)</translation>
+    </message>
+    <message>
+        <source>Enable or disable staking functionality for HLM inputs (0-1, default: %u)</source>
+        <translation>Aktiver eller deaktiver staking-funktionalitet for HLM-indgange (0-1, standard: %u)</translation>
+    </message>
+    <message>
+        <source>Enable or disable staking functionality for zHLM inputs (0-1, default: %u)</source>
+        <translation>Aktiver eller deaktiver staking-funktionalitet for zHLM-indgange (0-1, standard: %u)</translation>
     </message>
     <message>
         <source>Enable spork administration functionality with the appropriate private key.</source>
@@ -4861,10 +4762,6 @@ Enten mint højere nomineringer (så færre input er nødvendige) eller reducere
     <message>
         <source>Flush database activity from memory pool to disk log every &lt;n&gt; megabytes (default: %u)</source>
         <translation>Opsaml databaseaktiviteterne fra hukommelsespool og gem dem i loggen på disken for hver &lt;n&gt; megabytes (default: %u)</translation>
-    </message>
-    <message>
-        <source>Found unconfirmed denominated outputs, will wait till they confirm to continue.</source>
-        <translation>Der er fundet ubekræftede designerede outputs. Vent indtil de bekræftes for at fortsætte.</translation>
     </message>
     <message>
         <source>If paytxfee is not set, include enough fee so transactions begin confirmation on average within n blocks (default: %u)</source>
@@ -5051,10 +4948,6 @@ Enten mint højere nomineringer (så færre input er nødvendige) eller reducere
         <translation>Tillad DNS opslag for -addnode, -seednode og -connect</translation>
     </message>
     <message>
-        <source>Already have that input.</source>
-        <translation>Dette er allerede angivet</translation>
-    </message>
-    <message>
         <source>Always query for peer addresses via DNS lookup (default: %u)</source>
         <translation>Forespørg altid peer adresser via DNS opslag (default: %u)</translation>
     </message>
@@ -5075,18 +4968,6 @@ Enten mint højere nomineringer (så færre input er nødvendige) eller reducere
         <translation>Beregning af manglende akkumulatorer ...</translation>
     </message>
     <message>
-        <source>Can't denominate: no compatible inputs left.</source>
-        <translation>Kan ikke designere: Ingen kompatible inputs tilbage.</translation>
-    </message>
-    <message>
-        <source>Can't find random Masternode.</source>
-        <translation>Kan ikke finde en tilfældig masternode.</translation>
-    </message>
-    <message>
-        <source>Can't mix while sync in progress.</source>
-        <translation>Kan ikke usynliggøre så længe der synkroniseres.</translation>
-    </message>
-    <message>
         <source>Cannot downgrade wallet</source>
         <translation>Kan ikke nedgradere tegnebogen</translation>
     </message>
@@ -5105,10 +4986,6 @@ Enten mint højere nomineringer (så færre input er nødvendige) eller reducere
     <message>
         <source>Cannot write default address</source>
         <translation>Kan ikke skrive standardadressen</translation>
-    </message>
-    <message>
-        <source>Collateral not valid.</source>
-        <translation>Sikkerhed ikke gyldig</translation>
     </message>
     <message>
         <source>Connect only to the specified node(s)</source>
@@ -5195,14 +5072,6 @@ Enten mint højere nomineringer (så færre input er nødvendige) eller reducere
         <translation>Slå tilstanden "masternode" til (0-1 default: %u)</translation>
     </message>
     <message>
-        <source>Entries are full.</source>
-        <translation>Der er ikke plads til flere poster</translation>
-    </message>
-    <message>
-        <source>Error connecting to Masternode.</source>
-        <translation>Fejl ved oprettelse af forbindelse til masternode.</translation>
-    </message>
-    <message>
         <source>Error initializing block database</source>
         <translation>Fejl ved initialisering af blokdatabasen</translation>
     </message>
@@ -5239,16 +5108,16 @@ Enten mint højere nomineringer (så færre input er nødvendige) eller reducere
         <translation>Fejl ved genskabelse af den offentlige nøgle</translation>
     </message>
     <message>
+        <source>Error writing zerocoinDB to disk</source>
+        <translation>Fejl ved at skrive zerocoinDB til disk</translation>
+    </message>
+    <message>
         <source>Error</source>
         <translation>Fejl!</translation>
     </message>
     <message>
         <source>Error: A fatal internal error occured, see debug.log for details</source>
         <translation>Fejl! En fatal intern fejl opstod. Se debug.log for nærmere detaljer</translation>
-    </message>
-    <message>
-        <source>Error: Can't select current denominated inputs</source>
-        <translation>Fejl! Kan ikke vælge de aktuelt designerede inputs</translation>
     </message>
     <message>
         <source>Error: Disk space is low!</source>
@@ -5263,16 +5132,16 @@ Enten mint højere nomineringer (så færre input er nødvendige) eller reducere
         <translation>Fejl! Tegnebogen er låst. Det er ikke muligt at oprette transaktionen.</translation>
     </message>
     <message>
-        <source>Error: You already have pending entries in the Obfuscation pool</source>
-        <translation>Fejl! De har allerede ventende transaktioner i tilsløringsgruppen</translation>
-    </message>
-    <message>
         <source>Failed to calculate accumulator checkpoint</source>
         <translation>Kunne ikke beregne akkumulatorkontrolpunktet</translation>
     </message>
     <message>
         <source>Failed to listen on any port. Use -listen=0 if you want this.</source>
         <translation>Lytning på uspecificerede porte mislykkedes. Brug -listen=0 hvis De ønsker denne funktion.</translation>
+    </message>
+    <message>
+        <source>Failed to parse host:port string</source>
+        <translation>Failed to parse host:port string</translation>
     </message>
     <message>
         <source>Failed to read block</source>
@@ -5283,20 +5152,8 @@ Enten mint højere nomineringer (så færre input er nødvendige) eller reducere
         <translation>Gebyr (i HLM/kB) som skal tilføjes transaktionen der sendes (default: %s)</translation>
     </message>
     <message>
-        <source>Finalizing transaction.</source>
-        <translation>Færdiggør transaktionen.</translation>
-    </message>
-    <message>
         <source>Force safe mode (default: %u)</source>
         <translation>Gennemtving beskyttet tilstand (default: %u)</translation>
-    </message>
-    <message>
-        <source>Found enough users, signing ( waiting %s )</source>
-        <translation>Der er fundet tilstrækkeligt med brugere der underskriver (venter %s)</translation>
-    </message>
-    <message>
-        <source>Found enough users, signing ...</source>
-        <translation>Der er fundet tilstrækkeligt med brugere der underskriver...</translation>
     </message>
     <message>
         <source>Generate coins (default: %u)</source>
@@ -5323,14 +5180,6 @@ Enten mint højere nomineringer (så færre input er nødvendige) eller reducere
         <translation>Inkluder IP adressen i debug output (default: %u)</translation>
     </message>
     <message>
-        <source>Incompatible mode.</source>
-        <translation>Ikke kompatibel i denne tilstand</translation>
-    </message>
-    <message>
-        <source>Incompatible version.</source>
-        <translation>Ikke kompatibel version</translation>
-    </message>
-    <message>
         <source>Incorrect or no genesis block found. Wrong datadir for network?</source>
         <translation>Forkert, eller ikke genesis blok fundet. Er De sikker på, at det er den rigtige datadir der benyttes til netværket?</translation>
     </message>
@@ -5341,10 +5190,6 @@ Enten mint højere nomineringer (så færre input er nødvendige) eller reducere
     <message>
         <source>Initialization sanity check failed. Helium Core is shutting down.</source>
         <translation>Initiering af sanitetskontrollen fejlede. Helium core lukker ned. </translation>
-    </message>
-    <message>
-        <source>Input is not valid.</source>
-        <translation>Ugyldigt input</translation>
     </message>
     <message>
         <source>Insufficient funds</source>
@@ -5403,16 +5248,24 @@ Enten mint højere nomineringer (så færre input er nødvendige) eller reducere
         <translation>Ugyldig privat nøgle</translation>
     </message>
     <message>
-        <source>Invalid script detected.</source>
-        <translation>Ugyldigt script fundet.</translation>
-    </message>
-    <message>
         <source>Percentage of automatically minted Zerocoin  (1-100, default: %u)</source>
         <translation>Procentdel af automatisk mintede Zerocoin (10-100, standard: %u)</translation>
     </message>
     <message>
         <source>Reindex the HLM and zHLM money supply statistics</source>
         <translation>Reindex HLM og zHLM pengemængde statistikker</translation>
+    </message>
+    <message>
+        <source>Reindexing zerocoin database...</source>
+        <translation>Reindexing zerocoin database ...</translation>
+    </message>
+    <message>
+        <source>Reindexing zerocoin failed</source>
+        <translation>Reindexerende zerocoin mislykkedes</translation>
+    </message>
+    <message>
+        <source>Selected coins value is less than payment target</source>
+        <translation>Valgt mønter værdi er mindre end betalingsmål</translation>
     </message>
     <message>
         <source>SwiftX options:</source>
@@ -5475,6 +5328,14 @@ Enten mint højere nomineringer (så færre input er nødvendige) eller reducere
         <translation>Foretrukken Betegnelse for automatisk mintede Zerocoin (1/5/10/50/100/500/1000/5000), 0 uden præference. standard: %u)</translation>
     </message>
     <message>
+        <source>Specify custom backup path to add a copy of any automatic zHLM backup. If set as dir, every backup generates a timestamped file. If set as file, will rewrite to that file every backup. If backuppath is set as well, 4 backups will happen</source>
+        <translation>Angiv brugerdefineret backup-vej for at tilføje en kopi af enhver zHLM-backup. Hvis det er angivet som dig, genererer hver backup en tidsstempelet fil. Hvis den er angivet som fil, ønsker man at omskrive til den pågældende fil hver backup. Hvis backupath er indstillet, vil der ske 4 sikkerhedskopier</translation>
+    </message>
+    <message>
+        <source>Specify custom backup path to add a copy of any wallet backup. If set as dir, every backup generates a timestamped file. If set as file, will rewrite to that file every backup.</source>
+        <translation>Angiv en brugerdefineret backup-sti for at tilføje en kopi af en wallet-backup. Hvis det er angivet som dig, genererer hver backup en tidsstempelet fil. Hvis den er angivet som fil, ønsker man at omskrive til den pågældende fil hver backup.</translation>
+    </message>
+    <message>
         <source>SwiftX requires inputs with at least 6 confirmations, you might need to wait a few minutes and try again.</source>
         <translation>SwiftTX kræver mindst 6 bekræftelser. Vent nogle minutter og prøv igen.</translation>
     </message>
@@ -5531,12 +5392,16 @@ Enten mint højere nomineringer (så færre input er nødvendige) eller reducere
         <translation>Kunne ikke oprette mynte</translation>
     </message>
     <message>
-        <source>Failed to deserialize</source>
-        <translation>Kunne ikke deserialisere</translation>
+        <source>Failed to find Zerocoins in wallet.dat</source>
+        <translation>Kunne ikke finde Zerocoins i wallet.dat</translation>
     </message>
     <message>
         <source>Failed to select a zerocoin</source>
         <translation>Kunne ikke vælge en zerocoin</translation>
+    </message>
+    <message>
+        <source>Failed to wipe zerocoinDB</source>
+        <translation>Kunne ikke tørre zerocoinDB</translation>
     </message>
     <message>
         <source>Failed to write coin serial number into wallet</source>
@@ -5545,14 +5410,6 @@ Enten mint højere nomineringer (så færre input er nødvendige) eller reducere
     <message>
         <source>Keep at most &lt;n&gt; unconnectable transactions in memory (default: %u)</source>
         <translation>Behold højest &lt;n&gt; transaktioner i hukommelsen, der ikke kan forbindes (default: %u)</translation>
-    </message>
-    <message>
-        <source>Last Obfuscation was too recent.</source>
-        <translation>Seneste tilsløring var for ny</translation>
-    </message>
-    <message>
-        <source>Last successful Obfuscation action was too recent.</source>
-        <translation>Seneste succesfulde tilsløring var for ny</translation>
     </message>
     <message>
         <source>Limit size of signature cache to &lt;n&gt; entries (default: %u)</source>
@@ -5607,10 +5464,6 @@ Enten mint højere nomineringer (så færre input er nødvendige) eller reducere
         <translation>Placering af auth cookie (standard: data dir)</translation>
     </message>
     <message>
-        <source>Lock is already in place.</source>
-        <translation>Er allerede låst</translation>
-    </message>
-    <message>
         <source>Lock masternodes from masternode configuration file (default: %u)</source>
         <translation>Lås masternoder fra masternode konfiguratinsfilen (default: %u)</translation>
     </message>
@@ -5627,14 +5480,6 @@ Enten mint højere nomineringer (så færre input er nødvendige) eller reducere
         <translation>Masternodeoptioner</translation>
     </message>
     <message>
-        <source>Masternode queue is full.</source>
-        <translation>Masternodens kø er fyldt op.</translation>
-    </message>
-    <message>
-        <source>Masternode:</source>
-        <translation>Masternode:</translation>
-    </message>
-    <message>
         <source>Maximum per-connection receive buffer, &lt;n&gt;*1000 bytes (default: %u)</source>
         <translation>Maksimal størrelse på per-connection receive buffer, &lt;n&gt;*1000 bytes (default: %u)</translation>
     </message>
@@ -5647,14 +5492,6 @@ Enten mint højere nomineringer (så færre input er nødvendige) eller reducere
         <translation>Mint gjorde det ikke til blockchain</translation>
     </message>
     <message>
-        <source>Missing input transaction information.</source>
-        <translation>Manglende transaktionsinformationsinput</translation>
-    </message>
-    <message>
-        <source>Mixing in progress...</source>
-        <translation>Usynliggørelse i gang</translation>
-    </message>
-    <message>
         <source>Need address because change is not exact</source>
         <translation>Har brug for adresse, fordi ændring ikke er nøjagtig</translation>
     </message>
@@ -5663,56 +5500,20 @@ Enten mint højere nomineringer (så færre input er nødvendige) eller reducere
         <translation>Der skal specificeres en port med -whitebind: '%s'</translation>
     </message>
     <message>
-        <source>No Masternodes detected.</source>
-        <translation>Ingen masternoder fundet.</translation>
-    </message>
-    <message>
-        <source>No compatible Masternode found.</source>
-        <translation>Ingen kompatible masternoder fundet.</translation>
-    </message>
-    <message>
-        <source>No funds detected in need of denominating.</source>
-        <translation>Ingen midler fundet til eventuel designering</translation>
-    </message>
-    <message>
-        <source>No matching denominations found for mixing.</source>
-        <translation>ingen matchende designerede midler til usynliggørelse.</translation>
-    </message>
-    <message>
         <source>Node relay options:</source>
         <translation>Node videresendelsesoptioner:</translation>
-    </message>
-    <message>
-        <source>Non-standard public key detected.</source>
-        <translation>Ikke standard offentlig nøgle fundet</translation>
-    </message>
-    <message>
-        <source>Not compatible with existing transactions.</source>
-        <translation>Ikke kompatibel med eksisterende transaktioner</translation>
     </message>
     <message>
         <source>Not enough file descriptors available.</source>
         <translation>Ikke nok fildescriptors tilgængelige</translation>
     </message>
     <message>
-        <source>Not in the Masternode list.</source>
-        <translation>Findes ikke i masternodelisten</translation>
-    </message>
-    <message>
         <source>Number of automatic wallet backups (default: 10)</source>
         <translation>Antal automatiske sikkerhedskopier af tegnebogen (default: 10)</translation>
     </message>
     <message>
-        <source>Obfuscation is idle.</source>
-        <translation>Tilsløringssystem ledigt</translation>
-    </message>
-    <message>
-        <source>Obfuscation request complete:</source>
-        <translation>Tilsløring færdig.</translation>
-    </message>
-    <message>
-        <source>Obfuscation request incomplete:</source>
-        <translation>Tilsløringsanmodning ikke færdiggjort</translation>
+        <source>Number of custom location backups to retain (default: %d)</source>
+        <translation>Antal brugerdefinerede positionsbackups til at beholde (standard: %d)</translation>
     </message>
     <message>
         <source>Only accept block chain matching built-in checkpoints (default: %u)</source>
@@ -5805,10 +5606,6 @@ Enten mint højere nomineringer (så færre input er nødvendige) eller reducere
     <message>
         <source>Send transactions as zero-fee transactions if possible (default: %u)</source>
         <translation>Send transaktioner som nugebyrstransaktioner hvis muligt (default: %u)</translation>
-    </message>
-    <message>
-        <source>Session not complete!</source>
-        <translation>Sessionen blev ikke færdiggjort!</translation>
     </message>
     <message>
         <source>Session timed out.</source>
@@ -5915,18 +5712,6 @@ Enten mint højere nomineringer (så færre input er nødvendige) eller reducere
         <translation>Stop kørsel efter import af blokke fra disken (default: %u)</translation>
     </message>
     <message>
-        <source>Submitted following entries to masternode: %u / %d</source>
-        <translation>Afsendt følgende posteringer til masternode %u / %d</translation>
-    </message>
-    <message>
-        <source>Submitted to masternode, waiting for more entries ( %u / %d ) %s</source>
-        <translation>Afsendt til masternode. Afventer flere posteringer (%u /%d) %s</translation>
-    </message>
-    <message>
-        <source>Submitted to masternode, waiting in queue %s</source>
-        <translation>Afsendt til masternode, venter i kø %s</translation>
-    </message>
-    <message>
         <source>Synchronization failed</source>
         <translation>Synkronisering mislykkedes.</translation>
     </message>
@@ -5955,16 +5740,12 @@ Enten mint højere nomineringer (så færre input er nødvendige) eller reducere
         <translation>Synkroniserer sporks...</translation>
     </message>
     <message>
+        <source>Syncing zHLM wallet...</source>
+        <translation>Syncing zHLM wallet ..</translation>
+    </message>
+    <message>
         <source>The coin spend has been used</source>
         <translation>Møntudgifterne er blevet brugt</translation>
-    </message>
-    <message>
-        <source>The new spend coin transaction did not verify</source>
-        <translation>Den nye udgiftsmønttransaktion bekræftede ikke</translation>
-    </message>
-    <message>
-        <source>The selected mint coin is an invalid coin</source>
-        <translation>Den valgte mintmønter er en ugyldig mønt</translation>
     </message>
     <message>
         <source>The transaction did not verify</source>
@@ -5981,10 +5762,6 @@ Enten mint højere nomineringer (så færre input er nødvendige) eller reducere
     <message>
         <source>This is intended for regression testing tools and app development.</source>
         <translation>Dette er ment som et tilbagekørings test- og appudviklingsværktøj.</translation>
-    </message>
-    <message>
-        <source>This is not a Masternode.</source>
-        <translation>Dette er ikke en masternode</translation>
     </message>
     <message>
         <source>Threshold for disconnecting misbehaving peers (default: %u)</source>
@@ -6019,18 +5796,6 @@ Enten mint højere nomineringer (så færre input er nødvendige) eller reducere
         <translation>Transaktionsbeløbet skal være positivt</translation>
     </message>
     <message>
-        <source>Transaction created successfully.</source>
-        <translation>Transaktionen blev oprettet.</translation>
-    </message>
-    <message>
-        <source>Transaction fees are too high.</source>
-        <translation>Transaktionsgebyrerne er for høje</translation>
-    </message>
-    <message>
-        <source>Transaction not valid.</source>
-        <translation>Transaktionen er ugyldig</translation>
-    </message>
-    <message>
         <source>Transaction too large for fee policy</source>
         <translation>Transaktionen er for stor til at opfylde gebyrpolitikken</translation>
     </message>
@@ -6039,24 +5804,12 @@ Enten mint højere nomineringer (så færre input er nødvendige) eller reducere
         <translation>Transaktionen er for stor</translation>
     </message>
     <message>
-        <source>Transmitting final transaction.</source>
-        <translation>Afsender sluttransaktionen.</translation>
-    </message>
-    <message>
-        <source>Try to spend with a higher security level to include more coins</source>
-        <translation>Prøv at bruge med et højere sikkerhedsniveau til at inkludere flere mønter</translation>
-    </message>
-    <message>
         <source>Trying to spend an already spent serial #, try again.</source>
         <translation>Forsøger at bruge en allerede brugt serie #, prøv igen.</translation>
     </message>
     <message>
         <source>Unable to bind to %s on this computer (bind returned error %s)</source>
         <translation>Det er ikke muligt at forbide til %s på denne computer (bind returnerede fejl %s)</translation>
-    </message>
-    <message>
-        <source>Unable to find transaction containing mint</source>
-        <translation>Kunne ikke finde transaktioner indeholdende mynte</translation>
     </message>
     <message>
         <source>Unable to sign spork message, wrong key?</source>
@@ -6069,10 +5822,6 @@ Enten mint højere nomineringer (så færre input er nødvendige) eller reducere
     <message>
         <source>Unknown network specified in -onlynet: '%s'</source>
         <translation>Ukendt netværk specificeret i -onlynet: '%s'</translation>
-    </message>
-    <message>
-        <source>Unknown state: id = %u</source>
-        <translation>Ukendt stade: id = %u</translation>
     </message>
     <message>
         <source>Upgrade wallet to latest format</source>
@@ -6099,8 +5848,8 @@ Enten mint højere nomineringer (så færre input er nødvendige) eller reducere
         <translation>Brugernavn til JSON-RPC forbindelser</translation>
     </message>
     <message>
-        <source>Value more than Obfuscation pool maximum allows.</source>
-        <translation>Værdien er højere end tilsløringsgruppen tillader</translation>
+        <source>Value is below the smallest available denomination (= 1) of zHLM</source>
+        <translation>Værdien er under den mindste tilgængelige værdi (= 1) for zHLM</translation>
     </message>
     <message>
         <source>Verifying blocks...</source>
@@ -6113,10 +5862,6 @@ Enten mint højere nomineringer (så færre input er nødvendige) eller reducere
     <message>
         <source>Wallet %s resides outside data directory %s</source>
         <translation>Tegnbogen %s befinder sig udenfor datamappen %s</translation>
-    </message>
-    <message>
-        <source>Wallet is locked.</source>
-        <translation>Tegnebogen er låst</translation>
     </message>
     <message>
         <source>Wallet needed to be rewritten: restart Helium Core to complete</source>
@@ -6147,24 +5892,12 @@ Enten mint højere nomineringer (så færre input er nødvendige) eller reducere
         <translation>Advarsel! Argumentet -debugnet understøttes ikke og blev ignoret. Brug -debug=net.</translation>
     </message>
     <message>
-        <source>Will retry...</source>
-        <translation>Prøver igen</translation>
-    </message>
-    <message>
         <source>You don't have enough Zerocoins in your wallet</source>
         <translation>Du har ikke nok Zerocoins i din tegnebog</translation>
     </message>
     <message>
         <source>You need to rebuild the database using -reindex to change -txindex</source>
         <translation>Databasen skal genopbygges ved hjælp af -reindex for at ændre -txindex</translation>
-    </message>
-    <message>
-        <source>Your entries added successfully.</source>
-        <translation>Posterne blev tilføjet.</translation>
-    </message>
-    <message>
-        <source>Your transaction was accepted into the pool!</source>
-        <translation>Transaktionen blev accepteret af POOL!</translation>
     </message>
     <message>
         <source>Zapping all transactions from wallet...</source>

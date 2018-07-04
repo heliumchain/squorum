@@ -681,6 +681,10 @@
         <translation>最新</translation>
     </message>
     <message>
+        <source>%1 and %2</source>
+        <translation>%1 和 %2</translation>
+    </message>
+    <message>
         <source>Catching up...</source>
         <translation>追赶…</translation>
     </message>
@@ -801,6 +805,13 @@ Address: %4
     <name>FreespaceChecker</name>
     </context>
 <context>
+    <name>GovernancePage</name>
+    <message>
+        <source>Form</source>
+        <translation>来自</translation>
+    </message>
+    </context>
+<context>
     <name>HelpMessageDialog</name>
     <message>
         <source>Helium Core</source>
@@ -892,9 +903,6 @@ Address: %4
     <name>MultisigDialog</name>
     </context>
 <context>
-    <name>ObfuscationConfig</name>
-    </context>
-<context>
     <name>OpenURIDialog</name>
     </context>
 <context>
@@ -982,10 +990,6 @@ Address: %4
     <message>
         <source>User Interface Theme:</source>
         <translation>界面主题（语言包）:</translation>
-    </message>
-    <message>
-        <source>&amp;Unit to show amounts in:</source>
-        <translation>&amp;单位显示金额</translation>
     </message>
     <message>
         <source>Choose the default subdivision unit to show in the interface and when sending coins.</source>
@@ -1117,7 +1121,14 @@ Address: %4
     </message>
     </context>
 <context>
+    <name>ProposalFrame</name>
+    </context>
+<context>
     <name>QObject</name>
+    <message>
+        <source>Helium Core</source>
+        <translation>PIVX Core</translation>
+    </message>
     </context>
 <context>
     <name>QRImageWidget</name>
@@ -1172,6 +1183,10 @@ Address: %4
         <translation>&amp;消息：</translation>
     </message>
     <message>
+        <source>A&amp;mount:</source>
+        <translation>A&amp;总计</translation>
+    </message>
+    <message>
         <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Helium network.</source>
         <translation>附加到付款请求的可选消息，将在请求打开时显示。 注意：消息不会在付款时通过Helium网络发送。</translation>
     </message>
@@ -1184,10 +1199,6 @@ Address: %4
         <translation>&amp;标签</translation>
     </message>
     <message>
-        <source>&amp;Amount:</source>
-        <translation>&amp;总计</translation>
-    </message>
-    <message>
         <source>&amp;Request payment</source>
         <translation>&amp;请求支付</translation>
     </message>
@@ -1195,7 +1206,11 @@ Address: %4
         <source>Copy message</source>
         <translation>复制消息</translation>
     </message>
-    </context>
+    <message>
+        <source>Copy address</source>
+        <translation>复制地址</translation>
+    </message>
+</context>
 <context>
     <name>ReceiveRequestDialog</name>
     <message>
@@ -1236,6 +1251,10 @@ Address: %4
     <message>
         <source>Message</source>
         <translation>消息 </translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>地址</translation>
     </message>
     <message>
         <source>(no label)</source>
@@ -1568,14 +1587,6 @@ Address: %4
     <message>
         <source>Warning</source>
         <translation>注意</translation>
-    </message>
-    <message>
-        <source>Your entries added successfully.</source>
-        <translation>您的输入成功添加。</translation>
-    </message>
-    <message>
-        <source>Your transaction was accepted into the pool!</source>
-        <translation>您的交易被矿池接受！</translation>
     </message>
     </context>
 </TS>

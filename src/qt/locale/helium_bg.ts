@@ -608,10 +608,6 @@
         <source>&amp;Command-line options</source>
         <translation>Опции за &amp;Командното-поле</translation>
     </message>
-    <message numerus="yes">
-        <source>Processed %n blocks of transaction history.</source>
-        <translation><numerusform>Обработени %n блока от преводната история.</numerusform><numerusform>Обработени %n блока от преводна история.</numerusform></translation>
-    </message>
     <message>
         <source>Synchronizing additional data: %p%</source>
         <translation>Синхронизиране на допълнитенни данни: %p%</translation>
@@ -736,10 +732,6 @@
         <source>Helium Core client</source>
         <translation>Клиент Helium Ядро</translation>
     </message>
-    <message numerus="yes">
-        <source>%n active connection(s) to Helium network</source>
-        <translation><numerusform> %n активни свръзки към Helium мрежата </numerusform><numerusform>%n активни свръзка(и) към Helium мрежата </numerusform></translation>
-    </message>
     <message>
         <source>Synchronizing with network...</source>
         <translation>Синхронизиране с мрежата...</translation>
@@ -760,21 +752,9 @@
         <source>Up to date</source>
         <translation>Актуален</translation>
     </message>
-    <message numerus="yes">
-        <source>%n hour(s)</source>
-        <translation><numerusform>%n часа</numerusform><numerusform>%n часа</numerusform></translation>
-    </message>
-    <message numerus="yes">
-        <source>%n week(s)</source>
-        <translation><numerusform>%n седмици</numerusform><numerusform>%n седмици</numerusform></translation>
-    </message>
     <message>
         <source>%1 and %2</source>
         <translation>%1 и %2</translation>
-    </message>
-    <message numerus="yes">
-        <source>%n year(s)</source>
-        <translation><numerusform>%n години</numerusform><numerusform>%n години</numerusform></translation>
     </message>
     <message>
         <source>Catching up...</source>
@@ -846,7 +826,7 @@ Address: %4
     </message>
     <message>
         <source>AutoMint is currently enabled and set to </source>
-        <translation>АвтоЕмитирането е включено в момента и настроено на </translation>
+        <translation>АвтоЕмисията е включена и настроена на</translation>
     </message>
     <message>
         <source>AutoMint is disabled</source>
@@ -860,7 +840,7 @@ Address: %4
         <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;locked&lt;/b&gt;</source>
         <translation>Портфейла е &lt;b&gt;шифриран&lt;/b&gt; и в момента е &lt;b&gt;отключен&lt;/b&gt;</translation>
     </message>
-</context>
+    </context>
 <context>
     <name>BlockExplorer</name>
     <message>
@@ -1221,6 +1201,17 @@ Address: %4
     </message>
 </context>
 <context>
+    <name>GovernancePage</name>
+    <message>
+        <source>Form</source>
+        <translation>От</translation>
+    </message>
+    <message>
+        <source>0</source>
+        <translation>0</translation>
+    </message>
+    </context>
+<context>
     <name>HelpMessageDialog</name>
     <message>
         <source>version</source>
@@ -1538,48 +1529,8 @@ MultiSend will not be activated unless you have clicked Activate</source>
         <translation>(без етикет)</translation>
     </message>
     <message>
-        <source>The entered address:
-</source>
-        <translation>Въведения адрес:
-</translation>
-    </message>
-    <message>
-        <source> is invalid.
-Please check the address and try again.</source>
-        <translation>е невалиден.
-Моля проверете адреса отново и опитайте пак.</translation>
-    </message>
-    <message>
-        <source>The total amount of your MultiSend vector is over 100% of your stake reward
-</source>
-        <translation>Сумата по Вашия вектор за МултиИзпращане надхвърля 100% от вашето стейк възнаграждение.
-</translation>
-    </message>
-    <message>
         <source>Please Enter 1 - 100 for percent.</source>
         <translation>Използвайте числата 1 - 100 за процент.</translation>
-    </message>
-    <message>
-        <source>Saved the MultiSend to memory, but failed saving properties to the database.
-</source>
-        <translation>МултиСенд е успешно запазен в паметта, но свойствата не бяха записани в базата данни.
-</translation>
-    </message>
-    <message>
-        <source>MultiSend Vector
-</source>
-        <translation>Вектор по МултиИзпращане
-</translation>
-    </message>
-    <message>
-        <source>Removed </source>
-        <translation>Премахнат</translation>
-    </message>
-    <message>
-        <source>Could not locate address
-</source>
-        <translation>Не намирам адреса
-</translation>
     </message>
 </context>
 <context>
@@ -1751,73 +1702,6 @@ Please be patient after clicking import.</source>
     <message>
         <source>Maximum (15)</source>
         <translation>Максимум (15)</translation>
-    </message>
-</context>
-<context>
-    <name>ObfuscationConfig</name>
-    <message>
-        <source>Configure Obfuscation</source>
-        <translation>Конфигурирай Обфускацията</translation>
-    </message>
-    <message>
-        <source>Basic Privacy</source>
-        <translation>Елементарна Поверителност</translation>
-    </message>
-    <message>
-        <source>High Privacy</source>
-        <translation>Високо ниво на Поверителност</translation>
-    </message>
-    <message>
-        <source>Maximum Privacy</source>
-        <translation>Максимална Поверителност</translation>
-    </message>
-    <message>
-        <source>Please select a privacy level.</source>
-        <translation>Изберете ниво на поверителност.</translation>
-    </message>
-    <message>
-        <source>Use 2 separate masternodes to mix funds up to 10000 HLM</source>
-        <translation>Използвай 2 различни мастърноуда за смесване на средства над 10000 HLM</translation>
-    </message>
-    <message>
-        <source>Use 8 separate masternodes to mix funds up to 10000 HLM</source>
-        <translation>Използвай 8 различни мастърноуда за да смесите средства до 10000 HLM</translation>
-    </message>
-    <message>
-        <source>Use 16 separate masternodes</source>
-        <translation>Използвай 16 различни мастърноуда</translation>
-    </message>
-    <message>
-        <source>This option is the quickest and will cost about ~0.025 HLM to anonymize 10000 HLM</source>
-        <translation>Това е най-бързия метод и ще струва около 0.025 HLM за да скриете 10000 HLM</translation>
-    </message>
-    <message>
-        <source>This option is moderately fast and will cost about 0.05 HLM to anonymize 10000 HLM</source>
-        <translation>Тази опция е сравнително бърза и ще струва около 0.05 HLM за да скриете 10000 HLM</translation>
-    </message>
-    <message>
-        <source>This is the slowest and most secure option. Using maximum anonymity will cost</source>
-        <translation>Това е най-бавния и най-сигурен вариант за скриване на HLM. Използването й ще струва</translation>
-    </message>
-    <message>
-        <source>0.1 HLM per 10000 HLM you anonymize.</source>
-        <translation>0.1 HLM за 10000 скрити HLM</translation>
-    </message>
-    <message>
-        <source>Obfuscation Configuration</source>
-        <translation>Конфигурация на Обфускацията</translation>
-    </message>
-    <message>
-        <source>Obfuscation was successfully set to basic (%1 and 2 rounds). You can change this at any time by opening Helium's configuration screen.</source>
-        <translation>Обфускацията е успешно конфигурирана на елементарно ниво (%1 и 2 кръга). Moжете да промените тази настройка по всяко време от същото място.</translation>
-    </message>
-    <message>
-        <source>Obfuscation was successfully set to high (%1 and 8 rounds). You can change this at any time by opening Helium's configuration screen.</source>
-        <translation>Обфускацията е успешно конфигурирана на високо ниво (%1 и 8 кръга). Moжете да промените тази настройка по всяко време от същото място.</translation>
-    </message>
-    <message>
-        <source>Obfuscation was successfully set to maximum (%1 and 16 rounds). You can change this at any time by opening Helium's configuration screen.</source>
-        <translation>Обфускацията е успешно конфигурирана на максимално ниво (%1 и 16 кръга). Moжете да промените тази настройка по всяко време от същото място.</translation>
     </message>
 </context>
 <context>
@@ -2024,10 +1908,6 @@ https://www.transifex.com/heliumchain/helium-project-translations</translation>
         <translation>Тема на интерфейса:</translation>
     </message>
     <message>
-        <source>&amp;Unit to show amounts in:</source>
-        <translation>Мерни единици:</translation>
-    </message>
-    <message>
         <source>Choose the default subdivision unit to show in the interface and when sending coins.</source>
         <translation>Изберете вида десетична запетая.</translation>
     </message>
@@ -2157,6 +2037,18 @@ https://www.transifex.com/heliumchain/helium-project-translations</translation>
     <message>
         <source>zHLM Balance</source>
         <translation>zHLM Наличности</translation>
+    </message>
+    <message>
+        <source>Mature: more than 20 confirmation and more than 1 mint of the same denomination after it was minted.
+These zHLM are spendable.</source>
+        <translation>Узрели: повече от 20 потвърждения и повече от 1 емисии от същата деноминация след като е била емитирана.
+Тези zHLM могат да се похарчат.</translation>
+    </message>
+    <message>
+        <source>Unconfirmed: less than 20 confirmations
+Immature: confirmed, but less than 1 mint of the same denomination after it was minted</source>
+        <translation>Непотвърдени: по-малко от 20 потвърждения
+Неузрели: потвърдени, но с по-малко от 1 емисии от същата деноминация след като са биле емитирани</translation>
     </message>
     <message>
         <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Helium network after a connection is established, but this process has not completed yet.</source>
@@ -2370,36 +2262,12 @@ To enable AutoMint change 'enablezeromint=0' to 'enablezeromint=1' in helium.con
         <translation>zHLM</translation>
     </message>
     <message>
-        <source>Available for minting are coins which are confirmed and not locked or Masternode collaterals.</source>
-        <translation>Наличните за емитиране са онези монети, които са биле потвърдени и не са заключени като гаранция в Главни Възли.</translation>
-    </message>
-    <message>
-        <source>Available for Minting:</source>
-        <translation>Налични за сечене:</translation>
-    </message>
-    <message>
-        <source>0.000 000 00 HLM</source>
-        <translation>0.000 000 00 HLM</translation>
-    </message>
-    <message>
         <source>Reset Zerocoin Wallet DB. Deletes transactions that did not make it into the blockchain.</source>
         <translation>Ресетна базата данни на Zerocoin Портфейла. Изтрива преводите, които не са успели да се качат на блокчена.</translation>
     </message>
     <message>
         <source>Reset</source>
         <translation>Ресет</translation>
-    </message>
-    <message>
-        <source>Coin Control...</source>
-        <translation>Монетен контрол...</translation>
-    </message>
-    <message>
-        <source>Quantity:</source>
-        <translation>Количество:</translation>
-    </message>
-    <message>
-        <source>Amount:</source>
-        <translation>Сума:</translation>
     </message>
     <message>
         <source>Rescan the complete blockchain for  Zerocoin mints and their meta-data.</source>
@@ -2416,6 +2284,14 @@ To enable AutoMint change 'enablezeromint=0' to 'enablezeromint=1' in helium.con
     <message>
         <source>PRIVACY</source>
         <translation>КОНФИДЕНЦИАЛНОСТ</translation>
+    </message>
+    <message>
+        <source>zHLM Control</source>
+        <translation>zHLM Контрол</translation>
+    </message>
+    <message>
+        <source>zHLM Selected:</source>
+        <translation>Избрани zHLM:</translation>
     </message>
     <message>
         <source>Quantity Selected:</source>
@@ -2448,18 +2324,6 @@ zHLM са узрели, тогава когато имат повече от 20 
     <message>
         <source>0 zHLM</source>
         <translation>0 zHLM</translation>
-    </message>
-    <message>
-        <source>Security Level for Zerocoin Transactions. More is better, but needs more time and resources.</source>
-        <translation>Сигурност на Zerocoin Преводите. Повече - означава по-добра сигурност, но изисква повече време и ресурси.</translation>
-    </message>
-    <message>
-        <source>Security Level:</source>
-        <translation>Сигурност:</translation>
-    </message>
-    <message>
-        <source>Security Level 1 - 100 (default: 42)</source>
-        <translation>Ниво на Сигурност 1 - 100 (42 по подразбиране)</translation>
     </message>
     <message>
         <source>Pay &amp;To:</source>
@@ -2532,6 +2396,12 @@ zHLM са узрели, тогава когато имат повече от 20 
     <message>
         <source>Denom. with value 1:</source>
         <translation>Деном. със стойност 1:</translation>
+    </message>
+    <message>
+        <source>Unconfirmed: less than 20 confirmations
+Immature: confirmed, but less than 1 mint of the same denomination after it was minted</source>
+        <translation>Непотвърдени: по-малко от 20 потвърждения
+Неузрели: потвърдени, но с по-малко от 1 емисии от същата деноминация след като са биле емитирани</translation>
     </message>
     <message>
         <source>Show the current status of automatic zHLM minting.
@@ -2719,12 +2589,18 @@ To change the percentage (no restart required):
         <translation>Състояние на монето-сечене: OK</translation>
     </message>
     <message>
-        <source>Copy quantity</source>
-        <translation>Копирай количеството</translation>
+        <source>Starting ResetMintZerocoin: rescanning complete blockchain, this will need up to 30 minutes depending on your hardware.
+Please be patient...</source>
+        <translation>Стартиране на ResetMintZerocoin: сканираме цялия блокчейн, това ще изисква около 30 минути, в зависимост от вашия компютър.
+Моля изчакате...</translation>
     </message>
     <message>
-        <source>Copy amount</source>
-        <translation>Копирай сумата</translation>
+        <source>zHLM Spend #: </source>
+        <translation>zHLM Похарчени #:</translation>
+    </message>
+    <message>
+        <source>zHLM Mint</source>
+        <translation>Сечене на zHLM</translation>
     </message>
     <message>
         <source> &lt;b&gt;enabled&lt;/b&gt;.</source>
@@ -2815,38 +2691,6 @@ To change the percentage (no restart required):
         <translation>Деноминация. &lt;b&gt;5000&lt;/b&gt;:</translation>
     </message>
     <message>
-        <source>Error: Your wallet is locked. Please enter the wallet passphrase first.</source>
-        <translation>Грешка: Портфейла е заключен. Моля първо въведете Вашата парола.</translation>
-    </message>
-    <message>
-        <source>Message: Enter an amount &gt; 0.</source>
-        <translation>Съобщение: Въведете стойност &gt; 0.</translation>
-    </message>
-    <message>
-        <source>Minting </source>
-        <translation>Сечене</translation>
-    </message>
-    <message>
-        <source>Successfully minted </source>
-        <translation>Успешно изсечени</translation>
-    </message>
-    <message>
-        <source> zHLM in </source>
-        <translation>zHLM в</translation>
-    </message>
-    <message>
-        <source> sec. Used denominations:
-</source>
-        <translation>сек. Използвани деноминации:
-</translation>
-    </message>
-    <message>
-        <source>Starting ResetMintZerocoin: rescanning complete blockchain, this will need up to 30 minutes depending on your hardware. 
-Please be patient...</source>
-        <translation>Стартиране на ResetMintZerocoin: сканираме цялия блокчейн, това ще изисква около 30 минути, в зависимост от вашия компютър.
-Моля изчакате...</translation>
-    </message>
-    <message>
         <source>Duration: </source>
         <translation>Времетраене:</translation>
     </message>
@@ -2889,36 +2733,12 @@ Please be patient...</source>
         <translation>на ново-генериран (неизползван до сега и поради това - анонимен) локален адрес &lt;br /&gt;</translation>
     </message>
     <message>
-        <source>with Security Level </source>
-        <translation>с Ниво на Сигурност</translation>
-    </message>
-    <message>
         <source>Confirm send coins</source>
         <translation>Потвърждаване на изпращането</translation>
     </message>
     <message>
-        <source>Spending Zerocoin.
-Computationally expensive, might need several minutes depending on the selected Security Level and your hardware. 
-Please be patient...</source>
-        <translation>Харчене на Zerocoin.
-Математически скъп превод, който може да има нужда от няколко минути за потвърждение, в зависимост от избраното Ниво на Сигурност и Вашият хардуер.
-Моля проявете търпение...</translation>
-    </message>
-    <message>
-        <source>Too much inputs (</source>
-        <translation>Твърде много входящи (</translation>
-    </message>
-    <message>
-        <source>) needed. 
-Maximum allowed: </source>
-        <translation>) нужни.
-Максимум позволени:</translation>
-    </message>
-    <message>
-        <source>
-Either mint higher denominations (so fewer inputs are needed) or reduce the amount to spend.</source>
-        <translation>
-Или емитирайте по-големи деноминации (за да се ползват по малко входящи) или намалете сумата за плащане.</translation>
+        <source>Failed to fetch mint associated with serial hash</source>
+        <translation>Неуспешно извличане на мента, свързана със сериен хеш</translation>
     </message>
     <message>
         <source>Spend Zerocoin failed with status = </source>
@@ -2957,6 +2777,9 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>такса:</translation>
     </message>
 </context>
+<context>
+    <name>ProposalFrame</name>
+    </context>
 <context>
     <name>QObject</name>
     <message>
@@ -3007,7 +2830,11 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <source>%1 ms</source>
         <translation>%1 милисек.</translation>
     </message>
-</context>
+    <message>
+        <source>Helium Core</source>
+        <translation>Helium Ядро</translation>
+    </message>
+    </context>
 <context>
     <name>QRImageWidget</name>
     <message>
@@ -3234,6 +3061,18 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Времево отлагане</translation>
     </message>
     <message>
+        <source>Custom Backup Path:</source>
+        <translation>Персонален резервен път:</translation>
+    </message>
+    <message>
+        <source>Custom zHLM Backup Path:</source>
+        <translation>Персонализиран zHLM резервен път:</translation>
+    </message>
+    <message>
+        <source>Custom Backups Threshold:</source>
+        <translation>Праг на персонализирани резервни копия:</translation>
+    </message>
+    <message>
         <source>Salvage wallet</source>
         <translation>Спаси портфейл</translation>
     </message>
@@ -3358,10 +3197,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Потвърдете ресинх на Блокчейна</translation>
     </message>
     <message>
-        <source>Use up and down arrows to navigate history, and &lt;b&gt;Ctrl-L&lt;/b&gt; to clear screen.</source>
-        <translation>Използвайте стрелките за на доре и на долу, за да разгледате историята и &lt;b&gt;Ctrol-L&lt;/b&gt;за да изчистите екрана.</translation>
-    </message>
-    <message>
         <source>Type &lt;b&gt;help&lt;/b&gt; for an overview of available commands.</source>
         <translation>Напишете &lt;b&gt;help&lt;/b&gt; за списък с възможните команди.</translation>
     </message>
@@ -3433,6 +3268,10 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Незадължителен етикет, който да асоциираме с адреса за получаване.</translation>
     </message>
     <message>
+        <source>A&amp;mount:</source>
+        <translation>Сума:</translation>
+    </message>
+    <message>
         <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Helium network.</source>
         <translation>Съобщение свободен текст, което да се прикачи към платежното нареждане, за да бъде показано когато нареждането се отвори от клиента на когото е изпратено. Обърнете внимание, че съобщението няма да бъде изпратено заедно с плащането по Helium мрежата.</translation>
     </message>
@@ -3455,10 +3294,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     <message>
         <source>An optional amount to request. Leave this empty or zero to not request a specific amount.</source>
         <translation>Незадължителна сума за поискване. Оставете полето празно или напишете нула, за да не изисквате определена сума.</translation>
-    </message>
-    <message>
-        <source>&amp;Amount:</source>
-        <translation>&amp;Сума:</translation>
     </message>
     <message>
         <source>&amp;Request payment</source>
@@ -3503,6 +3338,10 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     <message>
         <source>Copy amount</source>
         <translation>Копирай сумата</translation>
+    </message>
+    <message>
+        <source>Copy address</source>
+        <translation>Копирай адрес</translation>
     </message>
 </context>
 <context>
@@ -3573,6 +3412,10 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     <message>
         <source>Message</source>
         <translation>Съобщение</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Адрес</translation>
     </message>
     <message>
         <source>Amount</source>
@@ -3856,10 +3699,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     <message>
         <source>A fee %1 times higher than %2 per kB is considered an insanely high fee.</source>
         <translation>Такса %1 пъти по-голяма от %2 за кБ се счита неразумно голяма такса.</translation>
-    </message>
-    <message numerus="yes">
-        <source>Estimated to begin confirmation within %n block(s).</source>
-        <translation><numerusform>Очаквано начало на потвърждения след %n блока.</numerusform><numerusform>Очаквано начало на потвърждения след %n блока.</numerusform></translation>
     </message>
     <message>
         <source>The recipient address is not valid, please recheck.</source>
@@ -4183,10 +4022,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
 </context>
 <context>
     <name>TransactionDesc</name>
-    <message numerus="yes">
-        <source>Open for %n more block(s)</source>
-        <translation><numerusform>Отворен за още %n блока</numerusform><numerusform>Отворен за още %n блока</numerusform></translation>
-    </message>
     <message>
         <source>Open until %1</source>
         <translation>Отворен до %1</translation>
@@ -4247,10 +4082,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <source>, has not been successfully broadcast yet</source>
         <translation>, все още неуспешно обявени</translation>
     </message>
-    <message numerus="yes">
-        <source>, broadcast through %n node(s)</source>
-        <translation><numerusform>, обявени през %n възела</numerusform><numerusform>, обявени през %n нода</numerusform></translation>
-    </message>
     <message>
         <source>Date</source>
         <translation>Дата</translation>
@@ -4290,10 +4121,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     <message>
         <source>Credit</source>
         <translation>Кредит</translation>
-    </message>
-    <message numerus="yes">
-        <source>matures in %n more block(s)</source>
-        <translation><numerusform>узрява след още %n блока</numerusform><numerusform>узрява след още %n блока</numerusform></translation>
     </message>
     <message>
         <source>not accepted</source>
@@ -4393,10 +4220,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <source>Address</source>
         <translation>Адрес</translation>
     </message>
-    <message numerus="yes">
-        <source>Open for %n more block(s)</source>
-        <translation><numerusform>Отворен за още %n блока</numerusform><numerusform>Отворен за още %n блока</numerusform></translation>
-    </message>
     <message>
         <source>Open until %1</source>
         <translation>Отворен до %1</translation>
@@ -4446,6 +4269,14 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Получен посредством обфускация</translation>
     </message>
     <message>
+        <source>HLM Stake</source>
+        <translation>HLM Stake</translation>
+    </message>
+    <message>
+        <source>zHLM Stake</source>
+        <translation>zHLM Stake</translation>
+    </message>
+    <message>
         <source>Obfuscation Denominate</source>
         <translation>Деноминация на обфускация</translation>
     </message>
@@ -4460,6 +4291,34 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     <message>
         <source>Obfuscation Create Denominations</source>
         <translation>Обфускация и направа на Деноминации</translation>
+    </message>
+    <message>
+        <source>Converted HLM to zHLM</source>
+        <translation>Конвертиран HLM във zHLM</translation>
+    </message>
+    <message>
+        <source>Spent zHLM</source>
+        <translation>Похарчени zHLM</translation>
+    </message>
+    <message>
+        <source>Received HLM from zHLM</source>
+        <translation>Получен HLM от zHLM</translation>
+    </message>
+    <message>
+        <source>Minted Change as zHLM from zHLM Spend</source>
+        <translation>Исечено ресто като zHLM от похарчените zHLM</translation>
+    </message>
+    <message>
+        <source>Converted zHLM to HLM</source>
+        <translation>Конвертиран zHLM във HLM</translation>
+    </message>
+    <message>
+        <source>Anonymous (zHLM Transaction)</source>
+        <translation>Анонимен (транзакция zHLM)</translation>
+    </message>
+    <message>
+        <source>Anonymous (zHLM Stake)</source>
+        <translation>Анонимен (zHLM Stake)</translation>
     </message>
     <message>
         <source>Sent to</source>
@@ -4669,6 +4528,14 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Експортирането Успешно</translation>
     </message>
     <message>
+        <source>Received HLM from zHLM</source>
+        <translation>Получен HLM от zHLM</translation>
+    </message>
+    <message>
+        <source>Zerocoin Spend, Change in zHLM</source>
+        <translation>Харчене на Zerocoin, Ресто в zHLM</translation>
+    </message>
+    <message>
         <source>The transaction history was successfully saved to %1.</source>
         <translation>Преводната история бе успешно запазена в %1.</translation>
     </message>
@@ -4736,6 +4603,10 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
 <context>
     <name>ZHlmControlDialog</name>
     <message>
+        <source>Select zHLM to Spend</source>
+        <translation>Изберете zHLM за Изпращане</translation>
+    </message>
+    <message>
         <source>Quantity</source>
         <translation>Количество</translation>
     </message>
@@ -4751,11 +4622,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <source>Select/Deselect All</source>
         <translation>Избери/Премахни Всички</translation>
     </message>
-    <message>
-        <source>Is Spendable</source>
-        <translation>В Налични за харечене</translation>
-    </message>
-</context>
+    </context>
 <context>
     <name>helium-core</name>
     <message>
@@ -4803,8 +4670,24 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Изтрий всички преводи от портфейла и възстанови само тези части от блокчейна - сканира при стартиране.</translation>
     </message>
     <message>
+        <source>Delete all zerocoin spends and mints that have been recorded to the blockchain database and reindex them (0-1, default: %u)</source>
+        <translation>Изтрийте всички разходи за нулево злато и монетните дворове, които са записани в блока за блокиране и ги възстановете (0-1, по подразбиране: %u)</translation>
+    </message>
+    <message>
         <source>Distributed under the MIT software license, see the accompanying file COPYING or &lt;http://www.opensource.org/licenses/mit-license.php&gt;.</source>
         <translation>Разпространява се пот MIT софтуерен лиценз, виж съпровождащия файл от &lt;http://www.opensource.org/licenses/mit-license.php&gt;.</translation>
+    </message>
+    <message>
+        <source>Enable automatic wallet backups triggered after each zHLM minting (0-1, default: %u)</source>
+        <translation>Включи автоматичните бекъпи на портфейла след всяко zHLM емитиране (0-1, по подразбиране: %u)</translation>
+    </message>
+    <message>
+        <source>Enable or disable staking functionality for HLM inputs (0-1, default: %u)</source>
+        <translation>Активиране или деактивиране на функцията за зареждане за HLM входове (0-1, по подразбиране: %u)</translation>
+    </message>
+    <message>
+        <source>Enable or disable staking functionality for zHLM inputs (0-1, default: %u)</source>
+        <translation>Активиране или деактивиране на функцията за зареждане за zHLM входове (0-1, по подразбиране: %u)</translation>
     </message>
     <message>
         <source>Enable spork administration functionality with the appropriate private key.</source>
@@ -4849,10 +4732,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     <message>
         <source>Flush database activity from memory pool to disk log every &lt;n&gt; megabytes (default: %u)</source>
         <translation>Изпразни паметта за дейности по базата данни в лог файл на диска на всеки &lt;n&gt; мегабайта (default: %u)</translation>
-    </message>
-    <message>
-        <source>Found unconfirmed denominated outputs, will wait till they confirm to continue.</source>
-        <translation>Намерени са непотвърдени деноминации, ще изчакаме докато се потвърдят преди да продължим.</translation>
     </message>
     <message>
         <source>If paytxfee is not set, include enough fee so transactions begin confirmation on average within n blocks (default: %u)</source>
@@ -5039,10 +4918,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Позволявай DNS запитвания за -addnote, -seednode и -connect</translation>
     </message>
     <message>
-        <source>Already have that input.</source>
-        <translation>Този въвод вече съществува.</translation>
-    </message>
-    <message>
         <source>Always query for peer addresses via DNS lookup (default: %u)</source>
         <translation>Винаги извършвай запитване за пиъри посредствим DNS търсене (по подразбиране: %u)</translation>
     </message>
@@ -5063,18 +4938,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Изчислява липсващите акумулатори...</translation>
     </message>
     <message>
-        <source>Can't denominate: no compatible inputs left.</source>
-        <translation>Не може да деноминира: не са останали съвместими входящи.</translation>
-    </message>
-    <message>
-        <source>Can't find random Masternode.</source>
-        <translation>Не откривам случан Главен възел.</translation>
-    </message>
-    <message>
-        <source>Can't mix while sync in progress.</source>
-        <translation>Не може да се миксира по време на синхронизация.</translation>
-    </message>
-    <message>
         <source>Cannot downgrade wallet</source>
         <translation>Променяне софтуерната версия на портфейла към по-ниска е невъзможно.</translation>
     </message>
@@ -5093,10 +4956,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     <message>
         <source>Cannot write default address</source>
         <translation>Не можем да запишем адреса по подразбиране</translation>
-    </message>
-    <message>
-        <source>Collateral not valid.</source>
-        <translation>Гаранцията е невалидна.</translation>
     </message>
     <message>
         <source>Connect only to the specified node(s)</source>
@@ -5183,14 +5042,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Вкл. клиента да действа като влаген възел (0-1, по подразбиране: %u)</translation>
     </message>
     <message>
-        <source>Entries are full.</source>
-        <translation>Запълнени полета.</translation>
-    </message>
-    <message>
-        <source>Error connecting to Masternode.</source>
-        <translation>Грешка при свързването с Главен възел.</translation>
-    </message>
-    <message>
         <source>Error initializing block database</source>
         <translation>Грешка при стартирането на блок базата данни</translation>
     </message>
@@ -5235,10 +5086,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Грешка: Фатална вътрешна грешка, вижте debug.log за повече подробности.</translation>
     </message>
     <message>
-        <source>Error: Can't select current denominated inputs</source>
-        <translation>Грешка: Така зададените деноминации не могат да бъдат избрани</translation>
-    </message>
-    <message>
         <source>Error: Disk space is low!</source>
         <translation>Грешка: Намаляващо Дисково пространство!</translation>
     </message>
@@ -5249,10 +5096,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     <message>
         <source>Error: Wallet locked, unable to create transaction!</source>
         <translation>Грешка: Портфейла е заключен, неуспешен превод!</translation>
-    </message>
-    <message>
-        <source>Error: You already have pending entries in the Obfuscation pool</source>
-        <translation>Грешка: Вече имате изчакващи входящи в басейна за Обфускация</translation>
     </message>
     <message>
         <source>Failed to calculate accumulator checkpoint</source>
@@ -5271,20 +5114,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Такса (в HLM/kB), която да се добави към изходящи преводи (по подразбиране: %s)</translation>
     </message>
     <message>
-        <source>Finalizing transaction.</source>
-        <translation>Приключване на превода.</translation>
-    </message>
-    <message>
         <source>Force safe mode (default: %u)</source>
         <translation>Предизвикай безопасен режим (по подразбиране: %u)</translation>
-    </message>
-    <message>
-        <source>Found enough users, signing ( waiting %s )</source>
-        <translation>Имаме достатъчно потребители, подписване ( изчаква %s )</translation>
-    </message>
-    <message>
-        <source>Found enough users, signing ...</source>
-        <translation>Имаме достатучно потребители, подписване ...</translation>
     </message>
     <message>
         <source>Generate coins (default: %u)</source>
@@ -5311,14 +5142,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Включи и IP адресите при дебъг (по подразбиране: %u)</translation>
     </message>
     <message>
-        <source>Incompatible mode.</source>
-        <translation>Несъвместим режим.</translation>
-    </message>
-    <message>
-        <source>Incompatible version.</source>
-        <translation>Несъвместима версия.</translation>
-    </message>
-    <message>
         <source>Incorrect or no genesis block found. Wrong datadir for network?</source>
         <translation>Няма намерен генезис блок или намерения е несъвместим. Грешен datadlr за мрежата?</translation>
     </message>
@@ -5329,10 +5152,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     <message>
         <source>Initialization sanity check failed. Helium Core is shutting down.</source>
         <translation>Стартирането на проверка на здравословното състояние на портфейла се провали. Изключваме Портфейла.</translation>
-    </message>
-    <message>
-        <source>Input is not valid.</source>
-        <translation>Зададените стойности са невалидни.</translation>
     </message>
     <message>
         <source>Insufficient funds</source>
@@ -5391,16 +5210,24 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Грешен личен ключ.</translation>
     </message>
     <message>
-        <source>Invalid script detected.</source>
-        <translation>Невалиден скрипт, засечен.</translation>
-    </message>
-    <message>
         <source>Percentage of automatically minted Zerocoin  (1-100, default: %u)</source>
         <translation>Процент автоматично емитирани Zerocoin (1-100, по подразбиране: %u)</translation>
     </message>
     <message>
         <source>Reindex the HLM and zHLM money supply statistics</source>
         <translation>Индексирай наново HLM и zHLM данните по наличности</translation>
+    </message>
+    <message>
+        <source>Reindexing zerocoin database...</source>
+        <translation>Редексиране на база данни за нуроиди ...</translation>
+    </message>
+    <message>
+        <source>Reindexing zerocoin failed</source>
+        <translation>Повторното индексиране на зероцена се провали</translation>
+    </message>
+    <message>
+        <source>Selected coins value is less than payment target</source>
+        <translation>Избраната стойност на монетите е по-малка от целта за плащане</translation>
     </message>
     <message>
         <source>SwiftX options:</source>
@@ -5463,6 +5290,14 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Предпочитани деноминации за автоматично изсечените Zerocoin (1/5/10/50/100/500/1000/5000), 0 за каквито и да е. (По подразбиране: %u)</translation>
     </message>
     <message>
+        <source>Specify custom backup path to add a copy of any automatic zHLM backup. If set as dir, every backup generates a timestamped file. If set as file, will rewrite to that file every backup. If backuppath is set as well, 4 backups will happen</source>
+        <translation>Посочете персонализиран път за архивиране, за да добавите копие на всяко автоматично архивиране zHLM. Ако е зададено като реж., Всеки архив генерира файл с времева маркировка. Ако е зададен като файл, ще пренапише към този файл всеки архив. Ако е зададено и резервно копие, ще се случат 4 архиви</translation>
+    </message>
+    <message>
+        <source>Specify custom backup path to add a copy of any wallet backup. If set as dir, every backup generates a timestamped file. If set as file, will rewrite to that file every backup.</source>
+        <translation>Посочете персонализиран път за архивиране, за да добавите копие на всяко резервно копие на портфейла. Ако е зададено като реж., Всеки архив генерира файл с времева маркировка. Ако е зададен като файл, ще пренапише към този файл всеки архив.</translation>
+    </message>
+    <message>
         <source>SwiftX requires inputs with at least 6 confirmations, you might need to wait a few minutes and try again.</source>
         <translation>SwiftTX изисква входящи преводи с поне 6 потвърждения. Може да се наложи да изчакате още преди да опитате отново.</translation>
     </message>
@@ -5519,12 +5354,16 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Неуспешно емитиране</translation>
     </message>
     <message>
-        <source>Failed to deserialize</source>
-        <translation>Неуспешно изтриване на серийния номер</translation>
+        <source>Failed to find Zerocoins in wallet.dat</source>
+        <translation>Няма намерени Zerocoin монети в wallet.dat файла</translation>
     </message>
     <message>
         <source>Failed to select a zerocoin</source>
         <translation>Неуспешен избор на Zerocoin</translation>
+    </message>
+    <message>
+        <source>Failed to wipe zerocoinDB</source>
+        <translation>Изтриването на zerocoinDB не бе успешно</translation>
     </message>
     <message>
         <source>Failed to write coin serial number into wallet</source>
@@ -5533,14 +5372,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     <message>
         <source>Keep at most &lt;n&gt; unconnectable transactions in memory (default: %u)</source>
         <translation>Пази най-много &lt;n&gt; несвързани превода в паметта (по подразбиране: %u)</translation>
-    </message>
-    <message>
-        <source>Last Obfuscation was too recent.</source>
-        <translation>Последната обфускация бе твърде скоро.</translation>
-    </message>
-    <message>
-        <source>Last successful Obfuscation action was too recent.</source>
-        <translation>Последното действие по Обфускация е било твърде скоро.</translation>
     </message>
     <message>
         <source>Limit size of signature cache to &lt;n&gt; entries (default: %u)</source>
@@ -5595,10 +5426,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Местоположение на оторизационната бисквитка (по подразбиране: data dir)</translation>
     </message>
     <message>
-        <source>Lock is already in place.</source>
-        <translation>Вече е заключен.</translation>
-    </message>
-    <message>
         <source>Lock masternodes from masternode configuration file (default: %u)</source>
         <translation>Заключи главен възел от конфигурационния файл (по подразбиране: %u)</translation>
     </message>
@@ -5615,14 +5442,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Опции за Главни възли</translation>
     </message>
     <message>
-        <source>Masternode queue is full.</source>
-        <translation>Опашката за Главни възли е пълна.</translation>
-    </message>
-    <message>
-        <source>Masternode:</source>
-        <translation>Главен Възел:</translation>
-    </message>
-    <message>
         <source>Maximum per-connection receive buffer, &lt;n&gt;*1000 bytes (default: %u)</source>
         <translation>Максимум буфер за Получаване, за връзка, &lt;n&gt;*1000 байта (по подразбиране: %u)</translation>
     </message>
@@ -5635,14 +5454,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Емисията не успя да се включи в блокчейна</translation>
     </message>
     <message>
-        <source>Missing input transaction information.</source>
-        <translation>Липсваща вх. информация за превода.</translation>
-    </message>
-    <message>
-        <source>Mixing in progress...</source>
-        <translation>В момента тече смесване...</translation>
-    </message>
-    <message>
         <source>Need address because change is not exact</source>
         <translation>Необходим е адрес, понеже рестото не е кръгла сума</translation>
     </message>
@@ -5651,56 +5462,20 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Нужно е да се зададе порт с -whitebind: '%s'</translation>
     </message>
     <message>
-        <source>No Masternodes detected.</source>
-        <translation>Не се засичат Мастърноудове.</translation>
-    </message>
-    <message>
-        <source>No compatible Masternode found.</source>
-        <translation>Не е намерен съвместим Мастърноуд.</translation>
-    </message>
-    <message>
-        <source>No funds detected in need of denominating.</source>
-        <translation>Не засякохме средства, които да имат нужда от деноминация.</translation>
-    </message>
-    <message>
-        <source>No matching denominations found for mixing.</source>
-        <translation>Не намерихме съвпадащи деноминации за смесване.</translation>
-    </message>
-    <message>
         <source>Node relay options:</source>
         <translation>Опции на възел релето:</translation>
-    </message>
-    <message>
-        <source>Non-standard public key detected.</source>
-        <translation>Засякохме нестандартен публичен ключ.</translation>
-    </message>
-    <message>
-        <source>Not compatible with existing transactions.</source>
-        <translation>Несъвместимост със съществуващите преводи.</translation>
     </message>
     <message>
         <source>Not enough file descriptors available.</source>
         <translation>Недостатъчно налични файл описания.</translation>
     </message>
     <message>
-        <source>Not in the Masternode list.</source>
-        <translation>Не е в списъка с Главни възли.</translation>
-    </message>
-    <message>
         <source>Number of automatic wallet backups (default: 10)</source>
         <translation>Брой автоматични портфейлни копия (по подразбиране: 10)</translation>
     </message>
     <message>
-        <source>Obfuscation is idle.</source>
-        <translation>Обфускацията е в режим на изчакване.</translation>
-    </message>
-    <message>
-        <source>Obfuscation request complete:</source>
-        <translation>Обфускацията приключи.</translation>
-    </message>
-    <message>
-        <source>Obfuscation request incomplete:</source>
-        <translation>Обфускацията не успя да приключи.</translation>
+        <source>Number of custom location backups to retain (default: %d)</source>
+        <translation>Брой запазени резервни копия за местоположението (по подразбиране: %d)</translation>
     </message>
     <message>
         <source>Only accept block chain matching built-in checkpoints (default: %u)</source>
@@ -5793,10 +5568,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     <message>
         <source>Send transactions as zero-fee transactions if possible (default: %u)</source>
         <translation>Ако е възможно, изпращай транзакциите като нулево-таксуван превод (по подразбиране: %u)</translation>
-    </message>
-    <message>
-        <source>Session not complete!</source>
-        <translation>Недовърешна сесия!</translation>
     </message>
     <message>
         <source>Session timed out.</source>
@@ -5903,18 +5674,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Изключи се след импортирането на блоквоете от диска (default: %u)</translation>
     </message>
     <message>
-        <source>Submitted following entries to masternode: %u / %d</source>
-        <translation>Следните са изпратени до главния възел: %u / %d</translation>
-    </message>
-    <message>
-        <source>Submitted to masternode, waiting for more entries ( %u / %d ) %s</source>
-        <translation>Изпратени до главния възел, чакаме още ( %u %d ) %s</translation>
-    </message>
-    <message>
-        <source>Submitted to masternode, waiting in queue %s</source>
-        <translation>Изпратено до главния възел, чака си реда %s</translation>
-    </message>
-    <message>
         <source>Synchronization failed</source>
         <translation>Неуспешна синхронизация</translation>
     </message>
@@ -5943,16 +5702,12 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Синхронизиране на вилицо-лъжиците...</translation>
     </message>
     <message>
+        <source>Syncing zHLM wallet...</source>
+        <translation>Синхронизиране на zHLM портфейла ...</translation>
+    </message>
+    <message>
         <source>The coin spend has been used</source>
         <translation>Монетното плащане е използвано</translation>
-    </message>
-    <message>
-        <source>The new spend coin transaction did not verify</source>
-        <translation>Новото преводно плащане не бе потвърдено</translation>
-    </message>
-    <message>
-        <source>The selected mint coin is an invalid coin</source>
-        <translation>Избраната емисия е невалидна монета</translation>
     </message>
     <message>
         <source>The transaction did not verify</source>
@@ -5969,10 +5724,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     <message>
         <source>This is intended for regression testing tools and app development.</source>
         <translation>Това е за регресионен тест и софтуерна разработка.</translation>
-    </message>
-    <message>
-        <source>This is not a Masternode.</source>
-        <translation>Това не е Главен Възел.</translation>
     </message>
     <message>
         <source>Threshold for disconnecting misbehaving peers (default: %u)</source>
@@ -6007,18 +5758,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Преводните суми трябва да са положително число</translation>
     </message>
     <message>
-        <source>Transaction created successfully.</source>
-        <translation>Превода е създаден успешно</translation>
-    </message>
-    <message>
-        <source>Transaction fees are too high.</source>
-        <translation>Преводните таски са твърде високи.</translation>
-    </message>
-    <message>
-        <source>Transaction not valid.</source>
-        <translation>Превода е невалиден.</translation>
-    </message>
-    <message>
         <source>Transaction too large for fee policy</source>
         <translation>Твърде голям превод за таксионната политика</translation>
     </message>
@@ -6027,24 +5766,12 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Твърде голям превод</translation>
     </message>
     <message>
-        <source>Transmitting final transaction.</source>
-        <translation>Изпращане на последния превод.</translation>
-    </message>
-    <message>
-        <source>Try to spend with a higher security level to include more coins</source>
-        <translation>Опитайте да платите с по-високо ниво на сигурност, за да включите повече монети.</translation>
-    </message>
-    <message>
         <source>Trying to spend an already spent serial #, try again.</source>
         <translation>Опитвате се да похарчите, вече похарчен сериен номер. Опитайте отново.</translation>
     </message>
     <message>
         <source>Unable to bind to %s on this computer (bind returned error %s)</source>
         <translation>Не можем да прикачим %s към този компютър (прикачването даде грешка %s)</translation>
-    </message>
-    <message>
-        <source>Unable to find transaction containing mint</source>
-        <translation>Не можем да намерим превод, който съдържа емисията</translation>
     </message>
     <message>
         <source>Unable to sign spork message, wrong key?</source>
@@ -6057,10 +5784,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     <message>
         <source>Unknown network specified in -onlynet: '%s'</source>
         <translation>Непозната мрежа е зададена в -onlynet: '%s'</translation>
-    </message>
-    <message>
-        <source>Unknown state: id = %u</source>
-        <translation>Непознато състояние: id = %u</translation>
     </message>
     <message>
         <source>Upgrade wallet to latest format</source>
@@ -6087,8 +5810,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Потребителско име за JSON-RPC свръзките</translation>
     </message>
     <message>
-        <source>Value more than Obfuscation pool maximum allows.</source>
-        <translation>Стойността е по-голяма от позволената от басейна Обфускация.</translation>
+        <source>Value is below the smallest available denomination (= 1) of zHLM</source>
+        <translation>Стойността е под най-малката налична деноминация (= 1) в zHLM</translation>
     </message>
     <message>
         <source>Verifying blocks...</source>
@@ -6101,10 +5824,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     <message>
         <source>Wallet %s resides outside data directory %s</source>
         <translation>Портфейла %s е извън папката с данни %s</translation>
-    </message>
-    <message>
-        <source>Wallet is locked.</source>
-        <translation>Портфейла е заключен.</translation>
     </message>
     <message>
         <source>Wallet needed to be rewritten: restart Helium Core to complete</source>
@@ -6135,24 +5854,12 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Внимание: Неподдържанния аргумент -debugnet бе игнориран, използвайте -debug=net.</translation>
     </message>
     <message>
-        <source>Will retry...</source>
-        <translation>Ще опита...</translation>
-    </message>
-    <message>
         <source>You don't have enough Zerocoins in your wallet</source>
         <translation>Нямате достатъчно Zerocoin в портфейла си</translation>
     </message>
     <message>
         <source>You need to rebuild the database using -reindex to change -txindex</source>
         <translation>Трябва да построите базата данни наново, използвайки -reindex вместо -txindex</translation>
-    </message>
-    <message>
-        <source>Your entries added successfully.</source>
-        <translation>Въведени успешно.</translation>
-    </message>
-    <message>
-        <source>Your transaction was accepted into the pool!</source>
-        <translation>Превода е приет в басейна!</translation>
     </message>
     <message>
         <source>Zapping all transactions from wallet...</source>

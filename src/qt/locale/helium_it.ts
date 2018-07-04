@@ -137,7 +137,7 @@
     </message>
     <message>
         <source>For anonymization, automint, and staking only</source>
-        <translation>Solo per anonimizzazione, automint e stake</translation>
+        <translation>Solo per anonimizzazione, conio automatico e stake</translation>
     </message>
     <message>
         <source>Enter the new passphrase to the wallet.&lt;br/&gt;Please use a passphrase of &lt;b&gt;ten or more random characters&lt;/b&gt;, or &lt;b&gt;eight or more words&lt;/b&gt;.</source>
@@ -578,7 +578,7 @@
     </message>
     <message>
         <source>&amp;Multisignature creation...</source>
-        <translation>Creazione &amp;Multifirma...</translation>
+        <translation>Creazione &amp;Firma multipla...</translation>
     </message>
     <message>
         <source>Create a new multisignature address and add it to this wallet</source>
@@ -598,7 +598,7 @@
     </message>
     <message>
         <source>Sign with a multisignature address</source>
-        <translation>Firma digitale con un indirizzo multifirma</translation>
+        <translation>Firma digitale con un indirizzo a firma multipla</translation>
     </message>
     <message>
         <source>Open &amp;URI...</source>
@@ -607,10 +607,6 @@
     <message>
         <source>&amp;Command-line options</source>
         <translation>Opzioni riga di &amp;Comando</translation>
-    </message>
-    <message numerus="yes">
-        <source>Processed %n blocks of transaction history.</source>
-        <translation><numerusform>Elaborato 1 blocco dalla cronologia delle transazioni</numerusform><numerusform>Elaborati %n blocchi dalla cronologia delle transazioni.</numerusform></translation>
     </message>
     <message>
         <source>Synchronizing additional data: %p%</source>
@@ -650,7 +646,7 @@
     </message>
     <message>
         <source>Send coins to a Helium address</source>
-        <translation>Invia monete all' indirizzo Helium</translation>
+        <translation>Invia valuta all'indirizzo Helium</translation>
     </message>
     <message>
         <source>Request payments (generates QR codes and helium: URIs)</source>
@@ -698,7 +694,7 @@
     </message>
     <message>
         <source>&amp;MultiSend</source>
-        <translation>Invio &amp;multiplo</translation>
+        <translation>&amp;MultiSend</translation>
     </message>
     <message>
         <source>MultiSend Settings</source>
@@ -736,10 +732,6 @@
         <source>Helium Core client</source>
         <translation>PIVX Core</translation>
     </message>
-    <message numerus="yes">
-        <source>%n active connection(s) to Helium network</source>
-        <translation><numerusform>%n connessione attiva alla rete HLMIX</numerusform><numerusform>%n connessioni attive alla rete HLMIX</numerusform></translation>
-    </message>
     <message>
         <source>Synchronizing with network...</source>
         <translation>Sincronizzazione con la rete ...</translation>
@@ -760,25 +752,9 @@
         <source>Up to date</source>
         <translation>Aggiornato</translation>
     </message>
-    <message numerus="yes">
-        <source>%n hour(s)</source>
-        <translation><numerusform>%n ora</numerusform><numerusform>%n ore</numerusform></translation>
-    </message>
-    <message numerus="yes">
-        <source>%n day(s)</source>
-        <translation><numerusform>%n giorno</numerusform><numerusform>%n giorni</numerusform></translation>
-    </message>
-    <message numerus="yes">
-        <source>%n week(s)</source>
-        <translation><numerusform>%n settimana</numerusform><numerusform>%n settimane</numerusform></translation>
-    </message>
     <message>
         <source>%1 and %2</source>
         <translation>%1 e %2</translation>
-    </message>
-    <message numerus="yes">
-        <source>%n year(s)</source>
-        <translation><numerusform>%n anno</numerusform><numerusform>%n anni</numerusform></translation>
     </message>
     <message>
         <source>Last received block was generated %1 ago.</source>
@@ -846,11 +822,11 @@ MultiSend: %1</translation>
     </message>
     <message>
         <source>AutoMint is currently enabled and set to </source>
-        <translation>AutoMint è attivo e impostato su</translation>
+        <translation>Conio automatico è attivo e impostato su</translation>
     </message>
     <message>
         <source>AutoMint is disabled</source>
-        <translation>AutoMint disabilitato</translation>
+        <translation>Conio automatico disabilitato</translation>
     </message>
     <message>
         <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;unlocked&lt;/b&gt;</source>
@@ -860,7 +836,7 @@ MultiSend: %1</translation>
         <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;locked&lt;/b&gt;</source>
         <translation>Il portafoglio è &lt;b&gt;crittografato&lt;/b&gt; e attualmente &lt;b&gt;bloccato&lt;/b&gt;</translation>
     </message>
-</context>
+    </context>
 <context>
     <name>BlockExplorer</name>
     <message>
@@ -944,6 +920,10 @@ MultiSend: %1</translation>
     <message>
         <source>(un)select all</source>
         <translation>(de)seleziona tutto</translation>
+    </message>
+    <message>
+        <source>toggle lock state</source>
+        <translation>Attiva/disattiva stato bloccato</translation>
     </message>
     <message>
         <source>Tree mode</source>
@@ -1036,6 +1016,10 @@ MultiSend: %1</translation>
     <message>
         <source>Copy dust</source>
         <translation>Copia polvere</translation>
+    </message>
+    <message>
+        <source>Copy change</source>
+        <translation>Copia resto</translation>
     </message>
     <message>
         <source>Please switch to "List mode" to use this function.</source>
@@ -1204,6 +1188,17 @@ MultiSend: %1</translation>
         <translation>Impossibile creare la cartella dati qui.</translation>
     </message>
 </context>
+<context>
+    <name>GovernancePage</name>
+    <message>
+        <source>Form</source>
+        <translation>Modulo</translation>
+    </message>
+    <message>
+        <source>0</source>
+        <translation>0</translation>
+    </message>
+    </context>
 <context>
     <name>HelpMessageDialog</name>
     <message>
@@ -1413,19 +1408,33 @@ MultiSend: %1</translation>
     <name>MultiSendDialog</name>
     <message>
         <source>MultiSend</source>
-        <translation>Invio multiplo</translation>
+        <translation>MultiSend</translation>
     </message>
     <message>
         <source>Enter whole numbers 1 - 100</source>
         <translation>Inserire numeri interi 1 - 100</translation>
     </message>
     <message>
+        <source>Enter % to Give (1-100)</source>
+        <translation>Inserisci % da inviare (1-100)</translation>
+    </message>
+    <message>
         <source>Enter Address to Send to</source>
         <translation>Inserire indirizzo destinatario</translation>
     </message>
     <message>
+        <source>MultiSend allows you to automatically send up to 100% of your stake or masternode reward to a list of other Helium addresses after it matures.
+To Add: enter percentage to give and Helium address to add to the MultiSend vector.
+To Delete: Enter address to delete and press delete.
+MultiSend will not be activated unless you have clicked Activate</source>
+        <translation>MultiSend ti permette di inviare automaticamente ad una lista di indirizzi Helium fino al 100% delle ricompense di stake o masternodi, dopo che queste sono mature.
+Per Aggiunger: inserisci la percentuale da inviare e l'indirizzo Helium da aggiungere al vettore MultiSend.
+Per Eliminare: Inserisci l'indirizzo da eliminare e premi elimina.
+MultiSend non verrà attivato a meno che tu non prema su Attiva</translation>
+    </message>
+    <message>
         <source>Add to MultiSend Vector</source>
-        <translation>Aggiungi a Vettore InvioMultiplo</translation>
+        <translation>Aggiungi a Vettore MultiSend</translation>
     </message>
     <message>
         <source>Add</source>
@@ -1433,7 +1442,7 @@ MultiSend: %1</translation>
     </message>
     <message>
         <source>Deactivate MultiSend</source>
-        <translation>Disattiva InvioMultiplo</translation>
+        <translation>Disattiva MultiSend</translation>
     </message>
     <message>
         <source>Deactivate</source>
@@ -1448,8 +1457,16 @@ MultiSend: %1</translation>
         <translation>Alt+A</translation>
     </message>
     <message>
+        <source>Percentage of stake to send</source>
+        <translation>Percentuale dello stake da inviare</translation>
+    </message>
+    <message>
         <source>Percentage:</source>
         <translation>Percentuale:</translation>
+    </message>
+    <message>
+        <source>Address to send portion of stake to</source>
+        <translation>Indirizzo a cui inviare la percentuale dello stake</translation>
     </message>
     <message>
         <source>Address:</source>
@@ -1460,43 +1477,63 @@ MultiSend: %1</translation>
         <translation>Etichetta:</translation>
     </message>
     <message>
+        <source>Enter a label for this address to add it to your address book</source>
+        <translation>Inserisci un'etichetta per questo indirizzo da aggiungere alla tua rubrica</translation>
+    </message>
+    <message>
+        <source>Delete Address From MultiSend Vector</source>
+        <translation>Elimina indirizzo dal vettore MultiSend</translation>
+    </message>
+    <message>
         <source>Delete</source>
         <translation>Elimina</translation>
+    </message>
+    <message>
+        <source>Activate MultiSend</source>
+        <translation>Attiva MultiSend</translation>
     </message>
     <message>
         <source>Activate</source>
         <translation>Attiva</translation>
     </message>
     <message>
+        <source>View MultiSend Vector</source>
+        <translation>Visualizza vettore MultiSend</translation>
+    </message>
+    <message>
+        <source>View MultiSend</source>
+        <translation>Visualizza MultiSend</translation>
+    </message>
+    <message>
         <source>Send For Stakes</source>
         <translation>Invia per stake</translation>
+    </message>
+    <message>
+        <source>Send For Masternode Rewards</source>
+        <translation>Invio per le Ricompense Masternodo</translation>
     </message>
     <message>
         <source>(no label)</source>
         <translation>(nessuna etichetta)</translation>
     </message>
     <message>
-        <source>MultiSend Vector
-</source>
-        <translation>Vettore InvioMultiplo
-</translation>
-    </message>
-    <message>
-        <source>Removed </source>
-        <translation>Eliminato</translation>
-    </message>
-    <message>
-        <source>Could not locate address
-</source>
-        <translation>Impossibile trovare l'indirizzo
-</translation>
+        <source>Please Enter 1 - 100 for percent.</source>
+        <translation>Per favore inserisci 1 - 100 come percentuale.</translation>
     </message>
 </context>
 <context>
     <name>MultisigDialog</name>
     <message>
+        <source>Multisignature Address Interactions</source>
+        <translation>Interazioni indirizzo multifirma</translation>
+    </message>
+    <message>
         <source>Create MultiSignature &amp;Address</source>
         <translation>Crea indirizzo a firme &amp;Multiple</translation>
+    </message>
+    <message>
+        <source>How many people must sign to verify a transaction</source>
+        <translation>Quante persone devono firmare per verificare una transazione</translation>
     </message>
     <message>
         <source>Address Label:</source>
@@ -1507,12 +1544,20 @@ MultiSend: %1</translation>
         <translation>&amp;Aggiungi indirizzo / codice</translation>
     </message>
     <message>
+        <source>Create a new multisig address</source>
+        <translation>Crea un nuovo indirizzo multifirma</translation>
+    </message>
+    <message>
         <source>C&amp;reate</source>
         <translation>C&amp;rea</translation>
     </message>
     <message>
         <source>Status:</source>
         <translation>Stato:</translation>
+    </message>
+    <message>
+        <source>&amp;Create MultiSignature Tx</source>
+        <translation>&amp;Crea Tx multifirma</translation>
     </message>
     <message>
         <source>Inputs:</source>
@@ -1543,6 +1588,10 @@ MultiSend: %1</translation>
         <translation>Cr&amp;ea</translation>
     </message>
     <message>
+        <source>&amp;Sign MultiSignature Tx</source>
+        <translation>&amp;Firma Tx a firma multipla</translation>
+    </message>
+    <message>
         <source>Transaction Hex:</source>
         <translation>Hex Transazione:</translation>
     </message>
@@ -1563,29 +1612,6 @@ MultiSend: %1</translation>
         <translation>Massimo (15)</translation>
     </message>
 </context>
-<context>
-    <name>ObfuscationConfig</name>
-    <message>
-        <source>Configure Obfuscation</source>
-        <translation>Configura Offuscamento</translation>
-    </message>
-    <message>
-        <source>Use 2 separate masternodes to mix funds up to 10000 HLM</source>
-        <translation>Usa 2 masternodi diversi per mescolare fino a 10000 HLM</translation>
-    </message>
-    <message>
-        <source>Use 8 separate masternodes to mix funds up to 10000 HLM</source>
-        <translation>Usa 8 masternodi diversi per mixare fino a 10000 HLM</translation>
-    </message>
-    <message>
-        <source>Use 16 separate masternodes</source>
-        <translation>Usa 16 masternodi diversi</translation>
-    </message>
-    <message>
-        <source>Obfuscation Configuration</source>
-        <translation>Configurazione Offuscamento</translation>
-    </message>
-    </context>
 <context>
     <name>OpenURIDialog</name>
     <message>
@@ -1612,8 +1638,24 @@ MultiSend: %1</translation>
         <translation>Mappa la porta utilizzando &amp;UPnP</translation>
     </message>
     <message>
+        <source>Enable automatic minting of HLM units to zHLM</source>
+        <translation>Attiva il conio automatico di unità HLM in zHLM</translation>
+    </message>
+    <message>
         <source>Enable zHLM Automint</source>
-        <translation>Attiva Autoconio zHLM</translation>
+        <translation>Attiva Conio automatico zHLM</translation>
+    </message>
+    <message>
+        <source>Percentage of incoming HLM which get automatically converted to zHLM via Zerocoin Protocol (min: 10%)</source>
+        <translation>Percentuale di HLM in entrata che viene automaticamente convertita in zHLM attraverso il protocollo Zerocoin (min: 10%)</translation>
+    </message>
+    <message>
+        <source>Percentage of autominted zHLM</source>
+        <translation>Percentuale di zHLM Percentuale di zHLM da coniare automaticamente</translation>
+    </message>
+    <message>
+        <source>Preferred Automint zHLM Denomination</source>
+        <translation>Denominazione preferita conio automatico zHLM</translation>
     </message>
     <message>
         <source>Proxy &amp;IP:</source>
@@ -1667,6 +1709,14 @@ MultiSend: %1</translation>
         <translation>Disponibile:</translation>
     </message>
     <message>
+        <source>Your current spendable balance</source>
+        <translation>Il tuo saldo spendibile corrente</translation>
+    </message>
+    <message>
+        <source>Total Balance, including all unavailable coins.</source>
+        <translation>Saldo totale, inclusi tutte le monete non disponibili.</translation>
+    </message>
+    <message>
         <source>HLM Balance</source>
         <translation>Bilancio HLM</translation>
     </message>
@@ -1675,20 +1725,54 @@ MultiSend: %1</translation>
         <translation>Non maturi:</translation>
     </message>
     <message>
+        <source>Current locked balance in watch-only addresses</source>
+        <translation>Saldo corrente bloccato in indirizzi sola-lettura.</translation>
+    </message>
+    <message>
+        <source>Your current Helium balance, unconfirmed and immature transactions included</source>
+        <translation>Il tuo saldo Helium corrente, incluse le transazioni non confermate e non mature</translation>
+    </message>
+    <message>
         <source>zHLM Balance</source>
         <translation>Bilancio zHLM</translation>
+    </message>
+    <message>
+        <source>Mature: more than 20 confirmation and more than 1 mint of the same denomination after it was minted.
+These zHLM are spendable.</source>
+        <translation>Maturi: più di 20 conferme e più di 1 conio della stessa denominazione dopo il conio.
+Questi zHLM sono spendibili.</translation>
     </message>
     <message>
         <source>OVERVIEW</source>
         <translation>PANORAMICA</translation>
     </message>
     <message>
+        <source>Combined Balance (including unconfirmed and immature coins)</source>
+        <translation>Saldo complessivo (incluse monete non confermate e non mature)</translation>
+    </message>
+    <message>
+        <source>Combined Balance</source>
+        <translation>Saldo complessivo</translation>
+    </message>
+    <message>
         <source>Total:</source>
         <translation>Totale:</translation>
     </message>
     <message>
+        <source>Current total balance in watch-only addresses</source>
+        <translation>Saldo corrente totale in indirizzi sola-lettura</translation>
+    </message>
+    <message>
+        <source>Your current balance in watch-only addresses</source>
+        <translation>Il tuo saldo corrente in indirizzi sola-lettura</translation>
+    </message>
+    <message>
         <source>Spendable:</source>
         <translation>Spendibili:</translation>
+    </message>
+    <message>
+        <source>Locked HLM or Masternode collaterals. These are excluded from zHLM minting.</source>
+        <translation>HLM bloccati o collaterali Masternodo. Questi sono esclusi dal conio di zHLM.</translation>
     </message>
     <message>
         <source>Locked:</source>
@@ -1699,14 +1783,36 @@ MultiSend: %1</translation>
         <translation>Non confermati:</translation>
     </message>
     <message>
+        <source>Your current zHLM balance, unconfirmed and immature zHLM included.</source>
+        <translation>Il tuo saldo zHLM corrente, inclusi zHLM non confermati e non maturi</translation>
+    </message>
+    <message>
         <source>Recent transactions</source>
         <translation>Transazioni recenti</translation>
     </message>
     <message>
-        <source>AutoMint is currently enabled and set to </source>
-        <translation>AutoMint è attivo e impostato su</translation>
+        <source>Current percentage of zHLM.
+If AutoMint is enabled this percentage will settle around the configured AutoMint percentage (default = 10%).
+</source>
+        <translation>Percentuale corrente di zHLM.
+Se il conio automatico è attivato questa percentuale si stabilizzerà all'incirca sulla percentuale stabilita per il conio automatico (percentuale prestabilita = 10%).
+</translation>
     </message>
-    </context>
+    <message>
+        <source>AutoMint is currently enabled and set to </source>
+        <translation>Conio automatico è attivo e impostato su</translation>
+    </message>
+    <message>
+        <source>To disable AutoMint add 'enablezeromint=0' in helium.conf.</source>
+        <translation>Per disabilitare il conio automatico aggiungi 'enablezeromint=0' in helium.conf.</translation>
+    </message>
+    <message>
+        <source>AutoMint is currently disabled.
+To enable AutoMint change 'enablezeromint=0' to 'enablezeromint=1' in helium.conf</source>
+        <translation>Conio automatico è correntemente disattivato.
+Per attivare il Conio automatico cambiare 'enablezeromint=0' in 'enablezeromint=1' in helium.conf</translation>
+    </message>
+</context>
 <context>
     <name>PaymentServer</name>
     <message>
@@ -1756,24 +1862,8 @@ MultiSend: %1</translation>
         <translation>zHLM</translation>
     </message>
     <message>
-        <source>0.000 000 00 HLM</source>
-        <translation>0.000 000 00 HLM</translation>
-    </message>
-    <message>
         <source>Reset</source>
         <translation>Reset</translation>
-    </message>
-    <message>
-        <source>Coin Control...</source>
-        <translation>Controllo Monete...</translation>
-    </message>
-    <message>
-        <source>Quantity:</source>
-        <translation>Quantità:</translation>
-    </message>
-    <message>
-        <source>Amount:</source>
-        <translation>Totale:</translation>
     </message>
     <message>
         <source>PRIVACY</source>
@@ -1784,6 +1874,10 @@ MultiSend: %1</translation>
         <translation>Controllo zHLM</translation>
     </message>
     <message>
+        <source>zHLM Selected:</source>
+        <translation>zHLM selezionati:</translation>
+    </message>
+    <message>
         <source>Quantity Selected:</source>
         <translation>Quantità Selezionata:</translation>
     </message>
@@ -1792,8 +1886,19 @@ MultiSend: %1</translation>
         <translation>Spendi Zerocoin</translation>
     </message>
     <message>
+        <source>Available (mature and spendable) zHLM for spending</source>
+        <translation>zHLM disponibili disponibili per essere spesi (maturi e spendibili)</translation>
+    </message>
+    <message>
         <source>Available Balance:</source>
         <translation>Bilancio Disponibile:</translation>
+    </message>
+    <message>
+        <source>Available (mature and spendable) zHLM for spending
+
+zHLM are mature when they have more than 20 confirmations AND more than 2 mints of the same denomination after them were minted</source>
+        <translation>zHLM disponibili disponibili per essere spesi (maturi e spendibili)
+Gli zHLM sono maturi quando hanno più di 20 conferme E più di 2 conii della stessa denominazione dopo che sono stati coniati</translation>
     </message>
     <message>
         <source>0 zHLM</source>
@@ -1838,6 +1943,39 @@ MultiSend: %1</translation>
     <message>
         <source>Zerocoin Stats:</source>
         <translation>Statistiche Zerocoin:</translation>
+    </message>
+    <message>
+        <source>Total Balance including unconfirmed and immature zHLM</source>
+        <translation>Saldo totale inclusi zHLM non confermati e non maturi</translation>
+    </message>
+    <message>
+        <source>Total Zerocoin  Balance:</source>
+        <translation>Saldo totale Zerocoin:</translation>
+    </message>
+    <message>
+        <source>Show the current status of automatic zHLM minting.
+
+To change the status (restart required):
+- enable: add 'enablezeromint=1' to helium.conf
+- disable: add 'enablezeromint=0' to helium.conf
+
+To change the percentage (no restart required):
+- menu Settings-&gt;Options-&gt;Percentage of autominted zHLM
+
+</source>
+        <translation>Mostra lo stato corrente del conio automatico zHLM.
+Per cambiare lo stato (riavvio necessario):
+- attivato: aggiungi 'enablezeromint=1' a helium.conf
+- disattivato: aggiungi 'enablezeromint=0' a helium.conf
+
+Per cambiare la percentuale (riavvio non necessario):
+- menu Impostazioni-&gt;Opzioni-&gt;Percentuale di zHLM da coniare automaticamente
+
+</translation>
+    </message>
+    <message>
+        <source>AutoMint Status</source>
+        <translation>Stato Conio automatico</translation>
     </message>
     <message>
         <source>Denom. 1:</source>
@@ -1941,7 +2079,7 @@ MultiSend: %1</translation>
     </message>
     <message>
         <source>Fee:</source>
-        <translation>Tassa:</translation>
+        <translation>Commissione:</translation>
     </message>
     <message>
         <source>Dust:</source>
@@ -1960,6 +2098,10 @@ MultiSend: %1</translation>
         <translation>Fondi insufficienti!</translation>
     </message>
     <message>
+        <source>medium</source>
+        <translation>media</translation>
+    </message>
+    <message>
         <source>Amount After Fee:</source>
         <translation>Importo al netto della commissione:</translation>
     </message>
@@ -1968,20 +2110,28 @@ MultiSend: %1</translation>
         <translation>Differenza:</translation>
     </message>
     <message>
-        <source>Copy quantity</source>
-        <translation>Copia importo</translation>
-    </message>
-    <message>
-        <source>Copy amount</source>
-        <translation>Copia ammontare</translation>
-    </message>
-    <message>
         <source>zHLM Mint</source>
         <translation>Conio zHLM</translation>
     </message>
     <message>
+        <source>AutoMint Status:</source>
+        <translation>Stato Conio automatico:</translation>
+    </message>
+    <message>
+        <source>Invalid Send Amount</source>
+        <translation>Importo di invio non valido</translation>
+    </message>
+    <message>
         <source>Confirm additional Fees</source>
         <translation>Conferma commissioni aggiuntive</translation>
+    </message>
+    <message>
+        <source>Confirm send coins</source>
+        <translation>Conferma invio monete</translation>
+    </message>
+    <message>
+        <source>Sending successful, return code: </source>
+        <translation>Invio riuscito con successo, codice di conferma:</translation>
     </message>
     <message>
         <source>fee: </source>
@@ -1989,10 +2139,17 @@ MultiSend: %1</translation>
     </message>
 </context>
 <context>
+    <name>ProposalFrame</name>
+    </context>
+<context>
     <name>QObject</name>
     <message>
         <source>Amount</source>
         <translation>Ammontare</translation>
+    </message>
+    <message>
+        <source>Helium Core</source>
+        <translation>PIVX Core</translation>
     </message>
     </context>
 <context>
@@ -2012,9 +2169,17 @@ MultiSend: %1</translation>
         <source>Version</source>
         <translation>Versione</translation>
     </message>
+    <message>
+        <source>Last Send</source>
+        <translation>Ultimo Invio</translation>
+    </message>
     </context>
 <context>
     <name>ReceiveCoinsDialog</name>
+    <message>
+        <source>A&amp;mount:</source>
+        <translation>Q&amp;uantità:</translation>
+    </message>
     <message>
         <source>&amp;Label:</source>
         <translation>&amp;Etichetta:</translation>
@@ -2026,6 +2191,10 @@ MultiSend: %1</translation>
     <message>
         <source>Copy amount</source>
         <translation>Copia ammontare</translation>
+    </message>
+    <message>
+        <source>Copy address</source>
+        <translation>Copia indirizzo</translation>
     </message>
 </context>
 <context>
@@ -2054,6 +2223,10 @@ MultiSend: %1</translation>
         <translation>Etichetta</translation>
     </message>
     <message>
+        <source>Address</source>
+        <translation>Indirizzo</translation>
+    </message>
+    <message>
         <source>Amount</source>
         <translation>Ammontare</translation>
     </message>
@@ -2064,6 +2237,14 @@ MultiSend: %1</translation>
     </context>
 <context>
     <name>SendCoinsDialog</name>
+    <message>
+        <source>Send Coins</source>
+        <translation>Invia Monete</translation>
+    </message>
+    <message>
+        <source>SEND</source>
+        <translation>INVIA</translation>
+    </message>
     <message>
         <source>Insufficient funds!</source>
         <translation>Fondi insufficienti!</translation>
@@ -2085,8 +2266,12 @@ MultiSend: %1</translation>
         <translation>Priorità:</translation>
     </message>
     <message>
+        <source>medium</source>
+        <translation>media</translation>
+    </message>
+    <message>
         <source>Fee:</source>
-        <translation>Tassa:</translation>
+        <translation>Commissione:</translation>
     </message>
     <message>
         <source>Dust:</source>
@@ -2098,7 +2283,7 @@ MultiSend: %1</translation>
     </message>
     <message>
         <source>After Fee:</source>
-        <translation>Al netto della commissione:</translation>
+        <translation>Importo al netto della commissione:</translation>
     </message>
     <message>
         <source>Change:</source>
@@ -2117,8 +2302,24 @@ MultiSend: %1</translation>
         <translation>(Commissioni smart non ancora inizializzate. L'inizializzazione richiede in genere un paio di blocchi...)</translation>
     </message>
     <message>
+        <source>Send as zero-fee transaction if possible</source>
+        <translation>Invia qualora possibile come transazione a commissione-zero</translation>
+    </message>
+    <message>
+        <source>Confirm the send action</source>
+        <translation>Conferma l'azione di invio</translation>
+    </message>
+    <message>
         <source>Clear &amp;All</source>
         <translation>Cancella &amp;All</translation>
+    </message>
+    <message>
+        <source>Send to multiple recipients at once</source>
+        <translation>Invia contemporaneamente a destinatari multipli</translation>
+    </message>
+    <message>
+        <source>Balance:</source>
+        <translation>Saldo:</translation>
     </message>
     <message>
         <source>Copy quantity</source>
@@ -2130,19 +2331,39 @@ MultiSend: %1</translation>
     </message>
     <message>
         <source>Copy fee</source>
-        <translation>Copia commissioni</translation>
+        <translation>Copia commissione</translation>
     </message>
     <message>
         <source>Copy after fee</source>
-        <translation>Copia al netto della commissione</translation>
+        <translation>Copia importo al netto della commissione</translation>
     </message>
     <message>
         <source>Copy bytes</source>
         <translation>Copia byte</translation>
     </message>
     <message>
+        <source>Copy priority</source>
+        <translation>Copia priorità</translation>
+    </message>
+    <message>
         <source>Copy dust</source>
         <translation>Copia polvere</translation>
+    </message>
+    <message>
+        <source>Copy change</source>
+        <translation>Copia resto</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to send?</source>
+        <translation>Sei sicuro di voler inviare?</translation>
+    </message>
+    <message>
+        <source>Confirm send coins</source>
+        <translation>Conferma invio monete</translation>
+    </message>
+    <message>
+        <source>The amount exceeds your balance.</source>
+        <translation>L'importo eccede il tuo saldo.</translation>
     </message>
     <message>
         <source>(no label)</source>
@@ -2179,7 +2400,11 @@ MultiSend: %1</translation>
         <source>A&amp;mount:</source>
         <translation>Q&amp;uantità:</translation>
     </message>
-    </context>
+    <message>
+        <source>Enter a label for this address to add it to your address book</source>
+        <translation>Inserisci un'etichetta per questo indirizzo da aggiungere alla tua rubrica</translation>
+    </message>
+</context>
 <context>
     <name>ShutdownWindow</name>
     </context>
@@ -2352,6 +2577,10 @@ MultiSend: %1</translation>
     </context>
 <context>
     <name>WalletModel</name>
+    <message>
+        <source>Send Coins</source>
+        <translation>Invia Monete</translation>
+    </message>
     </context>
 <context>
     <name>WalletView</name>

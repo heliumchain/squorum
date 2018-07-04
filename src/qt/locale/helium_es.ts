@@ -141,7 +141,7 @@
     </message>
     <message>
         <source>Enter the new passphrase to the wallet.&lt;br/&gt;Please use a passphrase of &lt;b&gt;ten or more random characters&lt;/b&gt;, or &lt;b&gt;eight or more words&lt;/b&gt;.</source>
-        <translation>Escriba la nueva contraseña para la Wallet. &lt;br/&gt;Por favor utilice una contraseña de &lt;b&gt;10 o más caracteres aleatorios&lt;/b&gt;, u &lt;b&gt; ocho o más palabras&lt;/b&gt;</translation>
+        <translation>Escriba la nueva contraseña para el monedero. &lt;br/&gt;Por favor utilice una contraseña de &lt;b&gt;10 o más caracteres aleatorios&lt;/b&gt;, u &lt;b&gt; ocho o más palabras&lt;/b&gt;</translation>
     </message>
     <message>
         <source>Encrypt wallet</source>
@@ -267,7 +267,7 @@
     </message>
     <message>
         <source>Alt+A</source>
-        <translation>Alt + A</translation>
+        <translation>Alt+A</translation>
     </message>
     <message>
         <source>Paste address from clipboard</source>
@@ -275,7 +275,7 @@
     </message>
     <message>
         <source>Alt+P</source>
-        <translation>Alt + P</translation>
+        <translation>Alt+P</translation>
     </message>
     <message>
         <source>Passphrase: </source>
@@ -402,7 +402,7 @@
     <name>BitcoinGUI</name>
     <message>
         <source>Wallet</source>
-        <translation>Wallet</translation>
+        <translation>Monedero</translation>
     </message>
     <message>
         <source>Node</source>
@@ -414,7 +414,7 @@
     </message>
     <message>
         <source>Show general overview of wallet</source>
-        <translation>Mostrar visión general de la wallet</translation>
+        <translation>Mostrar visión general del monedero</translation>
     </message>
     <message>
         <source>&amp;Send</source>
@@ -466,19 +466,19 @@
     </message>
     <message>
         <source>&amp;Encrypt Wallet...</source>
-        <translation>&amp;Encriptar wallet...</translation>
+        <translation>&amp;Encriptar monedero...</translation>
     </message>
     <message>
         <source>Encrypt the private keys that belong to your wallet</source>
-        <translation>Encriptar las claves privadas que pertenecen a tu wallet</translation>
+        <translation>Encriptar las claves privadas que pertenecen a tu monedero</translation>
     </message>
     <message>
         <source>&amp;Backup Wallet...</source>
-        <translation>&amp;Copia de seguridad de la wallet...</translation>
+        <translation>&amp;Copia de seguridad del monedero...</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
-        <translation>Copia de seguridad de la wallet a otra ubicación</translation>
+        <translation>Copia de seguridad del monedero a otra ubicación</translation>
     </message>
     <message>
         <source>&amp;Change Passphrase...</source>
@@ -486,11 +486,11 @@
     </message>
     <message>
         <source>Change the passphrase used for wallet encryption</source>
-        <translation>Cambiar contraseña usada para la encriptación de la wallet</translation>
+        <translation>Cambiar contraseña usada para la encriptación del monedero</translation>
     </message>
     <message>
         <source>&amp;Unlock Wallet...</source>
-        <translation>&amp;Desbloquear wallet...</translation>
+        <translation>&amp;Desbloquear monedero...</translation>
     </message>
     <message>
         <source>Unlock wallet</source>
@@ -498,7 +498,7 @@
     </message>
     <message>
         <source>&amp;Lock Wallet</source>
-        <translation>&amp;Bloquear Wallet</translation>
+        <translation>&amp;Bloquear monedero</translation>
     </message>
     <message>
         <source>Sign &amp;message...</source>
@@ -542,11 +542,11 @@
     </message>
     <message>
         <source>Wallet &amp;Repair</source>
-        <translation>&amp;Reparación de la wallet</translation>
+        <translation>&amp;Reparación del monedero</translation>
     </message>
     <message>
         <source>Show wallet repair options</source>
-        <translation>Mostrar opciones de reparación de la wallet</translation>
+        <translation>Mostrar opciones de reparación del monedero</translation>
     </message>
     <message>
         <source>Open configuration file</source>
@@ -582,11 +582,11 @@
     </message>
     <message>
         <source>Create a new multisignature address and add it to this wallet</source>
-        <translation>Crear una nueva dirección multifirma y agregarla a esta cartera</translation>
+        <translation>Crear una nueva dirección multifirma y agregarla a este monedero</translation>
     </message>
     <message>
         <source>&amp;Multisignature spending...</source>
-        <translation>Gasto multifirmas...</translation>
+        <translation>Gasto &amp;multifirmas...</translation>
     </message>
     <message>
         <source>Spend from a multisignature address</source>
@@ -594,7 +594,7 @@
     </message>
     <message>
         <source>&amp;Multisignature signing...</source>
-        <translation>Firma multifirmas...</translation>
+        <translation>Firma &amp;multifirmas...</translation>
     </message>
     <message>
         <source>Sign with a multisignature address</source>
@@ -608,10 +608,6 @@
         <source>&amp;Command-line options</source>
         <translation>&amp;Opciones de linea de comandos</translation>
     </message>
-    <message numerus="yes">
-        <source>Processed %n blocks of transaction history.</source>
-        <translation><numerusform>Procesados %n bloques del histórico de transacciones.</numerusform><numerusform>Procesados %n bloques del histórico de transacciones.</numerusform></translation>
-    </message>
     <message>
         <source>Synchronizing additional data: %p%</source>
         <translation>Sincronizando datos adicionales: %p%</translation>
@@ -623,6 +619,10 @@
     <message>
         <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;unlocked&lt;/b&gt; for anonymization and staking only</source>
         <translation>El monedero está &lt;b&gt;cifrado&lt;/b&gt; y actualmente &lt;b&gt;desbloqueado&lt;/b&gt; para anonimato y prueba de participación.</translation>
+    </message>
+    <message>
+        <source>Tor is &lt;b&gt;enabled&lt;/b&gt;: %1</source>
+        <translation>Tor está &lt;b&gt; habilitado&lt;/b&gt;: %1</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -646,11 +646,11 @@
     </message>
     <message>
         <source>Helium Core</source>
-        <translation>Núcleo Helium</translation>
+        <translation>PIVX Core</translation>
     </message>
     <message>
         <source>Send coins to a Helium address</source>
-        <translation>Enviar coins a una dirección Helium</translation>
+        <translation>Enviar monedas a una dirección Helium</translation>
     </message>
     <message>
         <source>Request payments (generates QR codes and helium: URIs)</source>
@@ -662,19 +662,19 @@
     </message>
     <message>
         <source>&amp;Masternodes</source>
-        <translation>Nodos &amp;Maestros</translation>
+        <translation>&amp;Masternodes</translation>
     </message>
     <message>
         <source>Browse masternodes</source>
-        <translation>Explorar nodos maestros</translation>
+        <translation>Explorar masternodes</translation>
     </message>
     <message>
         <source>&amp;About Helium Core</source>
-        <translation>&amp;Sobre el núcleo de Helium</translation>
+        <translation>&amp;Sobre PIVX Core</translation>
     </message>
     <message>
         <source>Show information about Helium Core</source>
-        <translation>Mostrar información sobre el núcleo de Helium</translation>
+        <translation>Mostrar información sobre PIVX Core</translation>
     </message>
     <message>
         <source>Modify configuration options for Helium</source>
@@ -694,7 +694,7 @@
     </message>
     <message>
         <source>Encrypt and decrypt private keys using a passphrase</source>
-        <translation>Encriptar y desencriptar las llaves privadas usando una contraseña</translation>
+        <translation>Encriptar y desencriptar las llaves privadas usando una frase contraseña</translation>
     </message>
     <message>
         <source>&amp;MultiSend</source>
@@ -706,15 +706,15 @@
     </message>
     <message>
         <source>Open Wallet &amp;Configuration File</source>
-        <translation>Abrir Fichero de &amp;Configuración del Monedero</translation>
+        <translation>Abrir fichero del monedero &amp;Configuración</translation>
     </message>
     <message>
         <source>Open &amp;Masternode Configuration File</source>
-        <translation>Abrir Fichero de Configuración de Nodos &amp;Maestros</translation>
+        <translation>Abrir Fichero de Configuración de &amp;Masternodes</translation>
     </message>
     <message>
         <source>Open Masternode configuration file</source>
-        <translation>Abrir Fichero de Configuración de Nodos Maestros</translation>
+        <translation>Abrir fichero de Configuración de masternodes</translation>
     </message>
     <message>
         <source>Open a Helium: URI or payment request</source>
@@ -722,7 +722,7 @@
     </message>
     <message>
         <source>&amp;Blockchain explorer</source>
-        <translation>Explorador de &amp;Bloques</translation>
+        <translation>Explorador de &amp;Blockchain</translation>
     </message>
     <message>
         <source>Block explorer window</source>
@@ -735,10 +735,6 @@
     <message>
         <source>Helium Core client</source>
         <translation>Cliente PIVX Core</translation>
-    </message>
-    <message numerus="yes">
-        <source>%n active connection(s) to Helium network</source>
-        <translation><numerusform>%n conexión(es) activas a la red Helium</numerusform><numerusform>%n conexión(es) activas a la red Helium</numerusform></translation>
     </message>
     <message>
         <source>Synchronizing with network...</source>
@@ -760,25 +756,9 @@
         <source>Up to date</source>
         <translation>Actualizado</translation>
     </message>
-    <message numerus="yes">
-        <source>%n hour(s)</source>
-        <translation><numerusform>%n horas</numerusform><numerusform>%n horas</numerusform></translation>
-    </message>
-    <message numerus="yes">
-        <source>%n day(s)</source>
-        <translation><numerusform>%n días</numerusform><numerusform>%n días</numerusform></translation>
-    </message>
-    <message numerus="yes">
-        <source>%n week(s)</source>
-        <translation><numerusform>%n semanas</numerusform><numerusform>%n semanas</numerusform></translation>
-    </message>
     <message>
         <source>%1 and %2</source>
         <translation>%1 y %2</translation>
-    </message>
-    <message numerus="yes">
-        <source>%n year(s)</source>
-        <translation><numerusform>%n años</numerusform><numerusform>%n años</numerusform></translation>
     </message>
     <message>
         <source>Catching up...</source>
@@ -831,7 +811,7 @@ Dirección: %4
     <message>
         <source>Staking is active
  MultiSend: %1</source>
-        <translation>La recompensa de participación está activa
+        <translation>Staking está activado
 MultiEnvío: %1</translation>
     </message>
     <message>
@@ -850,7 +830,7 @@ MultiEnvío: %1</translation>
     </message>
     <message>
         <source>AutoMint is currently enabled and set to </source>
-        <translation>AutoMint está actualmente habilitado y configurado</translation>
+        <translation>AutoMint está actualmente habilitado y configurado en</translation>
     </message>
     <message>
         <source>AutoMint is disabled</source>
@@ -864,12 +844,12 @@ MultiEnvío: %1</translation>
         <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;locked&lt;/b&gt;</source>
         <translation>El monedero está &lt;b&gt;encriptado&lt;/b&gt; y actualmente &lt;b&gt;bloqueado&lt;/b&gt;</translation>
     </message>
-</context>
+    </context>
 <context>
     <name>BlockExplorer</name>
     <message>
         <source>Blockchain Explorer</source>
-        <translation>Explorador de Cadena de Bloques</translation>
+        <translation>Explorador del blockchain</translation>
     </message>
     <message>
         <source>Back</source>
@@ -915,11 +895,11 @@ MultiEnvío: %1</translation>
     </message>
     <message>
         <source>Bytes:</source>
-        <translation>Octetos:</translation>
+        <translation>Bytes:</translation>
     </message>
     <message>
         <source>Amount:</source>
-        <translation>Cantidad:</translation>
+        <translation>Suma:</translation>
     </message>
     <message>
         <source>Priority:</source>
@@ -939,7 +919,7 @@ MultiEnvío: %1</translation>
     </message>
     <message>
         <source>After Fee:</source>
-        <translation>Con Comisión:</translation>
+        <translation>Después de Comisión:</translation>
     </message>
     <message>
         <source>Change:</source>
@@ -1015,11 +995,11 @@ MultiEnvío: %1</translation>
     </message>
     <message>
         <source>Lock unspent</source>
-        <translation>Bloquear no gastados</translation>
+        <translation>Bloquear no gastado</translation>
     </message>
     <message>
         <source>Unlock unspent</source>
-        <translation>Desbloquear no gastados</translation>
+        <translation>Desbloquear no gastado</translation>
     </message>
     <message>
         <source>Copy quantity</source>
@@ -1131,7 +1111,7 @@ MultiEnvío: %1</translation>
     </message>
     <message>
         <source>Can vary +/- %1 uhlm per input.</source>
-        <translation>Pode variar +/- %1 uhlm por entrada.</translation>
+        <translation>Puede variar +/- %1 uhlm por entrada.</translation>
     </message>
     <message>
         <source>(no label)</source>
@@ -1225,6 +1205,17 @@ MultiEnvío: %1</translation>
     </message>
 </context>
 <context>
+    <name>GovernancePage</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulario</translation>
+    </message>
+    <message>
+        <source>0</source>
+        <translation>0</translation>
+    </message>
+    </context>
+<context>
     <name>HelpMessageDialog</name>
     <message>
         <source>version</source>
@@ -1232,7 +1223,7 @@ MultiEnvío: %1</translation>
     </message>
     <message>
         <source>Helium Core</source>
-        <translation>Núcleo Helium</translation>
+        <translation>PIVX Core</translation>
     </message>
     <message>
         <source>(%1-bit)</source>
@@ -1307,7 +1298,7 @@ MultiEnvío: %1</translation>
     </message>
     <message>
         <source>Helium Core</source>
-        <translation>Núcleo Helium</translation>
+        <translation>PIVX Core</translation>
     </message>
     <message>
         <source>Error: Specified data directory "%1" cannot be created.</source>
@@ -1334,7 +1325,7 @@ MultiEnvío: %1</translation>
     </message>
     <message>
         <source>MASTERNODES</source>
-        <translation>MASTERNODES</translation>
+        <translation>NODO MAESTROS</translation>
     </message>
     <message>
         <source>Note: Status of your masternodes in local wallet can potentially be slightly incorrect.&lt;br /&gt;Always wait for wallet to sync additional data and then double check from another node&lt;br /&gt;if your node should be running but you still see "MISSING" in "Status" field.</source>
@@ -1398,19 +1389,19 @@ MultiEnvío: %1</translation>
     </message>
     <message>
         <source>Confirm masternode start</source>
-        <translation>Confirmar inicio del nodo maestro</translation>
+        <translation>Confirmar inicio del masternode</translation>
     </message>
     <message>
         <source>Are you sure you want to start masternode %1?</source>
-        <translation>¿Está seguro de que quiere arrancar el nodo maestro %1?</translation>
+        <translation>¿Está seguro de que quiere arrancar el masternode %1?</translation>
     </message>
     <message>
         <source>Confirm all masternodes start</source>
-        <translation>Confirmar el arranque de todos los nodos maestros</translation>
+        <translation>Confirmar el arranque de todos los masternodes</translation>
     </message>
     <message>
         <source>Are you sure you want to start ALL masternodes?</source>
-        <translation>¿Estás seguro de querer arrancar TODOS los nodos maestros?</translation>
+        <translation>¿Estás seguro de querer arrancar TODOS los masternodes?</translation>
     </message>
     <message>
         <source>Command is not available right now</source>
@@ -1422,11 +1413,11 @@ MultiEnvío: %1</translation>
     </message>
     <message>
         <source>Confirm missing masternodes start</source>
-        <translation>Confirmar arranque de nodos maestros no encontrados</translation>
+        <translation>Confirmar arranque de masternodes no encontrados</translation>
     </message>
     <message>
         <source>Are you sure you want to start MISSING masternodes?</source>
-        <translation>¿Estás seguro de querer arrancar los nodos maestros NO ENCONTRADOS?</translation>
+        <translation>¿Estás seguro de querer arrancar los masternodes NO ENCONTRADOS?</translation>
     </message>
 </context>
 <context>
@@ -1479,11 +1470,11 @@ MultiEnvío no se activará a menos que haga usted click en Activar</translation
     </message>
     <message>
         <source>Alt+A</source>
-        <translation>Alt + A</translation>
+        <translation>Alt+A</translation>
     </message>
     <message>
         <source>Percentage of stake to send</source>
-        <translation>Porcentaje de capital a enviar</translation>
+        <translation>Porcentaje de stake a enviar</translation>
     </message>
     <message>
         <source>Percentage:</source>
@@ -1491,7 +1482,7 @@ MultiEnvío no se activará a menos que haga usted click en Activar</translation
     </message>
     <message>
         <source>Address to send portion of stake to</source>
-        <translation>Dirección a enviar porción de la recompensa</translation>
+        <translation>Dirección a enviar porción del stake</translation>
     </message>
     <message>
         <source>Address:</source>
@@ -1531,59 +1522,65 @@ MultiEnvío no se activará a menos que haga usted click en Activar</translation
     </message>
     <message>
         <source>Send For Stakes</source>
-        <translation>Enviar Para Participaciones</translation>
+        <translation>Enviar Para Stakes</translation>
     </message>
     <message>
         <source>Send For Masternode Rewards</source>
-        <translation>Enviar Para Recomensas De Nodos Maestros</translation>
+        <translation>Enviar Para Recomensas De masternodes</translation>
     </message>
     <message>
         <source>(no label)</source>
         <translation>(sin etiqueta)</translation>
     </message>
     <message>
-        <source>The entered address:
-</source>
-        <translation>La dirección introducida:
-</translation>
+        <source>MultiSend Active for Stakes and Masternode Rewards</source>
+        <translation>MultiSend Activado para las recompensas de Stakes y Masternode</translation>
     </message>
     <message>
-        <source> is invalid.
+        <source>MultiSend Active for Stakes</source>
+        <translation>MultiSend Activado para Stakes</translation>
+    </message>
+    <message>
+        <source>MultiSend Active for Masternode Rewards</source>
+        <translation>MultiSend Activado para las recompensas de Masternode</translation>
+    </message>
+    <message>
+        <source>MultiSend Not Active</source>
+        <translation>MultiSend Desactivado </translation>
+    </message>
+    <message>
+        <source>The entered address: %1 is invalid.
 Please check the address and try again.</source>
-        <translation>es inválida.
-Por favor compruebe la dirección e inténtelo de nuevo.</translation>
+        <translation>La dirección introducida: %1 es inválida.
+Por favor comprueba la dirección e inténtalo nuevamente.</translation>
     </message>
     <message>
-        <source>The total amount of your MultiSend vector is over 100% of your stake reward
-</source>
-        <translation>La cantidad total de su vector MultiEnvío es superior al 100% de su recompensa
-</translation>
+        <source>The total amount of your MultiSend vector is over 100% of your stake reward</source>
+        <translation>La cantidad total de tu vector de MultiEnvío es superior al 100% de tu recompensa de Stake</translation>
+    </message>
+    <message>
+        <source>Saved the MultiSend to memory, but failed saving properties to the database.</source>
+        <translation>El MultiSend se guardó en la memoria, pero se produjo un error al guardar las propiedades en la base de datos.</translation>
+    </message>
+    <message>
+        <source>MultiSend Vector</source>
+        <translation>Vector de MultiSend</translation>
+    </message>
+    <message>
+        <source>Removed %1</source>
+        <translation>Removido %1</translation>
+    </message>
+    <message>
+        <source>Could not locate address</source>
+        <translation>No se pudo localizar la dirección</translation>
+    </message>
+    <message>
+        <source>Unable to activate MultiSend, check MultiSend vector</source>
+        <translation>No fue posible activar el MultiSend, verifica el vector de MultiSend</translation>
     </message>
     <message>
         <source>Please Enter 1 - 100 for percent.</source>
         <translation>Por favor Introduzca 1 - 100 por ciento.</translation>
-    </message>
-    <message>
-        <source>Saved the MultiSend to memory, but failed saving properties to the database.
-</source>
-        <translation>Salvou o MultiSend na memória, mas não salvou as propriedades no banco de dados.
-</translation>
-    </message>
-    <message>
-        <source>MultiSend Vector
-</source>
-        <translation>Vector MultiEnvío
-</translation>
-    </message>
-    <message>
-        <source>Removed </source>
-        <translation>Borrado</translation>
-    </message>
-    <message>
-        <source>Could not locate address
-</source>
-        <translation>No se pudo localizar la dirección
-</translation>
     </message>
 </context>
 <context>
@@ -1614,7 +1611,7 @@ Por favor compruebe la dirección e inténtelo de nuevo.</translation>
     </message>
     <message>
         <source>&amp;Add Address / Key</source>
-        <translation>Agrega dirección / Llave</translation>
+        <translation>&amp;Agrega dirección / Llave</translation>
     </message>
     <message>
         <source>Local addresses or public keys that can sign:</source>
@@ -1626,7 +1623,7 @@ Por favor compruebe la dirección e inténtelo de nuevo.</translation>
     </message>
     <message>
         <source>C&amp;reate</source>
-        <translation>Crear</translation>
+        <translation>C&amp;rear</translation>
     </message>
     <message>
         <source>Status:</source>
@@ -1637,12 +1634,12 @@ Por favor compruebe la dirección e inténtelo de nuevo.</translation>
 Keep in mind, the wallet will rescan the blockchain to find transactions containing the new address.
 Please be patient after clicking import.</source>
         <translation>Use debajo para importar rápidamente una dirección al canjearla. ¡No olvide agregar una etiqueta antes de hacer clic en importar!
-Tenga en cuenta que la billetera volverá a explorar la cadena de bloques para buscar transacciones que contengan la nueva dirección.
+Tenga en cuenta que el monedero volverá a explorar el blockchain para buscar transacciones que contengan la nueva dirección.
 Por favor, tenga paciencia después de hacer clic en importar.</translation>
     </message>
     <message>
         <source>&amp;Import Redeem</source>
-        <translation>Importar Canje</translation>
+        <translation>&amp;Importar redimir</translation>
     </message>
     <message>
         <source>&amp;Create MultiSignature Tx</source>
@@ -1666,7 +1663,7 @@ Por favor, tenga paciencia después de hacer clic en importar.</translation>
     </message>
     <message>
         <source>Amount:</source>
-        <translation>Cantidad:</translation>
+        <translation>Suma:</translation>
     </message>
     <message>
         <source>Add an input to fund the outputs</source>
@@ -1686,7 +1683,7 @@ Por favor, tenga paciencia después de hacer clic en importar.</translation>
     </message>
     <message>
         <source>Add &amp;Destination</source>
-        <translation>Agregar destino</translation>
+        <translation>Agregar &amp;Destino</translation>
     </message>
     <message>
         <source>Create a transaction object using the given inputs to the given outputs</source>
@@ -1694,11 +1691,11 @@ Por favor, tenga paciencia después de hacer clic en importar.</translation>
     </message>
     <message>
         <source>Cr&amp;eate</source>
-        <translation>Crear</translation>
+        <translation>Cr&amp;ear</translation>
     </message>
     <message>
         <source>&amp;Sign MultiSignature Tx</source>
-        <translation>Firmar transacción multifirmas</translation>
+        <translation>&amp;Firmar Tx multifirmas</translation>
     </message>
     <message>
         <source>Transaction Hex:</source>
@@ -1706,11 +1703,11 @@ Por favor, tenga paciencia después de hacer clic en importar.</translation>
     </message>
     <message>
         <source>Sign the transaction from this wallet or from provided private keys</source>
-        <translation>Firma la transacción desde esta cartera o desde llaves privadas provistas</translation>
+        <translation>Firma la transacción desde este monedero o desde llaves privadas provistas</translation>
     </message>
     <message>
         <source>S&amp;ign</source>
-        <translation>Firmar</translation>
+        <translation>F&amp;irmar</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;DISABLED until transaction has been signed enough times.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
@@ -1718,7 +1715,7 @@ Por favor, tenga paciencia después de hacer clic en importar.</translation>
     </message>
     <message>
         <source>Co&amp;mmit</source>
-        <translation>Confirmar</translation>
+        <translation>Co&amp;nfirmar</translation>
     </message>
     <message>
         <source>Add private keys to sign the transaction with</source>
@@ -1726,7 +1723,7 @@ Por favor, tenga paciencia después de hacer clic en importar.</translation>
     </message>
     <message>
         <source>Add Private &amp;Key</source>
-        <translation>Agregar llave privada</translation>
+        <translation>Agregar &amp;llave privada</translation>
     </message>
     <message>
         <source>Sign with only private keys (Not Recommened)</source>
@@ -1734,7 +1731,7 @@ Por favor, tenga paciencia después de hacer clic en importar.</translation>
     </message>
     <message>
         <source>Invalid Tx Hash.</source>
-        <translation>Hash de transacción inválido</translation>
+        <translation>Hash Tx inválido.</translation>
     </message>
     <message>
         <source>Vout position must be positive.</source>
@@ -1755,73 +1752,6 @@ Por favor, tenga paciencia después de hacer clic en importar.</translation>
     <message>
         <source>Maximum (15)</source>
         <translation>Máximo (15)</translation>
-    </message>
-</context>
-<context>
-    <name>ObfuscationConfig</name>
-    <message>
-        <source>Configure Obfuscation</source>
-        <translation>Configurar Ofuscación</translation>
-    </message>
-    <message>
-        <source>Basic Privacy</source>
-        <translation>Privacidad Básica</translation>
-    </message>
-    <message>
-        <source>High Privacy</source>
-        <translation>Alta Privacidad</translation>
-    </message>
-    <message>
-        <source>Maximum Privacy</source>
-        <translation>Máxima Privacidad</translation>
-    </message>
-    <message>
-        <source>Please select a privacy level.</source>
-        <translation>Por favor selecciones un nivel de privacidad.</translation>
-    </message>
-    <message>
-        <source>Use 2 separate masternodes to mix funds up to 10000 HLM</source>
-        <translation>Use 2 nodos maestros diferentes para mezclar los fondos hasta los 10000 HLM</translation>
-    </message>
-    <message>
-        <source>Use 8 separate masternodes to mix funds up to 10000 HLM</source>
-        <translation>Use 8 nodos maestros diferentes para mezclar fondos hasta los 10000 HLM</translation>
-    </message>
-    <message>
-        <source>Use 16 separate masternodes</source>
-        <translation>Use 16 nodos maestros diferentes</translation>
-    </message>
-    <message>
-        <source>This option is the quickest and will cost about ~0.025 HLM to anonymize 10000 HLM</source>
-        <translation>Esta opción es la más rápida y costará alrededor de ~0.025 HLM para anonimizar 10000 HLM</translation>
-    </message>
-    <message>
-        <source>This option is moderately fast and will cost about 0.05 HLM to anonymize 10000 HLM</source>
-        <translation>Esta opción es moderadamente rápida y costará cerca de 0.05 HLM para anonimizar 10000 HLM.</translation>
-    </message>
-    <message>
-        <source>This is the slowest and most secure option. Using maximum anonymity will cost</source>
-        <translation>Esta es la opción más lenta pero más segura. Usar el máximo anonimato costará</translation>
-    </message>
-    <message>
-        <source>0.1 HLM per 10000 HLM you anonymize.</source>
-        <translation>0.1 HLM por 10000 HLM que anonimizas.</translation>
-    </message>
-    <message>
-        <source>Obfuscation Configuration</source>
-        <translation>Configuración de Ofuscación</translation>
-    </message>
-    <message>
-        <source>Obfuscation was successfully set to basic (%1 and 2 rounds). You can change this at any time by opening Helium's configuration screen.</source>
-        <translation>La Ofuscación se configuró correctamente en modo básico (%1 y 2 rondas). Puedes cambiar esto en cualquier momento accediendo a la ventana de configuración de Helium.</translation>
-    </message>
-    <message>
-        <source>Obfuscation was successfully set to high (%1 and 8 rounds). You can change this at any time by opening Helium's configuration screen.</source>
-        <translation>La Ofuscación se activó correctamente en modo alto (%1 y 8 rondas). Usted puede cambiar esto en cualquier momento abriendo la ventana de configuración de Helium.</translation>
-    </message>
-    <message>
-        <source>Obfuscation was successfully set to maximum (%1 and 16 rounds). You can change this at any time by opening Helium's configuration screen.</source>
-        <translation>La Ofuscación se activó correctamente en su grado máximo (%1 y 16 rondas). Usted puede cambiar ésto en cualquier momento en la ventana de configuración de Helium.</translation>
     </message>
 </context>
 <context>
@@ -1875,7 +1805,7 @@ Por favor, tenga paciencia después de hacer clic en importar.</translation>
     </message>
     <message>
         <source>W&amp;allet</source>
-        <translation>&amp;Monedero</translation>
+        <translation>M&amp;onedero</translation>
     </message>
     <message>
         <source>If you disable the spending of unconfirmed change, the change from a transaction&lt;br/&gt;cannot be used until that transaction has at least one confirmation.&lt;br/&gt;This also affects how your balance is computed.</source>
@@ -1903,7 +1833,7 @@ Por favor, tenga paciencia después de hacer clic en importar.</translation>
     </message>
     <message>
         <source>Automatically start Helium after logging in to the system.</source>
-        <translation>Arrancar Helium automáticamente después de identificarse en Windows.</translation>
+        <translation>Arrancar Helium automáticamente después de identificarse en el sistema.</translation>
     </message>
     <message>
         <source>&amp;Start Helium on system login</source>
@@ -1911,19 +1841,19 @@ Por favor, tenga paciencia después de hacer clic en importar.</translation>
     </message>
     <message>
         <source>Whether to show coin control features or not.</source>
-        <translation>Mostrar las características de control de monedas individuales, o no</translation>
+        <translation>Mostrar las características de control de monedas, o no</translation>
     </message>
     <message>
         <source>Enable coin &amp;control features</source>
-        <translation>Activar funciones de control de &amp;monedas</translation>
+        <translation>Activar funciones de &amp;control de monedas</translation>
     </message>
     <message>
         <source>Show additional tab listing all your masternodes in first sub-tab&lt;br/&gt;and all masternodes on the network in second sub-tab.</source>
-        <translation>Mostrar pestaña adicional listando todos sus nodos maestros en la primera sub-pestaña&lt;br/&gt;y todos los nodos maestros de la red en la segunda sub-pestaña.</translation>
+        <translation>Mostrar pestaña adicional listando todos sus masternodes en la primera sub-pestaña&lt;br/&gt;y todos los masternodes de la red en la segunda sub-pestaña.</translation>
     </message>
     <message>
         <source>Show Masternodes Tab</source>
-        <translation>Mostrar la pestaña de Nodos Maestros</translation>
+        <translation>Mostrar la pestaña de masternodes</translation>
     </message>
     <message>
         <source>&amp;Spend unconfirmed change</source>
@@ -1949,15 +1879,15 @@ https://www.transifex.com/heliumchain/helium-project-translations</translation>
     </message>
     <message>
         <source>Enable automatic minting of HLM units to zHLM</source>
-        <translation>Ative a cunhagem automática de unidades HLM para zHLM</translation>
+        <translation>Activar el minting automática de unidades HLM a zHLM</translation>
     </message>
     <message>
         <source>Enable zHLM Automint</source>
-        <translation>Ativar zHLM Automint</translation>
+        <translation>Activar zHLM Automint</translation>
     </message>
     <message>
         <source>Percentage of incoming HLM which get automatically converted to zHLM via Zerocoin Protocol (min: 10%)</source>
-        <translation>Porcentaje de HLMs entrantes que serán automáticamente convertidos a zHLM a través del Protocolo Zerocoin (mín: 10%)</translation>
+        <translation>Porcentaje de HLM entrantes que serán automáticamente convertidos a zHLM a través del Protocolo Zerocoin (mín: 10%)</translation>
     </message>
     <message>
         <source>Percentage of autominted zHLM</source>
@@ -1965,7 +1895,7 @@ https://www.transifex.com/heliumchain/helium-project-translations</translation>
     </message>
     <message>
         <source>Wait with automatic conversion to Zerocoin until enough HLM for this denomination is available</source>
-        <translation>Retrasar la conversión automática a Zerocoin hasta que hayan suficientes HLM disponibles para este tamaño de billete</translation>
+        <translation>Esperar con la conversión automática a Zerocoin hasta que hayan suficientes HLM disponibles para este tamaño de billete</translation>
     </message>
     <message>
         <source>Preferred Automint zHLM Denomination</source>
@@ -1973,7 +1903,7 @@ https://www.transifex.com/heliumchain/helium-project-translations</translation>
     </message>
     <message>
         <source>Stake split threshold:</source>
-        <translation>Limite de divisão da estaca:</translation>
+        <translation>Parte limite de stake:</translation>
     </message>
     <message>
         <source>Connect to the Helium network through a SOCKS5 proxy.</source>
@@ -2026,10 +1956,6 @@ https://www.transifex.com/heliumchain/helium-project-translations</translation>
     <message>
         <source>User Interface Theme:</source>
         <translation>Tema de la Interface de Usuario:</translation>
-    </message>
-    <message>
-        <source>&amp;Unit to show amounts in:</source>
-        <translation>&amp;Unidad para mostrar cantidades:</translation>
     </message>
     <message>
         <source>Choose the default subdivision unit to show in the interface and when sending coins.</source>
@@ -2105,11 +2031,11 @@ https://www.transifex.com/heliumchain/helium-project-translations</translation>
     </message>
     <message>
         <source>The supplied proxy port is invalid.</source>
-        <translation>A porta do proxy fornecida é inválida.</translation>
+        <translation>El puerto proxy suministrado no es válido.</translation>
     </message>
     <message>
         <source>The supplied proxy settings are invalid.</source>
-        <translation>As configurações de proxy fornecidas são inválidas.</translation>
+        <translation>La configuración del proxy suministrado no es válida.</translation>
     </message>
 </context>
 <context>
@@ -2128,7 +2054,7 @@ https://www.transifex.com/heliumchain/helium-project-translations</translation>
     </message>
     <message>
         <source>Total Balance, including all unavailable coins.</source>
-        <translation>Saldo Total, incluindo todas as moedas indisponíveis.</translation>
+        <translation>Balance Total, incluidas todas las monedas no disponibles.</translation>
     </message>
     <message>
         <source>HLM Balance</source>
@@ -2152,15 +2078,27 @@ https://www.transifex.com/heliumchain/helium-project-translations</translation>
     </message>
     <message>
         <source>Current locked balance in watch-only addresses</source>
-        <translation>Saldo bloqueado atual em endereços somente para assistir</translation>
+        <translation>Saldo bloqueado actual en direcciones solo de lectura</translation>
     </message>
     <message>
         <source>Your current Helium balance, unconfirmed and immature transactions included</source>
-        <translation>Seu saldo atual da Helium, transações não confirmadas e imaturas incluídas</translation>
+        <translation>Su balance Helium actual, transacciones no confirmadas e inmaduras incluidas</translation>
     </message>
     <message>
         <source>zHLM Balance</source>
-        <translation>Balanço zHLM</translation>
+        <translation>Balance zHLM</translation>
+    </message>
+    <message>
+        <source>Mature: more than 20 confirmation and more than 1 mint of the same denomination after it was minted.
+These zHLM are spendable.</source>
+        <translation>Maduración: más de 20 confirmaciones y más de 1 acuñación de la misma denominación después de acuñarse.
+Estas zHLM son utilizables.</translation>
+    </message>
+    <message>
+        <source>Unconfirmed: less than 20 confirmations
+Immature: confirmed, but less than 1 mint of the same denomination after it was minted</source>
+        <translation>Sin confirmar: menos de 20 confirmaciones
+Inmaduro: confirmado, pero menos de 1 acuñación de la misma denominación después de ser acuñado</translation>
     </message>
     <message>
         <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Helium network after a connection is established, but this process has not completed yet.</source>
@@ -2168,15 +2106,15 @@ https://www.transifex.com/heliumchain/helium-project-translations</translation>
     </message>
     <message>
         <source>OVERVIEW</source>
-        <translation>VISÃO GERAL</translation>
+        <translation>VISIÓN DE CONJUNTO</translation>
     </message>
     <message>
         <source>Combined Balance (including unconfirmed and immature coins)</source>
-        <translation>Saldos combinados (incluidas las monedas no confirmadas e inmaduras)</translation>
+        <translation>Balance combinados (incluidas las monedas no confirmadas e inmaduras)</translation>
     </message>
     <message>
         <source>Combined Balance</source>
-        <translation>Saldo Combinado</translation>
+        <translation>Balance Combinado</translation>
     </message>
     <message>
         <source>Unconfirmed transactions to watch-only addresses</source>
@@ -2184,7 +2122,7 @@ https://www.transifex.com/heliumchain/helium-project-translations</translation>
     </message>
     <message>
         <source>Staked or masternode rewards in watch-only addresses that has not yet matured</source>
-        <translation>Recompensa de participación o de nodo maestro en direcciones de sólo lectura que todavía no han madurado</translation>
+        <translation>Recompensa stake o recompensa de masternodes en direcciones de sólo lectura que todavía no han madurado</translation>
     </message>
     <message>
         <source>Total:</source>
@@ -2208,7 +2146,7 @@ https://www.transifex.com/heliumchain/helium-project-translations</translation>
     </message>
     <message>
         <source>Locked HLM or Masternode collaterals. These are excluded from zHLM minting.</source>
-        <translation>Bloqueado HLM o Masternode colaterales. Estos están excluidos de la zHLM minting.</translation>
+        <translation>HLM bloqueado o Masternode colaterales. Estos están excluidos de minting zHLM.</translation>
     </message>
     <message>
         <source>Locked:</source>
@@ -2220,7 +2158,7 @@ https://www.transifex.com/heliumchain/helium-project-translations</translation>
     </message>
     <message>
         <source>Your current zHLM balance, unconfirmed and immature zHLM included.</source>
-        <translation>Seu saldo atual do zHLM, zHLM não confirmado e imaturo incluído.</translation>
+        <translation>Su balance zHLM actual, zHLM inmaduro e inmaduro incluido.</translation>
     </message>
     <message>
         <source>Recent transactions</source>
@@ -2240,7 +2178,7 @@ Si AutoMint está habilitado, este porcentaje se establecerá alrededor del porc
     </message>
     <message>
         <source>AutoMint is currently enabled and set to </source>
-        <translation>AutoMint está actualmente habilitado y configurado</translation>
+        <translation>AutoMint está actualmente habilitado y configurado en</translation>
     </message>
     <message>
         <source>To disable AutoMint add 'enablezeromint=0' in helium.conf.</source>
@@ -2382,40 +2320,16 @@ Para habilitar AutoMint cambie 'enablezeromint = 0' a 'enablezeromint = 1' en he
         <translation>zHLM</translation>
     </message>
     <message>
-        <source>Available for minting are coins which are confirmed and not locked or Masternode collaterals.</source>
-        <translation>Disponibles para minting son monedas que están confirmadas y no bloqueadas o Masternode colaterales.</translation>
-    </message>
-    <message>
-        <source>Available for Minting:</source>
-        <translation>Disponible para Creación de moneda:</translation>
-    </message>
-    <message>
-        <source>0.000 000 00 HLM</source>
-        <translation>0.000 000 00 HLM</translation>
-    </message>
-    <message>
         <source>Reset Zerocoin Wallet DB. Deletes transactions that did not make it into the blockchain.</source>
-        <translation>Resetear la base de datos del monedero Zerocoin. Esta opción borra transacciones que no consiguieron salir publicadas en la cadena de bloques.</translation>
+        <translation>Resetear la base de datos del monedero Zerocoin. Esta opción borra transacciones que no consiguieron salir publicadas en el blockchain.</translation>
     </message>
     <message>
         <source>Reset</source>
         <translation>Reiniciar</translation>
     </message>
     <message>
-        <source>Coin Control...</source>
-        <translation>Control de Monedas...</translation>
-    </message>
-    <message>
-        <source>Quantity:</source>
-        <translation>Cantidad:</translation>
-    </message>
-    <message>
-        <source>Amount:</source>
-        <translation>Cantidad:</translation>
-    </message>
-    <message>
         <source>Rescan the complete blockchain for  Zerocoin mints and their meta-data.</source>
-        <translation>Reescanear la cadena de bloques entera buscando creación de moneda Zerocoin y otros meta-datos.</translation>
+        <translation>Reescanear el blockchain entero buscando Zerocoin mints y su meta-datos.</translation>
     </message>
     <message>
         <source>ReScan</source>
@@ -2423,11 +2337,19 @@ Para habilitar AutoMint cambie 'enablezeromint = 0' a 'enablezeromint = 1' en he
     </message>
     <message>
         <source>Status and/or Mesages from the last Mint Action.</source>
-        <translation>Estado y/o Mensajes de la última Acción de Creación de moneda.</translation>
+        <translation>Estado y/o Mensajes de la última acción mint.</translation>
     </message>
     <message>
         <source>PRIVACY</source>
-        <translation>PRIVACIDADE</translation>
+        <translation>PRIVACIDAD</translation>
+    </message>
+    <message>
+        <source>zHLM Control</source>
+        <translation>Control zHLM</translation>
+    </message>
+    <message>
+        <source>zHLM Selected:</source>
+        <translation>zHLM Seleccionados:</translation>
     </message>
     <message>
         <source>Quantity Selected:</source>
@@ -2443,7 +2365,7 @@ Para habilitar AutoMint cambie 'enablezeromint = 0' a 'enablezeromint = 1' en he
     </message>
     <message>
         <source>Available (mature and spendable) zHLM for spending</source>
-        <translation>ZHLM disponible (maduro y gastable) para gastar</translation>
+        <translation>zHLM disponible (maduro y gastable) para gastar</translation>
     </message>
     <message>
         <source>Available Balance:</source>
@@ -2453,25 +2375,13 @@ Para habilitar AutoMint cambie 'enablezeromint = 0' a 'enablezeromint = 1' en he
         <source>Available (mature and spendable) zHLM for spending
 
 zHLM are mature when they have more than 20 confirmations AND more than 2 mints of the same denomination after them were minted</source>
-        <translation>ZHLM disponible (maduro y gastable) para gastar
+        <translation>zHLM disponible (maduro y gastable) para gastar
 
-zHLM son maduros cuando tienen más de 20 confirmaciones Y más de 2 mints de la misma denominación después de ellos fueron minted</translation>
+zHLM son maduros cuando tienen más de 20 confirmaciones Y más de 2 mints de la misma denominación después que ellos fueron minted</translation>
     </message>
     <message>
         <source>0 zHLM</source>
         <translation>0 zHLM</translation>
-    </message>
-    <message>
-        <source>Security Level for Zerocoin Transactions. More is better, but needs more time and resources.</source>
-        <translation>Nivel de Seguridad para Transacciones Zerocoin. Cuanto más mejor, pero necesitará más tiempo y recursos.</translation>
-    </message>
-    <message>
-        <source>Security Level:</source>
-        <translation>Nivel de Seguridad:</translation>
-    </message>
-    <message>
-        <source>Security Level 1 - 100 (default: 42)</source>
-        <translation>Nivel de Seguridad 1 - 100 (por defecto: 42)</translation>
     </message>
     <message>
         <source>Pay &amp;To:</source>
@@ -2487,7 +2397,7 @@ zHLM son maduros cuando tienen más de 20 confirmaciones Y más de 2 mints de la
     </message>
     <message>
         <source>Alt+A</source>
-        <translation>Alt + A</translation>
+        <translation>Alt+A</translation>
     </message>
     <message>
         <source>Paste address from clipboard</source>
@@ -2495,7 +2405,7 @@ zHLM son maduros cuando tienen más de 20 confirmaciones Y más de 2 mints de la
     </message>
     <message>
         <source>Alt+P</source>
-        <translation>Alt + P</translation>
+        <translation>Alt+P</translation>
     </message>
     <message>
         <source>&amp;Label:</source>
@@ -2507,15 +2417,15 @@ zHLM son maduros cuando tienen más de 20 confirmaciones Y más de 2 mints de la
     </message>
     <message>
         <source>A&amp;mount:</source>
-        <translation>Ca&amp;ntidad:</translation>
+        <translation>Cantidad:</translation>
     </message>
     <message>
         <source>Convert Change to Zerocoin (might cost additional fees)</source>
-        <translation>Convertir el Cambio a Zerocoin (puede costar alguna tasa adicional)</translation>
+        <translation>Convertir el Cambio a Zerocoin (puede costar alguna comisión adicional)</translation>
     </message>
     <message>
         <source>If checked, the wallet tries to minimize the returning change instead of minimizing the number of spent denominations.</source>
-        <translation>Si está marcado, el monedero intenta minimizar el cambio de vuelta en lugar de minimizar el número de billetes necesarios.</translation>
+        <translation>Si está marcado, el monedero intenta minimizar el cambio de vuelta en lugar de minimizar el numero de denominaciones necesarios.</translation>
     </message>
     <message>
         <source>Minimize Change</source>
@@ -2539,11 +2449,17 @@ zHLM son maduros cuando tienen más de 20 confirmaciones Y más de 2 mints de la
     </message>
     <message>
         <source>Denominations with value 1:</source>
-        <translation>Billetes con valor 1:</translation>
+        <translation>Denominaciones con valor 1:</translation>
     </message>
     <message>
         <source>Denom. with value 1:</source>
-        <translation>Billetes con valor 1:</translation>
+        <translation>Denom. con valor 1:</translation>
+    </message>
+    <message>
+        <source>Unconfirmed: less than 20 confirmations
+Immature: confirmed, but less than 1 mint of the same denomination after it was minted</source>
+        <translation>Sin confirmar: menos de 20 confirmaciones
+Inmaduro: confirmado, pero menos de 1 acuñación de la misma denominación después de ser acuñado</translation>
     </message>
     <message>
         <source>Show the current status of automatic zHLM minting.
@@ -2556,23 +2472,23 @@ To change the percentage (no restart required):
 - menu Settings-&gt;Options-&gt;Percentage of autominted zHLM
 
 </source>
-        <translation>Mostrar o status atual do zHLM minting automático.
+        <translation>Muestra el estado actual de zHLM minting automática.
 
-Para alterar o status (reinicialização obrigatória): 
-- enable: adicione 'enablezeromint = 1' ao helium.conf
-- disable: adiciona 'enablezeromint = 0' ao helium.conf
+Para cambiar el estado (reinicio requerido):
+- activar: añade 'enablezeromint = 1' en helium.conf
+- desctivar: añade 'enablezeromint = 0' en helium.conf
 
-Para alterar a porcentagem (não é necessário reiniciar): 
-- menu Configurações-&gt; Opções-&gt; Porcentagem de zHLMs automáticos
+Para cambiar el porcentaje (no se requiere reiniciar):
+- menú Configuración-&gt;Opciones-&gt;Porcentaje de zHLM automint
 </translation>
     </message>
     <message>
         <source>AutoMint Status</source>
-        <translation>Status de AutoMint</translation>
+        <translation>Estado de AutoMint</translation>
     </message>
     <message>
         <source>Global Supply:</source>
-        <translation>Abastecimento Global:</translation>
+        <translation>Suministro Global:</translation>
     </message>
     <message>
         <source>Denom. 1:</source>
@@ -2612,59 +2528,59 @@ Para alterar a porcentagem (não é necessário reiniciar):
     </message>
     <message>
         <source>Denominations with value 5:</source>
-        <translation>Billetes con valor 5:</translation>
+        <translation>Denominación con valor 5:</translation>
     </message>
     <message>
         <source>Denom. with value 5:</source>
-        <translation>Billetes con valor 5:</translation>
+        <translation>Denom. con valor 5:</translation>
     </message>
     <message>
         <source>Denominations with value 10:</source>
-        <translation>Billetes con valor 10:</translation>
+        <translation>Denominación con valor 10:</translation>
     </message>
     <message>
         <source>Denom. with value 10:</source>
-        <translation>Billetes con valor 10:</translation>
+        <translation>Denom. con valor 10:</translation>
     </message>
     <message>
         <source>Denominations with value 50:</source>
-        <translation>Billetes con valor 50:</translation>
+        <translation>Denominación con valor 50:</translation>
     </message>
     <message>
         <source>Denom. with value 50:</source>
-        <translation>Billetes con valor 50:</translation>
+        <translation>Denom. con valor 50:</translation>
     </message>
     <message>
         <source>Denominations with value 100:</source>
-        <translation>Billetes con valor 100:</translation>
+        <translation>Denominación con valor 100:</translation>
     </message>
     <message>
         <source>Denom. with value 100:</source>
-        <translation>Billetes con valor 100:</translation>
+        <translation>Denom. con valor 100:</translation>
     </message>
     <message>
         <source>Denominations with value 500:</source>
-        <translation>Billetes con valor 500:</translation>
+        <translation>Denominación con valor 500:</translation>
     </message>
     <message>
         <source>Denom. with value 500:</source>
-        <translation>Billetes con valor 500:</translation>
+        <translation>Denom. con valor 500:</translation>
     </message>
     <message>
         <source>Denominations with value 1000:</source>
-        <translation>Billetes con valor 1000:</translation>
+        <translation>Denominación con valor 1000:</translation>
     </message>
     <message>
         <source>Denom. with value 1000:</source>
-        <translation>Billetes con valor 1000:</translation>
+        <translation>Denom. con valor 1000:</translation>
     </message>
     <message>
         <source>Denominations with value 5000:</source>
-        <translation>Billetes con valor 5000:</translation>
+        <translation>Denominación con valor 5000:</translation>
     </message>
     <message>
         <source>Denom. with value 5000:</source>
-        <translation>Billetes con valor 5000:</translation>
+        <translation>Denom. con valor 5000:</translation>
     </message>
     <message>
         <source>Priority:</source>
@@ -2688,7 +2604,7 @@ Para alterar a porcentagem (não é necessário reiniciar):
     </message>
     <message>
         <source>Bytes:</source>
-        <translation>Octetos:</translation>
+        <translation>Bytes:</translation>
     </message>
     <message>
         <source>Insufficient funds!</source>
@@ -2716,7 +2632,7 @@ Para alterar a porcentagem (não é necessário reiniciar):
     </message>
     <message>
         <source>Amount After Fee:</source>
-        <translation>Cantidad Después de Tasas:</translation>
+        <translation>Cantidad Después de comisión:</translation>
     </message>
     <message>
         <source>Change:</source>
@@ -2731,12 +2647,18 @@ Para alterar a porcentagem (não é necessário reiniciar):
         <translation>Estado de Creación de Moneda: Ok</translation>
     </message>
     <message>
-        <source>Copy quantity</source>
-        <translation>Copiar cantidad</translation>
+        <source>Starting ResetMintZerocoin: rescanning complete blockchain, this will need up to 30 minutes depending on your hardware.
+Please be patient...</source>
+        <translation>Ejecutando ResetMintZerocoin: reescaneando el blockchain entero, esto necesitará hasta 30 minutos dependiendo de su hardware.
+Por favor espere...</translation>
     </message>
     <message>
-        <source>Copy amount</source>
-        <translation>Copiar cantidad</translation>
+        <source>zHLM Spend #: </source>
+        <translation>Gastar zHLM #: </translation>
+    </message>
+    <message>
+        <source>zHLM Mint</source>
+        <translation>Acuñar zHLM</translation>
     </message>
     <message>
         <source> &lt;b&gt;enabled&lt;/b&gt;.</source>
@@ -2748,7 +2670,7 @@ Para alterar a porcentagem (não é necessário reiniciar):
     </message>
     <message>
         <source> Configured target percentage: &lt;b&gt;</source>
-        <translation>Porcentagem de segmentação configurada:&lt;b&gt;</translation>
+        <translation>Porcentaje objetivo configurado:</translation>
     </message>
     <message>
         <source>zHLM is currently disabled due to maintenance.</source>
@@ -2827,38 +2749,6 @@ Para alterar a porcentagem (não é necessário reiniciar):
         <translation>Denom. &lt;b&gt;5000&lt;/b&gt;:</translation>
     </message>
     <message>
-        <source>Error: Your wallet is locked. Please enter the wallet passphrase first.</source>
-        <translation>Error: Tu monedero está bloqueado. Por favor, primero introduzca la clave de desbloqueo.</translation>
-    </message>
-    <message>
-        <source>Message: Enter an amount &gt; 0.</source>
-        <translation>Mensaje: Introduzca una cantidad &gt; 0.</translation>
-    </message>
-    <message>
-        <source>Minting </source>
-        <translation>Creando moneda</translation>
-    </message>
-    <message>
-        <source>Successfully minted </source>
-        <translation>Monedas creadas correctamente</translation>
-    </message>
-    <message>
-        <source> zHLM in </source>
-        <translation>zHLM en</translation>
-    </message>
-    <message>
-        <source> sec. Used denominations:
-</source>
-        <translation>seg. Billetes usados:
-</translation>
-    </message>
-    <message>
-        <source>Starting ResetMintZerocoin: rescanning complete blockchain, this will need up to 30 minutes depending on your hardware. 
-Please be patient...</source>
-        <translation>Ejecutando ResetMintZerocoin: reescaneando la cadena de bloques entera, esto necesitará hasta media hora dependiendo de su hardware.
-Por favor espere...</translation>
-    </message>
-    <message>
         <source>Duration: </source>
         <translation>Duración:</translation>
     </message>
@@ -2886,7 +2776,7 @@ Por favor espere...</translation>
     </message>
     <message>
         <source>Confirm additional Fees</source>
-        <translation>Confirmar Tasas adicionales</translation>
+        <translation>Confirmar comisiónes adicionales</translation>
     </message>
     <message>
         <source>Are you sure you want to send?&lt;br /&gt;&lt;br /&gt;</source>
@@ -2901,36 +2791,12 @@ Por favor espere...</translation>
         <translation>a una dirección local recién generada (no utilizada y, por lo tanto, anónima)&lt;br /&gt;</translation>
     </message>
     <message>
-        <source>with Security Level </source>
-        <translation>con Nivel de Seguridad</translation>
-    </message>
-    <message>
         <source>Confirm send coins</source>
         <translation>Confirmar enviar monedas</translation>
     </message>
     <message>
-        <source>Spending Zerocoin.
-Computationally expensive, might need several minutes depending on the selected Security Level and your hardware. 
-Please be patient...</source>
-        <translation>Gastando Zerocoin.
-Esto es computacionalmente intensivo, puede necesitar varios minutos dependiendo del Nivel de Seguridad elegido y el hardware de su máquina.
-Por favor tenga paciencia...</translation>
-    </message>
-    <message>
-        <source>Too much inputs (</source>
-        <translation>Demasiadas entradas (</translation>
-    </message>
-    <message>
-        <source>) needed. 
-Maximum allowed: </source>
-        <translation>) necesario.
-Máximo permitido:</translation>
-    </message>
-    <message>
-        <source>
-Either mint higher denominations (so fewer inputs are needed) or reduce the amount to spend.</source>
-        <translation>
-También mint las denominaciones más altas (por lo tanto, se necesitan menos datos) o reduzca la cantidad a gastar.</translation>
+        <source>Failed to fetch mint associated with serial hash</source>
+        <translation>Error al buscar la asociación del acuñado con el hash serial</translation>
     </message>
     <message>
         <source>Spend Zerocoin failed with status = </source>
@@ -2938,7 +2804,7 @@ También mint las denominaciones más altas (por lo tanto, se necesitan menos da
     </message>
     <message>
         <source>denomination: </source>
-        <translation>billete:</translation>
+        <translation>Denominación:</translation>
     </message>
     <message>
         <source>serial: </source>
@@ -2966,9 +2832,12 @@ También mint las denominaciones más altas (por lo tanto, se necesitan menos da
     </message>
     <message>
         <source>fee: </source>
-        <translation>tasa:</translation>
+        <translation>comisión:</translation>
     </message>
 </context>
+<context>
+    <name>ProposalFrame</name>
+    </context>
 <context>
     <name>QObject</name>
     <message>
@@ -3019,7 +2888,11 @@ También mint las denominaciones más altas (por lo tanto, se necesitan menos da
         <source>%1 ms</source>
         <translation>%1 ms</translation>
     </message>
-</context>
+    <message>
+        <source>Helium Core</source>
+        <translation>PIVX Core</translation>
+    </message>
+    </context>
 <context>
     <name>QRImageWidget</name>
     <message>
@@ -3111,7 +2984,7 @@ También mint las denominaciones más altas (por lo tanto, se necesitan menos da
     </message>
     <message>
         <source>Block chain</source>
-        <translation>Cadena de bloques</translation>
+        <translation>Blockchain</translation>
     </message>
     <message>
         <source>Open the Helium debug log file from the current data directory. This can take a few seconds for large log files.</source>
@@ -3119,7 +2992,7 @@ También mint las denominaciones más altas (por lo tanto, se necesitan menos da
     </message>
     <message>
         <source>Number of Masternodes</source>
-        <translation>Número de Nodos Maestros</translation>
+        <translation>Número de masternodes</translation>
     </message>
     <message>
         <source>&amp;Console</source>
@@ -3151,19 +3024,19 @@ También mint las denominaciones más altas (por lo tanto, se necesitan menos da
     </message>
     <message>
         <source>&amp;Peers</source>
-        <translation>&amp;Nodos conectados</translation>
+        <translation>&amp;Peers</translation>
     </message>
     <message>
         <source>Banned peers</source>
-        <translation>Pares proibidos</translation>
+        <translation>Peers proibidos</translation>
     </message>
     <message>
         <source>Select a peer to view detailed information.</source>
-        <translation>Seleccione un nodo conectado para ver información detallada.</translation>
+        <translation>Seleccione un peer conectado para ver información detallada.</translation>
     </message>
     <message>
         <source>Whitelisted</source>
-        <translation>Whitelisted</translation>
+        <translation>En lista blance</translation>
     </message>
     <message>
         <source>Direction</source>
@@ -3223,19 +3096,19 @@ También mint las denominaciones más altas (por lo tanto, se necesitan menos da
     </message>
     <message>
         <source>Starting Block</source>
-        <translation>Bloco de partida</translation>
+        <translation>Bloque de empiezo</translation>
     </message>
     <message>
         <source>Synced Headers</source>
-        <translation>Cabeçalhos sincronizados</translation>
+        <translation>Encabezados sincronizados</translation>
     </message>
     <message>
         <source>Synced Blocks</source>
-        <translation>Blocos sincronizados</translation>
+        <translation>Bloques sincronizados</translation>
     </message>
     <message>
         <source>The duration of a currently outstanding ping.</source>
-        <translation>A duração de um ping atualmente pendente.</translation>
+        <translation>La duración de un ping actualmente pendiente.</translation>
     </message>
     <message>
         <source>Ping Wait</source>
@@ -3243,7 +3116,19 @@ También mint las denominaciones más altas (por lo tanto, se necesitan menos da
     </message>
     <message>
         <source>Time Offset</source>
-        <translation>Compensação Temporal</translation>
+        <translation>Desplazamiento de tiempo</translation>
+    </message>
+    <message>
+        <source>Custom Backup Path:</source>
+        <translation>Ruta personalizada de la copia de seguridad:</translation>
+    </message>
+    <message>
+        <source>Custom zHLM Backup Path:</source>
+        <translation>Ruta personalizada de la copia de seguridad zHLM:</translation>
+    </message>
+    <message>
+        <source>Custom Backups Threshold:</source>
+        <translation>Límite de copias de seguridad personalizadas:</translation>
     </message>
     <message>
         <source>Salvage wallet</source>
@@ -3255,11 +3140,11 @@ También mint las denominaciones más altas (por lo tanto, se necesitan menos da
     </message>
     <message>
         <source>Rescan blockchain files</source>
-        <translation>Reescanear ficheros de cadena de bloques</translation>
+        <translation>Reescanear ficheros del blockchain</translation>
     </message>
     <message>
         <source>Rescan the block chain for missing wallet transactions.</source>
-        <translation>Reescanear la cadena de bloques buscando transacciones que faltan en el monedero.</translation>
+        <translation>Reescanear el blockchain buscando transacciones que faltan en el monedero.</translation>
     </message>
     <message>
         <source>Recover transactions 1</source>
@@ -3267,7 +3152,7 @@ También mint las denominaciones más altas (por lo tanto, se necesitan menos da
     </message>
     <message>
         <source>Recover transactions from blockchain (keep meta-data, e.g. account owner).</source>
-        <translation>Recuperar transacciones desde la cadena de bloques (mantener meta-datos, p.e. propietario de la cuenta,etc).</translation>
+        <translation>Recuperar transacciones del blockchain (mantener meta-datos, p.e. propietario de la cuenta,etc).</translation>
     </message>
     <message>
         <source>Recover transactions 2</source>
@@ -3275,7 +3160,7 @@ También mint las denominaciones más altas (por lo tanto, se necesitan menos da
     </message>
     <message>
         <source>Recover transactions from blockchain (drop meta-data).</source>
-        <translation>Recuperar transacciones desde la cadena de bloques (ignorar meta-datos).</translation>
+        <translation>Recuperar transacciones del blockchain (ignorar meta-datos).</translation>
     </message>
     <message>
         <source>Upgrade wallet format</source>
@@ -3283,7 +3168,7 @@ También mint las denominaciones más altas (por lo tanto, se necesitan menos da
     </message>
     <message>
         <source>Rebuild block chain index from current blk000??.dat files.</source>
-        <translation>Reconstruir el índice de la cadena de bloques desde los archivos blk000??.dat actuales.</translation>
+        <translation>Reconstruir el índice del blockchain desde los archivos blk000??.dat actuales.</translation>
     </message>
     <message>
         <source>-resync:</source>
@@ -3291,7 +3176,7 @@ También mint las denominaciones más altas (por lo tanto, se necesitan menos da
     </message>
     <message>
         <source>Deletes all local blockchain folders so the wallet synchronizes from scratch.</source>
-        <translation>Eliminar todos los directorios locales de blockchain y sincronizar la cartera desde el principio</translation>
+        <translation>Eliminar todos los directorios locales del blockchain y sincronizar el monedero desde el principio</translation>
     </message>
     <message>
         <source>The buttons below will restart the wallet with command-line options to repair the wallet, fix issues with corrupt blockhain files or missing/obsolete transactions.</source>
@@ -3323,39 +3208,39 @@ También mint las denominaciones más altas (por lo tanto, se necesitan menos da
     </message>
     <message>
         <source>&amp;Disconnect Node</source>
-        <translation>&amp; Disconnect Node</translation>
+        <translation>&amp;Desconectar nodo</translation>
     </message>
     <message>
         <source>Ban Node for</source>
-        <translation>Nó de proibição para</translation>
+        <translation>Prohibir nodo por </translation>
     </message>
     <message>
         <source>1 &amp;hour</source>
-        <translation>1 &amp;hour</translation>
+        <translation>1 &amp;hora</translation>
     </message>
     <message>
         <source>1 &amp;day</source>
-        <translation>1 &amp;day</translation>
+        <translation>1 &amp;día</translation>
     </message>
     <message>
         <source>1 &amp;week</source>
-        <translation>1 &amp;week</translation>
+        <translation>1 &amp;semana</translation>
     </message>
     <message>
         <source>1 &amp;year</source>
-        <translation>1 &amp;year</translation>
+        <translation>1 &amp;año</translation>
     </message>
     <message>
         <source>&amp;Unban Node</source>
-        <translation>&amp; Unban Node</translation>
+        <translation>&amp;  No prohibir nodo</translation>
     </message>
     <message>
         <source>This will delete your local blockchain folders and the wallet will synchronize the complete Blockchain from scratch.&lt;br /&gt;&lt;br /&gt;</source>
-        <translation>Esto eliminará las carpetas de blockchain locales y la cartera sincronizará la cadena de bloques completa desde cero.&lt;br /&gt;&lt;br /&gt;</translation>
+        <translation>Esto eliminará las carpetas de blockchain locales y el monedero sincronizará la cadena de bloques completa desde cero.&lt;br /&gt;&lt;br /&gt;</translation>
     </message>
     <message>
         <source>This needs quite some time and downloads a lot of data.&lt;br /&gt;&lt;br /&gt;</source>
-        <translation>Esto requiere bastante tiempo y descarga una gran cantidad de datos.&lt;br /&gt;&lt;br /&gt;</translation>
+        <translation>Esto requiere bastante tiempo y la descarga una gran cantidad de datos.&lt;br /&gt;&lt;br /&gt;</translation>
     </message>
     <message>
         <source>Your transactions and funds will be visible again after the download has completed.&lt;br /&gt;&lt;br /&gt;</source>
@@ -3367,11 +3252,7 @@ También mint las denominaciones más altas (por lo tanto, se necesitan menos da
     </message>
     <message>
         <source>Confirm resync Blockchain</source>
-        <translation>Confirmar resincronización de Blockchain</translation>
-    </message>
-    <message>
-        <source>Use up and down arrows to navigate history, and &lt;b&gt;Ctrl-L&lt;/b&gt; to clear screen.</source>
-        <translation>Use las teclas arriba y abajo para navegar por la historia, y &lt;b&gt;Ctrl-L&lt;/b&gt; para limpiar la pantalla.</translation>
+        <translation>Confirmar resincronización del Blockchain</translation>
     </message>
     <message>
         <source>Type &lt;b&gt;help&lt;/b&gt; for an overview of available commands.</source>
@@ -3399,7 +3280,7 @@ También mint las denominaciones más altas (por lo tanto, se necesitan menos da
     </message>
     <message>
         <source>via %1</source>
-        <translation>via %1</translation>
+        <translation>vía %1</translation>
     </message>
     <message>
         <source>never</source>
@@ -3415,11 +3296,11 @@ También mint las denominaciones más altas (por lo tanto, se necesitan menos da
     </message>
     <message>
         <source>Yes</source>
-        <translation>sí</translation>
+        <translation>Sí</translation>
     </message>
     <message>
         <source>No</source>
-        <translation>Não</translation>
+        <translation>No</translation>
     </message>
     <message>
         <source>Unknown</source>
@@ -3445,12 +3326,16 @@ También mint las denominaciones más altas (por lo tanto, se necesitan menos da
         <translation>Una etiqueta opcional a asociar con la nueva dirección de recepción.</translation>
     </message>
     <message>
+        <source>A&amp;mount:</source>
+        <translation>Cantidad:</translation>
+    </message>
+    <message>
         <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Helium network.</source>
         <translation>Un mensaje opcional a adjuntar a la solicitud de pago, que será mostrado cuando se abra la solicitud. Nota: El mensaje no se envía junto al pago por la red Helium.</translation>
     </message>
     <message>
         <source>RECEIVE</source>
-        <translation>RECEBER</translation>
+        <translation>RECIBIR</translation>
     </message>
     <message>
         <source>An optional message to attach to the payment request, which will be displayed when the request is opened.&lt;br&gt;Note: The message will not be sent with the payment over the Helium network.</source>
@@ -3467,10 +3352,6 @@ También mint las denominaciones más altas (por lo tanto, se necesitan menos da
     <message>
         <source>An optional amount to request. Leave this empty or zero to not request a specific amount.</source>
         <translation>Una cantidad opcional a solicitar. Deje esto vacío o en cero para no pedir una cantidad específica.</translation>
-    </message>
-    <message>
-        <source>&amp;Amount:</source>
-        <translation>&amp;Cantidad:</translation>
     </message>
     <message>
         <source>&amp;Request payment</source>
@@ -3515,6 +3396,10 @@ También mint las denominaciones más altas (por lo tanto, se necesitan menos da
     <message>
         <source>Copy amount</source>
         <translation>Copiar cantidad</translation>
+    </message>
+    <message>
+        <source>Copy address</source>
+        <translation>Copiar dirección</translation>
     </message>
 </context>
 <context>
@@ -3587,6 +3472,10 @@ También mint las denominaciones más altas (por lo tanto, se necesitan menos da
         <translation>Mensaje</translation>
     </message>
     <message>
+        <source>Address</source>
+        <translation>Dirección</translation>
+    </message>
+    <message>
         <source>Amount</source>
         <translation>Cantidad</translation>
     </message>
@@ -3627,11 +3516,11 @@ También mint las denominaciones más altas (por lo tanto, se necesitan menos da
     </message>
     <message>
         <source>Bytes:</source>
-        <translation>Octetos:</translation>
+        <translation>Bytes:</translation>
     </message>
     <message>
         <source>Amount:</source>
-        <translation>Cantidad:</translation>
+        <translation>Suma:</translation>
     </message>
     <message>
         <source>Priority:</source>
@@ -3655,7 +3544,7 @@ También mint las denominaciones más altas (por lo tanto, se necesitan menos da
     </message>
     <message>
         <source>After Fee:</source>
-        <translation>Con Comisión:</translation>
+        <translation>Después de Comisión:</translation>
     </message>
     <message>
         <source>Change:</source>
@@ -3707,7 +3596,7 @@ También mint las denominaciones más altas (por lo tanto, se necesitan menos da
     </message>
     <message>
         <source>total at least</source>
-        <translation>total por lo menos</translation>
+        <translation>total al menos</translation>
     </message>
     <message>
         <source>(read the tooltip)</source>
@@ -3791,7 +3680,7 @@ También mint las denominaciones más altas (por lo tanto, se necesitan menos da
     </message>
     <message>
         <source>Add &amp;Recipient</source>
-        <translation>Añadir Destinata&amp;rio</translation>
+        <translation>Añadir Destinatario</translation>
     </message>
     <message>
         <source>Anonymized HLM</source>
@@ -3868,10 +3757,6 @@ También mint las denominaciones más altas (por lo tanto, se necesitan menos da
     <message>
         <source>A fee %1 times higher than %2 per kB is considered an insanely high fee.</source>
         <translation>Una comisión %1 veces más alta que %2 por kB se considera exageradamente alta.</translation>
-    </message>
-    <message numerus="yes">
-        <source>Estimated to begin confirmation within %n block(s).</source>
-        <translation><numerusform>Estimamos que empezará la confirmación en %n bloques.</numerusform><numerusform>Estimamos que empezará la confirmación en %n bloques.</numerusform></translation>
     </message>
     <message>
         <source>The recipient address is not valid, please recheck.</source>
@@ -3954,7 +3839,7 @@ También mint las denominaciones más altas (por lo tanto, se necesitan menos da
     </message>
     <message>
         <source>Alt+A</source>
-        <translation>Alt + A</translation>
+        <translation>Alt+A</translation>
     </message>
     <message>
         <source>Paste address from clipboard</source>
@@ -3962,7 +3847,7 @@ También mint las denominaciones más altas (por lo tanto, se necesitan menos da
     </message>
     <message>
         <source>Alt+P</source>
-        <translation>Alt + P</translation>
+        <translation>Alt+P</translation>
     </message>
     <message>
         <source>Remove this entry</source>
@@ -3978,7 +3863,7 @@ También mint las denominaciones más altas (por lo tanto, se necesitan menos da
     </message>
     <message>
         <source>A&amp;mount:</source>
-        <translation>Ca&amp;ntidad:</translation>
+        <translation>Cantidad:</translation>
     </message>
     <message>
         <source>Message:</source>
@@ -4044,7 +3929,7 @@ También mint las denominaciones más altas (por lo tanto, se necesitan menos da
     </message>
     <message>
         <source>Alt+A</source>
-        <translation>Alt + A</translation>
+        <translation>Alt+A</translation>
     </message>
     <message>
         <source>Paste address from clipboard</source>
@@ -4052,7 +3937,7 @@ También mint las denominaciones más altas (por lo tanto, se necesitan menos da
     </message>
     <message>
         <source>Alt+P</source>
-        <translation>Alt + P</translation>
+        <translation>Alt+P</translation>
     </message>
     <message>
         <source>Enter the message you want to sign here</source>
@@ -4163,7 +4048,7 @@ También mint las denominaciones más altas (por lo tanto, se necesitan menos da
     <name>SplashScreen</name>
     <message>
         <source>Helium Core</source>
-        <translation>Núcleo Helium</translation>
+        <translation>PIVX Core</translation>
     </message>
     <message>
         <source>Version %1</source>
@@ -4195,10 +4080,6 @@ También mint las denominaciones más altas (por lo tanto, se necesitan menos da
 </context>
 <context>
     <name>TransactionDesc</name>
-    <message numerus="yes">
-        <source>Open for %n more block(s)</source>
-        <translation><numerusform>Abierto para %n bloques más</numerusform><numerusform>Abierto para %n bloques más</numerusform></translation>
-    </message>
     <message>
         <source>Open until %1</source>
         <translation>Abierto hasta %1</translation>
@@ -4259,10 +4140,6 @@ También mint las denominaciones más altas (por lo tanto, se necesitan menos da
         <source>, has not been successfully broadcast yet</source>
         <translation>, no ha sido correctamente transmitida todavía</translation>
     </message>
-    <message numerus="yes">
-        <source>, broadcast through %n node(s)</source>
-        <translation><numerusform>, retransmitido a través de %n nodos</numerusform><numerusform>, retransmitido a través de %n nodos</numerusform></translation>
-    </message>
     <message>
         <source>Date</source>
         <translation>Fecha</translation>
@@ -4302,10 +4179,6 @@ También mint las denominaciones más altas (por lo tanto, se necesitan menos da
     <message>
         <source>Credit</source>
         <translation>Crédito</translation>
-    </message>
-    <message numerus="yes">
-        <source>matures in %n more block(s)</source>
-        <translation><numerusform>madura en %n bloques más</numerusform><numerusform>madura en %n bloques más</numerusform></translation>
     </message>
     <message>
         <source>not accepted</source>
@@ -4405,10 +4278,6 @@ También mint las denominaciones más altas (por lo tanto, se necesitan menos da
         <source>Address</source>
         <translation>Dirección</translation>
     </message>
-    <message numerus="yes">
-        <source>Open for %n more block(s)</source>
-        <translation><numerusform>Abierto para %n bloques más</numerusform><numerusform>Abierto para %n bloques más</numerusform></translation>
-    </message>
     <message>
         <source>Open until %1</source>
         <translation>Abierto hasta %1</translation>
@@ -4458,6 +4327,14 @@ También mint las denominaciones más altas (por lo tanto, se necesitan menos da
         <translation>Recibido por medio de Ofuscación</translation>
     </message>
     <message>
+        <source>HLM Stake</source>
+        <translation>Stake HLM</translation>
+    </message>
+    <message>
+        <source>zHLM Stake</source>
+        <translation>Stake zHLM</translation>
+    </message>
+    <message>
         <source>Obfuscation Denominate</source>
         <translation>Ofuscación Denominada</translation>
     </message>
@@ -4472,6 +4349,34 @@ También mint las denominaciones más altas (por lo tanto, se necesitan menos da
     <message>
         <source>Obfuscation Create Denominations</source>
         <translation>Ofuscación Crea Billetes</translation>
+    </message>
+    <message>
+        <source>Converted HLM to zHLM</source>
+        <translation>HLM convertidos a zHLM</translation>
+    </message>
+    <message>
+        <source>Spent zHLM</source>
+        <translation>Gastar zHLM</translation>
+    </message>
+    <message>
+        <source>Received HLM from zHLM</source>
+        <translation>HLM recibidos desde zHLM</translation>
+    </message>
+    <message>
+        <source>Minted Change as zHLM from zHLM Spend</source>
+        <translation>Cambio de acuñación en zHLM al Gastar zHLM</translation>
+    </message>
+    <message>
+        <source>Converted zHLM to HLM</source>
+        <translation>zHLM convertidos a HLM</translation>
+    </message>
+    <message>
+        <source>Anonymous (zHLM Transaction)</source>
+        <translation>Anónimo (Transacción zHLM)</translation>
+    </message>
+    <message>
+        <source>Anonymous (zHLM Stake)</source>
+        <translation>Anónimo (Stake zHLM)</translation>
     </message>
     <message>
         <source>Sent to</source>
@@ -4681,6 +4586,14 @@ También mint las denominaciones más altas (por lo tanto, se necesitan menos da
         <translation>Exportación Correcta</translation>
     </message>
     <message>
+        <source>Received HLM from zHLM</source>
+        <translation>HLM recibidos desde zHLM</translation>
+    </message>
+    <message>
+        <source>Zerocoin Spend, Change in zHLM</source>
+        <translation>Gastar Zerocoin, Cambio en zHLM</translation>
+    </message>
+    <message>
         <source>The transaction history was successfully saved to %1.</source>
         <translation>El historial de transacción fue guardado satisfactoriamente a %1.</translation>
     </message>
@@ -4748,6 +4661,10 @@ También mint las denominaciones más altas (por lo tanto, se necesitan menos da
 <context>
     <name>ZHlmControlDialog</name>
     <message>
+        <source>Select zHLM to Spend</source>
+        <translation>Selecciona zHLM para Gastar</translation>
+    </message>
+    <message>
         <source>Quantity</source>
         <translation>Cantidad</translation>
     </message>
@@ -4763,11 +4680,7 @@ También mint las denominaciones más altas (por lo tanto, se necesitan menos da
         <source>Select/Deselect All</source>
         <translation>Seleccionar/Deseleccionar Todos</translation>
     </message>
-    <message>
-        <source>Is Spendable</source>
-        <translation>Es Gastable</translation>
-    </message>
-</context>
+    </context>
 <context>
     <name>helium-core</name>
     <message>
@@ -4815,8 +4728,24 @@ También mint las denominaciones más altas (por lo tanto, se necesitan menos da
         <translation>Borrar todas las transacciones del monedero y solo recuperar partes de la cadena de bloque a traves de -rescan al inicio.</translation>
     </message>
     <message>
+        <source>Delete all zerocoin spends and mints that have been recorded to the blockchain database and reindex them (0-1, default: %u)</source>
+        <translation>Elimina todos registros de las transferencias y el acuñado de Zerocoin que se hayan registrado en la base de datos de Blockchain y vuelva a indexarlos (0-1, default: %u)</translation>
+    </message>
+    <message>
         <source>Distributed under the MIT software license, see the accompanying file COPYING or &lt;http://www.opensource.org/licenses/mit-license.php&gt;.</source>
         <translation>Distribuido bajo licencia MIT software license, ver el archivo adjunto COPYING or &lt;http://www.opensource.org/licenses/mit-license.php&gt;</translation>
+    </message>
+    <message>
+        <source>Enable automatic wallet backups triggered after each zHLM minting (0-1, default: %u)</source>
+        <translation>Habilite copias de seguridad automáticas del monedero que se activan después de cada acuñación zHLM (0-1, predeterminado: %u)</translation>
+    </message>
+    <message>
+        <source>Enable or disable staking functionality for HLM inputs (0-1, default: %u)</source>
+        <translation>Habilitar o deshabilitar la funcionalidad de staking para las entradas HLM (0-1, predeterminado: %u)</translation>
+    </message>
+    <message>
+        <source>Enable or disable staking functionality for zHLM inputs (0-1, default: %u)</source>
+        <translation>Habilitar o deshabilitar la funcionalidad de staking para las entradas zHLM (0-1, predeterminado: %u)</translation>
     </message>
     <message>
         <source>Enable spork administration functionality with the appropriate private key.</source>
@@ -4832,7 +4761,7 @@ También mint las denominaciones más altas (por lo tanto, se necesitan menos da
     </message>
     <message>
         <source>Error: The transaction is larger than the maximum allowed transaction size!</source>
-        <translation>Erro: a transação é maior que o tamanho máximo permitido da transação!</translation>
+        <translation>Error: ¡La transacción es más grande que el tamaño máximo de transacción permitido!</translation>
     </message>
     <message>
         <source>Error: Unsupported argument -socks found. Setting SOCKS version isn't possible anymore, only SOCKS5 proxies are supported.</source>
@@ -4863,10 +4792,6 @@ También mint las denominaciones más altas (por lo tanto, se necesitan menos da
         <translation>Trasladar la actividad de la base de datos en el pool de memoria al log de disco cada &lt;n&gt; megabytes (default: %u)</translation>
     </message>
     <message>
-        <source>Found unconfirmed denominated outputs, will wait till they confirm to continue.</source>
-        <translation>Se encontró salidas denominadas sin confirmar, se esperará hasta que se confirmen para continuar.</translation>
-    </message>
-    <message>
         <source>If paytxfee is not set, include enough fee so transactions begin confirmation on average within n blocks (default: %u)</source>
         <translation>Si paytxfee no esta definido, incluir suficiente comisión de manera que la transacción se vuelva confirmada en promedio dentro de n bloques (predeterminado: %u)</translation>
     </message>
@@ -4888,7 +4813,7 @@ También mint las denominaciones más altas (por lo tanto, se necesitan menos da
     </message>
     <message>
         <source>Log transaction priority and fee per kB when mining blocks (default: %u)</source>
-        <translation>Prioridad del registro de transacciones por kB cuando se esta minando bloques (predeterminado: %u)</translation>
+        <translation>Prioridad y comisión del registro de transacciones por kB cuando se esta minando bloques (predeterminado: %u)</translation>
     </message>
     <message>
         <source>Maintain a full transaction index, used by the getrawtransaction rpc call (default: %u)</source>
@@ -4900,7 +4825,7 @@ También mint las denominaciones más altas (por lo tanto, se necesitan menos da
     </message>
     <message>
         <source>Maximum total fees to use in a single wallet transaction, setting too low may abort large transactions (default: %s)</source>
-        <translation>Comisión máxima total para usar en una única transacción de billetera, definirlo muy bajo puede abortar transacciones largas (predeterminado: %s)</translation>
+        <translation>Comisión máxima total para usar en una única transacción de monedero, definirlo muy bajo puede abortar transacciones largas (predeterminado: %s)</translation>
     </message>
     <message>
         <source>Number of seconds to keep misbehaving peers from reconnecting (default: %u)</source>
@@ -5051,10 +4976,6 @@ También mint las denominaciones más altas (por lo tanto, se necesitan menos da
         <translation>Permitir búsquedas DNS para -addnode, -seednode y -connect</translation>
     </message>
     <message>
-        <source>Already have that input.</source>
-        <translation>Ya tiene esa entrada.</translation>
-    </message>
-    <message>
         <source>Always query for peer addresses via DNS lookup (default: %u)</source>
         <translation>Siempre consultar por direcciones de pares vía búsqueda DNS (predeterminado: %u)</translation>
     </message>
@@ -5075,20 +4996,8 @@ También mint las denominaciones más altas (por lo tanto, se necesitan menos da
         <translation>Calculando acumuladores pendientes...</translation>
     </message>
     <message>
-        <source>Can't denominate: no compatible inputs left.</source>
-        <translation>No se puede denominar: quedaron entradas no compatibles.</translation>
-    </message>
-    <message>
-        <source>Can't find random Masternode.</source>
-        <translation>No se puede encontrar un Masternode al azar.</translation>
-    </message>
-    <message>
-        <source>Can't mix while sync in progress.</source>
-        <translation>No se puede mezclar mientras la sincronización esta en progreso.</translation>
-    </message>
-    <message>
         <source>Cannot downgrade wallet</source>
-        <translation>No se puede volver a una versión anterior de la billetera</translation>
+        <translation>No se puede volver a una versión anterior del monedero</translation>
     </message>
     <message>
         <source>Cannot resolve -bind address: '%s'</source>
@@ -5105,10 +5014,6 @@ También mint las denominaciones más altas (por lo tanto, se necesitan menos da
     <message>
         <source>Cannot write default address</source>
         <translation>No se puede escribir la dirección predeterminada</translation>
-    </message>
-    <message>
-        <source>Collateral not valid.</source>
-        <translation>Colateral no válido.</translation>
     </message>
     <message>
         <source>Connect only to the specified node(s)</source>
@@ -5168,7 +5073,7 @@ También mint las denominaciones más altas (por lo tanto, se necesitan menos da
     </message>
     <message>
         <source>Do not load the wallet and disable wallet RPC calls</source>
-        <translation>No cargar la billetera y desactivar las llamadas RPC de billetera</translation>
+        <translation>No cargar la monedero y desactivar las llamadas RPC del monedero</translation>
     </message>
     <message>
         <source>Do you want to rebuild the block database now?</source>
@@ -5195,20 +5100,12 @@ También mint las denominaciones más altas (por lo tanto, se necesitan menos da
         <translation>Habilitar al cliente para actuar como un nodo maestro (0-1. predeterminado: %u)</translation>
     </message>
     <message>
-        <source>Entries are full.</source>
-        <translation>Las entradas están llenas.</translation>
-    </message>
-    <message>
-        <source>Error connecting to Masternode.</source>
-        <translation>Error al conectar al Nodo Maestro</translation>
-    </message>
-    <message>
         <source>Error initializing block database</source>
         <translation>Error al inicializar base de datos de bloques</translation>
     </message>
     <message>
         <source>Error initializing wallet database environment %s!</source>
-        <translation>Error al inicializar ambiente %s de base de datos de billetera!</translation>
+        <translation>Error al inicializar ambiente %s de base de datos del monedero!</translation>
     </message>
     <message>
         <source>Error loading block database</source>
@@ -5220,11 +5117,11 @@ También mint las denominaciones más altas (por lo tanto, se necesitan menos da
     </message>
     <message>
         <source>Error loading wallet.dat: Wallet corrupted</source>
-        <translation>Error al cargar wallet.dat: Billetera dañada</translation>
+        <translation>Error al cargar wallet.dat: Monedero dañado</translation>
     </message>
     <message>
         <source>Error loading wallet.dat: Wallet requires newer version of Helium Core</source>
-        <translation>Error al cargar wallet.dat: La Billetera requiere una nueva versión del Núcleo Helium</translation>
+        <translation>Error al cargar wallet.dat: El monedero requiere una nueva versión del PIVX Core</translation>
     </message>
     <message>
         <source>Error opening block database</source>
@@ -5239,16 +5136,16 @@ También mint las denominaciones más altas (por lo tanto, se necesitan menos da
         <translation>Error al recuperar clave pública.</translation>
     </message>
     <message>
+        <source>Error writing zerocoinDB to disk</source>
+        <translation>Error al escribir zerocoinDB en el disco</translation>
+    </message>
+    <message>
         <source>Error</source>
         <translation>Error</translation>
     </message>
     <message>
         <source>Error: A fatal internal error occured, see debug.log for details</source>
         <translation>Error: Un error interno fatal a ocurrido, ver debug.log para mas detalles</translation>
-    </message>
-    <message>
-        <source>Error: Can't select current denominated inputs</source>
-        <translation>Error: No se pudo seleccionar las entradas denominadas actuales</translation>
     </message>
     <message>
         <source>Error: Disk space is low!</source>
@@ -5260,11 +5157,7 @@ También mint las denominaciones más altas (por lo tanto, se necesitan menos da
     </message>
     <message>
         <source>Error: Wallet locked, unable to create transaction!</source>
-        <translation>Error: Billetera bloqueada, imposible crear transacción!</translation>
-    </message>
-    <message>
-        <source>Error: You already have pending entries in the Obfuscation pool</source>
-        <translation>Error: Ya tienes entradas pendientes en el pool de Ofuscación</translation>
+        <translation>Error: ¡Monedero bloqueado, imposible crear transacción!</translation>
     </message>
     <message>
         <source>Failed to calculate accumulator checkpoint</source>
@@ -5275,6 +5168,10 @@ También mint las denominaciones más altas (por lo tanto, se necesitan menos da
         <translation>Falló la escucha en cualquiera de los puertos. Usar -listen=0 si quieres esto.</translation>
     </message>
     <message>
+        <source>Failed to parse host:port string</source>
+        <translation>Error al analizar el host: cadena del puerto</translation>
+    </message>
+    <message>
         <source>Failed to read block</source>
         <translation>Falló al leer el bloque</translation>
     </message>
@@ -5283,20 +5180,8 @@ También mint las denominaciones más altas (por lo tanto, se necesitan menos da
         <translation>Comisión (en HLM/kB) para agregar a la transacción que envías (predeterminado: %s)</translation>
     </message>
     <message>
-        <source>Finalizing transaction.</source>
-        <translation>Finalizando transacción.</translation>
-    </message>
-    <message>
         <source>Force safe mode (default: %u)</source>
         <translation>Forzar modo seguro (predeterminado: %u)</translation>
-    </message>
-    <message>
-        <source>Found enough users, signing ( waiting %s )</source>
-        <translation>Se han encontrado suficientes usuarios, firmando ( esperando %s )</translation>
-    </message>
-    <message>
-        <source>Found enough users, signing ...</source>
-        <translation>Se han encontrado suficientes usuarios, firmando ...</translation>
     </message>
     <message>
         <source>Generate coins (default: %u)</source>
@@ -5323,14 +5208,6 @@ También mint las denominaciones más altas (por lo tanto, se necesitan menos da
         <translation>Incluir direcciones IP en salida de depuración (predeterminado: %u)</translation>
     </message>
     <message>
-        <source>Incompatible mode.</source>
-        <translation>Modo incompatible.</translation>
-    </message>
-    <message>
-        <source>Incompatible version.</source>
-        <translation>Versión imcompatible.</translation>
-    </message>
-    <message>
         <source>Incorrect or no genesis block found. Wrong datadir for network?</source>
         <translation>Bloque de génesis incorrecto o no encontrado. datadir equivocado para red?</translation>
     </message>
@@ -5341,10 +5218,6 @@ También mint las denominaciones más altas (por lo tanto, se necesitan menos da
     <message>
         <source>Initialization sanity check failed. Helium Core is shutting down.</source>
         <translation>La prueba de salud de inicialización ha fallado. Helium Core se cerrará.</translation>
-    </message>
-    <message>
-        <source>Input is not valid.</source>
-        <translation>La entrada no es válida.</translation>
     </message>
     <message>
         <source>Insufficient funds</source>
@@ -5403,16 +5276,24 @@ También mint las denominaciones más altas (por lo tanto, se necesitan menos da
         <translation>Clave pública inválida.</translation>
     </message>
     <message>
-        <source>Invalid script detected.</source>
-        <translation>Script inválido detectado.</translation>
-    </message>
-    <message>
         <source>Percentage of automatically minted Zerocoin  (1-100, default: %u)</source>
         <translation>Porcentaje de Zerocoin creadas automáticamente (10-100, por defecto: %u)</translation>
     </message>
     <message>
         <source>Reindex the HLM and zHLM money supply statistics</source>
         <translation>Reindexar as estatísticas de fornecimento de dinheiro HLM e zHLM</translation>
+    </message>
+    <message>
+        <source>Reindexing zerocoin database...</source>
+        <translation>Reindexando la base de datos zerocoin...</translation>
+    </message>
+    <message>
+        <source>Reindexing zerocoin failed</source>
+        <translation>La reindexación zerocoin ha fallado</translation>
+    </message>
+    <message>
+        <source>Selected coins value is less than payment target</source>
+        <translation>El valor de las monedas seleccionadas es menor que el monto a pagar</translation>
     </message>
     <message>
         <source>SwiftX options:</source>
@@ -5460,19 +5341,27 @@ También mint las denominaciones más altas (por lo tanto, se necesitan menos da
     </message>
     <message>
         <source>Execute command when the best block changes and its size is over (%s in cmd is replaced by block hash, %d with the block size)</source>
-        <translation>Execute o comando quando o melhor bloco for alterado e seu tamanho terminar (%s em cmd é substituído por hash de bloco, %d com o tamanho do bloco)</translation>
+        <translation>Ejecute el comando cuando el mejor bloque cambie y su tamaño haya terminado (%s en cmd se reemplaza por el hash del bloque, %d con el tamaño de bloque)</translation>
     </message>
     <message>
         <source>Failed to find coin set amongst held coins with less than maxNumber of Spends</source>
-        <translation>Não foi possível encontrar o conjunto de moedas entre as moedas retidas com menos de um máximo de gastos</translation>
+        <translation>No se puede encontrar el conjunto de monedas necesarias entre las monedas disponibles con menos de maxNumber para poder gastarlas</translation>
     </message>
     <message>
         <source>In rare cases, a spend with 7 coins exceeds our maximum allowable transaction size, please retry spend using 6 or less coins</source>
-        <translation>Em casos raros, um gasto com 7 moedas excede nosso tamanho máximo de transação permitido. Repita o investimento usando 6 moedas ou menos</translation>
+        <translation>En casos excepcionales, un envío con más de 7 monedas excede el tamaño máximo de transacción permitidas, intente gastar 6 monedas o menos.</translation>
     </message>
     <message>
         <source>Preferred Denomination for automatically minted Zerocoin  (1/5/10/50/100/500/1000/5000), 0 for no preference. default: %u)</source>
-        <translation>Tamaño de Billete Zerocoin Preferido para los Zerocoin creados automáticamente (1/5/10/50/100/500/1000/5000), poner 0 si no tiene preferencias. Por defecto: %u) </translation>
+        <translation>Denominación preferida para acuñado automatico de Zerocoin (1/5/10/50/100/500/1000/5000), 0 para ninguna preferencia. predeterminado: %u)</translation>
+    </message>
+    <message>
+        <source>Specify custom backup path to add a copy of any automatic zHLM backup. If set as dir, every backup generates a timestamped file. If set as file, will rewrite to that file every backup. If backuppath is set as well, 4 backups will happen</source>
+        <translation>Especifique la ruta de copia de seguridad personalizada para agregar una copia de cualquier copia de seguridad zHLM automática. Si se establece como directorio, cada copia de seguridad genera un archivo con marcas de tiempo. Si se establece como archivo, se reescribirá en ese archivo cada copia de seguridad. Si también se establece backuppath, se realizarán 4 copias de seguridad</translation>
+    </message>
+    <message>
+        <source>Specify custom backup path to add a copy of any wallet backup. If set as dir, every backup generates a timestamped file. If set as file, will rewrite to that file every backup.</source>
+        <translation>Especifique una ruta de copia de seguridad personalizada para agregar una copia de cualquier copia de seguridad de monedero. Si se establece como directorio, cada copia de seguridad genera un archivo con marcas de tiempo. Si se establece como archivo, se reescribirá en ese archivo cada copia de seguridad generada.</translation>
     </message>
     <message>
         <source>SwiftX requires inputs with at least 6 confirmations, you might need to wait a few minutes and try again.</source>
@@ -5488,7 +5377,7 @@ También mint las denominaciones más altas (por lo tanto, se necesitan menos da
     </message>
     <message>
         <source>CoinSpend: Accumulator witness does not verify</source>
-        <translation>CoinSpend: testemunha do acumulador não verifica</translation>
+        <translation>CoinSpend: El testigo del acumulador no verifica</translation>
     </message>
     <message>
         <source>Display the stake modifier calculations in the debug.log file.</source>
@@ -5524,35 +5413,31 @@ También mint las denominaciones más altas (por lo tanto, se necesitan menos da
     </message>
     <message>
         <source>Error: No valid utxo!</source>
-        <translation>Erro: Nenhum utxo válido!</translation>
+        <translation>Error: ¡utxo no válido!</translation>
     </message>
     <message>
         <source>Failed to create mint</source>
-        <translation>Falha ao criar hortelã</translation>
+        <translation>Error al acuñar</translation>
     </message>
     <message>
-        <source>Failed to deserialize</source>
-        <translation>Falha ao desserializar</translation>
+        <source>Failed to find Zerocoins in wallet.dat</source>
+        <translation>Error al encontrar Zerocoins en wallet.dat</translation>
     </message>
     <message>
         <source>Failed to select a zerocoin</source>
-        <translation>Falha ao selecionar um zerocoin</translation>
+        <translation>Error al seleccionar una zerocoin</translation>
+    </message>
+    <message>
+        <source>Failed to wipe zerocoinDB</source>
+        <translation>Error al borrar zerocoinDB</translation>
     </message>
     <message>
         <source>Failed to write coin serial number into wallet</source>
-        <translation>Falha ao gravar o número de série da moeda na carteira</translation>
+        <translation>Error al escribir el número de serie de la moneda en el monedero</translation>
     </message>
     <message>
         <source>Keep at most &lt;n&gt; unconnectable transactions in memory (default: %u)</source>
         <translation>Mantener como máximo &lt;n&gt; transacciones no conectables en memoria (predeterminado: %u)</translation>
-    </message>
-    <message>
-        <source>Last Obfuscation was too recent.</source>
-        <translation>La última Ofuscación fue demasiado reciente.</translation>
-    </message>
-    <message>
-        <source>Last successful Obfuscation action was too recent.</source>
-        <translation>La última acción de Ofuscación exitosa fue demasiado reciente.</translation>
     </message>
     <message>
         <source>Limit size of signature cache to &lt;n&gt; entries (default: %u)</source>
@@ -5604,11 +5489,7 @@ También mint las denominaciones más altas (por lo tanto, se necesitan menos da
     </message>
     <message>
         <source>Location of the auth cookie (default: data dir)</source>
-        <translation>Localização do cookie de autenticação (padrão: data dir)</translation>
-    </message>
-    <message>
-        <source>Lock is already in place.</source>
-        <translation>Bloqueo esta en su lugar.</translation>
+        <translation>Ubicación de la cookie de autenticación (predeterminado: data dir)</translation>
     </message>
     <message>
         <source>Lock masternodes from masternode configuration file (default: %u)</source>
@@ -5616,7 +5497,7 @@ También mint las denominaciones más altas (por lo tanto, se necesitan menos da
     </message>
     <message>
         <source>Lookup(): Invalid -proxy address or hostname: '%s'</source>
-        <translation>Pesquisa (): Endereço de proxy ou nome de host inválido: '%s'</translation>
+        <translation>Lookup(): Inválido -dirección proxy o nombre de host '%s'</translation>
     </message>
     <message>
         <source>Maintain at most &lt;n&gt; connections to peers (default: %u)</source>
@@ -5625,14 +5506,6 @@ También mint las denominaciones más altas (por lo tanto, se necesitan menos da
     <message>
         <source>Masternode options:</source>
         <translation>Opciones de Masternode:</translation>
-    </message>
-    <message>
-        <source>Masternode queue is full.</source>
-        <translation>La cola del Nodo Maestro esta llena.</translation>
-    </message>
-    <message>
-        <source>Masternode:</source>
-        <translation>Nodo maestro:</translation>
     </message>
     <message>
         <source>Maximum per-connection receive buffer, &lt;n&gt;*1000 bytes (default: %u)</source>
@@ -5644,75 +5517,31 @@ También mint las denominaciones más altas (por lo tanto, se necesitan menos da
     </message>
     <message>
         <source>Mint did not make it into blockchain</source>
-        <translation>Mint não fez isso em blockchain</translation>
-    </message>
-    <message>
-        <source>Missing input transaction information.</source>
-        <translation>Información de transacciones de entrada perdidas.</translation>
-    </message>
-    <message>
-        <source>Mixing in progress...</source>
-        <translation>Mezcla en progreso...</translation>
+        <translation>El Acuñado no se realizó en blockchain</translation>
     </message>
     <message>
         <source>Need address because change is not exact</source>
-        <translation>Precisa de endereço porque a mudança não é exata</translation>
+        <translation>Necesita dirección porque el cambio no es exacto</translation>
     </message>
     <message>
         <source>Need to specify a port with -whitebind: '%s'</source>
         <translation>Necesita especificar un puerto con -whitebind: '%s'</translation>
     </message>
     <message>
-        <source>No Masternodes detected.</source>
-        <translation>No se han detectado Masternodes.</translation>
-    </message>
-    <message>
-        <source>No compatible Masternode found.</source>
-        <translation>No hay un Masternode compatible encontrado.</translation>
-    </message>
-    <message>
-        <source>No funds detected in need of denominating.</source>
-        <translation>No hay fondos detectados necesarios de denominación.</translation>
-    </message>
-    <message>
-        <source>No matching denominations found for mixing.</source>
-        <translation>No hemos encontrado billetes coincidentes para mezclado.</translation>
-    </message>
-    <message>
         <source>Node relay options:</source>
         <translation>Opciones de transmisión del nodo:</translation>
-    </message>
-    <message>
-        <source>Non-standard public key detected.</source>
-        <translation>Clave pública no-estandar ha sido detectada.</translation>
-    </message>
-    <message>
-        <source>Not compatible with existing transactions.</source>
-        <translation>No es compatible con las transacciones salientes.</translation>
     </message>
     <message>
         <source>Not enough file descriptors available.</source>
         <translation>No hay suficientes descriptores de archivo disponibles.</translation>
     </message>
     <message>
-        <source>Not in the Masternode list.</source>
-        <translation>No en la lista Masternode.</translation>
-    </message>
-    <message>
         <source>Number of automatic wallet backups (default: 10)</source>
         <translation>Número de Copias de seguridad automáticas de monedero (predeterminado: 10)</translation>
     </message>
     <message>
-        <source>Obfuscation is idle.</source>
-        <translation>La Ofuscación está sin uso.</translation>
-    </message>
-    <message>
-        <source>Obfuscation request complete:</source>
-        <translation>Pedido de Ofuscacion completado:</translation>
-    </message>
-    <message>
-        <source>Obfuscation request incomplete:</source>
-        <translation>Pedido de Ofuscación incompleto:</translation>
+        <source>Number of custom location backups to retain (default: %d)</source>
+        <translation>Número de copias de seguridad personalizadas que se deben retener (predeterminado: %d)</translation>
     </message>
     <message>
         <source>Only accept block chain matching built-in checkpoints (default: %u)</source>
@@ -5732,7 +5561,7 @@ También mint las denominaciones más altas (por lo tanto, se necesitan menos da
     </message>
     <message>
         <source>isValid(): Invalid -proxy address or hostname: '%s'</source>
-        <translation>isValid (): Endereço de proxy ou nome de host inválido: '%s'</translation>
+        <translation>isValid(): Inválido -dirección proxy o nombre de host '%s'</translation>
     </message>
     <message>
         <source>Preparing for resync...</source>
@@ -5807,10 +5636,6 @@ También mint las denominaciones más altas (por lo tanto, se necesitan menos da
         <translation>Enviar transacciones como transacciones cero-comisión si es posible (predeterminado: %u)</translation>
     </message>
     <message>
-        <source>Session not complete!</source>
-        <translation>Sesión no completa!</translation>
-    </message>
-    <message>
         <source>Session timed out.</source>
         <translation>La sesión expiró.</translation>
     </message>
@@ -5848,7 +5673,7 @@ También mint las denominaciones más altas (por lo tanto, se necesitan menos da
     </message>
     <message>
         <source>Sets the DB_PRIVATE flag in the wallet db environment (default: %u)</source>
-        <translation>Definir la bandera DB_PRIVATE en la db de la billetera del ambiente (predeterminado: %u)</translation>
+        <translation>Definir la bandera DB_PRIVATE en la db de la monedero del ambiente (predeterminado: %u)</translation>
     </message>
     <message>
         <source>Show all debugging options (usage: --help -help-debug)</source>
@@ -5892,7 +5717,7 @@ También mint las denominaciones más altas (por lo tanto, se necesitan menos da
     </message>
     <message>
         <source>Specify wallet file (within data directory)</source>
-        <translation>Especifique el archivo monedero (dentro del directorio de datos)</translation>
+        <translation>Especifique el archivo del monedero (dentro del directorio de datos)</translation>
     </message>
     <message>
         <source>Specify your own public address</source>
@@ -5913,18 +5738,6 @@ También mint las denominaciones más altas (por lo tanto, se necesitan menos da
     <message>
         <source>Stop running after importing blocks from disk (default: %u)</source>
         <translation>Parar la ejecución después de importar bloques desde el disco (predeterminado: %u)</translation>
-    </message>
-    <message>
-        <source>Submitted following entries to masternode: %u / %d</source>
-        <translation>Se enviaron las siguientes entradas a masternode: %u / %d</translation>
-    </message>
-    <message>
-        <source>Submitted to masternode, waiting for more entries ( %u / %d ) %s</source>
-        <translation>Enviado a masternode, esperando por mas entradas (%u / %d) %s</translation>
-    </message>
-    <message>
-        <source>Submitted to masternode, waiting in queue %s</source>
-        <translation>Enviado a masternode, quedando en espera %s</translation>
     </message>
     <message>
         <source>Synchronization failed</source>
@@ -5955,20 +5768,16 @@ También mint las denominaciones más altas (por lo tanto, se necesitan menos da
         <translation>Sincronizando con la red... </translation>
     </message>
     <message>
+        <source>Syncing zHLM wallet...</source>
+        <translation>Sincronizando el monedero zHLM...</translation>
+    </message>
+    <message>
         <source>The coin spend has been used</source>
-        <translation>O gasto com moedas foi usado</translation>
-    </message>
-    <message>
-        <source>The new spend coin transaction did not verify</source>
-        <translation>A nova transação de moeda de gasto não foi confirmada</translation>
-    </message>
-    <message>
-        <source>The selected mint coin is an invalid coin</source>
-        <translation>A moeda de hortelã selecionada é uma moeda inválida</translation>
+        <translation>El gasto de moneda se ha usado</translation>
     </message>
     <message>
         <source>The transaction did not verify</source>
-        <translation>A transação não verificou</translation>
+        <translation>La transacción no se verificó</translation>
     </message>
     <message>
         <source>This help message</source>
@@ -5983,16 +5792,12 @@ También mint las denominaciones más altas (por lo tanto, se necesitan menos da
         <translation>Esto esta destinado para herramientas de prueba de regresión y desarrollo de aplicaciones.</translation>
     </message>
     <message>
-        <source>This is not a Masternode.</source>
-        <translation>Este no es un nodo maestro.</translation>
-    </message>
-    <message>
         <source>Threshold for disconnecting misbehaving peers (default: %u)</source>
         <translation>Limite para desconexión de peers de mal desempeño (predeterminado: %u)</translation>
     </message>
     <message>
         <source>Too many spends needed</source>
-        <translation>Gastos demais são necessários</translation>
+        <translation>Demasiados gastos necesarios</translation>
     </message>
     <message>
         <source>Tor control port password (default: empty)</source>
@@ -6004,7 +5809,7 @@ También mint las denominaciones más altas (por lo tanto, se necesitan menos da
     </message>
     <message>
         <source>Transaction Created</source>
-        <translation>Transação Criada</translation>
+        <translation>Transacción creada</translation>
     </message>
     <message>
         <source>Transaction Mint Started</source>
@@ -6019,32 +5824,12 @@ También mint las denominaciones más altas (por lo tanto, se necesitan menos da
         <translation>El monto de la transacción debe ser positivo</translation>
     </message>
     <message>
-        <source>Transaction created successfully.</source>
-        <translation>Transacción creada satisfactoriamente.</translation>
-    </message>
-    <message>
-        <source>Transaction fees are too high.</source>
-        <translation>La comision de transacción es demasiado alta.</translation>
-    </message>
-    <message>
-        <source>Transaction not valid.</source>
-        <translation>La transacción no es valida.</translation>
-    </message>
-    <message>
         <source>Transaction too large for fee policy</source>
         <translation>La transacción es demasiado grande para la política de comisión.</translation>
     </message>
     <message>
         <source>Transaction too large</source>
         <translation>La transacción es demasiado grande</translation>
-    </message>
-    <message>
-        <source>Transmitting final transaction.</source>
-        <translation>Transmitiendo la transacción final.</translation>
-    </message>
-    <message>
-        <source>Try to spend with a higher security level to include more coins</source>
-        <translation>Tente gastar com um nível de segurança mais alto para incluir mais moedas</translation>
     </message>
     <message>
         <source>Trying to spend an already spent serial #, try again.</source>
@@ -6055,28 +5840,20 @@ También mint las denominaciones más altas (por lo tanto, se necesitan menos da
         <translation>Imposible enlazar %s en esta computadora (enlace retorna error %s)</translation>
     </message>
     <message>
-        <source>Unable to find transaction containing mint</source>
-        <translation>Não é possível encontrar transações contendo hortelã</translation>
-    </message>
-    <message>
         <source>Unable to sign spork message, wrong key?</source>
         <translation>Imposible firmar el mensaje spork, ¿llave equivocada?</translation>
     </message>
     <message>
         <source>Unable to start HTTP server. See debug log for details.</source>
-        <translation>Não é possível iniciar o servidor HTTP. Veja o log de depuração para detalhes.</translation>
+        <translation>No se puede iniciar el servidor HTTP. Ver registro de depuración para más detalles.</translation>
     </message>
     <message>
         <source>Unknown network specified in -onlynet: '%s'</source>
         <translation>Red especificada desconocida en -onlynet: '%s'</translation>
     </message>
     <message>
-        <source>Unknown state: id = %u</source>
-        <translation>Estado desconocido: id = %u</translation>
-    </message>
-    <message>
         <source>Upgrade wallet to latest format</source>
-        <translation>Actualizar el monedero al formato ultimo</translation>
+        <translation>Actualizar el monedero al último formato</translation>
     </message>
     <message>
         <source>Use UPnP to map the listening port (default: %u)</source>
@@ -6099,8 +5876,8 @@ También mint las denominaciones más altas (por lo tanto, se necesitan menos da
         <translation>Nombre de usuario para conexiones JSON-RPC</translation>
     </message>
     <message>
-        <source>Value more than Obfuscation pool maximum allows.</source>
-        <translation>Valor mayor al máximo pool de Ofuscación permitido.</translation>
+        <source>Value is below the smallest available denomination (= 1) of zHLM</source>
+        <translation>El valor está por debajo de la denominación más pequeña disponible (= 1) de zHLM</translation>
     </message>
     <message>
         <source>Verifying blocks...</source>
@@ -6112,15 +5889,11 @@ También mint las denominaciones más altas (por lo tanto, se necesitan menos da
     </message>
     <message>
         <source>Wallet %s resides outside data directory %s</source>
-        <translation>La billetera %s esta ubicada fuera del directorio de datos %s</translation>
-    </message>
-    <message>
-        <source>Wallet is locked.</source>
-        <translation>Monedero bloqueado.</translation>
+        <translation>El monedero %s esta ubicada fuera del directorio de datos %s</translation>
     </message>
     <message>
         <source>Wallet needed to be rewritten: restart Helium Core to complete</source>
-        <translation>Monedero necesita ser reescrito: reinicie Helium Core para completar</translation>
+        <translation>El Monedero necesita ser reescrito: reinicie Helium Core para completar</translation>
     </message>
     <message>
         <source>Wallet options:</source>
@@ -6147,24 +5920,12 @@ También mint las denominaciones más altas (por lo tanto, se necesitan menos da
         <translation>Advertencia: Argumento no soportado -debugnet ignorado, use -debug=net.</translation>
     </message>
     <message>
-        <source>Will retry...</source>
-        <translation>Probando...</translation>
-    </message>
-    <message>
         <source>You don't have enough Zerocoins in your wallet</source>
-        <translation>Você não tem Zerocoins suficientes na sua carteira</translation>
+        <translation>No tienes suficientes Zerocoins en tu monedero</translation>
     </message>
     <message>
         <source>You need to rebuild the database using -reindex to change -txindex</source>
         <translation>Usted necesita reconstruir la base de datos usando -reindex para cambiar -txindex</translation>
-    </message>
-    <message>
-        <source>Your entries added successfully.</source>
-        <translation>Su entrada a sido agregada satisfactoriamente.</translation>
-    </message>
-    <message>
-        <source>Your transaction was accepted into the pool!</source>
-        <translation>Su transacción ha sido aceptada en el pool!</translation>
     </message>
     <message>
         <source>Zapping all transactions from wallet...</source>

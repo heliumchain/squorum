@@ -13,7 +13,9 @@ QT_TS = \
   qt/locale/helium_da.ts \
   qt/locale/helium_de.ts \
   qt/locale/helium_en.ts \
+  qt/locale/helium_en_GB.ts \
   qt/locale/helium_en_US.ts \
+  qt/locale/helium_eo.ts \
   qt/locale/helium_es.ts \
   qt/locale/helium_es_ES.ts \
   qt/locale/helium_fi.ts \

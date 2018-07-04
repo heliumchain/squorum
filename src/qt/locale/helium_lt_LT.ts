@@ -608,10 +608,6 @@
         <source>&amp;Command-line options</source>
         <translation>&amp;Komandinės eilutės parinktys</translation>
     </message>
-    <message numerus="yes">
-        <source>Processed %n blocks of transaction history.</source>
-        <translation><numerusform>Apdorota %n operacijų istorijos blokų.</numerusform><numerusform>Apdorota %n operacijų istorijos blokų.</numerusform><numerusform>Apdorota %n operacijų istorijos blokų.</numerusform></translation>
-    </message>
     <message>
         <source>Synchronizing additional data: %p%</source>
         <translation>Sinchronizuojami papildomi duomenys: %p%</translation>
@@ -736,10 +732,6 @@
         <source>Helium Core client</source>
         <translation>Helium Core piniginė</translation>
     </message>
-    <message numerus="yes">
-        <source>%n active connection(s) to Helium network</source>
-        <translation><numerusform>%n aktyvių prisijungimų Helium tinkle ()</numerusform><numerusform>%n aktyvių prisijungimų Helium tinkle ()</numerusform><numerusform>%n aktyvių prisijungimų Helium tinkle ()</numerusform></translation>
-    </message>
     <message>
         <source>Synchronizing with network...</source>
         <translation>Sinchronizuojama su tinklu ...</translation>
@@ -760,25 +752,9 @@
         <source>Up to date</source>
         <translation>Atnaujinta</translation>
     </message>
-    <message numerus="yes">
-        <source>%n hour(s)</source>
-        <translation><numerusform>%n valanda</numerusform><numerusform>%n valandų</numerusform><numerusform>%n valandų</numerusform></translation>
-    </message>
-    <message numerus="yes">
-        <source>%n day(s)</source>
-        <translation><numerusform>%n diena</numerusform><numerusform>%n dienų</numerusform><numerusform>%n dienų</numerusform></translation>
-    </message>
-    <message numerus="yes">
-        <source>%n week(s)</source>
-        <translation><numerusform>%n savaitė</numerusform><numerusform>%n savaičių</numerusform><numerusform>%n savaičių</numerusform></translation>
-    </message>
     <message>
         <source>%1 and %2</source>
         <translation>%1 ir %2</translation>
-    </message>
-    <message numerus="yes">
-        <source>%n year(s)</source>
-        <translation><numerusform>%n metai</numerusform><numerusform>%n metų</numerusform><numerusform>%n metų</numerusform></translation>
     </message>
     <message>
         <source>Catching up...</source>
@@ -864,7 +840,7 @@ MultiSend: %1</translation>
         <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;locked&lt;/b&gt;</source>
         <translation>Piniginė yra &lt;b&gt;užšifruota&lt;/b&gt; ir šiuo metu &lt;b&gt;užrakinta&lt;/b&gt;</translation>
     </message>
-</context>
+    </context>
 <context>
     <name>BlockExplorer</name>
     <message>
@@ -1217,6 +1193,17 @@ MultiSend: %1</translation>
     </message>
 </context>
 <context>
+    <name>GovernancePage</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>0</source>
+        <translation>0</translation>
+    </message>
+    </context>
+<context>
     <name>HelpMessageDialog</name>
     <message>
         <source>version</source>
@@ -1534,42 +1521,8 @@ MultiSend nebus aktyvuotas, nebent paspausite "Įjungti"</translation>
         <translation>(nėra etiketės)</translation>
     </message>
     <message>
-        <source>The entered address:
-</source>
-        <translation>Įvestas adresas: 
-</translation>
-    </message>
-    <message>
-        <source> is invalid.
-Please check the address and try again.</source>
-        <translation>yra netinkamas.
-Patikrinkite adresą ir bandykite dar kartą.</translation>
-    </message>
-    <message>
-        <source>The total amount of your MultiSend vector is over 100% of your stake reward
-</source>
-        <translation>Bendra MultiSend sąrašo suma yra didesnė nei 100% jūsų stake'inimo atlygio
-</translation>
-    </message>
-    <message>
         <source>Please Enter 1 - 100 for percent.</source>
         <translation>Įveskite 1-100 procentų</translation>
-    </message>
-    <message>
-        <source>MultiSend Vector
-</source>
-        <translation>MultiSend Sąrašas
-</translation>
-    </message>
-    <message>
-        <source>Removed </source>
-        <translation>Pašalintas</translation>
-    </message>
-    <message>
-        <source>Could not locate address
-</source>
-        <translation>Nepavyko rasti adreso
-</translation>
     </message>
 </context>
 <context>
@@ -1643,6 +1596,10 @@ Patikrinkite adresą ir bandykite dar kartą.</translation>
         <translation>Suma:</translation>
     </message>
     <message>
+        <source>Add a Raw Input</source>
+        <translation>Pridėti Gryną Įvestį</translation>
+    </message>
+    <message>
         <source>Address / Amount:</source>
         <translation>Adresas / Suma:</translation>
     </message>
@@ -1677,6 +1634,14 @@ Patikrinkite adresą ir bandykite dar kartą.</translation>
     <message>
         <source>S&amp;ign</source>
         <translation>&amp;Pasirašyti</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;DISABLED until transaction has been signed enough times.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;IŠJUNGTA, kol sandoris bus patvirtintas pakankamai kartų.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>Co&amp;mmit</source>
+        <translation>Sk&amp;irti</translation>
     </message>
     <message>
         <source>Add private keys to sign the transaction with</source>
@@ -1716,53 +1681,6 @@ Patikrinkite adresą ir bandykite dar kartą.</translation>
     </message>
 </context>
 <context>
-    <name>ObfuscationConfig</name>
-    <message>
-        <source>Basic Privacy</source>
-        <translation>Pagrindinis Privatumas</translation>
-    </message>
-    <message>
-        <source>High Privacy</source>
-        <translation>Aukštas Privatumas</translation>
-    </message>
-    <message>
-        <source>Maximum Privacy</source>
-        <translation>Maksimalus Privatumas</translation>
-    </message>
-    <message>
-        <source>Please select a privacy level.</source>
-        <translation>Pasirinkite privatumo lygmenį.</translation>
-    </message>
-    <message>
-        <source>Use 2 separate masternodes to mix funds up to 10000 HLM</source>
-        <translation>Naudokite 2 atskirus masternod'us, kad sumaišytumėte lėšas iki 10 000 HLM</translation>
-    </message>
-    <message>
-        <source>Use 8 separate masternodes to mix funds up to 10000 HLM</source>
-        <translation>Naudokite 8 atskirus masternod'us, kad sumaišytumėte lėšas iki 10 000 HLM</translation>
-    </message>
-    <message>
-        <source>Use 16 separate masternodes</source>
-        <translation>Naudokite 16 atskirų masternod'ų</translation>
-    </message>
-    <message>
-        <source>This option is the quickest and will cost about ~0.025 HLM to anonymize 10000 HLM</source>
-        <translation>Ši parinktis yra greičiausia ir kainuos apie ~0.025 HLM, kad anonimizuotų 10000 HLM</translation>
-    </message>
-    <message>
-        <source>This option is moderately fast and will cost about 0.05 HLM to anonymize 10000 HLM</source>
-        <translation>Ši parinktis yra vidutiniškai greita ir kainuoja apie 0,05 HLM, kad anonimizuotų 10000 HLM</translation>
-    </message>
-    <message>
-        <source>This is the slowest and most secure option. Using maximum anonymity will cost</source>
-        <translation>Tai yra lėčiausias ir saugiausias variantas. Maksimalus anonimiškumas kainuos.</translation>
-    </message>
-    <message>
-        <source>0.1 HLM per 10000 HLM you anonymize.</source>
-        <translation>0.1 HLM kas 1000 HLM kuriuos anonimizuosite.</translation>
-    </message>
-    </context>
-<context>
     <name>OpenURIDialog</name>
     <message>
         <source>Open URI</source>
@@ -1788,6 +1706,10 @@ Patikrinkite adresą ir bandykite dar kartą.</translation>
         <translation>Nustatymai</translation>
     </message>
     <message>
+        <source>Size of &amp;database cache</source>
+        <translation>&amp;Duomenų bazės talpyklos dydis</translation>
+    </message>
+    <message>
         <source>MB</source>
         <translation>MB</translation>
     </message>
@@ -1802,6 +1724,10 @@ Patikrinkite adresą ir bandykite dar kartą.</translation>
     <message>
         <source>Allow incoming connections</source>
         <translation>Leisti įeinančius ryšius</translation>
+    </message>
+    <message>
+        <source>Expert</source>
+        <translation>Ekspertas</translation>
     </message>
     <message>
         <source>Automatically start Helium after logging in to the system.</source>
@@ -1820,8 +1746,16 @@ Patikrinkite adresą ir bandykite dar kartą.</translation>
         <translation>Įgalinti monetų &amp;valdymo funkcijas</translation>
     </message>
     <message>
+        <source>Show additional tab listing all your masternodes in first sub-tab&lt;br/&gt;and all masternodes on the network in second sub-tab.</source>
+        <translation>Rodyti papildomą skirtuką, kuriame pateikiami visi jūsų masternod'ai pirmame&lt;br/&gt; skirtuke ir visi antrame skirtuke visi tinkle esantys masternod'ai.</translation>
+    </message>
+    <message>
         <source>Show Masternodes Tab</source>
         <translation>Rodyti Masternod'ų Langelį</translation>
+    </message>
+    <message>
+        <source>&amp;Spend unconfirmed change</source>
+        <translation>&amp;Išleisti nepatvirtintą grąžą</translation>
     </message>
     <message>
         <source>&amp;Network</source>
@@ -1840,6 +1774,10 @@ https://www.transifex.com/heliumchain/helium-project-translations</translation>
     <message>
         <source>Map port using &amp;UPnP</source>
         <translation>Įrašyti prievadą naudojant &amp;UPnP</translation>
+    </message>
+    <message>
+        <source>Enable automatic minting of HLM units to zHLM</source>
+        <translation>Įgalinti automatinį konvertavimą iš HLM į zHLM</translation>
     </message>
     <message>
         <source>Enable zHLM Automint</source>
@@ -1886,12 +1824,24 @@ https://www.transifex.com/heliumchain/helium-project-translations</translation>
         <translation>Po lango minimizavimo rodyti tik piktogramą.</translation>
     </message>
     <message>
+        <source>&amp;Display</source>
+        <translation>&amp;Rodyti</translation>
+    </message>
+    <message>
+        <source>Decimal digits</source>
+        <translation>Dešimtainiai skaitmenys</translation>
+    </message>
+    <message>
         <source>Hide empty balances</source>
         <translation>Slėpti tuščius balansus</translation>
     </message>
     <message>
         <source>Third party transaction URLs</source>
         <translation>Trečių šalių pavedimų URL adresai</translation>
+    </message>
+    <message>
+        <source>Reset all client options to default.</source>
+        <translation>Iš naujo nustatyti visas parinktis.</translation>
     </message>
     <message>
         <source>&amp;Reset Options</source>
@@ -1997,6 +1947,18 @@ https://www.transifex.com/heliumchain/helium-project-translations</translation>
         <translation>zHLM Balansas</translation>
     </message>
     <message>
+        <source>Mature: more than 20 confirmation and more than 1 mint of the same denomination after it was minted.
+These zHLM are spendable.</source>
+        <translation>Subrendę: daugiau nei 20 patvirtinimų ir daugiau nei 1 konvertacija to pačio nominalo, kai jis jau buvo konvertuotas.
+Šiuos zHLM galima išleisti.</translation>
+    </message>
+    <message>
+        <source>Unconfirmed: less than 20 confirmations
+Immature: confirmed, but less than 1 mint of the same denomination after it was minted</source>
+        <translation>Nepatvirtinta: mažiau nei 20 patvirtinimų
+Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos to pačio nominalo po to, kai buvo konvertuotas.</translation>
+    </message>
+    <message>
         <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Helium network after a connection is established, but this process has not completed yet.</source>
         <translation>Rodoma informacija gali būti pasenusi. Jūsų piniginė automatiškai sinchronizuojasi su Helium tinklu po ryšio aktyvavimo, tačiau šis procesas dar nebaigtas.</translation>
     </message>
@@ -2011,6 +1973,14 @@ https://www.transifex.com/heliumchain/helium-project-translations</translation>
     <message>
         <source>Combined Balance</source>
         <translation>Kombinuotas balansas</translation>
+    </message>
+    <message>
+        <source>Unconfirmed transactions to watch-only addresses</source>
+        <translation>Nepatvirtinti sandoriai tik žiūrėjimo adresams</translation>
+    </message>
+    <message>
+        <source>Staked or masternode rewards in watch-only addresses that has not yet matured</source>
+        <translation>Stake'inimo ar masternod'ų atlygiai tik žiūrėjimo adresuose, kurie dar nėra subrendę</translation>
     </message>
     <message>
         <source>Total:</source>
@@ -2063,14 +2033,62 @@ https://www.transifex.com/heliumchain/helium-project-translations</translation>
     </context>
 <context>
     <name>PaymentServer</name>
-    </context>
+    <message>
+        <source>Payment request error</source>
+        <translation>Mokėjimo užklausos klaida</translation>
+    </message>
+    <message>
+        <source>Invalid payment address %1</source>
+        <translation>Netinkamas mokėjimo adresas %1</translation>
+    </message>
+    <message>
+        <source>Cannot start helium: click-to-pay handler</source>
+        <translation>Nepavyksta paleisti helium: apdorojimo "spustelėjimo ir apmokėjimo" funkcijos klaida</translation>
+    </message>
+    <message>
+        <source>Payment request file cannot be read! This can be caused by an invalid payment request file.</source>
+        <translation>Mokėjimo užklausos failas negali būti nuskaitytas! Tai gali sukelti netinkamas mokėjimo prašymo failas.</translation>
+    </message>
+    <message>
+        <source>Payment request rejected</source>
+        <translation>Mokėjimo užklausa atmesta</translation>
+    </message>
+    <message>
+        <source>Error communicating with %1: %2</source>
+        <translation>Klaida susisiekiant su %1: %2</translation>
+    </message>
+    <message>
+        <source>Payment request cannot be parsed!</source>
+        <translation>Negalima išnagrinėti mokėjimo užklausos!</translation>
+    </message>
+    <message>
+        <source>Bad response from server %1</source>
+        <translation>Blogas serverio %1 atsakymas</translation>
+    </message>
+    <message>
+        <source>Network request error</source>
+        <translation>Tinklo užklausos klaida</translation>
+    </message>
+    <message>
+        <source>Payment acknowledged</source>
+        <translation>Mokėjimas patvirtintas</translation>
+    </message>
+</context>
 <context>
     <name>PeerTableModel</name>
+    <message>
+        <source>Address/Hostname</source>
+        <translation>Adresas / pavadinimas</translation>
+    </message>
     <message>
         <source>Version</source>
         <translation>Versija</translation>
     </message>
-    </context>
+    <message>
+        <source>Ping Time</source>
+        <translation>Ping'o laikas</translation>
+    </message>
+</context>
 <context>
     <name>PrivacyDialog</name>
     <message>
@@ -2082,6 +2100,10 @@ https://www.transifex.com/heliumchain/helium-project-translations</translation>
         <translation>Rodoma informacija gali būti pasenusi. Jūsų piniginė automatiškai sinchronizuojasi su Helium tinklu po ryšio aktyvavimo, tačiau šis procesas dar nebaigtas.</translation>
     </message>
     <message>
+        <source>Mint Zerocoin</source>
+        <translation>Konvertuoti į Zerocoin</translation>
+    </message>
+    <message>
         <source>0</source>
         <translation>0</translation>
     </message>
@@ -2090,24 +2112,36 @@ https://www.transifex.com/heliumchain/helium-project-translations</translation>
         <translation>zHLM</translation>
     </message>
     <message>
-        <source>0.000 000 00 HLM</source>
-        <translation>0.000 000 00 HLM</translation>
+        <source>Reset</source>
+        <translation>Atitaisyti</translation>
     </message>
     <message>
-        <source>Quantity:</source>
-        <translation>Kiekis:</translation>
+        <source>Rescan the complete blockchain for  Zerocoin mints and their meta-data.</source>
+        <translation>Iš naujo nuskenuokite blockchain'ą Zerocoin konvertacijoms ir jų metaduomenims.</translation>
     </message>
     <message>
-        <source>Amount:</source>
-        <translation>Suma:</translation>
+        <source>ReScan</source>
+        <translation>Nuskenuoti iš naujo</translation>
     </message>
     <message>
         <source>PRIVACY</source>
         <translation>PRIVATUMAS</translation>
     </message>
     <message>
+        <source>zHLM Control</source>
+        <translation>zHlm Kontrolė</translation>
+    </message>
+    <message>
+        <source>zHLM Selected:</source>
+        <translation>Pasirinkta zHLM:</translation>
+    </message>
+    <message>
         <source>Quantity Selected:</source>
         <translation>Pasirinktas Kiekis:</translation>
+    </message>
+    <message>
+        <source>Spend Zerocoin. Without 'Pay To:' address creates payments to yourself.</source>
+        <translation>Išleisti Zerocoin. Be "Mokėti:" adreso sukuria mokėjimus sau.</translation>
     </message>
     <message>
         <source>Spend Zerocoin</source>
@@ -2122,12 +2156,8 @@ https://www.transifex.com/heliumchain/helium-project-translations</translation>
         <translation>0 zHLM</translation>
     </message>
     <message>
-        <source>Security Level:</source>
-        <translation>Saugumo Lygmuo:</translation>
-    </message>
-    <message>
-        <source>Security Level 1 - 100 (default: 42)</source>
-        <translation>Saugumo Lygmuo 1 - 100 (numatytas: 42)</translation>
+        <source>Pay &amp;To:</source>
+        <translation>&amp;Mokėti:</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -2150,12 +2180,130 @@ https://www.transifex.com/heliumchain/helium-project-translations</translation>
         <translation>&amp;Etiketė:</translation>
     </message>
     <message>
+        <source>A&amp;mount:</source>
+        <translation>S&amp;uma:</translation>
+    </message>
+    <message>
+        <source>Minimize Change</source>
+        <translation>Sumažinti Grąžą</translation>
+    </message>
+    <message>
+        <source>Zerocoin Stats:</source>
+        <translation>Zerocoin Statistika:</translation>
+    </message>
+    <message>
+        <source>Total Balance including unconfirmed and immature zHLM</source>
+        <translation>Bendras balansas, įskaitant nepatvirtintą ir nesubrendusį zHLM</translation>
+    </message>
+    <message>
         <source>Total Zerocoin  Balance:</source>
         <translation>Visas Zerocoin Balansas:</translation>
     </message>
     <message>
+        <source>Denominations with value 1:</source>
+        <translation>Nominalai su verte 1:</translation>
+    </message>
+    <message>
+        <source>Denom. with value 1:</source>
+        <translation>Nomin. su verte 1:</translation>
+    </message>
+    <message>
+        <source>Unconfirmed: less than 20 confirmations
+Immature: confirmed, but less than 1 mint of the same denomination after it was minted</source>
+        <translation>Nepatvirtinta: mažiau nei 20 patvirtinimų
+Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos to pačio nominalo po to, kai buvo konvertuotas.</translation>
+    </message>
+    <message>
+        <source>Denom. 1:</source>
+        <translation>Nomin.  1:</translation>
+    </message>
+    <message>
+        <source>Denom. 5:</source>
+        <translation>Nomin. 5:</translation>
+    </message>
+    <message>
+        <source>Denom. 10:</source>
+        <translation>Nomin.  10:</translation>
+    </message>
+    <message>
+        <source>Denom. 50:</source>
+        <translation>Nomin. 50:</translation>
+    </message>
+    <message>
+        <source>Denom. 100:</source>
+        <translation>Nomin.  100:</translation>
+    </message>
+    <message>
+        <source>Denom. 500:</source>
+        <translation>Nomin. 500:</translation>
+    </message>
+    <message>
+        <source>Denom. 1000:</source>
+        <translation>Nomin.  1000:</translation>
+    </message>
+    <message>
+        <source>Denom. 5000:</source>
+        <translation>Nomin. 5000:</translation>
+    </message>
+    <message>
         <source>0 x</source>
         <translation>0 x</translation>
+    </message>
+    <message>
+        <source>Denominations with value 5:</source>
+        <translation>Nominalai su verte 5:</translation>
+    </message>
+    <message>
+        <source>Denom. with value 5:</source>
+        <translation>Nomin. su verte 5:</translation>
+    </message>
+    <message>
+        <source>Denominations with value 10:</source>
+        <translation>Nominalai su verte 10:</translation>
+    </message>
+    <message>
+        <source>Denom. with value 10:</source>
+        <translation>Nomin. su verte 10:</translation>
+    </message>
+    <message>
+        <source>Denominations with value 50:</source>
+        <translation>Nominalai su verte 50:</translation>
+    </message>
+    <message>
+        <source>Denom. with value 50:</source>
+        <translation>Nomin. su verte 50:</translation>
+    </message>
+    <message>
+        <source>Denominations with value 100:</source>
+        <translation>Nominalai su verte 100:</translation>
+    </message>
+    <message>
+        <source>Denom. with value 100:</source>
+        <translation>Nomin. su verte 100:</translation>
+    </message>
+    <message>
+        <source>Denominations with value 500:</source>
+        <translation>Nominalai su verte 500:</translation>
+    </message>
+    <message>
+        <source>Denom. with value 500:</source>
+        <translation>Nomin. su verte 500:</translation>
+    </message>
+    <message>
+        <source>Denominations with value 1000:</source>
+        <translation>Nominalai su verte 1000:</translation>
+    </message>
+    <message>
+        <source>Denom. with value 1000:</source>
+        <translation>Nomin. su verte 1000:</translation>
+    </message>
+    <message>
+        <source>Denominations with value 5000:</source>
+        <translation>Nominalai su verte 5000:</translation>
+    </message>
+    <message>
+        <source>Denom. with value 5000:</source>
+        <translation>Nomin. su verte 5000:</translation>
     </message>
     <message>
         <source>Priority:</source>
@@ -2194,27 +2342,170 @@ https://www.transifex.com/heliumchain/helium-project-translations</translation>
         <translation>Monetų Valdymo Funkcijos</translation>
     </message>
     <message>
+        <source>Custom change address</source>
+        <translation>Pasirinktinio pakeitimo adresas</translation>
+    </message>
+    <message>
+        <source>Amount After Fee:</source>
+        <translation>Suma Po Mokesčių:</translation>
+    </message>
+    <message>
         <source>Change:</source>
         <translation>Grąža: </translation>
     </message>
     <message>
         <source>out of sync</source>
-        <translation>ne sinchronizuotas</translation>
+        <translation>nesinchronizuotas</translation>
     </message>
     <message>
-        <source>Copy quantity</source>
-        <translation>Kopijuoti kiekį</translation>
+        <source>Mint Status: Okay</source>
+        <translation>Konvertavimo Statusas: Geras</translation>
     </message>
     <message>
-        <source>Copy amount</source>
-        <translation>Kopijuoti sumą</translation>
+        <source>zHLM Spend #: </source>
+        <translation>zHLM Išleidimas #:</translation>
     </message>
+    <message>
+        <source>zHLM Mint</source>
+        <translation>zHLM Konvertavimas</translation>
+    </message>
+    <message>
+        <source> &lt;b&gt;enabled&lt;/b&gt;.</source>
+        <translation>&lt;b&gt;įjungta&lt;/b&gt;.</translation>
+    </message>
+    <message>
+        <source> &lt;b&gt;disabled&lt;/b&gt;.</source>
+        <translation>&lt;b&gt;išjungta&lt;/b&gt;.</translation>
+    </message>
+    <message>
+        <source>Denom. with value &lt;b&gt;1&lt;/b&gt;:</source>
+        <translation>Nomin. su verte &lt;b&gt;1&lt;/b&gt;:</translation>
+    </message>
+    <message>
+        <source>Denom. with value &lt;b&gt;5&lt;/b&gt;:</source>
+        <translation>Nomin. su verte &lt;b&gt;5&lt;/b&gt;:</translation>
+    </message>
+    <message>
+        <source>Denom. with value &lt;b&gt;10&lt;/b&gt;:</source>
+        <translation>Nomin. su verte &lt;b&gt;10&lt;/b&gt;:</translation>
+    </message>
+    <message>
+        <source>Denom. with value &lt;b&gt;50&lt;/b&gt;:</source>
+        <translation>Nomin. su verte &lt;b&gt;50&lt;/b&gt;:</translation>
+    </message>
+    <message>
+        <source>Denom. with value &lt;b&gt;100&lt;/b&gt;:</source>
+        <translation>Nomin. su verte &lt;b&gt;100&lt;/b&gt;:</translation>
+    </message>
+    <message>
+        <source>Denom. with value &lt;b&gt;500&lt;/b&gt;:</source>
+        <translation>Nomin. su verte &lt;b&gt;500&lt;/b&gt;:</translation>
+    </message>
+    <message>
+        <source>Denom. with value &lt;b&gt;1000&lt;/b&gt;:</source>
+        <translation>Nomin. su verte &lt;b&gt;1000&lt;/b&gt;:</translation>
+    </message>
+    <message>
+        <source>Denom. with value &lt;b&gt;5000&lt;/b&gt;:</source>
+        <translation>Nomin. su verte &lt;b&gt;5000&lt;/b&gt;:</translation>
+    </message>
+    <message>
+        <source>AutoMint Status:</source>
+        <translation>Auto-Konvertavimo Statusas:</translation>
+    </message>
+    <message>
+        <source>Denom. &lt;b&gt;1&lt;/b&gt;:</source>
+        <translation>Nomin.  &lt;b&gt;1&lt;/b&gt;:</translation>
+    </message>
+    <message>
+        <source>Denom. &lt;b&gt;5&lt;/b&gt;:</source>
+        <translation>Nomin. &lt;b&gt;5&lt;/b&gt;:</translation>
+    </message>
+    <message>
+        <source>Denom. &lt;b&gt;10&lt;/b&gt;:</source>
+        <translation>Nomin.  &lt;b&gt;10&lt;/b&gt;:</translation>
+    </message>
+    <message>
+        <source>Denom. &lt;b&gt;50&lt;/b&gt;:</source>
+        <translation>Nomin. &lt;b&gt;50&lt;/b&gt;:</translation>
+    </message>
+    <message>
+        <source>Denom. &lt;b&gt;100&lt;/b&gt;:</source>
+        <translation>Nomin.  &lt;b&gt;100&lt;/b&gt;:</translation>
+    </message>
+    <message>
+        <source>Denom. &lt;b&gt;500&lt;/b&gt;:</source>
+        <translation>Nomin. &lt;b&gt;500&lt;/b&gt;:</translation>
+    </message>
+    <message>
+        <source>Denom. &lt;b&gt;1000&lt;/b&gt;:</source>
+        <translation>Nomin.  &lt;b&gt;1000&lt;/b&gt;:</translation>
+    </message>
+    <message>
+        <source>Denom. &lt;b&gt;5000&lt;/b&gt;:</source>
+        <translation>Nomin. &lt;b&gt;5000&lt;/b&gt;:</translation>
+    </message>
+    <message>
+        <source>Invalid Helium Address</source>
+        <translation>Netinkamas Helium Adresas</translation>
+    </message>
+    <message>
+        <source>Invalid Send Amount</source>
+        <translation>Netinkama Siuntimo Suma</translation>
+    </message>
+    <message>
+        <source>Confirm additional Fees</source>
+        <translation>Patvirtinkite papildomus mokesčius</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to send?&lt;br /&gt;&lt;br /&gt;</source>
+        <translation>Ar tikrai norite siųsti?&lt;br /&gt;&lt;br /&gt;</translation>
+    </message>
+    <message>
+        <source> to address </source>
+        <translation>į adresą</translation>
+    </message>
+    <message>
+        <source>serial: </source>
+        <translation>serija:</translation>
+    </message>
+    <message>
+        <source>address: </source>
+        <translation>adresas:</translation>
+    </message>
+    <message>
+        <source>fee: </source>
+        <translation>mokestis: </translation>
+    </message>
+</context>
+<context>
+    <name>ProposalFrame</name>
     </context>
 <context>
     <name>QObject</name>
     <message>
         <source>Amount</source>
         <translation>Suma</translation>
+    </message>
+    <message>
+        <source>Enter a Helium address (e.g. %1)</source>
+        <translation>Įveskite Helium adresą (pvz. %1)</translation>
+    </message>
+    <message>
+        <source>%1 d</source>
+        <translation>%1 d</translation>
+    </message>
+    <message>
+        <source>%1 h</source>
+        <translation>%1 v</translation>
+    </message>
+    <message>
+        <source>%1 m</source>
+        <translation>%1 m</translation>
+    </message>
+    <message>
+        <source>%1 s</source>
+        <translation>%1 s</translation>
     </message>
     <message>
         <source>NETWORK</source>
@@ -2231,6 +2522,10 @@ https://www.transifex.com/heliumchain/helium-project-translations</translation>
     <message>
         <source>N/A</source>
         <translation>N/A</translation>
+    </message>
+    <message>
+        <source>Helium Core</source>
+        <translation>PIVX Core</translation>
     </message>
     </context>
 <context>
@@ -2359,6 +2654,10 @@ https://www.transifex.com/heliumchain/helium-project-translations</translation>
         <translation>Gauta Baitų</translation>
     </message>
     <message>
+        <source>Ping Time</source>
+        <translation>Ping'o laikas</translation>
+    </message>
+    <message>
         <source>&amp;Wallet Repair</source>
         <translation>&amp;Piniginės Taisymas</translation>
     </message>
@@ -2382,12 +2681,12 @@ https://www.transifex.com/heliumchain/helium-project-translations</translation>
 <context>
     <name>ReceiveCoinsDialog</name>
     <message>
-        <source>&amp;Label:</source>
-        <translation>&amp;Etiketė:</translation>
+        <source>A&amp;mount:</source>
+        <translation>S&amp;uma:</translation>
     </message>
     <message>
-        <source>&amp;Amount:</source>
-        <translation>&amp;Suma:</translation>
+        <source>&amp;Label:</source>
+        <translation>&amp;Etiketė:</translation>
     </message>
     <message>
         <source>&amp;Request payment</source>
@@ -2424,6 +2723,10 @@ https://www.transifex.com/heliumchain/helium-project-translations</translation>
     <message>
         <source>Copy amount</source>
         <translation>Kopijuoti sumą</translation>
+    </message>
+    <message>
+        <source>Copy address</source>
+        <translation>Kopijuoti adresą</translation>
     </message>
 </context>
 <context>
@@ -2470,6 +2773,10 @@ https://www.transifex.com/heliumchain/helium-project-translations</translation>
     <message>
         <source>Message</source>
         <translation>Žinutė</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Adresas</translation>
     </message>
     <message>
         <source>Amount</source>
@@ -2537,6 +2844,10 @@ https://www.transifex.com/heliumchain/helium-project-translations</translation>
     <message>
         <source>Change:</source>
         <translation>Grąža: </translation>
+    </message>
+    <message>
+        <source>Custom change address</source>
+        <translation>Pasirinktinio pakeitimo adresas</translation>
     </message>
     <message>
         <source>0 HLM</source>
@@ -2658,6 +2969,10 @@ https://www.transifex.com/heliumchain/helium-project-translations</translation>
         <translation>Tai normalus mokėjimas.</translation>
     </message>
     <message>
+        <source>Pay &amp;To:</source>
+        <translation>&amp;Mokėti:</translation>
+    </message>
+    <message>
         <source>Choose previously used address</source>
         <translation>Pasirinkti prieš tai naudotą adresą</translation>
     </message>
@@ -2676,6 +2991,10 @@ https://www.transifex.com/heliumchain/helium-project-translations</translation>
     <message>
         <source>&amp;Label:</source>
         <translation>&amp;Etiketė:</translation>
+    </message>
+    <message>
+        <source>A&amp;mount:</source>
+        <translation>S&amp;uma:</translation>
     </message>
     <message>
         <source>Enter a label for this address to add it to your address book</source>
@@ -3000,16 +3319,8 @@ https://www.transifex.com/heliumchain/helium-project-translations</translation>
         <translation>(numatytas: 1)</translation>
     </message>
     <message>
-        <source>Already have that input.</source>
-        <translation>Jau turi tą įvestį.</translation>
-    </message>
-    <message>
         <source>Done loading</source>
         <translation>Krovimas baigtas</translation>
-    </message>
-    <message>
-        <source>Entries are full.</source>
-        <translation>Įvestys pilnos.</translation>
     </message>
     <message>
         <source>Error loading block database</source>
@@ -3040,10 +3351,6 @@ https://www.transifex.com/heliumchain/helium-project-translations</translation>
         <translation>Klaida: Įvyko vidinė klaida, dėl išsamesnės informacijos žr. Debug.log</translation>
     </message>
     <message>
-        <source>Error: Can't select current denominated inputs</source>
-        <translation>Klaida: Nepavyko pasirinkti esamų nominalo įvesčių</translation>
-    </message>
-    <message>
         <source>Error: Disk space is low!</source>
         <translation>Klaida: Diske mažai vietos!</translation>
     </message>
@@ -3052,28 +3359,12 @@ https://www.transifex.com/heliumchain/helium-project-translations</translation>
         <translation>Klaida nuskaitant bloką</translation>
     </message>
     <message>
-        <source>Finalizing transaction.</source>
-        <translation>Sandoris užbaiginėjamas.</translation>
-    </message>
-    <message>
         <source>Importing...</source>
         <translation>Importuojama...</translation>
     </message>
     <message>
-        <source>Incompatible mode.</source>
-        <translation>Nesuderinamas režimas.</translation>
-    </message>
-    <message>
-        <source>Incompatible version.</source>
-        <translation>Nesuderinama versija.</translation>
-    </message>
-    <message>
         <source>Information</source>
         <translation>Informacija</translation>
-    </message>
-    <message>
-        <source>Input is not valid.</source>
-        <translation>Įvestis neteisinga.</translation>
     </message>
     <message>
         <source>Insufficient funds</source>
@@ -3092,16 +3383,8 @@ https://www.transifex.com/heliumchain/helium-project-translations</translation>
         <translation>Neteisingas privatus raktas.</translation>
     </message>
     <message>
-        <source>Invalid script detected.</source>
-        <translation>Aptiktas netinkamas programos kodas.</translation>
-    </message>
-    <message>
         <source>SwiftX options:</source>
         <translation>SwiftX nustatymai:</translation>
-    </message>
-    <message>
-        <source>Failed to deserialize</source>
-        <translation>Nepavyko deserializuoti</translation>
     </message>
     <message>
         <source>Failed to select a zerocoin</source>
@@ -3142,14 +3425,6 @@ https://www.transifex.com/heliumchain/helium-project-translations</translation>
     <message>
         <source>Masternode options:</source>
         <translation>Masternod'ų nustatymai:</translation>
-    </message>
-    <message>
-        <source>Masternode:</source>
-        <translation>Masternod'as:</translation>
-    </message>
-    <message>
-        <source>Not in the Masternode list.</source>
-        <translation>Nėra Masternod'ų sąraše.</translation>
     </message>
     <message>
         <source>Options:</source>
@@ -3212,24 +3487,8 @@ https://www.transifex.com/heliumchain/helium-project-translations</translation>
         <translation>Sandorio sumos turi būti teigiamos</translation>
     </message>
     <message>
-        <source>Transaction created successfully.</source>
-        <translation>Sandoris sėkmingai sukurtas.</translation>
-    </message>
-    <message>
-        <source>Transaction fees are too high.</source>
-        <translation>Sandorio mokesčiai yra per dideli.</translation>
-    </message>
-    <message>
-        <source>Transaction not valid.</source>
-        <translation>Sandoris negalioja.</translation>
-    </message>
-    <message>
         <source>Transaction too large</source>
         <translation>Sandoris per didelis</translation>
-    </message>
-    <message>
-        <source>Transmitting final transaction.</source>
-        <translation>Perduodamas galutinis sandoris.</translation>
     </message>
     <message>
         <source>Upgrade wallet to latest format</source>
@@ -3250,10 +3509,6 @@ https://www.transifex.com/heliumchain/helium-project-translations</translation>
     <message>
         <source>Wallet %s resides outside data directory %s</source>
         <translation>Piniginė %s yra ne duomenų kataloge %s</translation>
-    </message>
-    <message>
-        <source>Wallet is locked.</source>
-        <translation>Piniginė užrakinta.</translation>
     </message>
     <message>
         <source>Wallet needed to be rewritten: restart Helium Core to complete</source>
@@ -3286,14 +3541,6 @@ https://www.transifex.com/heliumchain/helium-project-translations</translation>
     <message>
         <source>You don't have enough Zerocoins in your wallet</source>
         <translation>Neturite pakankamai Zerocoin monetų savo piniginėje</translation>
-    </message>
-    <message>
-        <source>Your entries added successfully.</source>
-        <translation>Jūsų įrašai sėkmingai pridėti.</translation>
-    </message>
-    <message>
-        <source>Your transaction was accepted into the pool!</source>
-        <translation>Jūsų sandoris buvo priimtas į "baseiną"!</translation>
     </message>
     <message>
         <source>Zapping all transactions from wallet...</source>
