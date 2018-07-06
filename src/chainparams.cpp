@@ -2471,7 +2471,7 @@ public:
         nTargetSpacing = 60;  // Helium: 1 minute
         nLastPOWBlock = 10000;
         nMaturity = 15;
-        nMasternodeCountDrift = 4;
+        nMasternodeCountDrift = 2;
         // nModifierUpdateBlock = 0; //approx Mon, 17 Apr 2017 04:00:00 GMT
         nMaxMoneyOut = 21000000 * COIN;
         nZerocoinStartHeight = 9999999;
