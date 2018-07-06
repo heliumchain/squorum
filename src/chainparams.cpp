@@ -2469,7 +2469,7 @@ public:
         nMinerThreads = 1;
         nTargetTimespan = 24 * 60 * 60; // Helium: 1 day
         nTargetSpacing = 60;  // Helium: 1 minute
-        nLastPOWBlock = 1000;
+        nLastPOWBlock = 10000;
         nMaturity = 15;
         nMasternodeCountDrift = 4;
         // nModifierUpdateBlock = 0; //approx Mon, 17 Apr 2017 04:00:00 GMT
