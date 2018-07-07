@@ -3,7 +3,7 @@ Helium Core
 
 Setup
 ---------------------
-[Helium Core](http://heliumpay.com/wallet) is the original Helium client and it builds the backbone of the network. However, it downloads and stores the entire history of Helium transactions; depending on the speed of your computer and network connection, the synchronization process can take anywhere from a few hours to a day or more. Thankfully you only have to do this once.
+[Helium Core](http://heliumchain.org/wallet) is the original Helium client and it builds the backbone of the network. However, it downloads and stores the entire history of Helium transactions; depending on the speed of your computer and network connection, the synchronization process can take anywhere from a few hours to a day or more. Thankfully you only have to do this once.
 
 Running
 ---------------------
@@ -29,8 +29,8 @@ Drag Helium-Qt to your applications folder, and then run Helium-Qt.
 * See the documentation at the [Helium Wiki](https://en.bitcoin.it/wiki/Main_Page) ***TODO***
 for help and more information.
 * Ask for help on [BitcoinTalk](https://bitcointalk.org/index.php?topic=1262920.0) or on the [Helium Forum](http://forum.heliumlabs.org/).
-* Join our Discord server [Discord Server](https://discord.heliumpay.com)
-* Join one of our Slack groups [Helium Slack Groups](https://heliumpay.com/slack-logins/) (Main community is replaced by Discord).
+* Join our Discord server [Discord Server](https://discord.heliumchain.org)
+* Join one of our Slack groups [Helium Slack Groups](https://heliumchain.org/slack-logins/) (Main community is replaced by Discord).
 
 Building
 ---------------------
