@@ -96,7 +96,7 @@ static bool SelectBlockFromCandidates(
         if (fSelected && pindex->GetBlockTime() > nSelectionIntervalStop)
             break;
 
-        /* FIXME: GJH Inappropriate for Helium
+        /* NOTE: GJH Inappropriate for Helium
         //if the lowest block height (vSortedByTimestamp[0]) is >= switch height, use new modifier calc
         if (fFirstRun){
             fModifierV2 = pindex->nHeight >= Params().ModifierUpgradeBlock();
@@ -107,7 +107,7 @@ static bool SelectBlockFromCandidates(
         if (mapSelectedBlocks.count(pindex->GetBlockHash()) > 0)
             continue;
 
-        /* FIXME: GJH Inappropriate for Helium
+        /* NOTE: GJH Inappropriate for Helium
         // compute the selection hash by hashing an input that is unique to that block
         uint256 hashProof;
         if(fModifierV2)
@@ -118,7 +118,7 @@ static bool SelectBlockFromCandidates(
         uint256 hashProof ;
 
         CDataStream ss(SER_GETHASH, 0);
-        /* FIXME: GJH Inappropriate for Helium
+        /* NOTE: GJH Inappropriate for Helium
         ss << hashProof << nStakeModifierPrev;
         */
         ss << pindex->GetBlockHash() << nStakeModifierPrev;

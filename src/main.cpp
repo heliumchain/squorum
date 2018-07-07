@@ -971,7 +971,7 @@ bool ContextualCheckZerocoinSpend(const CTransaction& tx, const CoinSpend& spend
         return error("%s : zHLM spend with serial %s is already in block %d\n", __func__,
                      spend.getCoinSerialNumber().GetHex(), nHeightTx);
 
-    /* FIXME: GJH Inappropriate for Helium
+    /* NOTE: GJH Inappropriate for Helium
     //Reject serial's that are not in the acceptable value range
     bool fUseV1Params = spend.getVersion() < libzerocoin::PrivateCoin::PUBKEY_VERSION;
     if (pindex->nHeight > Params().Zerocoin_Block_EnforceSerialRange() &&
@@ -1317,7 +1317,7 @@ bool AcceptToMemoryPool(CTxMemPool& pool, CValidationState& state, const CTransa
                     return false;
                 }
 
-                /* FIXME: GJH inappropriate for Helium
+                /* NOTE: GJH inappropriate for Helium
                 //Check for invalid/fraudulent inputs
                 if (!ValidOutPoint(txin.prevout, chainActive.Height())) {
                     return state.Invalid(error("%s : tried to spend invalid input %s in tx %s", __func__, txin.prevout.ToString(),
@@ -1541,7 +1541,7 @@ bool AcceptableInputs(CTxMemPool& pool, CValidationState& state, const CTransact
                     return false;
                 }
 
-                /* FIXME: GJH inappropriate for Helium
+                /* NOTE: GJH inappropriate for Helium
                 // check for invalid/fraudulent inputs
                 if (!ValidOutPoint(txin.prevout, chainActive.Height())) {
                     return state.Invalid(error("%s : tried to spend invalid input %s in tx %s", __func__, txin.prevout.ToString(),
@@ -1871,7 +1871,7 @@ CAmount GetSeeSaw(const CAmount& blockValue, int nMasternodeCount, int nHeight)
     }
 
     int64_t nMoneySupply = chainActive.Tip()->nMoneySupply;
-    /* FIXME: GJH PIVX-specific masternode collateral of 10000 */
+    /* Masternode collateral variable in chainparams.h */
     int64_t mNodeCoins = nMasternodeCount * MASTERNODE_COLLATERAL_AMOUNT * COIN;
 
     // Use this log to compare the masternode count for different clients
@@ -1881,7 +1881,7 @@ CAmount GetSeeSaw(const CAmount& blockValue, int nMasternodeCount, int nHeight)
         LogPrintf("GetMasternodePayment(): moneysupply=%s, nodecoins=%s \n", FormatMoney(nMoneySupply).c_str(),
                   FormatMoney(mNodeCoins).c_str());
 
-    /* FIXME: GJH PIVX-specific masternode "seesaw" reward schedule */
+    /* Note: GJH PIVX-specific masternode "seesaw" reward schedule */
     CAmount ret = 0;
     if (mNodeCoins == 0) {
         ret = 0;
@@ -2106,7 +2106,7 @@ int64_t GetMasternodePayment(int nHeight, int64_t blockValue, int nMasternodeCou
             return 0;
     }
 
-    /* FIXME: GJH Temporary hack to investigate initial PoW period */
+    /* Note: GJH Temporary hack to investigate initial PoW period */
     // NH - commented out //
     //if (nHeight <= 10000)
     //    ret = 0;
@@ -2300,7 +2300,7 @@ bool CScriptCheck::operator()()
     return true;
 }
 
-/* FIXME: GJH inappropriate for Helium
+/* NOTE: GJH inappropriate for Helium
 CBitcoinAddress addressExp1("DQZzqnSR6PXxagep1byLiRg9ZurCZ5KieQ");
 CBitcoinAddress addressExp2("DTQYdnNqKuEHXyNeeYhPQGGGdqHbXYwjpj");
 
@@ -2352,7 +2352,7 @@ void AddInvalidSpendsToMap(const CBlock& block)
 }
 */
 
-/* FIXME: GJH inappropriate for Helium
+/* NOTE: GJH inappropriate for Helium
 bool ValidOutPoint(const COutPoint out, int nHeight)
 {
     bool isInvalid = nHeight >= Params().Block_Enforce_Invalid() && invalid_out::ContainsOutPoint(out);
@@ -2765,7 +2765,7 @@ bool RecalculatePIVSupply(int nHeightStart)
         if (pindex->nHeight == Params().Zerocoin_Block_RecalculateAccumulators()) {
             LogPrintf("%s : Original money supply=%s\n", __func__, FormatMoney(pindex->nMoneySupply));
 
-            /* FIXME: GJH Inappropriate for Helium
+            /* NOTE: GJH Inappropriate for Helium
             pindex->nMoneySupply += Params().InvalidAmountFiltered();
             LogPrintf("%s : Adding filtered funds to supply + %s : supply=%s\n", __func__, FormatMoney(Params().InvalidAmountFiltered()), FormatMoney(pindex->nMoneySupply));
             */
@@ -3029,7 +3029,7 @@ bool ConnectBlock(const CBlock& block, CValidationState& state, CBlockIndex* pin
                 return state.DoS(100, error("ConnectBlock() : inputs missing/spent"),
                     REJECT_INVALID, "bad-txns-inputs-missingorspent");
 
-            /* FIXME: GJH inappropriate for Helium
+            /* NOTE: GJH inappropriate for Helium
             // Check that the inputs are not marked as invalid/fraudulent
             for (CTxIn in : tx.vin) {
                 if (!ValidOutPoint(in.prevout, pindex->nHeight)) {
@@ -3220,7 +3220,7 @@ bool ConnectBlock(const CBlock& block, CValidationState& state, CBlockIndex* pin
     nTimeCallbacks += nTime4 - nTime3;
     LogPrint("bench", "    - Callbacks: %.2fms [%.2fs]\n", 0.001 * (nTime4 - nTime3), nTimeCallbacks * 0.000001);
 
-    /* FIXME: GJH Inappropriate for Helium
+    /* NOTE: GJH Inappropriate for Helium
     //Continue tracking possible movement of fraudulent funds until they are completely frozen
     if (pindex->nHeight >= Params().Zerocoin_Block_FirstFraudulent() && pindex->nHeight <= Params().Zerocoin_Block_RecalculateAccumulators() + 1)
         AddInvalidSpendsToMap(block);
