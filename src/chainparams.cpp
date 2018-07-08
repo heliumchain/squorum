@@ -129,7 +129,7 @@ static CBlock CreateGenesisBlock(const char* pszTimestamp, const CScript& genesi
         txNew.vout[0].nValue = 54321012345678;
         txNew.vout[0].scriptPubKey = CScript() << OP_DUP << OP_HASH160 << ParseHex(DecodeBase58ToHex(std::string("SeYn7AmvjB3Wr3QqdJK6UsW85dPKeEKmSg"))) << OP_EQUALVERIFY << OP_CHECKSIG; // Genesis tx testing #1
 
-/* - FIXME: NH  - new addresses below that need new accoutn values - when fixed comment out the above values
+	/* - FIXME: NH  - new addresses below that need new accoutn values - when fixed comment out the above values
         txNew.vout[0].nValue = FIXME;
         txNew.vout[0].scriptPubKey = CScript() << OP_DUP << OP_HASH160 << ParseHex(DecodeBase58ToHex(std::string("SPqjnTbYLmp3TfRzccKBqFUiVJzePK9NRU"))) << OP_EQUALVERIFY << OP_CHECKSIG; // Genesis tx testing #1
         genesis.vtx.push_back(txNew);
@@ -138,8 +138,8 @@ static CBlock CreateGenesisBlock(const char* pszTimestamp, const CScript& genesi
         genesis.vtx.push_back(txNew);
         txNew.vout[0].nValue = FIXME;
         txNew.vout[0].scriptPubKey = CScript() << OP_DUP << OP_HASH160 << ParseHex(DecodeBase58ToHex(std::string("SNFpemXtZ2hdqUy2jTAXmWJRy7e8jqGiE7"))) << OP_EQUALVERIFY << OP_CHECKSIG; // Genesis tx testing #1
+	*/
 
-*/
         genesis.vtx.push_back(txNew);
         txNew.vout[0].nValue = 369280970638330;
         txNew.vout[0].scriptPubKey = CScript() << OP_DUP << OP_HASH160 << ParseHex(DecodeBase58ToHex(std::string("SQTstaCXN3vNjSCjJbVA9Z7ecrsYcTjYKn"))) << OP_EQUALVERIFY << OP_CHECKSIG;
@@ -2363,8 +2363,8 @@ public:
                    "SeYn7AmvjB3Wr3QqdJK6UsW85dPKeEKmSg", // second old treasury address
                    "Sbe6m4y6wGhUo6FoS6Sab2PxnScXm8HQTf"  // third old treasury address
 		/* - FIXME: NH - Replace the above with the values below when we have the block and correct values */
-                   //"STSzh125JxXtnsGwDVuP76i5ZS69s5VvUP"  // first NEW treasury address
-                   //"SNFpemXtZ2hdqUy2jTAXmWJRy7e8jqGiE7"  // second NEW treasury address
+                   //"STSzh125JxXtnsGwDVuP76i5ZS69s5VvUP",  // first NEW treasury address
+                   //"SNFpemXtZ2hdqUy2jTAXmWJRy7e8jqGiE7",  // second NEW treasury address
                    //"SPqjnTbYLmp3TfRzccKBqFUiVJzePK9NRU"  // third NEW treasury address
                     );
 
@@ -2625,8 +2625,8 @@ public:
                    "SeYn7AmvjB3Wr3QqdJK6UsW85dPKeEKmSg", // second treasury address
                    "Sbe6m4y6wGhUo6FoS6Sab2PxnScXm8HQTf"  // third treasury address
                 /* - FIXME: NH - Replace the above with the values below when we have the block and correct values */
-                   //"STSzh125JxXtnsGwDVuP76i5ZS69s5VvUP"  // first NEW treasury address
-                   //"SNFpemXtZ2hdqUy2jTAXmWJRy7e8jqGiE7"  // second NEW treasury address
+                   //"STSzh125JxXtnsGwDVuP76i5ZS69s5VvUP",  // first NEW treasury address
+                   //"SNFpemXtZ2hdqUy2jTAXmWJRy7e8jqGiE7",  // second NEW treasury address
                    //"SPqjnTbYLmp3TfRzccKBqFUiVJzePK9NRU"  // third NEW treasury address
                     );
 
