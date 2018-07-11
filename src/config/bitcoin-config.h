@@ -21,7 +21,7 @@
 #define CLIENT_VERSION_MINOR 14
 
 /* Build revision */
-#define CLIENT_VERSION_REVISION 2
+#define CLIENT_VERSION_REVISION 3
 
 /* Version is release */
 #define COPYRIGHT_YEAR 2018
@@ -290,7 +290,7 @@
 #define PACKAGE_NAME "Helium Core"
 
 /* Define to the full name and version of this package. */
-#define PACKAGE_STRING "Helium Core 0.14.2"
+#define PACKAGE_STRING "Helium Core 0.14.3"
 
 /* Define to the one symbol short name of this package. */
 #define PACKAGE_TARNAME "helium"
@@ -299,7 +299,7 @@
 #define PACKAGE_URL ""
 
 /* Define to the version of this package. */
-#define PACKAGE_VERSION "0.14.2"
+#define PACKAGE_VERSION "0.14.3"
 
 /* Define to necessary symbol if this constant uses a non-standard name on
    your system. */
