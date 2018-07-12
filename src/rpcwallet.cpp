@@ -3748,3 +3748,28 @@ UniValue spendrawzerocoin(const UniValue& params, bool fHelp)
     return DoZhlmSpend(nAmount, false, true, 42, vMintsSelected, address_str);
 }
 
+
+UniValue clearspendcache(const UniValue& params, bool fHelp)
+{
+    if(fHelp || params.size() != 0)
+        throw runtime_error(
+            "clearspendcache\n"
+            "\nClear the pre-computed zHLM spend cache.\n" +
+            HelpRequiringPassphrase() + "\n"
+
+            "\nExamples\n" +
+            HelpExampleCli("clearspendcache", "") + HelpExampleRpc("clearspendcache", ""));
+
+    EnsureWalletIsUnlocked();
+
+    CzHLMTracker* zhlmTracker = pwalletMain->zhlmTracker.get();
+
+    {
+        TRY_LOCK(zhlmTracker->cs_spendcache, fLocked);
+        if (fLocked) {
+            if (zhlmTracker->ClearSpendCache())
+                return NullUniValue;
+        }
+    }
+    throw JSONRPCError(RPC_WALLET_ERROR, "Error: Spend cache not cleared!");
+}
