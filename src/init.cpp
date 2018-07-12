@@ -41,6 +41,7 @@
 #include "utilmoneystr.h"
 #include "validationinterface.h"
 #include "zhlm/accumulatorcheckpoints.h"
+#include "zhlmchain.h"
 
 #ifdef ENABLE_WALLET
 #include "db.h"
