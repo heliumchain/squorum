@@ -113,6 +113,7 @@ bool CzHLMTracker::GetMetaFromStakeHash(const uint256& hashStake, CMintMeta& met
 
 CoinWitnessData* CzHLMTracker::GetSpendCache(const uint256& hashStake)
 {
+    AssertLockHeld(cs_spendcache);
     if (!mapStakeCache.count(hashStake)) {
         std::unique_ptr<CoinWitnessData> uptr(new CoinWitnessData());
         mapStakeCache.insert(std::make_pair(hashStake, std::move(uptr)));
@@ -120,6 +121,17 @@ CoinWitnessData* CzHLMTracker::GetSpendCache(const uint256& hashStake)
     }
 
     return mapStakeCache.at(hashStake).get();
+}
+
+bool CzHLMTracker::ClearSpendCache()
+{
+    AssertLockHeld(cs_spendcache);
+    if (!mapStakeCache.empty()) {
+        mapStakeCache.clear();
+        return true;
+    }
+
+    return false;
 }
 
 std::vector<uint256> CzHLMTracker::GetSerialHashes()
