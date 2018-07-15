@@ -332,10 +332,19 @@ def deployFrameworks(frameworks, bundlePath, binaryPath, strip, verbose, deploym
         if deploymentInfo.qtPath is None and framework.isQtFramework():
             deploymentInfo.detectQtPath(framework.frameworkDirectory)
         
-        if framework.installName.startswith("@executable_path") or framework.installName.startswith(bundlePath):
-            if verbose >= 2:
-                print(framework.frameworkName, "already deployed, skipping.")
-            continue
+        #if framework.installName.startswith("@executable_path") or framework.installName.startswith(bundlePath):
+        #    if verbose >= 2:
+        #        print(framework.frameworkName, "already deployed, skipping.")
+        #    continue
+
+        if framework.frameworkName == 'libboost_system-mt.dylib':
+            print("Aha, gotcha! ({}) {} {}".format(os.getcwd()+'/contrib/macdeploy/', framework.sourceFilePath, framework.installName))
+            shutil.copy2(os.getcwd()+'/contrib/macdeploy/libboost_system-mt.dylib', os.getcwd()+'/'+framework.sourceFilePath)
+
+        elif framework.installName.startswith("@executable_path") or framework.installName.startswith(bundlePath):
+             if verbose >= 2:
+                 print(framework.frameworkName, "already deployed, skipping.")
+             continue
         
         # install_name_tool the new id into the binary
         changeInstallName(framework.installName, framework.deployedInstallName, binaryPath, verbose)

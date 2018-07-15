@@ -11,6 +11,7 @@
 #include <assert.h>
 #include <boost/variant/apply_visitor.hpp>
 #include <boost/variant/static_visitor.hpp>
+#include <iostream>
 #include <sstream>
 #include <stdint.h>
 #include <string.h>
