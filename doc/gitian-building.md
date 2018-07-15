@@ -201,6 +201,10 @@ After the VM has booted you can connect to it using SSH, and files can be copied
 Connect to `localhost`, port `22222` (or the port configured when installing the VM).
 On Windows you can use putty[1] and WinSCP[2].
 
+If you are on another system you can find the IP Address of the Debian VM by typing: 
+
+```ip address show```
+
 For example to connect as `root` from a Linux command prompt use
 
     $ ssh root@localhost -p 22222
@@ -257,6 +261,17 @@ reboot
 At the end the VM is rebooted to make sure that the changes take effect. The steps in this
 section need only to be performed once.
 
+Setting up sudo
+----------------
+
+```su -``` and enter the root password
+run visudo and add
+```debian ALL=(ALL:ALL) ALL```
+under this line
+```%sudo   ALL=(ALL:ALL) ALL```
+Enter CTRL + X to exit and select yes to save the file
+exit root by typing exit
+
 Installing gitian
 ------------------
 
@@ -281,7 +296,7 @@ Clone the git repositories for helium and gitian and then checkout the helium ve
 
 ```bash
 git clone https://github.com/devrandom/gitian-builder.git
-git clone https://github.com/helium-crypto/helium.git
+git clone https://github.com/heliumchain/helium/helium.git
 cd helium
 git checkout v${VERSION}
 cd ..
