@@ -296,7 +296,7 @@ Clone the git repositories for helium and gitian and then checkout the helium ve
 
 ```bash
 git clone https://github.com/devrandom/gitian-builder.git
-git clone https://github.com/heliumchain/helium/helium.git
+git clone https://github.com/heliumchain/helium.git
 cd helium
 git checkout v${VERSION}
 cd ..
