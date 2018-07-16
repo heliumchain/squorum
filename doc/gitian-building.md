@@ -261,17 +261,6 @@ reboot
 At the end the VM is rebooted to make sure that the changes take effect. The steps in this
 section need only to be performed once.
 
-Setting up sudo
-----------------
-
-```su -``` and enter the root password
-run visudo and add
-```debian ALL=(ALL:ALL) ALL```
-under this line
-```%sudo   ALL=(ALL:ALL) ALL```
-Enter CTRL + X to exit and select yes to save the file
-exit root by typing exit
-
 Installing gitian
 ------------------
 
