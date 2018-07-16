@@ -4,7 +4,7 @@
 There are many ways to setup a wallet to support start-many. This guide will walk through two of them.
 
 1. [Importing an existing wallet (recommended if you are consolidating wallets).](#option1)
-2. [Sending 10,000 Helium to new wallet addresses.](#option2)
+2. [Sending 1000 Helium to new wallet addresses.](#option2)
 
 ## <a name="option1"></a>Option 1. Importing an existing wallet
 
@@ -14,14 +14,14 @@ This is the way to go if you are consolidating multiple wallets into one that su
 
 Open your QT Wallet and go to console (from the menu select Tools => Debug Console)
 
-Dump the private key from your MasterNode's pulic key.
+Dump the private key from your MasterNode's public key.
 
 ```
 walletpassphrase [your_wallet_passphrase] 600
 dumpprivkey [mn_public_key]
 ```
 
-Copy the resulting priviate key. You'll use it in the next step.
+Copy the resulting private key. You'll use it in the next step.
 
 ### From your multi-instance MasterNode Wallet
 
@@ -56,9 +56,9 @@ Create a new wallet address for each MasterNode.
 
 Close your QT Wallet.
 
-### Send 10,000 Helium to New Addresses
+### Send 1000 Helium to New Addresses
 
-Just like setting up a standard MN. Send exactly 10,000 Helium to each new address created above.
+Just like setting up a standard MN. Send exactly 1000 Helium to each new address created above.
 
 ### Create New Masternode Private Keys
 
@@ -78,11 +78,11 @@ Remember... this is local. Make sure your QT is not running.
 
 Create the masternode.conf file in the same directory as your wallet.dat.
 
-Copy the masternode private key and correspondig collateral output transaction that holds the 1K Helium.
+Copy the masternode private key and corresponding collateral output transaction that holds the 1K Helium.
 
 The masternode private key may be an existing key from [Option 1](#option1), or a newly generated key from [Option 2](#option2). 
 
-*Please note, the masternode priviate key is not the same as a wallet private key. Never put your wallet private key in the masternode.conf file. That is equivalent to putting your 10,000 Helium on the remote server and defeats the purpose of a hot/cold setup.*
+*Please note, the masternode private key is not the same as a wallet private key. Never put your wallet private key in the masternode.conf file. That is equivalent to putting your 1000 Helium on the remote server and defeats the purpose of a hot/cold setup.*
 
 ### Get the collateral output
 
@@ -92,7 +92,7 @@ Issue the following:
 
 ```masternode outputs```
 
-Make note of the hash (which is your collaterla_output) and index.
+Make note of the hash (which is your collateral_output) and index.
 
 ### Enter your MasterNode details into your masternode.conf file
 [From the helium github repo](https://github.com/helium-crypto/helium/blob/master/doc/masternode_conf.md)
