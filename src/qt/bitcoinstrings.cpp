@@ -333,7 +333,7 @@ QT_TRANSLATE_NOOP("bitcoin-core", "Invalid amount for -paytxfee=<amount>: '%s' (
 QT_TRANSLATE_NOOP("bitcoin-core", "Invalid amount for -paytxfee=<amount>: '%s'"),
 QT_TRANSLATE_NOOP("bitcoin-core", "Invalid amount for -reservebalance=<amount>"),
 QT_TRANSLATE_NOOP("bitcoin-core", "Invalid amount"),
-QT_TRANSLATE_NOOP("bitcoin-core", "Invalid masternodeprivkey. Please see documenation."),
+QT_TRANSLATE_NOOP("bitcoin-core", "Invalid masternodeprivkey. Please see documentation."),
 QT_TRANSLATE_NOOP("bitcoin-core", "Invalid netmask specified in -whitelist: '%s'"),
 QT_TRANSLATE_NOOP("bitcoin-core", "Invalid port detected in masternode.conf"),
 QT_TRANSLATE_NOOP("bitcoin-core", "Invalid private key."),
