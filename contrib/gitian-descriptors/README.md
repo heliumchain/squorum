@@ -20,7 +20,7 @@ Sanity checks:
 
 Once you've got the right hardware and software:
 
-    git clone git://github.com/helium-project/helium.git
+    git clone git://github.com/heliumchain/helium.git
     git clone git://github.com/devrandom/gitian-builder.git
     mkdir gitian-builder/inputs
     cd gitian-builder/inputs

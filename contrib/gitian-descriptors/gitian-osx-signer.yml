@@ -7,7 +7,7 @@ architectures:
 packages:
 - "faketime"
 remotes:
-- "url": "https://github.com/helium-project/helium-detached-sigs.git"
+- "url": "https://github.com/heliumchain/helium-detached-sigs.git"
   "dir": "signature"
 files:
 - "helium-osx-unsigned.tar.gz"
