@@ -21,8 +21,8 @@ if [ -e "$(which git 2>/dev/null)" -a "$(git rev-parse --is-inside-work-tree 2>/
     git diff >/dev/null 2>/dev/null 
 
     # if latest commit is tagged and not dirty, then override using the tag name
-    DESC=$(git describe 2>/dev/null)
-    RAWDESC=$(git describe --abbrev=0 2>/dev/null)
+    DESC=$(git describe --tags 2>/dev/null)
+    RAWDESC=$(git describe --tags --abbrev=0 2>/dev/null)
     git diff-index --quiet HEAD -- || DESC="$DESC-dirty"
 
     # get a string like "2012-04-10 16:27:19 +0200"
