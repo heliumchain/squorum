@@ -1,12 +1,13 @@
+#!/usr/bin/env bash
 # Copyright (c) 2016 The Bitcoin Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
+export LC_ALL=C
 # What to do
 sign=false
 verify=false
 build=false
-setupenv=false
 
 # Systems to build
 linux=true
@@ -21,6 +22,7 @@ url=https://github.com/heliumchain/helium
 proc=2
 mem=2000
 lxc=true
+docker=false
 osslTarUrl=http://downloads.sourceforge.net/project/osslsigncode/osslsigncode/osslsigncode-1.7.1.tar.gz
 osslPatchUrl=https://bitcoincore.org/cfields/osslsigncode-Backports-to-1.7.1.patch
 scriptName=$(basename -- "$0")
@@ -31,7 +33,7 @@ commitFiles=true
 read -d '' usage <<- EOF
 Usage: $scriptName [-c|u|v|b|s|B|o|h|j|m|] signer version
 
-Run this script from the directory containing the helium, gitian-builder, gitian.sigs, and helium-detached-sigs.
+Run this script from the directory containing the bitcoin, gitian-builder, gitian.sigs, and bitcoin-detached-sigs.
 
 Arguments:
 signer          GPG signer to sign each build assert file
@@ -39,16 +41,17 @@ version		Version number, commit, or branch to build. If building a commit or bra
 
 Options:
 -c|--commit	Indicate that the version argument is for a commit or branch
--u|--url	Specify the URL of the repository. Default is https://github.com/heliumchain/helium
--v|--verify 	Verify the gitian build
--b|--build	Do a gitian build
+-u|--url	Specify the URL of the repository. Default is https://github.com/bitcoin/bitcoin
+-v|--verify 	Verify the Gitian build
+-b|--build	Do a Gitian build
 -s|--sign	Make signed binaries for Windows and Mac OSX
 -B|--buildsign	Build both signed and unsigned binaries
--o|--os		Specify which Operating Systems the build is for. Default is lwx. l for linux, w for windows, x for osx, a for aarch64
+-o|--os		Specify which Operating Systems the build is for. Default is lwx. l for linux, w for windows, x for osx
 -j		Number of processes to use. Default 2
 -m		Memory to allocate in MiB. Default 2000
 --kvm           Use KVM instead of LXC
---setup         Setup the gitian building environment. Uses KVM. If you want to use lxc, use the --lxc option. Only works on Debian-based systems (Ubuntu, Debian)
+--docker        Use Docker instead of LXC
+--setup         Set up the Gitian building environment. Uses LXC. If you want to use KVM, use the --kvm option. Only works on Debian-based systems (Ubuntu, Debian)
 --detach-sign   Create the assert file for detached signing. Will not commit anything.
 --no-commit     Do not commit anything to git
 -h|--help	Print this help message
@@ -78,7 +81,7 @@ while :; do
         -S|--signer)
 	    if [ -n "$2" ]
 	    then
-		SIGNER=$2
+		SIGNER="$2"
 		shift
 	    else
 		echo 'Error: "--signer" requires a non-empty argument.'
@@ -92,7 +95,6 @@ while :; do
 		linux=false
 		windows=false
 		osx=false
-		aarch64=false
 		if [[ "$2" = *"l"* ]]
 		then
 		    linux=true
@@ -105,13 +107,9 @@ while :; do
 		then
 		    osx=true
 		fi
-		if [[ "$2" = *"a"* ]]
-		then
-		    aarch64=true
-		fi
 		shift
 	    else
-		echo 'Error: "--os" requires an argument containing an l (for linux), w (for windows), x (for Mac OSX), or a (for aarch64)\n'
+		echo 'Error: "--os" requires an argument containing an l (for linux), w (for windows), or x (for Mac OSX)'
 		exit 1
 	    fi
 	    ;;
@@ -161,6 +159,16 @@ while :; do
         --kvm)
             lxc=false
             ;;
+        # docker
+        --docker)
+            if [[ $lxc = false ]]
+            then
+                echo 'Error: cannot have both kvm and docker'
+                exit 1
+            fi
+            lxc=false
+            docker=true
+            ;;
         # Detach sign
         --detach-sign)
             signProg="true"
@@ -184,8 +192,12 @@ done
 if [[ $lxc = true ]]
 then
     export USE_LXC=1
-    export LXC_BRIDGE=lxcbr0
-    sudo ifconfig lxcbr0 up 10.0.2.2
+fi
+
+# Setup docker
+if [[ $docker = true ]]
+then
+    export USE_DOCKER=1
 fi
 
 # Check for OSX SDK
@@ -196,9 +208,9 @@ then
 fi
 
 # Get signer
-if [[ -n"$1" ]]
+if [[ -n "$1" ]]
 then
-    SIGNER=$1
+    SIGNER="$1"
     shift
 fi
 
@@ -211,7 +223,7 @@ then
 fi
 
 # Check that a signer is specified
-if [[ $SIGNER == "" ]]
+if [[ "$SIGNER" == "" ]]
 then
     echo "$scriptName: Missing signer."
     echo "Try $scriptName --help for more information"
@@ -237,15 +249,20 @@ echo ${COMMIT}
 if [[ $setup = true ]]
 then
     sudo apt-get install ruby apache2 git apt-cacher-ng python-vm-builder qemu-kvm qemu-utils
-    git clone https://github.com/heliumchain/helium
-    git clone https://github.com/devrandom/gitian-builder.git
+    #git clone https://github.com/bitcoin-core/gitian.sigs.git
+    #git clone https://github.com/bitcoin-core/bitcoin-detached-sigs.git
+    #git clone https://github.com/devrandom/gitian-builder.git
     pushd ./gitian-builder
     if [[ -n "$USE_LXC" ]]
     then
         sudo apt-get install lxc
-        bin/make-base-vm --suite trusty --arch amd64 --lxc
+        bin/make-base-vm --suite bionic --arch amd64 --lxc
+    elif [[ -n "$USE_DOCKER" ]]
+    then
+        sudo apt-get install docker-ce
+        bin/make-base-vm --suite bionic --arch amd64 --docker
     else
-        bin/make-base-vm --suite trusty --arch amd64
+        bin/make-base-vm --suite bionic --arch amd64
     fi
     popd
 fi
@@ -261,12 +278,12 @@ if [[ $build = true ]]
 then
 	# Make output folder
 	mkdir -p ./helium-binaries/${VERSION}
-
+	
 	# Build Dependencies
 	echo ""
 	echo "Building Dependencies"
 	echo ""
-	pushd ./gitian-builder
+	pushd ./gitian-builder	
 	mkdir -p inputs
 	wget -N -P inputs $osslPatchUrl
 	wget -N -P inputs $osslTarUrl
@@ -279,7 +296,7 @@ then
 	    echo "Compiling ${VERSION} Linux"
 	    echo ""
 	    ./bin/gbuild -j ${proc} -m ${mem} --commit helium=${COMMIT} --url helium=${url} ../helium/contrib/gitian-descriptors/gitian-linux.yml
-	    ./bin/gsign -p $signProg --signer $SIGNER --release ${VERSION}-linux --destination ../gitian.sigs/ ../helium/contrib/gitian-descriptors/gitian-linux.yml
+	    ./bin/gsign -p "$signProg" --signer "$SIGNER" --release ${VERSION}-linux --destination ../gitian.sigs/ ../helium/contrib/gitian-descriptors/gitian-linux.yml
 	    mv build/out/helium-*.tar.gz build/out/src/helium-*.tar.gz ../helium-binaries/${VERSION}
 	fi
 	# Windows
@@ -289,7 +306,7 @@ then
 	    echo "Compiling ${VERSION} Windows"
 	    echo ""
 	    ./bin/gbuild -j ${proc} -m ${mem} --commit helium=${COMMIT} --url helium=${url} ../helium/contrib/gitian-descriptors/gitian-win.yml
-	    ./bin/gsign -p $signProg --signer $SIGNER --release ${VERSION}-win-unsigned --destination ../gitian.sigs/ ../helium/contrib/gitian-descriptors/gitian-win.yml
+	    ./bin/gsign -p "$signProg" --signer "$SIGNER" --release ${VERSION}-win-unsigned --destination ../gitian.sigs/ ../helium/contrib/gitian-descriptors/gitian-win.yml
 	    mv build/out/helium-*-win-unsigned.tar.gz inputs/helium-win-unsigned.tar.gz
 	    mv build/out/helium-*.zip build/out/helium-*.exe ../helium-binaries/${VERSION}
 	fi
@@ -300,19 +317,10 @@ then
 	    echo "Compiling ${VERSION} Mac OSX"
 	    echo ""
 	    ./bin/gbuild -j ${proc} -m ${mem} --commit helium=${COMMIT} --url helium=${url} ../helium/contrib/gitian-descriptors/gitian-osx.yml
-	    ./bin/gsign -p $signProg --signer $SIGNER --release ${VERSION}-osx-unsigned --destination ../gitian.sigs/ ../helium/contrib/gitian-descriptors/gitian-osx.yml
+	    ./bin/gsign -p "$signProg" --signer "$SIGNER" --release ${VERSION}-osx-unsigned --destination ../gitian.sigs/ ../helium/contrib/gitian-descriptors/gitian-osx.yml
 	    mv build/out/helium-*-osx-unsigned.tar.gz inputs/helium-osx-unsigned.tar.gz
 	    mv build/out/helium-*.tar.gz build/out/helium-*.dmg ../helium-binaries/${VERSION}
 	fi
-	# AArch64
-	if [[ $aarch64 = true ]]
-	then
-	    echo ""
-	    echo "Compiling ${VERSION} AArch64"
-	    echo ""
-	    ./bin/gbuild -j ${proc} -m ${mem} --commit helium=${COMMIT} --url helium=${url} ../helium/contrib/gitian-descriptors/gitian-aarch64.yml
-	    ./bin/gsign -p $signProg --signer $SIGNER --release ${VERSION}-aarch64 --destination ../gitian.sigs/ ../helium/contrib/gitian-descriptors/gitian-aarch64.yml
-	    mv build/out/helium-*.tar.gz build/out/src/helium-*.tar.gz ../helium-binaries/${VERSION}
 	popd
 
         if [[ $commitFiles = true ]]
@@ -322,10 +330,9 @@ then
             echo "Committing ${VERSION} Unsigned Sigs"
             echo ""
             pushd gitian.sigs
-            git add ${VERSION}-linux/${SIGNER}
-            git add ${VERSION}-aarch64/${SIGNER}
-            git add ${VERSION}-win-unsigned/${SIGNER}
-            git add ${VERSION}-osx-unsigned/${SIGNER}
+            git add ${VERSION}-linux/"${SIGNER}"
+            git add ${VERSION}-win-unsigned/"${SIGNER}"
+            git add ${VERSION}-osx-unsigned/"${SIGNER}"
             git commit -a -m "Add ${VERSION} unsigned sigs for ${SIGNER}"
             popd
         fi
@@ -345,16 +352,11 @@ then
 	echo "Verifying v${VERSION} Windows"
 	echo ""
 	./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-win-unsigned ../helium/contrib/gitian-descriptors/gitian-win.yml
-	# Mac OSX
+	# Mac OSX	
 	echo ""
 	echo "Verifying v${VERSION} Mac OSX"
-	echo ""
+	echo ""	
 	./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-osx-unsigned ../helium/contrib/gitian-descriptors/gitian-osx.yml
-	# AArch64
-	echo ""
-	echo "Verifying v${VERSION} AArch64"
-	echo ""
-	./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-aarch64 ../helium/contrib/gitian-descriptors/gitian-aarch64.yml
 	# Signed Windows
 	echo ""
 	echo "Verifying v${VERSION} Signed Windows"
@@ -364,14 +366,14 @@ then
 	echo ""
 	echo "Verifying v${VERSION} Signed Mac OSX"
 	echo ""
-	./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-osx-signed ../helium/contrib/gitian-descriptors/gitian-osx-signer.yml
+	./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-osx-signed ../helium/contrib/gitian-descriptors/gitian-osx-signer.yml	
 	popd
 fi
 
 # Sign binaries
 if [[ $sign = true ]]
 then
-
+	
         pushd ./gitian-builder
 	# Sign Windows
 	if [[ $windows = true ]]
@@ -380,7 +382,7 @@ then
 	    echo "Signing ${VERSION} Windows"
 	    echo ""
 	    ./bin/gbuild -i --commit signature=${COMMIT} ../helium/contrib/gitian-descriptors/gitian-win-signer.yml
-	    ./bin/gsign -p $signProg --signer $SIGNER --release ${VERSION}-win-signed --destination ../gitian.sigs/ ../helium/contrib/gitian-descriptors/gitian-win-signer.yml
+	    ./bin/gsign -p "$signProg" --signer "$SIGNER" --release ${VERSION}-win-signed --destination ../gitian.sigs/ ../helium/contrib/gitian-descriptors/gitian-win-signer.yml
 	    mv build/out/helium-*win64-setup.exe ../helium-binaries/${VERSION}
 	    mv build/out/helium-*win32-setup.exe ../helium-binaries/${VERSION}
 	fi
@@ -391,7 +393,7 @@ then
 	    echo "Signing ${VERSION} Mac OSX"
 	    echo ""
 	    ./bin/gbuild -i --commit signature=${COMMIT} ../helium/contrib/gitian-descriptors/gitian-osx-signer.yml
-	    ./bin/gsign -p $signProg --signer $SIGNER --release ${VERSION}-osx-signed --destination ../gitian.sigs/ ../helium/contrib/gitian-descriptors/gitian-osx-signer.yml
+	    ./bin/gsign -p "$signProg" --signer "$SIGNER" --release ${VERSION}-osx-signed --destination ../gitian.sigs/ ../helium/contrib/gitian-descriptors/gitian-osx-signer.yml
 	    mv build/out/helium-osx-signed.dmg ../helium-binaries/${VERSION}/helium-${VERSION}-osx.dmg
 	fi
 	popd
@@ -403,8 +405,8 @@ then
             echo ""
             echo "Committing ${VERSION} Signed Sigs"
             echo ""
-            git add ${VERSION}-win-signed/${SIGNER}
-            git add ${VERSION}-osx-signed/${SIGNER}
+            git add ${VERSION}-win-signed/"${SIGNER}"
+            git add ${VERSION}-osx-signed/"${SIGNER}"
             git commit -a -m "Add ${VERSION} signed binary sigs for ${SIGNER}"
             popd
         fi
