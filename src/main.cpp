@@ -1816,26 +1816,31 @@ double ConvertBitsToDouble(unsigned int nBits)
 int64_t GetBlockValue(int nHeight)
 {
     if (Params().NetworkID() == CBaseChainParams::TESTNET) {
-	// set testnet PoW period reward
-        if (nHeight < 10000 && nHeight > 0)
+        // set testnet PoW period reward
+        if (nHeight < 9999 && nHeight > 0) {
             return 250 * COIN;
+        } else if (nHeight <= Params().LAST_POW_BLOCK() && nHeight >= 9999) {
+            return 200 * COIN;
+        } else if (nHeight <= 20000 && nHeight > Params().LAST_POW_BLOCK()) {
+            return 200 * COIN;
+        } else if (nHeight <= 302399 && nHeight >= 20001) {
+            return static_cast<int64_t>(200 * COIN);
+        }
+
     }
     int64_t nSubsidy = 0;
     if (nHeight == 0) {
         // Mint the ledger total (minus treasury deposit) for disbursal
         nSubsidy = (ledgerTotal - treasuryDeposit); // (8891432 * COIN) - (432870.87949961 * COIN)
 
-	// NH changing 2 week PoW to 1 HLM
-    } else if (nHeight < 20160 && nHeight > 0) {
+        // NH changing 2 week PoW to 1 HLM
+    } else if (nHeight < 20159 && nHeight > 0) {
         nSubsidy = 1 * COIN;
-    } else if (nHeight < 86400 && nHeight >= 20160) {
-        nSubsidy = 250 * COIN;
-    } else if (nHeight < (Params().NetworkID() == CBaseChainParams::TESTNET ? 145000 : 151200) && nHeight >= 86400) {
-        nSubsidy = 225 * COIN;
-    } else if (nHeight <= Params().LAST_POW_BLOCK() && nHeight >= 151200) {
+    } else if (nHeight <= Params().LAST_POW_BLOCK() && nHeight >= 20159) {
         nSubsidy = 45 * COIN;
     } else if (nHeight <= 302399 && nHeight > Params().LAST_POW_BLOCK()) {
         nSubsidy = 45 * COIN;
+        // testnet rejoins here
     } else if (nHeight <= 345599 && nHeight >= 302400) {
         nSubsidy = static_cast<int64_t>(40.5 * COIN);
     } else if (nHeight <= 388799 && nHeight >= 345600) {
