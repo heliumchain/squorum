@@ -15,8 +15,8 @@ windows=true
 osx=true
 
 # Other Basic variables
-SIGNER=faetos
-VERSION=0.14.5
+SIGNER=
+VERSION=
 commit=false
 url=https://github.com/heliumchain/helium
 proc=2
