@@ -1818,16 +1818,15 @@ int64_t GetBlockValue(int nHeight)
     if (Params().NetworkID() == CBaseChainParams::TESTNET) {
         // set testnet PoW period reward
         if (nHeight < 9999 && nHeight > 0) {
-            return 250 * COIN;
+            return static_cast<int64_t>(250 * COIN);
         } else if (nHeight <= Params().LAST_POW_BLOCK() && nHeight >= 9999) {
-            return 200 * COIN;
-        } else if (nHeight <= 20000 && nHeight > Params().LAST_POW_BLOCK()) {
-            return 200 * COIN;
-        } else if (nHeight <= 302399 && nHeight >= 20001) {
+            return static_cast<int64_t>(200 * COIN);
+        } else {
             return static_cast<int64_t>(200 * COIN);
         }
 
     }
+
     int64_t nSubsidy = 0;
     if (nHeight == 0) {
         // Mint the ledger total (minus treasury deposit) for disbursal
@@ -1835,32 +1834,15 @@ int64_t GetBlockValue(int nHeight)
 
         // NH changing 2 week PoW to 1 HLM
     } else if (nHeight < 20159 && nHeight > 0) {
-        nSubsidy = 1 * COIN;
+        nSubsidy = static_cast<int64_t>(1 * COIN);
     } else if (nHeight <= Params().LAST_POW_BLOCK() && nHeight >= 20159) {
-        nSubsidy = 45 * COIN;
+        nSubsidy = static_cast<int64_t>(45 * COIN);
     } else if (nHeight <= 302399 && nHeight > Params().LAST_POW_BLOCK()) {
-        nSubsidy = 45 * COIN;
-        // testnet rejoins here
-    } else if (nHeight <= 345599 && nHeight >= 302400) {
-        nSubsidy = static_cast<int64_t>(40.5 * COIN);
-    } else if (nHeight <= 388799 && nHeight >= 345600) {
-        nSubsidy = 36 * COIN;
-    } else if (nHeight <= 431999 && nHeight >= 388800) {
-        nSubsidy = static_cast<int64_t>(31.5 * COIN);
-    } else if (nHeight <= 475199 && nHeight >= 432000) {
-        nSubsidy = 27 * COIN;
-    } else if (nHeight <= 518399 && nHeight >= 475200) {
-        nSubsidy = static_cast<int64_t>(22.5 * COIN);
-    } else if (nHeight <= 561599 && nHeight >= 518400) {
-        nSubsidy = 18 * COIN;
-    } else if (nHeight <= 604799 && nHeight >= 561600) {
-        nSubsidy = static_cast<int64_t>(13.5 * COIN);
-    } else if (nHeight <= 647999 && nHeight >= 604800) {
-        nSubsidy = 9 * COIN;
+        nSubsidy = static_cast<int64_t>(45 * COIN);
     } else if (nHeight < Params().Zerocoin_Block_V2_Start()) {
-        nSubsidy = 4.5 * COIN;
+        nSubsidy = static_cast<int64_t>(4.5 * COIN);
     } else {
-        nSubsidy = 5 * COIN;
+        nSubsidy = static_cast<int64_t>(5 * COIN);
     }
     return nSubsidy;
 }
