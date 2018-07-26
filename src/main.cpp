@@ -1817,7 +1817,7 @@ int64_t GetBlockValue(int nHeight)
 {
     if (Params().NetworkID() == CBaseChainParams::TESTNET) {
         // set testnet PoW period reward
-        if (nHeight < 9999 && nHeight > 0) {
+        if (nHeight < 9999) {
             return static_cast<int64_t>(250 * COIN);
         } else if (nHeight <= Params().LAST_POW_BLOCK() && nHeight >= 9999) {
             return static_cast<int64_t>(200 * COIN);
@@ -1831,14 +1831,14 @@ int64_t GetBlockValue(int nHeight)
     if (nHeight == 0) {
         // Mint the ledger total (minus treasury deposit) for disbursal
         nSubsidy = (ledgerTotal - treasuryDeposit); // (8891432 * COIN) - (432870.87949961 * COIN)
-    } else if (nHeight < 20159 && nHeight > 0) {
+    } else if (nHeight < 20159) {
         nSubsidy = static_cast<int64_t>(1 * COIN);
     } else if (nHeight <= Params().LAST_POW_BLOCK() && nHeight >= 20159) {
-        nSubsidy = static_cast<int64_t>(45 * COIN);
-    } else if (nHeight <= 302399 && nHeight > Params().LAST_POW_BLOCK()) {
-        nSubsidy = static_cast<int64_t>(45 * COIN);
-    } else if (nHeight < Params().Zerocoin_Block_V2_Start()) {
-        nSubsidy = static_cast<int64_t>(4.5 * COIN);
+        nSubsidy = static_cast<int64_t>(5 * COIN);
+    } else if (nHeight > Params().LAST_POW_BLOCK()) {
+        nSubsidy = static_cast<int64_t>(5 * COIN);
+//    } else if (nHeight < Params().Zerocoin_Block_V2_Start()) {
+//        nSubsidy = static_cast<int64_t>(4.5 * COIN);
     } else {
         nSubsidy = static_cast<int64_t>(5 * COIN);
     }
@@ -2110,8 +2110,8 @@ int64_t GetMasternodePayment(int nHeight, int64_t blockValue, int nMasternodeCou
 //        ret = 50 * COIN;
 //    } else if (nHeight <= Params().LAST_POW_BLOCK() && nHeight >= 151200) {
 //        ret = blockValue / 2;
-    } else if (nHeight < Params().Zerocoin_Block_V2_Start()) {
-        return GetSeeSaw(blockValue, nMasternodeCount, nHeight);
+//    } else if (nHeight < Params().Zerocoin_Block_V2_Start()) {
+//        return GetSeeSaw(blockValue, nMasternodeCount, nHeight);
     } else {
         //When zPIV is staked, masternode only gets 2 PIV
         ret = 3 * COIN;
