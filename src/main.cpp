@@ -2096,24 +2096,13 @@ int64_t GetMasternodePayment(int nHeight, int64_t blockValue, int nMasternodeCou
 	}
     }
 
-    /* Note: GJH Temporary hack to investigate initial PoW period */
-    // NH - commented out //
-    //if (nHeight <= 10000)
-    //    ret = 0;
-
-    /* FIXME: GJH Particularise masternode payment schedule */
+    /* NOTE: GJH Particularise masternode payment schedule */
     if (nHeight <= 43200) {
         ret = 0;
     } else if (nHeight > 43200) {
         ret = blockValue / (100 / 30);
-//    } else if (nHeight < (Params().NetworkID() == CBaseChainParams::TESTNET ? 145000 : 151200) && nHeight >= 86400) {
-//        ret = 50 * COIN;
-//    } else if (nHeight <= Params().LAST_POW_BLOCK() && nHeight >= 151200) {
-//        ret = blockValue / 2;
-//    } else if (nHeight < Params().Zerocoin_Block_V2_Start()) {
-//        return GetSeeSaw(blockValue, nMasternodeCount, nHeight);
     } else {
-        //When zPIV is staked, masternode only gets 2 PIV
+        //When zPIV is staked, masternode only gets 2 HLM
         ret = 3 * COIN;
         if (isZPIVStake)
             ret = 2 * COIN;
