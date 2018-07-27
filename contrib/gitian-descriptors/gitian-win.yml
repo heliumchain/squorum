@@ -2,7 +2,7 @@
 name: "helium-win-0.14.8"
 enable_cache: true
 suites:
-- "trusty"
+- "bionic"
 architectures:
 - "amd64"
 packages:
