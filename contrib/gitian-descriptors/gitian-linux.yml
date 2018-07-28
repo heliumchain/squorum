@@ -2,7 +2,7 @@
 name: "helium-linux-0.14.8"
 enable_cache: true
 suites:
-- "bionic"
+- "trusty"
 architectures:
 - "amd64"
 packages:

@@ -2,7 +2,7 @@
 name: "helium-aarch64-0.14.8"
 enable_cache: true
 suites:
-- "bionic"
+- "xenial"
 architectures:
 - "amd64"
 packages:
