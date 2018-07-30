@@ -40,11 +40,16 @@ Generate list of authors:
 
 Tag version (or release candidate) in git
 
-    git tag -s v(new version, e.g. 0.8.0)
+    git tag -a -s v(new version, e.g. 0.8.0) -m "Release 0.14.9"
+    git push --tags
 
 ### Setup and perform Gitian builds
 
-If you're using the automated script (found in [contrib/gitian-build.sh](/contrib/gitian-build.sh)), then at this point you should run it with the "--build" command. Otherwise ignore this.
+If you're using the automated script (found in [contrib/gitian-build.py](/contrib/gitian-build.py)), then at this point you should run it with the "--build" command. Otherwise ignore this.
+
+An example of that command using 5 processors and 5000 MB of RAM:
+
+./gitian-build.py -j 5 -m 5000 --detach-sign --no-commit -b bubba 0.14.9
 
 Setup Gitian descriptors:
 
