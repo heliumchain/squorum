@@ -96,10 +96,11 @@ You need to copy these uncommited changes to your host machine, where you can si
 
 ```
 export NAME=bubba
-export VERSION=0.14.9
-gpg --output $VERSION-linux/$NAME/helium-linux-0.14.9-build.assert.sig --detach-sig 0.14.9-linux/$NAME/bitcoin-linux-0.16-build.assert 
-gpg --output $VERSION-osx-unsigned/$NAME/helium-osx-0.14.9-build.assert.sig --detach-sig 0.14.9-osx-unsigned/$NAME/bitcoin-osx-0.16-build.assert 
-gpg --output $VERSION-win-unsigned/$NAME/helium-win-0.14.9-build.assert.sig --detach-sig 0.14.9-win-unsigned/$NAME/bitcoin-win-0.16-build.assert 
+export VERSION=0.14.9.2
+export BUILD=0.14.9
+gpg --output $VERSION-linux/$NAME/helium-linux-$BUILD-build.assert.sig --detach-sig $VERSION-linux/$NAME/bitcoin-linux-$BUILD-build.assert 
+gpg --output $VERSION-osx-unsigned/$NAME/helium-osx-$BUILD-build.assert.sig --detach-sig 0$VERSION-osx-unsigned/$NAME/bitcoin-osx-$BUILD-build.assert 
+gpg --output $VERSION-win-unsigned/$NAME/helium-win-$BUILD-build.assert.sig --detach-sig $VERSION-win-unsigned/$NAME/bitcoin-win-$BUILD-build.assert 
 ```
 
 Make a PR (both the `.assert` and `.assert.sig` files) to the
