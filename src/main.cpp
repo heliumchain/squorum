@@ -5638,6 +5638,17 @@ bool static ProcessMessage(CNode* pfrom, string strCommand, CDataStream& vRecv, 
             vRecv >> LIMITED_STRING(pfrom->strSubVer, 256);
             pfrom->cleanSubVer = SanitizeString(pfrom->strSubVer);
         }
+
+	// Banned versions moving forward - Chain switch at 0.14.7
+	if (pfrom->cleanSubVer == "/Helium Core:0.14.3/" ||
+            pfrom->cleanSubVer == "/Helium Core:0.14.4/" ||
+            pfrom->cleanSubVer == "/Helium Core:0.14.5/" ||
+            pfrom->cleanSubVer == "/Helium Core:0.14.6/") {
+            LOCK(cs_main);
+            Misbehaving(pfrom->GetId(), 100); // instantly ban them because they have bad block data
+            return false;
+        }
+	
         if (!vRecv.empty())
             vRecv >> pfrom->nStartingHeight;
         if (!vRecv.empty())
