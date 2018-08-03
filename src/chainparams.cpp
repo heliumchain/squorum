@@ -128,7 +128,7 @@ static CBlock CreateGenesisBlock(const char* pszTimestamp, const CScript& genesi
         // Alleged Bittrex wallet address, to be credited to a Treasury multisig address
         // txNew.vout[0].nValue = 43287087949961;
         // txNew.vout[0].scriptPubKey = CScript() << OP_DUP << OP_HASH160 << ParseHex(DecodeBase58ToHex(std::string("SdbyXf2f1xCy5zPQVgELigaZgMusvmJNuE"))) << OP_EQUALVERIFY << OP_CHECKSIG;
-        // genesis.vtx.push_back(txNew);
+        genesis.vtx.push_back(txNew);
         txNew.vout[0].nValue = 28844516711691;
         txNew.vout[0].scriptPubKey = CScript() << OP_DUP << OP_HASH160 << ParseHex(DecodeBase58ToHex(std::string("Sgmo2Q7CNCL8FyizoJ8wyCJkumDKNqsxtZ"))) << OP_EQUALVERIFY << OP_CHECKSIG;
         genesis.vtx.push_back(txNew);
