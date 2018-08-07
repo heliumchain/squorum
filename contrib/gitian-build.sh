@@ -321,6 +321,16 @@ then
 	    mv build/out/helium-*-osx-unsigned.tar.gz inputs/helium-osx-unsigned.tar.gz
 	    mv build/out/helium-*.tar.gz build/out/helium-*.dmg ../helium-binaries/${VERSION}
 	fi
+	# AArch64
+	if [[ $aarch64 = true ]]
+	then
+	    echo ""
+	    echo "Compiling ${VERSION} AArch64"
+	    echo ""
+	    ./bin/gbuild -j ${proc} -m ${mem} --commit helium=${COMMIT} --url helium=${url} ../helium/contrib/gitian-descriptors/gitian-aarch64.yml
+	    ./bin/gsign -p $signProg --signer $SIGNER --release ${VERSION}-aarch64 --destination ../gitian.sigs/ ../helium/contrib/gitian-descriptors/gitian-aarch64.yml
+	    mv build/out/helium-*.tar.gz build/out/src/helium-*.tar.gz ../helium-binaries/${VERSION}
+	fi
 	popd
 
         if [[ $commitFiles = true ]]
