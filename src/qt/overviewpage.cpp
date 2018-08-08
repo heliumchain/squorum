@@ -275,28 +275,28 @@ void OverviewPage::setBalance(const CAmount& balance, const CAmount& unconfirmed
 
     // HLM Available
     bool showHLMAvailable = settingShowAllBalances || hlmAvailableBalance != nTotalBalance;
-    bool showWatchOnlyHLMAvailable = settingShowAllBalances || nAvailableWatchBalance != nTotalWatchBalance;
+    bool showWatchOnlyHLMAvailable = showHLMAvailable || nAvailableWatchBalance != nTotalWatchBalance;
     ui->labelBalanceText->setVisible(showHLMAvailable || showWatchOnlyHLMAvailable);
     ui->labelBalance->setVisible(showHLMAvailable || showWatchOnlyHLMAvailable);
     ui->labelWatchAvailable->setVisible(showWatchOnlyHLMAvailable && showWatchOnly);
 
     // HLM Pending
     bool showHLMPending = settingShowAllBalances || unconfirmedBalance != 0;
-    bool showWatchOnlyHLMPending = settingShowAllBalances || watchUnconfBalance != 0;
+    bool showWatchOnlyHLMPending = showHLMPending || watchUnconfBalance != 0;
     ui->labelPendingText->setVisible(showHLMPending || showWatchOnlyHLMPending);
     ui->labelUnconfirmed->setVisible(showHLMPending || showWatchOnlyHLMPending);
     ui->labelWatchPending->setVisible(showWatchOnlyHLMPending && showWatchOnly);
 
     // HLM Immature
     bool showHLMImmature = settingShowAllBalances || immatureBalance != 0;
-    bool showWatchOnlyImmature = settingShowAllBalances || watchImmatureBalance != 0;
+    bool showWatchOnlyImmature = showHLMImmature || watchImmatureBalance != 0;
     ui->labelImmatureText->setVisible(showHLMImmature || showWatchOnlyImmature);
     ui->labelImmature->setVisible(showHLMImmature || showWatchOnlyImmature); // for symmetry reasons also show immature label when the watch-only one is shown
     ui->labelWatchImmature->setVisible(showWatchOnlyImmature && showWatchOnly); // show watch-only immature balance
 
     // HLM Locked
     bool showHLMLocked = settingShowAllBalances || nLockedBalance != 0;
-    bool showWatchOnlyHLMLocked = settingShowAllBalances || nWatchOnlyLockedBalance != 0;
+    bool showWatchOnlyHLMLocked = showHLMLocked || nWatchOnlyLockedBalance != 0;
     ui->labelLockedBalanceText->setVisible(showHLMLocked || showWatchOnlyHLMLocked);
     ui->labelLockedBalance->setVisible(showHLMLocked || showWatchOnlyHLMLocked);
     ui->labelWatchLocked->setVisible(showWatchOnlyHLMLocked && showWatchOnly);
