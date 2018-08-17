@@ -14,6 +14,7 @@
 #include "timedata.h"
 #include "util.h"
 
+#define MASTERNODE_COLLATERAL_AMOUNT 1000
 #define MASTERNODE_MIN_CONFIRMATIONS 15
 #define MASTERNODE_MIN_MNP_SECONDS (10 * 60)
 #define MASTERNODE_MIN_MNB_SECONDS (5 * 60)
