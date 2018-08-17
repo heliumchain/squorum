@@ -2381,6 +2381,7 @@ public:
         //vSeeds.push_back(CDNSSeedData("Minkiz", "minkiz.co"));           // GJH Node
         vSeeds.push_back(CDNSSeedData("heliumna01", "heliumna01.heliumchain.org"));
         vSeeds.push_back(CDNSSeedData("Spread", "188.166.58.8"));
+	vSeeds.push_back(CDNSSeedData("Kserv", "149.28.242.177"));
 
         // Helium addresses start with 'S'
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,63);
