@@ -373,7 +373,7 @@ CBlockTemplate* CreateNewBlock(const CScript& scriptPubKeyIn, CWallet* pwallet, 
                     continue;
 
                 bool fDoubleSerial = false;
-                for (const CTxIn txIn : tx.vin) {
+                for (const CTxIn& txIn : tx.vin) {
                     if (txIn.scriptSig.IsZerocoinSpend()) {
                         libzerocoin::CoinSpend spend = TxInToZerocoinSpend(txIn);
                         bool fUseV1Params = libzerocoin::ExtractVersionFromSerial(spend.getCoinSerialNumber()) < libzerocoin::PrivateCoin::PUBKEY_VERSION;
@@ -418,7 +418,7 @@ CBlockTemplate* CreateNewBlock(const CScript& scriptPubKeyIn, CWallet* pwallet, 
             nBlockSigOps += nTxSigOps;
             nFees += nTxFees;
 
-            for (const CBigNum bnSerial : vTxSerials)
+            for (const CBigNum& bnSerial : vTxSerials)
                 vBlockSerials.emplace_back(bnSerial);
 
             if (fPrintPriority) {

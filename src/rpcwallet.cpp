@@ -3043,7 +3043,7 @@ UniValue getarchivedzerocoin(const UniValue& params, bool fHelp)
     list<CDeterministicMint> listDMints = walletdb.ListArchivedDeterministicMints();
 
     UniValue arrRet(UniValue::VARR);
-    for (const CZerocoinMint mint : listMints) {
+    for (const CZerocoinMint& mint : listMints) {
         UniValue objMint(UniValue::VOBJ);
         objMint.push_back(Pair("txid", mint.GetTxHash().GetHex()));
         objMint.push_back(Pair("denomination", ValueFromAmount(mint.GetDenominationAsAmount())));
@@ -3053,7 +3053,7 @@ UniValue getarchivedzerocoin(const UniValue& params, bool fHelp)
         arrRet.push_back(objMint);
     }
 
-    for (const CDeterministicMint dMint : listDMints) {
+    for (const CDeterministicMint& dMint : listDMints) {
         UniValue objDMint(UniValue::VOBJ);
         objDMint.push_back(Pair("txid", dMint.GetTxHash().GetHex()));
         objDMint.push_back(Pair("denomination", ValueFromAmount(libzerocoin::ZerocoinDenominationToAmount(dMint.GetDenomination()))));
@@ -3262,7 +3262,7 @@ UniValue reconsiderzerocoins(const UniValue& params, bool fHelp)
     pwalletMain->ReconsiderZerocoins(listMints, listDMints);
 
     UniValue arrRet(UniValue::VARR);
-    for (const CZerocoinMint mint : listMints) {
+    for (const CZerocoinMint& mint : listMints) {
         UniValue objMint(UniValue::VOBJ);
         objMint.push_back(Pair("txid", mint.GetTxHash().GetHex()));
         objMint.push_back(Pair("denomination", ValueFromAmount(mint.GetDenominationAsAmount())));
@@ -3270,7 +3270,7 @@ UniValue reconsiderzerocoins(const UniValue& params, bool fHelp)
         objMint.push_back(Pair("height", mint.GetHeight()));
         arrRet.push_back(objMint);
     }
-    for (const CDeterministicMint dMint : listDMints) {
+    for (const CDeterministicMint& dMint : listDMints) {
         UniValue objMint(UniValue::VOBJ);
         objMint.push_back(Pair("txid", dMint.GetTxHash().GetHex()));
         objMint.push_back(Pair("denomination", FormatMoney(libzerocoin::ZerocoinDenominationToAmount(dMint.GetDenomination()))));
