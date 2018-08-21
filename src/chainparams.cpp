@@ -2378,8 +2378,7 @@ public:
 	// Mainnet --- nonce: 851930 time: 1520801782 hash: 0x00000289d5c33bbc11a166ee53f3e76aa80863ffbc10f22b2484ffc40f7357b2 merklehash: 0x41af082a5c40201a598b994218ceb4aabc59a70999009f6e1bf6f9e063b794b9
 
 
-        //vSeeds.push_back(CDNSSeedData("Minkiz", "minkiz.co"));           // GJH Node
-        vSeeds.push_back(CDNSSeedData("heliumna01", "heliumna01.heliumchain.org"));
+        vSeeds.push_back(CDNSSeedData("heliumlabs", "seed.heliumlabs.org"));
         vSeeds.push_back(CDNSSeedData("Spread", "188.166.58.8"));
 	vSeeds.push_back(CDNSSeedData("Kserv", "149.28.242.177"));
 
