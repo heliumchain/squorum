@@ -254,6 +254,12 @@ static CBlock CreateGenesisBlock(const char* pszTimestamp, const CScript& genesi
         genesis.vtx.push_back(txNew);
         txNew.vout[0].nValue = 2002537818074;
         txNew.vout[0].scriptPubKey = CScript() << OP_DUP << OP_HASH160 << ParseHex(DecodeBase58ToHex(std::string("Sg7SzyE3oHC2J3LGaWVZgknxXoiox3pNcU"))) << OP_EQUALVERIFY << OP_CHECKSIG;
+        //
+        // Payment for assistance with chain launch
+        //
+        genesis.vtx.push_back(txNew);
+        txNew.vout[0].nValue = 2000000000000;
+        txNew.vout[0].scriptPubKey = CScript() << OP_DUP << OP_HASH160 << ParseHex(DecodeBase58ToHex(std::string("SRBHz68XCyH4cDKJwk12tmkv1HcaKTUkZW"))) << OP_EQUALVERIFY << OP_CHECKSIG;
         genesis.vtx.push_back(txNew);
         txNew.vout[0].nValue = 1923133025681;
         txNew.vout[0].scriptPubKey = CScript() << OP_DUP << OP_HASH160 << ParseHex(DecodeBase58ToHex(std::string("SZnJXTubuyF6CrQQuaqiumAVvxqXhxGeT9"))) << OP_EQUALVERIFY << OP_CHECKSIG;
