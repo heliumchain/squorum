@@ -1828,10 +1828,7 @@ int64_t GetBlockValue(int nHeight)
     }
 
     int64_t nSubsidy = 0;
-    if (nHeight == 0) {
-        // Mint the ledger total (minus treasury deposit) for disbursal
-        nSubsidy = (ledgerTotal - treasuryDeposit); // (8891432 * COIN) - (432870.87949961 * COIN)
-    } else if (nHeight < 20159) {
+    if (nHeight < 20159) {
         nSubsidy = static_cast<int64_t>(1 * COIN);
     } else if (nHeight <= Params().LAST_POW_BLOCK() && nHeight >= 20159) {
         nSubsidy = static_cast<int64_t>(5 * COIN);
