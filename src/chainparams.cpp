@@ -2384,6 +2384,7 @@ public:
 	// Mainnet --- nonce: 1022668 time: 1534884770 hash: 0x00000233f0e260f57999acfa4ab7556f708fa44a2f01433e71ab271c7d32845a merklehash: 0xf6582d8b6d6b023c269e2fd41ca53d4adf801e108f58d74ffb10fe8fff8e67ef
 
 
+        vSeeds.push_back(CDNSSeedData("knout", "dnsseed.helium.cl"));
         vSeeds.push_back(CDNSSeedData("heliumlabs", "seed.heliumlabs.org"));
         vSeeds.push_back(CDNSSeedData("Spread", "node.heliumcha.in"));
 	vSeeds.push_back(CDNSSeedData("Kserv", "149.28.242.177"));
