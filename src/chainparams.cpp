@@ -2340,12 +2340,12 @@ public:
 
         genesis = CreateGenesisBlock(
                     1534884770,                          // nTime
-                    82127,                               // nNonce
+                    1022668,                             // nNonce
                     0x1e0ffff0,                          // nBits
                     3,                                   // nVersion
                    treasuryDeposit,                      // genesisReward (treasury deposit)
-                   "STSzh125JxXtnsGwDVuP76i5ZS69s5VvUP",  // first NEW treasury address
-                   "SNFpemXtZ2hdqUy2jTAXmWJRy7e8jqGiE7",  // second NEW treasury address
+                   "STSzh125JxXtnsGwDVuP76i5ZS69s5VvUP", // first NEW treasury address
+                   "SNFpemXtZ2hdqUy2jTAXmWJRy7e8jqGiE7", // second NEW treasury address
                    "SPqjnTbYLmp3TfRzccKBqFUiVJzePK9NRU"  // third NEW treasury address
                     );
 
@@ -2488,7 +2488,7 @@ public:
         //! Modify the testnet genesis block so the timestamp is valid for a later start.
         genesis = CreateGenesisBlock(
                     1534884770,                          // nTime
-                    1426964,                               // nNonce
+                    257707,                               // nNonce
                     0x1e0ffff0,                          // nBits
                     3,                                   // nVersion
                     treasuryDeposit,                     // genesisReward (treasury deposit)
