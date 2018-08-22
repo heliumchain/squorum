@@ -58,7 +58,7 @@ static void convertSeed6(std::vector<CAddress>& vSeedsOut, const SeedSpec6* data
 // + Contains no strange transactions
 static Checkpoints::MapCheckpoints mapCheckpoints =
     boost::assign::map_list_of
-    (0, uint256("0x00000d0b57455f1d5574e80d377561d4ca1b258a80b4f87b2389695c0bb0de59"));
+    (0, uint256("0x00000233f0e260f57999acfa4ab7556f708fa44a2f01433e71ab271c7d32845a"));
 static const Checkpoints::CCheckpointData data = {
     &mapCheckpoints,
     1520801782, // * UNIX timestamp of last checkpoint block
@@ -2378,10 +2378,10 @@ public:
             LogPrintf(" time: %u\n", genesis.nTime);
             LogPrintf(" hash: 0x%s\n", genesis.GetHash().ToString().c_str());
             LogPrintf(" merklehash: 0x%s\n", genesis.hashMerkleRoot.ToString().c_str());
-            assert(hashGenesisBlock == uint256("0x00000d0b57455f1d5574e80d377561d4ca1b258a80b4f87b2389695c0bb0de59"));
-            assert(genesis.hashMerkleRoot == uint256("0x5fbdbb8161ac36ca7fca837e9a55bce842222dc27dc06a814e119ba67071a52e"));
+            assert(hashGenesisBlock == uint256("0x00000233f0e260f57999acfa4ab7556f708fa44a2f01433e71ab271c7d32845a"));
+            assert(genesis.hashMerkleRoot == uint256("0xf6582d8b6d6b023c269e2fd41ca53d4adf801e108f58d74ffb10fe8fff8e67ef"));
         }
-	// Mainnet --- nonce: 851930 time: 1520801782 hash: 0x00000289d5c33bbc11a166ee53f3e76aa80863ffbc10f22b2484ffc40f7357b2 merklehash: 0x41af082a5c40201a598b994218ceb4aabc59a70999009f6e1bf6f9e063b794b9
+	// Mainnet --- nonce: 1022668 time: 1534884770 hash: 0x00000233f0e260f57999acfa4ab7556f708fa44a2f01433e71ab271c7d32845a merklehash: 0xf6582d8b6d6b023c269e2fd41ca53d4adf801e108f58d74ffb10fe8fff8e67ef
 
 
         vSeeds.push_back(CDNSSeedData("heliumlabs", "seed.heliumlabs.org"));
@@ -2523,10 +2523,10 @@ public:
             LogPrintf(" time: %u\n", genesis.nTime);
             LogPrintf(" hash: 0x%s\n", genesis.GetHash().ToString().c_str());
             LogPrintf(" merklehash: 0x%s\n", genesis.hashMerkleRoot.ToString().c_str());
-            assert(hashGenesisBlock == uint256("0x00000f4e3a8c8c8bbf2dad765ec396a3d5c13b6bdf1a0151c71e6e1811f06bc3"));
-            assert(genesis.hashMerkleRoot == uint256("0x3cea4614b210109440b3c05afd2b3e20670b8f94cf40657316c4dbb9a126ab3e"));
+            assert(hashGenesisBlock == uint256("0x00000381a5f48095fc082471ccab65b74cac42078bed5e5c64963c01e19b3d0a"));
+            assert(genesis.hashMerkleRoot == uint256("0xba9a2837698d91bb5cbb4e173938bee468b92174ac3670b84aeae6afcd3ce828"));
         }
-	// Testnet --- nonce: 1497998 time: 1520801782 hash: 0x00000ad9f74009abda4c38fe49f4cf1c37cc8c956a931e669313cef5739157f3 merklehash: 0x53c6673d08fd145d707ccd623c5c254f1e4a283b1321662ca991dd9231d9b526
+	// Testnet --- nonce: 257707 time: 1534884770 hash: 0x00000381a5f48095fc082471ccab65b74cac42078bed5e5c64963c01e19b3d0a merklehash: 0xba9a2837698d91bb5cbb4e173938bee468b92174ac3670b84aeae6afcd3ce828
 
         vFixedSeeds.clear();
         vSeeds.clear();
@@ -2637,10 +2637,10 @@ public:
             LogPrintf(" time: %u\n", genesis.nTime);
             LogPrintf(" hash: 0x%s\n", genesis.GetHash().ToString().c_str());
             LogPrintf(" merklehash: 0x%s\n", genesis.hashMerkleRoot.ToString().c_str());
-            assert(hashGenesisBlock == uint256("0x3466bad752fbab0a6f04c084e0593b4d138de9a03bff704e2c9ce65b1edba961"));
-            assert(genesis.hashMerkleRoot == uint256("0x5fbdbb8161ac36ca7fca837e9a55bce842222dc27dc06a814e119ba67071a52e"));
+            assert(hashGenesisBlock == uint256("0x47c571377ed0ee2c00dc64bf44f3eae8208761f75839dfb88ce757972af90de4"));
+            assert(genesis.hashMerkleRoot == uint256("0xf6582d8b6d6b023c269e2fd41ca53d4adf801e108f58d74ffb10fe8fff8e67ef"));
         }
-	// Regtestnet --- nonce: 5 time: 1520801782 hash: 0x545594cf835ead5266cd10f0d6f5f8497f69910cd781940d53590bd36bc20d14 merklehash: 0x41af082a5c40201a598b994218ceb4aabc59a70999009f6e1bf6f9e063b794b9
+	// Regtestnet --- nonce: 5 time: 1534884770 hash: 0x47c571377ed0ee2c00dc64bf44f3eae8208761f75839dfb88ce757972af90de4 merklehash: 0xf6582d8b6d6b023c269e2fd41ca53d4adf801e108f58d74ffb10fe8fff8e67ef
 
 
         if (regenerate)
