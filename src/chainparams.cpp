@@ -2284,7 +2284,7 @@ static CBlock CreateGenesisBlock(const char* pszTimestamp, const CScript& genesi
 
 static CBlock CreateGenesisBlock(uint32_t nTime, uint32_t nNonce, uint32_t nBits, int32_t nVersion, const CAmount& genesisReward, const string addr1, const string addr2, const string addr3)
 {
-    const char* pszTimestamp = "Bitcoin Block #531843: 00000000000000000004b8ac34227fc1932aaa01bf78e744dae90c15089320e1";
+    const char* pszTimestamp = "Bitcoin Block #537850: 000000000000000000077c47652606169f0af195b52fbac97763b7779eb9fde3";
     const CScript genesisOutputScript = CScript() << OP_2 << ParseHex(DecodeBase58ToHex(addr1)) << ParseHex(DecodeBase58ToHex(addr2)) << ParseHex(DecodeBase58ToHex(addr3)) << OP_3 << OP_CHECKMULTISIG;
     return CreateGenesisBlock(pszTimestamp, genesisOutputScript, nTime, nNonce, nBits, nVersion, genesisReward);
 };
@@ -2339,7 +2339,7 @@ public:
         nRejectOldSporkKey = 1527811200; // (PIVX: 1527811200) //!> Fully reject old spork key after (GMT): Friday, June 1, 2018 12:00:00 AM
 
         genesis = CreateGenesisBlock(
-                    1520801782,                          // nTime
+                    1534884770,                          // nTime
                     82127,                               // nNonce
                     0x1e0ffff0,                          // nBits
                     3,                                   // nVersion
@@ -2486,7 +2486,7 @@ public:
 
         //! Modify the testnet genesis block so the timestamp is valid for a later start.
         genesis = CreateGenesisBlock(
-                    1520801782,                          // nTime
+                    1534884770,                          // nTime
                     1426964,                               // nNonce
                     0x1e0ffff0,                          // nBits
                     3,                                   // nVersion
@@ -2600,7 +2600,7 @@ public:
 
         //! Modify the testnet genesis block so the timestamp is valid for a later start.
         genesis = CreateGenesisBlock(
-                    1520801782,                          // nTime
+                    1534884770,                          // nTime
                     5,                                   // nNonce
                     0x207fffff,                          // nBits
                     3,                                   // nVersion
