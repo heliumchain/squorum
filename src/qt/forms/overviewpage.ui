@@ -825,7 +825,6 @@
                     </layout>
                    </widget>
                   </item>
-                  <!--
                   <item>
                    <widget class="QFrame" name="frame_ZerocoinBalances">
                     <property name="frameShape">
@@ -906,7 +905,8 @@
                        <item row="1" column="0">
                         <widget class="QLabel" name="labelzBalanceMatureText">
                          <property name="toolTip">
-                          <string>Mature: more than 20 confirmation and more than 1 mint of the same denomination after it was minted. These zHLM are spendable.</string>
+                          <string>Mature: more than 20 confirmation and more than 1 mint of the same denomination after it was minted.
+These zHLM are spendable.</string>
                          </property>
                          <property name="text">
                           <string>Available:</string>
@@ -922,7 +922,8 @@
                           </font>
                          </property>
                          <property name="toolTip">
-                          <string>Mature: more than 20 confirmation and more than 1 mint of the same denomination after it was minted. These zHLM are spendable.</string>
+                          <string>Mature: more than 20 confirmation and more than 1 mint of the same denomination after it was minted.
+These zHLM are spendable.</string>
                          </property>
                          <property name="text">
                           <string notr="true">0.000 000 00 HLM</string>
@@ -935,7 +936,8 @@
                        <item row="2" column="0">
                         <widget class="QLabel" name="labelzBalanceUnconfirmedText">
                          <property name="toolTip">
-                          <string>Unconfirmed: less than 20 confirmations Immature: confirmed, but less than 1 mint of the same denomination after it was minted</string>
+                          <string>Unconfirmed: less than 20 confirmations
+Immature: confirmed, but less than 1 mint of the same denomination after it was minted</string>
                          </property>
                          <property name="text">
                           <string>Unconfirmed:</string>
@@ -951,7 +953,8 @@
                           </font>
                          </property>
                          <property name="toolTip">
-                          <string>Unconfirmed: less than 20 confirmations Immature: confirmed, but less than 1 mint of the same denomination after it was minted</string>
+                          <string>Unconfirmed: less than 20 confirmations
+Immature: confirmed, but less than 1 mint of the same denomination after it was minted</string>
                          </property>
                          <property name="text">
                           <string notr="true">0.000 000 00 HLM</string>
@@ -964,7 +967,8 @@
                        <item row="3" column="0">
                         <widget class="QLabel" name="labelzBalanceImmatureText">
                          <property name="toolTip">
-                          <string>Unconfirmed: less than 20 confirmations Immature: confirmed, but less than 1 mint of the same denomination after it was minted</string>
+                          <string>Unconfirmed: less than 20 confirmations
+Immature: confirmed, but less than 1 mint of the same denomination after it was minted</string>
                          </property>
                          <property name="text">
                           <string>Immature:</string>
@@ -980,7 +984,8 @@
                           </font>
                          </property>
                          <property name="toolTip">
-                          <string>Unconfirmed: less than 20 confirmations Immature: confirmed, but less than 1 mint of the same denomination after it was minted</string>
+                          <string>Unconfirmed: less than 20 confirmations
+Immature: confirmed, but less than 1 mint of the same denomination after it was minted</string>
                          </property>
                          <property name="text">
                           <string notr="true">0.000 000 00 HLM</string>
@@ -1056,7 +1061,6 @@
                     </layout>
                    </widget>
                   </item>
-                -->
                  </layout>
                 </widget>
                </item>

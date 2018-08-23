@@ -130,7 +130,6 @@
          </property>
         </spacer>
        </item>
-       <!--
        <item>
         <widget class="QCheckBox" name="checkBoxZeromintEnable">
          <property name="toolTip">
@@ -210,7 +209,6 @@
          </item>
         </layout>
        </item>
-     -->
       </layout>
      </widget>
      <widget class="QWidget" name="tabWallet">
