@@ -2412,8 +2412,8 @@ public:
         fHeadersFirstSyncingActive = false;
 
         nPoolMaxTransactions = 3;
-        strSporkKey = "0413e2041484553f1fba37f5f2af6def9ad6fd16d90b947734ff8d9b885fa38c7e04c98ba5c3ba093d36c20b05d521a5882d63c1b2653914e16c3c68c602b58308";
-        strSporkKeyOld = "04B433E6598390C992F4F022F20D3B4CBBE691652EE7C48243B81701CBDB7CC7D7BF0EE09E154E6FCBF2043D65AF4E9E97B89B5DBAF830D83B9B7F469A6C45A717";
+        strSporkKey = "04beb92bb57470a4e6b011a291026c8cb6ce59c20b36ae5128d88b723c198443cb35cb2609eb9054f9fc49aa9f49257026cd1a09afb3fd7e1429086ab708ffb482";
+        strSporkKeyOld = "0413e2041484553f1fba37f5f2af6def9ad6fd16d90b947734ff8d9b885fa38c7e04c98ba5c3ba093d36c20b05d521a5882d63c1b2653914e16c3c68c602b58308";
         strObfuscationPoolDummyAddress = "S87q2gC9j6nNrnzCsg4aY6bHMLsT9nUhEw";
         nStartMasternodePayments = 1527634800; // 2018-05-30 00:00:00
 
@@ -2559,8 +2559,8 @@ public:
         fSkipProofOfWorkCheck = true;
 
         nPoolMaxTransactions = 2;
-        strSporkKey = "";
-        strSporkKeyOld = "";
+        strSporkKey = "04beb92bb57470a4e6b011a291026c8cb6ce59c20b36ae5128d88b723c198443cb35cb2609eb9054f9fc49aa9f49257026cd1a09afb3fd7e1429086ab708ffb482";
+        strSporkKeyOld = "0413e2041484553f1fba37f5f2af6def9ad6fd16d90b947734ff8d9b885fa38c7e04c98ba5c3ba093d36c20b05d521a5882d63c1b2653914e16c3c68c602b58308";
         strObfuscationPoolDummyAddress = "m57cqfGRkekRyDRNeJiLtYVEbvhXrNbmox";
         nStartMasternodePayments = 1527634800; //30th May 2018 00:00:00
         nBudget_Fee_Confirmations = 3; // Number of confirmations for the finalization fee. We have to make this very short
