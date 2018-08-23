@@ -1680,7 +1680,6 @@
              <property name="spacing">
               <number>3</number>
              </property>
-             <!--
              <item>
               <widget class="QCheckBox" name="checkzPIV">
                <property name="enabled">
@@ -1691,7 +1690,6 @@
                </property>
               </widget>
              </item>
-           -->
              <item>
               <widget class="QCheckBox" name="checkSwiftTX">
                <property name="enabled">
