@@ -70,6 +70,8 @@ public:
     bool DefaultConsistencyChecks() const { return fDefaultConsistencyChecks; }
     /** Allow mining of a min-difficulty block */
     bool AllowMinDifficultyBlocks() const { return fAllowMinDifficultyBlocks; }
+    /** Skip proof-of-work check: allow mining of any difficulty block */
+    bool SkipProofOfWorkCheck() const { return fSkipProofOfWorkCheck; }
     /** Make standard checks */
     bool RequireStandard() const { return fRequireStandard; }
     int64_t TargetTimespan() const { return nTargetTimespan; }
@@ -159,6 +161,7 @@ protected:
     bool fDefaultConsistencyChecks;
     bool fRequireStandard;
     bool fMineBlocksOnDemand;
+    bool fSkipProofOfWorkCheck;
     bool fTestnetToBeDeprecatedFieldRPC;
     bool fHeadersFirstSyncingActive;
     int nPoolMaxTransactions;
@@ -205,6 +208,7 @@ public:
     virtual void setToCheckBlockUpgradeMajority(int anToCheckBlockUpgradeMajority) = 0;
     virtual void setDefaultConsistencyChecks(bool aDefaultConsistencyChecks) = 0;
     virtual void setAllowMinDifficultyBlocks(bool aAllowMinDifficultyBlocks) = 0;
+    virtual void setSkipProofOfWorkCheck(bool aSkipProofOfWorkCheck) = 0;
 };
 
 

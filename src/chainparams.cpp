@@ -224,6 +224,7 @@ public:
         fDefaultConsistencyChecks = false;
         fRequireStandard = true;
         fMineBlocksOnDemand = false;
+        fSkipProofOfWorkCheck = false;
         fTestnetToBeDeprecatedFieldRPC = false;
         fHeadersFirstSyncingActive = false;
 
@@ -362,6 +363,7 @@ public:
         fAllowMinDifficultyBlocks = true;
         fDefaultConsistencyChecks = false;
         fRequireStandard = true;
+        fSkipProofOfWorkCheck = false;
         fMineBlocksOnDemand = false;
         fTestnetToBeDeprecatedFieldRPC = true;
 
@@ -484,6 +486,7 @@ public:
         vSeeds.clear();      //! Unit test mode doesn't have any DNS seeds.
 
         fMiningRequiresPeers = false;
+        // fSkipProofOfWorkCheck = false;
         fDefaultConsistencyChecks = true;
         fAllowMinDifficultyBlocks = false;
         fMineBlocksOnDemand = true;
@@ -502,6 +505,7 @@ public:
     virtual void setToCheckBlockUpgradeMajority(int anToCheckBlockUpgradeMajority) { nToCheckBlockUpgradeMajority = anToCheckBlockUpgradeMajority; }
     virtual void setDefaultConsistencyChecks(bool afDefaultConsistencyChecks) { fDefaultConsistencyChecks = afDefaultConsistencyChecks; }
     virtual void setAllowMinDifficultyBlocks(bool afAllowMinDifficultyBlocks) { fAllowMinDifficultyBlocks = afAllowMinDifficultyBlocks; }
+    virtual void setSkipProofOfWorkCheck(bool afSkipProofOfWorkCheck) { fSkipProofOfWorkCheck = afSkipProofOfWorkCheck; }
 };
 static CUnitTestParams unitTestParams;
 
