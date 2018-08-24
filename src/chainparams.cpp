@@ -406,17 +406,9 @@ public:
         bnProofOfWorkLimit = ~uint256(0) >> 1;
         nDefaultPort = 19004;
 
-        //! Modify the testnet genesis block so the timestamp is valid for a later start.
-        genesis = CreateGenesisBlock(
-                    1534884770,                          // nTime
-                    5,                                   // nNonce
-                    0x207fffff,                          // nBits
-                    3,                                   // nVersion
-                    treasuryDeposit,                     // genesisReward (treasury deposit)
-                   "STSzh125JxXtnsGwDVuP76i5ZS69s5VvUP",  // first NEW treasury address
-                   "SNFpemXtZ2hdqUy2jTAXmWJRy7e8jqGiE7",  // second NEW treasury address
-                   "SPqjnTbYLmp3TfRzccKBqFUiVJzePK9NRU"  // third NEW treasury address
-                    );
+        genesis.nTime = 1534884770;
+        genesis.nBits = 0x207fffff;
+        genesis.nNonce = 5;
 
         hashGenesisBlock = genesis.GetHash();
 
