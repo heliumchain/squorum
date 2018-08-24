@@ -116,8 +116,7 @@ bool fLiteMode = false;
 // SwiftX
 bool fEnableSwiftTX = true;
 int nSwiftTXDepth = 5;
-// Automatic Zerocoin minting
-bool fEnableZeromint = false; // disabled autominting of HLM->zHLM
+bool fEnableZeromint = false;
 int nZeromintPercentage = 0;
 int nPreferredDenom = 0;
 const int64_t AUTOMINT_DELAY = (60 * 5); // Wait at least 5 minutes until Automint starts
@@ -245,7 +244,6 @@ bool LogAcceptCategory(const char* category)
                 ptrCategory->insert(string("swiftx"));
                 ptrCategory->insert(string("masternode"));
                 ptrCategory->insert(string("mnpayments"));
-                ptrCategory->insert(string("zero"));
                 ptrCategory->insert(string("mnbudget"));
             }
         }

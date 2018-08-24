@@ -2256,14 +2256,6 @@ bool DisconnectBlock(CBlock& block, CValidationState& state, CBlockIndex* pindex
                         CoinSpend spend = TxInToZerocoinSpend(txin);
                         if (!zerocoinDB->EraseCoinSpend(spend.getCoinSerialNumber()))
                             return error("failed to erase spent zerocoin in block");
-
-                        //if this was our spend, then mark it unspent now
-                        if (pwalletMain) {
-                            if (pwalletMain->IsMyZerocoinSpend(spend.getCoinSerialNumber())) {
-                                if (!pwalletMain->SetMintUnspent(spend.getCoinSerialNumber()))
-                                    LogPrintf("%s: failed to automatically reset mint", __func__);
-                            }
-                        }
                     }
 
                 }
@@ -2310,7 +2302,7 @@ bool DisconnectBlock(CBlock& block, CValidationState& state, CBlockIndex* pindex
         }
 
         // restore inputs
-        if (!tx.IsCoinBase() && !tx.IsZerocoinSpend()) { // not coinbases or zerocoinspend because they dont have traditional inputs
+        if (!tx.IsCoinBase()) { // not coinbases because they dont have traditional inputs
             const CTxUndo& txundo = blockUndo.vtxundo[i - 1];
             if (txundo.vprevout.size() != tx.vin.size())
                 return error("DisconnectBlock() : transaction and undo data inconsistent - txundo.vprevout.siz=%d tx.vin.siz=%d", txundo.vprevout.size(), tx.vin.size());
@@ -2903,42 +2895,24 @@ bool ConnectBlock(const CBlock& block, CValidationState& state, CBlockIndex* pin
     //Record zPIV serials
     set<uint256> setAddedTx;
     for (pair<CoinSpend, uint256> pSpend : vSpends) {
-        //record spend to database
-        if (!zerocoinDB->WriteCoinSpend(pSpend.first.getCoinSerialNumber(), pSpend.second))
-            return state.Abort(("Failed to record coin serial to database"));
-
         // Send signal to wallet if this is ours
         if (pwalletMain) {
-            if (pwalletMain->IsMyZerocoinSpend(pSpend.first.getCoinSerialNumber())) {
-                LogPrintf("%s: %s detected zerocoinspend in transaction %s \n", __func__, pSpend.first.getCoinSerialNumber().GetHex(), pSpend.second.GetHex());
-                pwalletMain->NotifyZerocoinChanged(pwalletMain, pSpend.first.getCoinSerialNumber().GetHex(), "Used", CT_UPDATED);
+            //Don't add the same tx multiple times
+            if (setAddedTx.count(pSpend.second))
+                continue;
 
-                //Don't add the same tx multiple times
-                if (setAddedTx.count(pSpend.second))
-                    continue;
-
-                //Search block for matching tx, turn into wtx, set merkle branch, add to wallet
-                for (CTransaction tx : block.vtx) {
-                    if (tx.GetHash() == pSpend.second) {
-                        CWalletTx wtx(pwalletMain, tx);
-                        wtx.nTimeReceived = pindex->GetBlockTime();
-                        wtx.SetMerkleBranch(block);
-                        pwalletMain->AddToWallet(wtx);
-                        setAddedTx.insert(pSpend.second);
-                    }
+            //Search block for matching tx, turn into wtx, set merkle branch, add to wallet
+            for (CTransaction tx : block.vtx) {
+                if (tx.GetHash() == pSpend.second) {
+                    CWalletTx wtx(pwalletMain, tx);
+                    wtx.nTimeReceived = pindex->GetBlockTime();
+                    wtx.SetMerkleBranch(block);
+                    pwalletMain->AddToWallet(wtx);
+                    setAddedTx.insert(pSpend.second);
                 }
             }
         }
     }
-
-    //Record mints to db
-    for (pair<PublicCoin, uint256> pMint : vMints) {
-        if (!zerocoinDB->WriteCoinMint(pMint.first, pMint.second))
-            return state.Abort(("Failed to record new mint to database"));
-    }
-
-    //Record accumulator checksums
-    DatabaseChecksums(mapAccumulators);
 
     if (fTxIndex)
         if (!pblocktree->WriteTxIndex(vPos))
@@ -2965,13 +2939,6 @@ bool ConnectBlock(const CBlock& block, CValidationState& state, CBlockIndex* pin
     if (pindex->nHeight >= Params().Zerocoin_Block_FirstFraudulent() && pindex->nHeight <= Params().Zerocoin_Block_RecalculateAccumulators() + 1)
         AddInvalidSpendsToMap(block);
     */
-
-    //Remove zerocoinspends from the pending map
-    for (const uint256& txid : vSpendsInBlock) {
-        auto it = mapZerocoinspends.find(txid);
-        if (it != mapZerocoinspends.end())
-            mapZerocoinspends.erase(it);
-    }
 
     return true;
 }
@@ -3048,10 +3015,6 @@ void FlushStateToDisk()
 void static UpdateTip(CBlockIndex* pindexNew)
 {
     chainActive.SetTip(pindexNew);
-
-    // If turned on AutoZeromint will automatically convert PIV to zPIV
-    if (pwalletMain->isZeromintEnabled ())
-        pwalletMain->AutoZeromint ();
 
     // New best block
     nTimeBestReceived = GetTime();

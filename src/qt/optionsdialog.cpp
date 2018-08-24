@@ -166,8 +166,6 @@ void OptionsDialog::setModel(OptionsModel* model)
     /* Main */
     connect(ui->databaseCache, SIGNAL(valueChanged(int)), this, SLOT(showRestartWarning()));
     connect(ui->threadsScriptVerif, SIGNAL(valueChanged(int)), this, SLOT(showRestartWarning()));
-    /* Wallet */
-    connect(ui->spendZeroConfChange, SIGNAL(clicked(bool)), this, SLOT(showRestartWarning()));
     /* Network */
     connect(ui->allowIncoming, SIGNAL(clicked(bool)), this, SLOT(showRestartWarning()));
     connect(ui->connectSocks, SIGNAL(clicked(bool)), this, SLOT(showRestartWarning()));
@@ -254,8 +252,9 @@ void OptionsDialog::on_resetButton_clicked()
 void OptionsDialog::on_okButton_clicked()
 {
     mapper->submit();
-    obfuScationPool.cachedNumBlocks = std::numeric_limits<int>::max();
-    pwalletMain->MarkDirty();
+    /* FIXME: GJH What's this about? */
+    // obfuScationPool.cachedNumBlocks = std::numeric_limits<int>::max();
+    // pwalletMain->MarkDirty();
     accept();
 }
 

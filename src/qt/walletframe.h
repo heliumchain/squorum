@@ -62,7 +62,6 @@ public Q_SLOTS:
     /** Switch to receive coins page */
     void gotoReceiveCoinsPage();
     /** Switch to privacy page */
-    void gotoPrivacyPage();
     /** Switch to send coins page */
     void gotoSendCoinsPage(QString addr = "");
     /** Switch to explorer page */

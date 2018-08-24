@@ -119,12 +119,6 @@ void OptionsModel::Init()
         addOverriddenOption("-par");
 
 // Wallet
-#ifdef ENABLE_WALLET
-    if (!settings.contains("bSpendZeroConfChange"))
-        settings.setValue("bSpendZeroConfChange", false);
-    if (!SoftSetBoolArg("-spendzeroconfchange", settings.value("bSpendZeroConfChange").toBool()))
-        addOverriddenOption("-spendzeroconfchange");
-#endif
     if (!settings.contains("nStakeSplitThreshold"))
         settings.setValue("nStakeSplitThreshold", 1);
 
@@ -161,15 +155,6 @@ void OptionsModel::Init()
         settings.setValue("language", "");
     if (!SoftSetArg("-lang", settings.value("language").toString().toStdString()))
         addOverriddenOption("-lang");
-
-    if (settings.contains("fZeromintEnable"))
-        SoftSetBoolArg("-enablezeromint", settings.value("fZeromintEnable").toBool());
-    if (settings.contains("nZeromintPercentage"))
-        SoftSetArg("-zeromintpercentage", settings.value("nZeromintPercentage").toString().toStdString());
-    if (settings.contains("nPreferredDenom"))
-        SoftSetArg("-preferredDenom", settings.value("nPreferredDenom").toString().toStdString());
-    if (settings.contains("nAnonymizeCoinAmount"))
-        SoftSetArg("-anonymizecoinamount", settings.value("nAnonymizeCoinAmount").toString().toStdString());
 
     language = settings.value("language").toString();
 }
@@ -226,8 +211,6 @@ QVariant OptionsModel::data(const QModelIndex& index, int role) const
         }
 
 #ifdef ENABLE_WALLET
-        case SpendZeroConfChange:
-            return settings.value("bSpendZeroConfChange");
         case ShowMasternodesTab:
             return settings.value("fShowMasternodesTab");
 #endif
@@ -254,14 +237,6 @@ QVariant OptionsModel::data(const QModelIndex& index, int role) const
             return settings.value("nThreadsScriptVerif");
         case HideZeroBalances:
             return settings.value("fHideZeroBalances");
-        case ZeromintEnable:
-            return QVariant(fEnableZeromint);
-        case ZeromintPercentage:
-            return QVariant(nZeromintPercentage);
-        case ZeromintPrefDenom:
-            return QVariant(nPreferredDenom);
-        case AnonymizeCoinAmount:
-            return QVariant(nAnonymizeCoinAmount);
         case Listen:
             return settings.value("fListen");
         default:
@@ -324,12 +299,6 @@ bool OptionsModel::setData(const QModelIndex& index, const QVariant& value, int 
             }
         } break;
 #ifdef ENABLE_WALLET
-        case SpendZeroConfChange:
-            if (settings.value("bSpendZeroConfChange") != value) {
-                settings.setValue("bSpendZeroConfChange", value);
-                setRestartRequired(true);
-            }
-            break;
         case ShowMasternodesTab:
             if (settings.value("fShowMasternodesTab") != value) {
                 settings.setValue("fShowMasternodesTab", value);
@@ -368,32 +337,6 @@ bool OptionsModel::setData(const QModelIndex& index, const QVariant& value, int 
                 settings.setValue("language", value);
                 setRestartRequired(true);
             }
-            break;
-        case ZeromintEnable:
-            fEnableZeromint = value.toBool();
-            settings.setValue("fZeromintEnable", fEnableZeromint);
-            Q_EMIT zeromintEnableChanged(fEnableZeromint);
-            break;
-        case ZeromintPercentage:
-            nZeromintPercentage = value.toInt();
-            settings.setValue("nZeromintPercentage", nZeromintPercentage);
-            Q_EMIT zeromintPercentageChanged(nZeromintPercentage);
-            break;
-        case ZeromintPrefDenom:
-            nPreferredDenom = value.toInt();
-            settings.setValue("nPreferredDenom", nPreferredDenom);
-            Q_EMIT preferredDenomChanged(nPreferredDenom);
-            break;
-        case HideZeroBalances:
-            fHideZeroBalances = value.toBool();
-            settings.setValue("fHideZeroBalances", fHideZeroBalances);
-            Q_EMIT hideZeroBalancesChanged(fHideZeroBalances);
-            break;
-
-        case AnonymizeCoinAmount:
-            nAnonymizeCoinAmount = value.toInt();
-            settings.setValue("nAnonymizeCoinAmount", nAnonymizeCoinAmount);
-            Q_EMIT anonymizeCoinAmountChanged(nAnonymizeCoinAmount);
             break;
         case CoinControlFeatures:
             fCoinControlFeatures = value.toBool();
