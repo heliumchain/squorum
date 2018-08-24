@@ -299,8 +299,8 @@ static const CRPCCommand vRPCCommands[] =
         {"network", "clearbanned", &clearbanned, true, false, false},
 
         /* Block chain and UTXO */
-        // {"blockchain", "findserial", &findserial, true, false, false},
-        // {"blockchain", "getaccumulatorvalues", &getaccumulatorvalues, true, false, false},
+        {"blockchain", "findserial", &findserial, true, false, false},
+        {"blockchain", "getaccumulatorvalues", &getaccumulatorvalues, true, false, false},
         {"blockchain", "getblockchaininfo", &getblockchaininfo, true, false, false},
         {"blockchain", "getbestblockhash", &getbestblockhash, true, false, false},
         {"blockchain", "getblockcount", &getblockcount, true, false, false},
@@ -437,24 +437,24 @@ static const CRPCCommand vRPCCommands[] =
         {"wallet", "walletpassphrasechange", &walletpassphrasechange, true, false, true},
         {"wallet", "walletpassphrase", &walletpassphrase, true, false, true},
 
-        // {"zerocoin", "getzerocoinbalance", &getzerocoinbalance, false, false, true},
-        // {"zerocoin", "listmintedzerocoins", &listmintedzerocoins, false, false, true},
-        // {"zerocoin", "listspentzerocoins", &listspentzerocoins, false, false, true},
-        // {"zerocoin", "listzerocoinamounts", &listzerocoinamounts, false, false, true},
-        // {"zerocoin", "mintzerocoin", &mintzerocoin, false, false, true},
-        // {"zerocoin", "spendzerocoin", &spendzerocoin, false, false, true},
-        // {"zerocoin", "resetmintzerocoin", &resetmintzerocoin, false, false, true},
-        // {"zerocoin", "resetspentzerocoin", &resetspentzerocoin, false, false, true},
-        // {"zerocoin", "getarchivedzerocoin", &getarchivedzerocoin, false, false, true},
-        // {"zerocoin", "importzerocoins", &importzerocoins, false, false, true},
-        // {"zerocoin", "exportzerocoins", &exportzerocoins, false, false, true},
-        // {"zerocoin", "reconsiderzerocoins", &reconsiderzerocoins, false, false, true},
-        // {"zerocoin", "getspentzerocoinamount", &getspentzerocoinamount, false, false, false},
-        // {"zerocoin", "getzhlmseed", &getzhlmseed, false, false, true},
-        // {"zerocoin", "setzhlmseed", &setzhlmseed, false, false, true},
-        // {"zerocoin", "generatemintlist", &generatemintlist, false, false, true},
-        // {"zerocoin", "searchdzhlm", &searchdzhlm, false, false, true},
-        // {"zerocoin", "dzhlmstate", &dzhlmstate, false, false, true}
+        {"zerocoin", "getzerocoinbalance", &getzerocoinbalance, false, false, true},
+        {"zerocoin", "listmintedzerocoins", &listmintedzerocoins, false, false, true},
+        {"zerocoin", "listspentzerocoins", &listspentzerocoins, false, false, true},
+        {"zerocoin", "listzerocoinamounts", &listzerocoinamounts, false, false, true},
+        {"zerocoin", "mintzerocoin", &mintzerocoin, false, false, true},
+        {"zerocoin", "spendzerocoin", &spendzerocoin, false, false, true},
+        {"zerocoin", "resetmintzerocoin", &resetmintzerocoin, false, false, true},
+        {"zerocoin", "resetspentzerocoin", &resetspentzerocoin, false, false, true},
+        {"zerocoin", "getarchivedzerocoin", &getarchivedzerocoin, false, false, true},
+        {"zerocoin", "importzerocoins", &importzerocoins, false, false, true},
+        {"zerocoin", "exportzerocoins", &exportzerocoins, false, false, true},
+        {"zerocoin", "reconsiderzerocoins", &reconsiderzerocoins, false, false, true},
+        {"zerocoin", "getspentzerocoinamount", &getspentzerocoinamount, false, false, false},
+        {"zerocoin", "getzhlmseed", &getzhlmseed, false, false, true},
+        {"zerocoin", "setzhlmseed", &setzhlmseed, false, false, true},
+        {"zerocoin", "generatemintlist", &generatemintlist, false, false, true},
+        {"zerocoin", "searchdzhlm", &searchdzhlm, false, false, true},
+        {"zerocoin", "dzhlmstate", &dzhlmstate, false, false, true}
 
 #endif // ENABLE_WALLET
 };

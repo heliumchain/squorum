@@ -1828,7 +1828,10 @@ int64_t GetBlockValue(int nHeight)
     }
 
     int64_t nSubsidy = 0;
-    if (nHeight < 20159) {
+    // Block 1: credit of public ledger total, for subsequent disbursal.
+    if (nHeight == 1) {
+        nSubsidy = static_cast<int64_t>(8891432 * COIN);
+    } else if (nHeight < 20159) {
         nSubsidy = static_cast<int64_t>(1 * COIN);
     } else if (nHeight <= Params().LAST_POW_BLOCK() && nHeight >= 20159) {
         nSubsidy = static_cast<int64_t>(5 * COIN);
@@ -2640,11 +2643,9 @@ static int64_t nTimeTotal = 0;
 
 bool ConnectBlock(const CBlock& block, CValidationState& state, CBlockIndex* pindex, CCoinsViewCache& view, bool fJustCheck, bool fAlreadyChecked)
 {
-    bool isGenesis = block.GetHash() == Params().HashGenesisBlock() && pindex->nHeight == 0;
-
     AssertLockHeld(cs_main);
     // Check it again in case a previous version let a bad block in
-    if (!isGenesis && !fAlreadyChecked && !CheckBlock(block, state, !fJustCheck, !fJustCheck))
+    if (!fAlreadyChecked && !CheckBlock(block, state, !fJustCheck, !fJustCheck))
         return false;
 
     // verify that the view's current state corresponds to the previous block
@@ -3795,9 +3796,6 @@ bool CheckBlockHeader(const CBlockHeader& block, CValidationState& state, bool f
 
 bool CheckBlock(const CBlock& block, CValidationState& state, bool fCheckPOW, bool fCheckMerkleRoot, bool fCheckSig)
 {
-    // don't check genesis... the ledger transfer means multiple coinbases
-    if (block.GetHash() == Params().HashGenesisBlock())
-        return true;
     // These are checks that are independent of context.
 
     // Check that the header is valid (particularly PoW).  This is mostly
