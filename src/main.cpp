@@ -2640,11 +2640,9 @@ static int64_t nTimeTotal = 0;
 
 bool ConnectBlock(const CBlock& block, CValidationState& state, CBlockIndex* pindex, CCoinsViewCache& view, bool fJustCheck, bool fAlreadyChecked)
 {
-    bool isGenesis = block.GetHash() == Params().HashGenesisBlock() && pindex->nHeight == 0;
-
     AssertLockHeld(cs_main);
     // Check it again in case a previous version let a bad block in
-    if (!isGenesis && !fAlreadyChecked && !CheckBlock(block, state, !fJustCheck, !fJustCheck))
+    if (!fAlreadyChecked && !CheckBlock(block, state, !fJustCheck, !fJustCheck))
         return false;
 
     // verify that the view's current state corresponds to the previous block
