@@ -19,7 +19,7 @@ BOOST_AUTO_TEST_SUITE(Checkpoints_tests)
 
 BOOST_AUTO_TEST_CASE(sanity)
 {
-    uint256 /*p259201*/ pgenesis = uint256("0x00000233f0e260f57999acfa4ab7556f708fa44a2f01433e71ab271c7d32845a");
+    uint256 /*p259201*/ pgenesis = uint256("0x000001c3832b1728cd393c1b5cdecf42277da185c6da5cc7a7f45212e088c6f0");
     uint256 /*p623933*/ pblock10 = uint256("0x");
     BOOST_CHECK(Checkpoints::CheckBlock(/*259201*/0, /*p259201*/ pgenesis));
     // BOOST_CHECK(Checkpoints::CheckBlock(/*623933*/10, /*p623933*/ pblock10));
