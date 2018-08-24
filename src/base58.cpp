@@ -67,21 +67,6 @@ bool DecodeBase58(const char* psz, std::vector<unsigned char>& vch)
     return true;
 }
 
-std::string DecodeBase58ToHex(const std::string& str) {
-    std::vector<unsigned char> vchRet;
-    std::stringstream ss;
-    if (DecodeBase58(str.c_str(), vchRet)) {
-        ss << std::hex;
-        for (std::vector<unsigned char>::size_type i = 1; i != vchRet.size() - 4; i++) {
-            ss << std::setw(2) << std::setfill('0') << (int)vchRet[i];
-        }
-    } else {
-        // FAIL
-        ss << "Failed with " << str << std::endl;
-    }
-    return ss.str();
-}
-
 std::string DecodeBase58(const char* psz)
 {
     std::vector<unsigned char> vch;
