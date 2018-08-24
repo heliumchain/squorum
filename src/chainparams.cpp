@@ -58,10 +58,10 @@ static void convertSeed6(std::vector<CAddress>& vSeedsOut, const SeedSpec6* data
 // + Contains no strange transactions
 static Checkpoints::MapCheckpoints mapCheckpoints =
     boost::assign::map_list_of
-    (0, uint256("0x00000233f0e260f57999acfa4ab7556f708fa44a2f01433e71ab271c7d32845a"));
+    (0, uint256("0x000001c3832b1728cd393c1b5cdecf42277da185c6da5cc7a7f45212e088c6f0"));
 static const Checkpoints::CCheckpointData data = {
     &mapCheckpoints,
-    1520801782, // * UNIX timestamp of last checkpoint block
+    1535104494, // * UNIX timestamp of last checkpoint block
     0,    // * total number of transactions between genesis and last checkpoint
                 //   (the tx=... number in the SetBestChain debug.log lines)
     2000        // * estimated number of transactions per day after checkpoint
@@ -69,19 +69,19 @@ static const Checkpoints::CCheckpointData data = {
 
 static Checkpoints::MapCheckpoints mapCheckpointsTestnet =
     boost::assign::map_list_of
-    (0, uint256("0x00000f4e3a8c8c8bbf2dad765ec396a3d5c13b6bdf1a0151c71e6e1811f06bc3"));
+    (0, uint256("0x00000fc011e0d753e70317369916e01c74881e3981f0aab77bd839f48f9c869d"));
 static const Checkpoints::CCheckpointData dataTestnet = {
     &mapCheckpointsTestnet,
-    1520851782,
+    1535103494,
     0,
     250};
 
 static Checkpoints::MapCheckpoints mapCheckpointsRegtest =
     boost::assign::map_list_of
-    (0, uint256("0x3466bad752fbab0a6f04c084e0593b4d138de9a03bff704e2c9ce65b1edba961"));
+    (0, uint256("0x410bca2b989d684a6b430d415a42546c664649117deec36f52a6750fcac72eba"));
 static const Checkpoints::CCheckpointData dataRegtest = {
     &mapCheckpointsRegtest,
-    1520851782,
+    1535104494,
     0,
     100};
 
@@ -151,7 +151,7 @@ public:
         nEnforceNewSporkKey = 1525158000; // (PIVX: 1525158000) //!> Sporks signed after (GMT): Tuesday, May 1, 2018 7:00:00 AM GMT must use the new spork key
         nRejectOldSporkKey = 1527811200; // (PIVX: 1527811200) //!> Fully reject old spork key after (GMT): Friday, June 1, 2018 12:00:00 AM
 
-        const char* pszTimestamp = "Bitcoin Block #537850: 000000000000000000077c47652606169f0af195b52fbac97763b7779eb9fde3";
+        const char* pszTimestamp = "Bitcoin Block #538238:  00000000000000000005523a96dcbfa11a72c5183cbd611816c6d45368754603";
         CMutableTransaction txNew;
         txNew.vin.resize(1);
         txNew.vout.resize(1);
@@ -162,9 +162,9 @@ public:
         genesis.hashPrevBlock = 0;
         genesis.hashMerkleRoot = genesis.BuildMerkleTree();
         genesis.nVersion = 4;
-        genesis.nTime = 1534884770;
+        genesis.nTime = 1535104494;
         genesis.nBits = 0x1e0ffff0;
-        genesis.nNonce = 1022668;
+        genesis.nNonce = 552218;
 
         hashGenesisBlock = genesis.GetHash();
         if (regenerate) {
@@ -185,9 +185,6 @@ public:
                 std::cout << " time: " << genesis.nTime;
                 std::cout << " hash: 0x" << genesis.GetHash().ToString().c_str();
                 std::cout << " merklehash: 0x"  << genesis.hashMerkleRoot.ToString().c_str() <<  "\n";
-
-
-
             }
         } else {
             LogPrintf("Mainnet ---\n");
@@ -195,10 +192,10 @@ public:
             LogPrintf(" time: %u\n", genesis.nTime);
             LogPrintf(" hash: 0x%s\n", genesis.GetHash().ToString().c_str());
             LogPrintf(" merklehash: 0x%s\n", genesis.hashMerkleRoot.ToString().c_str());
-            assert(hashGenesisBlock == uint256("0x00000233f0e260f57999acfa4ab7556f708fa44a2f01433e71ab271c7d32845a"));
-            assert(genesis.hashMerkleRoot == uint256("0xf6582d8b6d6b023c269e2fd41ca53d4adf801e108f58d74ffb10fe8fff8e67ef"));
+            assert(hashGenesisBlock == uint256("0x000001c3832b1728cd393c1b5cdecf42277da185c6da5cc7a7f45212e088c6f0"));
+            assert(genesis.hashMerkleRoot == uint256("0x5fdf654438324471a4c66a8b2b2f2ab9bd80d7642acb034a136edd200f3f25e5"));
         }
-	// Mainnet --- nonce: 1022668 time: 1534884770 hash: 0x00000233f0e260f57999acfa4ab7556f708fa44a2f01433e71ab271c7d32845a merklehash: 0xf6582d8b6d6b023c269e2fd41ca53d4adf801e108f58d74ffb10fe8fff8e67ef
+        // Mainnet --- nonce: 552218 time: 1535104494 hash: 0x000001c3832b1728cd393c1b5cdecf42277da185c6da5cc7a7f45212e088c6f0 merklehash: 0x5fdf654438324471a4c66a8b2b2f2ab9bd80d7642acb034a136edd200f3f25e5
 
 
         vSeeds.push_back(CDNSSeedData("knout", "dnsseed.helium.cl"));
@@ -301,8 +298,8 @@ public:
         nRejectOldSporkKey = 1522454400; //!> Reject old spork key after Saturday, March 31, 2018 12:00:00 AM GMT
 
         //! Modify the testnet genesis block so the timestamp is valid for a later start.
-        genesis.nTime = 1534884770;
-        genesis.nNonce = 257707;
+        genesis.nTime = 1535103494;
+        genesis.nNonce = 737655;
 
         hashGenesisBlock = genesis.GetHash();
         if (regenerate) {
@@ -331,10 +328,10 @@ public:
             LogPrintf(" time: %u\n", genesis.nTime);
             LogPrintf(" hash: 0x%s\n", genesis.GetHash().ToString().c_str());
             LogPrintf(" merklehash: 0x%s\n", genesis.hashMerkleRoot.ToString().c_str());
-            assert(hashGenesisBlock == uint256("0x00000381a5f48095fc082471ccab65b74cac42078bed5e5c64963c01e19b3d0a"));
-            assert(genesis.hashMerkleRoot == uint256("0xba9a2837698d91bb5cbb4e173938bee468b92174ac3670b84aeae6afcd3ce828"));
+            assert(hashGenesisBlock == uint256("0x00000fc011e0d753e70317369916e01c74881e3981f0aab77bd839f48f9c869d"));
+            assert(genesis.hashMerkleRoot == uint256("0x5fdf654438324471a4c66a8b2b2f2ab9bd80d7642acb034a136edd200f3f25e5"));
         }
-	// Testnet --- nonce: 257707 time: 1534884770 hash: 0x00000381a5f48095fc082471ccab65b74cac42078bed5e5c64963c01e19b3d0a merklehash: 0xba9a2837698d91bb5cbb4e173938bee468b92174ac3670b84aeae6afcd3ce828
+        // Testnet --- nonce: 737655 time: 1535103494 hash: 0x00000fc011e0d753e70317369916e01c74881e3981f0aab77bd839f48f9c869d merklehash: 0x5fdf654438324471a4c66a8b2b2f2ab9bd80d7642acb034a136edd200f3f25e5
 
         vFixedSeeds.clear();
         vSeeds.clear();
@@ -406,9 +403,9 @@ public:
         bnProofOfWorkLimit = ~uint256(0) >> 1;
         nDefaultPort = 19004;
 
-        genesis.nTime = 1534884770;
+        genesis.nTime = 1535104494;
         genesis.nBits = 0x207fffff;
-        genesis.nNonce = 5;
+        genesis.nNonce = 1;
 
         hashGenesisBlock = genesis.GetHash();
 
@@ -437,10 +434,10 @@ public:
             LogPrintf(" time: %u\n", genesis.nTime);
             LogPrintf(" hash: 0x%s\n", genesis.GetHash().ToString().c_str());
             LogPrintf(" merklehash: 0x%s\n", genesis.hashMerkleRoot.ToString().c_str());
-            assert(hashGenesisBlock == uint256("0x47c571377ed0ee2c00dc64bf44f3eae8208761f75839dfb88ce757972af90de4"));
-            assert(genesis.hashMerkleRoot == uint256("0xf6582d8b6d6b023c269e2fd41ca53d4adf801e108f58d74ffb10fe8fff8e67ef"));
+            assert(hashGenesisBlock == uint256("0x410bca2b989d684a6b430d415a42546c664649117deec36f52a6750fcac72eba"));
+            assert(genesis.hashMerkleRoot == uint256("0x5fdf654438324471a4c66a8b2b2f2ab9bd80d7642acb034a136edd200f3f25e5"));
         }
-	// Regtestnet --- nonce: 5 time: 1534884770 hash: 0x47c571377ed0ee2c00dc64bf44f3eae8208761f75839dfb88ce757972af90de4 merklehash: 0xf6582d8b6d6b023c269e2fd41ca53d4adf801e108f58d74ffb10fe8fff8e67ef
+        // Regtestnet --- nonce: 1 time: 1535104494 hash: 0x410bca2b989d684a6b430d415a42546c664649117deec36f52a6750fcac72eba merklehash: 0x5fdf654438324471a4c66a8b2b2f2ab9bd80d7642acb034a136edd200f3f25e5
 
 
         if (regenerate)
