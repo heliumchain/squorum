@@ -40,7 +40,7 @@ Generate list of authors:
 
 Tag version (or release candidate) in git
 
-    git tag -a -s v(new version, e.g. 0.8.0) -m "Release 0.14.9"
+    git tag -a -s v(new version, e.g. 0.8.0) -m "Release 0.14.10"
     git push --tags
 
 ### Setup and perform Gitian builds
@@ -49,7 +49,7 @@ If you're using the automated script (found in [contrib/gitian-build.py](/contri
 
 An example of that command using 5 processors and 5000 MB of RAM:
 
-./gitian-build.py -j 5 -m 5000 --detach-sign --no-commit -b bubba 0.14.9
+./gitian-build.py -j 5 -m 5000 --detach-sign --no-commit -b bubba 0.14.10
 
 Setup Gitian descriptors:
 

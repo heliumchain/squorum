@@ -68,10 +68,10 @@ cp helium/contrib/gitian-build.py .
 You only need to do this once:
 
 ```
-./gitian-build.py --setup bubba 0.14.9
+./gitian-build.py --setup bubba 0.14.10
 ```
 
-Where `bubba` is your Github name and `0.14.9` is the most recent tag (without `v`). 
+Where `bubba` is your Github name and `0.14.10` is the most recent tag (without `v`). 
 
 In order to sign gitian builds on your host machine, which has your PGP key, fork the gitian.sigs repository and clone it on your host machine:
 
@@ -86,7 +86,7 @@ Windows and OSX have code signed binaries, but those won't be available until a 
 
 To build the most recent tag:
 
- `./gitian-build.py --detach-sign --no-commit -b bubba 0.14.9`
+ `./gitian-build.py --detach-sign --no-commit -b bubba 0.14.10`
 
 To speed up the build, use `-j 5 -m 5000` as the first arguments, where `5` is the number of CPU's you allocated to the VM plus one, and 5000 is a little bit less than then the MB's of RAM you allocated.
 
@@ -96,8 +96,8 @@ You need to copy these uncommited changes to your host machine, where you can si
 
 ```
 export NAME=bubba
-export VERSION=0.14.9.2
-export BUILD=0.14.9
+export VERSION=0.14.10.2
+export BUILD=0.14.10
 gpg --output $VERSION-linux/$NAME/helium-linux-$BUILD-build.assert.sig --detach-sig $VERSION-linux/$NAME/helium-linux-$BUILD-build.assert 
 gpg --output $VERSION-osx-unsigned/$NAME/helium-osx-$BUILD-build.assert.sig --detach-sig 0$VERSION-osx-unsigned/$NAME/helium-osx-$BUILD-build.assert 
 gpg --output $VERSION-win-unsigned/$NAME/helium-win-$BUILD-build.assert.sig --detach-sig $VERSION-win-unsigned/$NAME/helium-win-$BUILD-build.assert 
@@ -107,9 +107,9 @@ Make a PR (both the `.assert` and `.assert.sig` files) to the
 [heliumchain/gitian.sigs](https://github.com/heliumchain/gitian.sigs/) repository:
 
 ```
-git checkout -b 0.14.9-not-codesigned
-git commit -S -a -m "Add $NAME 0.14.9 non-code signed signatures"
-git push --set-upstream $NAME 0.14.9
+git checkout -b 0.14.10-not-codesigned
+git commit -S -a -m "Add $NAME 0.14.10 non-code signed signatures"
+git push --set-upstream $NAME 0.14.10
 ```
 
 You can also mail the files to faetos (faetos@protonmail.com) and he will commit them.
@@ -126,6 +126,6 @@ This will create the `.sig` files that can be committed together with the `.asse
 Gitian build.
 
 
- `./gitian-build.py --detach-sign -s bubba 0.14.9 --nocommit`
+ `./gitian-build.py --detach-sign -s bubba 0.14.10 --nocommit`
 
 Make another pull request for these.
