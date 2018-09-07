@@ -24,7 +24,11 @@ BOOST_AUTO_TEST_CASE(subsidy_limit_test)
 //        nSum += nSubsidy;
 //    }
 
-    for (int nHeight = 1; nHeight < 86400; nHeight += 1) {
+    /* Test public ledger emission */
+    CAmount nSubsidy = GetBlockValue(1);
+    BOOST_CHECK(nSubsidy <= 8891432 * COIN);
+
+    for (int nHeight = 2; nHeight < 86400; nHeight += 1) {
         /* PoW Phase One */
         CAmount nSubsidy = GetBlockValue(nHeight);
         BOOST_CHECK(nSubsidy <= 250 * COIN);

@@ -55,12 +55,6 @@ std::string DecodeBase58(const char* psz);
 bool DecodeBase58(const std::string& str, std::vector<unsigned char>& vchRet);
 
 /**
- * Decode a base58-encoded hex-encoded string (str) into a byte vector (vchRet).
- * return the decoding if successful.
- */
-std::string DecodeBase58ToHex(const std::string& str);
-
-/**
  * Encode a byte vector into a base58-encoded string, including checksum
  */
 std::string EncodeBase58Check(const std::vector<unsigned char>& vchIn);
