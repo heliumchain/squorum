@@ -12,7 +12,8 @@
 
 BOOST_AUTO_TEST_SUITE(main_tests)
 
-CAmount nMoneySupplyPoWEnd = 43199500 * COIN;
+CAmount nMoneySupplyPoWEnd = 8891432 * COIN;
+CAmount nMoneySupplyPoSEnd = 21679663 * COIN;
 
 BOOST_AUTO_TEST_CASE(subsidy_limit_test)
 {
@@ -26,29 +27,73 @@ BOOST_AUTO_TEST_CASE(subsidy_limit_test)
 
     /* Test public ledger emission */
     CAmount nSubsidy = GetBlockValue(1);
-    BOOST_CHECK(nSubsidy <= 8891432 * COIN);
+    BOOST_CHECK(nSubsidy <= 8891033 * COIN);
 
-    for (int nHeight = 2; nHeight < 86400; nHeight += 1) {
-        /* PoW Phase One */
+    for (int nHeight = 2; nHeight < 401; nHeight += 1) {
+        /* PoW Phase */
         CAmount nSubsidy = GetBlockValue(nHeight);
-        BOOST_CHECK(nSubsidy <= 250 * COIN);
-        nSum += nSubsidy;
-    }
-
-    for (int nHeight = 86400; nHeight < 151200; nHeight += 1) {
-        /* PoW Phase Two */
-        CAmount nSubsidy = GetBlockValue(nHeight);
-        BOOST_CHECK(nSubsidy <= 225 * COIN);
-        nSum += nSubsidy;
-    }
-
-    for (int nHeight = 151200; nHeight < 259200; nHeight += 1) {
-        /* PoW Phase Two */
-        CAmount nSubsidy = GetBlockValue(nHeight);
-        BOOST_CHECK(nSubsidy <= 45 * COIN);
+        BOOST_CHECK(nSubsidy <= 1 * COIN);
         BOOST_CHECK(MoneyRange(nSubsidy));
         nSum += nSubsidy;
         BOOST_CHECK(nSum > 0 && nSum <= nMoneySupplyPoWEnd);
+     }
+
+    for (int nHeight = 401; nHeight < 20561; nHeight += 1) {
+        /* PoS Phase One */
+        CAmount nSubsidy = GetBlockValue(nHeight);
+        BOOST_CHECK(nSubsidy <= 0.2 * COIN);
+        nSum += nSubsidy;
+    }
+
+    for (int nHeight = 20561; nHeight < 526001; nHeight += 1) {
+        /* PoS Phase Two */
+        CAmount nSubsidy = GetBlockValue(nHeight);
+        BOOST_CHECK(nSubsidy <= 5 * COIN);
+        nSum += nSubsidy;
+    }
+
+    for (int nHeight = 526001; nHeight < 1052001; nHeight += 1) {
+        /* PoS Phase Three */
+        CAmount nSubsidy = GetBlockValue(nHeight);
+        BOOST_CHECK(nSubsidy <= 4.5 * COIN);
+        nSum += nSubsidy;
+    }
+
+    for (int nHeight = 1052001; nHeight < 1578001; nHeight += 1) {
+        /* PoS Phase Four */
+        CAmount nSubsidy = GetBlockValue(nHeight);
+        BOOST_CHECK(nSubsidy <= 4 * COIN);
+        nSum += nSubsidy;
+    }
+
+    for (int nHeight = 1578001; nHeight < 2104001; nHeight += 1) {
+        /* PoS Phase Five */
+        CAmount nSubsidy = GetBlockValue(nHeight);
+        BOOST_CHECK(nSubsidy <= 3.5 * COIN);
+        nSum += nSubsidy;
+    }
+
+    for (int nHeight = 2104001; nHeight < 2630001; nHeight += 1) {
+        /* PoS Phase Six */
+        CAmount nSubsidy = GetBlockValue(nHeight);
+        BOOST_CHECK(nSubsidy <= 3 * COIN);
+        nSum += nSubsidy;
+    }
+
+    for (int nHeight = 2630001; nHeight < 3156001; nHeight += 1) {
+        /* PoS Phase Seven */
+        CAmount nSubsidy = GetBlockValue(nHeight);
+        BOOST_CHECK(nSubsidy <= 2.5 * COIN);
+        nSum += nSubsidy;
+    }
+
+    for (int nHeight = 3156001; nHeight < 3682001; nHeight += 1) {
+        /* PoS Phase Eight */
+        CAmount nSubsidy = GetBlockValue(nHeight);
+        BOOST_CHECK(nSubsidy <= 2 * COIN);
+        BOOST_CHECK(MoneyRange(nSubsidy));
+        nSum += nSubsidy;
+        BOOST_CHECK(nSum > 0 && nSum <= nMoneySupplyPoSEnd);
     }
     //BOOST_CHECK(nSum == 4109975100000000ULL);
 }

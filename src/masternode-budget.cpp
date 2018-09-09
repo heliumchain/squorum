@@ -916,24 +916,18 @@ CAmount CBudgetManager::GetTotalBudget(int nHeight)
 
     if (Params().NetworkID() == CBaseChainParams::TESTNET) {
         CAmount nSubsidy = 250 * COIN;
-        return ((nSubsidy / 100) * 10) * 146;
+        return ((nSubsidy / 100) * 7.2) * 146;
     }
 
-    //get block value and calculate from that
-    CAmount nSubsidy = 0;
-    if (nHeight <= 43200) {
-	nSubsidy = 0;
-    } else if (nHeight > 43200) {
-        nSubsidy = 5 * COIN;
-    } else {
-        nSubsidy = 5 * COIN;
-    }
+    // Get block value and calculate from that
+    CAmount nSubsidy = GetBlockValue(nHeight);
 
-    // Amount of blocks in a months period of time (using 1 minutes per) = (60*24*30)
-    if (nHeight <= 172800) {
-        return 648000 * COIN;
+    // No budget until after first two weeks of Proof of Stake
+    if (nHeight <= 20560) {
+        return 0 * COIN;
     } else {
-        return ((nSubsidy / 100) * 10) * 1440 * 30;
+       // Total budget is based on 7.2% of block reward for a 30 day period (using 1 minutes per) = (60*24*30)
+       return ((nSubsidy / 100) * 7.2) * 60 * 24 * 30;
     }
 }
 
