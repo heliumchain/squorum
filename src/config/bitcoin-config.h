@@ -21,7 +21,7 @@
 #define CLIENT_VERSION_MINOR 14
 
 /* Build revision */
-#define CLIENT_VERSION_REVISION 7
+#define CLIENT_VERSION_REVISION 9
 
 /* Version is release */
 #define COPYRIGHT_YEAR 2018
@@ -30,7 +30,7 @@
 #define ENABLE_WALLET 1
 
 /* Define to 1 to enable ZMQ functions */
-#define ENABLE_ZMQ 0
+#define ENABLE_ZMQ 1
 
 /* parameter and return value type for __fdelt_chk */
 /* #undef FDELT_TYPE */
@@ -54,7 +54,7 @@
 #define HAVE_BOOST_THREAD /**/
 
 /* define if the Boost::Unit_Test_Framework library is available */
-#define HAVE_BOOST_UNIT_TEST_FRAMEWORK /**/
+/* #undef HAVE_BOOST_UNIT_TEST_FRAMEWORK */
 
 /* Define this symbol if the consensus lib has been built */
 #define HAVE_CONSENSUS_LIB 1
@@ -212,16 +212,16 @@
 #define HAVE_MEMORY_H 1
 
 /* Define to 1 if you have the <miniupnpc/miniupnpc.h> header file. */
-/* #undef HAVE_MINIUPNPC_MINIUPNPC_H */
+#define HAVE_MINIUPNPC_MINIUPNPC_H 1
 
 /* Define to 1 if you have the <miniupnpc/miniwget.h> header file. */
-/* #undef HAVE_MINIUPNPC_MINIWGET_H */
+#define HAVE_MINIUPNPC_MINIWGET_H 1
 
 /* Define to 1 if you have the <miniupnpc/upnpcommands.h> header file. */
-/* #undef HAVE_MINIUPNPC_UPNPCOMMANDS_H */
+#define HAVE_MINIUPNPC_UPNPCOMMANDS_H 1
 
 /* Define to 1 if you have the <miniupnpc/upnperrors.h> header file. */
-/* #undef HAVE_MINIUPNPC_UPNPERRORS_H */
+#define HAVE_MINIUPNPC_UPNPERRORS_H 1
 
 /* Define this symbol if you have MSG_DONTWAIT */
 #define HAVE_MSG_DONTWAIT 1
@@ -290,7 +290,7 @@
 #define PACKAGE_NAME "Helium Core"
 
 /* Define to the full name and version of this package. */
-#define PACKAGE_STRING "Helium Core 0.14.7"
+#define PACKAGE_STRING "Helium Core 0.14.9"
 
 /* Define to the one symbol short name of this package. */
 #define PACKAGE_TARNAME "helium"
@@ -299,7 +299,7 @@
 #define PACKAGE_URL ""
 
 /* Define to the version of this package. */
-#define PACKAGE_VERSION "0.14.7"
+#define PACKAGE_VERSION "0.14.9"
 
 /* Define to necessary symbol if this constant uses a non-standard name on
    your system. */
@@ -337,7 +337,7 @@
 
 /* UPnP support not compiled if undefined, otherwise value (0 or 1) determines
    default state */
-/* #undef USE_UPNP */
+#define USE_UPNP 0
 
 /* Define WORDS_BIGENDIAN to 1 if your processor stores words with the most
    significant byte first (like Motorola and SPARC, unlike Intel). */

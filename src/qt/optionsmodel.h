@@ -43,10 +43,6 @@ public:
         CoinControlFeatures, // bool
         ThreadsScriptVerif,  // int
         DatabaseCache,       // int
-        SpendZeroConfChange, // bool
-        ZeromintEnable,      // bool
-        ZeromintPercentage,  // int
-        ZeromintPrefDenom,   // int
         HideZeroBalances,    // bool
         AnonymizeCoinAmount, //int
         ShowMasternodesTab,  // bool
@@ -97,10 +93,6 @@ private:
 
 Q_SIGNALS:
     void displayUnitChanged(int unit);
-    void zeromintEnableChanged(bool);
-    void zeromintPercentageChanged(int);
-    void preferredDenomChanged(int);
-    void anonymizeCoinAmountChanged(int);
     void coinControlFeaturesChanged(bool);
     void hideZeroBalancesChanged(bool);
 };

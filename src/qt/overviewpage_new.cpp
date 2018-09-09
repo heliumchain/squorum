@@ -256,7 +256,7 @@ void OverviewPage::setBalance(const CAmount& balance, const CAmount& unconfirmed
     ui->labelTotalz->setText(BitcoinUnits::floorHtmlWithUnit(nDisplayUnit, sumTotalBalance, false, BitcoinUnits::separatorAlways));
 
     // Percentage labels
-    ui->labelPIVPercent->setText(sPercentage);
+    ui->labelHLMPercent->setText(sPercentage);
     ui->labelzPIVPercent->setText(szPercentage);
 
     // Adjust bubble-help according to AutoMint settings
@@ -305,7 +305,7 @@ void OverviewPage::setBalance(const CAmount& balance, const CAmount& unconfirmed
     ui->labelzBalanceImmature->setVisible(showzPIVImmature);
     ui->labelzBalanceImmatureText->setVisible(showzPIVImmature);
     bool showPercentages = ! (zerocoinBalance == 0 && nTotalBalance == 0);
-    ui->labelPIVPercent->setVisible(showPercentages);
+    ui->labelHLMPercent->setVisible(showPercentages);
     ui->labelzPIVPercent->setVisible(showPercentages);
 
     static int cachedTxLocks = 0;

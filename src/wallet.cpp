@@ -2157,7 +2157,7 @@ bool CWallet::MintableCoins()
 {
     LOCK(cs_main);
     CAmount nBalance = GetBalance();
-    CAmount nZpivBalance = GetZerocoinBalance(false);
+    CAmount nZpivBalance = 0;
 
     // Regular PIV
     if (nBalance > 0) {
