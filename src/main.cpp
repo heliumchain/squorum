@@ -1828,19 +1828,32 @@ int64_t GetBlockValue(int nHeight)
     }
 
     int64_t nSubsidy = 0;
-    // Block 1: credit of public ledger total, for subsequent disbursal.
+    // Block value is reduced every 526,000 blocks
+    int64_t nSubsidyReductionInterval = 526000;
+    // Block 1: credit majority of public ledger total, for subsequent disbursal.
+    // Total of PoW phase adds up to all coins generated during PoW phase.
+    // Total ledger value: 8891432    PoW Phase: 400 blocks
     if (nHeight == 1) {
-        nSubsidy = static_cast<int64_t>(8891432 * COIN);
-    } else if (nHeight < 20159) {
+        nSubsidy = static_cast<int64_t>(8891033 * COIN);
+    } else if (nHeight <= Params().LAST_POW_BLOCK()) {
         nSubsidy = static_cast<int64_t>(1 * COIN);
-    } else if (nHeight <= Params().LAST_POW_BLOCK() && nHeight >= 20159) {
+    // Low PoS reward for 2 weeks following PoW phase
+    } else if (nHeight <= (Params().LAST_POW_BLOCK() + (1440 * 14))) {
+        nSubsidy = static_cast<int64_t>(0.2 * COIN);
+    } else if (nHeight <= (1 * nSubsidyReductionInterval)) {
         nSubsidy = static_cast<int64_t>(5 * COIN);
-    } else if (nHeight > Params().LAST_POW_BLOCK()) {
-        nSubsidy = static_cast<int64_t>(5 * COIN);
-//    } else if (nHeight < Params().Zerocoin_Block_V2_Start()) {
-//        nSubsidy = static_cast<int64_t>(4.5 * COIN);
+    } else if (nHeight > (1 * nSubsidyReductionInterval) && nHeight <= (2 * nSubsidyReductionInterval)) {
+        nSubsidy = static_cast<int64_t>(4.5 * COIN);
+    } else if (nHeight > (2 * nSubsidyReductionInterval) && nHeight <= (3 * nSubsidyReductionInterval)) {
+        nSubsidy = static_cast<int64_t>(4 * COIN);
+    } else if (nHeight > (3 * nSubsidyReductionInterval) && nHeight <= (4 * nSubsidyReductionInterval)) {
+        nSubsidy = static_cast<int64_t>(3.5 * COIN);
+    } else if (nHeight > (4 * nSubsidyReductionInterval) && nHeight <= (5 * nSubsidyReductionInterval)) {
+        nSubsidy = static_cast<int64_t>(3 * COIN);
+    } else if (nHeight > (5 * nSubsidyReductionInterval) && nHeight <= (6 * nSubsidyReductionInterval)) {
+        nSubsidy = static_cast<int64_t>(2.5 * COIN);
     } else {
-        nSubsidy = static_cast<int64_t>(5 * COIN);
+        nSubsidy = static_cast<int64_t>(2 * COIN);
     }
     return nSubsidy;
 }
