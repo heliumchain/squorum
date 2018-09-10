@@ -58,7 +58,7 @@ static void convertSeed6(std::vector<CAddress>& vSeedsOut, const SeedSpec6* data
 // + Contains no strange transactions
 static Checkpoints::MapCheckpoints mapCheckpoints =
     boost::assign::map_list_of
-    (0, uint256("0x000001c3832b1728cd393c1b5cdecf42277da185c6da5cc7a7f45212e088c6f0"));
+    (0, uint256("0x0000033346b0b31697bcd178789fe1d6d10f96a7fd46d74fbf647d5ea3757348"));
 static const Checkpoints::CCheckpointData data = {
     &mapCheckpoints,
     1535104494, // * UNIX timestamp of last checkpoint block
@@ -135,9 +135,8 @@ public:
         nMaxMoneyOut = 21000000 * COIN;
 
         /** Height or Time Based Activations **/
-        //nLastPOWBlock = 2880; // 2 days @ 1440 per day (PIVX: 259200, Phore 200)
         //nLastPOWBlock = 20160; // 14 days @ 1440 per day (PIVX: 259200, Phore 200)
-        nLastPOWBlock = 6600; // for testing PoS transition before official launch
+        nLastPOWBlock = 400; // Short PoW phase before transition to PoS
         //if the lowest block height (vSortedByTimestamp[0]) is >= switch height, use new modifier calc
         // nModifierUpdateBlock = 0; // (PIVX: 615800)
         nZerocoinStartHeight = 999999999; // (PIVX: 863787, Phore 90000)
@@ -152,7 +151,7 @@ public:
         nEnforceNewSporkKey = 1525158000; // (PIVX: 1525158000) //!> Sporks signed after (GMT): Tuesday, May 1, 2018 7:00:00 AM GMT must use the new spork key
         nRejectOldSporkKey = 1527811200; // (PIVX: 1527811200) //!> Fully reject old spork key after (GMT): Friday, June 1, 2018 12:00:00 AM
 
-        const char* pszTimestamp = "Bitcoin Block #538238:  00000000000000000005523a96dcbfa11a72c5183cbd611816c6d45368754603";
+        const char* pszTimestamp = "Bitcoin Block #540723:  000000000000000000200b9c401b3022de17cd305ba6ef9ce5bade07f9f5ebe5";
         CMutableTransaction txNew;
         txNew.vin.resize(1);
         txNew.vout.resize(1);
@@ -165,7 +164,7 @@ public:
         genesis.nVersion = 4;
         genesis.nTime = 1535104494;
         genesis.nBits = 0x1e0ffff0;
-        genesis.nNonce = 552218;
+        genesis.nNonce = 6846;
 
         hashGenesisBlock = genesis.GetHash();
         if (regenerate) {
@@ -193,11 +192,10 @@ public:
             LogPrintf(" time: %u\n", genesis.nTime);
             LogPrintf(" hash: 0x%s\n", genesis.GetHash().ToString().c_str());
             LogPrintf(" merklehash: 0x%s\n", genesis.hashMerkleRoot.ToString().c_str());
-            assert(hashGenesisBlock == uint256("0x000001c3832b1728cd393c1b5cdecf42277da185c6da5cc7a7f45212e088c6f0"));
-            assert(genesis.hashMerkleRoot == uint256("0x5fdf654438324471a4c66a8b2b2f2ab9bd80d7642acb034a136edd200f3f25e5"));
+            assert(hashGenesisBlock == uint256("0x0000033346b0b31697bcd178789fe1d6d10f96a7fd46d74fbf647d5ea3757348"));
+            assert(genesis.hashMerkleRoot == uint256("0xedee755717c4de66ce52056e36ae0f6e9f0269667fd8a06e3c5367588cbfadbd"));
         }
-        // Mainnet --- nonce: 552218 time: 1535104494 hash: 0x000001c3832b1728cd393c1b5cdecf42277da185c6da5cc7a7f45212e088c6f0 merklehash: 0x5fdf654438324471a4c66a8b2b2f2ab9bd80d7642acb034a136edd200f3f25e5
-
+        // Mainnet --- nonce: 6846 time: 1535104494 hash: 0x0000033346b0b31697bcd178789fe1d6d10f96a7fd46d74fbf647d5ea3757348 merklehash: 0xedee755717c4de66ce52056e36ae0f6e9f0269667fd8a06e3c5367588cbfadbd
 
         vSeeds.push_back(CDNSSeedData("knout", "dnsseed.helium.cl"));
         vSeeds.push_back(CDNSSeedData("Kserv", "149.28.242.177"));
@@ -281,7 +279,7 @@ public:
         nMinerThreads = 1;
         nTargetTimespan = 24 * 60 * 60; // Helium: 1 day
         nTargetSpacing = 60;  // Helium: 1 minute
-        nLastPOWBlock = 10000;
+        nLastPOWBlock = 400;
         nMaturity = 15;
         nMasternodeCountDrift = 2;
         // nModifierUpdateBlock = 0; //approx Mon, 17 Apr 2017 04:00:00 GMT
@@ -300,7 +298,7 @@ public:
 
         //! Modify the testnet genesis block so the timestamp is valid for a later start.
         genesis.nTime = 1535103494;
-        genesis.nNonce = 737655;
+        genesis.nNonce = 311676;
 
         hashGenesisBlock = genesis.GetHash();
         if (regenerate) {
@@ -329,10 +327,10 @@ public:
             LogPrintf(" time: %u\n", genesis.nTime);
             LogPrintf(" hash: 0x%s\n", genesis.GetHash().ToString().c_str());
             LogPrintf(" merklehash: 0x%s\n", genesis.hashMerkleRoot.ToString().c_str());
-            assert(hashGenesisBlock == uint256("0x00000fc011e0d753e70317369916e01c74881e3981f0aab77bd839f48f9c869d"));
-            assert(genesis.hashMerkleRoot == uint256("0x5fdf654438324471a4c66a8b2b2f2ab9bd80d7642acb034a136edd200f3f25e5"));
+            assert(hashGenesisBlock == uint256("0x0000049f035ee1942b9d3dd10965e7e07929aeaadd2c8855107dfeed05645d3f"));
+            assert(genesis.hashMerkleRoot == uint256("0xedee755717c4de66ce52056e36ae0f6e9f0269667fd8a06e3c5367588cbfadbd"));
         }
-        // Testnet --- nonce: 737655 time: 1535103494 hash: 0x00000fc011e0d753e70317369916e01c74881e3981f0aab77bd839f48f9c869d merklehash: 0x5fdf654438324471a4c66a8b2b2f2ab9bd80d7642acb034a136edd200f3f25e5
+        // Testnet --- nonce: 311676 time: 1535103494 hash: 0x0000049f035ee1942b9d3dd10965e7e07929aeaadd2c8855107dfeed05645d3f merklehash: 0xedee755717c4de66ce52056e36ae0f6e9f0269667fd8a06e3c5367588cbfadbd
 
         vFixedSeeds.clear();
         vSeeds.clear();
@@ -406,7 +404,7 @@ public:
 
         genesis.nTime = 1535104494;
         genesis.nBits = 0x207fffff;
-        genesis.nNonce = 1;
+        genesis.nNonce = 3;
 
         hashGenesisBlock = genesis.GetHash();
 
@@ -435,11 +433,10 @@ public:
             LogPrintf(" time: %u\n", genesis.nTime);
             LogPrintf(" hash: 0x%s\n", genesis.GetHash().ToString().c_str());
             LogPrintf(" merklehash: 0x%s\n", genesis.hashMerkleRoot.ToString().c_str());
-            assert(hashGenesisBlock == uint256("0x410bca2b989d684a6b430d415a42546c664649117deec36f52a6750fcac72eba"));
-            assert(genesis.hashMerkleRoot == uint256("0x5fdf654438324471a4c66a8b2b2f2ab9bd80d7642acb034a136edd200f3f25e5"));
+            assert(hashGenesisBlock == uint256("0x73abf6904e8a758c31d715d0c2bf8b36b86403a35bda369ec2fbcac8c2469c4d"));
+            assert(genesis.hashMerkleRoot == uint256("0xedee755717c4de66ce52056e36ae0f6e9f0269667fd8a06e3c5367588cbfadbd"));
         }
-        // Regtestnet --- nonce: 1 time: 1535104494 hash: 0x410bca2b989d684a6b430d415a42546c664649117deec36f52a6750fcac72eba merklehash: 0x5fdf654438324471a4c66a8b2b2f2ab9bd80d7642acb034a136edd200f3f25e5
-
+        // Regtestnet --- nonce: 3 time: 1535104494 hash: 0x73abf6904e8a758c31d715d0c2bf8b36b86403a35bda369ec2fbcac8c2469c4d merklehash: 0xedee755717c4de66ce52056e36ae0f6e9f0269667fd8a06e3c5367588cbfadbd
 
         if (regenerate)
             exit(0);
