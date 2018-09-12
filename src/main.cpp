@@ -1866,22 +1866,23 @@ int64_t GetMasternodePayment(int nHeight, int64_t blockValue, int nMasternodeCou
         if (nHeight < 9999) {
             return 0;
 	} else if (nHeight <= Params().LAST_POW_BLOCK() && nHeight >= 9999) {
-	    ret = blockValue / 5;
+	    ret = blockValue / 2;
 	} else {
-	    ret = blockValue / 5;
+	    ret = blockValue / 2;
 	}
     }
 
-    /* NOTE: GJH Particularise masternode payment schedule */
-    if (nHeight <= 43200) {
+    // No masternode payments during Proof of Work phase
+    if (nHeight <= Params().LAST_POW_BLOCK()) {
         ret = 0;
-    } else if (nHeight > 43200) {
-        ret = blockValue / (100 / 30);
     } else {
-        //When zPIV is staked, masternode only gets 2 HLM
-        ret = 3 * COIN;
-        if (isZPIVStake)
-            ret = 2 * COIN;
+        // 50/50 split of staking reward and masternode reward
+        ret = blockValue / 2;
+    //} else {
+    //    //When zPIV is staked, masternode only gets 2 HLM
+    //    ret = 3 * COIN;
+    //    if (isZPIVStake)
+    //        ret = 2 * COIN;
     }
 
     return ret;
