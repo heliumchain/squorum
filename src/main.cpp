@@ -1875,7 +1875,7 @@ int64_t GetMasternodePayment(int nHeight, int64_t blockValue, int nMasternodeCou
     // No masternode payments during Proof of Work phase
     if (nHeight <= Params().LAST_POW_BLOCK()) {
         ret = 0;
-	} else if (nHeight > Params().LAST_POW_BLOCK() && nHeight >= 2050) {
+	} else if (nHeight > Params().LAST_POW_BLOCK() && nHeight <= 2250) {
 	    ret = 0;
     } else {
         // 50/50 split of staking reward and masternode reward
