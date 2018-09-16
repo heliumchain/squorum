@@ -922,8 +922,8 @@ CAmount CBudgetManager::GetTotalBudget(int nHeight)
     // Get block value and calculate from that
     CAmount nSubsidy = GetBlockValue(nHeight);
 
-    // No budget until after first two weeks of Proof of Stake
-    if (nHeight <= 20560) {
+    // No budget until two weeks post initial launch
+    if (nHeight <= 28000) {
         return 0 * COIN;
     } else {
        // Total budget is based on 7.2% of block reward for a 30 day period (using 1 minutes per) = (60*24*30)
