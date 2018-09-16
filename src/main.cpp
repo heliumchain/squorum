@@ -1837,8 +1837,8 @@ int64_t GetBlockValue(int nHeight)
         nSubsidy = static_cast<int64_t>(8891033 * COIN);
     } else if (nHeight <= Params().LAST_POW_BLOCK()) {
         nSubsidy = static_cast<int64_t>(1 * COIN);
-    // Low PoS reward for 2 weeks following PoW phase
-    } else if (nHeight <= (Params().LAST_POW_BLOCK() + (1440 * 14))) {
+    // Low PoS reward for 2 weeks following initial wallet launch
+    } else if (nHeight <= 28000) {
         nSubsidy = static_cast<int64_t>(0.2 * COIN);
     } else if (nHeight <= (1 * nSubsidyReductionInterval)) {
         nSubsidy = static_cast<int64_t>(5 * COIN);
