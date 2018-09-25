@@ -59,7 +59,7 @@ and inputs.
 
 For example:
 ```bash
-URL=https://github.com/faetos/helium.git
+URL=https://github.com/heliumchain/helium.git
 COMMIT=2014_03_windows_unicode_path
 ./bin/gbuild --commit helium=${COMMIT} --url helium=${URL} ../helium/contrib/gitian-descriptors/gitian-linux.yml
 ./bin/gbuild --commit helium=${COMMIT} --url helium=${URL} ../helium/contrib/gitian-descriptors/gitian-win.yml
