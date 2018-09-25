@@ -3,7 +3,7 @@ Release Process
 
 Before every release candidate:
 
-* Update translations (ping faetos on Slack) see [translation_process.md](https://github.com/heliumchain/helium/blob/master/doc/translation_process.md#synchronising-translations).
+* Update translations see [translation_process.md](https://github.com/heliumchain/helium/blob/master/doc/translation_process.md#synchronising-translations).
 
 Before every minor and major release:
 
