@@ -112,8 +112,6 @@ git commit -S -a -m "Add $NAME 0.14.10 non-code signed signatures"
 git push --set-upstream $NAME 0.14.10
 ```
 
-You can also mail the files to faetos (faetos@protonmail.com) and he will commit them.
-
 ```bash
     gpg --detach-sign ${VERSION}-linux/${SIGNER}/helium-linux-*-build.assert
     gpg --detach-sign ${VERSION}-win-unsigned/${SIGNER}/helium-win-*-build.assert
