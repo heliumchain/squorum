@@ -203,8 +203,12 @@ public:
         // Mainnet --- nonce: 6846 time: 1535104494 hash: 0x0000033346b0b31697bcd178789fe1d6d10f96a7fd46d74fbf647d5ea3757348 merklehash: 0xedee755717c4de66ce52056e36ae0f6e9f0269667fd8a06e3c5367588cbfadbd
 
         vSeeds.push_back(CDNSSeedData("knout", "dnsseed.helium.cl"));
-        vSeeds.push_back(CDNSSeedData("Kserv", "149.28.242.177"));
-
+        vSeeds.push_back(CDNSSeedData("seed1", "s1.heliumcoin.info"));
+	vSeeds.push_back(CDNSSeedData("seed2", "s2.heliumcoin.info"));
+	vSeeds.push_back(CDNSSeedData("seed3", "s3.heliumcoin.info"));
+	vSeeds.push_back(CDNSSeedData("seed4", "s4.heliumcoin.info"));
+        vSeeds.push_back(CDNSSeedData("seed5", "s5.heliumcoin.info"));
+	
         // Helium addresses start with 'S'
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,63);
         // Helium script addresses start with '3'
