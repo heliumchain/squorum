@@ -6,6 +6,7 @@
 #include "ui_zhlmcontroldialog.h"
 
 #include "accumulators.h"
+#include "bitcoingui.h" //TreeWidgetItem
 #include "main.h"
 #include "walletmodel.h"
 
@@ -42,14 +43,6 @@ void ZHlmControlDialog::setModel(WalletModel *model)
     updateList();
 }
 
-// helper function str_pad
-QString ZHlmControlDialog::strPad(QString s, int nPadLength, QString sPadding)
-{
-    while (s.length() < nPadLength)
-        s = sPadding + s;
-
-    return s;
-}
 
 //Update the tree widget
 void ZHlmControlDialog::updateList()
@@ -62,14 +55,14 @@ void ZHlmControlDialog::updateList()
     QFlags<Qt::ItemFlag> flgTristate = Qt::ItemIsEnabled | Qt::ItemIsUserCheckable | Qt::ItemIsTristate;
     map<libzerocoin::CoinDenomination, int> mapDenomPosition;
     for (auto denom : libzerocoin::zerocoinDenomList) {
-        QTreeWidgetItem* itemDenom(new QTreeWidgetItem);
+        TreeWidgetItem* itemDenom(new TreeWidgetItem);
         ui->treeWidget->addTopLevelItem(itemDenom);
 
         //keep track of where this is positioned in tree widget
         mapDenomPosition[denom] = ui->treeWidget->indexOfTopLevelItem(itemDenom);
 
         itemDenom->setFlags(flgTristate);
-        itemDenom->setText(COLUMN_DENOMINATION, strPad(QString::number(denom), 5, " "));
+        itemDenom->setText(COLUMN_DENOMINATION, QString::number(denom));
     }
 
     // select all unused coins - including not mature. Update status of coins too.
@@ -83,7 +76,7 @@ void ZHlmControlDialog::updateList()
     for (const CMintMeta& mint : setMints) {
         // assign this mint to the correct denomination in the tree view
         libzerocoin::CoinDenomination denom = mint.denom;
-        QTreeWidgetItem *itemMint = new QTreeWidgetItem(ui->treeWidget->topLevelItem(mapDenomPosition.at(denom)));
+        TreeWidgetItem *itemMint = new TreeWidgetItem(ui->treeWidget->topLevelItem(mapDenomPosition.at(denom)));
 
         // if the mint is already selected, then it needs to have the checkbox checked
         std::string strPubCoinHash = mint.hashPubcoin.GetHex();
@@ -93,9 +86,9 @@ void ZHlmControlDialog::updateList()
         else
             itemMint->setCheckState(COLUMN_CHECKBOX, Qt::Unchecked);
 
-        itemMint->setText(COLUMN_DENOMINATION, strPad(QString::number(mint.denom), 5, " "));
+        itemMint->setText(COLUMN_DENOMINATION, QString::number(mint.denom));
         itemMint->setText(COLUMN_PUBCOIN, QString::fromStdString(strPubCoinHash));
-        itemMint->setText(COLUMN_VERSION, strPad(QString::number(mint.nVersion), 3, " "));
+        itemMint->setText(COLUMN_VERSION, QString::number(mint.nVersion));
 
         int nConfirmations = (mint.nHeight ? nBestHeight - mint.nHeight : 0);
         if (nConfirmations < 0) {
@@ -103,7 +96,7 @@ void ZHlmControlDialog::updateList()
             nConfirmations = 0;
         }
 
-        itemMint->setText(COLUMN_CONFIRMATIONS, strPad(QString::number(nConfirmations), 15, " "));
+        itemMint->setText(COLUMN_CONFIRMATIONS, QString::number(nConfirmations));
 
         // check for maturity
         bool isMature = false;
