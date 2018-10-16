@@ -116,13 +116,7 @@ CBlockTemplate* CreateNewBlock(const CScript& scriptPubKeyIn, CWallet* pwallet, 
     if (Params().MineBlocksOnDemand())
         pblock->nVersion = static_cast<int32_t>(GetArg("-blockversion", pblock->nVersion));
 
-    // Make sure to create the correct block version after zerocoin is enabled
     bool fZerocoinActive = GetAdjustedTime() >= Params().Zerocoin_StartTime();
-    if (fZerocoinActive)
-        pblock->nVersion = 4;
-    else
-        pblock->nVersion = 3;
-
     pblock->nVersion = 5;   // Supports CLTV activation
 
     // Create coinbase tx

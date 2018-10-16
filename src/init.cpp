@@ -1421,12 +1421,6 @@ bool AppInit2(boost::thread_group& threadGroup, CScheduler& scheduler)
                 pcoinscatcher = new CCoinsViewErrorCatcher(pcoinsdbview);
                 pcoinsTip = new CCoinsViewCache(pcoinscatcher);
 
-                bool fIsActiveCLTV;
-                if (!pblocktree->ReadFlag("CLTVHasMajority", fIsActiveCLTV))
-                    fCLTVHasMajority = false;
-                else
-                    fCLTVHasMajority = fIsActiveCLTV;
-
                 if (fReindex)
                     pblocktree->WriteReindexing(true);
 
