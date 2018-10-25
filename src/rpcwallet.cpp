@@ -3776,8 +3776,12 @@ UniValue clearspendcache(const UniValue& params, bool fHelp)
     {
         TRY_LOCK(zhlmTracker->cs_spendcache, fLocked);
         if (fLocked) {
-            if (zhlmTracker->ClearSpendCache())
+            if (zhlmTracker->ClearSpendCache()) {
+                fClearSpendCache = true;
+                CWalletDB walletdb("precomputes.dat", "cr+");
+                walletdb.ErasePrecomputes();
                 return NullUniValue;
+            }
         }
     }
     throw JSONRPCError(RPC_WALLET_ERROR, "Error: Spend cache not cleared!");
