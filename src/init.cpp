@@ -1692,6 +1692,8 @@ bool AppInit2()
         //Inititalize zHLMWallet
         uiInterface.InitMessage(_("Syncing zHLM wallet..."));
 
+        pwalletMain->InitAutoConvertAddresses();
+
         bool fEnableZHlmBackups = GetBoolArg("-backupzhlm", true);
         pwalletMain->setZHlmAutoBackups(fEnableZHlmBackups);
 
