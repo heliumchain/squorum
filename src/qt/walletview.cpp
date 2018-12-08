@@ -1,5 +1,6 @@
 // Copyright (c) 2011-2015 The Bitcoin developers
 // Copyright (c) 2016-2018 The PIVX developers
+// Copyright (c) 2018 The Phore developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -23,6 +24,7 @@
 #include "transactiontablemodel.h"
 #include "transactionview.h"
 #include "walletmodel.h"
+#include "proposallist.h"
 
 #include "ui_interface.h"
 
@@ -130,6 +132,53 @@ WalletView::WalletView(QWidget* parent) : QStackedWidget(parent),
         masternodeListPage = new MasternodeList();
         addWidget(masternodeListPage);
     }
+
+    proposalListPage = new QWidget(this);
+
+    QFrame *frame_Header_2 = new QFrame(proposalListPage);
+    frame_Header_2->setObjectName(QStringLiteral("frame_Header_2"));
+
+    QVBoxLayout* verticalLayout_9 = new QVBoxLayout(frame_Header_2);
+    verticalLayout_9->setObjectName(QStringLiteral("verticalLayout_9"));
+    verticalLayout_9->setContentsMargins(0, 0, 0, 0);
+
+    QHBoxLayout* horizontalLayout_Header_2 = new QHBoxLayout();
+    horizontalLayout_Header_2->setObjectName(QStringLiteral("horizontalLayout_Header"));
+
+    QLabel* labelOverviewHeaderLeft_2 = new QLabel(frame_Header_2);
+    labelOverviewHeaderLeft_2->setObjectName(QStringLiteral("labelOverviewHeaderLeft"));
+    labelOverviewHeaderLeft_2->setMinimumSize(QSize(464, 60));
+    labelOverviewHeaderLeft_2->setMaximumSize(QSize(16777215, 60));
+    labelOverviewHeaderLeft_2->setText(tr("PROPOSALS"));
+    labelOverviewHeaderLeft_2->setFont(fontHeaderLeft);
+    horizontalLayout_Header_2->addWidget(labelOverviewHeaderLeft_2);
+    verticalLayout_9->addLayout(horizontalLayout_Header_2);
+
+    QSpacerItem* horizontalSpacer_4 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+    horizontalLayout_Header_2->addItem(horizontalSpacer_4);
+
+    QLabel* labelOverviewHeaderRight_2 = new QLabel(frame_Header_2);
+    labelOverviewHeaderRight_2->setObjectName(QStringLiteral("labelOverviewHeaderRight"));
+    labelOverviewHeaderRight_2->setMinimumSize(QSize(464, 60));
+    labelOverviewHeaderRight_2->setMaximumSize(QSize(16777215, 60));
+    labelOverviewHeaderRight_2->setText(QString());
+    labelOverviewHeaderRight_2->setFont(fontHeaderRight);
+    labelOverviewHeaderRight_2->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
+    horizontalLayout_Header_2->addWidget(labelOverviewHeaderRight_2);
+
+    horizontalLayout_Header_2->setStretch(0, 1);
+    horizontalLayout_Header_2->setStretch(2, 1);
+
+    QVBoxLayout* vbox_2 = new QVBoxLayout();
+    vbox_2->addWidget(frame_Header_2);
+
+    proposalList = new ProposalList(this);
+    vbox_2->addWidget(proposalList);
+
+    vbox_2->setStretch(1, 1);
+
+    proposalListPage->setLayout(vbox_2);
+    addWidget(proposalListPage);
 
     // Clicking on a transaction on the overview pre-selects the transaction on the transaction history page
     connect(overviewPage, SIGNAL(transactionClicked(QModelIndex)), transactionView, SLOT(focusTransaction(QModelIndex)));
@@ -272,6 +321,11 @@ void WalletView::gotoPrivacyPage()
     setCurrentWidget(privacyPage);
     // Refresh UI-elements in case coins were locked/unlocked in CoinControl
     walletModel->emitBalanceChanged();
+}
+
+void WalletView::gotoProposalPage()
+{
+    setCurrentWidget(proposalListPage);
 }
 
 void WalletView::gotoSendCoinsPage(QString addr)
