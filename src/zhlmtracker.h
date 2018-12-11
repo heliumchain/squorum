@@ -9,6 +9,7 @@
 #include <list>
 
 class CDeterministicMint;
+class CzHLMWallet;
 
 class CzHLMTracker
 {
@@ -21,7 +22,7 @@ private:
 public:
     CzHLMTracker(std::string strWalletFile);
     ~CzHLMTracker();
-    void Add(const CDeterministicMint& dMint, bool isNew = false, bool isArchived = false);
+    void Add(const CDeterministicMint& dMint, bool isNew = false, bool isArchived = false, CzHLMWallet* zHLMWallet = NULL);
     void Add(const CZerocoinMint& mint, bool isNew = false, bool isArchived = false);
     bool Archive(CMintMeta& meta);
     bool HasPubcoin(const CBigNum& bnValue) const;
