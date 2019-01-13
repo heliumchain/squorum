@@ -763,6 +763,7 @@ void BitcoinGUI::optionsClicked()
 
     OptionsDialog dlg(this, enableWallet);
     dlg.setModel(clientModel->getOptionsModel());
+    dlg.setCurrentIndex(0);
     dlg.exec();
 }
 
