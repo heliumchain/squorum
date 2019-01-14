@@ -24,11 +24,11 @@ def setup():
     subprocess.check_call(['sudo', 'apt-get', 'install', '-qq'] + programs)
     if not os.path.isdir('gitian.sigs'):
         subprocess.check_call(['git', 'clone', 'https://github.com/heliumchain/gitian.sigs.git'])
-    if not os.path.isdir('ion-detached-sigs'):
+    if not os.path.isdir('Helium-detached-sigs'):
         subprocess.check_call(['git', 'clone', 'https://github.com/heliumchain/helium-detached-sigs.git'])
     if not os.path.isdir('gitian-builder'):
         subprocess.check_call(['git', 'clone', 'https://github.com/devrandom/gitian-builder.git'])
-    if not os.path.isdir('ion'):
+    if not os.path.isdir('Helium'):
         subprocess.check_call(['git', 'clone', 'https://github.com/heliumchain/helium.git'])
     os.chdir('gitian-builder')
     make_image_prog = ['bin/make-base-vm', '--suite', 'bionic', '--arch', 'amd64']
