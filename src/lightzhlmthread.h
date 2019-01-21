@@ -43,7 +43,7 @@ public:
 
     bool addWitWork(CGenWit wit) {
         if (!isWorkerRunning) {
-            LogPrintf("%s helium-light-thread not running trying to add wit work \n");
+            LogPrintf("%s not running trying to add wit work \n", "helium-light-thread");
             return false;
         }
         requestsQueue.push(wit);
