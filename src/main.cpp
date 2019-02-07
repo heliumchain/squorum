@@ -4668,9 +4668,6 @@ bool ProcessNewBlock(CValidationState& state, CNode* pfrom, CBlock* pblock, CDis
             }
             return error("%s : AcceptBlock FAILED", __func__);
         }
-        else {
-            LogPrintf("%s : AccpetBlock PASSED!", __func__);
-        }
     }
 
     if (!ActivateBestChain(state, pblock, checked))
