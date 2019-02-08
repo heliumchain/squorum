@@ -4464,7 +4464,7 @@ bool AcceptBlock(CBlock& block, CValidationState& state, CBlockIndex** ppindex, 
                     }
 
                     if (!ContextualCheckZerocoinSpendNoSerialCheck(stakeTxIn, spend, pindex, 0))
-                        return state.DoS(100,error("%s: ContextualCheckZerocoinSpend failed for tx %s", __func__,
+                        return state.DoS(100,error("%s: forked chain ContextualCheckZerocoinSpend failed for tx %s", __func__,
                                                    stakeTxIn.GetHash().GetHex()), REJECT_INVALID, "bad-txns-invalid-zhlm");
 
                     // Now only the ZKP left..
@@ -4507,12 +4507,14 @@ bool AcceptBlock(CBlock& block, CValidationState& state, CBlockIndex** ppindex, 
                 }
             }
         } else {
-            for (CTxIn zHlmInput : zHLMInputs) {
-                    CoinSpend spend = TxInToZerocoinSpend(zHlmInput);
-                    if (!ContextualCheckZerocoinSpend(stakeTxIn, spend, pindex, 0))
-                        return state.DoS(100,error("%s: ContextualCheckZerocoinSpend failed for tx %s", __func__,
-                                stakeTxIn.GetHash().GetHex()), REJECT_INVALID, "bad-txns-invalid-zhlm");
-            }
+            if(!isBlockFromFork)
+                for (CTxIn zHlmInput : zHLMInputs) {
+                        CoinSpend spend = TxInToZerocoinSpend(zHlmInput);
+                        if (!ContextualCheckZerocoinSpend(stakeTxIn, spend, pindex, 0))
+                            return state.DoS(100,error("%s: main chain ContextualCheckZerocoinSpend failed for tx %s", __func__,
+                                    stakeTxIn.GetHash().GetHex()), REJECT_INVALID, "bad-txns-invalid-zhlm");
+                }
+
         }
 
     }
