@@ -25,7 +25,7 @@
 #include "utilmoneystr.h"
 #include "zhlmchain.h"
 #ifdef ENABLE_WALLET
-#include "wallet.h"
+#include "wallet/wallet.h"
 #endif
 
 #include <stdint.h>

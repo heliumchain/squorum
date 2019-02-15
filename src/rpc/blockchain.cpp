@@ -16,8 +16,9 @@
 #include "utilmoneystr.h"
 #include "zhlm/accumulatormap.h"
 #include "zhlm/accumulators.h"
-#include "wallet.h"
+#include "wallet/wallet.h"
 #include "zhlmchain.h"
+
 #include <stdint.h>
 #include <fstream>
 #include <iostream>

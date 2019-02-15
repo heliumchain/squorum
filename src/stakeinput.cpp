@@ -7,7 +7,7 @@
 #include "zhlm/deterministicmint.h"
 #include "main.h"
 #include "stakeinput.h"
-#include "wallet.h"
+#include "wallet/wallet.h"
 
 CZHlmStake::CZHlmStake(const libzerocoin::CoinSpend& spend)
 {

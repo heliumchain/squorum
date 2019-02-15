@@ -14,7 +14,7 @@
 #include <boost/test/unit_test.hpp>
 #include <iostream>
 #include <zhlm/accumulators.h>
-#include "wallet.h"
+#include "wallet/wallet.h"
 #include "zhlm/zhlmwallet.h"
 #include "zhlmchain.h"
 
