@@ -2887,7 +2887,7 @@ UniValue spendzerocoin(const UniValue& params, bool fHelp)
     CAmount nAmount = AmountFromValue(params[0]);   // Spending amount
     bool fMintChange = params[1].get_bool();        // Mint change to zHLM
     bool fMinimizeChange = params[2].get_bool();    // Minimize change
-    std::string address_str = params.size() > 4 ? params[4].get_str() : "";
+    std::string address_str = params.size() > 3 ? params[3].get_str() : "";
 
     vector<CZerocoinMint> vMintsSelected;
 
@@ -3755,6 +3755,43 @@ UniValue spendrawzerocoin(const UniValue& params, bool fHelp)
     CAmount nAmount = mint.GetDenominationAsAmount();
 
     return DoZhlmSpend(nAmount, false, true, 42, vMintsSelected, address_str);
+}
+
+
+UniValue clearspendcache(const UniValue& params, bool fHelp)
+{
+    if(fHelp || params.size() != 0)
+        throw runtime_error(
+            "clearspendcache\n"
+            "\nClear the pre-computed zHLM spend cache, and database.\n" +
+            HelpRequiringPassphrase() + "\n"
+
+            "\nExamples\n" +
+            HelpExampleCli("clearspendcache", "") + HelpExampleRpc("clearspendcache", ""));
+
+    EnsureWalletIsUnlocked();
+
+    CzHLMTracker* zhlmTracker = pwalletMain->zhlmTracker.get();
+
+    {
+        int nTries = 0;
+        while (nTries < 100) {
+            TRY_LOCK(zhlmTracker->cs_spendcache, fLocked);
+            if (fLocked) {
+                if (zhlmTracker->ClearSpendCache()) {
+                    fClearSpendCache = true;
+                    CWalletDB walletdb("precomputes.dat", "cr+");
+                    walletdb.EraseAllPrecomputes();
+                    return "Successfully Cleared the Precompute Spend Cache and Database";
+                }
+            } else {
+                fGlobalUnlockSpendCache = true;
+                nTries++;
+                MilliSleep(100);
+            }
+        }
+    }
+    throw JSONRPCError(RPC_WALLET_ERROR, "Error: Spend cache not cleared!");
 }
 
 
