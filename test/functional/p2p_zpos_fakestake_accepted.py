@@ -1,14 +1,17 @@
 #!/usr/bin/env python3
-# -*- coding: utf-8 -*-
+# Copyright (c) 2019 The PIVX Core developers
+# Distributed under the MIT software license, see the accompanying
+# file COPYING or http://www.opensource.org/licenses/mit-license.php.
+
 '''
 Performs the same check as in Test_02 verifying that zPoS forked blocks that stake a zerocoin which is spent on mainchain on an higher block are still accepted.
 '''
 
 from test_framework.authproxy import JSONRPCException
-from base_test import Helium_FakeStakeTest
+from fake_stake.base_test import Helium_FakeStakeTest
 from time import sleep
 
-class Test_04(Helium_FakeStakeTest):
+class zPoSFakeStakeAccepted(Helium_FakeStakeTest):
 
 
     def set_test_params(self):
@@ -109,3 +112,6 @@ class Test_04(Helium_FakeStakeTest):
             raise AssertionError("TEST FAILED")
 
         self.log.info("%s PASSED" % self.__class__.__name__)
+
+if __name__ == '__main__':
+    zPoSFakeStakeAccepted().main()

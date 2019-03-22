@@ -1,14 +1,17 @@
 #!/usr/bin/env python3
-# -*- coding: utf-8 -*-
+# Copyright (c) 2019 The PIVX Core developers
+# Distributed under the MIT software license, see the accompanying
+# file COPYING or http://www.opensource.org/licenses/mit-license.php.
+
 '''
 Covers the scenario of a PoS block where the coinstake input prevout is already spent.
 '''
 
 from time import sleep
 
-from base_test import Helium_FakeStakeTest
+from fake_stake.base_test import Helium_FakeStakeTest
 
-class Test_01(Helium_FakeStakeTest):
+class PoSFakeStake(Helium_FakeStakeTest):
 
     def run_test(self):
         self.description = "Covers the scenario of a PoS block where the coinstake input prevout is already spent."
@@ -50,3 +53,6 @@ class Test_01(Helium_FakeStakeTest):
             raise AssertionError("TEST FAILED")
 
         self.log.info("%s PASSED" % self.__class__.__name__)
+
+if __name__ == '__main__':
+    PoSFakeStake().main()

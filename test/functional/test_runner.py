@@ -56,10 +56,16 @@ BASE_SCRIPTS= [
     # Scripts that are run by the travis build process.
     # Longest test should go first, to favor running tests in parallel
     'wallet_backup.py',
+    'p2p_pos_fakestake.py',
+    'p2p_pos_fakestake_accepted.py',
+    'p2p_zpos_fakestake.py',
+    'p2p_zpos_fakestake_accepted.py',
+    'zerocoin_wrapped_serials.py',
     # vv Tests less than 5m vv
     'feature_block.py',
     'rpc_fundrawtransaction.py',
     # vv Tests less than 2m vv
+    'p2p_pos_doublespend.py',
     'wallet_basic.py',
     'wallet_accounts.py',
     'wallet_dump.py',
@@ -451,7 +457,7 @@ def check_script_prefixes():
     # convention don't immediately cause the tests to fail.
     LEEWAY = 10
 
-    good_prefixes_re = re.compile("(example|feature|interface|mempool|mining|p2p|rpc|wallet)_")
+    good_prefixes_re = re.compile("(example|feature|interface|mempool|mining|p2p|rpc|wallet|zerocoin)_")
     bad_script_names = [script for script in ALL_SCRIPTS if good_prefixes_re.match(script) is None]
 
     if len(bad_script_names) > 0:
