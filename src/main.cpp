@@ -5927,16 +5927,6 @@ bool static ProcessMessage(CNode* pfrom, std::string strCommand, CDataStream& vR
             pfrom->cleanSubVer = SanitizeString(pfrom->strSubVer);
         }
 
-	// Banned versions moving forward - Chain switch at 0.14.7
-	if (pfrom->cleanSubVer == "/Helium Core:0.14.3/" ||
-            pfrom->cleanSubVer == "/Helium Core:0.14.4/" ||
-            pfrom->cleanSubVer == "/Helium Core:0.14.5/" ||
-            pfrom->cleanSubVer == "/Helium Core:0.14.6/") {
-            LOCK(cs_main);
-            Misbehaving(pfrom->GetId(), 100); // instantly ban them because they have bad block data
-            return false;
-        }
-
         if (!vRecv.empty())
             vRecv >> pfrom->nStartingHeight;
         if (!vRecv.empty())
@@ -6793,11 +6783,11 @@ bool static ProcessMessage(CNode* pfrom, std::string strCommand, CDataStream& vR
 //       it was the one which was commented out
 int ActiveProtocol()
 {
-    // SPORK_14 is used for 70913 (v3.1.0+)
+    // SPORK_14 is used for 71030 (v1.0+)
     if (IsSporkActive(SPORK_14_NEW_PROTOCOL_ENFORCEMENT))
             return MIN_PEER_PROTO_VERSION_AFTER_ENFORCEMENT;
 
-    // SPORK_15 was used for 70912 (v3.0.5+), commented out now.
+    // SPORK_15 was used for 71020 (v0.15+), commented out now.
     //if (IsSporkActive(SPORK_15_NEW_PROTOCOL_ENFORCEMENT_2))
     //        return MIN_PEER_PROTO_VERSION_AFTER_ENFORCEMENT;
 
