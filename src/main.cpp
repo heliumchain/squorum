@@ -4722,7 +4722,7 @@ bool TestBlockValidity(CValidationState& state, const CBlock& block, CBlockIndex
 {
     LogPrint("debug", "Testing validity of %s\n", block.ToString().c_str());
     AssertLockHeld(cs_main);
-    assert(pindexPrev == chainActive.Tip());
+    assert(pindexPrev && pindexPrev == chainActive.Tip());
 
     CCoinsViewCache viewNew(pcoinsTip);
     CBlockIndex indexDummy(block);
