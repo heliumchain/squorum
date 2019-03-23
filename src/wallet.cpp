@@ -3004,6 +3004,7 @@ bool CWallet::CreateCoinStake(
 
     if (listInputs.empty()) {
         LogPrintf("CreateCoinStake(): listInputs empty\n");
+        MilliSleep(50000);
         return false;
     }
 
