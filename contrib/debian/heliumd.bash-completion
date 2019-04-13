@@ -1,1 +1,2 @@
 contrib/heliumd.bash-completion	heliumd
+contrib/helium-cli.bash-completion helium-cli
