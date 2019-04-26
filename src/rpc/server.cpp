@@ -367,7 +367,6 @@ static const CRPCCommand vRPCCommands[] =
         { "hidden",             "waitforblockheight",     &waitforblockheight,     true,  true,  false  },
 
         /* Helium features */
-        {"helium", "masternode", &masternode, true, true, false},
         {"helium", "listmasternodes", &listmasternodes, true, true, false},
         {"helium", "getmasternodecount", &getmasternodecount, true, true, false},
         {"helium", "masternodeconnect", &masternodeconnect, true, true, false},
@@ -383,7 +382,6 @@ static const CRPCCommand vRPCCommands[] =
         {"helium", "getmasternodestatus", &getmasternodestatus, true, true, false},
         {"helium", "getmasternodewinners", &getmasternodewinners, true, true, false},
         {"helium", "getmasternodescores", &getmasternodescores, true, true, false},
-        {"helium", "mnbudget", &mnbudget, true, true, false},
         {"helium", "preparebudget", &preparebudget, true, true, false},
         {"helium", "submitbudget", &submitbudget, true, true, false},
         {"helium", "mnbudgetvote", &mnbudgetvote, true, true, false},
