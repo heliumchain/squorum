@@ -185,6 +185,7 @@ BITCOIN_CORE_H = \
   zhlm/zerocoin.h \
   zhlm/zhlmtracker.h \
   zhlm/zhlmwallet.h \
+  zhlm/zhlmmodule.h \
   genwit.h \
   concurrentqueue.h \
   lightzhlmthread.h \
@@ -281,6 +282,7 @@ libbitcoin_wallet_a_SOURCES = \
   zhlm/zhlmtracker.cpp \
   stakeinput.cpp \
   genwit.cpp \
+  zhlm/zhlmmodule.cpp \
   lightzhlmthread.cpp \
   $(BITCOIN_CORE_H)
 
