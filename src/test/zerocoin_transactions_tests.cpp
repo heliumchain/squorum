@@ -61,8 +61,6 @@ BOOST_AUTO_TEST_CASE(zerocoin_public_spend_test)
     ZerocoinParams *ZCParams = Params().Zerocoin_Params(false);
     (void)ZCParams;
 
-    ZHLMModule zhlmModule;
-
     PrivateCoin privCoin(ZCParams, libzerocoin::CoinDenomination::ZQ_ONE, true);
     const CPrivKey privKey = privCoin.getPrivKey();
 
@@ -95,17 +93,17 @@ BOOST_AUTO_TEST_CASE(zerocoin_public_spend_test)
     tx.vout[0].scriptPubKey = GetScriptForDestination(CBitcoinAddress("D9Ti4LEhF1n6dR2hGd2SyNADD51AVgva6q").Get());
 
     CTxIn in;
-    if (!zhlmModule.createInput(in, mint, tx.GetHash())){
+    if (!ZHLMModule::createInput(in, mint, tx.GetHash())){
         BOOST_CHECK_MESSAGE(false, "Failed to create zc input");
     }
 
     PublicCoinSpend publicSpend(ZCParams);
-    if (!zhlmModule.validateInput(in, out, tx, publicSpend)){
+    if (!ZHLMModule::validateInput(in, out, tx, publicSpend)){
         BOOST_CHECK_MESSAGE(false, "Failed to validate zc input");
     }
 
     PublicCoinSpend publicSpendTest(ZCParams);
-    BOOST_CHECK_MESSAGE(zhlmModule.parseCoinSpend(in, tx, out, publicSpendTest), "Failed to parse public spend");
+    BOOST_CHECK_MESSAGE(ZHLMModule::parseCoinSpend(in, tx, out, publicSpendTest), "Failed to parse public spend");
     libzerocoin::CoinSpend *spend = &publicSpendTest;
 
     BOOST_CHECK_MESSAGE(publicSpendTest.HasValidSignature(), "Failed to validate public spend signature");
