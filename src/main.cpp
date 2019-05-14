@@ -1031,20 +1031,17 @@ bool ContextualCheckZerocoinSpendNoSerialCheck(const CTransaction& tx, const Coi
         }
     }
 
-    //Reject serial's that are already in the blockchain
-    int nHeightTx = 0;
-    if (IsSerialInBlockchain(spend.getCoinSerialNumber(), nHeightTx))
-        return error("%s : zHLM spend with serial %s is already in block %d\n", __func__,
-                     spend.getCoinSerialNumber().GetHex(), nHeightTx);
-
-    /* NOTE: GJH Inappropriate for Helium
+    //Reject V1 old serials.
+    if (spend->getVersion() < libzerocoin::PrivateCoin::PUBKEY_VERSION) {
+        return error("%s : zHLM v1 serial spend not spendable\n", __func__,
+                     spend->getCoinSerialNumber().GetHex(), tx.GetHash().GetHex());
+    }
     //Reject serial's that are not in the acceptable value range
-    bool fUseV1Params = spend.getVersion() < libzerocoin::PrivateCoin::PUBKEY_VERSION;
-    if (pindex->nHeight > Params().Zerocoin_Block_EnforceSerialRange() &&
-        !spend.HasValidSerial(Params().Zerocoin_Params(fUseV1Params)))
-        return error("%s : zHLM spend with serial %s from tx %s is not in valid range\n", __func__,
-                     spend.getCoinSerialNumber().GetHex(), tx.GetHash().GetHex());
-    */
+    if (!spend->HasValidSerial(Params().Zerocoin_Params(false))) {
+        // Up until this block our chain was not checking serials correctly..
+            return error("%s : zHLM spend with serial %s from tx %s is not in valid range\n", __func__,
+                     spend->getCoinSerialNumber().GetHex(), tx.GetHash().GetHex());
+    }
 
 
     return true;
