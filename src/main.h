@@ -373,6 +373,9 @@ bool RecalculateHLMSupply(int nHeightStart);
 bool ReindexAccumulators(list<uint256>& listMissingCheckpoints, string& strError);
 
 
+// Public coin spend
+bool CheckPublicCoinSpendEnforced(int blockHeight, bool isPrivZerocoinSpend, bool isPublicSpend);
+
 /**
  * Check if transaction will be final in the next block to be created.
  *
