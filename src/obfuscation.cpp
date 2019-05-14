@@ -204,7 +204,7 @@ void CObfuscationPool::ProcessMessageObfuscation(CNode* pfrom, std::string& strC
             CValidationState state;
             CMutableTransaction tx;
 
-            for (const CTxOut o : out) {
+            for (const CTxOut &o : out) {
                 nValueOut += o.nValue;
                 tx.vout.push_back(o);
 
@@ -222,7 +222,7 @@ void CObfuscationPool::ProcessMessageObfuscation(CNode* pfrom, std::string& strC
                 }
             }
 
-            for (const CTxIn i : in) {
+            for (const CTxIn &i : in) {
                 tx.vin.push_back(i);
 
                 LogPrint("obfuscation", "dsi -- tx in %s\n", i.ToString());
@@ -318,7 +318,7 @@ void CObfuscationPool::ProcessMessageObfuscation(CNode* pfrom, std::string& strC
         bool success = false;
         int count = 0;
 
-        for (const CTxIn item : sigs) {
+        for (const CTxIn &item : sigs) {
             if (AddScriptSig(item)) success = true;
             LogPrint("obfuscation", " -- sigs count %d %d\n", (int)sigs.size(), count);
             count++;
@@ -693,8 +693,8 @@ void CObfuscationPool::ChargeFees()
 
     if (state == POOL_STATUS_SIGNING) {
         // who didn't sign?
-        for (const CObfuScationEntry v : entries) {
-            for (const CTxDSIn s : v.sev) {
+        for (const CObfuScationEntry &v : entries) {
+            for (const CTxDSIn &s : v.sev) {
                 if (!s.fHasSig) {
                     LogPrintf("CObfuscationPool::ChargeFees -- found uncooperative node (didn't sign). Found offence\n");
                     offences++;
@@ -746,8 +746,8 @@ void CObfuscationPool::ChargeFees()
 
     if (state == POOL_STATUS_SIGNING) {
         // who didn't sign?
-        for (const CObfuScationEntry v : entries) {
-            for (const CTxDSIn s : v.sev) {
+        for (const CObfuScationEntry &v : entries) {
+            for (const CTxDSIn &s : v.sev) {
                 if (!s.fHasSig && r > target) {
                     LogPrintf("CObfuscationPool::ChargeFees -- found uncooperative node (didn't sign). charging fees.\n");
 
@@ -961,7 +961,7 @@ bool CObfuscationPool::IsCollateralValid(const CTransaction& txCollateral)
     int64_t nValueOut = 0;
     bool missingTx = false;
 
-    for (const CTxOut o : txCollateral.vout) {
+    for (const CTxOut &o : txCollateral.vout) {
         nValueOut += o.nValue;
 
         if (!o.scriptPubKey.IsNormalPaymentScript()) {
@@ -970,7 +970,7 @@ bool CObfuscationPool::IsCollateralValid(const CTransaction& txCollateral)
         }
     }
 
-    for (const CTxIn i : txCollateral.vin) {
+    for (const CTxIn &i : txCollateral.vin) {
         CTransaction tx2;
         uint256 hash;
         if (GetTransaction(i.prevout.hash, tx2, hash, true)) {
@@ -1269,8 +1269,8 @@ bool CObfuscationPool::SignFinalTransaction(CTransaction& finalTransactionNew, C
     vector<CTxIn> sigs;
 
     //make sure my inputs/outputs are present, otherwise refuse to sign
-    for (const CObfuScationEntry e : entries) {
-        for (const CTxDSIn s : e.sev) {
+    for (const CObfuScationEntry &e : entries) {
+        for (const CTxDSIn &s : e.sev) {
             /* Sign my transaction and all outputs */
             int mine = -1;
             CScript prevPubKey = CScript();
@@ -1298,7 +1298,7 @@ bool CObfuscationPool::SignFinalTransaction(CTransaction& finalTransactionNew, C
                     }
                 }
 
-                for (const CTxOut o : e.vout)
+                for (const CTxOut &o : e.vout)
                     nValue2 += o.nValue;
 
                 int targetOuputs = e.vout.size();
@@ -1845,7 +1845,7 @@ bool CObfuscationPool::IsCompatibleWithEntries(std::vector<CTxOut>& vout)
 {
     if (GetDenominations(vout) == 0) return false;
 
-    for (const CObfuScationEntry v : entries) {
+    for (const CObfuScationEntry &v : entries) {
         LogPrintf(" IsCompatibleWithEntries %d %d\n", GetDenominations(vout), GetDenominations(v.vout));
         /*
         for (CTxOut o1 : vout)
