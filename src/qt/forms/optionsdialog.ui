@@ -458,16 +458,7 @@ https://www.transifex.com/helium-project/helium-project-translations</string>
        <item>
         <widget class="QWidget" name="verticalZhlmDisplayWidget" native="true">
          <layout class="QVBoxLayout" name="verticalZhlmDisplayLayout">
-          <property name="leftMargin">
-           <number>0</number>
-          </property>
-          <property name="topMargin">
-           <number>0</number>
-          </property>
-          <property name="rightMargin">
-           <number>0</number>
-          </property>
-          <property name="bottomMargin">
+          <property name="margin">
            <number>0</number>
           </property>
           <item>
