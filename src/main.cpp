@@ -1077,7 +1077,7 @@ bool CheckZerocoinSpend(const CTransaction& tx, bool fVerifySignature, CValidati
     for (const CTxIn& txin : tx.vin) {
 
         //only check txin that is a zcspend
-        bool isPublicSpend = txin.scriptSig.IsZerocoinPublicSpend();
+        bool isPublicSpend = txin.IsZerocoinPublicSpend();
         if (!txin.IsZerocoinSpend() && !isPublicSpend)
             continue;
 
@@ -1213,7 +1213,7 @@ bool CheckTransaction(const CTransaction& tx, bool fZerocoinActive, CValidationS
         //require that a zerocoinspend only has inputs that are zerocoins
         if (tx.HasZerocoinSpendInputs()) {
             for (const CTxIn& in : tx.vin) {
-                if (!in.IsZerocoinSpend() && !in.scriptSig.IsZerocoinPublicSpend())
+                if (!in.IsZerocoinSpend() && !in.IsZerocoinPublicSpend())
                     return state.DoS(100,
                                      error("CheckTransaction() : zerocoinspend contains inputs that are not zerocoins"));
             }
@@ -1386,7 +1386,7 @@ bool AcceptToMemoryPool(CTxMemPool& pool, CValidationState& state, const CTransa
             //Check for double spending of serial #'s
             for (const CTxIn& txIn : tx.vin) {
                 // Only allow for zc spends inputs
-                bool isPublicSpend = txIn.scriptSig.IsZerocoinPublicSpend();
+                bool isPublicSpend = txIn.IsZerocoinPublicSpend();
                 if (!txIn.IsZerocoinSpend() && !isPublicSpend) {
                     return state.Invalid(error("%s: ContextualCheckZerocoinSpend failed for tx %s, every input must be a zcspend or zcpublicspend", __func__,
                                         tx.GetHash().GetHex()), REJECT_INVALID, "bad-txns-invalid-zhlm");
@@ -2216,7 +2216,7 @@ void AddInvalidSpendsToMap(const CBlock& block)
 
         //Check all zerocoinspends for bad serials
         for (const CTxIn& in : tx.vin) {
-            bool isPublicSpend = in.scriptSig.IsZerocoinPublicSpend();
+            bool isPublicSpend = in.IsZerocoinPublicSpend();
             if (in.IsZerocoinSpend() || isPublicSpend) {
 
                 CoinSpend* spend;
@@ -2426,7 +2426,7 @@ bool DisconnectBlock(CBlock& block, CValidationState& state, CBlockIndex* pindex
             if (tx.HasZerocoinSpendInputs()) {
                 //erase all zerocoinspends in this transaction
                 for (const CTxIn &txin : tx.vin) {
-                    bool isPublicSpend = txin.scriptSig.IsZerocoinPublicSpend();
+                    bool isPublicSpend = txin.IsZerocoinPublicSpend();
                     if (txin.scriptSig.IsZerocoinSpend() || isPublicSpend) {
                         CBigNum serial;
                         if (isPublicSpend) {
@@ -2946,7 +2946,7 @@ bool ConnectBlock(const CBlock& block, CValidationState& state, CBlockIndex* pin
             //Check for double spending of serial #'s
             set<CBigNum> setSerials;
             for (const CTxIn& txIn : tx.vin) {
-                bool isPublicSpend = txIn.scriptSig.IsZerocoinPublicSpend();
+                bool isPublicSpend = txIn.IsZerocoinPublicSpend();
                 bool isPrivZerocoinSpend = txIn.IsZerocoinSpend();
                 if (!isPrivZerocoinSpend && !isPublicSpend)
                     continue;
@@ -4154,7 +4154,7 @@ bool CheckBlock(const CBlock& block, CValidationState& state, bool fCheckPOW, bo
         // double check that there are no double spent zHLM spends in this block
         if (tx.HasZerocoinSpendInputs()) {
             for (const CTxIn& txIn : tx.vin) {
-                bool isPublicSpend = txIn.scriptSig.IsZerocoinPublicSpend();
+                bool isPublicSpend = txIn.IsZerocoinPublicSpend();
                 if (txIn.IsZerocoinSpend() || isPublicSpend) {
                     libzerocoin::CoinSpend spend;
                     if (isPublicSpend) {
@@ -4512,7 +4512,7 @@ bool AcceptBlock(CBlock& block, CValidationState& state, CBlockIndex** ppindex, 
         for (const CTransaction& tx : block.vtx) {
             for (const CTxIn& in: tx.vin) {
                 if(nHeight >= Params().Zerocoin_StartHeight()) {
-                    bool isPublicSpend = in.scriptSig.IsZerocoinPublicSpend();
+                    bool isPublicSpend = in.IsZerocoinPublicSpend();
                     bool isPrivZerocoinSpend = in.IsZerocoinSpend();
                     if (isPrivZerocoinSpend || isPublicSpend) {
 
