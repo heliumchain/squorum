@@ -460,7 +460,7 @@ bool CzHLMTracker::UpdateStatusInternal(const std::set<uint256>& setMempool, CMi
     return false;
 }
 
-std::set<CMintMeta> CzHLMTracker::ListMints(bool fUnusedOnly, bool fMatureOnly, bool fUpdateStatus, bool fWrongSeed)
+std::set<CMintMeta> CzHLMTracker::ListMints(bool fUnusedOnly, bool fMatureOnly, bool fUpdateStatus, bool fWrongSeed, bool fExcludeV1)
 {
     CWalletDB walletdb(strWalletFile);
     if (fUpdateStatus) {
@@ -473,6 +473,8 @@ std::set<CMintMeta> CzHLMTracker::ListMints(bool fUnusedOnly, bool fMatureOnly, 
 
         CzHLMWallet* zHLMWallet = new CzHLMWallet(strWalletFile);
         for (auto& dMint : listDeterministicDB) {
+            if (fExcludeV1 && dMint.GetVersion() < 2)
+                continue;
             Add(dMint, false, false, zHLMWallet);
         }
         delete zHLMWallet;

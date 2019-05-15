@@ -4905,7 +4905,6 @@ bool CWallet::MintsToInputVectorPublicSpend(std::map<CBigNum, CZerocoinMint>& ma
 
 bool CWallet::CreateZerocoinSpendTransaction(CAmount nValue, CWalletTx& wtxNew, CReserveKey& reserveKey, CZerocoinSpendReceipt& receipt, vector<CZerocoinMint>& vSelectedMints, vector<CDeterministicMint>& vNewMints, bool fMintChange,  bool fMinimizeChange, CBitcoinAddress* address)
 {
-
     // Check available funds
     int nStatus = ZHLM_TRX_FUNDS_PROBLEMS;
     if (nValue > GetZerocoinBalance(true)) {
@@ -4931,7 +4930,7 @@ bool CWallet::CreateZerocoinSpendTransaction(CAmount nValue, CWalletTx& wtxNew, 
     vector<CMintMeta> vMintsToFetch;
     if (vSelectedMints.empty()) {
         //  All of the zHLM used in the public coin spend are mature by default (everything is public now.. no need to wait for any accumulation)
-        setMints = zhlmTracker->ListMints(true, false, true); // need to find mints to spend
+        setMints = zhlmTracker->ListMints(true, false, true, true); // need to find mints to spend
         if(setMints.empty()) {
             receipt.SetStatus(_("Failed to find Zerocoins in wallet.dat"), nStatus);
             return false;
