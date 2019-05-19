@@ -12,13 +12,14 @@
 #include "wallet/walletdb.h"
 #include "txdb.h"
 #include "zhlm/zhlmmodule.h"
+#include "test/test_helium.h"
 #include <boost/test/unit_test.hpp>
 #include <iostream>
 
 using namespace libzerocoin;
 
 
-BOOST_AUTO_TEST_SUITE(zerocoin_transactions_tests)
+BOOST_FIXTURE_TEST_SUITE(zerocoin_transactions_tests, TestingSetup)
 
 static CWallet cWallet("unlocked.dat");
 
