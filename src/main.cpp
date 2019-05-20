@@ -981,10 +981,10 @@ bool ContextualCheckZerocoinMint(const CTransaction& tx, const PublicCoin& coin,
     return true;
 }
 
-bool CheckPublicCoinSpendEnforced(int blockHeight, bool isPrivZerocoinSpend, bool isPublicSpend) {
+bool CheckPublicCoinSpendEnforced(int blockHeight, bool isPublicSpend) {
     if (blockHeight >= Params().Zerocoin_Block_Public_Spend_Enabled()) {
         // reject old coin spend
-        if (isPrivZerocoinSpend) {
+        if (!isPublicSpend) {
             return error("%s: failed to add block with older zc spend version", __func__);
         }
 
@@ -1031,11 +1031,14 @@ bool ContextualCheckZerocoinSpendNoSerialCheck(const CTransaction& tx, const Coi
         }
     }
 
-    //Reject V1 old serials.
-    if (spend->getVersion() < libzerocoin::PrivateCoin::PUBKEY_VERSION) {
-        return error("%s : zHLM v1 serial spend not spendable\n", __func__,
-                     spend->getCoinSerialNumber().GetHex(), tx.GetHash().GetHex());
+    if (pindex->nHeight >= Params().Zerocoin_Block_Public_Spend_Enabled()) {
+        //Reject V1 old serials.
+        if (spend->getVersion() < libzerocoin::PrivateCoin::PUBKEY_VERSION) {
+            return error("%s : zHLM v1 serial spend not spendable, serial %s, tx %s\n", __func__,
+                         spend->getCoinSerialNumber().GetHex(), tx.GetHash().GetHex());
+        }
     }
+
     //Reject serial's that are not in the acceptable value range
     if (!spend->HasValidSerial(Params().Zerocoin_Params(false))) {
         // Up until this block our chain was not checking serials correctly..
@@ -1401,7 +1404,7 @@ bool AcceptToMemoryPool(CTxMemPool& pool, CValidationState& state, const CTransa
                 }
 
                 // Check enforcement
-                if (!CheckPublicCoinSpendEnforced(chainActive.Height(), isPrivZerocoinSpend, isPublicSpend)){
+                if (!CheckPublicCoinSpendEnforced(chainActive.Height(), isPublicSpend)){
                     return state.Invalid(error("%s: AcceptToMemoryPool failed for tx %s", __func__,
                                                tx.GetHash().GetHex()), REJECT_INVALID, "bad-txns-invalid-zhlm");
                 }
@@ -2966,7 +2969,7 @@ bool ConnectBlock(const CBlock& block, CValidationState& state, CBlockIndex* pin
                     continue;
 
                 // Check enforcement
-                if (!CheckPublicCoinSpendEnforced(pindex->nHeight, isPrivZerocoinSpend, isPublicSpend)){
+                if (!CheckPublicCoinSpendEnforced(pindex->nHeight, isPublicSpend)){
                     return false;
                 }
 
@@ -4531,7 +4534,7 @@ bool AcceptBlock(CBlock& block, CValidationState& state, CBlockIndex** ppindex, 
                     if (isPrivZerocoinSpend || isPublicSpend) {
 
                         // Check enforcement
-                        if (!CheckPublicCoinSpendEnforced(pindex->nHeight, isPrivZerocoinSpend, isPublicSpend)){
+                        if (!CheckPublicCoinSpendEnforced(pindex->nHeight, isPublicSpend)){
                             return false;
                         }
 
