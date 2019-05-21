@@ -2765,8 +2765,10 @@ UniValue mintzerocoin(const UniValue& params, bool fHelp)
             "\nAs a json rpc call\n" +
             HelpExampleRpc("mintzerocoin", "13, \"[{\\\"txid\\\":\\\"a08e6907dbbd3d809776dbfc5d82e371b764ed838b5655e72f463568df1aadf0\\\",\\\"vout\\\":1}]\""));
 
-    throw JSONRPCError(RPC_WALLET_ERROR, "zHLM minting is DISABLED");
-    /*
+
+    if (Params().NetworkID() != CBaseChainParams::REGTEST)
+        throw JSONRPCError(RPC_WALLET_ERROR, "zHLM minting is DISABLED");
+
     LOCK2(cs_main, pwalletMain->cs_wallet);
 
     if (params.size() == 1)
@@ -2835,7 +2837,6 @@ UniValue mintzerocoin(const UniValue& params, bool fHelp)
     }
 
     return arrMints;
-    */
 }
 
 UniValue spendzerocoin(const UniValue& params, bool fHelp)
@@ -2890,7 +2891,7 @@ UniValue spendzerocoin(const UniValue& params, bool fHelp)
 
     CAmount nAmount = AmountFromValue(params[0]);   // Spending amount
     bool fMintChange = params[1].get_bool();        // Mint change to zHLM
-    if (fMintChange)
+    if (fMintChange && Params().NetworkID() != CBaseChainParams::REGTEST)
         throw JSONRPCError(RPC_WALLET_ERROR, "zHLM minting is DISABLED, cannot mint change");
     bool fMinimizeChange = params[2].get_bool();    // Minimize change
     std::string address_str = params.size() > 3 ? params[3].get_str() : "";
@@ -3003,7 +3004,7 @@ UniValue spendzerocoinmints(const UniValue& params, bool fHelp)
 extern UniValue DoZhlmSpend(const CAmount nAmount, bool fMintChange, bool fMinimizeChange, vector<CZerocoinMint>& vMintsSelected, std::string address_str, bool ispublicspend)
 {
     // zerocoin MINT is disabled. fMintChange should be false here. Double check
-    if (fMintChange)
+    if (fMintChange && Params().NetworkID() != CBaseChainParams::REGTEST)
         throw JSONRPCError(RPC_WALLET_ERROR, "zHLM minting is DISABLED, cannot mint change");
 
     int64_t nTimeStart = GetTimeMillis();
