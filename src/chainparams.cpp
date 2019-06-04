@@ -313,7 +313,7 @@ public:
         nRejectOldSporkKey = 1537966800; // (PIVX: 1527811200) //!> Fully reject old spork key after (GMT): Wednesday, September 26,2018 12:00 PM
 
         // Public coin spend enforcement
-        nPublicZCSpends = 1818300;
+        nPublicZCSpends = 1106100;
 
         //! Modify the testnet genesis block so the timestamp is valid for a later start.
         genesis.nTime = 1535103494;
