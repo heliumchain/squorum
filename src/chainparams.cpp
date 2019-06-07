@@ -158,7 +158,7 @@ public:
         nRejectOldSporkKey = 1537966800; // (PIVX: 1527811200) //!> Fully reject old spork key after (GMT): Wednesday, September 26,2018 12:00 PM
 
         // Public coin spend enforcement
-        nPublicZCSpends = 2000000;
+        nPublicZCSpends = 1880000;
 
         const char* pszTimestamp = "Bitcoin Block #540723:  000000000000000000200b9c401b3022de17cd305ba6ef9ce5bade07f9f5ebe5";
         CMutableTransaction txNew;
