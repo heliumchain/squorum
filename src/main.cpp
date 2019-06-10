@@ -4896,7 +4896,11 @@ bool TestBlockValidity(CValidationState& state, const CBlock& block, CBlockIndex
 {
     LogPrint("debug", "Testing validity of %s\n", block.ToString().c_str());
     AssertLockHeld(cs_main);
-    assert(pindexPrev && pindexPrev == chainActive.Tip());
+    assert(pindexPrev);
+    if (pindexPrev != chainActive.Tip()) {
+        LogPrintf("TestBlockValidity(): No longer working on chain tip\n");
+        return false;
+    }
 
     CCoinsViewCache viewNew(pcoinsTip);
     CBlockIndex indexDummy(block);
