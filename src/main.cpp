@@ -4229,8 +4229,17 @@ bool CheckWork(const CBlock block, CBlockIndex* const pindexPrev)
         return true;
     }
 
-    if (block.nBits != nBitsRequired)
+    if (block.nBits != nBitsRequired) {
+        // Helium Specific reference to the block with the wrong threshold was used.
+        static const int64_t HeliumBadBlockTime = 1471401614;
+        static const unsigned int HeliumBadBlocknBits = 0x1c056dac;
+        if ((block.nTime == HeliumBadBlockTime) && (block.nBits == HeliumBadBlocknBits)) {
+            // accept Helium block minted with incorrect proof of work threshold
+            return true;
+        }
+
         return error("%s : incorrect proof of work at %d", __func__, pindexPrev->nHeight + 1);
+    }
 
     return true;
 }
