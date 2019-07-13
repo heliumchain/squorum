@@ -373,7 +373,7 @@ bool ValidOutPoint(const COutPoint out, int nHeight);
 void RecalculateZHLMSpent();
 void RecalculateZHLMMinted();
 bool RecalculateHLMSupply(int nHeightStart);
-bool ReindexAccumulators(list<uint256>& listMissingCheckpoints, string& strError);
+bool ReindexAccumulators(std::list<uint256>& listMissingCheckpoints, std::string& strError);
 
 
 // Public coin spend

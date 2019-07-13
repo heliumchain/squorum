@@ -9,8 +9,6 @@
 #include "main.h"
 #include "walletmodel.h"
 
-using namespace std;
-using namespace libzerocoin;
 
 std::set<std::string> ZHlmControlDialog::setSelectedMints;
 std::set<CMintMeta> ZHlmControlDialog::setMints;
@@ -60,7 +58,7 @@ void ZHlmControlDialog::updateList()
 
     // add a top level item for each denomination
     QFlags<Qt::ItemFlag> flgTristate = Qt::ItemIsEnabled | Qt::ItemIsUserCheckable | Qt::ItemIsTristate;
-    map<libzerocoin::CoinDenomination, int> mapDenomPosition;
+    std::map<libzerocoin::CoinDenomination, int> mapDenomPosition;
     for (auto denom : libzerocoin::zerocoinDenomList) {
         CZHlmControlWidgetItem* itemDenom(new CZHlmControlWidgetItem);
         ui->treeWidget->addTopLevelItem(itemDenom);
@@ -138,7 +136,7 @@ void ZHlmControlDialog::updateList()
             if (setSelectedMints.count(strPubCoinHash))
                 setSelectedMints.erase(strPubCoinHash);
 
-            string strReason = "";
+            std::string strReason = "";
             if(nConfirmations < Params().Zerocoin_MintRequiredConfirmations())
                 strReason = strprintf("Needs %d more confirmations", Params().Zerocoin_MintRequiredConfirmations() - nConfirmations);
             else if (model->getEncryptionStatus() == WalletModel::EncryptionStatus::Locked)
