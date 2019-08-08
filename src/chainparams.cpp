@@ -141,6 +141,8 @@ public:
         /** Height or Time Based Activations **/
         //nLastPOWBlock = 20160; // 14 days @ 1440 per day (PIVX: 259200, Phore 200)
         nLastPOWBlock = 400; // Short PoW phase before transition to PoS
+        nHeliumBadBlockTime = 1536703158; // Skip nBit validation of Block 401 per PR #915
+        nHeliumBadBlocknBits = 0x1d5480f7; // Skip nBit validation of Block 401 per PR #915
         //if the lowest block height (vSortedByTimestamp[0]) is >= switch height, use new modifier calc
         // nModifierUpdateBlock = 0; // (PIVX: 615800)
         nZerocoinStartHeight = 999999999; // (PIVX: 863787, Phore 90000)

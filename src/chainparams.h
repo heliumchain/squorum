@@ -122,6 +122,8 @@ public:
     /** Height or Time Based Activations **/
     // int ModifierUpgradeBlock() const { return nModifierUpdateBlock; }
     int LAST_POW_BLOCK() const { return nLastPOWBlock; }
+    int HeliumBadBlockTime() const { return nHeliumBadBlockTime; }
+    int HeliumBadBlocknBits() const { return nHeliumBadBlocknBits; }
     int Zerocoin_StartHeight() const { return nZerocoinStartHeight; }
     // int Zerocoin_Block_EnforceSerialRange() const { return nBlockEnforceSerialRange; }
     int Zerocoin_Block_RecalculateAccumulators() const { return nBlockRecalculateAccumulators; }
@@ -151,6 +153,8 @@ protected:
     int64_t nTargetTimespan;
     int64_t nTargetSpacing;
     int nLastPOWBlock;
+    int64_t nHeliumBadBlockTime;
+    unsigned int nHeliumBadBlocknBits;
     int nMasternodeCountDrift;
     int nMaturity;
     int nModifierUpdateBlock;
