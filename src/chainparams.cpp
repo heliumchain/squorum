@@ -132,8 +132,8 @@ public:
         nRejectBlockOutdatedMajority = 10260; // 95%
         nToCheckBlockUpgradeMajority = 10800; // Approximate expected amount of blocks in 7 days (1440*7.5)
         nMinerThreads = 0;
-        nTargetTimespan = 1 * 60; // Helium: 1 minute
-        nTargetSpacing = 1 * 60;  // Helium: 1 minute
+        nTargetTimespan = 40 * 60;      // 40 minutes
+        nTargetSpacing = 1 * 60;        // 1 minute
         nMaturity = 100;
         nStakeMinAge = 60 * 60;   // Helium: 1 hour
         nMasternodeCountDrift = 20;
