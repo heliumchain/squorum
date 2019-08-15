@@ -4233,7 +4233,7 @@ bool CheckWork(const CBlock block, CBlockIndex* const pindexPrev)
 
     if (block.nBits != nBitsRequired) {
         // Helium Specific reference to the block with the wrong threshold was used.
-        if ((block.nTime == Params().HeliumBadBlockTime()) && (block.nBits == Params().HeliumBadBlocknBits())) {
+        if ((block.nTime == (uint32_t) Params().HeliumBadBlockTime()) && (block.nBits == (uint32_t) Params().HeliumBadBlocknBits())) {
             // accept Helium block minted with incorrect proof of work threshold
             return true;
         }
