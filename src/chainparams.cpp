@@ -107,6 +107,17 @@ libzerocoin::ZerocoinParams* CChainParams::Zerocoin_Params(bool useModulusV1) co
     return &ZCParamsDec;
 }
 
+bool CChainParams::HasStakeMinAgeOrDepth(const int contextHeight, const uint32_t contextTime,
+        const int utxoFromBlockHeight, const uint32_t utxoFromBlockTime) const
+{
+    // before stake modifier V2, the age required was 60 * 60 (1 hour) / not required on regtest
+    if (!IsStakeModifierV2(contextHeight))
+        return (NetworkID() == CBaseChainParams::REGTEST || (utxoFromBlockTime + 3600 <= contextTime));
+
+    // after stake modifier V2, we require the utxo to be nStakeMinDepth deep in the chain
+    return (contextHeight - utxoFromBlockHeight >= nStakeMinDepth);
+}
+
 class CMainParams : public CChainParams
 {
 public:
@@ -135,12 +146,9 @@ public:
         nTargetTimespan = 40 * 60;      // 40 minutes
         nTargetSpacing = 1 * 60;        // 1 minute
         nMaturity = 100;
-        nStakeMinAge = 60 * 60;   // Helium: 1 hour
+        nStakeMinDepth = 600;
         nMasternodeCountDrift = 20;
         nMaxMoneyOut = 21000000 * COIN;
-
-        nMaturityV2Modifier = 600;      // 10hs
-        nStakeMinAgeV2Modifier = 36000; // 10hs
 
         /** Height or Time Based Activations **/
         //nLastPOWBlock = 20160; // 14 days @ 1440 per day (PIVX: 259200, Phore 200)
@@ -273,6 +281,7 @@ public:
     {
         return data;
     }
+
 };
 static CMainParams mainParams;
 
@@ -305,11 +314,6 @@ public:
         nMasternodeCountDrift = 2;
         // nModifierUpdateBlock = 0; //approx Mon, 17 Apr 2017 04:00:00 GMT
         nMaxMoneyOut = 21000000 * COIN;
-
-        nMaturityV2Modifier = 300;      // 5hs
-        nStakeMinAgeV2Modifier = 18000; // 5hs
-
-
         nZerocoinStartHeight = 999999999;
         nZerocoinStartTime = 1530801782;
         // nBlockEnforceSerialRange = 0; //Enforce serial range starting this block
@@ -435,7 +439,7 @@ public:
         bnProofOfWorkLimit = ~uint256(0) >> 1;
         nLastPOWBlock = 250;
         nMaturity = 100;
-        nStakeMinAge = 0;
+        nStakeMinDepth = 0;
         nMasternodeCountDrift = 4;
 //        nModifierUpdateBlock = 0; //approx Mon, 17 Apr 2017 04:00:00 GMT
         nMaxMoneyOut = 43199500 * COIN;
