@@ -170,7 +170,7 @@ public:
         nBlockZerocoinV2 = 999999999; // (PIVX: 1153160) //!> The block that zerocoin v2 becomes active - roughly Tuesday, May 8, 2018 4:00:00 AM GMT
         nEnforceNewSporkKey = 1537963200; // (PIVX: 1525158000) //!> Sporks signed after (GMT): Wednesday, September 26,2018 12:00 PM must use the new spork key
         nRejectOldSporkKey = 1537966800; // (PIVX: 1527811200) //!> Fully reject old spork key after (GMT): Wednesday, September 26,2018 12:00 PM
-        nBlockStakeModifierlV2 = 1964000;
+        nBlockStakeModifierlV2 = 1967000;
         // Public coin spend enforcement
         nPublicZCSpends = 1880000;
 
