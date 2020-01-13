@@ -1611,7 +1611,7 @@
               <string>S&amp;end</string>
              </property>
              <property name="icon">
-              <iconset resource="../bitcoin.qrc">
+              <iconset resource="../helium.qrc">
                <normaloff>:/icons/send</normaloff>:/icons/send</iconset>
              </property>
              <property name="autoDefault">
@@ -1637,7 +1637,7 @@
               <string>Clear &amp;All</string>
              </property>
              <property name="icon">
-              <iconset resource="../bitcoin.qrc">
+              <iconset resource="../helium.qrc">
                <normaloff>:/icons/remove</normaloff>:/icons/remove</iconset>
              </property>
              <property name="autoDefault">
@@ -1654,7 +1654,7 @@
               <string>Add &amp;Recipient</string>
              </property>
              <property name="icon">
-              <iconset resource="../bitcoin.qrc">
+              <iconset resource="../helium.qrc">
                <normaloff>:/icons/add</normaloff>:/icons/add</iconset>
              </property>
              <property name="autoDefault">
@@ -1681,7 +1681,7 @@
               <number>3</number>
              </property>
              <item>
-              <widget class="QCheckBox" name="checkzPIV">
+              <widget class="QCheckBox" name="checkzHLM">
                <property name="enabled">
                 <bool>false</bool>
                </property>
@@ -1758,7 +1758,7 @@
   </customwidget>
  </customwidgets>
  <resources>
-  <include location="../bitcoin.qrc"/>
+  <include location="../helium.qrc"/>
  </resources>
  <connections/>
  <buttongroups>

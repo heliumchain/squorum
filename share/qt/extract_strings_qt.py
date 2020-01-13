@@ -10,7 +10,7 @@ import operator
 import os
 import sys
 
-OUT_CPP="qt/bitcoinstrings.cpp"
+OUT_CPP="qt/heliumstrings.cpp"
 EMPTY=['""']
 
 def parse_po(text):

@@ -77,7 +77,7 @@ AskPassphraseDialog::AskPassphraseDialog(Mode mode, QWidget* parent, WalletModel
     }
 
     // Set checkbox "For anonymization, automint, and staking only" depending on from where we were called
-    if (context == Context::Unlock_Menu || context == Context::Mint_zPIV || context == Context::BIP_38) {
+    if (context == Context::Unlock_Menu || context == Context::Mint_zHLM || context == Context::BIP_38) {
         ui->anonymizationCheckBox->setChecked(true);
     }
     else {
@@ -85,7 +85,7 @@ AskPassphraseDialog::AskPassphraseDialog(Mode mode, QWidget* parent, WalletModel
     }
 
     // It doesn't make sense to show the checkbox for sending HLM because you wouldn't check it anyway.
-    if (context == Context::Send_PIV || context == Context::Send_zPIV) {
+    if (context == Context::Send_HLM || context == Context::Send_zHLM) {
         ui->anonymizationCheckBox->hide();
     }
 

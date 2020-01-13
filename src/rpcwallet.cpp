@@ -19,7 +19,7 @@
 #include "utilmoneystr.h"
 #include "wallet.h"
 #include "walletdb.h"
-#include "zpivchain.h"
+#include "zhlmchain.h"
 
 #include <stdint.h>
 
@@ -616,7 +616,7 @@ UniValue getreceivedbyaccount(const UniValue& params, bool fHelp)
             "2. minconf          (numeric, optional, default=1) Only include transactions confirmed at least this many times.\n"
 
             "\nResult:\n"
-            "amount              (numeric) The total amount in PIV received for this account.\n"
+            "amount              (numeric) The total amount in HLM received for this account.\n"
 
             "\nExamples:\n"
             "\nAmount received by the default account with at least 1 confirmation\n" +
@@ -705,7 +705,7 @@ UniValue getbalance(const UniValue& params, bool fHelp)
             "3. includeWatchonly (bool, optional, default=false) Also include balance in watchonly addresses (see 'importaddress')\n"
 
             "\nResult:\n"
-            "amount              (numeric) The total amount in PIV received for this account.\n"
+            "amount              (numeric) The total amount in HLM received for this account.\n"
 
             "\nExamples:\n"
             "\nThe total amount in the server across all accounts\n" +
@@ -795,9 +795,9 @@ UniValue movecmd(const UniValue& params, bool fHelp)
             "true|false           (boolean) true if successfull.\n"
 
             "\nExamples:\n"
-            "\nMove 0.01 PIV from the default account to the account named tabby\n" +
+            "\nMove 0.01 HLM from the default account to the account named tabby\n" +
             HelpExampleCli("move", "\"\" \"tabby\" 0.01") +
-            "\nMove 0.01 PIV from timotei to akiko with a comment and funds have 6 confirmations\n" +
+            "\nMove 0.01 HLM from timotei to akiko with a comment and funds have 6 confirmations\n" +
             HelpExampleCli("move", "\"timotei\" \"akiko\" 0.01 6 \"happy birthday!\"") +
             "\nAs a json rpc call\n" +
             HelpExampleRpc("move", "\"timotei\", \"akiko\", 0.01, 6, \"happy birthday!\""));
@@ -871,7 +871,7 @@ UniValue sendfrom(const UniValue& params, bool fHelp)
             "\"transactionid\"        (string) The transaction id.\n"
 
             "\nExamples:\n"
-            "\nSend 0.01 PIV from the default account to the address, must have at least 1 confirmation\n" +
+            "\nSend 0.01 HLM from the default account to the address, must have at least 1 confirmation\n" +
             HelpExampleCli("sendfrom", "\"\" \"SMJRSsuU9zfyrvxVaAEFQqK4MxZg6vgeS6\" 0.01") +
             "\nSend 0.01 from the tabby account to the given address, funds must have at least 6 confirmations\n" +
             HelpExampleCli("sendfrom", "\"tabby\" \"SMJRSsuU9zfyrvxVaAEFQqK4MxZg6vgeS6\" 0.01 6 \"donation\" \"seans outpost\"") +
@@ -1007,9 +1007,9 @@ UniValue addmultisigaddress(const UniValue& params, bool fHelp)
 
             "\nArguments:\n"
             "1. nrequired        (numeric, required) The number of required signatures out of the n keys or addresses.\n"
-            "2. \"keysobject\"   (string, required) A json array of pivx addresses or hex-encoded public keys\n"
+            "2. \"keysobject\"   (string, required) A json array of helium addresses or hex-encoded public keys\n"
             "     [\n"
-            "       \"address\"  (string) pivx address or hex-encoded public key\n"
+            "       \"address\"  (string) helium address or hex-encoded public key\n"
             "       ...,\n"
             "     ]\n"
             "3. \"account\"      (string, optional) An account to assign the addresses to.\n"
@@ -1187,7 +1187,7 @@ UniValue listreceivedbyaddress(const UniValue& params, bool fHelp)
             "    \"involvesWatchonly\" : \"true\",    (bool) Only returned if imported addresses were involved in transaction\n"
             "    \"address\" : \"receivingaddress\",  (string) The receiving address\n"
             "    \"account\" : \"accountname\",       (string) The account of the receiving address. The default account is \"\".\n"
-            "    \"amount\" : x.xxx,                  (numeric) The total amount in PIV received by the address\n"
+            "    \"amount\" : x.xxx,                  (numeric) The total amount in HLM received by the address\n"
             "    \"confirmations\" : n                (numeric) The number of confirmations of the most recent transaction included\n"
             "    \"bcconfirmations\" : n              (numeric) The number of blockchain confirmations of the most recent transaction included\n"
             "  }\n"
@@ -1345,11 +1345,11 @@ UniValue listtransactions(const UniValue& params, bool fHelp)
             "                                                transaction between accounts, and not associated with an address,\n"
             "                                                transaction id or block. 'send' and 'receive' transactions are \n"
             "                                                associated with an address, transaction id and block details\n"
-            "    \"amount\": x.xxx,          (numeric) The amount in PIV. This is negative for the 'send' category, and for the\n"
+            "    \"amount\": x.xxx,          (numeric) The amount in HLM. This is negative for the 'send' category, and for the\n"
             "                                         'move' category for moves outbound. It is positive for the 'receive' category,\n"
             "                                         and for the 'move' category for inbound funds.\n"
             "    \"vout\" : n,               (numeric) the vout value\n"
-            "    \"fee\": x.xxx,             (numeric) The amount of the fee in PIV. This is negative and only available for the \n"
+            "    \"fee\": x.xxx,             (numeric) The amount of the fee in HLM. This is negative and only available for the \n"
             "                                         'send' category of transactions.\n"
             "    \"confirmations\": n,       (numeric) The number of confirmations for the transaction. Available for 'send' and \n"
             "                                         'receive' category of transactions.\n"
@@ -1536,10 +1536,10 @@ UniValue listsinceblock(const UniValue& params, bool fHelp)
             "    \"account\":\"accountname\",       (string) The account name associated with the transaction. Will be \"\" for the default account.\n"
             "    \"address\":\"address\",    (string) The address of the transaction. Not present for move transactions (category = move).\n"
             "    \"category\":\"send|receive\",     (string) The transaction category. 'send' has negative amounts, 'receive' has positive amounts.\n"
-            "    \"amount\": x.xxx,          (numeric) The amount in PIV. This is negative for the 'send' category, and for the 'move' category for moves \n"
+            "    \"amount\": x.xxx,          (numeric) The amount in HLM. This is negative for the 'send' category, and for the 'move' category for moves \n"
             "                                          outbound. It is positive for the 'receive' category, and for the 'move' category for inbound funds.\n"
             "    \"vout\" : n,               (numeric) the vout value\n"
-            "    \"fee\": x.xxx,             (numeric) The amount of the fee in PIV. This is negative and only available for the 'send' category of transactions.\n"
+            "    \"fee\": x.xxx,             (numeric) The amount of the fee in HLM. This is negative and only available for the 'send' category of transactions.\n"
             "    \"confirmations\": n,       (numeric) The number of confirmations for the transaction. Available for 'send' and 'receive' category of transactions.\n"
             "    \"bcconfirmations\" : n,    (numeric) The number of blockchain confirmations for the transaction. Available for 'send' and 'receive' category of transactions.\n"
             "    \"blockhash\": \"hashvalue\",     (string) The block hash containing the transaction. Available for 'send' and 'receive' category of transactions.\n"
@@ -1619,7 +1619,7 @@ UniValue gettransaction(const UniValue& params, bool fHelp)
 
             "\nResult:\n"
             "{\n"
-            "  \"amount\" : x.xxx,        (numeric) The transaction amount in PIV\n"
+            "  \"amount\" : x.xxx,        (numeric) The transaction amount in HLM\n"
             "  \"confirmations\" : n,     (numeric) The number of confirmations\n"
             "  \"bcconfirmations\" : n,   (numeric) The number of blockchain confirmations\n"
             "  \"blockhash\" : \"hash\",  (string) The block hash\n"
@@ -1633,7 +1633,7 @@ UniValue gettransaction(const UniValue& params, bool fHelp)
             "      \"account\" : \"accountname\",  (string) The account name involved in the transaction, can be \"\" for the default account.\n"
             "      \"address\" : \"address\",   (string) The address involved in the transaction\n"
             "      \"category\" : \"send|receive\",    (string) The category, either 'send' or 'receive'\n"
-            "      \"amount\" : x.xxx                  (numeric) The amount in PIV\n"
+            "      \"amount\" : x.xxx                  (numeric) The amount in HLM\n"
             "      \"vout\" : n,                       (numeric) the vout value\n"
             "    }\n"
             "    ,...\n"
@@ -2568,7 +2568,7 @@ UniValue listmintedzerocoins(const UniValue& params, bool fHelp)
     EnsureWalletIsUnlocked(true);
 
     CWalletDB walletdb(pwalletMain->strWalletFile);
-    set<CMintMeta> setMints = pwalletMain->zpivTracker->ListMints(true, false, true);
+    set<CMintMeta> setMints = pwalletMain->zhlmTracker->ListMints(true, false, true);
 
     UniValue jsonList(UniValue::VARR);
     for (const CMintMeta& meta : setMints)
@@ -2603,7 +2603,7 @@ UniValue listzerocoinamounts(const UniValue& params, bool fHelp)
     EnsureWalletIsUnlocked(true);
 
     CWalletDB walletdb(pwalletMain->strWalletFile);
-    set<CMintMeta> setMints = pwalletMain->zpivTracker->ListMints(true, true, true);
+    set<CMintMeta> setMints = pwalletMain->zhlmTracker->ListMints(true, true, true);
 
     std::map<libzerocoin::CoinDenomination, CAmount> spread;
     for (const auto& denom : libzerocoin::zerocoinDenomList)
@@ -2919,8 +2919,8 @@ UniValue resetmintzerocoin(const UniValue& params, bool fHelp)
     LOCK2(cs_main, pwalletMain->cs_wallet);
 
     CWalletDB walletdb(pwalletMain->strWalletFile);
-    CzPIVTracker* zpivTracker = pwalletMain->zpivTracker.get();
-    set<CMintMeta> setMints = zpivTracker->ListMints(false, false, true);
+    CzHLMTracker* zhlmTracker = pwalletMain->zhlmTracker.get();
+    set<CMintMeta> setMints = zhlmTracker->ListMints(false, false, true);
     vector<CMintMeta> vMintsToFind(setMints.begin(), setMints.end());
     vector<CMintMeta> vMintsMissing;
     vector<CMintMeta> vMintsToUpdate;
@@ -2931,14 +2931,14 @@ UniValue resetmintzerocoin(const UniValue& params, bool fHelp)
     // update the meta data of mints that were marked for updating
     UniValue arrUpdated(UniValue::VARR);
     for (CMintMeta meta : vMintsToUpdate) {
-        zpivTracker->UpdateState(meta);
+        zhlmTracker->UpdateState(meta);
         arrUpdated.push_back(meta.hashPubcoin.GetHex());
     }
 
     // delete any mints that were unable to be located on the blockchain
     UniValue arrDeleted(UniValue::VARR);
     for (CMintMeta mint : vMintsMissing) {
-        zpivTracker->Archive(mint);
+        zhlmTracker->Archive(mint);
         arrDeleted.push_back(mint.hashPubcoin.GetHex());
     }
 
@@ -2972,8 +2972,8 @@ UniValue resetspentzerocoin(const UniValue& params, bool fHelp)
     LOCK2(cs_main, pwalletMain->cs_wallet);
 
     CWalletDB walletdb(pwalletMain->strWalletFile);
-    CzPIVTracker* zpivTracker = pwalletMain->zpivTracker.get();
-    set<CMintMeta> setMints = zpivTracker->ListMints(false, false, false);
+    CzHLMTracker* zhlmTracker = pwalletMain->zhlmTracker.get();
+    set<CMintMeta> setMints = zhlmTracker->ListMints(false, false, false);
     list<CZerocoinSpend> listSpends = walletdb.ListSpentCoins();
     list<CZerocoinSpend> listUnconfirmedSpends;
 
@@ -2995,7 +2995,7 @@ UniValue resetspentzerocoin(const UniValue& params, bool fHelp)
     for (CZerocoinSpend spend : listUnconfirmedSpends) {
         for (auto& meta : setMints) {
             if (meta.hashSerial == GetSerialHash(spend.GetSerial())) {
-                zpivTracker->SetPubcoinNotUsed(meta.hashPubcoin);
+                zhlmTracker->SetPubcoinNotUsed(meta.hashPubcoin);
                 walletdb.EraseZerocoinSpendSerialEntry(spend.GetSerial());
                 RemoveSerialFromDB(spend.GetSerial());
                 UniValue obj(UniValue::VOBJ);
@@ -3109,8 +3109,8 @@ UniValue exportzerocoins(const UniValue& params, bool fHelp)
     if (params.size() == 2)
         denomination = libzerocoin::IntToZerocoinDenomination(params[1].get_int());
 
-    CzPIVTracker* zpivTracker = pwalletMain->zpivTracker.get();
-    set<CMintMeta> setMints = zpivTracker->ListMints(!fIncludeSpent, false, false);
+    CzHLMTracker* zhlmTracker = pwalletMain->zhlmTracker.get();
+    set<CMintMeta> setMints = zhlmTracker->ListMints(!fIncludeSpent, false, false);
 
     UniValue jsonList(UniValue::VARR);
     for (const CMintMeta& meta : setMints) {
@@ -3220,7 +3220,7 @@ UniValue importzerocoins(const UniValue& params, bool fHelp)
         CZerocoinMint mint(denom, bnValue, bnRandom, bnSerial, fUsed, nVersion, &privkey);
         mint.SetTxHash(txid);
         mint.SetHeight(nHeight);
-        pwalletMain->zpivTracker->Add(mint, true);
+        pwalletMain->zhlmTracker->Add(mint, true);
         count++;
         nValue += libzerocoin::ZerocoinDenominationToAmount(denom);
     }
@@ -3305,7 +3305,7 @@ UniValue setzhlmseed(const UniValue& params, bool fHelp)
     uint256 seed;
     seed.SetHex(params[0].get_str());
 
-    CzPIVWallet* zwallet = pwalletMain->getZWallet();
+    CzHLMWallet* zwallet = pwalletMain->getZWallet();
     bool fSuccess = zwallet->SetMasterSeed(seed, true);
     if (fSuccess)
         zwallet->SyncWithChain();
@@ -3332,7 +3332,7 @@ UniValue getzhlmseed(const UniValue& params, bool fHelp)
 
     EnsureWalletIsUnlocked();
 
-    CzPIVWallet* zwallet = pwalletMain->getZWallet();
+    CzHLMWallet* zwallet = pwalletMain->getZWallet();
     uint256 seed = zwallet->GetMasterSeed();
 
     UniValue ret(UniValue::VOBJ);
@@ -3371,7 +3371,7 @@ UniValue generatemintlist(const UniValue& params, bool fHelp)
 
     int nCount = params[0].get_int();
     int nRange = params[1].get_int();
-    CzPIVWallet* zwallet = pwalletMain->zwalletMain;
+    CzHLMWallet* zwallet = pwalletMain->zwalletMain;
 
     UniValue arrRet(UniValue::VARR);
     for (int i = nCount; i < nCount + nRange; i++) {
@@ -3400,7 +3400,7 @@ UniValue dzhlmstate(const UniValue& params, bool fHelp) {
                         "\nExamples\n" +
                 HelpExampleCli("mintpoolstatus", "") + HelpExampleRpc("mintpoolstatus", ""));
 
-    CzPIVWallet* zwallet = pwalletMain->zwalletMain;
+    CzHLMWallet* zwallet = pwalletMain->zwalletMain;
     UniValue obj(UniValue::VOBJ);
     int nCount, nCountLastUsed;
     zwallet->GetState(nCount, nCountLastUsed);
@@ -3411,7 +3411,7 @@ UniValue dzhlmstate(const UniValue& params, bool fHelp) {
 }
 
 
-void static SearchThread(CzPIVWallet* zwallet, int nCountStart, int nCountEnd)
+void static SearchThread(CzHLMWallet* zwallet, int nCountStart, int nCountEnd)
 {
     LogPrintf("%s: start=%d end=%d\n", __func__, nCountStart, nCountEnd);
     CWalletDB walletDB(pwalletMain->strWalletFile);
@@ -3428,7 +3428,7 @@ void static SearchThread(CzPIVWallet* zwallet, int nCountStart, int nCountEnd)
             CBigNum bnSerial;
             CBigNum bnRandomness;
             CKey key;
-            zwallet->SeedToZPIV(zerocoinSeed, bnValue, bnSerial, bnRandomness, key);
+            zwallet->SeedToZHLM(zerocoinSeed, bnValue, bnSerial, bnRandomness, key);
 
             uint256 hashPubcoin = GetPubCoinHash(bnValue);
             zwallet->AddToMintPool(make_pair(hashPubcoin, i), true);
@@ -3469,9 +3469,9 @@ UniValue searchdzhlm(const UniValue& params, bool fHelp)
 
     int nThreads = params[2].get_int();
 
-    CzPIVWallet* zwallet = pwalletMain->zwalletMain;
+    CzHLMWallet* zwallet = pwalletMain->zwalletMain;
 
-    boost::thread_group* dzpivThreads = new boost::thread_group();
+    boost::thread_group* dzhlmThreads = new boost::thread_group();
     int nRangePerThread = nRange / nThreads;
 
     int nPrevThreadEnd = nCount - 1;
@@ -3479,12 +3479,12 @@ UniValue searchdzhlm(const UniValue& params, bool fHelp)
         int nStart = nPrevThreadEnd + 1;;
         int nEnd = nStart + nRangePerThread;
         nPrevThreadEnd = nEnd;
-        dzpivThreads->create_thread(boost::bind(&SearchThread, zwallet, nStart, nEnd));
+        dzhlmThreads->create_thread(boost::bind(&SearchThread, zwallet, nStart, nEnd));
     }
 
-    dzpivThreads->join_all();
+    dzhlmThreads->join_all();
 
-    zwallet->RemoveMintsFromPool(pwalletMain->zpivTracker->GetSerialHashes());
+    zwallet->RemoveMintsFromPool(pwalletMain->zhlmTracker->GetSerialHashes());
     zwallet->SyncWithChain(false);
 
     //todo: better response

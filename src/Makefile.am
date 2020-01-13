@@ -88,7 +88,7 @@ if BUILD_BITCOIN_UTILS
 endif
 
 .PHONY: FORCE
-# coin core #
+# helium core #
 BITCOIN_CORE_H = \
   activemasternode.h \
   accumulators.h \
@@ -194,9 +194,9 @@ BITCOIN_CORE_H = \
   wallet.h \
   wallet_ismine.h \
   walletdb.h \
-  zpivchain.h \
-  zpivtracker.h \
-  zpivwallet.h \
+  zhlmchain.h \
+  zhlmtracker.h \
+  zhlmwallet.h \
   zmq/zmqabstractnotifier.h \
   zmq/zmqconfig.h \
   zmq/zmqnotificationinterface.h \
@@ -244,7 +244,7 @@ libbitcoin_server_a_SOURCES = \
   txdb.cpp \
   txmempool.cpp \
   validationinterface.cpp \
-  zpivchain.cpp \
+  zhlmchain.cpp \
   $(BITCOIN_CORE_H)
 
 if ENABLE_ZMQ
@@ -284,8 +284,8 @@ libbitcoin_wallet_a_SOURCES = \
   wallet.cpp \
   wallet_ismine.cpp \
   walletdb.cpp \
-  zpivwallet.cpp \
-  zpivtracker.cpp \
+  zhlmwallet.cpp \
+  zhlmtracker.cpp \
   stakeinput.cpp \
   $(BITCOIN_CORE_H)
 
@@ -427,13 +427,13 @@ nodist_libbitcoin_util_a_SOURCES = $(srcdir)/obj/build.h
 #
 
 # heliumd binary #
-heliumd_SOURCES = bitcoind.cpp
+heliumd_SOURCES = heliumd.cpp
 heliumd_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
 heliumd_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 heliumd_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if TARGET_WINDOWS
-heliumd_SOURCES += bitcoind-res.rc
+heliumd_SOURCES += heliumd-res.rc
 endif
 heliumd_LDADD = \
   $(LIBBITCOIN_SERVER) \
@@ -451,13 +451,13 @@ heliumd_LDADD = \
 heliumd_LDADD += $(BOOST_LIBS) $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS) $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS) $(ZMQ_LIBS)
 
 # helium-cli binary #
-helium_cli_SOURCES = bitcoin-cli.cpp
+helium_cli_SOURCES = helium-cli.cpp
 helium_cli_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(EVENT_CFLAGS)
 helium_cli_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 helium_cli_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if TARGET_WINDOWS
-helium_cli_SOURCES += bitcoin-cli-res.rc
+helium_cli_SOURCES += helium-cli-res.rc
 endif
 
 helium_cli_LDADD = \
@@ -470,13 +470,13 @@ helium_cli_LDADD += $(BOOST_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(EVENT_LIBS)
 #
 
 # helium-tx binary #
-helium_tx_SOURCES = bitcoin-tx.cpp
+helium_tx_SOURCES = helium-tx.cpp
 helium_tx_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
 helium_tx_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 helium_tx_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if TARGET_WINDOWS
-helium_tx_SOURCES += bitcoin-tx-res.rc
+helium_tx_SOURCES += helium-tx-res.rc
 endif
 
 helium_tx_LDADD = \

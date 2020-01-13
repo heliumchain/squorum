@@ -8,7 +8,7 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #if defined(HAVE_CONFIG_H)
-#include "config/bitcoin-config.h"
+#include "config/helium-config.h"
 #endif
 
 #include "util.h"
@@ -107,7 +107,7 @@ std::string to_internal(const std::string&);
 
 using namespace std;
 
-// PIVX only features
+// Helium only features
 // Masternode
 bool fMasterNode = false;
 string strMasterNodePrivKey = "";

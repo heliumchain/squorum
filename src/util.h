@@ -15,7 +15,7 @@
 #define BITCOIN_UTIL_H
 
 #if defined(HAVE_CONFIG_H)
-#include "config/bitcoin-config.h"
+#include "config/helium-config.h"
 #endif
 
 #include "compat.h"
@@ -31,7 +31,7 @@
 #include <boost/filesystem/path.hpp>
 #include <boost/thread/exceptions.hpp>
 
-//PIVX only features
+//Helium only features
 
 extern bool fMasterNode;
 extern bool fLiteMode;

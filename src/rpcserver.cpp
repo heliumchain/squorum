@@ -353,7 +353,7 @@ static const CRPCCommand vRPCCommands[] =
         {"hidden", "reconsiderblock", &reconsiderblock, true, true, false},
         {"hidden", "setmocktime", &setmocktime, true, false, false},
 
-        /* PIVX features */
+        /* Helium features */
         {"helium", "masternode", &masternode, true, true, false},
         {"helium", "listmasternodes", &listmasternodes, true, true, false},
         {"helium", "getmasternodecount", &getmasternodecount, true, true, false},

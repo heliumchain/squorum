@@ -1,0 +1,26 @@
+# /etc/conf.d/heliumd: config file for /etc/init.d/heliumd
+
+# Config file location
+#BITCOIND_CONFIGFILE="/etc/helium/helium.conf"
+
+# What directory to write pidfile to?  (created and owned by $BITCOIND_USER)
+#BITCOIND_PIDDIR="/var/run/heliumd"
+
+# What filename to give the pidfile
+#BITCOIND_PIDFILE="${BITCOIND_PIDDIR}/heliumd.pid"
+
+# Where to write heliumd data (be mindful that the blockchain is large)
+#BITCOIND_DATADIR="/var/lib/heliumd"
+
+# User and group to own heliumd process
+#BITCOIND_USER="helium"
+#BITCOIND_GROUP="helium"
+
+# Path to heliumd executable
+#BITCOIND_BIN="/usr/bin/heliumd"
+
+# Nice value to run heliumd under
+#BITCOIND_NICE=0
+
+# Additional options (avoid -conf and -datadir, use flags above)
+BITCOIND_OPTS=""

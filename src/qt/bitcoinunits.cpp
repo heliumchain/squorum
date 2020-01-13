@@ -1,6 +1,6 @@
 // Copyright (c) 2011-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
-// Copyright (c) 2015-2017 The XBTC developers
+// Copyright (c) 2015-2017 The PIVX developers
 // Copyright (c) 2018 The Helium developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
@@ -20,18 +20,18 @@ BitcoinUnits::BitcoinUnits(QObject* parent) : QAbstractListModel(parent),
 QList<BitcoinUnits::Unit> BitcoinUnits::availableUnits()
 {
     QList<BitcoinUnits::Unit> unitlist;
-    unitlist.append(BTC);
-    unitlist.append(mBTC);
-    unitlist.append(uBTC);
+    unitlist.append(HLM);
+    unitlist.append(mHLM);
+    unitlist.append(uHLM);
     return unitlist;
 }
 
 bool BitcoinUnits::valid(int unit)
 {
     switch (unit) {
-    case BTC:
-    case mBTC:
-    case uBTC:
+    case HLM:
+    case mHLM:
+    case uHLM:
         return true;
     default:
         return false;
@@ -41,12 +41,12 @@ bool BitcoinUnits::valid(int unit)
 QString BitcoinUnits::id(int unit)
 {
     switch (unit) {
-    case BTC:
-        return QString("hlm");
-    case mBTC:
-        return QString("mhlm");
-    case uBTC:
-        return QString::fromUtf8("uhlm");
+    case HLM:
+        return QString("helium");
+    case mHLM:
+        return QString("mhelium");
+    case uHLM:
+        return QString::fromUtf8("uhelium");
     default:
         return QString("???");
     }
@@ -56,22 +56,22 @@ QString BitcoinUnits::name(int unit)
 {
     if (Params().NetworkID() == CBaseChainParams::MAIN) {
         switch (unit) {
-        case BTC:
+        case HLM:
             return QString("HLM");
-        case mBTC:
+        case mHLM:
             return QString("mHLM");
-        case uBTC:
+        case uHLM:
             return QString::fromUtf8("μHLM");
         default:
             return QString("???");
         }
     } else {
         switch (unit) {
-        case BTC:
+        case HLM:
             return QString("tHLM");
-        case mBTC:
+        case mHLM:
             return QString("mtHLM");
-        case uBTC:
+        case uHLM:
             return QString::fromUtf8("μtHLM");
         default:
             return QString("???");
@@ -83,22 +83,22 @@ QString BitcoinUnits::description(int unit)
 {
     if (Params().NetworkID() == CBaseChainParams::MAIN) {
         switch (unit) {
-        case BTC:
+        case HLM:
             return QString("HLM");
-        case mBTC:
+        case mHLM:
             return QString("Milli-HLM (1 / 1" THIN_SP_UTF8 "000)");
-        case uBTC:
+        case uHLM:
             return QString("Micro-HLM (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
         default:
             return QString("???");
         }
     } else {
         switch (unit) {
-        case BTC:
+        case HLM:
             return QString("TestHLMs");
-        case mBTC:
+        case mHLM:
             return QString("Milli-TestHLM (1 / 1" THIN_SP_UTF8 "000)");
-        case uBTC:
+        case uHLM:
             return QString("Micro-TestHLM (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
         default:
             return QString("???");
@@ -109,11 +109,11 @@ QString BitcoinUnits::description(int unit)
 qint64 BitcoinUnits::factor(int unit)
 {
     switch (unit) {
-    case BTC:
+    case HLM:
         return 100000000;
-    case mBTC:
+    case mHLM:
         return 100000;
-    case uBTC:
+    case uHLM:
         return 100;
     default:
         return 100000000;
@@ -123,11 +123,11 @@ qint64 BitcoinUnits::factor(int unit)
 int BitcoinUnits::decimals(int unit)
 {
     switch (unit) {
-    case BTC:
+    case HLM:
         return 8;
-    case mBTC:
+    case mHLM:
         return 5;
-    case uBTC:
+    case uHLM:
         return 2;
     default:
         return 0;

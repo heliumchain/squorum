@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Helium
+Comment=Helium P2P Cryptocurrency
+Comment[fr]=Helium, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=Helium, eşten eşe kriptografik sanal para birimi
+Exec=helium-qt %u
+Terminal=false
+Type=Application
+Icon=helium128
+MimeType=x-scheme-handler/helium;
+Categories=Office;Finance;

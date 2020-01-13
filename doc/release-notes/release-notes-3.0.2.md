@@ -90,13 +90,13 @@ git merge commit are mentioned.
 
 ### P2P Protocol and Network Code
 - #286 `85c0f53` [Main] Change sporkDB from smart ptr to ptr. (presstab)
-- #292 `feadab4` Additional checks for double spending of zPiv serials. (presstab)
+- #292 `feadab4` Additional checks for double spending of zHlm serials. (presstab)
 
 ### Wallet
 - #271 `5e9a086` [Wallet] Remove unused member wallet in UnlockContext inner class (Jon Spock)
 - #279 `e734010` Add -backupzhlm startup flag. (presstab)
-- #280 `fdc182d` [Wallet] Fix zPiv spending errors. (presstab)
-- #282 `310f216` [Wallet] Count pending zPiv balance for automint. (presstab)
+- #280 `fdc182d` [Wallet] Fix zHlm spending errors. (presstab)
+- #282 `310f216` [Wallet] Count pending zHlm balance for automint. (presstab)
 - #290 `004d7b6` Include both pending and mature zerocoins for automint calculations (presstab)
 
 ### GUI
@@ -105,7 +105,7 @@ git merge commit are mentioned.
 - #270 `bd2328e` [Qt] Make lock icon clickable to toggle wallet lock state (Fuzzbawls)
 - #273 `f31136e` [Qt] Fix UI tab order and shortcuts (Mrs-X)
 - #287 `74a1c3c` [Qt] Don't allow the Esc key to close the privacy tab (Fuzzbawls)
-- #291 `cb314e6` [Qt] zPiv control quantity/amount fixes (rejectedpromise)
+- #291 `cb314e6` [Qt] zHlm control quantity/amount fixes (rejectedpromise)
 
 ### Miscellaneous
 - #266 `2d97b54` [Scripts] Fix location for aarch64 outputs in gitian-build.sh (Fuzzbawls)

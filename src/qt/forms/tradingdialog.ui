@@ -445,7 +445,7 @@
       <string>Buy HLM</string>
      </property>
      <property name="icon">
-      <iconset resource="../bitcoin.qrc">
+      <iconset resource="../helium.qrc">
        <normaloff>:/icons/bitcoin</normaloff>:/icons/bitcoin</iconset>
      </property>
     </widget>
@@ -1754,7 +1754,7 @@
       <string>Sell HLM</string>
      </property>
      <property name="icon">
-      <iconset resource="../bitcoin.qrc">
+      <iconset resource="../helium.qrc">
        <normaloff>:/icons/bitcoin</normaloff>:/icons/bitcoin</iconset>
      </property>
     </widget>
@@ -2944,7 +2944,7 @@
       <string>Generate Helium Deposit Address</string>
      </property>
      <property name="icon">
-      <iconset resource="../bitcoin.qrc">
+      <iconset resource="../helium.qrc">
        <normaloff>:/icons/bitcoin</normaloff>:/icons/bitcoin</iconset>
      </property>
     </widget>
@@ -3206,7 +3206,7 @@
        <string/>
       </property>
       <property name="pixmap">
-       <pixmap resource="../bitcoin.qrc">:/icons/transaction_1</pixmap>
+       <pixmap resource="../helium.qrc">:/icons/transaction_1</pixmap>
       </property>
       <property name="scaledContents">
        <bool>true</bool>
@@ -3253,7 +3253,7 @@
       <string>Update API Keys</string>
      </property>
      <property name="icon">
-      <iconset resource="../bitcoin.qrc">
+      <iconset resource="../helium.qrc">
        <normaloff>:/icons/bitcoin</normaloff>:/icons/bitcoin</iconset>
      </property>
     </widget>
@@ -3408,7 +3408,7 @@
   </widget>
  </widget>
  <resources>
-  <include location="../bitcoin.qrc"/>
+  <include location="../helium.qrc"/>
  </resources>
  <connections/>
 </ui>

@@ -22,7 +22,7 @@
 #include "swifttx.h"
 #include "uint256.h"
 #include "utilmoneystr.h"
-#include "zpivchain.h"
+#include "zhlmchain.h"
 #ifdef ENABLE_WALLET
 #include "wallet.h"
 #endif

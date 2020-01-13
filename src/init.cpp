@@ -7,7 +7,7 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #if defined(HAVE_CONFIG_H)
-#include "config/bitcoin-config.h"
+#include "config/helium-config.h"
 #endif
 
 #include "init.h"
@@ -41,7 +41,7 @@
 #include "util.h"
 #include "utilmoneystr.h"
 #include "validationinterface.h"
-#include "zpivchain.h"
+#include "zhlmchain.h"
 
 #ifdef ENABLE_WALLET
 #include "db.h"
@@ -75,7 +75,7 @@ using namespace std;
 
 #ifdef ENABLE_WALLET
 CWallet* pwalletMain = NULL;
-CzPIVWallet* zwalletMain = NULL;
+CzHLMWallet* zwalletMain = NULL;
 int nWalletBackups = 10;
 #endif
 volatile bool fFeeEstimatesInitialized = false;
@@ -1328,7 +1328,7 @@ bool AppInit2(boost::thread_group& threadGroup, CScheduler& scheduler)
 
     // ********************************************************* Step 7: load block chain
 
-    //PIVX: Load Accumulator Checkpoints according to network (main/test/regtest)
+    //Helium: Load Accumulator Checkpoints according to network (main/test/regtest)
     assert(AccumulatorCheckpoints::LoadCheckpoints(Params().NetworkIDString()));
 
     fReindex = GetBoolArg("-reindex", false);
@@ -1390,7 +1390,7 @@ bool AppInit2(boost::thread_group& threadGroup, CScheduler& scheduler)
                 delete zerocoinDB;
                 delete pSporkDB;
 
-                //PIVX specific: zerocoin and spork DB's
+                //Helium specific: zerocoin and spork DB's
                 zerocoinDB = new CZerocoinDB(0, false, fReindex);
                 pSporkDB = new CSporkDB(0, false, false);
 
@@ -1402,7 +1402,7 @@ bool AppInit2(boost::thread_group& threadGroup, CScheduler& scheduler)
                 if (fReindex)
                     pblocktree->WriteReindexing(true);
 
-                // PIVX: load previous sessions sporks if we have them.
+                // Helium: load previous sessions sporks if we have them.
                 uiInterface.InitMessage(_("Loading sporks..."));
                 LoadSporksFromDB();
 
@@ -1449,10 +1449,10 @@ bool AppInit2(boost::thread_group& threadGroup, CScheduler& scheduler)
                 // Recalculate money supply for blocks that are impacted by accounting issue after zerocoin activation
                 if (GetBoolArg("-reindexmoneysupply", false)) {
                     if (chainActive.Height() > Params().Zerocoin_StartHeight()) {
-                        RecalculateZPIVMinted();
-                        RecalculateZPIVSpent();
+                        RecalculateZHLMMinted();
+                        RecalculateZHLMSpent();
                     }
-                    RecalculatePIVSupply(1);
+                    RecalculateHLMSupply(1);
                 }
 
                 // Force recalculation of accumulators.
@@ -1465,7 +1465,7 @@ bool AppInit2(boost::thread_group& threadGroup, CScheduler& scheduler)
                     }
                 }
 
-                // PIVX: recalculate Accumulator Checkpoints that failed to database properly
+                // Helium: recalculate Accumulator Checkpoints that failed to database properly
                 if (!listAccCheckpointsNoDB.empty()) {
                     uiInterface.InitMessage(_("Calculating missing accumulators..."));
                     LogPrintf("%s : finding missing checkpoints\n", __func__);
@@ -1610,7 +1610,7 @@ bool AppInit2(boost::thread_group& threadGroup, CScheduler& scheduler)
 
         LogPrintf("%s", strErrors.str());
         LogPrintf(" wallet      %15dms\n", GetTimeMillis() - nStart);
-        zwalletMain = new CzPIVWallet(pwalletMain->strWalletFile);
+        zwalletMain = new CzHLMWallet(pwalletMain->strWalletFile);
         pwalletMain->setZWallet(zwalletMain);
 
         RegisterValidationInterface(pwalletMain);
@@ -1657,14 +1657,14 @@ bool AppInit2(boost::thread_group& threadGroup, CScheduler& scheduler)
         }
         fVerifyingBlocks = false;
 
-        //Inititalize zPIVWallet
+        //Inititalize zHLMWallet
         uiInterface.InitMessage(_("Syncing zHLM wallet..."));
 
-        bool fEnableZPivBackups = GetBoolArg("-backupzhlm", true);
-        pwalletMain->setZPivAutoBackups(fEnableZPivBackups);
+        bool fEnableZHlmBackups = GetBoolArg("-backupzhlm", true);
+        pwalletMain->setZHlmAutoBackups(fEnableZHlmBackups);
 
         //Load zerocoin mint hashes to memory
-        pwalletMain->zpivTracker->Init();
+        pwalletMain->zhlmTracker->Init();
         zwalletMain->LoadMintPoolFromDB();
         zwalletMain->SyncWithChain();
     }  // (!fDisableWallet)
@@ -1845,8 +1845,8 @@ bool AppInit2(boost::thread_group& threadGroup, CScheduler& scheduler)
        is convertable to another.
 
        For example:
-       1PIV+1000 == (.1PIV+100)*10
-       10PIV+10000 == (1PIV+1000)*10
+       1HLM+1000 == (.1HLM+100)*10
+       10HLM+10000 == (1HLM+1000)*10
     */
     obfuScationDenominations.push_back((10000 * COIN) + 10000000);
     obfuScationDenominations.push_back((1000 * COIN) + 1000000);

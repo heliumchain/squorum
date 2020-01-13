@@ -172,7 +172,7 @@
                       <item>
                        <layout class="QHBoxLayout" name="horizontalLayout_3">
                         <item>
-                         <widget class="QLabel" name="labelzPIVActions">
+                         <widget class="QLabel" name="labelzHLMActions">
                           <property name="font">
                            <font>
                             <pointsize>12</pointsize>
@@ -189,7 +189,7 @@
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLabel" name="labelzPIVSyncStatus">
+                         <widget class="QLabel" name="labelzHLMSyncStatus">
                           <property name="toolTip">
                            <string>The displayed information may be out of date. Your wallet automatically synchronizes with the Helium network after a connection is established, but this process has not completed yet.</string>
                           </property>
@@ -244,7 +244,7 @@
                       <item>
                        <layout class="QHBoxLayout" name="horizontalLayout_4">
                         <item>
-                         <widget class="QPushButton" name="pushButtonMintzPIV">
+                         <widget class="QPushButton" name="pushButtonMintzHLM">
                           <property name="minimumSize">
                            <size>
                             <width>131</width>
@@ -276,14 +276,14 @@
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLabel" name="labelzPIV_2">
+                         <widget class="QLabel" name="labelzHLM_2">
                           <property name="text">
                            <string>zHLM</string>
                           </property>
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLabel" name="labelzPIVAmountText">
+                         <widget class="QLabel" name="labelzHLMAmountText">
                           <property name="toolTip">
                            <string>Available for minting are coins which are confirmed and not locked or Masternode collaterals.</string>
                           </property>
@@ -296,7 +296,7 @@
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLabel" name="labelzPIVAmountValue">
+                         <widget class="QLabel" name="labelzHLMAmountValue">
                           <property name="font">
                            <font>
                             <weight>75</weight>
@@ -603,21 +603,21 @@
                          <number>0</number>
                         </property>
                         <item>
-                         <widget class="QPushButton" name="pushButtonZPivControl">
+                         <widget class="QPushButton" name="pushButtonZHlmControl">
                           <property name="text">
                            <string>zHLM Control</string>
                           </property>
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLabel" name="labelzPivSelected">
+                         <widget class="QLabel" name="labelzHlmSelected">
                           <property name="text">
                            <string>zHLM Selected:</string>
                           </property>
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLabel" name="labelzPivSelected_int">
+                         <widget class="QLabel" name="labelzHlmSelected_int">
                           <property name="text">
                            <string>0</string>
                           </property>
@@ -671,7 +671,7 @@
                       <item>
                        <layout class="QHBoxLayout" name="horizontalLayout_6">
                         <item>
-                         <widget class="QPushButton" name="pushButtonSpendzPIV">
+                         <widget class="QPushButton" name="pushButtonSpendzHLM">
                           <property name="minimumSize">
                            <size>
                             <width>131</width>
@@ -687,7 +687,7 @@
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLabel" name="labelzPIVBalanceText">
+                         <widget class="QLabel" name="labelzHLMBalanceText">
                           <property name="toolTip">
                            <string>Available (mature and spendable) zHLM for spending</string>
                           </property>
@@ -840,7 +840,7 @@ zHLM are mature when they have more than 20 confirmations AND more than 2 mints 
                              <string/>
                             </property>
                             <property name="icon">
-                             <iconset resource="../bitcoin.qrc">
+                             <iconset resource="../helium.qrc">
                               <normaloff>:/icons/address-book</normaloff>:/icons/address-book</iconset>
                             </property>
                             <property name="shortcut">
@@ -857,7 +857,7 @@ zHLM are mature when they have more than 20 confirmations AND more than 2 mints 
                              <string/>
                             </property>
                             <property name="icon">
-                             <iconset resource="../bitcoin.qrc">
+                             <iconset resource="../helium.qrc">
                               <normaloff>:/icons/editpaste</normaloff>:/icons/editpaste</iconset>
                             </property>
                             <property name="shortcut">
@@ -908,7 +908,7 @@ zHLM are mature when they have more than 20 confirmations AND more than 2 mints 
                            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                           </property>
                           <property name="buddy">
-                           <cstring>zPIVpayAmount</cstring>
+                           <cstring>zHLMpayAmount</cstring>
                           </property>
                          </widget>
                         </item>
@@ -918,10 +918,10 @@ zHLM are mature when they have more than 20 confirmations AND more than 2 mints 
                            <number>0</number>
                           </property>
                           <item>
-                           <widget class="QLineEdit" name="zPIVpayAmount"/>
+                           <widget class="QLineEdit" name="zHLMpayAmount"/>
                           </item>
                           <item>
-                           <widget class="QLabel" name="labelzPIV">
+                           <widget class="QLabel" name="labelzHLM">
                             <property name="minimumSize">
                              <size>
                               <width>55</width>
@@ -1013,7 +1013,7 @@ zHLM are mature when they have more than 20 confirmations AND more than 2 mints 
                       <item>
                        <layout class="QHBoxLayout" name="horizontalLayout_21">
                         <item>
-                         <widget class="QLabel" name="labelzPIVStats">
+                         <widget class="QLabel" name="labelzHLMStats">
                           <property name="font">
                            <font>
                             <pointsize>12</pointsize>
@@ -2677,7 +2677,7 @@ To change the percentage (no restart required):
   </customwidget>
  </customwidgets>
  <resources>
-  <include location="../bitcoin.qrc"/>
+  <include location="../helium.qrc"/>
  </resources>
  <connections/>
 </ui>
