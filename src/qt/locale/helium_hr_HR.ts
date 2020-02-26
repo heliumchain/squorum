@@ -136,10 +136,6 @@
         <translation>Služi za onemogućavanje spornog slanja novca kada je OS račun ugrožen. Ne pruža nikakvu stvarnu sigurnost.</translation>
     </message>
     <message>
-        <source>For anonymization, automint, and staking only</source>
-        <translation>Samo za anonimizaciju, automint i staking</translation>
-    </message>
-    <message>
         <source>Enter the new passphrase to the wallet.&lt;br/&gt;Please use a passphrase of &lt;b&gt;ten or more random characters&lt;/b&gt;, or &lt;b&gt;eight or more words&lt;/b&gt;.</source>
         <translation>Unesi novu zaporku za novčanik. 1. Molimo koristite zaporku od 2. 10 ili više nasumičnih simbola, ili 3. osam i više riječi 3. </translation>
     </message>
@@ -174,10 +170,6 @@
     <message>
         <source>Confirm wallet encryption</source>
         <translation>Potvrdi šifriranje novčanika</translation>
-    </message>
-    <message>
-        <source>Helium will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your HLMs from being stolen by malware infecting your computer.</source>
-        <translation>Helium se sada zatvara kako bi dovršio proces šifriranja. Ne zaboravite da šifriranje vašeg novčanika ne može u potpunosti zaštititi vaše HLM od krađe zlonamjernog softvera koji zarazi vaše računalo.</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
@@ -433,10 +425,6 @@
         <translation>Pregled povijesti transakcija</translation>
     </message>
     <message>
-        <source>Privacy Actions for zHLM</source>
-        <translation>Postavke privatnosti za zHLM</translation>
-    </message>
-    <message>
         <source>E&amp;xit</source>
         <translation>Izlaz</translation>
     </message>
@@ -642,7 +630,7 @@
     </message>
     <message>
         <source>Helium Core</source>
-        <translation>PIVX Core</translation>
+        <translation>Helium Core</translation>
     </message>
     <message>
         <source>Send coins to a Helium address</source>
@@ -651,10 +639,6 @@
     <message>
         <source>Request payments (generates QR codes and helium: URIs)</source>
         <translation>Zahtjev za plaćanje (generira QR kodove i helium: URI)</translation>
-    </message>
-    <message>
-        <source>&amp;Privacy</source>
-        <translation>Privatnost</translation>
     </message>
     <message>
         <source>&amp;Masternodes</source>
@@ -666,7 +650,7 @@
     </message>
     <message>
         <source>&amp;About Helium Core</source>
-        <translation>O PIVX Core</translation>
+        <translation>O Helium Core</translation>
     </message>
     <message>
         <source>Show information about Helium Core</source>
@@ -823,14 +807,6 @@ Višestruko slanje: %1</translation>
  MultiSend: %1</source>
         <translation>Staking nije aktivan
 Višestruko slanje: %1</translation>
-    </message>
-    <message>
-        <source>AutoMint is currently enabled and set to </source>
-        <translation>AutoMint je trenutno omogućen i podešen na</translation>
-    </message>
-    <message>
-        <source>AutoMint is disabled</source>
-        <translation>AutoMint je onemogućen</translation>
     </message>
     <message>
         <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;unlocked&lt;/b&gt;</source>
@@ -1219,7 +1195,7 @@ Višestruko slanje: %1</translation>
     </message>
     <message>
         <source>Helium Core</source>
-        <translation>PIVX Core</translation>
+        <translation>Helium Core</translation>
     </message>
     <message>
         <source>(%1-bit)</source>
@@ -1227,7 +1203,7 @@ Višestruko slanje: %1</translation>
     </message>
     <message>
         <source>About Helium Core</source>
-        <translation>O PIVX Core</translation>
+        <translation>O Helium Core</translation>
     </message>
     <message>
         <source>Command-line options</source>
@@ -1294,7 +1270,7 @@ Višestruko slanje: %1</translation>
     </message>
     <message>
         <source>Helium Core</source>
-        <translation>PIVX Core</translation>
+        <translation>Helium Core</translation>
     </message>
     <message>
         <source>Error: Specified data directory "%1" cannot be created.</source>
@@ -1820,39 +1796,9 @@ Budite strpljivi nakon što kliknete uvoz.</translation>
         <translation>Ovdje se može postaviti jezik korisničkog sučelja. Ova postavka će stupiti na snagu nakon ponovnog pokretanja Helium-a.</translation>
     </message>
     <message>
-        <source>Language missing or translation incomplete? Help contributing translations here:
-https://www.transifex.com/heliumchain/helium-project-translations</source>
-        <translation>Jezik nedostaje ili prijevod nije potpun? Pomozite s prijevodima ovdje:
-https://www.transifex.com/heliumchain/helium-project-translations</translation>
-    </message>
-    <message>
         <source>Map port using &amp;UPnP</source>
         <translation>Karte porta pomoću UPnP
 </translation>
-    </message>
-    <message>
-        <source>Enable automatic minting of HLM units to zHLM</source>
-        <translation>Omogućite automint HLM jedinica na zHLM</translation>
-    </message>
-    <message>
-        <source>Enable zHLM Automint</source>
-        <translation>Omogući zHLM Automint</translation>
-    </message>
-    <message>
-        <source>Percentage of incoming HLM which get automatically converted to zHLM via Zerocoin Protocol (min: 10%)</source>
-        <translation>Postotak dolaznih HLM koji se automatski pretvara u zHLM putem protokola Zerocoin (min: 10%)</translation>
-    </message>
-    <message>
-        <source>Percentage of autominted zHLM</source>
-        <translation>Postotak automatiziranog zHLM</translation>
-    </message>
-    <message>
-        <source>Wait with automatic conversion to Zerocoin until enough HLM for this denomination is available</source>
-        <translation>Pričekajte s automatskom pretvorbom u Zerocoin dok ne bude dostupno dovoljno HLM za apoen</translation>
-    </message>
-    <message>
-        <source>Preferred Automint zHLM Denomination</source>
-        <translation>Preferirana Automint zHLM denominacijad</translation>
     </message>
     <message>
         <source>Stake split threshold:</source>
@@ -1907,6 +1853,12 @@ https://www.transifex.com/heliumchain/helium-project-translations</translation>
         <translation>Jezik sučelja korisnika:</translation>
     </message>
     <message>
+        <source>Language missing or translation incomplete? Help contributing translations here:
+https://www.transifex.com/helium-project/helium-wallet</source>
+        <translation>Jezik nedostaje ili prijevod nije potpun? Pomozite s prijevodima ovdje:
+https://www.transifex.com/helium-project/helium-wallet</translation>
+    </message>
+    <message>
         <source>User Interface Theme:</source>
         <translation>Tema sučelja korisnika:</translation>
     </message>
@@ -1949,10 +1901,6 @@ https://www.transifex.com/heliumchain/helium-project-translations</translation>
     <message>
         <source>&amp;Cancel</source>
         <translation>Poništi</translation>
-    </message>
-    <message>
-        <source>Any</source>
-        <translation>bilo koji</translation>
     </message>
     <message>
         <source>default</source>
@@ -2034,26 +1982,6 @@ https://www.transifex.com/heliumchain/helium-project-translations</translation>
         <translation>Trenutačno zaključana ravnoteža u adresama samo za gledanje</translation>
     </message>
     <message>
-        <source>Your current Helium balance, unconfirmed and immature transactions included</source>
-        <translation>Uključena je vaša trenutna bilanca Helium, nepotvrđene i nezrele transakcije</translation>
-    </message>
-    <message>
-        <source>zHLM Balance</source>
-        <translation>zHLM Bilanca</translation>
-    </message>
-    <message>
-        <source>Mature: more than 20 confirmation and more than 1 mint of the same denomination after it was minted.
-These zHLM are spendable.</source>
-        <translation>Mature: više od 20 potvrda i više od 1 mint od iste denominacije nakon što je mintan.
-Ti zHLMs se mogu potrošiti.</translation>
-    </message>
-    <message>
-        <source>Unconfirmed: less than 20 confirmations
-Immature: confirmed, but less than 1 mint of the same denomination after it was minted</source>
-        <translation>Nepotvrđeno: manje od 20 potvrda
-Nezreli: potvrđeno, ali manje od 1 minta iste denominacije nakon mintanja</translation>
-    </message>
-    <message>
         <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Helium network after a connection is established, but this process has not completed yet.</source>
         <translation>Prikazane informacije mogu biti zastarjele. Vaš se novčanik automatski sinkronizira s Helium mrežom nakon uspostavljanja veze, ali taj postupak još nije dovršen.</translation>
     </message>
@@ -2104,14 +2032,6 @@ Nezreli: potvrđeno, ali manje od 1 minta iste denominacije nakon mintanja</tran
     <message>
         <source>Locked:</source>
         <translation>Zaključano:</translation>
-    </message>
-    <message>
-        <source>Unconfirmed:</source>
-        <translation>Nepotvrđeno:</translation>
-    </message>
-    <message>
-        <source>Your current zHLM balance, unconfirmed and immature zHLM included.</source>
-        <translation>Vaša trenutačna zHLM bilanca, nepotvrđena i nezrela zHLM.</translation>
     </message>
     <message>
         <source>Recent transactions</source>
@@ -2718,10 +2638,6 @@ Please be patient...</source>
         <translation>Nije dodijeljena adresa "Plati", stvarajući lokalnu uplatu</translation>
     </message>
     <message>
-        <source>Invalid Helium Address</source>
-        <translation>Nevažeća Helium Adresa</translation>
-    </message>
-    <message>
         <source>Invalid Send Amount</source>
         <translation>Neispravan iznos slanja</translation>
     </message>
@@ -2841,7 +2757,7 @@ Please be patient...</source>
     </message>
     <message>
         <source>Helium Core</source>
-        <translation>PIVX Core</translation>
+        <translation>Helium Core</translation>
     </message>
     </context>
 <context>
@@ -4003,7 +3919,7 @@ Please be patient...</source>
     <name>SplashScreen</name>
     <message>
         <source>Helium Core</source>
-        <translation>PIVX Core</translation>
+        <translation>Helium Core</translation>
     </message>
     <message>
         <source>Version %1</source>
@@ -4018,7 +3934,7 @@ Please be patient...</source>
         <translation>Dash Core programeri</translation>
     </message>
     <message>
-        <source>The PIVX Core developers</source>
+        <source>The Helium Core developers</source>
         <translation>Helium Core programeri</translation>
     </message>
     <message>
@@ -4178,10 +4094,6 @@ Please be patient...</source>
     <message>
         <source>Merchant</source>
         <translation>Trgovac</translation>
-    </message>
-    <message>
-        <source>Generated coins must mature %1 blocks before they can be spent. When you generated this block, it was broadcast to the network to be added to the block chain. If it fails to get into the chain, its state will change to "not accepted" and it won't be spendable. This may occasionally happen if another node generates a block within a few seconds of yours.</source>
-        <translation>Generirani novčići moraju se narasti za %1 blokova prije nego što se mogu potrošiti. Kada ste generirali taj blok, emitiran je na mrežu koji će biti dodan u blok lanac. Ako ne uspije ući u lanac, stanje će se promijeniti u "ne prihvaća" i neće biti potrošeno. To se ponekad može dogoditi ako drugi čvor generira blok u roku od nekoliko sekundi od vašeg.</translation>
     </message>
     <message>
         <source>Debug information</source>
@@ -4990,14 +4902,6 @@ Please be patient...</source>
     <message>
         <source>Copyright (C) 2009-%i The Bitcoin Core Developers</source>
         <translation>Autorska prava (C) 2009-%i Bitcoin Core Developers</translation>
-    </message>
-    <message>
-        <source>Copyright (C) 2014-%i The Dash Core Developers</source>
-        <translation>Autorska prava (C) 2014-%i The Dash Core Developers</translation>
-    </message>
-    <message>
-        <source>Copyright (C) 2015-%i The Helium Core Developers</source>
-        <translation>Autorska prava (C) 2015-%i The Helium Core Developers</translation>
     </message>
     <message>
         <source>Corrupted block database detected</source>
@@ -5845,7 +5749,7 @@ Please be patient...</source>
     </message>
     <message>
         <source>Wallet needed to be rewritten: restart Helium Core to complete</source>
-        <translation>Potrebno je prepisati novčanik: ponovo pokrenite PIVX Core</translation>
+        <translation>Potrebno je prepisati novčanik: ponovo pokrenite Helium Core</translation>
     </message>
     <message>
         <source>Wallet options:</source>

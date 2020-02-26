@@ -136,10 +136,6 @@
         <translation>Est utilisé pour désactiver l'envoi d'argent lorsque l'utilisateur OS est compromis. Ne fournit pas de vrai sécurité.</translation>
     </message>
     <message>
-        <source>For anonymization, automint, and staking only</source>
-        <translation>Pour l'anonymat, l'auto-monnayage et le staking seulement</translation>
-    </message>
-    <message>
         <source>Enter the new passphrase to the wallet.&lt;br/&gt;Please use a passphrase of &lt;b&gt;ten or more random characters&lt;/b&gt;, or &lt;b&gt;eight or more words&lt;/b&gt;.</source>
         <translation>Entrez la nouvelle phrase secrète dans le portefeuille.&lt;br/&gt;Utilisez s'il vous plaît une phrase secrète de :&lt;b&gt; 10 caractères au hasard ou plus&lt;/b&gt;, ou&lt;b&gt; huit mots ou plus&lt;/b&gt;.</translation>
     </message>
@@ -174,10 +170,6 @@
     <message>
         <source>Confirm wallet encryption</source>
         <translation>Confirmer le cryptage du portefeuille</translation>
-    </message>
-    <message>
-        <source>Helium will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your HLMs from being stolen by malware infecting your computer.</source>
-        <translation>Helium va maintenant se fermer pour finir le processus de cryptage. Notez que le cryptage de votre portefeuille ne peut pas complètement protéger vos HLMs d'un vol par un malware ayant infecté votre ordinateur. </translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
@@ -433,10 +425,6 @@
         <translation>Afficher l'historique de transaction</translation>
     </message>
     <message>
-        <source>Privacy Actions for zHLM</source>
-        <translation>Actions confidentielles pour zHLM</translation>
-    </message>
-    <message>
         <source>&amp;Governance</source>
         <translation>&amp;Gouvernance</translation>
     </message>
@@ -654,7 +642,7 @@
     </message>
     <message>
         <source>Helium Core</source>
-        <translation>PIVX Core</translation>
+        <translation>Helium Core</translation>
     </message>
     <message>
         <source>Send coins to a Helium address</source>
@@ -663,10 +651,6 @@
     <message>
         <source>Request payments (generates QR codes and helium: URIs)</source>
         <translation>Requêtes de paiements (Génère des QR codes et des URIs Helium)</translation>
-    </message>
-    <message>
-        <source>&amp;Privacy</source>
-        <translation>&amp;Confidentialité</translation>
     </message>
     <message>
         <source>&amp;Masternodes</source>
@@ -678,11 +662,11 @@
     </message>
     <message>
         <source>&amp;About Helium Core</source>
-        <translation>A &amp;propos de PIVX Core</translation>
+        <translation>A &amp;propos de Helium Core</translation>
     </message>
     <message>
         <source>Show information about Helium Core</source>
-        <translation>Afficher les information concernant PIVX Core</translation>
+        <translation>Afficher les information concernant Helium Core</translation>
     </message>
     <message>
         <source>Modify configuration options for Helium</source>
@@ -835,14 +819,6 @@ Adresse : %4
  MultiSend: %1</source>
         <translation>Staking n'est pas actif
  MultiSend: %1</translation>
-    </message>
-    <message>
-        <source>AutoMint is currently enabled and set to </source>
-        <translation>Auto-monnayage est actuellement activé et mis à</translation>
-    </message>
-    <message>
-        <source>AutoMint is disabled</source>
-        <translation>Auto-monnayage est désactivé</translation>
     </message>
     <message>
         <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;unlocked&lt;/b&gt;</source>
@@ -1267,7 +1243,7 @@ Adresse : %4
     </message>
     <message>
         <source>Helium Core</source>
-        <translation>PIVX Core</translation>
+        <translation>Helium Core</translation>
     </message>
     <message>
         <source>(%1-bit)</source>
@@ -1275,7 +1251,7 @@ Adresse : %4
     </message>
     <message>
         <source>About Helium Core</source>
-        <translation>A propos de PIVX Core</translation>
+        <translation>A propos de Helium Core</translation>
     </message>
     <message>
         <source>Command-line options</source>
@@ -1322,7 +1298,7 @@ Adresse : %4
     </message>
     <message>
         <source>Welcome to Helium Core.</source>
-        <translation>Bienvenue à PIVX Core</translation>
+        <translation>Bienvenue à Helium Core</translation>
     </message>
     <message>
         <source>As this is the first time the program is launched, you can choose where Helium Core will store its data.</source>
@@ -1342,7 +1318,7 @@ Adresse : %4
     </message>
     <message>
         <source>Helium Core</source>
-        <translation>PIVX Core</translation>
+        <translation>Helium Core</translation>
     </message>
     <message>
         <source>Error: Specified data directory "%1" cannot be created.</source>
@@ -1936,46 +1912,8 @@ S'il vous plaît soyez patient après avoir cliqué sur l'importation.</translat
         <translation>La langue de l'interface utilisateur peut être définie ici. Ce paramètre prendra effet après le redémarrage de Helium.</translation>
     </message>
     <message>
-        <source>Language missing or translation incomplete? Help contributing translations here:
-https://www.transifex.com/heliumchain/helium-project-translations</source>
-        <translation>Langue manquante ou traduction incomplète? Aidez-nous à traduire ce projet ici:
-https://www.transifex.com/heliumchain/helium-project-translations</translation>
-    </message>
-    <message>
         <source>Map port using &amp;UPnP</source>
         <translation>Répertorier les port utilisant UPnP</translation>
-    </message>
-    <message>
-        <source>Enable automatic minting of HLM units to zHLM</source>
-        <translation>Activé l'auto-monnayage de HLM unités en zHLM</translation>
-    </message>
-    <message>
-        <source>Enable zHLM Automint</source>
-        <translation>Activer l'Auto-monnayage zHLM </translation>
-    </message>
-    <message>
-        <source>Enable automatic zHLM minting from specific addresses</source>
-        <translation>Activer la frappe zHLM automatique à partir d'adresses spécifiques</translation>
-    </message>
-    <message>
-        <source>Enable Automint Addresses</source>
-        <translation>Activer les Adresses Automint</translation>
-    </message>
-    <message>
-        <source>Percentage of incoming HLM which get automatically converted to zHLM via Zerocoin Protocol (min: 10%)</source>
-        <translation>Pourcentage des HLM entrants qui seront automatiquement convertis en zHLM via le protocole Zerocoin (min. 10%)</translation>
-    </message>
-    <message>
-        <source>Percentage of autominted zHLM</source>
-        <translation>Pourcentage de zHLM auto-monnayé</translation>
-    </message>
-    <message>
-        <source>Wait with automatic conversion to Zerocoin until enough HLM for this denomination is available</source>
-        <translation>Met en attente la conversion automatique Zerocoin jusqu'à ce qu'il y ai suffisament de HLM disponibles pour la dénomination demandée</translation>
-    </message>
-    <message>
-        <source>Preferred Automint zHLM Denomination</source>
-        <translation>Dénomination préférée pour l'auto-monnayage zHLM</translation>
     </message>
     <message>
         <source>Stake split threshold:</source>
@@ -2030,6 +1968,12 @@ https://www.transifex.com/heliumchain/helium-project-translations</translation>
         <translation>Language de l'interface utilisateur:</translation>
     </message>
     <message>
+        <source>Language missing or translation incomplete? Help contributing translations here:
+https://www.transifex.com/helium-project/helium-wallet</source>
+        <translation>Langue manquante ou traduction incomplète? Aidez-nous à traduire ce projet ici:
+https://www.transifex.com/helium-project/helium-wallet</translation>
+    </message>
+    <message>
         <source>User Interface Theme:</source>
         <translation>Thème de l'interface utilisateur:</translation>
     </message>
@@ -2080,10 +2024,6 @@ https://www.transifex.com/heliumchain/helium-project-translations</translation>
     <message>
         <source>&amp;Cancel</source>
         <translation>Annuler</translation>
-    </message>
-    <message>
-        <source>Any</source>
-        <translation>Tout</translation>
     </message>
     <message>
         <source>default</source>
@@ -2165,26 +2105,6 @@ https://www.transifex.com/heliumchain/helium-project-translations</translation>
         <translation>Solde courant bloqué dans des adresses témoin</translation>
     </message>
     <message>
-        <source>Your current Helium balance, unconfirmed and immature transactions included</source>
-        <translation>Votre solde Helium actuel, incluant les transactions non confirmées et immatures</translation>
-    </message>
-    <message>
-        <source>zHLM Balance</source>
-        <translation>Solde de zHLM</translation>
-    </message>
-    <message>
-        <source>Mature: more than 20 confirmation and more than 1 mint of the same denomination after it was minted.
-These zHLM are spendable.</source>
-        <translation>Maturité: plus de 20 confirmations et plus de 1 monnaie de la même dénomination après sa frappe.
-Ces zHLM sont dépensables.</translation>
-    </message>
-    <message>
-        <source>Unconfirmed: less than 20 confirmations
-Immature: confirmed, but less than 1 mint of the same denomination after it was minted</source>
-        <translation>Non confirmé: moins de 20 confirmations
-Immature: confirmé, mais moins de 1 monnaie de la même dénomination après sa frappe</translation>
-    </message>
-    <message>
         <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Helium network after a connection is established, but this process has not completed yet.</source>
         <translation>Les informations affichées pourraient être périmées. Votre portefeuille se synchronise automatiquement avec le réseau Helium après l'établissement d'une connexion, mais ce processus n'est pas encore terminé.</translation>
     </message>
@@ -2235,14 +2155,6 @@ Immature: confirmé, mais moins de 1 monnaie de la même dénomination après sa
     <message>
         <source>Locked:</source>
         <translation>Vérrouillé:</translation>
-    </message>
-    <message>
-        <source>Unconfirmed:</source>
-        <translation>Non confirmé:</translation>
-    </message>
-    <message>
-        <source>Your current zHLM balance, unconfirmed and immature zHLM included.</source>
-        <translation>Votre solde courant zHLM, incluant les zHLM non confirmés et immatures.</translation>
     </message>
     <message>
         <source>Recent transactions</source>
@@ -2864,10 +2776,6 @@ S'il vous plaît soyez patient ...</translation>
         <translation>Aucune adresse 'Payer à' de fournie, création d'un paiement local</translation>
     </message>
     <message>
-        <source>Invalid Helium Address</source>
-        <translation>Adresse Helium incorrecte</translation>
-    </message>
-    <message>
         <source>Invalid Send Amount</source>
         <translation>Montant envoyé incorrecte</translation>
     </message>
@@ -3065,7 +2973,7 @@ S'il vous plaît soyez patient ...</translation>
     </message>
     <message>
         <source>Helium Core</source>
-        <translation>PIVX Core</translation>
+        <translation>Helium Core</translation>
     </message>
     <message>
         <source>Error: Specified data directory "%1" does not exist.</source>
@@ -4271,7 +4179,7 @@ S'il vous plaît soyez patient ...</translation>
     <name>SplashScreen</name>
     <message>
         <source>Helium Core</source>
-        <translation>PIVX Core</translation>
+        <translation>Helium Core</translation>
     </message>
     <message>
         <source>Version %1</source>
@@ -4286,8 +4194,8 @@ S'il vous plaît soyez patient ...</translation>
         <translation>Les développeurs Dash Core</translation>
     </message>
     <message>
-        <source>The PIVX Core developers</source>
-        <translation>Les développeurs PIVX Core</translation>
+        <source>The Helium Core developers</source>
+        <translation>Les développeurs Helium Core</translation>
     </message>
     <message>
         <source>[testnet]</source>
@@ -4446,10 +4354,6 @@ S'il vous plaît soyez patient ...</translation>
     <message>
         <source>Merchant</source>
         <translation>Marchand</translation>
-    </message>
-    <message>
-        <source>Generated coins must mature %1 blocks before they can be spent. When you generated this block, it was broadcast to the network to be added to the block chain. If it fails to get into the chain, its state will change to "not accepted" and it won't be spendable. This may occasionally happen if another node generates a block within a few seconds of yours.</source>
-        <translation>Les pièces créées doit murir %1 blocs avant qu'elles ne puissent être dépensées. Lorsque vous générez ce bloc, il est diffusé sur le réseau afin d'être ajouté à la chaîne de blocs. Si cet ajout échoue, son statut sera modifié à "non accepté" et il ne sera pas dépensable. Ceci peut arriver occasionnellement lorsqu'un autre noeud du réseau génère un bloc quelques secondes avant le votre.</translation>
     </message>
     <message>
         <source>Debug information</source>
@@ -5297,14 +5201,6 @@ S'il vous plaît soyez patient ...</translation>
     <message>
         <source>Copyright (C) 2009-%i The Bitcoin Core Developers</source>
         <translation>Copyright (C) 2009-%i Les développeurs de Bitcoin Core</translation>
-    </message>
-    <message>
-        <source>Copyright (C) 2014-%i The Dash Core Developers</source>
-        <translation>Copyright (C) 2014-%i Les développeurs de DASH Core</translation>
-    </message>
-    <message>
-        <source>Copyright (C) 2015-%i The Helium Core Developers</source>
-        <translation>Copyright (C) 2015-%i Les développeurs de PIVX Core</translation>
     </message>
     <message>
         <source>Corrupted block database detected</source>

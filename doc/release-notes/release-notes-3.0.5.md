@@ -108,4 +108,4 @@ Thanks to everyone who directly contributed to this release:
 - presstab
 - rejectedpromise
 
-As well as everyone that helped translating on [Transifex](https://www.transifex.com/projects/p/gjhiggins/diproton-translations/).
+As well as everyone that helped translating on [Transifex](https://www.transifex.com/helium-project/helium-wallet/).

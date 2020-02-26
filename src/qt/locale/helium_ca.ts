@@ -168,10 +168,6 @@
         <translation>Confirma l'encriptació del moneder</translation>
     </message>
     <message>
-        <source>Helium will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your HLMs from being stolen by malware infecting your computer.</source>
-        <translation>Helium es tancarà per finalitzar el procés d'encriptació. Recorda que encriptant el teu moneder no protegeix els teus HLM de ser robats si el teu ordinador està infectat amb programari maliciós.</translation>
-    </message>
-    <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
         <translation>Estàs segur que vols encriptar el moneder?</translation>
     </message>
@@ -422,15 +418,11 @@
     </message>
     <message>
         <source>Helium Core</source>
-        <translation>PIVX Core</translation>
+        <translation>Helium Core</translation>
     </message>
     <message>
         <source>Send coins to a Helium address</source>
         <translation>Envia monedes a una adreça Helium</translation>
-    </message>
-    <message>
-        <source>&amp;Privacy</source>
-        <translation>&amp;Privacitat</translation>
     </message>
     <message>
         <source>&amp;Masternodes</source>
@@ -438,7 +430,7 @@
     </message>
     <message>
         <source>&amp;About Helium Core</source>
-        <translation>&amp;Sobre PIVX Core</translation>
+        <translation>&amp;Sobre Helium Core</translation>
     </message>
     <message>
         <source>&amp;BIP38 tool</source>
@@ -863,7 +855,7 @@
     </message>
     <message>
         <source>Helium Core</source>
-        <translation>PIVX Core</translation>
+        <translation>Helium Core</translation>
     </message>
     <message>
         <source>(%1-bit)</source>
@@ -871,7 +863,7 @@
     </message>
     <message>
         <source>About Helium Core</source>
-        <translation>Sobre PIVX Core</translation>
+        <translation>Sobre Helium Core</translation>
     </message>
     <message>
         <source>Command-line options</source>
@@ -934,7 +926,7 @@
     </message>
     <message>
         <source>Helium Core</source>
-        <translation>PIVX Core</translation>
+        <translation>Helium Core</translation>
     </message>
     <message>
         <source>Error: Specified data directory "%1" cannot be created.</source>
@@ -1327,7 +1319,7 @@
     </message>
     <message>
         <source>Helium Core</source>
-        <translation>PIVX Core</translation>
+        <translation>Helium Core</translation>
     </message>
     </context>
 <context>
@@ -1717,7 +1709,7 @@
     <name>SplashScreen</name>
     <message>
         <source>Helium Core</source>
-        <translation>PIVX Core</translation>
+        <translation>Helium Core</translation>
     </message>
     <message>
         <source>Version %1</source>

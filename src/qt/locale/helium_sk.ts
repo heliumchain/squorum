@@ -172,10 +172,6 @@
         <translation>Potvrďte šifrovanie peňaženky</translation>
     </message>
     <message>
-        <source>Helium will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your HLMs from being stolen by malware infecting your computer.</source>
-        <translation>Helium sa teraz ukončí, aby dokončil proces šifrovania. Nezabudnite, že šifrovanie peňaženky nemôže úplne ochrániť vaše HLM pred odcudzením škodlivým softvérom, ktorý infikuje váš počítač.</translation>
-    </message>
-    <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
         <translation>Naozaj chcete zašifrovať svoju peňaženku?</translation>
     </message>
@@ -570,7 +566,7 @@
     </message>
     <message>
         <source>Helium Core</source>
-        <translation>PIVX Core</translation>
+        <translation>Helium Core</translation>
     </message>
     <message>
         <source>Send coins to a Helium address</source>
@@ -590,11 +586,11 @@
     </message>
     <message>
         <source>&amp;About Helium Core</source>
-        <translation>O PIVX Core</translation>
+        <translation>O Helium Core</translation>
     </message>
     <message>
         <source>Show information about Helium Core</source>
-        <translation>Zobraziť informácie o PIVX Core</translation>
+        <translation>Zobraziť informácie o Helium Core</translation>
     </message>
     <message>
         <source>Modify configuration options for Helium</source>
@@ -871,14 +867,14 @@ MultiSend: %1</translation>
     <name>HelpMessageDialog</name>
     <message>
         <source>Helium Core</source>
-        <translation>PIVX Core</translation>
+        <translation>Helium Core</translation>
     </message>
     </context>
 <context>
     <name>Intro</name>
     <message>
         <source>Helium Core</source>
-        <translation>PIVX Core</translation>
+        <translation>Helium Core</translation>
     </message>
     <message>
         <source>Error</source>
@@ -983,7 +979,7 @@ MultiSend: %1</translation>
     </message>
     <message>
         <source>Helium Core</source>
-        <translation>PIVX Core</translation>
+        <translation>Helium Core</translation>
     </message>
     </context>
 <context>
@@ -1189,7 +1185,7 @@ MultiSend: %1</translation>
     <name>SplashScreen</name>
     <message>
         <source>Helium Core</source>
-        <translation>PIVX Core</translation>
+        <translation>Helium Core</translation>
     </message>
     </context>
 <context>

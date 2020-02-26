@@ -136,10 +136,6 @@
         <translation>Ser till att inaktivera obetydliga skickade pengar när OS kontot är i risk. Förser ingen riktig säkerhet.</translation>
     </message>
     <message>
-        <source>For anonymization, automint, and staking only</source>
-        <translation>Endast för anonymisering, automint, och staking</translation>
-    </message>
-    <message>
         <source>Enter the new passphrase to the wallet.&lt;br/&gt;Please use a passphrase of &lt;b&gt;ten or more random characters&lt;/b&gt;, or &lt;b&gt;eight or more words&lt;/b&gt;.</source>
         <translation>Skriv in den nya lösenfrasen för plånboken.&lt;br/&gt;Var vänlig använd en lösenfras bestående av &lt;b&gt;tio eller mer slumpmässiga bokstäver&lt;/b&gt;, eller &lt;b&gt;åtta eller flera ord &lt;/b&gt;.</translation>
     </message>
@@ -174,10 +170,6 @@
     <message>
         <source>Confirm wallet encryption</source>
         <translation>Bekräfta plånboks krypering</translation>
-    </message>
-    <message>
-        <source>Helium will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your HLMs from being stolen by malware infecting your computer.</source>
-        <translation>Helium kommer att stängas ner nu för att färdigställa kryperingsprocessen. Kom ihåg att kryptering av din plånbok inte kan säkerställa dina HLMs från att bli stulna av skadeprogram som infekterat din dator.</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
@@ -433,10 +425,6 @@
         <translation>Bläddra i transaktions historiken</translation>
     </message>
     <message>
-        <source>Privacy Actions for zHLM</source>
-        <translation>Integritets funktioner för zHLM</translation>
-    </message>
-    <message>
         <source>&amp;Governance</source>
         <translation>&amp;Management</translation>
     </message>
@@ -658,7 +646,7 @@
     </message>
     <message>
         <source>Helium Core</source>
-        <translation>PIVX Core</translation>
+        <translation>Helium Core</translation>
     </message>
     <message>
         <source>Send coins to a Helium address</source>
@@ -667,10 +655,6 @@
     <message>
         <source>Request payments (generates QR codes and helium: URIs)</source>
         <translation>Begär betalning (genererar QR kod och helium: URls)</translation>
-    </message>
-    <message>
-        <source>&amp;Privacy</source>
-        <translation>&amp;Sekretess</translation>
     </message>
     <message>
         <source>&amp;Masternodes</source>
@@ -859,14 +843,6 @@ MultiSend: %1</translation>
  MultiSend: %1</source>
         <translation>Staking inaktivt
 MultiSend: %1</translation>
-    </message>
-    <message>
-        <source>AutoMint is currently enabled and set to </source>
-        <translation>AutoMint är för tillfället aktiverat och inställt på</translation>
-    </message>
-    <message>
-        <source>AutoMint is disabled</source>
-        <translation>AutoMint är inaktiverat</translation>
     </message>
     <message>
         <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;unlocked&lt;/b&gt;</source>
@@ -1291,7 +1267,7 @@ MultiSend: %1</translation>
     </message>
     <message>
         <source>Helium Core</source>
-        <translation>PIVX Core</translation>
+        <translation>Helium Core</translation>
     </message>
     <message>
         <source>(%1-bit)</source>
@@ -1366,7 +1342,7 @@ MultiSend: %1</translation>
     </message>
     <message>
         <source>Helium Core</source>
-        <translation>PIVX Core</translation>
+        <translation>Helium Core</translation>
     </message>
     <message>
         <source>Error: Specified data directory "%1" cannot be created.</source>
@@ -1960,46 +1936,8 @@ Var god vänta efter att du trycker på importera.</translation>
         <translation>Användargränssnittets språk kan väljas här. Denna inställning börjar gälla efter att man startat om Helium.</translation>
     </message>
     <message>
-        <source>Language missing or translation incomplete? Help contributing translations here:
-https://www.transifex.com/heliumchain/helium-project-translations</source>
-        <translation>Fattas språk eller är översättningen ofullständig? Hjälp till att bidra med översättning här:
-https://www.transifex.com/heliumchain/helium-project-translations</translation>
-    </message>
-    <message>
         <source>Map port using &amp;UPnP</source>
         <translation>Kartlägg port med &amp;UPnP</translation>
-    </message>
-    <message>
-        <source>Enable automatic minting of HLM units to zHLM</source>
-        <translation>Tillåt automatisk prägling med HLM enheter till zHLM</translation>
-    </message>
-    <message>
-        <source>Enable zHLM Automint</source>
-        <translation>Tillåt zHLM Autoprägling</translation>
-    </message>
-    <message>
-        <source>Enable automatic zHLM minting from specific addresses</source>
-        <translation>Aktivera automatisk zHLM prägling från specifika adresser</translation>
-    </message>
-    <message>
-        <source>Enable Automint Addresses</source>
-        <translation>Aktivera autopräglingsadresser</translation>
-    </message>
-    <message>
-        <source>Percentage of incoming HLM which get automatically converted to zHLM via Zerocoin Protocol (min: 10%)</source>
-        <translation>Procent av inkommande HLM som automatiskt konverteras till zHLM via Zerocoin Protokollet (min: 10%)</translation>
-    </message>
-    <message>
-        <source>Percentage of autominted zHLM</source>
-        <translation>Procent av autopräglade zHLM</translation>
-    </message>
-    <message>
-        <source>Wait with automatic conversion to Zerocoin until enough HLM for this denomination is available</source>
-        <translation>Vänta med automatisk omvandling till Zerocoin tills tillräckligt många HLM för denna valör är tillgängliga</translation>
-    </message>
-    <message>
-        <source>Preferred Automint zHLM Denomination</source>
-        <translation>Preferens på zHLM valör i autoprägling</translation>
     </message>
     <message>
         <source>Stake split threshold:</source>
@@ -2054,6 +1992,12 @@ https://www.transifex.com/heliumchain/helium-project-translations</translation>
         <translation>Användargränssnitt och &amp;språk:</translation>
     </message>
     <message>
+        <source>Language missing or translation incomplete? Help contributing translations here:
+https://www.transifex.com/helium-project/helium-wallet</source>
+        <translation>Fattas språk eller är översättningen ofullständig? Hjälp till att bidra med översättning här:
+https://www.transifex.com/helium-project/helium-wallet</translation>
+    </message>
+    <message>
         <source>User Interface Theme:</source>
         <translation>Användargränssnitts Tema:</translation>
     </message>
@@ -2104,10 +2048,6 @@ https://www.transifex.com/heliumchain/helium-project-translations</translation>
     <message>
         <source>&amp;Cancel</source>
         <translation>&amp;ta bort</translation>
-    </message>
-    <message>
-        <source>Any</source>
-        <translation>Vilken som helst</translation>
     </message>
     <message>
         <source>default</source>
@@ -2189,26 +2129,6 @@ https://www.transifex.com/heliumchain/helium-project-translations</translation>
         <translation>Nuvarande låst saldo endast i "watch only" adresser</translation>
     </message>
     <message>
-        <source>Your current Helium balance, unconfirmed and immature transactions included</source>
-        <translation>Ditt nuvarande Helium saldo, obekräftade och omogna transaktioner är inkluderade</translation>
-    </message>
-    <message>
-        <source>zHLM Balance</source>
-        <translation>zHLM Saldo</translation>
-    </message>
-    <message>
-        <source>Mature: more than 20 confirmation and more than 1 mint of the same denomination after it was minted.
-These zHLM are spendable.</source>
-        <translation>Mogna: över 20 bekräftelser och över 1 prägling av samma valör efter den blev myntad.
-Dessa zHLM kan spenderas.</translation>
-    </message>
-    <message>
-        <source>Unconfirmed: less than 20 confirmations
-Immature: confirmed, but less than 1 mint of the same denomination after it was minted</source>
-        <translation>Obekräftade: Under 20 bekräftelser
-Omogna: bekräftade men under 1 myntning av samma valör efter den blev präglad</translation>
-    </message>
-    <message>
         <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Helium network after a connection is established, but this process has not completed yet.</source>
         <translation>nformationen kan vara föråldrad. Din plånbok synkroniserar automatiskt med Helium nätverket efter att en anslutning är etablerad, men denna process har inte blivit klar än.</translation>
     </message>
@@ -2259,14 +2179,6 @@ Omogna: bekräftade men under 1 myntning av samma valör efter den blev präglad
     <message>
         <source>Locked:</source>
         <translation>Låsta:</translation>
-    </message>
-    <message>
-        <source>Unconfirmed:</source>
-        <translation>Obekräftade:</translation>
-    </message>
-    <message>
-        <source>Your current zHLM balance, unconfirmed and immature zHLM included.</source>
-        <translation>Ditt nuvarande zHLM saldo, obekräftade och omogna zHLM inräknade.</translation>
     </message>
     <message>
         <source>Recent transactions</source>
@@ -2896,10 +2808,6 @@ Ha lite tålamod...</translation>
         <translation>Ingen 'Betala Till' adress inmatad, skapar lokal betalning</translation>
     </message>
     <message>
-        <source>Invalid Helium Address</source>
-        <translation>Ogiltig Helium Adress</translation>
-    </message>
-    <message>
         <source>Invalid Send Amount</source>
         <translation>Ogiltig Mängd att Skicka</translation>
     </message>
@@ -3091,7 +2999,7 @@ Var tålmodig...</translation>
     </message>
     <message>
         <source>Helium Core</source>
-        <translation>PIVX Core</translation>
+        <translation>Helium Core</translation>
     </message>
     <message>
         <source>Error: Specified data directory "%1" does not exist.</source>
@@ -4289,7 +4197,7 @@ Var tålmodig...</translation>
     <name>SplashScreen</name>
     <message>
         <source>Helium Core</source>
-        <translation>PIVX Core</translation>
+        <translation>Helium Core</translation>
     </message>
     <message>
         <source>Version %1</source>
@@ -4304,7 +4212,7 @@ Var tålmodig...</translation>
         <translation>Dash Core utvecklarna</translation>
     </message>
     <message>
-        <source>The PIVX Core developers</source>
+        <source>The Helium Core developers</source>
         <translation>Helium Core utvecklarna</translation>
     </message>
     <message>
@@ -4476,10 +4384,6 @@ Var tålmodig...</translation>
     <message>
         <source>Merchant</source>
         <translation>Handlare</translation>
-    </message>
-    <message>
-        <source>Generated coins must mature %1 blocks before they can be spent. When you generated this block, it was broadcast to the network to be added to the block chain. If it fails to get into the chain, its state will change to "not accepted" and it won't be spendable. This may occasionally happen if another node generates a block within a few seconds of yours.</source>
-        <translation>Genererade mynt måste mogna %1 block innan de kan spenderas. När du genererar detta block, sänds den ut till nätverket för att läggas till i block chain. Om den misslyckas att komma med i blockchain så kommer dess status att ändras till "ej accepterad" och kommer ej kunna spenderas. Detta kan ibland hända om en annan nod genererar ett block inom några sekunder av ditt.</translation>
     </message>
     <message>
         <source>Debug information</source>
@@ -5299,14 +5203,6 @@ Var tålmodig...</translation>
     <message>
         <source>Copyright (C) 2009-%i The Bitcoin Core Developers</source>
         <translation>Copyright (C) 2009-%i The Bitcoin Core Developers</translation>
-    </message>
-    <message>
-        <source>Copyright (C) 2014-%i The Dash Core Developers</source>
-        <translation>Copyright (C) 2014-%i The Dash Core Developers</translation>
-    </message>
-    <message>
-        <source>Copyright (C) 2015-%i The Helium Core Developers</source>
-        <translation>Copyright (C) 2015-%i The Helium Core Developers</translation>
     </message>
     <message>
         <source>Corrupted block database detected</source>

@@ -133,11 +133,11 @@
     </message>
     <message>
         <source>Serves to disable the trivial sendmoney when OS account compromised. Provides no real security.</source>
-        <translation>Служит для отключения тривиальных сендмонэй, когда учетная запись ОС скомпрометирована. Не обеспечивает реальной безопасности. </translation>
+        <translation>Служит для отключения тривиальных сендмонэй, когда учетная запись ОС скомпрометирована. Не обеспечивает реальной безопасности.</translation>
     </message>
     <message>
-        <source>For anonymization, automint, and staking only</source>
-        <translation>Только для анонимности, автосоздания и хранения</translation>
+        <source>For staking only</source>
+        <translation>Только для ставок</translation>
     </message>
     <message>
         <source>Enter the new passphrase to the wallet.&lt;br/&gt;Please use a passphrase of &lt;b&gt;ten or more random characters&lt;/b&gt;, or &lt;b&gt;eight or more words&lt;/b&gt;.</source>
@@ -174,10 +174,6 @@
     <message>
         <source>Confirm wallet encryption</source>
         <translation>Подтверждение шифрования кошелька</translation>
-    </message>
-    <message>
-        <source>Helium will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your HLMs from being stolen by malware infecting your computer.</source>
-        <translation>Helium сейчас закроется, чтобы завершить процесс шифрования. Помните, что шифрование вашего кошелька не может полностью защитить ваши Helium от кражи с использованием вредоносного ПО.</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
@@ -279,7 +275,7 @@
     </message>
     <message>
         <source>Passphrase: </source>
-        <translation>Кодовая фраза:</translation>
+        <translation>Кодовая фраза: </translation>
     </message>
     <message>
         <source>Encrypted Key:</source>
@@ -291,7 +287,7 @@
     </message>
     <message>
         <source>Encrypt the private key for this Helium address</source>
-        <translation>Зашифровать личные ключи для этого Helium адреса </translation>
+        <translation>Зашифровать личные ключи для этого Helium адреса</translation>
     </message>
     <message>
         <source>Reset all fields</source>
@@ -327,7 +323,7 @@
     </message>
     <message>
         <source>Decrypted Key:</source>
-        <translation>Дешифрованный Ключ</translation>
+        <translation>Дешифрованный Ключ:</translation>
     </message>
     <message>
         <source>Import Address</source>
@@ -339,7 +335,7 @@
     </message>
     <message>
         <source>The entered passphrase is invalid. </source>
-        <translation>Неправильно введена кодовая фраза.</translation>
+        <translation>Неправильно введена кодовая фраза. </translation>
     </message>
     <message>
         <source>Allowed: 0-9,a-z,A-Z,</source>
@@ -433,10 +429,6 @@
         <translation>Просмотр истории транзакций</translation>
     </message>
     <message>
-        <source>Privacy Actions for zHLM</source>
-        <translation>Действия конфиденциальности для зпив</translation>
-    </message>
-    <message>
         <source>E&amp;xit</source>
         <translation>В&amp;ыход</translation>
     </message>
@@ -482,7 +474,7 @@
     </message>
     <message>
         <source>&amp;Change Passphrase...</source>
-        <translation>&amp;Изменить кодовую фразу</translation>
+        <translation>&amp;Изменить кодовую фразу...</translation>
     </message>
     <message>
         <source>Change the passphrase used for wallet encryption</source>
@@ -566,7 +558,7 @@
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
-        <translation>Показать список использованых адресов отправки </translation>
+        <translation>Показать список использованых адресов отправки</translation>
     </message>
     <message>
         <source>&amp;Receiving addresses...</source>
@@ -578,7 +570,7 @@
     </message>
     <message>
         <source>&amp;Multisignature creation...</source>
-        <translation>СОздание многоподписей...</translation>
+        <translation>&amp;Создание многоподписей...</translation>
     </message>
     <message>
         <source>Create a new multisignature address and add it to this wallet</source>
@@ -602,7 +594,7 @@
     </message>
     <message>
         <source>Open &amp;URI...</source>
-        <translation>Открыть &amp;URI</translation>
+        <translation>Открыть &amp;URI...</translation>
     </message>
     <message>
         <source>&amp;Command-line options</source>
@@ -618,11 +610,11 @@
     </message>
     <message>
         <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;unlocked&lt;/b&gt; for anonymization and staking only</source>
-        <translation>Кошелек &lt;b&gt;зашифрован&lt;/b&gt; и в настоящее время &lt;b&gt;разблокирован&lt;/b&gt; для анонимности и хранения.</translation>
+        <translation>Кошелек &lt;b&gt;зашифрован&lt;/b&gt; и в настоящее время &lt;b&gt;разблокирован&lt;/b&gt; для анонимности и хранения</translation>
     </message>
     <message>
         <source>Tor is &lt;b&gt;enabled&lt;/b&gt;: %1</source>
-        <translation>Tor равен &lt;b&gt;enabled&lt;/b&gt;: %1</translation>
+        <translation>Tor &lt;b&gt;включен&lt;/b&gt;: %1</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -646,7 +638,7 @@
     </message>
     <message>
         <source>Helium Core</source>
-        <translation>PIVX Core</translation>
+        <translation>Helium Core</translation>
     </message>
     <message>
         <source>Send coins to a Helium address</source>
@@ -655,10 +647,6 @@
     <message>
         <source>Request payments (generates QR codes and helium: URIs)</source>
         <translation>Запросить платежи (генерирует QR-код и Helium: URI)</translation>
-    </message>
-    <message>
-        <source>&amp;Privacy</source>
-        <translation>&amp;Конфиденциальность</translation>
     </message>
     <message>
         <source>&amp;Masternodes</source>
@@ -670,11 +658,11 @@
     </message>
     <message>
         <source>&amp;About Helium Core</source>
-        <translation>&amp;О PIVX Core</translation>
+        <translation>&amp;О Helium Core</translation>
     </message>
     <message>
         <source>Show information about Helium Core</source>
-        <translation>Показать информацию о PIVX Core</translation>
+        <translation>Показать информацию о Helium Core</translation>
     </message>
     <message>
         <source>Modify configuration options for Helium</source>
@@ -686,7 +674,7 @@
     </message>
     <message>
         <source>Verify messages to ensure they were signed with specified Helium addresses</source>
-        <translation>Проверте сообщения, чтобы убедиться, что они были подписаны указанным Helium адресом </translation>
+        <translation>Проверте сообщения, чтобы убедиться, что они были подписаны указанным Helium адресом</translation>
     </message>
     <message>
         <source>&amp;BIP38 tool</source>
@@ -734,7 +722,7 @@
     </message>
     <message>
         <source>Helium Core client</source>
-        <translation>Клиент PIVX Core</translation>
+        <translation>Клиент Helium Core</translation>
     </message>
     <message>
         <source>Synchronizing with network...</source>
@@ -750,7 +738,7 @@
     </message>
     <message>
         <source>No block source available...</source>
-        <translation>Источник блоков недоступен</translation>
+        <translation>Источник блоков недоступен...</translation>
     </message>
     <message>
         <source>Up to date</source>
@@ -766,11 +754,11 @@
     </message>
     <message>
         <source>Last received block was generated %1 ago.</source>
-        <translation>Последний полученный блок был сгенерирован %1 назад</translation>
+        <translation>Последний полученный блок был сгенерирован %1 назад.</translation>
     </message>
     <message>
         <source>Transactions after this will not yet be visible.</source>
-        <translation>Трансакции после этой не будут видимы</translation>
+        <translation>Трансакции после этой не будут видимы.</translation>
     </message>
     <message>
         <source>Error</source>
@@ -811,7 +799,7 @@ Address: %4
     <message>
         <source>Staking is active
  MultiSend: %1</source>
-        <translation>Хранение активно
+        <translation>Стакинг активен
 MultiSend: %1</translation>
     </message>
     <message>
@@ -825,16 +813,8 @@ MultiSend: %1</translation>
     <message>
         <source>Staking is not active
  MultiSend: %1</source>
-        <translation>Хранение не активно
+        <translation>Стакинг не активен
 MultiSend: %1</translation>
-    </message>
-    <message>
-        <source>AutoMint is currently enabled and set to </source>
-        <translation>Авточеканка в данный момен включена и установлена в</translation>
-    </message>
-    <message>
-        <source>AutoMint is disabled</source>
-        <translation>Авточеканка отключена</translation>
     </message>
     <message>
         <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;unlocked&lt;/b&gt;</source>
@@ -844,7 +824,11 @@ MultiSend: %1</translation>
         <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;locked&lt;/b&gt;</source>
         <translation>Кошелек &lt;b&gt;зашифрован&lt;/b&gt; и в настоящее время &lt;b&gt;заблокирован&lt;/b&gt;</translation>
     </message>
-    </context>
+    <message>
+        <source>A fatal error occurred. Helium can no longer continue safely and will quit.</source>
+        <translation>Произошла фатальная ошибка. Helium больше не может безопасно продолжать работу и завершит работу.</translation>
+    </message>
+</context>
 <context>
     <name>BlockExplorer</name>
     <message>
@@ -1011,7 +995,7 @@ MultiSend: %1</translation>
     </message>
     <message>
         <source>Copy after fee</source>
-        <translation>Копировать после вознаграждения </translation>
+        <translation>Копировать после вознаграждения</translation>
     </message>
     <message>
         <source>Copy bytes</source>
@@ -1031,7 +1015,7 @@ MultiSend: %1</translation>
     </message>
     <message>
         <source>Please switch to "List mode" to use this function.</source>
-        <translation>Для использования этой функции перейдите в "Режим списка"</translation>
+        <translation>Для использования этой функции перейдите в "Режим списка".</translation>
     </message>
     <message>
         <source>highest</source>
@@ -1091,11 +1075,11 @@ MultiSend: %1</translation>
     </message>
     <message>
         <source>This means a fee of at least %1 per kB is required.</source>
-        <translation>Это означает, что необходима комиссия в размере как минимум %1 за kB</translation>
+        <translation>Это означает, что необходима комиссия в размере как минимум %1 за kB.</translation>
     </message>
     <message>
         <source>Can vary +/- 1 byte per input.</source>
-        <translation>Может вариировать +/- 1 байт на каждый ввод</translation>
+        <translation>Может вариировать +/- 1 байт на каждый ввод.</translation>
     </message>
     <message>
         <source>Transactions with higher priority are more likely to get included into a block.</source>
@@ -1107,7 +1091,7 @@ MultiSend: %1</translation>
     </message>
     <message>
         <source>This label turns red, if any recipient receives an amount smaller than %1.</source>
-        <translation>Этот маркер становится красным если получаемая адресатом сумма меньше, чем %1</translation>
+        <translation>Этот маркер становится красным если получаемая адресатом сумма меньше, чем %1.</translation>
     </message>
     <message>
         <source>Can vary +/- %1 uhlm per input.</source>
@@ -1223,7 +1207,7 @@ MultiSend: %1</translation>
     </message>
     <message>
         <source>Helium Core</source>
-        <translation>PIVX Core</translation>
+        <translation>Helium Core</translation>
     </message>
     <message>
         <source>(%1-bit)</source>
@@ -1231,7 +1215,7 @@ MultiSend: %1</translation>
     </message>
     <message>
         <source>About Helium Core</source>
-        <translation>О PIVX Core</translation>
+        <translation>О Helium Core</translation>
     </message>
     <message>
         <source>Command-line options</source>
@@ -1247,7 +1231,7 @@ MultiSend: %1</translation>
     </message>
     <message>
         <source>UI Options:</source>
-        <translation>Опции интерфейса</translation>
+        <translation>Опции интерфейса:</translation>
     </message>
     <message>
         <source>Choose data directory on startup (default: %u)</source>
@@ -1298,11 +1282,11 @@ MultiSend: %1</translation>
     </message>
     <message>
         <source>Helium Core</source>
-        <translation>PIVX Core</translation>
+        <translation>Helium Core</translation>
     </message>
     <message>
         <source>Error: Specified data directory "%1" cannot be created.</source>
-        <translation>Ошибка: Невозможно создать указанный каталог данных "%1" </translation>
+        <translation>Ошибка: Невозможно создать указанный каталог данных "%1".</translation>
     </message>
     <message>
         <source>Error</source>
@@ -1329,7 +1313,7 @@ MultiSend: %1</translation>
     </message>
     <message>
         <source>Note: Status of your masternodes in local wallet can potentially be slightly incorrect.&lt;br /&gt;Always wait for wallet to sync additional data and then double check from another node&lt;br /&gt;if your node should be running but you still see "MISSING" in "Status" field.</source>
-        <translation>Примечание: Состояние ваших мастернод в локальном кошельке может слегка отличаться от действительности. &lt;br /&gt;Всегда дожидайтесь окончания синхронизации дополнительных данных и затем дважды проверьте с другого узла&lt;br /&gt;если ваша нода должна работать, но в окне "Состояние" пишет "НЕАКТИВНО"</translation>
+        <translation>Примечание: Состояние ваших мастернод в локальном кошельке может слегка отличаться от действительности. &lt;br /&gt;Всегда дожидайтесь окончания синхронизации дополнительных данных и затем дважды проверьте с другого узла&lt;br /&gt;если ваша нода должна работать, но в окне "Состояние" пишет "НЕАКТИВНО".</translation>
     </message>
     <message>
         <source>Alias</source>
@@ -1443,7 +1427,7 @@ MultiSend: %1</translation>
 To Add: enter percentage to give and Helium address to add to the MultiSend vector.
 To Delete: Enter address to delete and press delete.
 MultiSend will not be activated unless you have clicked Activate</source>
-        <translation>MultiSend позволяет вам автоматически отправлять до 100% вознаграждения за мастерноды и хранение, после их созревания, на другие Helium адреса.
+        <translation>MultiSend позволяет вам автоматически отправлять до 100% вознаграждения за мастерноды и стакинг, после их созревания, на другие Helium адреса.
 Для добавления: введите передаваемый процент и Helium адрес для добавления к вектору MultiSend.
 Для удаления: введите удаляемый адрес и нажмите удалить.
 MultiSend будет неактивен до тех пор, пока вы не нажмете Включить</translation>
@@ -1533,6 +1517,76 @@ MultiSend будет неактивен до тех пор, пока вы не �
         <translation>(нет метки)</translation>
     </message>
     <message>
+        <source>MultiSend Active for Stakes and Masternode Rewards</source>
+        <translation>MultiSend активный для ставок и вознаграждений мастернод</translation>
+    </message>
+    <message>
+        <source>MultiSend Active for Stakes</source>
+        <translation>MultiSend активный для ставок</translation>
+    </message>
+    <message>
+        <source>MultiSend Active for Masternode Rewards</source>
+        <translation>MultiSend активный для вознаграждений мастернод</translation>
+    </message>
+    <message>
+        <source>MultiSend Not Active</source>
+        <translation>MultiSend не активный</translation>
+    </message>
+    <message>
+        <source>The entered address: %1 is invalid.
+Please check the address and try again.</source>
+        <translation>Введенный адрес: %1 недействителен.
+ Пожалуйста, проверьте адрес и попробуйте снова.</translation>
+    </message>
+    <message>
+        <source>The total amount of your MultiSend vector is over 100% of your stake reward</source>
+        <translation>Общая сумма вашего вектора MultiSend превышает 100% ваших вознаграждений</translation>
+    </message>
+    <message>
+        <source>Saved the MultiSend to memory, but failed saving properties to the database.</source>
+        <translation>Сохранено MultiSend в памяти, но не удалось сохранить в базе данных.</translation>
+    </message>
+    <message>
+        <source>MultiSend Vector</source>
+        <translation>Вектор MultiSend</translation>
+    </message>
+    <message>
+        <source>Removed %1</source>
+        <translation>Удалено %1</translation>
+    </message>
+    <message>
+        <source>Could not locate address</source>
+        <translation>Не удалось найти адрес</translation>
+    </message>
+    <message>
+        <source>Unable to activate MultiSend, check MultiSend vector</source>
+        <translation>Невозможно активировать MultiSend, проверьте вектор MultiSend</translation>
+    </message>
+    <message>
+        <source>Need to select to send on stake and/or masternode rewards</source>
+        <translation>Нужно выбрать, чтобы отправить на ставку и / или награды мастернод</translation>
+    </message>
+    <message>
+        <source>MultiSend activated but writing settings to DB failed</source>
+        <translation>MultiSend активирован, но запись настроек в БД не удалась</translation>
+    </message>
+    <message>
+        <source>MultiSend activated</source>
+        <translation>MultiSend активирован</translation>
+    </message>
+    <message>
+        <source>First Address Not Valid</source>
+        <translation>Первый адрес не действителен</translation>
+    </message>
+    <message>
+        <source>MultiSend deactivated but writing settings to DB failed</source>
+        <translation>MultiSend деактивирован, но запись настроек в БД не удалась</translation>
+    </message>
+    <message>
+        <source>MultiSend deactivated</source>
+        <translation>MultiSend деактивирован</translation>
+    </message>
+    <message>
         <source>Please Enter 1 - 100 for percent.</source>
         <translation>Введите 1 - 100 для указания процентов.</translation>
     </message>
@@ -1541,7 +1595,7 @@ MultiSend будет неактивен до тех пор, пока вы не �
     <name>MultisigDialog</name>
     <message>
         <source>Multisignature Address Interactions</source>
-        <translation> Многоподписные адресные взаимодействия</translation>
+        <translation>Многоподписные адресные взаимодействия</translation>
     </message>
     <message>
         <source>Create MultiSignature &amp;Address</source>
@@ -1637,7 +1691,7 @@ Please be patient after clicking import.</source>
     </message>
     <message>
         <source>Add &amp;Destination</source>
-        <translation>Добавить &amp; Назначение</translation>
+        <translation>Добавить &amp;Назначение</translation>
     </message>
     <message>
         <source>Create a transaction object using the given inputs to the given outputs</source>
@@ -1649,7 +1703,7 @@ Please be patient after clicking import.</source>
     </message>
     <message>
         <source>&amp;Sign MultiSignature Tx</source>
-        <translation>&amp; Sign MultiSignature Tx</translation>
+        <translation>&amp;Подпись Мультиподписной транзакции</translation>
     </message>
     <message>
         <source>Transaction Hex:</source>
@@ -1677,7 +1731,7 @@ Please be patient after clicking import.</source>
     </message>
     <message>
         <source>Add Private &amp;Key</source>
-        <translation>Добавьте личный &amp; ключ</translation>
+        <translation>Добавьте личный &amp;ключ</translation>
     </message>
     <message>
         <source>Sign with only private keys (Not Recommened)</source>
@@ -1697,11 +1751,11 @@ Please be patient after clicking import.</source>
     </message>
     <message>
         <source>Vout Position: </source>
-        <translation>Vout Position:</translation>
+        <translation>Позиция Vout: </translation>
     </message>
     <message>
         <source>Amount: </source>
-        <translation>Сумма:</translation>
+        <translation>Сумма: </translation>
     </message>
     <message>
         <source>Maximum (15)</source>
@@ -1822,38 +1876,8 @@ Please be patient after clicking import.</source>
         <translation>Здесь можно выставить язык интерфейса. Изменения вступят в силу после перезапуска Helium.</translation>
     </message>
     <message>
-        <source>Language missing or translation incomplete? Help contributing translations here:
-https://www.transifex.com/heliumchain/helium-project-translations</source>
-        <translation>Отсутствует ваш язык или заметили незавершенный перевод? Вы можете помочь нам стать лучше:
-https://www.transifex.com/heliumchain/helium-project-translations</translation>
-    </message>
-    <message>
         <source>Map port using &amp;UPnP</source>
-        <translation>Карта порта, использующего &amp;UPnP</translation>
-    </message>
-    <message>
-        <source>Enable automatic minting of HLM units to zHLM</source>
-        <translation>Невозможно автоматически отчеканить единицы HLM для zHLM</translation>
-    </message>
-    <message>
-        <source>Enable zHLM Automint</source>
-        <translation>Невозможно авточеканка  zHLM</translation>
-    </message>
-    <message>
-        <source>Percentage of incoming HLM which get automatically converted to zHLM via Zerocoin Protocol (min: 10%)</source>
-        <translation>Процент приходящих HLM, которые автоматически конвертируются в zHLM благодаря Zerocoin протоколу (min: 10%)</translation>
-    </message>
-    <message>
-        <source>Percentage of autominted zHLM</source>
-        <translation>Процент  авточеканненых zHLM</translation>
-    </message>
-    <message>
-        <source>Wait with automatic conversion to Zerocoin until enough HLM for this denomination is available</source>
-        <translation>Подождите с автоматическим преобразованием в Zerocoin, пока не будет достаточно HLM для этой номинации.</translation>
-    </message>
-    <message>
-        <source>Preferred Automint zHLM Denomination</source>
-        <translation>Предпочитаемый номинал авточеканной  монеты  zHLM</translation>
+        <translation>Перенаправление порта, используя &amp;UPnP</translation>
     </message>
     <message>
         <source>Stake split threshold:</source>
@@ -1873,7 +1897,7 @@ https://www.transifex.com/heliumchain/helium-project-translations</translation>
     </message>
     <message>
         <source>&amp;Port:</source>
-        <translation>&amp;Порт</translation>
+        <translation>&amp;Порт:</translation>
     </message>
     <message>
         <source>Port of the proxy (e.g. 9050)</source>
@@ -1905,11 +1929,21 @@ https://www.transifex.com/heliumchain/helium-project-translations</translation>
     </message>
     <message>
         <source>User Interface &amp;language:</source>
-        <translation>&amp;Язык Интерфейса</translation>
+        <translation>&amp;Язык Интерфейса:</translation>
+    </message>
+    <message>
+        <source>Language missing or translation incomplete? Help contributing translations here:
+https://www.transifex.com/helium-project/helium-wallet</source>
+        <translation>Отсутствует ваш язык или заметили незавершенный перевод? Вы можете помочь нам стать лучше:
+https://www.transifex.com/helium-project/helium-wallet</translation>
     </message>
     <message>
         <source>User Interface Theme:</source>
-        <translation>Тема Интерфейса</translation>
+        <translation>Тема Интерфейса:</translation>
+    </message>
+    <message>
+        <source>Unit to show amounts in:</source>
+        <translation>Единица для отображения сумм в:</translation>
     </message>
     <message>
         <source>Choose the default subdivision unit to show in the interface and when sending coins.</source>
@@ -1922,6 +1956,14 @@ https://www.transifex.com/heliumchain/helium-project-translations</translation>
     <message>
         <source>Hide empty balances</source>
         <translation>Скрыть пустые балансы</translation>
+    </message>
+    <message>
+        <source>Hide orphan stakes in transaction lists</source>
+        <translation>Скрыть сиротские ставки в списке транзакций</translation>
+    </message>
+    <message>
+        <source>Hide orphan stakes</source>
+        <translation>Скрыть сиротские ставки</translation>
     </message>
     <message>
         <source>Third party URLs (e.g. a block explorer) that appear in the transactions tab as context menu items. %s in the URL is replaced by transaction hash. Multiple URLs are separated by vertical bar |.</source>
@@ -1937,7 +1979,7 @@ https://www.transifex.com/heliumchain/helium-project-translations</translation>
     </message>
     <message>
         <source>Reset all client options to default.</source>
-        <translation>Вернуть стандартные настройки клиента</translation>
+        <translation>Вернуть стандартные настройки клиента.</translation>
     </message>
     <message>
         <source>&amp;Reset Options</source>
@@ -1950,10 +1992,6 @@ https://www.transifex.com/heliumchain/helium-project-translations</translation>
     <message>
         <source>&amp;Cancel</source>
         <translation>&amp;Отмена</translation>
-    </message>
-    <message>
-        <source>Any</source>
-        <translation>Любой</translation>
     </message>
     <message>
         <source>default</source>
@@ -2008,7 +2046,7 @@ https://www.transifex.com/heliumchain/helium-project-translations</translation>
     </message>
     <message>
         <source>Total Balance, including all unavailable coins.</source>
-        <translation>Общий баланс включая все не доступные монеты</translation>
+        <translation>Общий баланс включая все не доступные монеты.</translation>
     </message>
     <message>
         <source>HLM Balance</source>
@@ -2028,34 +2066,15 @@ https://www.transifex.com/heliumchain/helium-project-translations</translation>
     </message>
     <message>
         <source>Staked or masternode rewards that has not yet matured</source>
-        <translation>Награды за хранение и мастерноды, которые еще не *созрели*</translation>
+        <translation>Награды за стакинг и мастерноды, которые еще не *созрели*</translation>
     </message>
     <message>
         <source>Current locked balance in watch-only addresses</source>
         <translation>Текущий заблокированый баланс всех наблюдаемых адресов</translation>
     </message>
     <message>
-        <source>Your current Helium balance, unconfirmed and immature transactions included</source>
-        <translation>Ваш текущий Helium  баланс, включая неподтвержденные и незрелые транзакции</translation>
-    </message>
-    <message>
-        <source>zHLM Balance</source>
-        <translation>Баланс zHLM</translation>
-    </message>
-    <message>
-        <source>Mature: more than 20 confirmation and more than 1 mint of the same denomination after it was minted.
-These zHLM are spendable.</source>
-        <translation>Зрелые: более 20 подтверждений и более 1 чеканки одного и того же наименования после того, как оно было отчеканено. Эти zHLM можно потратить.</translation>
-    </message>
-    <message>
-        <source>Unconfirmed: less than 20 confirmations
-Immature: confirmed, but less than 1 mint of the same denomination after it was minted</source>
-        <translation>Неподтверждено: менее 20 подтверждений
-Незрелый: подтвержден, но менее 1 чеканок того же наименования после того, как он был отчеканен</translation>
-    </message>
-    <message>
         <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Helium network after a connection is established, but this process has not completed yet.</source>
-        <translation>Возможно отображаемая информация устарела. Ваш кошелек автоматически синхронизируется с сетью Helium после установки соединения, но этот процесс еще не завершен. </translation>
+        <translation>Возможно отображаемая информация устарела. Ваш кошелек автоматически синхронизируется с сетью Helium после установки соединения, но этот процесс еще не завершен.</translation>
     </message>
     <message>
         <source>OVERVIEW</source>
@@ -2075,7 +2094,7 @@ Immature: confirmed, but less than 1 mint of the same denomination after it was 
     </message>
     <message>
         <source>Staked or masternode rewards in watch-only addresses that has not yet matured</source>
-        <translation>Награды за хранение и мастерноды в наблюдаемых адресах, которые еще не *созрели*</translation>
+        <translation>Награды за стакинг и мастерноды в  адресах "только для просмотра", которые еще не *созрели*</translation>
     </message>
     <message>
         <source>Total:</source>
@@ -2103,15 +2122,7 @@ Immature: confirmed, but less than 1 mint of the same denomination after it was 
     </message>
     <message>
         <source>Locked:</source>
-        <translation>Заперто</translation>
-    </message>
-    <message>
-        <source>Unconfirmed:</source>
-        <translation>Неподтвержденный:</translation>
-    </message>
-    <message>
-        <source>Your current zHLM balance, unconfirmed and immature zHLM included.</source>
-        <translation>Ваш текущий zHLM баланс, включая неподтвержденные и незрелые транзакции</translation>
+        <translation>Заблокированный:</translation>
     </message>
     <message>
         <source>Recent transactions</source>
@@ -2125,13 +2136,13 @@ Immature: confirmed, but less than 1 mint of the same denomination after it was 
         <source>Current percentage of zHLM.
 If AutoMint is enabled this percentage will settle around the configured AutoMint percentage (default = 10%).
 </source>
-        <translation>Текущий процент от zHLM.
-Если АвтоЧеканка включена, этот процент будет располагаться на настроенном проценте АвтоЧеканка  (по умолчанию = 10%).
+        <translation>Текущий процент zHLM.
+Если АвтоЧеканка включена, этот процент будет применятся к АвтоЧеканке  (по умолчанию = 10%).
 </translation>
     </message>
     <message>
         <source>AutoMint is currently enabled and set to </source>
-        <translation>Авточеканка в данный момен включена и установлена в</translation>
+        <translation>Авточеканка в данный момен включена и установлена в </translation>
     </message>
     <message>
         <source>To disable AutoMint add 'enablezeromint=0' in helium.conf.</source>
@@ -2156,7 +2167,7 @@ To enable AutoMint change 'enablezeromint=0' to 'enablezeromint=1' in helium.con
     </message>
     <message>
         <source>Payment request fetch URL is invalid: %1</source>
-        <translation> Недопустимый URL-адрес запроса платежа: %1</translation>
+        <translation>Недопустимый URL-адрес запроса платежа: %1</translation>
     </message>
     <message>
         <source>Payment request file handling</source>
@@ -2168,7 +2179,7 @@ To enable AutoMint change 'enablezeromint=0' to 'enablezeromint=1' in helium.con
     </message>
     <message>
         <source>Cannot start helium: click-to-pay handler</source>
-        <translation>Не удалось запустить helium: обработчик click-to-pay </translation>
+        <translation>Не удалось запустить helium: обработчик click-to-pay</translation>
     </message>
     <message>
         <source>URI cannot be parsed! This can be caused by an invalid Helium address or malformed URI parameters.</source>
@@ -2254,11 +2265,11 @@ To enable AutoMint change 'enablezeromint=0' to 'enablezeromint=1' in helium.con
     <name>PrivacyDialog</name>
     <message>
         <source>Zerocoin Actions:</source>
-        <translation>Действия Zerocoin </translation>
+        <translation>Действия Zerocoin:</translation>
     </message>
     <message>
         <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Helium network after a connection is established, but this process has not completed yet.</source>
-        <translation>Возможно отображаемая информация устарела. Ваш кошелек автоматически синхронизируется с сетью Helium после установки соединения, но этот процесс еще не завершен. </translation>
+        <translation>Возможно отображаемая информация устарела. Ваш кошелек автоматически синхронизируется с сетью Helium после установки соединения, но этот процесс еще не завершен.</translation>
     </message>
     <message>
         <source>Mint Zerocoin</source>
@@ -2282,7 +2293,7 @@ To enable AutoMint change 'enablezeromint=0' to 'enablezeromint=1' in helium.con
     </message>
     <message>
         <source>Rescan the complete blockchain for  Zerocoin mints and their meta-data.</source>
-        <translation>Пересканировать  завершенную блокчейн для Zerocoin  чеканки и мета данных</translation>
+        <translation>Пересканировать весь блокчейн для Zerocoin чеканки и мета данных.</translation>
     </message>
     <message>
         <source>ReScan</source>
@@ -2294,7 +2305,7 @@ To enable AutoMint change 'enablezeromint=0' to 'enablezeromint=1' in helium.con
     </message>
     <message>
         <source>PRIVACY</source>
-        <translation>КОНФИДЕНЦИАЛЬНОСТЬ</translation>
+        <translation>ПРИВАТНОСТЬ</translation>
     </message>
     <message>
         <source>zHLM Control</source>
@@ -2328,9 +2339,9 @@ To enable AutoMint change 'enablezeromint=0' to 'enablezeromint=1' in helium.con
         <source>Available (mature and spendable) zHLM for spending
 
 zHLM are mature when they have more than 20 confirmations AND more than 2 mints of the same denomination after them were minted</source>
-        <translation>Доступный (зрелый и затратный) zHLM для расходов
+        <translation>Доступный (зрелый и расходуемый) zHLM для расходов
 
-zHLM are mature when they have more than 20 confirmations AND more than 2 mints of the same denomination after them were minted</translation>
+ZHLM являются зрелыми, когда у них более 20 подтверждений И более 2 чеканок одного и того же наименования после того, как они были отчеканены</translation>
     </message>
     <message>
         <source>0 zHLM</source>
@@ -2411,7 +2422,7 @@ zHLM are mature when they have more than 20 confirmations AND more than 2 mints 
     <message>
         <source>Unconfirmed: less than 20 confirmations
 Immature: confirmed, but less than 1 mint of the same denomination after it was minted</source>
-        <translation>Неподтверждено: менее 20 подтверждений
+        <translation>Неподтвержденный: менее 20 подтверждений
 Незрелый: подтвержден, но менее 1 чеканок того же наименования после того, как он был отчеканен</translation>
     </message>
     <message>
@@ -2432,7 +2443,9 @@ To change the percentage (no restart required):
 - отключить: добавить 'enablezeromint = 0' в helium.conf
 
 Чтобы изменить процент (не требуется перезагрузка):
-- меню Настройки-&gt; Параметры-&gt; Процент авторизованного zHLM</translation>
+- меню Настройки-&gt; Параметры-&gt; Процент авточеканки zHLM
+
+</translation>
     </message>
     <message>
         <source>AutoMint Status</source>
@@ -2440,7 +2453,7 @@ To change the percentage (no restart required):
     </message>
     <message>
         <source>Global Supply:</source>
-        <translation>Общая поставка</translation>
+        <translation>Общее предложение:</translation>
     </message>
     <message>
         <source>Denom. 1:</source>
@@ -2477,6 +2490,22 @@ To change the percentage (no restart required):
     <message>
         <source>0 x</source>
         <translation>0 x</translation>
+    </message>
+    <message>
+        <source>Show zHLM denominations list</source>
+        <translation>Показать список номиналов zHLM</translation>
+    </message>
+    <message>
+        <source>Show Denominations</source>
+        <translation>Показать номиналы</translation>
+    </message>
+    <message>
+        <source>zHLM minting is DISABLED</source>
+        <translation>zHLM чеканка ОТКЛЮЧЕНА</translation>
+    </message>
+    <message>
+        <source>zHLM spending is NOT private (links back to the mint transaction)</source>
+        <translation>Расходы zHLM НЕ являются частными (ссылка на транзакцию чеканки)</translation>
     </message>
     <message>
         <source>Denominations with value 5:</source>
@@ -2535,6 +2564,10 @@ To change the percentage (no restart required):
         <translation>Номинал со значением 5000:</translation>
     </message>
     <message>
+        <source>Hide Denominations</source>
+        <translation>Скрыть номиналы</translation>
+    </message>
+    <message>
         <source>Priority:</source>
         <translation>Приоритет:</translation>
     </message>
@@ -2560,7 +2593,7 @@ To change the percentage (no restart required):
     </message>
     <message>
         <source>Insufficient funds!</source>
-        <translation>Недостаточно средств</translation>
+        <translation>Недостаточно средств!</translation>
     </message>
     <message>
         <source>Coins automatically selected</source>
@@ -2610,7 +2643,7 @@ Please be patient...</source>
     </message>
     <message>
         <source>zHLM Mint</source>
-        <translation>чеканка zHLM</translation>
+        <translation>Чеканка zHLM</translation>
     </message>
     <message>
         <source> &lt;b&gt;enabled&lt;/b&gt;.</source>
@@ -2626,7 +2659,7 @@ Please be patient...</source>
     </message>
     <message>
         <source>zHLM is currently disabled due to maintenance.</source>
-        <translation>zHLM в настоящее время отключен от обслуживания.</translation>
+        <translation>zHLM в настоящее время отключен для технического обслуживания.</translation>
     </message>
     <message>
         <source>zHLM is currently undergoing maintenance.</source>
@@ -2702,25 +2735,21 @@ Please be patient...</source>
     </message>
     <message>
         <source>Duration: </source>
-        <translation>Продолжительность:</translation>
+        <translation>Продолжительность: </translation>
     </message>
     <message>
         <source> sec.
 </source>
-        <translation>сек.
+        <translation> сек.
 </translation>
     </message>
     <message>
         <source>Starting ResetSpentZerocoin: </source>
-        <translation>Запуск ResetSpentZerocoin:</translation>
+        <translation>Запуск ResetSpentZerocoin: </translation>
     </message>
     <message>
         <source>No 'Pay To' address provided, creating local payment</source>
         <translation>Не предоставляется адрес «Pay To», создающий местный платеж</translation>
-    </message>
-    <message>
-        <source>Invalid Helium Address</source>
-        <translation>неправильный Helium адрес</translation>
     </message>
     <message>
         <source>Invalid Send Amount</source>
@@ -2736,11 +2765,11 @@ Please be patient...</source>
     </message>
     <message>
         <source> to address </source>
-        <translation>адресовать</translation>
+        <translation> на адрес </translation>
     </message>
     <message>
         <source> to a newly generated (unused and therefore anonymous) local address &lt;br /&gt;</source>
-        <translation>к вновь созданному (неиспользуемому и поэтому анонимному) локальному адресу &lt;br /&gt;</translation>
+        <translation> к вновь созданному (неиспользуемому и поэтому анонимному) локальному адресу &lt;br /&gt;</translation>
     </message>
     <message>
         <source>Confirm send coins</source>
@@ -2752,31 +2781,39 @@ Please be patient...</source>
     </message>
     <message>
         <source>Spend Zerocoin failed with status = </source>
-        <translation>Провести Zerocoin не удалось со статусом =</translation>
+        <translation>Провести Zerocoin не удалось со статусом = </translation>
     </message>
     <message>
         <source>denomination: </source>
-        <translation>наименование:</translation>
+        <translation>номиналы: </translation>
+    </message>
+    <message>
+        <source>Spending Zerocoin.
+Computationally expensive, might need several minutes depending on your hardware.
+Please be patient...</source>
+        <translation>Расходы Zerocoin.
+Ресурсоемкие вычисления, может потребоваться несколько минут в зависимости от вашего оборудования.
+Пожалуйста, будьте терпеливы ...</translation>
     </message>
     <message>
         <source>serial: </source>
-        <translation>последовательный:</translation>
+        <translation>serial: </translation>
     </message>
     <message>
         <source>Spend is 1 of : </source>
-        <translation>Расход 1 из :</translation>
+        <translation>Расход 1 из : </translation>
     </message>
     <message>
         <source>value out: </source>
-        <translation>ценность:</translation>
+        <translation>значение из: </translation>
     </message>
     <message>
         <source>address: </source>
-        <translation>Адрес:</translation>
+        <translation>адрес: </translation>
     </message>
     <message>
         <source>Sending successful, return code: </source>
-        <translation>Отправка успешного кода возврата:</translation>
+        <translation>Отправка успешно завершена, код: </translation>
     </message>
     <message>
         <source>txid: </source>
@@ -2784,7 +2821,7 @@ Please be patient...</source>
     </message>
     <message>
         <source>fee: </source>
-        <translation>Комиссия:</translation>
+        <translation>комиссия: </translation>
     </message>
 </context>
 <context>
@@ -2842,14 +2879,34 @@ Please be patient...</source>
     </message>
     <message>
         <source>Helium Core</source>
-        <translation>PIVX Core</translation>
+        <translation>Helium Core</translation>
     </message>
-    </context>
+    <message>
+        <source>Error: Specified data directory "%1" does not exist.</source>
+        <translation>Ошибка: указанный каталог данных "%1" не существует.</translation>
+    </message>
+    <message>
+        <source>Error: Cannot parse configuration file: %1. Only use key=value syntax.</source>
+        <translation>Ошибка: невозможно проанализировать файл конфигурации: %1. Используйте синтаксис ключ=значение.</translation>
+    </message>
+    <message>
+        <source>Error: Invalid combination of -regtest and -testnet.</source>
+        <translation>Ошибка: недопустимое сочетание -regtest и -testnet.</translation>
+    </message>
+    <message>
+        <source>Error reading masternode configuration file: %1</source>
+        <translation>Ошибка чтения файла конфигурации мастернод: %1</translation>
+    </message>
+    <message>
+        <source>Helium Core didn't yet exit safely...</source>
+        <translation>Helium Core еще не вышел благополучно...</translation>
+    </message>
+</context>
 <context>
     <name>QRImageWidget</name>
     <message>
         <source>&amp;Save Image...</source>
-        <translation>&amp;Сохранить изображение</translation>
+        <translation>&amp;Сохранить изображение...</translation>
     </message>
     <message>
         <source>&amp;Copy Image</source>
@@ -3084,7 +3141,7 @@ Please be patient...</source>
     </message>
     <message>
         <source>Salvage wallet</source>
-        <translation>Кошелёк для сбора</translation>
+        <translation>Восстановление кошелька</translation>
     </message>
     <message>
         <source>Attempt to recover private keys from a corrupt wallet.dat.</source>
@@ -3132,7 +3189,7 @@ Please be patient...</source>
     </message>
     <message>
         <source>The buttons below will restart the wallet with command-line options to repair the wallet, fix issues with corrupt blockhain files or missing/obsolete transactions.</source>
-        <translation>Кнопка ниже перезапустит кошелёк с некоторыми опциями кммандной строки чтобы отремотировать кошелёк, файлы блокчейна и пропавшие / устаревшие транзакции. </translation>
+        <translation>Кнопка ниже перезапустит кошелёк с некоторыми опциями кммандной строки чтобы отремотировать кошелёк, файлы блокчейна и пропавшие / устаревшие транзакции.</translation>
     </message>
     <message>
         <source>Wallet repair options.</source>
@@ -3208,8 +3265,16 @@ Please be patient...</source>
         <translation>Подтвердить повторную синхронизацию Blockchain</translation>
     </message>
     <message>
+        <source>Use up and down arrows to navigate history, and %1 to clear screen.</source>
+        <translation>Используйте стрелки вверх и вниз для навигации по истории и %1 для очистки экрана.</translation>
+    </message>
+    <message>
         <source>Type &lt;b&gt;help&lt;/b&gt; for an overview of available commands.</source>
         <translation>Введите &lt;b&gt;help&lt;/b&gt; для просмотра доступных команд.</translation>
+    </message>
+    <message>
+        <source>WARNING: Scammers have been active, telling users to type commands here, stealing their wallet contents. Do not use this console without fully understanding the ramifications of a command.</source>
+        <translation>ВНИМАНИЕ: мошенники очень активны, предлагая пользователям вводить здесь команды, крадя содержимое их кошелька. Не используйте эту консоль без полного понимания последствий команды.</translation>
     </message>
     <message>
         <source>%1 B</source>
@@ -3241,7 +3306,7 @@ Please be patient...</source>
     </message>
     <message>
         <source>Inbound</source>
-        <translation>входящий</translation>
+        <translation>Входящий</translation>
     </message>
     <message>
         <source>Outbound</source>
@@ -3268,7 +3333,7 @@ Please be patient...</source>
     </message>
     <message>
         <source>R&amp;euse an existing receiving address (not recommended)</source>
-        <translation>R &amp; euse существующего адреса получателя (не рекомендуется)</translation>
+        <translation>П&amp;овторное использование существующего адреса получателя (не рекомендуется)</translation>
     </message>
     <message>
         <source>&amp;Message:</source>
@@ -3277,6 +3342,16 @@ Please be patient...</source>
     <message>
         <source>An optional label to associate with the new receiving address.</source>
         <translation>Дополнительный ярлык для связи с новым адресом приема.</translation>
+    </message>
+    <message>
+        <source>Your receiving address. You can copy and use it to receive coins on this wallet. A new one will be generated once it is used.</source>
+        <translation>Ваш Адрес. Вы можете скопировать и использовать
+его для получения монет на этот кошелек.
+Новый будет создан, как только он будет использован.</translation>
+    </message>
+    <message>
+        <source>&amp;Address:</source>
+        <translation>&amp;Адрес:</translation>
     </message>
     <message>
         <source>A&amp;mount:</source>
@@ -3319,8 +3394,12 @@ Please be patient...</source>
         <translation>Очистить</translation>
     </message>
     <message>
+        <source>Receiving Addresses</source>
+        <translation>Адреса получения</translation>
+    </message>
+    <message>
         <source>Requested payments history</source>
-        <translation>Запрос истории платежей</translation>
+        <translation>История запросов платежей</translation>
     </message>
     <message>
         <source>Show the selected request (does the same as double clicking an entry)</source>
@@ -3371,7 +3450,7 @@ Please be patient...</source>
     </message>
     <message>
         <source>&amp;Save Image...</source>
-        <translation>&amp;Сохранить изображение</translation>
+        <translation>&amp;Сохранить изображение...</translation>
     </message>
     <message>
         <source>Request payment to %1</source>
@@ -3461,7 +3540,7 @@ Please be patient...</source>
     </message>
     <message>
         <source>Insufficient funds!</source>
-        <translation>Недостаточно средств</translation>
+        <translation>Недостаточно средств!</translation>
     </message>
     <message>
         <source>Quantity:</source>
@@ -3528,12 +3607,16 @@ Please be patient...</source>
         <translation>0 HLM</translation>
     </message>
     <message>
+        <source>SwiftX technology allows for near instant transactions - A flat fee of 0.01 HLM applies</source>
+        <translation>Технология SwiftX обеспечивает почти мгновенные транзакции - Применяется фиксированная плата в размере 0,01 HLM</translation>
+    </message>
+    <message>
         <source>Transaction Fee:</source>
         <translation>Комиссия за транзакцию:</translation>
     </message>
     <message>
         <source>Choose...</source>
-        <translation>Выберите:</translation>
+        <translation>Выберите...</translation>
     </message>
     <message>
         <source>collapse fee-settings</source>
@@ -3557,7 +3640,7 @@ Please be patient...</source>
     </message>
     <message>
         <source>Custom:</source>
-        <translation>Таможня:</translation>
+        <translation>Ручной:</translation>
     </message>
     <message>
         <source>(Smart fee not initialized yet. This usually takes a few blocks...)</source>
@@ -3573,7 +3656,7 @@ Please be patient...</source>
     </message>
     <message>
         <source>Open Coin Control...</source>
-        <translation>Открытый контроль монеты</translation>
+        <translation>Открыть контроль монет...</translation>
     </message>
     <message>
         <source>Coins automatically selected</source>
@@ -3581,11 +3664,11 @@ Please be patient...</source>
     </message>
     <message>
         <source>If the custom fee is set to 1000 uHLMs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 uHLMs in fee,&lt;br /&gt;while "at least" pays 1000 uHLMs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
-        <translation>Если пользовательская плата установлена в 1000 uHLMs, а транзакция составляет всего 250 байт, тогда «за килобайт» платит только 250 uHLMs,&lt;br /&gt;а «по крайней мере» платит 1000 uHLM. Для транзакций, превышающих килобайт, оплата за килобайт</translation>
+        <translation>Если пользовательская плата установлена в 1000 uHLMs, а транзакция составляет всего 250 байт, тогда «за килобайт» платит только 250 uHLMs,&lt;br /&gt;а «по крайней мере» платит 1000 uHLM. Для транзакций, превышающих килобайт, оплата за килобайт.</translation>
     </message>
     <message>
         <source>If the custom fee is set to 1000 uHLMs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 uHLMs in fee,&lt;br /&gt;while "total at least" pays 1000 uHLMs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
-        <translation>Если пользовательская плата установлена в 1000 uHLMs, а транзакция составляет всего 250 байт, тогда «за килобайт» платит только 250 uHLMs,&lt;br /&gt;а «по крайней мере» платит 1000 uHLM. Для транзакций, превышающих килобайт, оплата за килобайт</translation>
+        <translation>Если пользовательская плата установлена в 1000 uHLMs, а транзакция составляет всего 250 байт, тогда «за килобайт» платит только 250 uHLMs,&lt;br /&gt;а «итого как минимум» платит 1000 uHLM. Для транзакций, превышающих килобайт, оплата за килобайт.</translation>
     </message>
     <message>
         <source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks.&lt;br /&gt;But be aware that this can end up in a never confirming transaction once there is more demand for Helium transactions than the network can process.</source>
@@ -3617,7 +3700,7 @@ Please be patient...</source>
     </message>
     <message>
         <source>S&amp;end</source>
-        <translation>S&amp;end</translation>
+        <translation>О&amp;тправить</translation>
     </message>
     <message>
         <source>Clear all fields of the form.</source>
@@ -3657,7 +3740,7 @@ Please be patient...</source>
     </message>
     <message>
         <source>Copy after fee</source>
-        <translation>Копировать после вознаграждения </translation>
+        <translation>Копировать после комиссии</translation>
     </message>
     <message>
         <source>Copy bytes</source>
@@ -3721,7 +3804,7 @@ Please be patient...</source>
     </message>
     <message>
         <source> split into %1 outputs using the UTXO splitter.</source>
-        <translation>разделить на %1 выходы с использованием разделителя UTXO.</translation>
+        <translation> разделить на %1 выходы с использованием разделителя UTXO.</translation>
     </message>
     <message>
         <source>&lt;b&gt;(%1 of %2 entries displayed)&lt;/b&gt;</source>
@@ -3764,8 +3847,12 @@ Please be patient...</source>
         <translation>Платите только минимальный взнос %1</translation>
     </message>
     <message>
+        <source>Estimated to get 6 confirmations near instantly with &lt;b&gt;SwiftX&lt;/b&gt;!</source>
+        <translation>Расчетное количество подтверждений 6 блоков, мгновенно с &lt;b&gt;SwiftX&lt;/b&gt;!</translation>
+    </message>
+    <message>
         <source>Warning: Unknown change address</source>
-        <translation>Предупреждение: Неизвестный адрес </translation>
+        <translation>Предупреждение: Неизвестный адрес сдачи</translation>
     </message>
     <message>
         <source>(no label)</source>
@@ -3894,7 +3981,7 @@ Please be patient...</source>
     </message>
     <message>
         <source>Enter the message you want to sign here</source>
-        <translation>Введите сообщение, которое вы хотите подписать здесь.</translation>
+        <translation>Введите сообщение, которое вы хотите подписать здесь</translation>
     </message>
     <message>
         <source>Signature</source>
@@ -3914,7 +4001,7 @@ Please be patient...</source>
     </message>
     <message>
         <source>Verify the message to ensure it was signed with the specified Helium address</source>
-        <translation>Проверте сообщение, чтобы убедиться, что оно было подписано указанным Helium адресом </translation>
+        <translation>Проверте сообщение, чтобы убедиться, что оно было подписано указанным Helium адресом</translation>
     </message>
     <message>
         <source>Sign &amp;Message</source>
@@ -3934,7 +4021,7 @@ Please be patient...</source>
     </message>
     <message>
         <source>Enter the signing address, message (ensure you copy line breaks, spaces, tabs, etc. exactly) and signature below to verify the message. Be careful not to read more into the signature than what is in the signed message itself, to avoid being tricked by a man-in-the-middle attack.</source>
-        <translation>Введите адрес подписи, сообщение (убедитесь, что вы скопировали разрывы строк, пробелы, табуляции и т. Д.) И подпись ниже, чтобы проверить сообщение. Будьте внимательны, чтобы не читать больше в подписи, чем в самом подписанном сообщении, чтобы избежать обмана с помощью атаки</translation>
+        <translation>Введите адрес подписи, сообщение (убедитесь, что вы скопировали разрывы строк, пробелы, табуляции и т. Д.) И подпись ниже, чтобы проверить сообщение. Будьте внимательны, чтобы не читать больше в подписи, чем в самом подписанном сообщении, чтобы избежать обмана с помощью атаки.</translation>
     </message>
     <message>
         <source>Verify &amp;Message</source>
@@ -4001,7 +4088,7 @@ Please be patient...</source>
     <name>SplashScreen</name>
     <message>
         <source>Helium Core</source>
-        <translation>PIVX Core</translation>
+        <translation>Helium Core</translation>
     </message>
     <message>
         <source>Version %1</source>
@@ -4016,8 +4103,12 @@ Please be patient...</source>
         <translation>Разработчики Dash Core</translation>
     </message>
     <message>
-        <source>The PIVX Core developers</source>
-        <translation>Разработчики PIVX Core</translation>
+        <source>The Pivx Core developers</source>
+        <translation>Разработчики Pivx Core</translation>
+    </message>
+    <message>
+        <source>The Helium Core developers</source>
+        <translation>Разработчики Helium Core</translation>
     </message>
     <message>
         <source>[testnet]</source>
@@ -4178,10 +4269,6 @@ Please be patient...</source>
         <translation>коммерсант</translation>
     </message>
     <message>
-        <source>Generated coins must mature %1 blocks before they can be spent. When you generated this block, it was broadcast to the network to be added to the block chain. If it fails to get into the chain, its state will change to "not accepted" and it won't be spendable. This may occasionally happen if another node generates a block within a few seconds of yours.</source>
-        <translation>Сгенерированные монеты должны созреть %1 блоков, прежде чем они могут быть потрачены. Когда вы сгенерировали этот блок, он будет передан в сеть, которая будет добавлена в цепочку блоков. Если ему не удастся войти в цепочку, его состояние изменится на «не принято», и оно не будет потрачено. Иногда это может произойти, если другой узел генерирует блок за несколько секунд.</translation>
-    </message>
-    <message>
         <source>Debug information</source>
         <translation>Отладочная информация</translation>
     </message>
@@ -4245,7 +4332,7 @@ Please be patient...</source>
     </message>
     <message>
         <source>Confirming (%1 of %2 recommended confirmations)</source>
-        <translation>Подтверждение (%1 %2 рекомендованных подтверждений)</translation>
+        <translation>Подтверждение (%1 из %2 рекомендованных подтверждений)</translation>
     </message>
     <message>
         <source>Confirmed (%1 confirmations)</source>
@@ -4281,11 +4368,11 @@ Please be patient...</source>
     </message>
     <message>
         <source>HLM Stake</source>
-        <translation>Доля HLM</translation>
+        <translation>Чеканка HLM</translation>
     </message>
     <message>
         <source>zHLM Stake</source>
-        <translation>Доля zHLM</translation>
+        <translation>Чеканка zHLM</translation>
     </message>
     <message>
         <source>Obfuscation Denominate</source>
@@ -4317,7 +4404,7 @@ Please be patient...</source>
     </message>
     <message>
         <source>Minted Change as zHLM from zHLM Spend</source>
-        <translation>созданная  замена  zHLM из потраенного zHLM </translation>
+        <translation>Созданная Здача zHLM из потраченного zHLM</translation>
     </message>
     <message>
         <source>Converted zHLM to HLM</source>
@@ -4448,7 +4535,7 @@ Please be patient...</source>
     </message>
     <message>
         <source>Zerocoin Spend</source>
-        <translation>Потратить Zerocoin </translation>
+        <translation>Потратить Zerocoin</translation>
     </message>
     <message>
         <source>Zerocoin Spend to Self</source>
@@ -4489,6 +4576,10 @@ Please be patient...</source>
     <message>
         <source>Show transaction details</source>
         <translation>Детали транзакции</translation>
+    </message>
+    <message>
+        <source>Hide orphan stakes</source>
+        <translation>Скрыть сиротские ставки</translation>
     </message>
     <message>
         <source>Export Transaction History</source>
@@ -4552,7 +4643,7 @@ Please be patient...</source>
     </message>
     <message>
         <source>Range:</source>
-        <translation>диапазон</translation>
+        <translation>Диапазон:</translation>
     </message>
     <message>
         <source>to</source>
@@ -4563,7 +4654,7 @@ Please be patient...</source>
     <name>UnitDisplayStatusBarControl</name>
     <message>
         <source>Unit to show amounts in. Click to select another unit.</source>
-        <translation>Блок , чтобы отобразить суммы. Нажмите, чтобы выбрать другое устройство.</translation>
+        <translation>Единица, в которой отображаются суммы. Нажмите, чтобы выбрать другую единицу.</translation>
     </message>
 </context>
 <context>
@@ -4615,7 +4706,7 @@ Please be patient...</source>
     <name>ZHlmControlDialog</name>
     <message>
         <source>Select zHLM to Spend</source>
-        <translation>Выберите zHLM чтобы потратить</translation>
+        <translation>Выбор zHLM для трат</translation>
     </message>
     <message>
         <source>Quantity</source>
@@ -4631,9 +4722,13 @@ Please be patient...</source>
     </message>
     <message>
         <source>Select/Deselect All</source>
-        <translation>Выбрать / Отменить выбор</translation>
+        <translation>Выбрать/Отменить все</translation>
     </message>
-    </context>
+    <message>
+        <source>Spendable?</source>
+        <translation>Расходуемый?</translation>
+    </message>
+</context>
 <context>
     <name>helium-core</name>
     <message>
@@ -4989,14 +5084,6 @@ Please be patient...</source>
         <translation>Copyright (C) 2009-%i Разработчики Bitcoin Core</translation>
     </message>
     <message>
-        <source>Copyright (C) 2014-%i The Dash Core Developers</source>
-        <translation>Copyright (C) 2014-%i Разработчики Dash Core</translation>
-    </message>
-    <message>
-        <source>Copyright (C) 2015-%i The Helium Core Developers</source>
-        <translation>Copyright (C) 2015-%i Разработчики PIVX Core</translation>
-    </message>
-    <message>
         <source>Corrupted block database detected</source>
         <translation>Обнаружена поврежденная база данных блоков</translation>
     </message>
@@ -5074,7 +5161,7 @@ Please be patient...</source>
     </message>
     <message>
         <source>Error loading wallet.dat: Wallet requires newer version of Helium Core</source>
-        <translation>Ошибка загрузки wallet.dat: Кошелек требует более новой версии PIVX Core</translation>
+        <translation>Ошибка загрузки wallet.dat: Кошелек требует более новой версии Helium Core</translation>
     </message>
     <message>
         <source>Error opening block database</source>
@@ -5519,6 +5606,14 @@ Please be patient...</source>
     <message>
         <source>Preparing for resync...</source>
         <translation>Подготовка к повторной синхронизации ...</translation>
+    </message>
+    <message>
+        <source>Copyright (C) 2015-%i The Pivx Core Developers</source>
+        <translation>Copyright (C) 2015-%i Разработчики Pivx Core</translation>
+    </message>
+    <message>
+        <source>Copyright (C) 2018-%i The Helium Core Developers</source>
+        <translation>Copyright (C) 2018-%i Разработчики Helium Core</translation>
     </message>
     <message>
         <source>Prepend debug output with timestamp (default: %u)</source>

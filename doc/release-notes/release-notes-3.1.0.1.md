@@ -51,4 +51,4 @@ Detailed release notes follow. This overview includes changes that affect behavi
 Thanks to everyone who directly contributed to this release:
 - Fuzzbawls
 
-As well as everyone that helped translating on [Transifex](https://www.transifex.com/projects/p/gjhiggins/diproton-translations/), the QA team during Testing and the Node hosts supporting our Testnet.
+As well as everyone that helped translating on [Transifex](https://www.transifex.com/helium-project/helium-wallet/), the QA team during Testing and the Node hosts supporting our Testnet.

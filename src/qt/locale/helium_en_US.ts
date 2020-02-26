@@ -136,10 +136,6 @@
         <translation>Serves to disable the trivial sendmoney when OS account compromised. Provides no real security.</translation>
     </message>
     <message>
-        <source>For anonymization and staking only</source>
-        <translation>For anonymization and staking only</translation>
-    </message>
-    <message>
         <source>Enter the new passphrase to the wallet.&lt;br/&gt;Please use a passphrase of &lt;b&gt;ten or more random characters&lt;/b&gt;, or &lt;b&gt;eight or more words&lt;/b&gt;.</source>
         <translation>Enter the new passphrase to the wallet.&lt;br/&gt;Please use a passphrase of &lt;b&gt;ten or more random characters&lt;/b&gt;, or &lt;b&gt;eight or more words&lt;/b&gt;.</translation>
     </message>
@@ -174,10 +170,6 @@
     <message>
         <source>Confirm wallet encryption</source>
         <translation>Confirm wallet encryption</translation>
-    </message>
-    <message>
-        <source>Helium will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your HLMs from being stolen by malware infecting your computer.</source>
-        <translation>Helium will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your HLMs from being stolen by malware infecting your computer.</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
@@ -229,6 +221,9 @@
     </message>
 </context>
 <context>
+    <name>BanTableModel</name>
+    </context>
+<context>
     <name>Bip38ToolDialog</name>
     <message>
         <source>BIP 38 Tool</source>
@@ -239,16 +234,12 @@
         <translation>&amp;BIP 38 Encrypt</translation>
     </message>
     <message>
-        <source>Enter a Helium Address that you would like to encrypt using BIP 38. Enter a passphrase in the middle box. Press encrypt to compute the encrypted private key.</source>
-        <translation>Enter a Helium Address that you would like to encrypt using BIP 38. Enter a passphrase in the middle box. Press encrypt to compute the encrypted private key.</translation>
-    </message>
-    <message>
         <source>Address:</source>
         <translation>Address:</translation>
     </message>
     <message>
-        <source>The Helium address to sign the message with</source>
-        <translation>The Helium address to sign the message with</translation>
+        <source>Enter a Helium Address that you would like to encrypt using BIP 38. Enter a passphrase in the middle box. Press encrypt to compute the encrypted private key.</source>
+        <translation>Enter a Helium Address that you would like to encrypt using BIP 38. Enter a passphrase in the middle box. Press encrypt to compute the encrypted private key.</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -279,16 +270,8 @@
         <translation>Copy the current signature to the system clipboard</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Helium address</source>
-        <translation>Sign the message to prove you own this Helium address</translation>
-    </message>
-    <message>
         <source>Encrypt &amp;Key</source>
         <translation>Encrypt &amp;Key</translation>
-    </message>
-    <message>
-        <source>Reset all sign message fields</source>
-        <translation>Reset all sign message fields</translation>
     </message>
     <message>
         <source>Clear &amp;All</source>
@@ -303,20 +286,8 @@
         <translation>Enter the BIP 38 encrypted private key. Enter the passphrase in the middle box. Click Decrypt Key to compute the private key. After the key is decrypted, clicking 'Import Address' will add this private key to the wallet.</translation>
     </message>
     <message>
-        <source>The Helium address the message was signed with</source>
-        <translation>The Helium address the message was signed with</translation>
-    </message>
-    <message>
-        <source>Verify the message to ensure it was signed with the specified Helium address</source>
-        <translation>Verify the message to ensure it was signed with the specified Helium address</translation>
-    </message>
-    <message>
         <source>Decrypt &amp;Key</source>
         <translation>Decrypt &amp;Key</translation>
-    </message>
-    <message>
-        <source>Reset all verify message fields</source>
-        <translation>Reset all verify message fields</translation>
     </message>
     <message>
         <source>Decrypted Key:</source>
@@ -603,7 +574,7 @@
     </message>
     <message>
         <source>Helium Core</source>
-        <translation>PIVX Core</translation>
+        <translation>Helium Core</translation>
     </message>
     <message>
         <source>Send coins to a Helium address</source>
@@ -623,11 +594,11 @@
     </message>
     <message>
         <source>&amp;About Helium Core</source>
-        <translation>&amp;About PIVX Core</translation>
+        <translation>&amp;About Helium Core</translation>
     </message>
     <message>
         <source>Show information about Helium Core</source>
-        <translation>Show information about PIVX Core</translation>
+        <translation>Show information about Helium Core</translation>
     </message>
     <message>
         <source>Modify configuration options for Helium</source>
@@ -734,10 +705,6 @@
         <translation><numerusform>%n year</numerusform><numerusform>%n years</numerusform></translation>
     </message>
     <message>
-        <source>%1 behind</source>
-        <translation>%1 behind</translation>
-    </message>
-    <message>
         <source>Catching up...</source>
         <translation>Catching up...</translation>
     </message>
@@ -810,14 +777,10 @@ Address: %4
         <translation>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;unlocked&lt;/b&gt;</translation>
     </message>
     <message>
-        <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;unlocked&lt;/b&gt; for anonimization and staking only</source>
-        <translation>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;unlocked&lt;/b&gt; for anonimization and staking only</translation>
-    </message>
-    <message>
         <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;locked&lt;/b&gt;</source>
         <translation>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;locked&lt;/b&gt;</translation>
     </message>
-</context>
+    </context>
 <context>
     <name>BlockExplorer</name>
     <message>
@@ -843,10 +806,6 @@ Address: %4
 </context>
 <context>
     <name>ClientModel</name>
-    <message>
-        <source>Total: %1 (OBF compatible: %2 / Enabled: %3)</source>
-        <translation>Total: %1 (OBF compatible: %2 / Enabled: %3)</translation>
-    </message>
     <message>
         <source>Network Alert</source>
         <translation>Network Alert</translation>
@@ -923,10 +882,6 @@ Address: %4
         <translation>Received with address</translation>
     </message>
     <message>
-        <source>DS Rounds</source>
-        <translation>DS Rounds</translation>
-    </message>
-    <message>
         <source>Date</source>
         <translation>Date</translation>
     </message>
@@ -999,10 +954,6 @@ Address: %4
         <translation>Please switch to "List mode" to use this function.</translation>
     </message>
     <message>
-        <source>Non-anonymized input selected. &lt;b&gt;Obfuscation will be disabled.&lt;/b&gt;&lt;br&gt;&lt;br&gt;If you still want to use Obfuscation, please deselect all non-nonymized inputs first and then check Obfuscation checkbox again.</source>
-        <translation>Non-anonymized input selected. &lt;b&gt;Obfuscation will be disabled.&lt;/b&gt;&lt;br&gt;&lt;br&gt;If you still want to use Obfuscation, please deselect all non-nonymized inputs first and then check Obfuscation checkbox again.</translation>
-    </message>
-    <message>
         <source>highest</source>
         <translation>highest</translation>
     </message>
@@ -1017,14 +968,6 @@ Address: %4
     <message>
         <source>medium-high</source>
         <translation>medium-high</translation>
-    </message>
-    <message>
-        <source>Can vary +/- %1 duff(s) per input.</source>
-        <translation>Can vary +/- %1 duff(s) per input.</translation>
-    </message>
-    <message>
-        <source>n/a</source>
-        <translation>n/a</translation>
     </message>
     <message>
         <source>medium</source>
@@ -1178,6 +1121,9 @@ Address: %4
     </message>
 </context>
 <context>
+    <name>GovernancePage</name>
+    </context>
+<context>
     <name>HelpMessageDialog</name>
     <message>
         <source>version</source>
@@ -1185,7 +1131,7 @@ Address: %4
     </message>
     <message>
         <source>Helium Core</source>
-        <translation>PIVX Core</translation>
+        <translation>Helium Core</translation>
     </message>
     <message>
         <source>(%1-bit)</source>
@@ -1193,7 +1139,7 @@ Address: %4
     </message>
     <message>
         <source>About Helium Core</source>
-        <translation>About PIVX Core</translation>
+        <translation>About Helium Core</translation>
     </message>
     <message>
         <source>Command-line options</source>
@@ -1260,7 +1206,7 @@ Address: %4
     </message>
     <message>
         <source>Helium Core</source>
-        <translation>PIVX Core</translation>
+        <translation>Helium Core</translation>
     </message>
     <message>
         <source>Error: Specified data directory "%1" cannot be created.</source>
@@ -1284,10 +1230,6 @@ Address: %4
     <message>
         <source>Form</source>
         <translation>Form</translation>
-    </message>
-    <message>
-        <source>My Masternodes</source>
-        <translation>My Masternodes</translation>
     </message>
     <message>
         <source>Note: Status of your masternodes in local wallet can potentially be slightly incorrect.&lt;br /&gt;Always wait for wallet to sync additional data and then double check from another node&lt;br /&gt;if your node should be running but you still see "MISSING" in "Status" field.</source>
@@ -1483,111 +1425,13 @@ MultiSend will not be activated unless you have clicked Activate</translation>
         <translation>Send For Masternode Rewards</translation>
     </message>
     <message>
-        <source>The entered address:
-</source>
-        <translation>The entered address:
-</translation>
-    </message>
-    <message>
-        <source> is invalid.
-Please check the address and try again.</source>
-        <translation> is invalid.
-Please check the address and try again.</translation>
-    </message>
-    <message>
-        <source>The total amount of your MultiSend vector is over 100% of your stake reward
-</source>
-        <translation>The total amount of your MultiSend vector is over 100% of your stake reward
-</translation>
-    </message>
-    <message>
         <source>Please Enter 1 - 100 for percent.</source>
         <translation>Please Enter 1 - 100 for percent.</translation>
     </message>
-    <message>
-        <source>MultiSend Vector
-</source>
-        <translation>MultiSend Vector
-</translation>
-    </message>
-    <message>
-        <source>Removed </source>
-        <translation>Removed </translation>
-    </message>
-    <message>
-        <source>Could not locate address
-</source>
-        <translation>Could not locate address
-</translation>
-    </message>
 </context>
 <context>
-    <name>ObfuscationConfig</name>
-    <message>
-        <source>Configure Obfuscation</source>
-        <translation>Configure Obfuscation</translation>
-    </message>
-    <message>
-        <source>Basic Privacy</source>
-        <translation>Basic Privacy</translation>
-    </message>
-    <message>
-        <source>High Privacy</source>
-        <translation>High Privacy</translation>
-    </message>
-    <message>
-        <source>Maximum Privacy</source>
-        <translation>Maximum Privacy</translation>
-    </message>
-    <message>
-        <source>Please select a privacy level.</source>
-        <translation>Please select a privacy level.</translation>
-    </message>
-    <message>
-        <source>Use 2 separate masternodes to mix funds up to 10000 HLM</source>
-        <translation>Use 2 separate masternodes to mix funds up to 10000 HLM</translation>
-    </message>
-    <message>
-        <source>Use 8 separate masternodes to mix funds up to 10000 HLM</source>
-        <translation>Use 8 separate masternodes to mix funds up to 10000 HLM</translation>
-    </message>
-    <message>
-        <source>Use 16 separate masternodes</source>
-        <translation>Use 16 separate masternodes</translation>
-    </message>
-    <message>
-        <source>This option is the quickest and will cost about ~0.025 HLM to anonymize 10000 HLM</source>
-        <translation>This option is the quickest and will cost about ~0.025 HLM to anonymize 10000 HLM</translation>
-    </message>
-    <message>
-        <source>This option is moderately fast and will cost about 0.05 HLM to anonymize 10000 HLM</source>
-        <translation>This option is moderately fast and will cost about 0.05 HLM to anonymize 10000 HLM</translation>
-    </message>
-    <message>
-        <source>This is the slowest and most secure option. Using maximum anonymity will cost</source>
-        <translation>This is the slowest and most secure option. Using maximum anonymity will cost</translation>
-    </message>
-    <message>
-        <source>0.1 HLM per 10000 HLM you anonymize.</source>
-        <translation>0.1 HLM per 10000 HLM you anonymize.</translation>
-    </message>
-    <message>
-        <source>Obfuscation Configuration</source>
-        <translation>Obfuscation Configuration</translation>
-    </message>
-    <message>
-        <source>Obfuscation was successfully set to basic (%1 and 2 rounds). You can change this at any time by opening Helium's configuration screen.</source>
-        <translation>Obfuscation was successfully set to basic (%1 and 2 rounds). You can change this at any time by opening Helium's configuration screen.</translation>
-    </message>
-    <message>
-        <source>Obfuscation was successfully set to high (%1 and 8 rounds). You can change this at any time by opening Helium's configuration screen.</source>
-        <translation>Obfuscation was successfully set to high (%1 and 8 rounds). You can change this at any time by opening Helium's configuration screen.</translation>
-    </message>
-    <message>
-        <source>Obfuscation was successfully set to maximum (%1 and 16 rounds). You can change this at any time by opening Helium's configuration screen.</source>
-        <translation>Obfuscation was successfully set to maximum (%1 and 16 rounds). You can change this at any time by opening Helium's configuration screen.</translation>
-    </message>
-</context>
+    <name>MultisigDialog</name>
+    </context>
 <context>
     <name>OpenURIDialog</name>
     <message>
@@ -1674,22 +1518,6 @@ Please check the address and try again.</translation>
         <translation>&amp;Start Helium on system login</translation>
     </message>
     <message>
-        <source>This setting determines the amount of individual masternodes that an input will be anonymized through.&lt;br/&gt;More rounds of anonymization gives a higher degree of privacy, but also costs more in fees.</source>
-        <translation>This setting determines the amount of individual masternodes that an input will be anonymized through.&lt;br/&gt;More rounds of anonymization gives a higher degree of privacy, but also costs more in fees.</translation>
-    </message>
-    <message>
-        <source>Obfuscation rounds to use</source>
-        <translation>Obfuscation rounds to use</translation>
-    </message>
-    <message>
-        <source>This amount acts as a threshold to turn off Obfuscation once it's reached.</source>
-        <translation>This amount acts as a threshold to turn off Obfuscation once it's reached.</translation>
-    </message>
-    <message>
-        <source>Amount of Helium to keep anonymized</source>
-        <translation>Amount of Helium to keep anonymized</translation>
-    </message>
-    <message>
         <source>Whether to show coin control features or not.</source>
         <translation>Whether to show coin control features or not.</translation>
     </message>
@@ -1716,12 +1544,6 @@ Please check the address and try again.</translation>
     <message>
         <source>The user interface language can be set here. This setting will take effect after restarting Helium.</source>
         <translation>The user interface language can be set here. This setting will take effect after restarting Helium.</translation>
-    </message>
-    <message>
-        <source>Language missing or translation incomplete? Help contributing translations here:
-https://www.transifex.com/heliumchain/helium-project-translations</source>
-        <translation>Language missing or translation incomplete? Help contributing translations here:
-https://www.transifex.com/heliumchain/helium-project-translations</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>
@@ -1776,12 +1598,14 @@ https://www.transifex.com/heliumchain/helium-project-translations</translation>
         <translation>User Interface &amp;language:</translation>
     </message>
     <message>
-        <source>User Interface Theme:</source>
-        <translation>User Interface Theme:</translation>
+        <source>Language missing or translation incomplete? Help contributing translations here:
+https://www.transifex.com/helium-project/helium-wallet</source>
+        <translation>Language missing or translation incomplete? Help contributing translations here:
+https://www.transifex.com/helium-project/helium-wallet</translation>
     </message>
     <message>
-        <source>&amp;Unit to show amounts in:</source>
-        <translation>&amp;Unit to show amounts in:</translation>
+        <source>User Interface Theme:</source>
+        <translation>User Interface Theme:</translation>
     </message>
     <message>
         <source>Choose the default subdivision unit to show in the interface and when sending coins.</source>
@@ -1847,7 +1671,7 @@ https://www.transifex.com/heliumchain/helium-project-translations</translation>
         <source>The supplied proxy address is invalid.</source>
         <translation>The supplied proxy address is invalid.</translation>
     </message>
-</context>
+    </context>
 <context>
     <name>OverviewPage</name>
     <message>
@@ -1879,10 +1703,6 @@ https://www.transifex.com/heliumchain/helium-project-translations</translation>
         <translation>Staked or masternode rewards that has not yet matured</translation>
     </message>
     <message>
-        <source>Balances</source>
-        <translation>Balances</translation>
-    </message>
-    <message>
         <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Helium network after a connection is established, but this process has not completed yet.</source>
         <translation>The displayed information may be out of date. Your wallet automatically synchronizes with the Helium network after a connection is established, but this process has not completed yet.</translation>
     </message>
@@ -1897,10 +1717,6 @@ https://www.transifex.com/heliumchain/helium-project-translations</translation>
     <message>
         <source>Total:</source>
         <translation>Total:</translation>
-    </message>
-    <message>
-        <source>Your current total balance</source>
-        <translation>Your current total balance</translation>
     </message>
     <message>
         <source>Current total balance in watch-only addresses</source>
@@ -1919,156 +1735,14 @@ https://www.transifex.com/heliumchain/helium-project-translations</translation>
         <translation>Spendable:</translation>
     </message>
     <message>
-        <source>Status:</source>
-        <translation>Status:</translation>
-    </message>
-    <message>
-        <source>Obfuscation Balance:</source>
-        <translation>Obfuscation Balance:</translation>
-    </message>
-    <message>
-        <source>0 HLM / 0 Rounds</source>
-        <translation>0 HLM / 0 Rounds</translation>
-    </message>
-    <message>
-        <source>Enabled/Disabled</source>
-        <translation>Enabled/Disabled</translation>
-    </message>
-    <message>
-        <source>Try to manually submit a Obfuscation request.</source>
-        <translation>Try to manually submit a Obfuscation request.</translation>
-    </message>
-    <message>
-        <source>Reset the current status of Obfuscation (can interrupt Obfuscation if it's in the process of Mixing, which can cost you money!)</source>
-        <translation>Reset the current status of Obfuscation (can interrupt Obfuscation if it's in the process of Mixing, which can cost you money!)</translation>
-    </message>
-    <message>
-        <source>Obfuscation</source>
-        <translation>Obfuscation</translation>
-    </message>
-    <message>
-        <source>Completion:</source>
-        <translation>Completion:</translation>
-    </message>
-    <message>
-        <source>Amount and Rounds:</source>
-        <translation>Amount and Rounds:</translation>
-    </message>
-    <message>
-        <source>Submitted Denom:</source>
-        <translation>Submitted Denom:</translation>
-    </message>
-    <message>
-        <source>n/a</source>
-        <translation>n/a</translation>
-    </message>
-    <message>
         <source>Recent transactions</source>
         <translation>Recent transactions</translation>
-    </message>
-    <message>
-        <source>Start/Stop Mixing</source>
-        <translation>Start/Stop Mixing</translation>
-    </message>
-    <message>
-        <source>The denominations you submitted to the Masternode.&lt;br&gt;To mix, other users must submit the exact same denominations.</source>
-        <translation>The denominations you submitted to the Masternode.&lt;br&gt;To mix, other users must submit the exact same denominations.</translation>
-    </message>
-    <message>
-        <source>(Last Message)</source>
-        <translation>(Last Message)</translation>
-    </message>
-    <message>
-        <source>Try Mix</source>
-        <translation>Try Mix</translation>
-    </message>
-    <message>
-        <source>Reset</source>
-        <translation>Reset</translation>
     </message>
     <message>
         <source>out of sync</source>
         <translation>out of sync</translation>
     </message>
-    <message>
-        <source>Disabled</source>
-        <translation>Disabled</translation>
-    </message>
-    <message>
-        <source>No inputs detected</source>
-        <translation>No inputs detected</translation>
-    </message>
-    <message numerus="yes">
-        <source>%n Rounds</source>
-        <translation><numerusform>%n Round</numerusform><numerusform>%n Rounds</numerusform></translation>
-    </message>
-    <message>
-        <source>Not enough compatible inputs to anonymize &lt;span style='color:red;'&gt;%1&lt;/span&gt;,&lt;br&gt;will anonymize &lt;span style='color:red;'&gt;%2&lt;/span&gt; instead</source>
-        <translation>Not enough compatible inputs to anonymize &lt;span style='color:red;'&gt;%1&lt;/span&gt;,&lt;br&gt;will anonymize &lt;span style='color:red;'&gt;%2&lt;/span&gt; instead</translation>
-    </message>
-    <message>
-        <source>Overall progress</source>
-        <translation>Overall progress</translation>
-    </message>
-    <message>
-        <source>Denominated</source>
-        <translation>Denominated</translation>
-    </message>
-    <message>
-        <source>Anonymized</source>
-        <translation>Anonymized</translation>
-    </message>
-    <message numerus="yes">
-        <source>Denominated inputs have %5 of %n rounds on average</source>
-        <translation><numerusform>Denominated inputs have %5 of %n rounds on average</numerusform><numerusform>Denominated inputs have %5 of %n rounds on average</numerusform></translation>
-    </message>
-    <message>
-        <source>Last Obfuscation message:
-</source>
-        <translation>Last Obfuscation message:
-</translation>
-    </message>
-    <message>
-        <source>Obfuscation was successfully reset.</source>
-        <translation>Obfuscation was successfully reset.</translation>
-    </message>
-    <message>
-        <source>If you don't want to see internal Obfuscation fees/transactions select "Most Common" as Type on the "Transactions" tab.</source>
-        <translation>If you don't want to see internal Obfuscation fees/transactions select "Most Common" as Type on the "Transactions" tab.</translation>
-    </message>
-    <message>
-        <source>Obfuscation requires at least %1 to use.</source>
-        <translation>Obfuscation requires at least %1 to use.</translation>
-    </message>
-    <message>
-        <source>Wallet is locked and user declined to unlock. Disabling Obfuscation.</source>
-        <translation>Wallet is locked and user declined to unlock. Disabling Obfuscation.</translation>
-    </message>
-    <message>
-        <source>Found enough compatible inputs to anonymize %1</source>
-        <translation>Found enough compatible inputs to anonymize %1</translation>
-    </message>
-    <message>
-        <source>Start Obfuscation</source>
-        <translation>Start Obfuscation</translation>
-    </message>
-    <message>
-        <source>Stop Obfuscation</source>
-        <translation>Stop Obfuscation</translation>
-    </message>
-    <message>
-        <source>Mixed</source>
-        <translation>Mixed</translation>
-    </message>
-    <message>
-        <source>Enabled</source>
-        <translation>Enabled</translation>
-    </message>
-    <message>
-        <source>N/A</source>
-        <translation>N/A</translation>
-    </message>
-</context>
+    </context>
 <context>
     <name>PaymentServer</name>
     <message>
@@ -2176,6 +1850,12 @@ https://www.transifex.com/heliumchain/helium-project-translations</translation>
     </message>
 </context>
 <context>
+    <name>PrivacyDialog</name>
+    </context>
+<context>
+    <name>ProposalFrame</name>
+    </context>
+<context>
     <name>QObject</name>
     <message>
         <source>Amount</source>
@@ -2221,7 +1901,7 @@ https://www.transifex.com/heliumchain/helium-project-translations</translation>
         <source>%1 ms</source>
         <translation>%1 ms</translation>
     </message>
-</context>
+    </context>
 <context>
     <name>QRImageWidget</name>
     <message>
@@ -2376,14 +2056,6 @@ https://www.transifex.com/heliumchain/helium-project-translations</translation>
         <translation>Services</translation>
     </message>
     <message>
-        <source>Starting Height</source>
-        <translation>Starting Height</translation>
-    </message>
-    <message>
-        <source>Sync Height</source>
-        <translation>Sync Height</translation>
-    </message>
-    <message>
         <source>Ban Score</source>
         <translation>Ban Score</translation>
     </message>
@@ -2488,10 +2160,6 @@ https://www.transifex.com/heliumchain/helium-project-translations</translation>
         <translation>Welcome to the Helium RPC console.</translation>
     </message>
     <message>
-        <source>Use up and down arrows to navigate history, and &lt;b&gt;Ctrl-L&lt;/b&gt; to clear screen.</source>
-        <translation>Use up and down arrows to navigate history, and &lt;b&gt;Ctrl-L&lt;/b&gt; to clear screen.</translation>
-    </message>
-    <message>
         <source>Type &lt;b&gt;help&lt;/b&gt; for an overview of available commands.</source>
         <translation>Type &lt;b&gt;help&lt;/b&gt; for an overview of available commands.</translation>
     </message>
@@ -2531,10 +2199,6 @@ https://www.transifex.com/heliumchain/helium-project-translations</translation>
         <source>Unknown</source>
         <translation>Unknown</translation>
     </message>
-    <message>
-        <source>Fetching...</source>
-        <translation>Fetching...</translation>
-    </message>
 </context>
 <context>
     <name>ReceiveCoinsDialog</name>
@@ -2573,10 +2237,6 @@ https://www.transifex.com/heliumchain/helium-project-translations</translation>
     <message>
         <source>An optional amount to request. Leave this empty or zero to not request a specific amount.</source>
         <translation>An optional amount to request. Leave this empty or zero to not request a specific amount.</translation>
-    </message>
-    <message>
-        <source>&amp;Amount:</source>
-        <translation>&amp;Amount:</translation>
     </message>
     <message>
         <source>&amp;Request payment</source>
@@ -2622,7 +2282,7 @@ https://www.transifex.com/heliumchain/helium-project-translations</translation>
         <source>Copy amount</source>
         <translation>Copy amount</translation>
     </message>
-</context>
+    </context>
 <context>
     <name>ReceiveRequestDialog</name>
     <message>
@@ -2720,14 +2380,6 @@ https://www.transifex.com/heliumchain/helium-project-translations</translation>
         <translation>Coin Control Features</translation>
     </message>
     <message>
-        <source>Inputs...</source>
-        <translation>Inputs...</translation>
-    </message>
-    <message>
-        <source>automatically selected</source>
-        <translation>automatically selected</translation>
-    </message>
-    <message>
         <source>Insufficient funds!</source>
         <translation>Insufficient funds!</translation>
     </message>
@@ -2812,10 +2464,6 @@ https://www.transifex.com/heliumchain/helium-project-translations</translation>
         <translation>Minimize</translation>
     </message>
     <message>
-        <source>Obfuscation</source>
-        <translation>Obfuscation</translation>
-    </message>
-    <message>
         <source>per kilobyte</source>
         <translation>per kilobyte</translation>
     </message>
@@ -2896,10 +2544,6 @@ https://www.transifex.com/heliumchain/helium-project-translations</translation>
         <translation>Add &amp;Recipient</translation>
     </message>
     <message>
-        <source>SwiftTX</source>
-        <translation>SwiftTX</translation>
-    </message>
-    <message>
         <source>Balance:</source>
         <translation>Balance:</translation>
     </message>
@@ -2944,24 +2588,8 @@ https://www.transifex.com/heliumchain/helium-project-translations</translation>
         <translation>The split block tool does not work with multiple addresses. Try again.</translation>
     </message>
     <message>
-        <source>using</source>
-        <translation>using</translation>
-    </message>
-    <message>
-        <source>anonymous funds</source>
-        <translation>anonymous funds</translation>
-    </message>
-    <message>
         <source>Warning: Invalid Helium address</source>
         <translation>Warning: Invalid Helium address</translation>
-    </message>
-    <message>
-        <source>any available funds (not recommended)</source>
-        <translation>any available funds (not recommended)</translation>
-    </message>
-    <message>
-        <source>and SwiftTX</source>
-        <translation>and SwiftTX</translation>
     </message>
     <message>
         <source>%1 to %2</source>
@@ -2994,10 +2622,6 @@ https://www.transifex.com/heliumchain/helium-project-translations</translation>
     <message>
         <source>The recipient address is not valid, please recheck.</source>
         <translation>The recipient address is not valid, please recheck.</translation>
-    </message>
-    <message>
-        <source>(obfuscation requires this amount to be rounded up to the nearest %1).</source>
-        <translation>(obfuscation requires this amount to be rounded up to the nearest %1).</translation>
     </message>
     <message>
         <source> split into %1 outputs using the UTXO splitter.</source>
@@ -3277,7 +2901,7 @@ https://www.transifex.com/heliumchain/helium-project-translations</translation>
     <name>SplashScreen</name>
     <message>
         <source>Helium Core</source>
-        <translation>PIVX Core</translation>
+        <translation>Helium Core</translation>
     </message>
     <message>
         <source>Version %1</source>
@@ -3292,8 +2916,8 @@ https://www.transifex.com/heliumchain/helium-project-translations</translation>
         <translation>The Dash Core developers</translation>
     </message>
     <message>
-        <source>The PIVX Core developers</source>
-        <translation>The PIVX Core developers</translation>
+        <source>The Helium Core developers</source>
+        <translation>The Helium Core developers</translation>
     </message>
     <message>
         <source>[testnet]</source>
@@ -3322,18 +2946,6 @@ https://www.transifex.com/heliumchain/helium-project-translations</translation>
         <translation>conflicted</translation>
     </message>
     <message>
-        <source>%1/offline (verified via swifttx)</source>
-        <translation>%1/offline (verified via swifttx)</translation>
-    </message>
-    <message>
-        <source>%1/confirmed (verified via swifttx)</source>
-        <translation>%1/confirmed (verified via swifttx)</translation>
-    </message>
-    <message>
-        <source>%1 confirmations (verified via swifttx)</source>
-        <translation>%1 confirmations (verified via swifttx)</translation>
-    </message>
-    <message>
         <source>%1/offline</source>
         <translation>%1/offline</translation>
     </message>
@@ -3344,26 +2956,6 @@ https://www.transifex.com/heliumchain/helium-project-translations</translation>
     <message>
         <source>%1 confirmations</source>
         <translation>%1 confirmations</translation>
-    </message>
-    <message>
-        <source>%1/offline (SwiftTX verification in progress - %2 of %3 signatures)</source>
-        <translation>%1/offline (SwiftTX verification in progress - %2 of %3 signatures)</translation>
-    </message>
-    <message>
-        <source>%1/confirmed (SwiftTX verification in progress - %2 of %3 signatures )</source>
-        <translation>%1/confirmed (SwiftTX verification in progress - %2 of %3 signatures )</translation>
-    </message>
-    <message>
-        <source>%1 confirmations (SwiftTX verification in progress - %2 of %3 signatures)</source>
-        <translation>%1 confirmations (SwiftTX verification in progress - %2 of %3 signatures)</translation>
-    </message>
-    <message>
-        <source>%1/offline (SwiftTX verification failed)</source>
-        <translation>%1/offline (SwiftTX verification failed)</translation>
-    </message>
-    <message>
-        <source>%1/confirmed (SwiftTX verification failed)</source>
-        <translation>%1/confirmed (SwiftTX verification failed)</translation>
     </message>
     <message>
         <source>Status</source>
@@ -3464,10 +3056,6 @@ https://www.transifex.com/heliumchain/helium-project-translations</translation>
     <message>
         <source>Merchant</source>
         <translation>Merchant</translation>
-    </message>
-    <message>
-        <source>Generated coins must mature %1 blocks before they can be spent. When you generated this block, it was broadcast to the network to be added to the block chain. If it fails to get into the chain, its state will change to "not accepted" and it won't be spendable. This may occasionally happen if another node generates a block within a few seconds of yours.</source>
-        <translation>Generated coins must mature %1 blocks before they can be spent. When you generated this block, it was broadcast to the network to be added to the block chain. If it fails to get into the chain, its state will change to "not accepted" and it won't be spendable. This may occasionally happen if another node generates a block within a few seconds of yours.</translation>
     </message>
     <message>
         <source>Debug information</source>
@@ -3600,10 +3188,6 @@ https://www.transifex.com/heliumchain/helium-project-translations</translation>
         <translation>Payment to yourself</translation>
     </message>
     <message>
-        <source>Minted</source>
-        <translation>Minted</translation>
-    </message>
-    <message>
         <source>Mined</source>
         <translation>Mined</translation>
     </message>
@@ -3685,26 +3269,6 @@ https://www.transifex.com/heliumchain/helium-project-translations</translation>
     <message>
         <source>Sent to</source>
         <translation>Sent to</translation>
-    </message>
-    <message>
-        <source>Obfuscated</source>
-        <translation>Obfuscated</translation>
-    </message>
-    <message>
-        <source>Obfuscation Make Collateral Inputs</source>
-        <translation>Obfuscation Make Collateral Inputs</translation>
-    </message>
-    <message>
-        <source>Obfuscation Create Denominations</source>
-        <translation>Obfuscation Create Denominations</translation>
-    </message>
-    <message>
-        <source>Obfuscation Denominate</source>
-        <translation>Obfuscation Denominate</translation>
-    </message>
-    <message>
-        <source>Obfuscation Collateral Payment</source>
-        <translation>Obfuscation Collateral Payment</translation>
     </message>
     <message>
         <source>To yourself</source>
@@ -3839,11 +3403,7 @@ https://www.transifex.com/heliumchain/helium-project-translations</translation>
         <source>Send Coins</source>
         <translation>Send Coins</translation>
     </message>
-    <message>
-        <source>SwiftTX doesn't support sending values that high yet. Transactions are currently limited to %1 HLM.</source>
-        <translation>SwiftTX doesn't support sending values that high yet. Transactions are currently limited to %1 HLM.</translation>
-    </message>
-</context>
+    </context>
 <context>
     <name>WalletView</name>
     <message>
@@ -3866,23 +3426,10 @@ https://www.transifex.com/heliumchain/helium-project-translations</translation>
         <source>Wallet Data (*.dat)</source>
         <translation>Wallet Data (*.dat)</translation>
     </message>
-    <message>
-        <source>Backup Failed</source>
-        <translation>Backup Failed</translation>
-    </message>
-    <message>
-        <source>There was an error trying to save the wallet data to %1.</source>
-        <translation>There was an error trying to save the wallet data to %1.</translation>
-    </message>
-    <message>
-        <source>Backup Successful</source>
-        <translation>Backup Successful</translation>
-    </message>
-    <message>
-        <source>The wallet data was successfully saved to %1.</source>
-        <translation>The wallet data was successfully saved to %1.</translation>
-    </message>
 </context>
+<context>
+    <name>ZHlmControlDialog</name>
+    </context>
 <context>
     <name>helium-core</name>
     <message>
@@ -3892,10 +3439,6 @@ https://www.transifex.com/heliumchain/helium-project-translations</translation>
     <message>
         <source>Allow JSON-RPC connections from specified source. Valid for &lt;ip&gt; are a single IP (e.g. 1.2.3.4), a network/netmask (e.g. 1.2.3.4/255.255.255.0) or a network/CIDR (e.g. 1.2.3.4/24). This option can be specified multiple times</source>
         <translation>Allow JSON-RPC connections from specified source. Valid for &lt;ip&gt; are a single IP (e.g. 1.2.3.4), a network/netmask (e.g. 1.2.3.4/255.255.255.0) or a network/CIDR (e.g. 1.2.3.4/24). This option can be specified multiple times</translation>
-    </message>
-    <message>
-        <source>An error occurred while setting up the RPC address %s port %u for listening: %s</source>
-        <translation>An error occurred while setting up the RPC address %s port %u for listening: %s</translation>
     </message>
     <message>
         <source>Bind to given address and always listen on it. Use [host]:port notation for IPv6</source>
@@ -3930,24 +3473,12 @@ https://www.transifex.com/heliumchain/helium-project-translations</translation>
         <translation>Delete all wallet transactions and only recover those parts of the blockchain through -rescan on startup</translation>
     </message>
     <message>
-        <source>Disable all Helium specific functionality (Masternodes, Obfuscation, SwiftTX, Budgeting) (0-1, default: %u)</source>
-        <translation>Disable all Helium specific functionality (Masternodes, Obfuscation, SwiftTX, Budgeting) (0-1, default: %u)</translation>
-    </message>
-    <message>
         <source>Distributed under the MIT software license, see the accompanying file COPYING or &lt;http://www.opensource.org/licenses/mit-license.php&gt;.</source>
         <translation>Distributed under the MIT software license, see the accompanying file COPYING or &lt;http://www.opensource.org/licenses/mit-license.php&gt;.</translation>
     </message>
     <message>
         <source>Enable spork administration functionality with the appropriate private key.</source>
         <translation>Enable spork administration functionality with the appropriate private key.</translation>
-    </message>
-    <message>
-        <source>Enable swifttx, show confirmations for locked transactions (bool, default: %s)</source>
-        <translation>Enable swifttx, show confirmations for locked transactions (bool, default: %s)</translation>
-    </message>
-    <message>
-        <source>Enable use of automated obfuscation for funds stored in this wallet (0-1, default: %u)</source>
-        <translation>Enable use of automated obfuscation for funds stored in this wallet (0-1, default: %u)</translation>
     </message>
     <message>
         <source>Enter regression test mode, which uses a special chain in which blocks can be solved instantly.</source>
@@ -3984,14 +3515,6 @@ https://www.transifex.com/heliumchain/helium-project-translations</translation>
     <message>
         <source>Flush database activity from memory pool to disk log every &lt;n&gt; megabytes (default: %u)</source>
         <translation>Flush database activity from memory pool to disk log every &lt;n&gt; megabytes (default: %u)</translation>
-    </message>
-    <message>
-        <source>Found unconfirmed denominated outputs, will wait till they confirm to continue.</source>
-        <translation>Found unconfirmed denominated outputs, will wait till they confirm to continue.</translation>
-    </message>
-    <message>
-        <source>How thorough the block verification of -checkblocks is (0-4, default: %u)</source>
-        <translation>How thorough the block verification of -checkblocks is (0-4, default: %u)</translation>
     </message>
     <message>
         <source>If paytxfee is not set, include enough fee so transactions begin confirmation on average within n blocks (default: %u)</source>
@@ -4038,10 +3561,6 @@ https://www.transifex.com/heliumchain/helium-project-translations</translation>
         <translation>Output debugging information (default: %u, supplying &lt;category&gt; is optional)</translation>
     </message>
     <message>
-        <source>Provide liquidity to Obfuscation by infrequently mixing coins on a continual basis (0-100, default: %u, 1=very frequent, high fees, 100=very infrequent, low fees)</source>
-        <translation>Provide liquidity to Obfuscation by infrequently mixing coins on a continual basis (0-100, default: %u, 1=very frequent, high fees, 100=very infrequent, low fees)</translation>
-    </message>
-    <message>
         <source>Query for peer addresses via DNS lookup, if low on addresses (default: 1 unless -connect)</source>
         <translation>Query for peer addresses via DNS lookup, if low on addresses (default: 1 unless -connect)</translation>
     </message>
@@ -4074,36 +3593,8 @@ https://www.transifex.com/heliumchain/helium-project-translations</translation>
         <translation>Support filtering of blocks and transaction with bloom filters (default: %u)</translation>
     </message>
     <message>
-        <source>SwiftTX requires inputs with at least 6 confirmations, you might need to wait a few minutes and try again.</source>
-        <translation>SwiftTX requires inputs with at least 6 confirmations, you might need to wait a few minutes and try again.</translation>
-    </message>
-    <message>
         <source>This product includes software developed by the OpenSSL Project for use in the OpenSSL Toolkit &lt;https://www.openssl.org/&gt; and cryptographic software written by Eric Young and UPnP software written by Thomas Bernard.</source>
         <translation>This product includes software developed by the OpenSSL Project for use in the OpenSSL Toolkit &lt;https://www.openssl.org/&gt; and cryptographic software written by Eric Young and UPnP software written by Thomas Bernard.</translation>
-    </message>
-    <message>
-        <source>To use heliumd, or the -server option to helium-qt, you must set an rpcpassword in the configuration file:
-%s
-It is recommended you use the following random password:
-rpcuser=heliumrpc
-rpcpassword=%s
-(you do not need to remember this password)
-The username and password MUST NOT be the same.
-If the file does not exist, create it with owner-readable-only file permissions.
-It is also recommended to set alertnotify so you are notified of problems;
-for example: alertnotify=echo %%s | mail -s "Helium Alert" admin@foo.com
-</source>
-        <translation>To use heliumd, or the -server option to helium-qt, you must set an rpcpassword in the configuration file:
-%s
-It is recommended you use the following random password:
-rpcuser=heliumrpc
-rpcpassword=%s
-(you do not need to remember this password)
-The username and password MUST NOT be the same.
-If the file does not exist, create it with owner-readable-only file permissions.
-It is also recommended to set alertnotify so you are notified of problems;
-for example: alertnotify=echo %%s | mail -s "Helium Alert" admin@foo.com
-</translation>
     </message>
     <message>
         <source>Unable to bind to %s on this computer. Helium Core is probably already running.</source>
@@ -4194,20 +3685,12 @@ for example: alertnotify=echo %%s | mail -s "Helium Alert" admin@foo.com
         <translation>Accept public REST requests (default: %u)</translation>
     </message>
     <message>
-        <source>Acceptable ciphers (default: %s)</source>
-        <translation>Acceptable ciphers (default: %s)</translation>
-    </message>
-    <message>
         <source>Add a node to connect to and attempt to keep the connection open</source>
         <translation>Add a node to connect to and attempt to keep the connection open</translation>
     </message>
     <message>
         <source>Allow DNS lookups for -addnode, -seednode and -connect</source>
         <translation>Allow DNS lookups for -addnode, -seednode and -connect</translation>
-    </message>
-    <message>
-        <source>Already have that input.</source>
-        <translation>Already have that input.</translation>
     </message>
     <message>
         <source>Always query for peer addresses via DNS lookup (default: %u)</source>
@@ -4220,18 +3703,6 @@ for example: alertnotify=echo %%s | mail -s "Helium Alert" admin@foo.com
     <message>
         <source>Block creation options:</source>
         <translation>Block creation options:</translation>
-    </message>
-    <message>
-        <source>Can't denominate: no compatible inputs left.</source>
-        <translation>Can't denominate: no compatible inputs left.</translation>
-    </message>
-    <message>
-        <source>Can't find random Masternode.</source>
-        <translation>Can't find random Masternode.</translation>
-    </message>
-    <message>
-        <source>Can't mix while sync in progress.</source>
-        <translation>Can't mix while sync in progress.</translation>
     </message>
     <message>
         <source>Cannot downgrade wallet</source>
@@ -4254,10 +3725,6 @@ for example: alertnotify=echo %%s | mail -s "Helium Alert" admin@foo.com
         <translation>Cannot write default address</translation>
     </message>
     <message>
-        <source>Collateral not valid.</source>
-        <translation>Collateral not valid.</translation>
-    </message>
-    <message>
         <source>Connect only to the specified node(s)</source>
         <translation>Connect only to the specified node(s)</translation>
     </message>
@@ -4278,20 +3745,8 @@ for example: alertnotify=echo %%s | mail -s "Helium Alert" admin@foo.com
         <translation>Copyright (C) 2009-%i The Bitcoin Core Developers</translation>
     </message>
     <message>
-        <source>Copyright (C) 2014-%i The Dash Core Developers</source>
-        <translation>Copyright (C) 2014-%i The Dash Core Developers</translation>
-    </message>
-    <message>
-        <source>Copyright (C) 2015-%i The Helium Core Developers</source>
-        <translation>Copyright (C) 2015-%i The Helium Core Developers</translation>
-    </message>
-    <message>
         <source>Corrupted block database detected</source>
         <translation>Corrupted block database detected</translation>
-    </message>
-    <message>
-        <source>Could not parse -rpcbind value %s as network address</source>
-        <translation>Could not parse -rpcbind value %s as network address</translation>
     </message>
     <message>
         <source>Could not parse masternode.conf</source>
@@ -4326,14 +3781,6 @@ for example: alertnotify=echo %%s | mail -s "Helium Alert" admin@foo.com
         <translation>Enable the client to act as a masternode (0-1, default: %u)</translation>
     </message>
     <message>
-        <source>Entries are full.</source>
-        <translation>Entries are full.</translation>
-    </message>
-    <message>
-        <source>Error connecting to Masternode.</source>
-        <translation>Error connecting to Masternode.</translation>
-    </message>
-    <message>
         <source>Error initializing block database</source>
         <translation>Error initializing block database</translation>
     </message>
@@ -4355,7 +3802,7 @@ for example: alertnotify=echo %%s | mail -s "Helium Alert" admin@foo.com
     </message>
     <message>
         <source>Error loading wallet.dat: Wallet requires newer version of Helium Core</source>
-        <translation>Error loading wallet.dat: Wallet requires newer version of PIVX Core</translation>
+        <translation>Error loading wallet.dat: Wallet requires newer version of Helium Core</translation>
     </message>
     <message>
         <source>Error opening block database</source>
@@ -4378,10 +3825,6 @@ for example: alertnotify=echo %%s | mail -s "Helium Alert" admin@foo.com
         <translation>Error: A fatal internal error occured, see debug.log for details</translation>
     </message>
     <message>
-        <source>Error: Can't select current denominated inputs</source>
-        <translation>Error: Can't select current denominated inputs</translation>
-    </message>
-    <message>
         <source>Error: Disk space is low!</source>
         <translation>Error: Disk space is low!</translation>
     </message>
@@ -4392,10 +3835,6 @@ for example: alertnotify=echo %%s | mail -s "Helium Alert" admin@foo.com
     <message>
         <source>Error: Wallet locked, unable to create transaction!</source>
         <translation>Error: Wallet locked, unable to create transaction!</translation>
-    </message>
-    <message>
-        <source>Error: You already have pending entries in the Obfuscation pool</source>
-        <translation>Error: You already have pending entries in the Obfuscation pool</translation>
     </message>
     <message>
         <source>Failed to listen on any port. Use -listen=0 if you want this.</source>
@@ -4410,20 +3849,8 @@ for example: alertnotify=echo %%s | mail -s "Helium Alert" admin@foo.com
         <translation>Fee (in HLM/kB) to add to transactions you send (default: %s)</translation>
     </message>
     <message>
-        <source>Finalizing transaction.</source>
-        <translation>Finalizing transaction.</translation>
-    </message>
-    <message>
         <source>Force safe mode (default: %u)</source>
         <translation>Force safe mode (default: %u)</translation>
-    </message>
-    <message>
-        <source>Found enough users, signing ( waiting %s )</source>
-        <translation>Found enough users, signing ( waiting %s )</translation>
-    </message>
-    <message>
-        <source>Found enough users, signing ...</source>
-        <translation>Found enough users, signing ...</translation>
     </message>
     <message>
         <source>Generate coins (default: %u)</source>
@@ -4450,14 +3877,6 @@ for example: alertnotify=echo %%s | mail -s "Helium Alert" admin@foo.com
         <translation>Include IP addresses in debug output (default: %u)</translation>
     </message>
     <message>
-        <source>Incompatible mode.</source>
-        <translation>Incompatible mode.</translation>
-    </message>
-    <message>
-        <source>Incompatible version.</source>
-        <translation>Incompatible version.</translation>
-    </message>
-    <message>
         <source>Incorrect or no genesis block found. Wrong datadir for network?</source>
         <translation>Incorrect or no genesis block found. Wrong datadir for network?</translation>
     </message>
@@ -4470,20 +3889,8 @@ for example: alertnotify=echo %%s | mail -s "Helium Alert" admin@foo.com
         <translation>Initialization sanity check failed. Helium Core is shutting down.</translation>
     </message>
     <message>
-        <source>Input is not valid.</source>
-        <translation>Input is not valid.</translation>
-    </message>
-    <message>
         <source>Insufficient funds.</source>
         <translation>Insufficient funds.</translation>
-    </message>
-    <message>
-        <source>Invalid -onion address: '%s'</source>
-        <translation>Invalid -onion address: '%s'</translation>
-    </message>
-    <message>
-        <source>Invalid -proxy address: '%s'</source>
-        <translation>Invalid -proxy address: '%s'</translation>
     </message>
     <message>
         <source>Invalid amount for -maxtxfee=&lt;amount&gt;: '%s'</source>
@@ -4526,10 +3933,6 @@ for example: alertnotify=echo %%s | mail -s "Helium Alert" admin@foo.com
         <translation>Invalid private key.</translation>
     </message>
     <message>
-        <source>Invalid script detected.</source>
-        <translation>Invalid script detected.</translation>
-    </message>
-    <message>
         <source>This is a pre-release test build - use at your own risk - do not use for staking or merchant applications!</source>
         <translation>This is a pre-release test build - use at your own risk - do not use for staking or merchant applications!</translation>
     </message>
@@ -4554,20 +3957,12 @@ for example: alertnotify=echo %%s | mail -s "Helium Alert" admin@foo.com
         <translation>Enable publish hash block in &lt;address&gt;</translation>
     </message>
     <message>
-        <source>Enable publish hash transaction (locked via SwiftTX) in &lt;address&gt;</source>
-        <translation>Enable publish hash transaction (locked via SwiftTX) in &lt;address&gt;</translation>
-    </message>
-    <message>
         <source>Enable publish hash transaction in &lt;address&gt;</source>
         <translation>Enable publish hash transaction in &lt;address&gt;</translation>
     </message>
     <message>
         <source>Enable publish raw block in &lt;address&gt;</source>
         <translation>Enable publish raw block in &lt;address&gt;</translation>
-    </message>
-    <message>
-        <source>Enable publish raw transaction (locked via SwiftTX) in &lt;address&gt;</source>
-        <translation>Enable publish raw transaction (locked via SwiftTX) in &lt;address&gt;</translation>
     </message>
     <message>
         <source>Enable publish raw transaction in &lt;address&gt;</source>
@@ -4578,20 +3973,8 @@ for example: alertnotify=echo %%s | mail -s "Helium Alert" admin@foo.com
         <translation>Enable staking functionality (0-1, default: %u)</translation>
     </message>
     <message>
-        <source>Keep N HLM anonymized (default: %u)</source>
-        <translation>Keep N HLM anonymized (default: %u)</translation>
-    </message>
-    <message>
         <source>Keep at most &lt;n&gt; unconnectable transactions in memory (default: %u)</source>
         <translation>Keep at most &lt;n&gt; unconnectable transactions in memory (default: %u)</translation>
-    </message>
-    <message>
-        <source>Last Obfuscation was too recent.</source>
-        <translation>Last Obfuscation was too recent.</translation>
-    </message>
-    <message>
-        <source>Last successful Obfuscation action was too recent.</source>
-        <translation>Last successful Obfuscation action was too recent.</translation>
     </message>
     <message>
         <source>Limit size of signature cache to &lt;n&gt; entries (default: %u)</source>
@@ -4638,10 +4021,6 @@ for example: alertnotify=echo %%s | mail -s "Helium Alert" admin@foo.com
         <translation>Loading wallet...</translation>
     </message>
     <message>
-        <source>Lock is already in place.</source>
-        <translation>Lock is already in place.</translation>
-    </message>
-    <message>
         <source>Lock masternodes from masternode configuration file (default: %u)</source>
         <translation>Lock masternodes from masternode configuration file (default: %u)</translation>
     </message>
@@ -4654,14 +4033,6 @@ for example: alertnotify=echo %%s | mail -s "Helium Alert" admin@foo.com
         <translation>Masternode options:</translation>
     </message>
     <message>
-        <source>Masternode queue is full.</source>
-        <translation>Masternode queue is full.</translation>
-    </message>
-    <message>
-        <source>Masternode:</source>
-        <translation>Masternode:</translation>
-    </message>
-    <message>
         <source>Maximum per-connection receive buffer, &lt;n&gt;*1000 bytes (default: %u)</source>
         <translation>Maximum per-connection receive buffer, &lt;n&gt;*1000 bytes (default: %u)</translation>
     </message>
@@ -4670,72 +4041,20 @@ for example: alertnotify=echo %%s | mail -s "Helium Alert" admin@foo.com
         <translation>Maximum per-connection send buffer, &lt;n&gt;*1000 bytes (default: %u)</translation>
     </message>
     <message>
-        <source>Missing input transaction information.</source>
-        <translation>Missing input transaction information.</translation>
-    </message>
-    <message>
-        <source>Mixing in progress...</source>
-        <translation>Mixing in progress...</translation>
-    </message>
-    <message>
         <source>Need to specify a port with -whitebind: '%s'</source>
         <translation>Need to specify a port with -whitebind: '%s'</translation>
-    </message>
-    <message>
-        <source>No Masternodes detected.</source>
-        <translation>No Masternodes detected.</translation>
-    </message>
-    <message>
-        <source>No compatible Masternode found.</source>
-        <translation>No compatible Masternode found.</translation>
-    </message>
-    <message>
-        <source>No funds detected in need of denominating.</source>
-        <translation>No funds detected in need of denominating.</translation>
-    </message>
-    <message>
-        <source>No matching denominations found for mixing.</source>
-        <translation>No matching denominations found for mixing.</translation>
     </message>
     <message>
         <source>Node relay options:</source>
         <translation>Node relay options:</translation>
     </message>
     <message>
-        <source>Non-standard public key detected.</source>
-        <translation>Non-standard public key detected.</translation>
-    </message>
-    <message>
-        <source>Not compatible with existing transactions.</source>
-        <translation>Not compatible with existing transactions.</translation>
-    </message>
-    <message>
         <source>Not enough file descriptors available.</source>
         <translation>Not enough file descriptors available.</translation>
     </message>
     <message>
-        <source>Not in the Masternode list.</source>
-        <translation>Not in the Masternode list.</translation>
-    </message>
-    <message>
         <source>Number of automatic wallet backups (default: 10)</source>
         <translation>Number of automatic wallet backups (default: 10)</translation>
-    </message>
-    <message>
-        <source>Obfuscation is idle.</source>
-        <translation>Obfuscation is idle.</translation>
-    </message>
-    <message>
-        <source>Obfuscation options:</source>
-        <translation>Obfuscation options:</translation>
-    </message>
-    <message>
-        <source>Obfuscation request complete:</source>
-        <translation>Obfuscation request complete:</translation>
-    </message>
-    <message>
-        <source>Obfuscation request incomplete:</source>
-        <translation>Obfuscation request incomplete:</translation>
     </message>
     <message>
         <source>Only accept block chain matching built-in checkpoints (default: %u)</source>
@@ -4762,16 +4081,8 @@ for example: alertnotify=echo %%s | mail -s "Helium Alert" admin@foo.com
         <translation>Print version and exit</translation>
     </message>
     <message>
-        <source>RPC SSL options: (see the Bitcoin Wiki for SSL setup instructions)</source>
-        <translation>RPC SSL options: (see the Bitcoin Wiki for SSL setup instructions)</translation>
-    </message>
-    <message>
         <source>RPC server options:</source>
         <translation>RPC server options:</translation>
-    </message>
-    <message>
-        <source>RPC support for HTTP persistent connections (default: %d)</source>
-        <translation>RPC support for HTTP persistent connections (default: %d)</translation>
     </message>
     <message>
         <source>Randomly drop 1 of every &lt;n&gt; network messages</source>
@@ -4816,18 +4127,6 @@ for example: alertnotify=echo %%s | mail -s "Helium Alert" admin@foo.com
     <message>
         <source>Send transactions as zero-fee transactions if possible (default: %u)</source>
         <translation>Send transactions as zero-fee transactions if possible (default: %u)</translation>
-    </message>
-    <message>
-        <source>Server certificate file (default: %s)</source>
-        <translation>Server certificate file (default: %s)</translation>
-    </message>
-    <message>
-        <source>Server private key (default: %s)</source>
-        <translation>Server private key (default: %s)</translation>
-    </message>
-    <message>
-        <source>Session not complete!</source>
-        <translation>Session not complete!</translation>
     </message>
     <message>
         <source>Session timed out.</source>
@@ -4926,22 +4225,6 @@ for example: alertnotify=echo %%s | mail -s "Helium Alert" admin@foo.com
         <translation>Stop running after importing blocks from disk (default: %u)</translation>
     </message>
     <message>
-        <source>Submitted following entries to masternode: %u / %d</source>
-        <translation>Submitted following entries to masternode: %u / %d</translation>
-    </message>
-    <message>
-        <source>Submitted to masternode, waiting for more entries ( %u / %d ) %s</source>
-        <translation>Submitted to masternode, waiting for more entries ( %u / %d ) %s</translation>
-    </message>
-    <message>
-        <source>Submitted to masternode, waiting in queue %s</source>
-        <translation>Submitted to masternode, waiting in queue %s</translation>
-    </message>
-    <message>
-        <source>SwiftTX options:</source>
-        <translation>SwiftTX options:</translation>
-    </message>
-    <message>
         <source>Synchronization failed</source>
         <translation>Synchronization failed</translation>
     </message>
@@ -4982,10 +4265,6 @@ for example: alertnotify=echo %%s | mail -s "Helium Alert" admin@foo.com
         <translation>This is intended for regression testing tools and app development.</translation>
     </message>
     <message>
-        <source>This is not a Masternode.</source>
-        <translation>This is not a Masternode.</translation>
-    </message>
-    <message>
         <source>Threshold for disconnecting misbehaving peers (default: %u)</source>
         <translation>Threshold for disconnecting misbehaving peers (default: %u)</translation>
     </message>
@@ -4998,28 +4277,12 @@ for example: alertnotify=echo %%s | mail -s "Helium Alert" admin@foo.com
         <translation>Transaction amounts must be positive</translation>
     </message>
     <message>
-        <source>Transaction created successfully.</source>
-        <translation>Transaction created successfully.</translation>
-    </message>
-    <message>
-        <source>Transaction fees are too high.</source>
-        <translation>Transaction fees are too high.</translation>
-    </message>
-    <message>
-        <source>Transaction not valid.</source>
-        <translation>Transaction not valid.</translation>
-    </message>
-    <message>
         <source>Transaction too large for fee policy</source>
         <translation>Transaction too large for fee policy</translation>
     </message>
     <message>
         <source>Transaction too large</source>
         <translation>Transaction too large</translation>
-    </message>
-    <message>
-        <source>Transmitting final transaction.</source>
-        <translation>Transmitting final transaction.</translation>
     </message>
     <message>
         <source>Unable to bind to %s on this computer (bind returned error %s)</source>
@@ -5034,20 +4297,8 @@ for example: alertnotify=echo %%s | mail -s "Helium Alert" admin@foo.com
         <translation>Unknown network specified in -onlynet: '%s'</translation>
     </message>
     <message>
-        <source>Unknown state: id = %u</source>
-        <translation>Unknown state: id = %u</translation>
-    </message>
-    <message>
         <source>Upgrade wallet to latest format</source>
         <translation>Upgrade wallet to latest format</translation>
-    </message>
-    <message>
-        <source>Use N separate masternodes to anonymize funds  (2-8, default: %u)</source>
-        <translation>Use N separate masternodes to anonymize funds  (2-8, default: %u)</translation>
-    </message>
-    <message>
-        <source>Use OpenSSL (https) for JSON-RPC connections</source>
-        <translation>Use OpenSSL (https) for JSON-RPC connections</translation>
     </message>
     <message>
         <source>Use UPnP to map the listening port (default: %u)</source>
@@ -5066,10 +4317,6 @@ for example: alertnotify=echo %%s | mail -s "Helium Alert" admin@foo.com
         <translation>Username for JSON-RPC connections</translation>
     </message>
     <message>
-        <source>Value more than Obfuscation pool maximum allows.</source>
-        <translation>Value more than Obfuscation pool maximum allows.</translation>
-    </message>
-    <message>
         <source>Verifying blocks...</source>
         <translation>Verifying blocks...</translation>
     </message>
@@ -5080,10 +4327,6 @@ for example: alertnotify=echo %%s | mail -s "Helium Alert" admin@foo.com
     <message>
         <source>Wallet %s resides outside data directory %s</source>
         <translation>Wallet %s resides outside data directory %s</translation>
-    </message>
-    <message>
-        <source>Wallet is locked.</source>
-        <translation>Wallet is locked.</translation>
     </message>
     <message>
         <source>Wallet needed to be rewritten: restart Helium Core to complete</source>
@@ -5114,20 +4357,8 @@ for example: alertnotify=echo %%s | mail -s "Helium Alert" admin@foo.com
         <translation>Warning: Unsupported argument -debugnet ignored, use -debug=net.</translation>
     </message>
     <message>
-        <source>Will retry...</source>
-        <translation>Will retry...</translation>
-    </message>
-    <message>
         <source>You need to rebuild the database using -reindex to change -txindex</source>
         <translation>You need to rebuild the database using -reindex to change -txindex</translation>
-    </message>
-    <message>
-        <source>Your entries added successfully.</source>
-        <translation>Your entries added successfully.</translation>
-    </message>
-    <message>
-        <source>Your transaction was accepted into the pool!</source>
-        <translation>Your transaction was accepted into the pool!</translation>
     </message>
     <message>
         <source>Zapping all transactions from wallet...</source>

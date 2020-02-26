@@ -20,9 +20,6 @@ QT_TRANSLATE_NOOP("helium-core", ""
 "single IP (e.g. 1.2.3.4), a network/netmask (e.g. 1.2.3.4/255.255.255.0) or "
 "a network/CIDR (e.g. 1.2.3.4/24). This option can be specified multiple times"),
 QT_TRANSLATE_NOOP("helium-core", ""
-"An error occurred while setting up the RPC address %s port %u for listening: "
-"%s"),
-QT_TRANSLATE_NOOP("helium-core", ""
 "Bind to given address and always listen on it. Use [host]:port notation for "
 "IPv6"),
 QT_TRANSLATE_NOOP("helium-core", ""
@@ -39,7 +36,7 @@ QT_TRANSLATE_NOOP("helium-core", ""
 "running."),
 QT_TRANSLATE_NOOP("helium-core", ""
 "Change automatic finalized budget voting behavior. mode=auto: Vote for only "
-"exact finalized budget match to my generated budget. (std::string, default: auto)"),
+"exact finalized budget match to my generated budget. (string, default: auto)"),
 QT_TRANSLATE_NOOP("helium-core", ""
 "Continuously rate-limit free transactions to <n>*1000 bytes per minute "
 "(default:%u)"),
@@ -49,6 +46,9 @@ QT_TRANSLATE_NOOP("helium-core", ""
 QT_TRANSLATE_NOOP("helium-core", ""
 "Delete all wallet transactions and only recover those parts of the "
 "blockchain through -rescan on startup"),
+QT_TRANSLATE_NOOP("helium-core", ""
+"Delete all zerocoin spends and mints that have been recorded to the "
+"blockchain database and reindex them (0-1, default: %u)"),
 QT_TRANSLATE_NOOP("helium-core", ""
 "Disable all Helium specific functionality (Masternodes, Zerocoin, SwiftX, "
 "Budgeting) (0-1, default: %u)"),
@@ -63,12 +63,18 @@ QT_TRANSLATE_NOOP("helium-core", ""
 "Enable automatic wallet backups triggered after each zHLM minting (0-1, "
 "default: %u)"),
 QT_TRANSLATE_NOOP("helium-core", ""
+"Enable or disable staking functionality for HLM inputs (0-1, default: %u)"),
+QT_TRANSLATE_NOOP("helium-core", ""
+"Enable or disable staking functionality for zHLM inputs (0-1, default: %u)"),
+QT_TRANSLATE_NOOP("helium-core", ""
 "Enable spork administration functionality with the appropriate private key."),
 QT_TRANSLATE_NOOP("helium-core", ""
 "Enter regression test mode, which uses a special chain in which blocks can "
 "be solved instantly."),
 QT_TRANSLATE_NOOP("helium-core", ""
 "Error: Listening for incoming connections failed (listen returned error %s)"),
+QT_TRANSLATE_NOOP("helium-core", ""
+"Error: The transaction is larger than the maximum allowed transaction size!"),
 QT_TRANSLATE_NOOP("helium-core", ""
 "Error: The transaction was rejected! This might happen if some of the coins "
 "in your wallet were already spent, such as if you used a copy of wallet.dat "
@@ -91,6 +97,11 @@ QT_TRANSLATE_NOOP("helium-core", ""
 "Execute command when the best block changes (%s in cmd is replaced by block "
 "hash)"),
 QT_TRANSLATE_NOOP("helium-core", ""
+"Execute command when the best block changes and its size is over (%s in cmd "
+"is replaced by block hash, %d with the block size)"),
+QT_TRANSLATE_NOOP("helium-core", ""
+"Failed to find coin set amongst held coins with less than maxNumber of Spends"),
+QT_TRANSLATE_NOOP("helium-core", ""
 "Fees (in HLM/Kb) smaller than this are considered zero fee for relaying "
 "(default: %s)"),
 QT_TRANSLATE_NOOP("helium-core", ""
@@ -102,6 +113,9 @@ QT_TRANSLATE_NOOP("helium-core", ""
 QT_TRANSLATE_NOOP("helium-core", ""
 "If paytxfee is not set, include enough fee so transactions begin "
 "confirmation on average within n blocks (default: %u)"),
+QT_TRANSLATE_NOOP("helium-core", ""
+"In rare cases, a spend with 7 coins exceeds our maximum allowable "
+"transaction size, please retry spend using 6 or less coins"),
 QT_TRANSLATE_NOOP("helium-core", ""
 "In this mode -genproclimit controls how many blocks are generated "
 "immediately."),
@@ -164,6 +178,15 @@ QT_TRANSLATE_NOOP("helium-core", ""
 "Show N confirmations for a successfully locked transaction (0-9999, default: "
 "%u)"),
 QT_TRANSLATE_NOOP("helium-core", ""
+"Specify custom backup path to add a copy of any automatic zHLM backup. If "
+"set as dir, every backup generates a timestamped file. If set as file, will "
+"rewrite to that file every backup. If backuppath is set as well, 4 backups "
+"will happen"),
+QT_TRANSLATE_NOOP("helium-core", ""
+"Specify custom backup path to add a copy of any wallet backup. If set as "
+"dir, every backup generates a timestamped file. If set as file, will rewrite "
+"to that file every backup."),
+QT_TRANSLATE_NOOP("helium-core", ""
 "Support filtering of blocks and transaction with bloom filters (default: %u)"),
 QT_TRANSLATE_NOOP("helium-core", ""
 "SwiftX requires inputs with at least 6 confirmations, you might need to wait "
@@ -184,7 +207,8 @@ QT_TRANSLATE_NOOP("helium-core", ""
 "Total length of network version string (%i) exceeds maximum length (%i). "
 "Reduce the number or size of uacomments."),
 QT_TRANSLATE_NOOP("helium-core", ""
-"Unable to bind to %s on this computer. Helium Core is probably already running."),
+"Unable to bind to %s on this computer. Helium Core is probably already "
+"running."),
 QT_TRANSLATE_NOOP("helium-core", ""
 "Unable to locate enough Obfuscation denominated funds for this transaction."),
 QT_TRANSLATE_NOOP("helium-core", ""
@@ -236,7 +260,6 @@ QT_TRANSLATE_NOOP("helium-core", "Accept command line and JSON-RPC commands"),
 QT_TRANSLATE_NOOP("helium-core", "Accept connections from outside (default: 1 if no -proxy or -connect)"),
 QT_TRANSLATE_NOOP("helium-core", "Accept public REST requests (default: %u)"),
 QT_TRANSLATE_NOOP("helium-core", "Add a node to connect to and attempt to keep the connection open"),
-QT_TRANSLATE_NOOP("helium-core", "Adding Wrapped Serials supply..."),
 QT_TRANSLATE_NOOP("helium-core", "Allow DNS lookups for -addnode, -seednode and -connect"),
 QT_TRANSLATE_NOOP("helium-core", "Always query for peer addresses via DNS lookup (default: %u)"),
 QT_TRANSLATE_NOOP("helium-core", "Append comment to the user agent string"),
@@ -258,8 +281,8 @@ QT_TRANSLATE_NOOP("helium-core", "Connect through SOCKS5 proxy"),
 QT_TRANSLATE_NOOP("helium-core", "Connect to a node to retrieve peer addresses, and disconnect"),
 QT_TRANSLATE_NOOP("helium-core", "Connection options:"),
 QT_TRANSLATE_NOOP("helium-core", "Copyright (C) 2009-%i The Bitcoin Core Developers"),
-QT_TRANSLATE_NOOP("helium-core", "Copyright (C) 2014-%i The Dash Core Developers"),
-QT_TRANSLATE_NOOP("helium-core", "Copyright (C) 2015-%i The Helium Core Developers"),
+QT_TRANSLATE_NOOP("helium-core", "Copyright (C) 2015-%i The Pivx Core Developers"),
+QT_TRANSLATE_NOOP("helium-core", "Copyright (C) 2018-%i The Helium Core Developers"),
 QT_TRANSLATE_NOOP("helium-core", "Corrupted block database detected"),
 QT_TRANSLATE_NOOP("helium-core", "Could not parse masternode.conf"),
 QT_TRANSLATE_NOOP("helium-core", "Couldn't generate the accumulator witness"),

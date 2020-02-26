@@ -54,7 +54,7 @@
         <translation>C&amp;lose</translation>
     </message>
     <message>
-        <location filename="../addressbookpage.cpp" line="+44"/>
+        <location filename="../addressbookpage.cpp" line="+45"/>
         <source>Choose the address to send coins to</source>
         <translation>Choose the address to send coins to</translation>
     </message>
@@ -127,7 +127,7 @@
 <context>
     <name>AddressTableModel</name>
     <message>
-        <location filename="../addresstablemodel.cpp" line="+199"/>
+        <location filename="../addresstablemodel.cpp" line="+201"/>
         <source>Label</source>
         <translation>Label</translation>
     </message>
@@ -171,11 +171,11 @@
     </message>
     <message>
         <location line="+3"/>
-        <source>For anonymization, automint, and staking only</source>
+        <source>For staking only</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../askpassphrasedialog.cpp" line="+48"/>
+        <location filename="../askpassphrasedialog.cpp" line="+50"/>
         <source>Enter the new passphrase to the wallet.&lt;br/&gt;Please use a passphrase of &lt;b&gt;ten or more random characters&lt;/b&gt;, or &lt;b&gt;eight or more words&lt;/b&gt;.</source>
         <translation>Enter the new passphrase to the wallet.&lt;br/&gt;Please use a passphrase of &lt;b&gt;ten or more random characters&lt;/b&gt;, or &lt;b&gt;eight or more words&lt;/b&gt;.</translation>
     </message>
@@ -220,12 +220,7 @@
         <translation>Confirm wallet encryption</translation>
     </message>
     <message>
-        <location line="+9"/>
-        <source>Helium will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your HLMs from being stolen by malware infecting your computer.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="-8"/>
+        <location line="+1"/>
         <source>Are you sure you wish to encrypt your wallet?</source>
         <translation>Are you sure you wish to encrypt your wallet?</translation>
     </message>
@@ -241,7 +236,12 @@
         <translation>Wallet encrypted</translation>
     </message>
     <message>
-        <location line="-39"/>
+        <location line="-43"/>
+        <source>Helium will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your coins from being stolen by malware infecting your computer.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+4"/>
         <source>IMPORTANT: Any previous backups you have made of your wallet file should be replaced with the newly generated, encrypted wallet file. For security reasons, previous backups of the unencrypted wallet file will become useless as soon as you start using the new, encrypted wallet.</source>
         <translation>IMPORTANT: Any previous backups you have made of your wallet file should be replaced with the newly generated, encrypted wallet file. For security reasons, previous backups of the unencrypted wallet file will become useless as soon as you start using the new, encrypted wallet.</translation>
     </message>
@@ -296,7 +296,7 @@
 <context>
     <name>BanTableModel</name>
     <message>
-        <location filename="../bantablemodel.cpp" line="+87"/>
+        <location filename="../bantablemodel.cpp" line="+88"/>
         <source>IP/Netmask</source>
         <translation type="unfinished"></translation>
     </message>
@@ -431,7 +431,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../bip38tooldialog.cpp" line="+29"/>
+        <location filename="../bip38tooldialog.cpp" line="+30"/>
         <source>Click &quot;Decrypt Key&quot; to compute key</source>
         <translation type="unfinished"></translation>
     </message>
@@ -516,7 +516,7 @@
 <context>
     <name>BitcoinGUI</name>
     <message>
-        <location filename="../bitcoingui.cpp" line="+123"/>
+        <location filename="../bitcoingui.cpp" line="+125"/>
         <source>Wallet</source>
         <translation>Wallet</translation>
     </message>
@@ -556,12 +556,7 @@
         <translation>Browse transaction history</translation>
     </message>
     <message>
-        <location line="+11"/>
-        <source>Privacy Actions for zHLM</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+28"/>
+        <location line="+39"/>
         <source>&amp;Governance</source>
         <translation type="unfinished"></translation>
     </message>
@@ -855,12 +850,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+21"/>
-        <source>&amp;Privacy</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+15"/>
+        <location line="+36"/>
         <source>&amp;Masternodes</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1108,17 +1098,7 @@ Address: %4
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+12"/>
-        <source>AutoMint is currently enabled and set to </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+5"/>
-        <source>AutoMint is disabled</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+30"/>
+        <location line="+47"/>
         <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;unlocked&lt;/b&gt;</source>
         <translation>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;unlocked&lt;/b&gt;</translation>
     </message>
@@ -1128,7 +1108,7 @@ Address: %4
         <translation>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;locked&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../helium.cpp" line="+478"/>
+        <location filename="../helium.cpp" line="+479"/>
         <source>A fatal error occurred. Helium can no longer continue safely and will quit.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1166,7 +1146,7 @@ Address: %4
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../blockexplorer.cpp" line="+480"/>
+        <location filename="../blockexplorer.cpp" line="+481"/>
         <source>Not all transactions will be shown. To view all transactions you need to set txindex=1 in the configuration file (helium.conf).</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1174,12 +1154,12 @@ Address: %4
 <context>
     <name>ClientModel</name>
     <message>
-        <location filename="../clientmodel.cpp" line="+81"/>
+        <location filename="../clientmodel.cpp" line="+84"/>
         <source>Total: %1 (IPv4: %2 / IPv6: %3 / Tor: %4 / Unknown: %5)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+101"/>
+        <location line="+110"/>
         <source>Network Alert</source>
         <translation>Network Alert</translation>
     </message>
@@ -1515,7 +1495,7 @@ Address: %4
         <translation>The address associated with this address list entry. This can only be modified for sending addresses.</translation>
     </message>
     <message>
-        <location filename="../editaddressdialog.cpp" line="+28"/>
+        <location filename="../editaddressdialog.cpp" line="+29"/>
         <source>New receiving address</source>
         <translation>New receiving address</translation>
     </message>
@@ -1558,7 +1538,7 @@ Address: %4
 <context>
     <name>FreespaceChecker</name>
     <message>
-        <location filename="../intro.cpp" line="+70"/>
+        <location filename="../intro.cpp" line="+71"/>
         <source>A new data directory will be created.</source>
         <translation>A new data directory will be created.</translation>
     </message>
@@ -1644,7 +1624,7 @@ Address: %4
 <context>
     <name>HelpMessageDialog</name>
     <message>
-        <location filename="../utilitydialog.cpp" line="+37"/>
+        <location filename="../utilitydialog.cpp" line="+38"/>
         <source>version</source>
         <translation>version</translation>
     </message>
@@ -1851,7 +1831,7 @@ Address: %4
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../masternodelist.cpp" line="+52"/>
+        <location filename="../masternodelist.cpp" line="+53"/>
         <source>Start alias</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2027,7 +2007,7 @@ MultiSend will not be activated unless you have clicked Activate</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../multisenddialog.cpp" line="+64"/>
+        <location filename="../multisenddialog.cpp" line="+65"/>
         <source>(no label)</source>
         <translation type="unfinished">(no label)</translation>
     </message>
@@ -2306,7 +2286,7 @@ Please be patient after clicking import.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../multisigdialog.cpp" line="+299"/>
+        <location filename="../multisigdialog.cpp" line="+300"/>
         <source>Invalid Tx Hash.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2359,7 +2339,7 @@ Please be patient after clicking import.</source>
         <translation>Select payment request file</translation>
     </message>
     <message>
-        <location filename="../openuridialog.cpp" line="+45"/>
+        <location filename="../openuridialog.cpp" line="+46"/>
         <source>Select payment request file to open</source>
         <translation>Select payment request file to open</translation>
     </message>
@@ -2397,7 +2377,7 @@ Please be patient after clicking import.</source>
         <translation>(0 = auto, &lt;0 = leave that many cores free)</translation>
     </message>
     <message>
-        <location line="+141"/>
+        <location line="+36"/>
         <source>W&amp;allet</source>
         <translation>W&amp;allet</translation>
     </message>
@@ -2432,7 +2412,7 @@ Please be patient after clicking import.</source>
         <translation>Expert</translation>
     </message>
     <message>
-        <location line="-236"/>
+        <location line="-131"/>
         <source>Automatically start Helium after logging in to the system.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2442,7 +2422,7 @@ Please be patient after clicking import.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+239"/>
+        <location line="+134"/>
         <source>Whether to show coin control features or not.</source>
         <translation>Whether to show coin control features or not.</translation>
     </message>
@@ -2477,59 +2457,12 @@ Please be patient after clicking import.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+21"/>
-        <source>Language missing or translation incomplete? Help contributing translations here:
-https://www.transifex.com/heliumchain/helium-project-translations</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="-204"/>
+        <location line="-183"/>
         <source>Map port using &amp;UPnP</source>
         <translation>Map port using &amp;UPnP</translation>
     </message>
     <message>
-        <location line="-187"/>
-        <source>Enable automatic minting of HLM units to zHLM</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+6"/>
-        <source>Enable zHLM Automint</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+7"/>
-        <source>Enable automatic zHLM minting from specific addresses</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+6"/>
-        <source>Enable Automint Addresses</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+11"/>
-        <source>Percentage of incoming HLM which get automatically converted to zHLM via Zerocoin Protocol (min: 10%)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>Percentage of autominted zHLM</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+30"/>
-        <location line="+16"/>
-        <source>Wait with automatic conversion to Zerocoin until enough HLM for this denomination is available</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="-13"/>
-        <source>Preferred Automint zHLM Denomination</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+40"/>
+        <location line="-81"/>
         <source>Stake split threshold:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2594,7 +2527,13 @@ https://www.transifex.com/heliumchain/helium-project-translations</source>
         <translation>User Interface &amp;language:</translation>
     </message>
     <message>
-        <location line="+53"/>
+        <location line="+34"/>
+        <source>Language missing or translation incomplete? Help contributing translations here:
+https://www.transifex.com/helium-project/helium-wallet</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+19"/>
         <source>User Interface Theme:</source>
         <translation>User Interface Theme:</translation>
     </message>
@@ -2666,12 +2605,7 @@ https://www.transifex.com/heliumchain/helium-project-translations</source>
         <translation>&amp;Cancel</translation>
     </message>
     <message>
-        <location filename="../optionsdialog.cpp" line="+92"/>
-        <source>Any</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+23"/>
+        <location filename="../optionsdialog.cpp" line="+104"/>
         <source>default</source>
         <translation>default</translation>
     </message>
@@ -2681,7 +2615,7 @@ https://www.transifex.com/heliumchain/helium-project-translations</source>
         <translation>none</translation>
     </message>
     <message>
-        <location line="+98"/>
+        <location line="+89"/>
         <source>Confirm options reset</source>
         <translation>Confirm options reset</translation>
     </message>
@@ -2727,12 +2661,11 @@ https://www.transifex.com/heliumchain/helium-project-translations</source>
     <message>
         <location line="+270"/>
         <location line="+192"/>
-        <location line="+403"/>
         <source>Available:</source>
         <translation>Available:</translation>
     </message>
     <message>
-        <location line="-579"/>
+        <location line="-176"/>
         <location line="+192"/>
         <source>Your current spendable balance</source>
         <translation>Your current spendable balance</translation>
@@ -2759,12 +2692,11 @@ https://www.transifex.com/heliumchain/helium-project-translations</source>
     </message>
     <message>
         <location line="+41"/>
-        <location line="+351"/>
         <source>Immature:</source>
         <translation>Immature:</translation>
     </message>
     <message>
-        <location line="-335"/>
+        <location line="+16"/>
         <source>Staked or masternode rewards that has not yet matured</source>
         <translation>Staked or masternode rewards that has not yet matured</translation>
     </message>
@@ -2774,40 +2706,13 @@ https://www.transifex.com/heliumchain/helium-project-translations</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+16"/>
-        <location line="+19"/>
-        <source>Your current Helium balance, unconfirmed and immature transactions included</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+96"/>
-        <source>zHLM Balance</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+53"/>
-        <location line="+17"/>
-        <source>Mature: more than 20 confirmation and more than 1 mint of the same denomination after it was minted.
-These zHLM are spendable.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+14"/>
-        <location line="+17"/>
-        <location line="+14"/>
-        <location line="+17"/>
-        <source>Unconfirmed: less than 20 confirmations
-Immature: confirmed, but less than 1 mint of the same denomination after it was minted</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="-725"/>
-        <location line="+852"/>
+        <location line="-462"/>
+        <location line="+616"/>
         <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Helium network after a connection is established, but this process has not completed yet.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-990"/>
+        <location line="-754"/>
         <source>OVERVIEW</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2834,12 +2739,17 @@ Immature: confirmed, but less than 1 mint of the same denomination after it was 
     <message>
         <location line="-315"/>
         <location line="+394"/>
-        <location line="+261"/>
         <source>Total:</source>
         <translation>Total:</translation>
     </message>
     <message>
-        <location line="-220"/>
+        <location line="-3"/>
+        <location line="+19"/>
+        <source>Your current balance, unconfirmed and immature transactions included</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+25"/>
         <source>Current total balance in watch-only addresses</source>
         <translation>Current total balance in watch-only addresses</translation>
     </message>
@@ -2870,29 +2780,18 @@ Immature: confirmed, but less than 1 mint of the same denomination after it was 
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+260"/>
-        <source>Unconfirmed:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+58"/>
-        <location line="+19"/>
-        <source>Your current zHLM balance, unconfirmed and immature zHLM included.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+84"/>
+        <location line="+185"/>
         <source>Recent transactions</source>
         <translation>Recent transactions</translation>
     </message>
     <message>
-        <location filename="../overviewpage.cpp" line="+131"/>
+        <location filename="../overviewpage.cpp" line="+132"/>
         <location line="+1"/>
         <source>out of sync</source>
         <translation>out of sync</translation>
     </message>
     <message>
-        <location line="+111"/>
+        <location line="+104"/>
         <source>Current percentage of zHLM.
 If AutoMint is enabled this percentage will settle around the configured AutoMint percentage (default = 10%).
 </source>
@@ -2918,7 +2817,7 @@ To enable AutoMint change &apos;enablezeromint=0&apos; to &apos;enablezeromint=1
 <context>
     <name>PaymentServer</name>
     <message>
-        <location filename="../paymentserver.cpp" line="+291"/>
+        <location filename="../paymentserver.cpp" line="+290"/>
         <location line="+205"/>
         <location line="+33"/>
         <location line="+104"/>
@@ -3040,7 +2939,7 @@ To enable AutoMint change &apos;enablezeromint=0&apos; to &apos;enablezeromint=1
 <context>
     <name>PeerTableModel</name>
     <message>
-        <location filename="../peertablemodel.cpp" line="+114"/>
+        <location filename="../peertablemodel.cpp" line="+115"/>
         <source>Address/Hostname</source>
         <translation>Address/Hostname</translation>
     </message>
@@ -3068,7 +2967,7 @@ To enable AutoMint change &apos;enablezeromint=0&apos; to &apos;enablezeromint=1
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../privacydialog.cpp" line="+280"/>
+        <location filename="../privacydialog.cpp" line="+281"/>
         <source>Mint Zerocoin</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3130,13 +3029,13 @@ To enable AutoMint change &apos;enablezeromint=0&apos; to &apos;enablezeromint=1
     </message>
     <message>
         <location line="+37"/>
-        <location filename="../privacydialog.cpp" line="+546"/>
+        <location filename="../privacydialog.cpp" line="+542"/>
         <source>Spend Zerocoin. Without &apos;Pay To:&apos; address creates payments to yourself.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+3"/>
-        <location filename="../privacydialog.cpp" line="-497"/>
+        <location filename="../privacydialog.cpp" line="-493"/>
         <location line="+4"/>
         <location line="+12"/>
         <location line="+112"/>
@@ -3543,7 +3442,12 @@ Please be patient...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+240"/>
+        <location line="+88"/>
+        <source>Invalid Address</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+152"/>
         <source>zHLM Spend #: </source>
         <translation type="unfinished"></translation>
     </message>
@@ -3553,7 +3457,7 @@ Please be patient...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+294"/>
+        <location line="+290"/>
         <source> &lt;b&gt;enabled&lt;/b&gt;.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3573,7 +3477,7 @@ Please be patient...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-537"/>
+        <location line="-533"/>
         <source>zHLM is currently undergoing maintenance.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3619,12 +3523,12 @@ Please be patient...</source>
     </message>
     <message>
         <location line="+3"/>
-        <location line="+716"/>
+        <location line="+712"/>
         <source>AutoMint Status:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-713"/>
+        <location line="-709"/>
         <source>Denom. &lt;b&gt;1&lt;/b&gt;:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3689,12 +3593,7 @@ Please be patient...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+4"/>
-        <source>Invalid Helium Address</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+12"/>
+        <location line="+16"/>
         <source>Invalid Send Amount</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3784,7 +3683,7 @@ Please be patient...</source>
 <context>
     <name>ProposalFrame</name>
     <message>
-        <location filename="../proposalframe.cpp" line="+92"/>
+        <location filename="../proposalframe.cpp" line="+93"/>
         <source>Open proposal page in browser</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3868,12 +3767,12 @@ Please be patient...</source>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../bitcoinunits.cpp" line="+252"/>
+        <location filename="../bitcoinunits.cpp" line="+253"/>
         <source>Amount</source>
         <translation>Amount</translation>
     </message>
     <message>
-        <location filename="../guiutil.cpp" line="+105"/>
+        <location filename="../guiutil.cpp" line="+107"/>
         <source>Enter a Helium address (e.g. %1)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3970,7 +3869,7 @@ Please be patient...</source>
 <context>
     <name>QRImageWidget</name>
     <message>
-        <location filename="../receiverequestdialog.cpp" line="+33"/>
+        <location filename="../receiverequestdialog.cpp" line="+34"/>
         <source>&amp;Save Image...</source>
         <translation>&amp;Save Image...</translation>
     </message>
@@ -4003,7 +3902,7 @@ Please be patient...</source>
         <translation>&amp;Information</translation>
     </message>
     <message>
-        <location line="+15"/>
+        <location line="+22"/>
         <source>General</source>
         <translation>General</translation>
     </message>
@@ -4018,7 +3917,8 @@ Please be patient...</source>
         <translation>Client name</translation>
     </message>
     <message>
-        <location line="+10"/>
+        <location line="-20"/>
+        <location line="+30"/>
         <location line="+23"/>
         <location line="+26"/>
         <location line="+26"/>
@@ -4029,7 +3929,8 @@ Please be patient...</source>
         <location line="+23"/>
         <location line="+36"/>
         <location line="+23"/>
-        <location line="+522"/>
+        <location line="+66"/>
+        <location line="+477"/>
         <location line="+23"/>
         <location line="+23"/>
         <location line="+23"/>
@@ -4047,14 +3948,14 @@ Please be patient...</source>
         <location line="+26"/>
         <location line="+23"/>
         <location line="+78"/>
-        <location line="+26"/>
+        <location line="+29"/>
         <location line="+29"/>
         <location line="+29"/>
         <source>N/A</source>
         <translation>N/A</translation>
     </message>
     <message>
-        <location line="-1147"/>
+        <location line="-1171"/>
         <source>Number of connections</source>
         <translation>Number of connections</translation>
     </message>
@@ -4124,7 +4025,17 @@ Please be patient...</source>
         <translation>Number of Masternodes</translation>
     </message>
     <message>
-        <location line="+122"/>
+        <location line="+121"/>
+        <source>Data Directory</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>Last block hash</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+15"/>
         <source>&amp;Console</source>
         <translation>&amp;Console</translation>
     </message>
@@ -4170,8 +4081,8 @@ Please be patient...</source>
     </message>
     <message>
         <location line="+59"/>
-        <location filename="../rpcconsole.cpp" line="+329"/>
-        <location line="+727"/>
+        <location filename="../rpcconsole.cpp" line="+331"/>
+        <location line="+730"/>
         <source>Select a peer to view detailed information.</source>
         <translation>Select a peer to view detailed information.</translation>
     </message>
@@ -4281,7 +4192,7 @@ Please be patient...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+101"/>
+        <location line="+104"/>
         <source>Custom Backup Path:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4296,7 +4207,7 @@ Please be patient...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+48"/>
+        <location line="+45"/>
         <source>Salvage wallet</source>
         <translation>Salvage wallet</translation>
     </message>
@@ -4376,7 +4287,7 @@ Please be patient...</source>
         <translation>Rebuild index</translation>
     </message>
     <message>
-        <location filename="../rpcconsole.cpp" line="-376"/>
+        <location filename="../rpcconsole.cpp" line="-378"/>
         <source>In:</source>
         <translation>In:</translation>
     </message>
@@ -4391,7 +4302,7 @@ Please be patient...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-218"/>
+        <location line="-219"/>
         <source>&amp;Disconnect Node</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4429,7 +4340,7 @@ Please be patient...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+95"/>
+        <location line="+96"/>
         <source>This will delete your local blockchain folders and the wallet will synchronize the complete Blockchain from scratch.&lt;br /&gt;&lt;br /&gt;</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4469,7 +4380,7 @@ Please be patient...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+141"/>
+        <location line="+143"/>
         <source>%1 B</source>
         <translation>%1 B</translation>
     </message>
@@ -4647,7 +4558,7 @@ Please be patient...</source>
         <translation>Remove</translation>
     </message>
     <message>
-        <location filename="../receivecoinsdialog.cpp" line="+41"/>
+        <location filename="../receivecoinsdialog.cpp" line="+42"/>
         <source>Copy label</source>
         <translation>Copy label</translation>
     </message>
@@ -4738,7 +4649,7 @@ Please be patient...</source>
 <context>
     <name>RecentRequestsTableModel</name>
     <message>
-        <location filename="../recentrequeststablemodel.cpp" line="+27"/>
+        <location filename="../recentrequeststablemodel.cpp" line="+28"/>
         <source>Date</source>
         <translation>Date</translation>
     </message>
@@ -4782,7 +4693,7 @@ Please be patient...</source>
     <name>SendCoinsDialog</name>
     <message>
         <location filename="../forms/sendcoinsdialog.ui" line="+17"/>
-        <location filename="../sendcoinsdialog.cpp" line="+234"/>
+        <location filename="../sendcoinsdialog.cpp" line="+241"/>
         <location line="+25"/>
         <location line="+413"/>
         <source>Send Coins</source>
@@ -5035,7 +4946,7 @@ Please be patient...</source>
         <translation>Balance:</translation>
     </message>
     <message>
-        <location filename="../sendcoinsdialog.cpp" line="-590"/>
+        <location filename="../sendcoinsdialog.cpp" line="-595"/>
         <source>Copy quantity</source>
         <translation>Copy quantity</translation>
     </message>
@@ -5075,7 +4986,7 @@ Please be patient...</source>
         <translation>Copy change</translation>
     </message>
     <message>
-        <location line="+146"/>
+        <location line="+151"/>
         <source>The split block tool does not work when sending to outside addresses. Try again.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -5305,7 +5216,7 @@ Please be patient...</source>
         <translation>This is a verified payment request.</translation>
     </message>
     <message>
-        <location filename="../sendcoinsentry.cpp" line="+30"/>
+        <location filename="../sendcoinsentry.cpp" line="+31"/>
         <source>Enter a label for this address to add it to your address book</source>
         <translation>Enter a label for this address to add it to your address book</translation>
     </message>
@@ -5434,7 +5345,7 @@ Please be patient...</source>
         <translation>Reset all verify message fields</translation>
     </message>
     <message>
-        <location filename="../signverifymessagedialog.cpp" line="+30"/>
+        <location filename="../signverifymessagedialog.cpp" line="+32"/>
         <source>Click &quot;Sign Message&quot; to generate signature</source>
         <translation>Click &quot;Sign Message&quot; to generate signature</translation>
     </message>
@@ -5508,7 +5419,7 @@ Please be patient...</source>
 <context>
     <name>SplashScreen</name>
     <message>
-        <location filename="../splashscreen.cpp" line="+36"/>
+        <location filename="../splashscreen.cpp" line="+37"/>
         <source>Helium Core</source>
         <translation type="unfinished"></translation>
     </message>
@@ -5529,11 +5440,16 @@ Please be patient...</source>
     </message>
     <message>
         <location line="+1"/>
-        <source>The PIVX Core developers</source>
+        <source>The Pivx Core developers</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../networkstyle.cpp" line="+20"/>
+        <location line="+1"/>
+        <source>The Helium Core developers</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../networkstyle.cpp" line="+21"/>
         <source>[testnet]</source>
         <translation>[testnet]</translation>
     </message>
@@ -5541,7 +5457,7 @@ Please be patient...</source>
 <context>
     <name>TrafficGraphWidget</name>
     <message>
-        <location filename="../trafficgraphwidget.cpp" line="+79"/>
+        <location filename="../trafficgraphwidget.cpp" line="+80"/>
         <source>KB/s</source>
         <translation>KB/s</translation>
     </message>
@@ -5549,7 +5465,7 @@ Please be patient...</source>
 <context>
     <name>TransactionDesc</name>
     <message numerus="yes">
-        <location filename="../transactiondesc.cpp" line="+33"/>
+        <location filename="../transactiondesc.cpp" line="+34"/>
         <source>Open for %n more block(s)</source>
         <translation>
             <numerusform>Open for %n more block</numerusform>
@@ -5769,12 +5685,7 @@ Please be patient...</source>
         <translation>Merchant</translation>
     </message>
     <message>
-        <location line="+6"/>
-        <source>Generated coins must mature %1 blocks before they can be spent. When you generated this block, it was broadcast to the network to be added to the block chain. If it fails to get into the chain, its state will change to &quot;not accepted&quot; and it won&apos;t be spendable. This may occasionally happen if another node generates a block within a few seconds of yours.</source>
-        <translation>Generated coins must mature %1 blocks before they can be spent. When you generated this block, it was broadcast to the network to be added to the block chain. If it fails to get into the chain, its state will change to &quot;not accepted&quot; and it won&apos;t be spendable. This may occasionally happen if another node generates a block within a few seconds of yours.</translation>
-    </message>
-    <message>
-        <location line="+7"/>
+        <location line="+13"/>
         <source>Debug information</source>
         <translation>Debug information</translation>
     </message>
@@ -5822,7 +5733,7 @@ Please be patient...</source>
 <context>
     <name>TransactionTableModel</name>
     <message>
-        <location filename="../transactiontablemodel.cpp" line="+215"/>
+        <location filename="../transactiontablemodel.cpp" line="+216"/>
         <source>Date</source>
         <translation>Date</translation>
     </message>
@@ -6038,7 +5949,7 @@ Please be patient...</source>
 <context>
     <name>TransactionView</name>
     <message>
-        <location filename="../transactionview.cpp" line="+69"/>
+        <location filename="../transactionview.cpp" line="+70"/>
         <location line="+17"/>
         <source>All</source>
         <translation>All</translation>
@@ -6270,7 +6181,7 @@ Please be patient...</source>
 <context>
     <name>WalletFrame</name>
     <message>
-        <location filename="../walletframe.cpp" line="+26"/>
+        <location filename="../walletframe.cpp" line="+27"/>
         <source>No wallet has been loaded.</source>
         <translation>No wallet has been loaded.</translation>
     </message>
@@ -6278,7 +6189,7 @@ Please be patient...</source>
 <context>
     <name>WalletModel</name>
     <message>
-        <location filename="../walletmodel.cpp" line="+334"/>
+        <location filename="../walletmodel.cpp" line="+335"/>
         <location line="+9"/>
         <location line="+9"/>
         <source>Send Coins</source>
@@ -6294,7 +6205,7 @@ Please be patient...</source>
 <context>
     <name>WalletView</name>
     <message>
-        <location filename="../walletview.cpp" line="+64"/>
+        <location filename="../walletview.cpp" line="+65"/>
         <source>HISTORY</source>
         <translation type="unfinished"></translation>
     </message>
@@ -6314,7 +6225,7 @@ Please be patient...</source>
         <translation>Selected amount:</translation>
     </message>
     <message>
-        <location line="+265"/>
+        <location line="+264"/>
         <source>Backup Wallet</source>
         <translation>Backup Wallet</translation>
     </message>
@@ -6641,7 +6552,7 @@ Please be patient...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+2"/>
+        <location line="+3"/>
         <source>Unable to locate enough Obfuscation denominated funds for this transaction.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -6752,11 +6663,6 @@ Please be patient...</source>
     </message>
     <message>
         <location line="+1"/>
-        <source>Adding Wrapped Serials supply...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
         <source>Allow DNS lookups for -addnode, -seednode and -connect</source>
         <translation type="unfinished">Allow DNS lookups for -addnode, -seednode and -connect</translation>
     </message>
@@ -6846,17 +6752,7 @@ Please be patient...</source>
         <translation type="unfinished">Copyright (C) 2009-%i The Bitcoin Core Developers</translation>
     </message>
     <message>
-        <location line="+1"/>
-        <source>Copyright (C) 2014-%i The Dash Core Developers</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Copyright (C) 2015-%i The Helium Core Developers</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
+        <location line="+3"/>
         <source>Corrupted block database detected</source>
         <translation type="unfinished">Corrupted block database detected</translation>
     </message>
@@ -7288,12 +7184,12 @@ Please be patient...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+66"/>
+        <location line="+67"/>
         <source>&lt;category&gt; can be:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+9"/>
+        <location line="+8"/>
         <source>Attempt to force blockchain corruption recovery</source>
         <translation type="unfinished"></translation>
     </message>
@@ -7568,7 +7464,17 @@ Please be patient...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location line="-109"/>
+        <source>Copyright (C) 2015-%i The Pivx Core Developers</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location line="+1"/>
+        <source>Copyright (C) 2018-%i The Helium Core Developers</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+109"/>
         <source>Prepend debug output with timestamp (default: %u)</source>
         <translation type="unfinished">Prepend debug output with timestamp (default: %u)</translation>
     </message>

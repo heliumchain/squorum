@@ -172,10 +172,6 @@
         <translation>Confirmar encriptação da carteira</translation>
     </message>
     <message>
-        <source>Helium will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your HLMs from being stolen by malware infecting your computer.</source>
-        <translation>Helium encerrará para terminar o processo de encriptação. Lembre-se que encriptar sua carteira não protege completamente suas HLMs contra roubo por malware infectando seu computador.</translation>
-    </message>
-    <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
         <translation>Tem certeza que deseja encriptar sua carteira?</translation>
     </message>

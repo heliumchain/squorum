@@ -136,10 +136,6 @@
         <translation>Служи за изключване на възможността пари да бъдат превеждани, когато акаунта на операционната система е компрометиран. Не предоставя съществено ниво на сигурност.</translation>
     </message>
     <message>
-        <source>For anonymization, automint, and staking only</source>
-        <translation>За анонимизация, авто-емитиране, и единствено съхранение</translation>
-    </message>
-    <message>
         <source>Enter the new passphrase to the wallet.&lt;br/&gt;Please use a passphrase of &lt;b&gt;ten or more random characters&lt;/b&gt;, or &lt;b&gt;eight or more words&lt;/b&gt;.</source>
         <translation>Въведете нова паролата за портфейла.&lt;br/&gt;Моля, използвайте парола от &lt;b&gt;десет или повече случайни символа&lt;/b&gt; или &lt;b&gt;осем или повече думи&lt;/b&gt;.</translation>
     </message>
@@ -174,10 +170,6 @@
     <message>
         <source>Confirm wallet encryption</source>
         <translation>Потвърдете шифрирането на портфейла</translation>
-    </message>
-    <message>
-        <source>Helium will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your HLMs from being stolen by malware infecting your computer.</source>
-        <translation>Helium сега ще се затвори, за да довърши процеса по шифриране. Запомнете, че шифрирането на вашия портфейл не може напълно да защити вашия Helium от това, да бъде откраднат чрез злонамерен софутуер, инфектирал вашия компютър.</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
@@ -433,10 +425,6 @@
         <translation>История на транзакциите</translation>
     </message>
     <message>
-        <source>Privacy Actions for zHLM</source>
-        <translation>Поверителни Действия за ZHLM</translation>
-    </message>
-    <message>
         <source>E&amp;xit</source>
         <translation>Из&amp;ход</translation>
     </message>
@@ -653,10 +641,6 @@
         <translation>Поискай плащане (генерира QR кодове и  Helium:URI)</translation>
     </message>
     <message>
-        <source>&amp;Privacy</source>
-        <translation>&amp;Поверителност</translation>
-    </message>
-    <message>
         <source>&amp;Masternodes</source>
         <translation>&amp;Мастърноуд</translation>
     </message>
@@ -823,14 +807,6 @@ Address: %4
  MultiSend: %1</source>
         <translation>Не стейква
 МултиИзпращане: %1</translation>
-    </message>
-    <message>
-        <source>AutoMint is currently enabled and set to </source>
-        <translation>АвтоЕмисията е включена и настроена на</translation>
-    </message>
-    <message>
-        <source>AutoMint is disabled</source>
-        <translation>АвтоЕмитирането е изключено</translation>
     </message>
     <message>
         <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;unlocked&lt;/b&gt;</source>
@@ -1818,38 +1794,8 @@ Please be patient after clicking import.</source>
         <translation>Промяна на езика. Настройката е активна след рестарт на портфейла.</translation>
     </message>
     <message>
-        <source>Language missing or translation incomplete? Help contributing translations here:
-https://www.transifex.com/heliumchain/helium-project-translations</source>
-        <translation>Липсващ език или непълен превод? Помогнете с преводите тук:
-https://www.transifex.com/heliumchain/helium-project-translations</translation>
-    </message>
-    <message>
         <source>Map port using &amp;UPnP</source>
         <translation>Картографирай портовете използвайки &amp;UPnP</translation>
-    </message>
-    <message>
-        <source>Enable automatic minting of HLM units to zHLM</source>
-        <translation>Включи автоматичното емитиране на HLM единици в zHLM</translation>
-    </message>
-    <message>
-        <source>Enable zHLM Automint</source>
-        <translation>Включи Автоматично емитиране на zHLM</translation>
-    </message>
-    <message>
-        <source>Percentage of incoming HLM which get automatically converted to zHLM via Zerocoin Protocol (min: 10%)</source>
-        <translation>Процент от входящите HLM, който автоматично да се конвертира в zHLM посредтвом Zerocoin Протокола (мин: 10%)</translation>
-    </message>
-    <message>
-        <source>Percentage of autominted zHLM</source>
-        <translation>Процент автоматично сечени zHLM</translation>
-    </message>
-    <message>
-        <source>Wait with automatic conversion to Zerocoin until enough HLM for this denomination is available</source>
-        <translation>Не бързай с автоматичното конвертиране в zHLM докато не се съберат достатъчно HLM за тази деноминация</translation>
-    </message>
-    <message>
-        <source>Preferred Automint zHLM Denomination</source>
-        <translation>Предпочитани деноминации, в които да се сече автоматичен zHLM</translation>
     </message>
     <message>
         <source>Stake split threshold:</source>
@@ -1904,6 +1850,12 @@ https://www.transifex.com/heliumchain/helium-project-translations</translation>
         <translation>Език на интерфейса:</translation>
     </message>
     <message>
+        <source>Language missing or translation incomplete? Help contributing translations here:
+https://www.transifex.com/helium-project/helium-wallet</source>
+        <translation>Липсващ език или непълен превод? Помогнете с преводите тук:
+https://www.transifex.com/helium-project/helium-wallet</translation>
+    </message>
+    <message>
         <source>User Interface Theme:</source>
         <translation>Тема на интерфейса:</translation>
     </message>
@@ -1946,10 +1898,6 @@ https://www.transifex.com/heliumchain/helium-project-translations</translation>
     <message>
         <source>&amp;Cancel</source>
         <translation>&amp;Отказ</translation>
-    </message>
-    <message>
-        <source>Any</source>
-        <translation>Всеки</translation>
     </message>
     <message>
         <source>default</source>
@@ -2031,26 +1979,6 @@ https://www.transifex.com/heliumchain/helium-project-translations</translation>
         <translation>Сегашния баланс по портфейли в режим на наблюдение само</translation>
     </message>
     <message>
-        <source>Your current Helium balance, unconfirmed and immature transactions included</source>
-        <translation>Вашите Helium наличности, включително непотвърдените и неузрели преводи</translation>
-    </message>
-    <message>
-        <source>zHLM Balance</source>
-        <translation>zHLM Наличности</translation>
-    </message>
-    <message>
-        <source>Mature: more than 20 confirmation and more than 1 mint of the same denomination after it was minted.
-These zHLM are spendable.</source>
-        <translation>Узрели: повече от 20 потвърждения и повече от 1 емисии от същата деноминация след като е била емитирана.
-Тези zHLM могат да се похарчат.</translation>
-    </message>
-    <message>
-        <source>Unconfirmed: less than 20 confirmations
-Immature: confirmed, but less than 1 mint of the same denomination after it was minted</source>
-        <translation>Непотвърдени: по-малко от 20 потвърждения
-Неузрели: потвърдени, но с по-малко от 1 емисии от същата деноминация след като са биле емитирани</translation>
-    </message>
-    <message>
         <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Helium network after a connection is established, but this process has not completed yet.</source>
         <translation>Информацията на вашия екран може би е стара. Вашия портфейла синхронизира автоматично с Helium мрежата след като има успешна свръзка, но процеса отнема време и не е завършил все още.</translation>
     </message>
@@ -2101,14 +2029,6 @@ Immature: confirmed, but less than 1 mint of the same denomination after it was 
     <message>
         <source>Locked:</source>
         <translation>Заключени:</translation>
-    </message>
-    <message>
-        <source>Unconfirmed:</source>
-        <translation>Непотвърден</translation>
-    </message>
-    <message>
-        <source>Your current zHLM balance, unconfirmed and immature zHLM included.</source>
-        <translation>Вашите zHLM наличности, включеително непотвърдените и неузрелите zHLM.</translation>
     </message>
     <message>
         <source>Recent transactions</source>
@@ -2707,10 +2627,6 @@ Please be patient...</source>
     <message>
         <source>No 'Pay To' address provided, creating local payment</source>
         <translation>Без 'Плати На' адрес, плащането е локално</translation>
-    </message>
-    <message>
-        <source>Invalid Helium Address</source>
-        <translation>Невалиден Helium адрес</translation>
     </message>
     <message>
         <source>Invalid Send Amount</source>
@@ -4005,7 +3921,7 @@ Please be patient...</source>
         <translation>Dash Core разработчици</translation>
     </message>
     <message>
-        <source>The PIVX Core developers</source>
+        <source>The Helium Core developers</source>
         <translation>Helium Core разработчици</translation>
     </message>
     <message>
@@ -4165,10 +4081,6 @@ Please be patient...</source>
     <message>
         <source>Merchant</source>
         <translation>Търговец</translation>
-    </message>
-    <message>
-        <source>Generated coins must mature %1 blocks before they can be spent. When you generated this block, it was broadcast to the network to be added to the block chain. If it fails to get into the chain, its state will change to "not accepted" and it won't be spendable. This may occasionally happen if another node generates a block within a few seconds of yours.</source>
-        <translation>Генерираните монети трябва да узреят поне %1 блока преди да бъдат налични за харчене. Когато генерирахте този блок, той бе обявен към мрежата за добавяне в блокчейна. Ако не успее да се закачи към блокчейна, статуса му ще се промени в "неприет" и средствата няма да бъдат налични за харчене. Това може да се случи от време на време ако друг ноуд генерира блок в същото време като Вашия.</translation>
     </message>
     <message>
         <source>Debug information</source>
@@ -4976,14 +4888,6 @@ Please be patient...</source>
     <message>
         <source>Copyright (C) 2009-%i The Bitcoin Core Developers</source>
         <translation>Всички права запазени (c) 2009-%i Bitcoin Core разработчици</translation>
-    </message>
-    <message>
-        <source>Copyright (C) 2014-%i The Dash Core Developers</source>
-        <translation>Всички права запазени (c) 2014-%i Dash Core разработчици</translation>
-    </message>
-    <message>
-        <source>Copyright (C) 2015-%i The Helium Core Developers</source>
-        <translation>Всички права запазени (c) 2015-%i Helium Core разработчици</translation>
     </message>
     <message>
         <source>Corrupted block database detected</source>

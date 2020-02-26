@@ -136,10 +136,6 @@
         <translation>Slår ligegyldige afsendelser fra, når operativsystemets konto er kompromitteret. Denne funktion giver ikke ægte sikkerhed</translation>
     </message>
     <message>
-        <source>For anonymization, automint, and staking only</source>
-        <translation>Til anonymisering, automint og staking alene</translation>
-    </message>
-    <message>
         <source>Enter the new passphrase to the wallet.&lt;br/&gt;Please use a passphrase of &lt;b&gt;ten or more random characters&lt;/b&gt;, or &lt;b&gt;eight or more words&lt;/b&gt;.</source>
         <translation>Indtast et password til tegnebogen. &lt;br/&gt; Brug mindst 10 karakterer&lt;b&gt;eller&lt;b&gt; mindst 8 ord&lt;b&gt;.</translation>
     </message>
@@ -174,10 +170,6 @@
     <message>
         <source>Confirm wallet encryption</source>
         <translation>Bekræft, og tegnebogen krypteres.</translation>
-    </message>
-    <message>
-        <source>Helium will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your HLMs from being stolen by malware infecting your computer.</source>
-        <translation>Helium vil lukke ned for at færdiggøre kryptograferingsprocesserne. Husk at kryptering alene ikke sikrer mod tyveri af mønterne fra malware eller virus på computeren.</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
@@ -433,10 +425,6 @@
         <translation>Vis transaktionshistorik</translation>
     </message>
     <message>
-        <source>Privacy Actions for zHLM</source>
-        <translation>Beskyttelse af personlige oplysninger for zHLM</translation>
-    </message>
-    <message>
         <source>E&amp;xit</source>
         <translation>E&amp;xit</translation>
     </message>
@@ -653,10 +641,6 @@
         <translation>Anmod om betaling (genrerer QR kode og Helium URL)</translation>
     </message>
     <message>
-        <source>&amp;Privacy</source>
-        <translation>&amp;Privatliv</translation>
-    </message>
-    <message>
         <source>&amp;Masternodes</source>
         <translation>&amp;Masternoder</translation>
     </message>
@@ -823,14 +807,6 @@ Adresse: %4
  MultiSend: %1</source>
         <translation>"Indskydning af saldo" ikke aktiveret
 "Multisend": %1</translation>
-    </message>
-    <message>
-        <source>AutoMint is currently enabled and set to </source>
-        <translation>AutoMint er i øjeblikket aktiveret og indstillet til</translation>
-    </message>
-    <message>
-        <source>AutoMint is disabled</source>
-        <translation>AutoMint er deaktiveret</translation>
     </message>
     <message>
         <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;unlocked&lt;/b&gt;</source>
@@ -1439,9 +1415,9 @@ Adresse: %4
 To Add: enter percentage to give and Helium address to add to the MultiSend vector.
 To Delete: Enter address to delete and press delete.
 MultiSend will not be activated unless you have clicked Activate</source>
-        <translation>Multisend tillader at De automatisk kan sende op til 100% af Deres belønninger fra såvel indskud som masternodebelønninger til en liste over andre Helium adressater når den er tilstrækkelig stor. 
-For at tilføje: Indtast procentsatsen De ønsker at overføre samt den Helium adresse som skal modtage via Multisendsystemet. 
-For at fjerne: Indtast adressen som skal slettes og klik på slet. 
+        <translation>Multisend tillader at De automatisk kan sende op til 100% af Deres belønninger fra såvel indskud som masternodebelønninger til en liste over andre Helium adressater når den er tilstrækkelig stor.
+For at tilføje: Indtast procentsatsen De ønsker at overføre samt den Helium adresse som skal modtage via Multisendsystemet.
+For at fjerne: Indtast adressen som skal slettes og klik på slet.
 Multisend vil ikke fungere med mindre systemet er aktiveret.</translation>
     </message>
     <message>
@@ -1836,38 +1812,8 @@ Vær tålmodig efter at du har klikket på import.</translation>
         <translation>Vælg sprog her. Ændringerne træder i kraft næste gang Helium klienten startes</translation>
     </message>
     <message>
-        <source>Language missing or translation incomplete? Help contributing translations here:
-https://www.transifex.com/heliumchain/helium-project-translations</source>
-        <translation>Det valgte sprog mangler, eller oversættelsen er mangelfuld. Hjælp ved at bidrage med oversættelser her:
-https://www.transifex.com/heliumchain/helium-project-translations</translation>
-    </message>
-    <message>
         <source>Map port using &amp;UPnP</source>
         <translation>MAP port ved hjælp af UPnP</translation>
-    </message>
-    <message>
-        <source>Enable automatic minting of HLM units to zHLM</source>
-        <translation>Aktivér automatisk mintning af HLM-enheder til zHLM</translation>
-    </message>
-    <message>
-        <source>Enable zHLM Automint</source>
-        <translation>Aktivér zHLM Automint</translation>
-    </message>
-    <message>
-        <source>Percentage of incoming HLM which get automatically converted to zHLM via Zerocoin Protocol (min: 10%)</source>
-        <translation>Procentdelen af indkommende HLM, som automatisk konverteres til zHLM via Zerocoin Protocol (min: 10%)</translation>
-    </message>
-    <message>
-        <source>Percentage of autominted zHLM</source>
-        <translation>Procentdel af automatiseret zHLM</translation>
-    </message>
-    <message>
-        <source>Wait with automatic conversion to Zerocoin until enough HLM for this denomination is available</source>
-        <translation>Vent med automatisk konvertering til Zerocoin, indtil nok HLM til denne betegnelse er tilgængelig</translation>
-    </message>
-    <message>
-        <source>Preferred Automint zHLM Denomination</source>
-        <translation>Foretrukket Automint zHLM Denomination</translation>
     </message>
     <message>
         <source>Stake split threshold:</source>
@@ -1922,6 +1868,12 @@ https://www.transifex.com/heliumchain/helium-project-translations</translation>
         <translation>Brugerinterface &amp;sprog:</translation>
     </message>
     <message>
+        <source>Language missing or translation incomplete? Help contributing translations here:
+https://www.transifex.com/helium-project/helium-wallet</source>
+        <translation>Det valgte sprog mangler, eller oversættelsen er mangelfuld. Hjælp ved at bidrage med oversættelser her:
+https://www.transifex.com/helium-project/helium-wallet</translation>
+    </message>
+    <message>
         <source>User Interface Theme:</source>
         <translation>Brugers tema:</translation>
     </message>
@@ -1964,10 +1916,6 @@ https://www.transifex.com/heliumchain/helium-project-translations</translation>
     <message>
         <source>&amp;Cancel</source>
         <translation>&amp;Annuller</translation>
-    </message>
-    <message>
-        <source>Any</source>
-        <translation>Nogen</translation>
     </message>
     <message>
         <source>default</source>
@@ -2049,26 +1997,6 @@ https://www.transifex.com/heliumchain/helium-project-translations</translation>
         <translation>Nuværende låst balance i kun-adresser</translation>
     </message>
     <message>
-        <source>Your current Helium balance, unconfirmed and immature transactions included</source>
-        <translation>Din nuværende Helium-saldo, ubekræftede og umodne transaktioner inkluderet</translation>
-    </message>
-    <message>
-        <source>zHLM Balance</source>
-        <translation>zHLM-saldo</translation>
-    </message>
-    <message>
-        <source>Mature: more than 20 confirmation and more than 1 mint of the same denomination after it was minted.
-These zHLM are spendable.</source>
-        <translation>Ældre: mere end 20 bekræftelser og mere end 1 minutter med samme betegnelse, efter at den blev minted
-Disse zHLM kan bruges.</translation>
-    </message>
-    <message>
-        <source>Unconfirmed: less than 20 confirmations
-Immature: confirmed, but less than 1 mint of the same denomination after it was minted</source>
-        <translation>Ubekræftet: mindre end 20 bekræftelser
-Uplettet: bekræftet, men mindre end 1 minutter med samme betegnelse, efter at den blev mønnet</translation>
-    </message>
-    <message>
         <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Helium network after a connection is established, but this process has not completed yet.</source>
         <translation>De viste informationer kan være uddaterede. Deres tegnebog synkronisere automatism med Helium netværket så snart en forbindelse er etalbleret, men denne proces er ikke færdiggjort endnu. </translation>
     </message>
@@ -2119,14 +2047,6 @@ Uplettet: bekræftet, men mindre end 1 minutter med samme betegnelse, efter at d
     <message>
         <source>Locked:</source>
         <translation>Låst:</translation>
-    </message>
-    <message>
-        <source>Unconfirmed:</source>
-        <translation>Ubekræftet:</translation>
-    </message>
-    <message>
-        <source>Your current zHLM balance, unconfirmed and immature zHLM included.</source>
-        <translation>Din nuværende zHLM-saldo, ubekræftede og umodne zHLM inkluderet.</translation>
     </message>
     <message>
         <source>Recent transactions</source>
@@ -2732,10 +2652,6 @@ Vær tålmodig...</translation>
     <message>
         <source>No 'Pay To' address provided, creating local payment</source>
         <translation>Ingen 'Betal til' adresse, der er oprettet, skaber lokal betaling</translation>
-    </message>
-    <message>
-        <source>Invalid Helium Address</source>
-        <translation> Ugyldig Helium adresse</translation>
     </message>
     <message>
         <source>Invalid Send Amount</source>
@@ -4034,7 +3950,7 @@ Vær tålmodig...</translation>
         <translation>DASH "core" udviklerne</translation>
     </message>
     <message>
-        <source>The PIVX Core developers</source>
+        <source>The Helium Core developers</source>
         <translation>Helium "core" udviklerne</translation>
     </message>
     <message>
@@ -4194,10 +4110,6 @@ Vær tålmodig...</translation>
     <message>
         <source>Merchant</source>
         <translation>Forhandler</translation>
-    </message>
-    <message>
-        <source>Generated coins must mature %1 blocks before they can be spent. When you generated this block, it was broadcast to the network to be added to the block chain. If it fails to get into the chain, its state will change to "not accepted" and it won't be spendable. This may occasionally happen if another node generates a block within a few seconds of yours.</source>
-        <translation>Genererede mønter skal modnes i %1 blokke førend de kan anvendes. Da denne blok blev genereret, blev den udsendt til netværket for at blive tilføjet til blokkæden. Hvis det skulle mislykkes, vil status skifte til "afvist!" og den vil derefter ikke være brugbar. Dette sker ind i mellem, når en anden node genererer en blok nærligt samtidigt.</translation>
     </message>
     <message>
         <source>Debug information</source>
@@ -4704,7 +4616,7 @@ Vær tålmodig...</translation>
     </message>
     <message>
         <source>Distributed under the MIT software license, see the accompanying file COPYING or &lt;http://www.opensource.org/licenses/mit-license.php&gt;.</source>
-        <translation>Distribueret under MIT software licensen. Se den vedlaget fil COPYING eller 
+        <translation>Distribueret under MIT software licensen. Se den vedlaget fil COPYING eller
 &lt;http://www.opensource.org/licenses/mit-license.php&gt;. </translation>
     </message>
     <message>
@@ -5006,14 +4918,6 @@ Vær tålmodig...</translation>
     <message>
         <source>Copyright (C) 2009-%i The Bitcoin Core Developers</source>
         <translation>Copyright (C) 2009-%i The Bitcoin Core Developers </translation>
-    </message>
-    <message>
-        <source>Copyright (C) 2014-%i The Dash Core Developers</source>
-        <translation>Copyright (C) 2014-%i The Dash Core Developers </translation>
-    </message>
-    <message>
-        <source>Copyright (C) 2015-%i The Helium Core Developers</source>
-        <translation>Copyright (C) 2015-%i The Helium Core Developers</translation>
     </message>
     <message>
         <source>Corrupted block database detected</source>

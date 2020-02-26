@@ -172,10 +172,6 @@
         <translation>Potvrdite šifriranje novčanika</translation>
     </message>
     <message>
-        <source>Helium will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your HLMs from being stolen by malware infecting your computer.</source>
-        <translation>Helium se sada zatvara kako bi dovršio proces šifriranja. Ne zaboravite da šifriranje vašeg novčanika ne može u potpunosti zaštititi vaše HLM od krađe zlonamjernog softvera koji zarazi vaše računalo.</translation>
-    </message>
-    <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
         <translation>Jeste li sigurni da želite šifrirati svoj novčanik?</translation>
     </message>
@@ -409,10 +405,6 @@
         <translation>Pregledajte povijest transakcija</translation>
     </message>
     <message>
-        <source>Privacy Actions for zHLM</source>
-        <translation>Aktivnosti na privatnost za zHLM</translation>
-    </message>
-    <message>
         <source>E&amp;xit</source>
         <translation>E&amp;Izlaz</translation>
     </message>
@@ -618,7 +610,7 @@
     </message>
     <message>
         <source>Helium Core</source>
-        <translation>PIVX Core</translation>
+        <translation>Helium Core</translation>
     </message>
     <message>
         <source>Send coins to a Helium address</source>
@@ -627,10 +619,6 @@
     <message>
         <source>Request payments (generates QR codes and helium: URIs)</source>
         <translation>Zahtjev za plaćanja (generira QR kodove i helium: URI)</translation>
-    </message>
-    <message>
-        <source>&amp;Privacy</source>
-        <translation>&amp;Privatnost</translation>
     </message>
     <message>
         <source>&amp;Masternodes</source>
@@ -923,14 +911,14 @@
     <name>HelpMessageDialog</name>
     <message>
         <source>Helium Core</source>
-        <translation>PIVX Core</translation>
+        <translation>Helium Core</translation>
     </message>
     </context>
 <context>
     <name>Intro</name>
     <message>
         <source>Helium Core</source>
-        <translation>PIVX Core</translation>
+        <translation>Helium Core</translation>
     </message>
     <message>
         <source>Error</source>
@@ -1059,7 +1047,7 @@
     </message>
     <message>
         <source>Helium Core</source>
-        <translation>PIVX Core</translation>
+        <translation>Helium Core</translation>
     </message>
     </context>
 <context>
@@ -1409,7 +1397,7 @@
     <name>SplashScreen</name>
     <message>
         <source>Helium Core</source>
-        <translation>PIVX Core</translation>
+        <translation>Helium Core</translation>
     </message>
     <message>
         <source>Version %1</source>

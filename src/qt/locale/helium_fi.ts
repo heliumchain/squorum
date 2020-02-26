@@ -172,10 +172,6 @@
         <translation>Vahvista lompakon salaus</translation>
     </message>
     <message>
-        <source>Helium will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your HLMs from being stolen by malware infecting your computer.</source>
-        <translation>Helium sulkeutuu salausprosessin ajaksi. Muista, että lompakon salaus ei voi täysin suojella HLMien varkaudelta, jos tietokoneesi sisältää haittaohjelmia.</translation>
-    </message>
-    <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
         <translation>Oletko varma että tahdot salata lompakkosi?</translation>
     </message>
@@ -2137,7 +2133,7 @@
         <translation>Dash Core kehittäjät</translation>
     </message>
     <message>
-        <source>The PIVX Core developers</source>
+        <source>The Helium Core developers</source>
         <translation>Helium core kehittäjät</translation>
     </message>
     <message>

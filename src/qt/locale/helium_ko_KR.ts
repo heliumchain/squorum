@@ -136,10 +136,6 @@
         <translation>운영체제 계정이 손상되었을 때 일반적인 송금을 비활성화 합니다. 실질적인 보안을 제공하지 않습니다.</translation>
     </message>
     <message>
-        <source>For anonymization, automint, and staking only</source>
-        <translation>익명성 스테이킹 전용 모드</translation>
-    </message>
-    <message>
         <source>Enter the new passphrase to the wallet.&lt;br/&gt;Please use a passphrase of &lt;b&gt;ten or more random characters&lt;/b&gt;, or &lt;b&gt;eight or more words&lt;/b&gt;.</source>
         <translation>지갑에 새로운 암호를 입력해주세요. &lt;br/&gt;&lt;b&gt;10자리 이상의 임의의 문자&lt;/b&gt; 또는, &lt;b&gt;8개 이상의 단어&lt;/b&gt;로 구성된 암호를 입력해주세요.</translation>
     </message>
@@ -174,10 +170,6 @@
     <message>
         <source>Confirm wallet encryption</source>
         <translation>지갑 암호화 확인</translation>
-    </message>
-    <message>
-        <source>Helium will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your HLMs from being stolen by malware infecting your computer.</source>
-        <translation>Helium는 이제 암호화 프로세스를 마치기 위해 닫힐것입니다. 지갑을 암호화하더라도 맬웨어로 인한 HLMs 의 도난당하는 것을 완벽하게 보호 할 수는 없습니다.</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
@@ -433,10 +425,6 @@
         <translation>겨래내역 보기</translation>
     </message>
     <message>
-        <source>Privacy Actions for zHLM</source>
-        <translation>zHLM 생성 및 관리</translation>
-    </message>
-    <message>
         <source>E&amp;xit</source>
         <translation>종&amp;료</translation>
     </message>
@@ -646,7 +634,7 @@
     </message>
     <message>
         <source>Helium Core</source>
-        <translation>PIVX Core</translation>
+        <translation>Helium Core</translation>
     </message>
     <message>
         <source>Send coins to a Helium address</source>
@@ -655,10 +643,6 @@
     <message>
         <source>Request payments (generates QR codes and helium: URIs)</source>
         <translation>결제 요청 (QR 코드 및 helium: URI 생성)</translation>
-    </message>
-    <message>
-        <source>&amp;Privacy</source>
-        <translation>&amp;프라이버시</translation>
     </message>
     <message>
         <source>&amp;Masternodes</source>
@@ -827,14 +811,6 @@ Address: %4
  MultiSend: %1</source>
         <translation>스테이킹이 활성화 되지 않음
 다중전송: %1</translation>
-    </message>
-    <message>
-        <source>AutoMint is currently enabled and set to </source>
-        <translation>자동 생성기능이 현재 작동중 그리고 </translation>
-    </message>
-    <message>
-        <source>AutoMint is disabled</source>
-        <translation>자동생성이 비활성화 되었습니다.</translation>
     </message>
     <message>
         <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;unlocked&lt;/b&gt;</source>
@@ -1223,7 +1199,7 @@ Address: %4
     </message>
     <message>
         <source>Helium Core</source>
-        <translation>PIVX Core</translation>
+        <translation>Helium Core</translation>
     </message>
     <message>
         <source>(%1-bit)</source>
@@ -1298,7 +1274,7 @@ Address: %4
     </message>
     <message>
         <source>Helium Core</source>
-        <translation>PIVX Core</translation>
+        <translation>Helium Core</translation>
     </message>
     <message>
         <source>Error: Specified data directory "%1" cannot be created.</source>
@@ -1822,38 +1798,8 @@ Please be patient after clicking import.</source>
         <translation>사용자 인터페이스 언어를 설정할 수 있습니다. 이 설정은 Helium을 다시 시작한 후에 적용됩니다.</translation>
     </message>
     <message>
-        <source>Language missing or translation incomplete? Help contributing translations here:
-https://www.transifex.com/heliumchain/helium-project-translations</source>
-        <translation>지원 언어가 없거나 번역이 불완전한가요? 번역을 도와주세요 :
-https://www.transifex.com/heliumchain/helium-project-translations</translation>
-    </message>
-    <message>
         <source>Map port using &amp;UPnP</source>
         <translation>&amp;UPnp를 사용하여 포트 매핑</translation>
-    </message>
-    <message>
-        <source>Enable automatic minting of HLM units to zHLM</source>
-        <translation>보상받은 HLM를 zHLM로 자동변환 활성화</translation>
-    </message>
-    <message>
-        <source>Enable zHLM Automint</source>
-        <translation>zHLM 자동생성 활성화</translation>
-    </message>
-    <message>
-        <source>Percentage of incoming HLM which get automatically converted to zHLM via Zerocoin Protocol (min: 10%)</source>
-        <translation>HLM수신시 자동변환 zHLM 비율 (최소값:10%)</translation>
-    </message>
-    <message>
-        <source>Percentage of autominted zHLM</source>
-        <translation>자동 변환되는 zHLM 비율</translation>
-    </message>
-    <message>
-        <source>Wait with automatic conversion to Zerocoin until enough HLM for this denomination is available</source>
-        <translation>이 디노미네이션의 HLM가 충분해질 때까지 Zerocoin으로 자동전환은 보류됩니다.</translation>
-    </message>
-    <message>
-        <source>Preferred Automint zHLM Denomination</source>
-        <translation>선호하는 자동생성 zHLM 디노미네이션 </translation>
     </message>
     <message>
         <source>Stake split threshold:</source>
@@ -1908,6 +1854,12 @@ https://www.transifex.com/heliumchain/helium-project-translations</translation>
         <translation>사용자 인터페이스 &amp;언어:</translation>
     </message>
     <message>
+        <source>Language missing or translation incomplete? Help contributing translations here:
+https://www.transifex.com/helium-project/helium-wallet</source>
+        <translation>지원 언어가 없거나 번역이 불완전한가요? 번역을 도와주세요 :
+https://www.transifex.com/helium-project/helium-wallet</translation>
+    </message>
+    <message>
         <source>User Interface Theme:</source>
         <translation>사용자 인터페이스 테마:</translation>
     </message>
@@ -1950,10 +1902,6 @@ https://www.transifex.com/heliumchain/helium-project-translations</translation>
     <message>
         <source>&amp;Cancel</source>
         <translation>&amp;취소</translation>
-    </message>
-    <message>
-        <source>Any</source>
-        <translation>어떤</translation>
     </message>
     <message>
         <source>default</source>
@@ -2035,26 +1983,6 @@ https://www.transifex.com/heliumchain/helium-project-translations</translation>
         <translation>현재 보기전용 주소의 잠긴 잔액 </translation>
     </message>
     <message>
-        <source>Your current Helium balance, unconfirmed and immature transactions included</source>
-        <translation>현재 Helium 잔액, 미확정, 생성중인 코인 포함</translation>
-    </message>
-    <message>
-        <source>zHLM Balance</source>
-        <translation>zHLM 잔액</translation>
-    </message>
-    <message>
-        <source>Mature: more than 20 confirmation and more than 1 mint of the same denomination after it was minted.
-These zHLM are spendable.</source>
-        <translation>성숙한 : 그것이 발행 된 후 같은 명칭의 20 개 이상의 확인 및 1 개 민트.
-이 zHLM는 쓸만합니다.</translation>
-    </message>
-    <message>
-        <source>Unconfirmed: less than 20 confirmations
-Immature: confirmed, but less than 1 mint of the same denomination after it was minted</source>
-        <translation>미확인 : 20 회 미만 확인
-미성숙 : 확인되었지만 발행 된 후 같은 종파 1 개 미만</translation>
-    </message>
-    <message>
         <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Helium network after a connection is established, but this process has not completed yet.</source>
         <translation>표시된 정보가 오래되었을 수 있습니다. 연결이 완료되면 지갑이 Helium 네트워크와 자동으로 동기화될 예정이지만, 아직 해당 프로세스가 완료되지 않았습니다.</translation>
     </message>
@@ -2105,14 +2033,6 @@ Immature: confirmed, but less than 1 mint of the same denomination after it was 
     <message>
         <source>Locked:</source>
         <translation>잠김:</translation>
-    </message>
-    <message>
-        <source>Unconfirmed:</source>
-        <translation>미승인:</translation>
-    </message>
-    <message>
-        <source>Your current zHLM balance, unconfirmed and immature zHLM included.</source>
-        <translation>zHLM 잔액, 미확정, 생성중인 zHLM 포함.</translation>
     </message>
     <message>
         <source>Recent transactions</source>
@@ -2721,10 +2641,6 @@ Please be patient...</source>
         <translation>주소를 입력하지 않아, 신규 주소를 생성합니다.</translation>
     </message>
     <message>
-        <source>Invalid Helium Address</source>
-        <translation>잘못된 Helium 주소</translation>
-    </message>
-    <message>
         <source>Invalid Send Amount</source>
         <translation>잘못된 전송 수량</translation>
     </message>
@@ -2844,7 +2760,7 @@ Please be patient...</source>
     </message>
     <message>
         <source>Helium Core</source>
-        <translation>PIVX Core</translation>
+        <translation>Helium Core</translation>
     </message>
     </context>
 <context>
@@ -4003,7 +3919,7 @@ Please be patient...</source>
     <name>SplashScreen</name>
     <message>
         <source>Helium Core</source>
-        <translation>PIVX Core</translation>
+        <translation>Helium Core</translation>
     </message>
     <message>
         <source>Version %1</source>
@@ -4018,7 +3934,7 @@ Please be patient...</source>
         <translation>Dash Core 개발자</translation>
     </message>
     <message>
-        <source>The PIVX Core developers</source>
+        <source>The Helium Core developers</source>
         <translation>Helium Core 개발자</translation>
     </message>
     <message>
@@ -4179,10 +4095,6 @@ Please be patient...</source>
     <message>
         <source>Merchant</source>
         <translation>상인</translation>
-    </message>
-    <message>
-        <source>Generated coins must mature %1 blocks before they can be spent. When you generated this block, it was broadcast to the network to be added to the block chain. If it fails to get into the chain, its state will change to "not accepted" and it won't be spendable. This may occasionally happen if another node generates a block within a few seconds of yours.</source>
-        <translation>생성된 코인은 사용되기 전 %1 블록이 완료되야 합니다. 이 블록을 생성하면 네트워크에 브로드캐스팅되어 블록체인에 추가 됩니다. 체인이 실패한 경우 "승인되지 않음"으로 바뀌어 사용할 수 없습니다. 다른 노드가 당신과 겹쳐서 몇 초 이내 블록을 생성하면 때때로 이런 일이 발생할 수 있습니다.</translation>
     </message>
     <message>
         <source>Debug information</source>
@@ -4990,14 +4902,6 @@ Please be patient...</source>
     <message>
         <source>Copyright (C) 2009-%i The Bitcoin Core Developers</source>
         <translation>Copyright (C) 2009-%i 비트코인 Core 개발자들</translation>
-    </message>
-    <message>
-        <source>Copyright (C) 2014-%i The Dash Core Developers</source>
-        <translation>Copyright (C) 2014-%i The Dash Core 개발자들</translation>
-    </message>
-    <message>
-        <source>Copyright (C) 2015-%i The Helium Core Developers</source>
-        <translation>Copyright (C) 2015-%i The Helium Core 개발자</translation>
     </message>
     <message>
         <source>Corrupted block database detected</source>

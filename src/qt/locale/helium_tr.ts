@@ -136,10 +136,6 @@
         <translation>OS hesabı tehlikeye atıldığında önemsiz para göndermeyi devre dışı bırakır. Gerçek bir güvenlik sağlamaz.</translation>
     </message>
     <message>
-        <source>For anonymization, automint, and staking only</source>
-        <translation>Sadece anonimleştirmek, otomatik basım ve stakelemek için</translation>
-    </message>
-    <message>
         <source>Enter the new passphrase to the wallet.&lt;br/&gt;Please use a passphrase of &lt;b&gt;ten or more random characters&lt;/b&gt;, or &lt;b&gt;eight or more words&lt;/b&gt;.</source>
         <translation>Yeni şifre sözcüğünü cüzdana girinLütfen bir şifre söcüğü kullanın &lt;br/&gt;&lt;b&gt;10 veya daha fazla karakter içeren&lt;/b&gt;veya&lt;b&gt;8 veya daha fazla kelime içeren&lt;/b&gt;</translation>
     </message>
@@ -174,10 +170,6 @@
     <message>
         <source>Confirm wallet encryption</source>
         <translation>cüzdan şifrelemesini onayla</translation>
-    </message>
-    <message>
-        <source>Helium will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your HLMs from being stolen by malware infecting your computer.</source>
-        <translation>Helium şifreleme işlemini tamamlamak için şimdi kapanacaktır. Cüzdanınızı şifrelemenin, HLM'lerinizi bilgisayarınıza bulaşan kötücül yazılımlar tarafından çalınmasına tamamen engelleyemediğini unutmayın</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
@@ -433,10 +425,6 @@
         <translation>İşlem geçmişini ara</translation>
     </message>
     <message>
-        <source>Privacy Actions for zHLM</source>
-        <translation>Gizlilik Aksiyonları zHLM</translation>
-    </message>
-    <message>
         <source>E&amp;xit</source>
         <translation>Çık</translation>
     </message>
@@ -657,10 +645,6 @@
         <translation>Ödeme talep etme (QR kodları ve helium üretir: URI'ler)</translation>
     </message>
     <message>
-        <source>&amp;Privacy</source>
-        <translation>&amp;Özel</translation>
-    </message>
-    <message>
         <source>&amp;Masternodes</source>
         <translation>&amp;Masternodlar</translation>
     </message>
@@ -827,14 +811,6 @@ Adres: %4
  MultiSend: %1</source>
         <translation>Staking etkin değildir
 ÇokluGönderi: %1</translation>
-    </message>
-    <message>
-        <source>AutoMint is currently enabled and set to </source>
-        <translation>AutoMint şu anda etkinleştirilmiş ve</translation>
-    </message>
-    <message>
-        <source>AutoMint is disabled</source>
-        <translation>Otomatik Basım iptal edildi</translation>
     </message>
     <message>
         <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;unlocked&lt;/b&gt;</source>
@@ -1228,7 +1204,7 @@ Adres: %4
     </message>
     <message>
         <source>About Helium Core</source>
-        <translation>hakkında PIVX Core</translation>
+        <translation>hakkında Helium Core</translation>
     </message>
     <message>
         <source>Command-line options</source>
@@ -1853,38 +1829,8 @@ Unutmayın, cüzdan, yeni adresi içeren işlemleri bulmak için blok zinciri ye
         <translation>Kullanıcı arabirimi dili burada ayarlanabilir. Bu ayar, Helium yeniden başlatıldıktan sonra geçerli olur.</translation>
     </message>
     <message>
-        <source>Language missing or translation incomplete? Help contributing translations here:
-https://www.transifex.com/heliumchain/helium-project-translations</source>
-        <translation>Dil eksik veya çeviri tamamlanmamış mı? Katkıda bulunan çevirilere yardımcı olun:
-https://www.transifex.com/heliumchain/helium-project-translations</translation>
-    </message>
-    <message>
         <source>Map port using &amp;UPnP</source>
         <translation>Map port using &amp;UPnP</translation>
-    </message>
-    <message>
-        <source>Enable automatic minting of HLM units to zHLM</source>
-        <translation>HLM birimlerinin zHLM'e otomatik basımını ektinleştir</translation>
-    </message>
-    <message>
-        <source>Enable zHLM Automint</source>
-        <translation>zHLM Otomatik basımı etkinleştir</translation>
-    </message>
-    <message>
-        <source>Percentage of incoming HLM which get automatically converted to zHLM via Zerocoin Protocol (min: 10%)</source>
-        <translation>Zerocoin Protokolü üzerinden otomatik olarak zHLM'ye dönüştürülen gelen HLM yüzdesi (dakika: 10%)</translation>
-    </message>
-    <message>
-        <source>Percentage of autominted zHLM</source>
-        <translation>Otomatikleştirilmiş zHLM yüzdesi</translation>
-    </message>
-    <message>
-        <source>Wait with automatic conversion to Zerocoin until enough HLM for this denomination is available</source>
-        <translation>Bu mezhebi için yeterli HLM bulunana kadar Zerocoin'e otomatik dönüşümle birlikte bekleyin</translation>
-    </message>
-    <message>
-        <source>Preferred Automint zHLM Denomination</source>
-        <translation>Tercih edilen Automint zHLM Nominal değeri</translation>
     </message>
     <message>
         <source>Connect to the Helium network through a SOCKS5 proxy.</source>
@@ -1935,6 +1881,12 @@ https://www.transifex.com/heliumchain/helium-project-translations</translation>
         <translation>Kullanıcı Arayüzü ve dil:</translation>
     </message>
     <message>
+        <source>Language missing or translation incomplete? Help contributing translations here:
+https://www.transifex.com/helium-project/helium-wallet</source>
+        <translation>Dil eksik veya çeviri tamamlanmamış mı? Katkıda bulunan çevirilere yardımcı olun:
+https://www.transifex.com/helium-project/helium-wallet</translation>
+    </message>
+    <message>
         <source>User Interface Theme:</source>
         <translation>Kullanıcı Arabirimi Teması:</translation>
     </message>
@@ -1977,10 +1929,6 @@ https://www.transifex.com/heliumchain/helium-project-translations</translation>
     <message>
         <source>&amp;Cancel</source>
         <translation>&amp;İptal</translation>
-    </message>
-    <message>
-        <source>Any</source>
-        <translation>Herhangi</translation>
     </message>
     <message>
         <source>default</source>
@@ -2062,26 +2010,6 @@ https://www.transifex.com/heliumchain/helium-project-translations</translation>
         <translation>Mevcut kilitli bakiye sadece görüntülenebilir adreslerde.</translation>
     </message>
     <message>
-        <source>Your current Helium balance, unconfirmed and immature transactions included</source>
-        <translation>Güncel Helium bakiyeniz, onaylanmamış ve olgunlaşmamış işlemler dahil</translation>
-    </message>
-    <message>
-        <source>zHLM Balance</source>
-        <translation>zHLM Bakiyesi</translation>
-    </message>
-    <message>
-        <source>Mature: more than 20 confirmation and more than 1 mint of the same denomination after it was minted.
-These zHLM are spendable.</source>
-        <translation>Olgun: basılmış olduktan sonra 20'den fazla onay alınmış ve aynı ölçü biriminden 1 kereden fazla basılmış.
-Bu zHLM ler harcanabilir.</translation>
-    </message>
-    <message>
-        <source>Unconfirmed: less than 20 confirmations
-Immature: confirmed, but less than 1 mint of the same denomination after it was minted</source>
-        <translation>Doğrulanmamış: 20'den az doğrulama
-Olgunlaşmamış: onaylandı, ancak basıldıktan sonra aynı ölçü biriminden 1 taneden daha az basım bulunmakta.</translation>
-    </message>
-    <message>
         <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Helium network after a connection is established, but this process has not completed yet.</source>
         <translation>Görüntülenen bilgiler güncelliğini yitirmiş olabilir. Bir bağlantı kurulduktan sonra M-cüzdanınız otomatik olarak Helium şebekesiyle senkronize edilir, ancak bu işlem henüz tamamlanmadı.</translation>
     </message>
@@ -2132,14 +2060,6 @@ Olgunlaşmamış: onaylandı, ancak basıldıktan sonra aynı ölçü biriminden
     <message>
         <source>Locked:</source>
         <translation>Kilitli:</translation>
-    </message>
-    <message>
-        <source>Unconfirmed:</source>
-        <translation>onaylanmamış:</translation>
-    </message>
-    <message>
-        <source>Your current zHLM balance, unconfirmed and immature zHLM included.</source>
-        <translation>Güncel zHLM bakiyeniz, onaylanmamış ve olgunlaşmamış zHLM'ler dahil.</translation>
     </message>
     <message>
         <source>Recent transactions</source>
@@ -2609,10 +2529,6 @@ Lütfen sabırlı olun...</translation>
     <message>
         <source>No 'Pay To' address provided, creating local payment</source>
         <translation>Sağlanan 'Ödeme Yapmak İçin' adresi yok, yerel ödeme oluşturun</translation>
-    </message>
-    <message>
-        <source>Invalid Helium Address</source>
-        <translation>Geçersiz Helium Adresi</translation>
     </message>
     <message>
         <source>Invalid Send Amount</source>
@@ -3819,8 +3735,8 @@ Lütfen sabırlı olun...</translation>
         <translation>The Dash Core developers</translation>
     </message>
     <message>
-        <source>The PIVX Core developers</source>
-        <translation>The PIVX Core developers</translation>
+        <source>The Helium Core developers</source>
+        <translation>The Helium Core developers</translation>
     </message>
     <message>
         <source>[testnet]</source>
@@ -3979,10 +3895,6 @@ Lütfen sabırlı olun...</translation>
     <message>
         <source>Merchant</source>
         <translation>Satıcı</translation>
-    </message>
-    <message>
-        <source>Generated coins must mature %1 blocks before they can be spent. When you generated this block, it was broadcast to the network to be added to the block chain. If it fails to get into the chain, its state will change to "not accepted" and it won't be spendable. This may occasionally happen if another node generates a block within a few seconds of yours.</source>
-        <translation>Üretilen bozuk paraların harcanmadan önce %1 blok olgunlaşması gerekir. Bu bloğu oluşturduğunuzda, blok zincirine eklenmek üzere ağa yayın yapıldı. Zincire girmeyi başaramazsa, devleti "kabul edilmedi" olarak değişir ve harcanamaz. Bu, başka bir düğüm sizden birkaç saniye içinde bir blok üretirse, bazen meydana gelebilir.</translation>
     </message>
     <message>
         <source>Debug information</source>

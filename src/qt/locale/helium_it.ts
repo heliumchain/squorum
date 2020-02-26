@@ -136,10 +136,6 @@
         <translation>Serve per impedire invii accidentali nel caso in cui l'utenza del sistema operativo sia stata compromessa. Non garantisce alcuna reale sicurezza.</translation>
     </message>
     <message>
-        <source>For anonymization, automint, and staking only</source>
-        <translation>Solo per anonimizzazione, conio automatico e stake</translation>
-    </message>
-    <message>
         <source>Enter the new passphrase to the wallet.&lt;br/&gt;Please use a passphrase of &lt;b&gt;ten or more random characters&lt;/b&gt;, or &lt;b&gt;eight or more words&lt;/b&gt;.</source>
         <translation>Inserisci la nuova parola d'ordine per il portafoglio.&lt;br/&gt;Si raccomanda di usare una parola d'ordine di &lt;b&gt;dieci o più caratteri casuali&lt;/b&gt;, oppure di &lt;b&gt;otto o più parole&lt;/b&gt;.</translation>
     </message>
@@ -174,10 +170,6 @@
     <message>
         <source>Confirm wallet encryption</source>
         <translation>Conferma cifratura portafoglio</translation>
-    </message>
-    <message>
-        <source>Helium will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your HLMs from being stolen by malware infecting your computer.</source>
-        <translation>Helium verrà ora chiuso per completare il processo di cifratura. Ricorda che crittografare il tuo portafoglio non protegge completamente i tuoi HLM dal furto da parte di software malevoli che potrebbero infettare il tuo computer.</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
@@ -433,10 +425,6 @@
         <translation>Espora la cronologia delle transazioni</translation>
     </message>
     <message>
-        <source>Privacy Actions for zHLM</source>
-        <translation>Operazioni di privacy per zHLM</translation>
-    </message>
-    <message>
         <source>E&amp;xit</source>
         <translation>&amp;Esci</translation>
     </message>
@@ -642,7 +630,7 @@
     </message>
     <message>
         <source>Helium Core</source>
-        <translation>PIVX Core</translation>
+        <translation>Helium Core</translation>
     </message>
     <message>
         <source>Send coins to a Helium address</source>
@@ -651,10 +639,6 @@
     <message>
         <source>Request payments (generates QR codes and helium: URIs)</source>
         <translation>Richiedi pagamenti (genera codici QR e helium: URIs)</translation>
-    </message>
-    <message>
-        <source>&amp;Privacy</source>
-        <translation>&amp;pRIVACY</translation>
     </message>
     <message>
         <source>&amp;Masternodes</source>
@@ -666,11 +650,11 @@
     </message>
     <message>
         <source>&amp;About Helium Core</source>
-        <translation>&amp;Informazioni PIVX Core</translation>
+        <translation>&amp;Informazioni Helium Core</translation>
     </message>
     <message>
         <source>Show information about Helium Core</source>
-        <translation>Visualizza informazioni su PIVX Core</translation>
+        <translation>Visualizza informazioni su Helium Core</translation>
     </message>
     <message>
         <source>Modify configuration options for Helium</source>
@@ -730,7 +714,7 @@
     </message>
     <message>
         <source>Helium Core client</source>
-        <translation>PIVX Core</translation>
+        <translation>Helium Core</translation>
     </message>
     <message>
         <source>Synchronizing with network...</source>
@@ -819,14 +803,6 @@ MultiSend: %1</translation>
  MultiSend: %1</source>
         <translation>Lo Staking non è attivo
 MultiSend: %1</translation>
-    </message>
-    <message>
-        <source>AutoMint is currently enabled and set to </source>
-        <translation>Conio automatico è attivo e impostato su</translation>
-    </message>
-    <message>
-        <source>AutoMint is disabled</source>
-        <translation>Conio automatico disabilitato</translation>
     </message>
     <message>
         <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;unlocked&lt;/b&gt;</source>
@@ -1207,7 +1183,7 @@ MultiSend: %1</translation>
     </message>
     <message>
         <source>Helium Core</source>
-        <translation>PIVX Core</translation>
+        <translation>Helium Core</translation>
     </message>
     <message>
         <source>(%1-bit)</source>
@@ -1215,7 +1191,7 @@ MultiSend: %1</translation>
     </message>
     <message>
         <source>About Helium Core</source>
-        <translation>Informazioni su PIVX Core</translation>
+        <translation>Informazioni su Helium Core</translation>
     </message>
     <message>
         <source>Command-line options</source>
@@ -1282,7 +1258,7 @@ MultiSend: %1</translation>
     </message>
     <message>
         <source>Helium Core</source>
-        <translation>PIVX Core</translation>
+        <translation>Helium Core</translation>
     </message>
     <message>
         <source>Error: Specified data directory "%1" cannot be created.</source>
@@ -1638,26 +1614,6 @@ MultiSend non verrà attivato a meno che tu non prema su Attiva</translation>
         <translation>Mappa la porta utilizzando &amp;UPnP</translation>
     </message>
     <message>
-        <source>Enable automatic minting of HLM units to zHLM</source>
-        <translation>Attiva il conio automatico di unità HLM in zHLM</translation>
-    </message>
-    <message>
-        <source>Enable zHLM Automint</source>
-        <translation>Attiva Conio automatico zHLM</translation>
-    </message>
-    <message>
-        <source>Percentage of incoming HLM which get automatically converted to zHLM via Zerocoin Protocol (min: 10%)</source>
-        <translation>Percentuale di HLM in entrata che viene automaticamente convertita in zHLM attraverso il protocollo Zerocoin (min: 10%)</translation>
-    </message>
-    <message>
-        <source>Percentage of autominted zHLM</source>
-        <translation>Percentuale di zHLM Percentuale di zHLM da coniare automaticamente</translation>
-    </message>
-    <message>
-        <source>Preferred Automint zHLM Denomination</source>
-        <translation>Denominazione preferita conio automatico zHLM</translation>
-    </message>
-    <message>
         <source>Proxy &amp;IP:</source>
         <translation>Proxy &amp;IP:</translation>
     </message>
@@ -1729,20 +1685,6 @@ MultiSend non verrà attivato a meno che tu non prema su Attiva</translation>
         <translation>Saldo corrente bloccato in indirizzi sola-lettura.</translation>
     </message>
     <message>
-        <source>Your current Helium balance, unconfirmed and immature transactions included</source>
-        <translation>Il tuo saldo Helium corrente, incluse le transazioni non confermate e non mature</translation>
-    </message>
-    <message>
-        <source>zHLM Balance</source>
-        <translation>Bilancio zHLM</translation>
-    </message>
-    <message>
-        <source>Mature: more than 20 confirmation and more than 1 mint of the same denomination after it was minted.
-These zHLM are spendable.</source>
-        <translation>Maturi: più di 20 conferme e più di 1 conio della stessa denominazione dopo il conio.
-Questi zHLM sono spendibili.</translation>
-    </message>
-    <message>
         <source>OVERVIEW</source>
         <translation>PANORAMICA</translation>
     </message>
@@ -1777,14 +1719,6 @@ Questi zHLM sono spendibili.</translation>
     <message>
         <source>Locked:</source>
         <translation>Bloccati:</translation>
-    </message>
-    <message>
-        <source>Unconfirmed:</source>
-        <translation>Non confermati:</translation>
-    </message>
-    <message>
-        <source>Your current zHLM balance, unconfirmed and immature zHLM included.</source>
-        <translation>Il tuo saldo zHLM corrente, inclusi zHLM non confermati e non maturi</translation>
     </message>
     <message>
         <source>Recent transactions</source>
@@ -2149,7 +2083,7 @@ Per cambiare la percentuale (riavvio non necessario):
     </message>
     <message>
         <source>Helium Core</source>
-        <translation>PIVX Core</translation>
+        <translation>Helium Core</translation>
     </message>
     </context>
 <context>
@@ -2483,7 +2417,7 @@ Per cambiare la percentuale (riavvio non necessario):
     <name>SplashScreen</name>
     <message>
         <source>Helium Core</source>
-        <translation>PIVX Core</translation>
+        <translation>Helium Core</translation>
     </message>
     </context>
 <context>

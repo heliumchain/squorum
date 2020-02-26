@@ -136,10 +136,6 @@
         <translation>Servas por malŝalti la banalan sendmoney kiam la operaciumo konto estas kompromiti. Ĝi ne donas veran sekurecon.</translation>
     </message>
     <message>
-        <source>For anonymization, automint, and staking only</source>
-        <translation>Por anonimigo, automintii kaj stakado nur</translation>
-    </message>
-    <message>
         <source>Enter the new passphrase to the wallet.&lt;br/&gt;Please use a passphrase of &lt;b&gt;ten or more random characters&lt;/b&gt;, or &lt;b&gt;eight or more words&lt;/b&gt;.</source>
         <translation>Tajpu la novan pasfrazo al la monujo.&lt;br/&gt;Bonvolu uzi unu pasfrazon kun&lt;b&gt;dek ol pli hazardaj signoj&lt;/b&gt;, aŭ &lt;b&gt;okt ol pli vortoj&lt;/b&gt;.</translation>
     </message>
@@ -174,10 +170,6 @@
     <message>
         <source>Confirm wallet encryption</source>
         <translation>Konfirmi monerĉifrado</translation>
-    </message>
-    <message>
-        <source>Helium will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your HLMs from being stolen by malware infecting your computer.</source>
-        <translation>Helium fermos nun por fini ĉifran procezon. Memoru ke ĉifri vian monujon ne povas plene protekti viajn HLMs de esti ŝtelita per malware infektanta vian komputilon.</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
@@ -433,10 +425,6 @@
         <translation>&amp;Foliumi transakcio historio</translation>
     </message>
     <message>
-        <source>Privacy Actions for zHLM</source>
-        <translation>Privataj agoj por zHLM</translation>
-    </message>
-    <message>
         <source>E&amp;xit</source>
         <translation>&amp;Eliri</translation>
     </message>
@@ -653,10 +641,6 @@
         <translation>Peto pagojn (generas QR kodojn kaj helium: URIs)</translation>
     </message>
     <message>
-        <source>&amp;Privacy</source>
-        <translation>&amp;Privateco</translation>
-    </message>
-    <message>
         <source>&amp;Masternodes</source>
         <translation>&amp;Mastronodoj</translation>
     </message>
@@ -823,14 +807,6 @@ Multisendi: %1</translation>
  MultiSend: %1</source>
         <translation>Staki ne estas aktiva
 Muktisendi: %1</translation>
-    </message>
-    <message>
-        <source>AutoMint is currently enabled and set to </source>
-        <translation>Autominti estas nuntempe ebligita kaj agordita a</translation>
-    </message>
-    <message>
-        <source>AutoMint is disabled</source>
-        <translation>Autominti estas neebligita</translation>
     </message>
     <message>
         <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;unlocked&lt;/b&gt;</source>
@@ -1632,12 +1608,6 @@ Muktisendi: %1</translation>
         <translation>La uzanta interfaco lingvo povas esti agordi ĉi tie. Tio agordo efektivigos post rekomenci Helium.</translation>
     </message>
     <message>
-        <source>Language missing or translation incomplete? Help contributing translations here:
-https://www.transifex.com/heliumchain/helium-project-translations</source>
-        <translation>Ĉu mankas lingvon aŭ nekompleta tradukado? Helpu la  tradukcio ĉi tie:
-https://www.transifex.com/heliumchain/helium-project-translations</translation>
-    </message>
-    <message>
         <source>Connect to the Helium network through a SOCKS5 proxy.</source>
         <translation>Konekti al la Helium reto per SOCKS5 prokurilo.</translation>
     </message>
@@ -1656,6 +1626,12 @@ https://www.transifex.com/heliumchain/helium-project-translations</translation>
     <message>
         <source>User Interface &amp;language:</source>
         <translation>Uzanta interfaca &amp;lingvo:</translation>
+    </message>
+    <message>
+        <source>Language missing or translation incomplete? Help contributing translations here:
+https://www.transifex.com/helium-project/helium-wallet</source>
+        <translation>Ĉu mankas lingvon aŭ nekompleta tradukado? Helpu la  tradukcio ĉi tie:
+https://www.transifex.com/helium-project/helium-wallet</translation>
     </message>
     <message>
         <source>User Interface Theme:</source>
@@ -1713,20 +1689,6 @@ https://www.transifex.com/heliumchain/helium-project-translations</translation>
         <translation>Nematura:</translation>
     </message>
     <message>
-        <source>Your current Helium balance, unconfirmed and immature transactions included</source>
-        <translation>Via aktuala Helium totalo, nekonformita kaj nematurita transakcioj inkluzivita</translation>
-    </message>
-    <message>
-        <source>zHLM Balance</source>
-        <translation>zHLM kvanto</translation>
-    </message>
-    <message>
-        <source>Unconfirmed: less than 20 confirmations
-Immature: confirmed, but less than 1 mint of the same denomination after it was minted</source>
-        <translation>Malkonfirmita: malpli ol 20 konfirmacioj
-Nematura: konfirmita, sed malpli ol 1 minto el la samo nomado post ĝin estis mintita</translation>
-    </message>
-    <message>
         <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Helium network after a connection is established, but this process has not completed yet.</source>
         <translation>Montrata informon povas esti malmoderna. Via monujo automate sinkronigis kun la Helium reto post konekcio establas, sed ĉi tio procezo ankoraŭ ne kompletigis.</translation>
     </message>
@@ -1749,10 +1711,6 @@ Nematura: konfirmita, sed malpli ol 1 minto el la samo nomado post ĝin estis mi
     <message>
         <source>Locked:</source>
         <translation>Malfermita:</translation>
-    </message>
-    <message>
-        <source>Unconfirmed:</source>
-        <translation>Nekonfirmita:</translation>
     </message>
     <message>
         <source>AutoMint is currently enabled and set to </source>
@@ -1892,10 +1850,6 @@ Nematura: konfirmita, sed malpli ol 1 minto el la samo nomado post ĝin estis mi
     <message>
         <source> &lt;b&gt;disabled&lt;/b&gt;.</source>
         <translation>&lt;b&gt;malebligita&lt;/b&gt;.</translation>
-    </message>
-    <message>
-        <source>Invalid Helium Address</source>
-        <translation>Nevalida Helium adreso</translation>
     </message>
     <message>
         <source>Confirm send coins</source>
@@ -2370,7 +2324,7 @@ Nematura: konfirmita, sed malpli ol 1 minto el la samo nomado post ĝin estis mi
         <translation>La Dash kerno programistoj</translation>
     </message>
     <message>
-        <source>The PIVX Core developers</source>
+        <source>The Helium Core developers</source>
         <translation>La Helium kerno programistoj</translation>
     </message>
     </context>

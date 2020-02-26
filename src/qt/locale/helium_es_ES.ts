@@ -136,10 +136,6 @@
         <translation>Sirve simplemente para deshabilitar el envío de dinero cuando la cuenta del SO ha sido comprometida. No suministra seguridad real.</translation>
     </message>
     <message>
-        <source>For anonymization, automint, and staking only</source>
-        <translation>Para solo anonimizar, automint y staking</translation>
-    </message>
-    <message>
         <source>Enter the new passphrase to the wallet.&lt;br/&gt;Please use a passphrase of &lt;b&gt;ten or more random characters&lt;/b&gt;, or &lt;b&gt;eight or more words&lt;/b&gt;.</source>
         <translation>Introduzca la nueva clave de seguridad para el monedero.&lt;br/&gt;Por favor, use una clave de seguridad de &lt;b&gt;diez o más caracteres aleatorios&lt;/b&gt;, u &lt;b&gt; ocho o más palabras.</translation>
     </message>
@@ -174,10 +170,6 @@
     <message>
         <source>Confirm wallet encryption</source>
         <translation>Confirmar encriptación del monedero</translation>
-    </message>
-    <message>
-        <source>Helium will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your HLMs from being stolen by malware infecting your computer.</source>
-        <translation>Helium se cerrará ahora para completar el proceso de encriptación. Recuerde que la encriptación no le protege completamente del robo de sus HLMs frente a malware que infecte su ordenador.</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>

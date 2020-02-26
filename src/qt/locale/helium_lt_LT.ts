@@ -136,10 +136,6 @@
         <translation>Pašalina nereikšmingą sendmoney, kai OS sąskaita pažeista. Nesuteikia jokio realaus saugumo.</translation>
     </message>
     <message>
-        <source>For anonymization, automint, and staking only</source>
-        <translation>Tik dėl anonimizacijos ir "kasimo"</translation>
-    </message>
-    <message>
         <source>Enter the new passphrase to the wallet.&lt;br/&gt;Please use a passphrase of &lt;b&gt;ten or more random characters&lt;/b&gt;, or &lt;b&gt;eight or more words&lt;/b&gt;.</source>
         <translation>Suveskite naują slaptafrazę į piniginę, &lt;br/&gt;Prašome naudoti frazę sudarytą iš &lt;b&gt; dešimt ar daugiau atsitiktinių simbolių&lt;/b&gt;, arba &lt;b&gt;aštuonis ir daugiau žodžių&lt;/b&gt;.</translation>
     </message>
@@ -174,10 +170,6 @@
     <message>
         <source>Confirm wallet encryption</source>
         <translation>Patvirtinkite piniginės užšifravimą.</translation>
-    </message>
-    <message>
-        <source>Helium will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your HLMs from being stolen by malware infecting your computer.</source>
-        <translation>Dabar Helium išsijungs, kad būtų užbaigtas šifravimo procesas. Atminkite, kad jūsų piniginės užšifravimas negali visiškai apsaugoti jūsų HLM nuo kenkėjiškų programų, užkrėsto jūsų kompiuterio.</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
@@ -433,10 +425,6 @@
         <translation>Naršyti pavedimų istoriją</translation>
     </message>
     <message>
-        <source>Privacy Actions for zHLM</source>
-        <translation>zHLM Saugumo Veiksmai </translation>
-    </message>
-    <message>
         <source>E&amp;xit</source>
         <translation>&amp;Išeiti</translation>
     </message>
@@ -642,7 +630,7 @@
     </message>
     <message>
         <source>Helium Core</source>
-        <translation>PIVX Core</translation>
+        <translation>Helium Core</translation>
     </message>
     <message>
         <source>Send coins to a Helium address</source>
@@ -651,10 +639,6 @@
     <message>
         <source>Request payments (generates QR codes and helium: URIs)</source>
         <translation>Prašyti mokėjimų (sugeneruoja QR kodus ir helium URI)</translation>
-    </message>
-    <message>
-        <source>&amp;Privacy</source>
-        <translation>&amp;Privatumas</translation>
     </message>
     <message>
         <source>&amp;Masternodes</source>
@@ -666,11 +650,11 @@
     </message>
     <message>
         <source>&amp;About Helium Core</source>
-        <translation>&amp;Apie PIVX Core</translation>
+        <translation>&amp;Apie Helium Core</translation>
     </message>
     <message>
         <source>Show information about Helium Core</source>
-        <translation>Rodyti informaciją apie PIVX Core</translation>
+        <translation>Rodyti informaciją apie Helium Core</translation>
     </message>
     <message>
         <source>Modify configuration options for Helium</source>
@@ -823,14 +807,6 @@ MultiSend: %1</translation>
  MultiSend: %1</source>
         <translation>Stake'inimas neaktyvuotas
 MultiSend: %1</translation>
-    </message>
-    <message>
-        <source>AutoMint is currently enabled and set to </source>
-        <translation>AutoMint šiuo metu įgalintas ir nustatytas</translation>
-    </message>
-    <message>
-        <source>AutoMint is disabled</source>
-        <translation>AutoMint išjungtas</translation>
     </message>
     <message>
         <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;unlocked&lt;/b&gt;</source>
@@ -1211,7 +1187,7 @@ MultiSend: %1</translation>
     </message>
     <message>
         <source>Helium Core</source>
-        <translation>PIVX Core</translation>
+        <translation>Helium Core</translation>
     </message>
     <message>
         <source>(%1-bit)</source>
@@ -1219,7 +1195,7 @@ MultiSend: %1</translation>
     </message>
     <message>
         <source>About Helium Core</source>
-        <translation>Apie PIVX Core</translation>
+        <translation>Apie Helium Core</translation>
     </message>
     <message>
         <source>Command-line options</source>
@@ -1266,7 +1242,7 @@ MultiSend: %1</translation>
     </message>
     <message>
         <source>Welcome to Helium Core.</source>
-        <translation>Sveiki atvykę į PIVX Core</translation>
+        <translation>Sveiki atvykę į Helium Core</translation>
     </message>
     <message>
         <source>As this is the first time the program is launched, you can choose where Helium Core will store its data.</source>
@@ -1286,7 +1262,7 @@ MultiSend: %1</translation>
     </message>
     <message>
         <source>Helium Core</source>
-        <translation>PIVX Core</translation>
+        <translation>Helium Core</translation>
     </message>
     <message>
         <source>Error: Specified data directory "%1" cannot be created.</source>
@@ -1766,34 +1742,8 @@ MultiSend nebus aktyvuotas, nebent paspausite "Įjungti"</translation>
         <translation>Čia galite nustatyti vartotojo sąsajos kalbą. Šis nustatymas įsigalios iš naujo paleidus "Helium".</translation>
     </message>
     <message>
-        <source>Language missing or translation incomplete? Help contributing translations here:
-https://www.transifex.com/heliumchain/helium-project-translations</source>
-        <translation>Trūksta kalbos arba vertimas nebaigtas? Padėkite prisidėdami prie vertimų čia: 
-https://www.transifex.com/heliumchain/helium-project-translations</translation>
-    </message>
-    <message>
         <source>Map port using &amp;UPnP</source>
         <translation>Įrašyti prievadą naudojant &amp;UPnP</translation>
-    </message>
-    <message>
-        <source>Enable automatic minting of HLM units to zHLM</source>
-        <translation>Įgalinti automatinį konvertavimą iš HLM į zHLM</translation>
-    </message>
-    <message>
-        <source>Enable zHLM Automint</source>
-        <translation>Įgalinti zHLM Automatinį nukaldinima</translation>
-    </message>
-    <message>
-        <source>Percentage of incoming HLM which get automatically converted to zHLM via Zerocoin Protocol (min: 10%)</source>
-        <translation>Procentas gauto HLM, kuris automatiškai bus konvertuotas į zHLM naudojant Zerocoin Protokolą (min: 10%)</translation>
-    </message>
-    <message>
-        <source>Percentage of autominted zHLM</source>
-        <translation>Automatiškai sukurtų zHLM procentas</translation>
-    </message>
-    <message>
-        <source>Preferred Automint zHLM Denomination</source>
-        <translation>Pageidautinas zHLM Automatinio Nukaldinimo Nominalas</translation>
     </message>
     <message>
         <source>Connect to the Helium network through a SOCKS5 proxy.</source>
@@ -1828,6 +1778,12 @@ https://www.transifex.com/heliumchain/helium-project-translations</translation>
         <translation>&amp;Rodyti</translation>
     </message>
     <message>
+        <source>Language missing or translation incomplete? Help contributing translations here:
+https://www.transifex.com/helium-project/helium-wallet</source>
+        <translation>Trūksta kalbos arba vertimas nebaigtas? Padėkite prisidėdami prie vertimų čia:
+https://www.transifex.com/helium-project/helium-wallet</translation>
+    </message>
+    <message>
         <source>Decimal digits</source>
         <translation>Dešimtainiai skaitmenys</translation>
     </message>
@@ -1854,10 +1810,6 @@ https://www.transifex.com/heliumchain/helium-project-translations</translation>
     <message>
         <source>&amp;Cancel</source>
         <translation>&amp;Atšaukti</translation>
-    </message>
-    <message>
-        <source>Any</source>
-        <translation>Bet koks</translation>
     </message>
     <message>
         <source>default</source>
@@ -1939,26 +1891,6 @@ https://www.transifex.com/heliumchain/helium-project-translations</translation>
         <translation>Dabartinis bendras užrakintas balansas tik žiūrėjimo adresuose</translation>
     </message>
     <message>
-        <source>Your current Helium balance, unconfirmed and immature transactions included</source>
-        <translation>Jūsų dabartinis Helium balansas, įskaitant nepatvirtintus ir nesubrendusius sandorius</translation>
-    </message>
-    <message>
-        <source>zHLM Balance</source>
-        <translation>zHLM Balansas</translation>
-    </message>
-    <message>
-        <source>Mature: more than 20 confirmation and more than 1 mint of the same denomination after it was minted.
-These zHLM are spendable.</source>
-        <translation>Subrendę: daugiau nei 20 patvirtinimų ir daugiau nei 1 konvertacija to pačio nominalo, kai jis jau buvo konvertuotas.
-Šiuos zHLM galima išleisti.</translation>
-    </message>
-    <message>
-        <source>Unconfirmed: less than 20 confirmations
-Immature: confirmed, but less than 1 mint of the same denomination after it was minted</source>
-        <translation>Nepatvirtinta: mažiau nei 20 patvirtinimų
-Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos to pačio nominalo po to, kai buvo konvertuotas.</translation>
-    </message>
-    <message>
         <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Helium network after a connection is established, but this process has not completed yet.</source>
         <translation>Rodoma informacija gali būti pasenusi. Jūsų piniginė automatiškai sinchronizuojasi su Helium tinklu po ryšio aktyvavimo, tačiau šis procesas dar nebaigtas.</translation>
     </message>
@@ -2009,10 +1941,6 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos to pačio nominalo
     <message>
         <source>Locked:</source>
         <translation>Užrakinta:</translation>
-    </message>
-    <message>
-        <source>Unconfirmed:</source>
-        <translation>Nepatvirtinta:</translation>
     </message>
     <message>
         <source>Recent transactions</source>
@@ -2446,10 +2374,6 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos to pačio nominalo
         <translation>Nomin. &lt;b&gt;5000&lt;/b&gt;:</translation>
     </message>
     <message>
-        <source>Invalid Helium Address</source>
-        <translation>Netinkamas Helium Adresas</translation>
-    </message>
-    <message>
         <source>Invalid Send Amount</source>
         <translation>Netinkama Siuntimo Suma</translation>
     </message>
@@ -2525,7 +2449,7 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos to pačio nominalo
     </message>
     <message>
         <source>Helium Core</source>
-        <translation>PIVX Core</translation>
+        <translation>Helium Core</translation>
     </message>
     </context>
 <context>
@@ -3079,7 +3003,7 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos to pačio nominalo
     <name>SplashScreen</name>
     <message>
         <source>Helium Core</source>
-        <translation>PIVX Core</translation>
+        <translation>Helium Core</translation>
     </message>
     </context>
 <context>

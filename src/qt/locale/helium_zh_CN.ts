@@ -172,10 +172,6 @@
         <translation>确认钱包加密</translation>
     </message>
     <message>
-        <source>Helium will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your HLMs from being stolen by malware infecting your computer.</source>
-        <translation>Helium将关闭以完成加密过程。但是，仅仅加密您的钱包是不够的，因为它并不能阻止恶意软件从您的电脑里面偷取HLMs。</translation>
-    </message>
-    <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
         <translation>您确定加密您的钱包吗？</translation>
     </message>
@@ -570,7 +566,7 @@
     </message>
     <message>
         <source>Helium Core</source>
-        <translation>PIVX Core</translation>
+        <translation>Helium Core</translation>
     </message>
     <message>
         <source>Send coins to a Helium address</source>
@@ -579,10 +575,6 @@
     <message>
         <source>Request payments (generates QR codes and helium: URIs)</source>
         <translation>请求支付（生成二维码和helium：URIs）</translation>
-    </message>
-    <message>
-        <source>&amp;Privacy</source>
-        <translation>&amp;P隐私</translation>
     </message>
     <message>
         <source>&amp;Masternodes</source>
@@ -594,7 +586,7 @@
     </message>
     <message>
         <source>&amp;About Helium Core</source>
-        <translation>&amp;A关于PIVX Core</translation>
+        <translation>&amp;A关于Helium Core</translation>
     </message>
     <message>
         <source>Show information about Helium Core</source>
@@ -815,18 +807,18 @@ Address: %4
     <name>HelpMessageDialog</name>
     <message>
         <source>Helium Core</source>
-        <translation>PIVX Core</translation>
+        <translation>Helium Core</translation>
     </message>
     <message>
         <source>About Helium Core</source>
-        <translation>关于PIVX Core</translation>
+        <translation>关于Helium Core</translation>
     </message>
     </context>
 <context>
     <name>Intro</name>
     <message>
         <source>Welcome to Helium Core.</source>
-        <translation>欢迎使用 PIVX Core</translation>
+        <translation>欢迎使用 Helium Core</translation>
     </message>
     <message>
         <source>As this is the first time the program is launched, you can choose where Helium Core will store its data.</source>
@@ -838,7 +830,7 @@ Address: %4
     </message>
     <message>
         <source>Helium Core</source>
-        <translation>PIVX Core</translation>
+        <translation>Helium Core</translation>
     </message>
     <message>
         <source>Error</source>
@@ -1127,7 +1119,7 @@ Address: %4
     <name>QObject</name>
     <message>
         <source>Helium Core</source>
-        <translation>PIVX Core</translation>
+        <translation>Helium Core</translation>
     </message>
     </context>
 <context>
@@ -1473,7 +1465,7 @@ Address: %4
     <name>SplashScreen</name>
     <message>
         <source>Helium Core</source>
-        <translation>PIVX Core</translation>
+        <translation>Helium Core</translation>
     </message>
     </context>
 <context>

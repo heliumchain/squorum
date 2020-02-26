@@ -136,10 +136,6 @@
         <translation>Server irá desabilitar o sendmoney trivial quando a conta do sistema operacional for comprometido. Não oferece segurança real.</translation>
     </message>
     <message>
-        <source>For anonymization, automint, and staking only</source>
-        <translation>Somente para anonimização, automint e staking</translation>
-    </message>
-    <message>
         <source>Enter the new passphrase to the wallet.&lt;br/&gt;Please use a passphrase of &lt;b&gt;ten or more random characters&lt;/b&gt;, or &lt;b&gt;eight or more words&lt;/b&gt;.</source>
         <translation>Digite uma nova senha para esta carteira.&lt;br/&gt;Use uma senha com &lt;b&gt;dez ou mais caracteres aleatórios&lt;/b&gt; ou &lt;b&gt;mais de oito palavras.&lt;/b&gt;</translation>
     </message>
@@ -174,10 +170,6 @@
     <message>
         <source>Confirm wallet encryption</source>
         <translation>Confirmar criptografia de carteira</translation>
-    </message>
-    <message>
-        <source>Helium will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your HLMs from being stolen by malware infecting your computer.</source>
-        <translation>Helium vai fechar agora para finalizar o processo de criptografia. Lembre-se que encriptar sua carteira não pode proteger totalmente suas HLMs de serem roubadas por malwares infectando seu computador.</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
@@ -409,10 +401,6 @@
         <translation>Olhar histórico de transação</translation>
     </message>
     <message>
-        <source>Privacy Actions for zHLM</source>
-        <translation>Ações privadas para zHLM</translation>
-    </message>
-    <message>
         <source>E&amp;xit</source>
         <translation>&amp;Sair</translation>
     </message>
@@ -614,7 +602,7 @@
     </message>
     <message>
         <source>Helium Core</source>
-        <translation>PIVX Core</translation>
+        <translation>Helium Core</translation>
     </message>
     <message>
         <source>Send coins to a Helium address</source>
@@ -623,10 +611,6 @@
     <message>
         <source>Request payments (generates QR codes and helium: URIs)</source>
         <translation>Requisitar pagamentos (gera códigos QR e helium: URIs)</translation>
-    </message>
-    <message>
-        <source>&amp;Privacy</source>
-        <translation>&amp;Privacidade</translation>
     </message>
     <message>
         <source>&amp;Masternodes</source>
@@ -638,11 +622,11 @@
     </message>
     <message>
         <source>&amp;About Helium Core</source>
-        <translation>&amp;Sobre o PIVX Core</translation>
+        <translation>&amp;Sobre o Helium Core</translation>
     </message>
     <message>
         <source>Show information about Helium Core</source>
-        <translation>Mostra informação sobre o PIVX Core</translation>
+        <translation>Mostra informação sobre o Helium Core</translation>
     </message>
     <message>
         <source>Modify configuration options for Helium</source>
@@ -1176,7 +1160,7 @@ MultiSend: %1</translation>
     </message>
     <message>
         <source>Helium Core</source>
-        <translation>PIVX Core</translation>
+        <translation>Helium Core</translation>
     </message>
     <message>
         <source>(%1-bit)</source>
@@ -1184,7 +1168,7 @@ MultiSend: %1</translation>
     </message>
     <message>
         <source>About Helium Core</source>
-        <translation>Sobre o PIVX Core</translation>
+        <translation>Sobre o Helium Core</translation>
     </message>
     <message>
         <source>Command-line options</source>
@@ -1247,7 +1231,7 @@ MultiSend: %1</translation>
     </message>
     <message>
         <source>Helium Core</source>
-        <translation>PIVX Core</translation>
+        <translation>Helium Core</translation>
     </message>
     <message>
         <source>Error: Specified data directory "%1" cannot be created.</source>
@@ -1621,12 +1605,6 @@ MultiSend: %1</translation>
         <translation>A linguagem da interface pode ser definida aqui. Está configuração terá efeito após reinício do Helium.</translation>
     </message>
     <message>
-        <source>Language missing or translation incomplete? Help contributing translations here:
-https://www.transifex.com/heliumchain/helium-project-translations</source>
-        <translation>Linguagem não encontrada ou tradução incompleta? Ajude contribuido com traduções aqui:
-https://www.transifex.com/heliumchain/helium-project-translations</translation>
-    </message>
-    <message>
         <source>Connect to the Helium network through a SOCKS5 proxy.</source>
         <translation>Conectar à rede Helium através de um proxy SOCKS5</translation>
     </message>
@@ -1669,6 +1647,12 @@ https://www.transifex.com/heliumchain/helium-project-translations</translation>
     <message>
         <source>User Interface &amp;language:</source>
         <translation>Interface do usuário &amp;Linguagem:</translation>
+    </message>
+    <message>
+        <source>Language missing or translation incomplete? Help contributing translations here:
+https://www.transifex.com/helium-project/helium-wallet</source>
+        <translation>Linguagem não encontrada ou tradução incompleta? Ajude contribuido com traduções aqui:
+https://www.transifex.com/helium-project/helium-wallet</translation>
     </message>
     <message>
         <source>User Interface Theme:</source>
@@ -1784,10 +1768,6 @@ https://www.transifex.com/heliumchain/helium-project-translations</translation>
     <message>
         <source>Locked:</source>
         <translation>Travado:</translation>
-    </message>
-    <message>
-        <source>Unconfirmed:</source>
-        <translation>Não confirmado:</translation>
     </message>
     <message>
         <source>Recent transactions</source>
@@ -2086,7 +2066,7 @@ https://www.transifex.com/heliumchain/helium-project-translations</translation>
     </message>
     <message>
         <source>Helium Core</source>
-        <translation>PIVX Core</translation>
+        <translation>Helium Core</translation>
     </message>
     </context>
 <context>
@@ -2992,7 +2972,7 @@ https://www.transifex.com/heliumchain/helium-project-translations</translation>
     <name>SplashScreen</name>
     <message>
         <source>Helium Core</source>
-        <translation>PIVX Core</translation>
+        <translation>Helium Core</translation>
     </message>
     <message>
         <source>Version %1</source>
@@ -3007,8 +2987,8 @@ https://www.transifex.com/heliumchain/helium-project-translations</translation>
         <translation>Os desenvolvedores do Dash Core</translation>
     </message>
     <message>
-        <source>The PIVX Core developers</source>
-        <translation>Os desenvolvedores do PIVX Core</translation>
+        <source>The Helium Core developers</source>
+        <translation>Os desenvolvedores do Helium Core</translation>
     </message>
     <message>
         <source>[testnet]</source>
@@ -3656,14 +3636,6 @@ https://www.transifex.com/heliumchain/helium-project-translations</translation>
         <translation>Todos os direitos reservados (C) 2009-%i aos Desenvolvedores do Bitcoin Core</translation>
     </message>
     <message>
-        <source>Copyright (C) 2014-%i The Dash Core Developers</source>
-        <translation>Todos os direitos reservados (C) 2014-%i aos Desenvolvedores do Dash Core</translation>
-    </message>
-    <message>
-        <source>Copyright (C) 2015-%i The Helium Core Developers</source>
-        <translation>Todos os direitos reservados (C) 2015-%i aos Desenvolvedores do PIVX Core</translation>
-    </message>
-    <message>
         <source>Corrupted block database detected</source>
         <translation>database de blocos corrompida</translation>
     </message>
@@ -3713,7 +3685,7 @@ https://www.transifex.com/heliumchain/helium-project-translations</translation>
     </message>
     <message>
         <source>Error loading wallet.dat: Wallet requires newer version of Helium Core</source>
-        <translation>Erro ao carregar wallet.dat: A Carteira requer uma nova versão da PIVX Core</translation>
+        <translation>Erro ao carregar wallet.dat: A Carteira requer uma nova versão da Helium Core</translation>
     </message>
     <message>
         <source>Error opening block database</source>

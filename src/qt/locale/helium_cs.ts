@@ -172,10 +172,6 @@
         <translation>Potvrdit zašifrování peněženky</translation>
     </message>
     <message>
-        <source>Helium will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your HLMs from being stolen by malware infecting your computer.</source>
-        <translation>Helium se teď zavře pro dokončení šifrovacího procesu. Prosím, vemte na vědomí, že zašifrování Vaší peněženky plně neochrání Vaše HLMy před krádží, pokud je Váš počítač infikován malwarem.</translation>
-    </message>
-    <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
         <translation>Opravdu chcete zašifrovat Vaši peněženku?</translation>
     </message>
@@ -397,10 +393,6 @@
         <translation>Procházet historii transakcí</translation>
     </message>
     <message>
-        <source>Privacy Actions for zHLM</source>
-        <translation>Řešení soukromí pro zHLM</translation>
-    </message>
-    <message>
         <source>E&amp;xit</source>
         <translation>E&amp;xit</translation>
     </message>
@@ -602,7 +594,7 @@
     </message>
     <message>
         <source>Helium Core</source>
-        <translation>PIVX Core</translation>
+        <translation>Helium Core</translation>
     </message>
     <message>
         <source>Send coins to a Helium address</source>
@@ -611,10 +603,6 @@
     <message>
         <source>Request payments (generates QR codes and helium: URIs)</source>
         <translation>Vyžádat platbu (generování QK kódu a helium: URIs)</translation>
-    </message>
-    <message>
-        <source>&amp;Privacy</source>
-        <translation>&amp;Soukromí</translation>
     </message>
     <message>
         <source>&amp;Masternodes</source>
@@ -626,11 +614,11 @@
     </message>
     <message>
         <source>&amp;About Helium Core</source>
-        <translation>&amp;O PIVX Core</translation>
+        <translation>&amp;O Helium Core</translation>
     </message>
     <message>
         <source>Show information about Helium Core</source>
-        <translation>Zobraz informace o PIVX Core</translation>
+        <translation>Zobraz informace o Helium Core</translation>
     </message>
     <message>
         <source>Modify configuration options for Helium</source>
@@ -1139,11 +1127,11 @@ MultiSend: %1</translation>
     </message>
     <message>
         <source>Helium Core</source>
-        <translation>PIVX Core</translation>
+        <translation>Helium Core</translation>
     </message>
     <message>
         <source>About Helium Core</source>
-        <translation>O PIVX Core</translation>
+        <translation>O Helium Core</translation>
     </message>
     <message>
         <source>Command-line options</source>
@@ -1198,7 +1186,7 @@ MultiSend: %1</translation>
     </message>
     <message>
         <source>Helium Core</source>
-        <translation>PIVX Core</translation>
+        <translation>Helium Core</translation>
     </message>
     <message>
         <source>Error: Specified data directory "%1" cannot be created.</source>
@@ -1691,7 +1679,7 @@ MultiSend: %1</translation>
     </message>
     <message>
         <source>Helium Core</source>
-        <translation>PIVX Core</translation>
+        <translation>Helium Core</translation>
     </message>
     </context>
 <context>
@@ -2221,7 +2209,7 @@ MultiSend: %1</translation>
     <name>SplashScreen</name>
     <message>
         <source>Helium Core</source>
-        <translation>PIVX Core</translation>
+        <translation>Helium Core</translation>
     </message>
     </context>
 <context>
