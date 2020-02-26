@@ -58,7 +58,7 @@ WINDOWS_PACKAGING = $(top_srcdir)/share/pixmaps/helium.ico \
 
 LINUX_PACKAGING = $(top_srcdir)/share/pixmaps/helium16.xpm \
   $(top_srcdir)/share/pixmaps/helium32.xpm \
-  $(top_srcdir)/share/pixmaps/helium128.png
+  $(top_srcdir)/share/pixmaps/helium128.xpm
 
 OSX_PACKAGING = $(OSX_DEPLOY_SCRIPT) $(OSX_FANCY_PLIST) $(OSX_INSTALLER_ICONS) \
   $(top_srcdir)/contrib/macdeploy/$(OSX_BACKGROUND_SVG) \

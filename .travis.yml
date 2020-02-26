@@ -77,9 +77,6 @@ after_failure:
   - wget https://raw.githubusercontent.com/DiscordHooks/travis-ci-discord-webhook/master/send.sh
   - chmod +x send.sh
   - ./send.sh failure $WEBHOOK_URL
-notifications:
-  slack:
-    secure: bkJ07Wy4+pJJnXj7FQCrI7pMwX3YNoHmDiW+qQbAqpQgCj6Fp8E/6Yh2wXqodJCy4vE4it00Cx7J2mTvd5sxZfM9j0cv91zIVazI+5koPyAHPFls+y8T8w/lqsqSjgGYOyofbhwr9/cBxnV78Q4vBV2N0Et6W0Yr086bWcZZ42Y3Y6rWkQHAhT8XoIG7MB2n3LLG2LWfLvZXhB1891GBX858GufUKBKhq0bG+/D5OxZcH6aKZ9XwqgCctdx0OKEg0UoKdnZR7U68atQl457oG3UxdrglB6/1jD1E9gNOhVkXr+Jl1RyBqIe99xCF609GDH30z6cFU6kDuRBqYubWjZ/leQbEePnFlxk6jOXod1GV3LpI/LyB9EocD8OKOKAp0qrlSIpbTOvZUBgx+6PyPFxM+U2NjwlDpTDeaP/Iug3vTgS1wMyrdAENObXwuO6NCN8gclsE+839AeSKxw1kFPxzkvmCowGq5NeBxn9xbdEaHggWT/g+Q5q3/Tmvm6i/CHp7GdokKKGHwZfcw0v4E8/qGVwS6SUvQgFB9z6CbZsPqTaJbc1+heAcqEp3AR5ZEJiAzGPlxtZNuDYIikPZaYJkc3CctJz3VOgZxV1b6HV4ZvCYGzCvUljL2GJrRy3ML62P+v0TelHBYOQiCnckudDzRao/9OItfrcXu/mnaIo=
 
 jobs:
   include:
