@@ -20,15 +20,15 @@ class SignRawTransactionsTest(BitcoinTestFramework):
 
         1) The transaction has a complete set of signatures
         2) No script verification error occurred"""
-        privKeys = ['cUeKHd5orzT3mz8P9pxyREHfsWtVfgsfDjiZZBcjUBAaGk1BTj7N']
+        privKeys = ['cPmx4GNu8UcngfwJtg2P9G4AN4KBYF4sViMXbZvMbBjvC6VpwHQH']
 
         inputs = [
             # Valid pay-to-pubkey script
-            {'txid': '9b907ef1e3c26fc71fe4a4b3580bc75264112f95050014157059c736f0202e71', 'vout': 0,
-             'scriptPubKey': '76a91460baa0f494b38ce3c940dea67f3804dc52d1fb9488ac'}
+            {'txid': '9713932fc4c05279a8f9ed0a6ded43cb644bfc99b34d6db347acf3fc9b7355be', 'vout': 0,
+             'scriptPubKey': '76a91445668a0714414ab23bb4dab5eaf0a83cf2e9067c88ac'}
         ]
 
-        outputs = {'xwMWGTnBNUmGxMm8vfAdbL45bWXyVTYctd': 0.1}
+        outputs = {'n4V9VAdbmogwzXFpACLFVR5sQwWJUCPVYX': 0.1}
 
         rawTx = self.nodes[0].createrawtransaction(inputs, outputs)
         rawTxSigned = self.nodes[0].signrawtransaction(rawTx, inputs, privKeys)
@@ -49,27 +49,27 @@ class SignRawTransactionsTest(BitcoinTestFramework):
         4) Two script verification errors occurred
         5) Script verification errors have certain properties ("txid", "vout", "scriptSig", "sequence", "error")
         6) The verification errors refer to the invalid (vin 1) and missing input (vin 2)"""
-        privKeys = ['cUeKHd5orzT3mz8P9pxyREHfsWtVfgsfDjiZZBcjUBAaGk1BTj7N']
+        privKeys = ['cPmx4GNu8UcngfwJtg2P9G4AN4KBYF4sViMXbZvMbBjvC6VpwHQH']
 
         inputs = [
             # Valid pay-to-pubkey script
-            {'txid': '9b907ef1e3c26fc71fe4a4b3580bc75264112f95050014157059c736f0202e71', 'vout': 0},
+            {'txid': '9713932fc4c05279a8f9ed0a6ded43cb644bfc99b34d6db347acf3fc9b7355be', 'vout': 0},
             # Invalid script
             {'txid': '5b8673686910442c644b1f4993d8f7753c7c8fcb5c87ee40d56eaeef25204547', 'vout': 7},
             # Missing scriptPubKey
-            {'txid': '9b907ef1e3c26fc71fe4a4b3580bc75264112f95050014157059c736f0202e71', 'vout': 1},
+            {'txid': '9713932fc4c05279a8f9ed0a6ded43cb644bfc99b34d6db347acf3fc9b7355be', 'vout': 1},
         ]
 
         scripts = [
             # Valid pay-to-pubkey script
-            {'txid': '9b907ef1e3c26fc71fe4a4b3580bc75264112f95050014157059c736f0202e71', 'vout': 0,
-             'scriptPubKey': '76a91460baa0f494b38ce3c940dea67f3804dc52d1fb9488ac'},
+            {'txid': '9713932fc4c05279a8f9ed0a6ded43cb644bfc99b34d6db347acf3fc9b7355be', 'vout': 0,
+             'scriptPubKey': '76a91445668a0714414ab23bb4dab5eaf0a83cf2e9067c88ac'},
             # Invalid script
             {'txid': '5b8673686910442c644b1f4993d8f7753c7c8fcb5c87ee40d56eaeef25204547', 'vout': 7,
              'scriptPubKey': 'badbadbadbad'}
         ]
 
-        outputs = {'xwMWGTnBNUmGxMm8vfAdbL45bWXyVTYctd': 0.1}
+        outputs = {'mmqukqVDJGj664CFYgBbr5oP6KzEyLNz6h': 0.1}
 
         rawTx = self.nodes[0].createrawtransaction(inputs, outputs)
         rawTxSigned = self.nodes[0].signrawtransaction(rawTx, scripts, privKeys)

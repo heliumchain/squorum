@@ -1996,7 +1996,6 @@ int64_t GetBlockValue(int nHeight)
     }
 
     if (Params().NetworkID() == CBaseChainParams::REGTEST) {
-        if (nHeight == 0)
             return 250 * COIN;
 
     }
@@ -2889,12 +2888,12 @@ bool ConnectBlock(const CBlock& block, CValidationState& state, CBlockIndex* pin
 
     // Special case for the genesis block, skipping connection of its transactions
     // (its coinbase is unspendable)
-    /*
+
     if (block.GetHash() == Params().HashGenesisBlock()) {
         view.SetBestBlock(pindex->GetBlockHash());
         return true;
     }
-    */
+
     if (pindex->nHeight <= Params().LAST_POW_BLOCK() && block.IsProofOfStake())
         return state.DoS(100, error("ConnectBlock() : PoS period not active"),
             REJECT_INVALID, "PoS-early");
