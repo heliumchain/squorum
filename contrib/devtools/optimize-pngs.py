@@ -26,7 +26,7 @@ def content_hash(filename):
 
 pngcrush = 'pngcrush'
 git = 'git'
-folders = ["src/qt/res/movies", "src/qt/res/icons", "share/pixmaps"]
+folders = ["src/qt/res/movies", "src/qt/res/icons", "share/pixmaps", "src/qt/res/images"]
 basePath = subprocess.check_output([git, 'rev-parse', '--show-toplevel'], universal_newlines=True, encoding='utf8').rstrip('\n')
 totalSaveBytes = 0
 noHashChange = True
@@ -43,7 +43,7 @@ for folder in folders:
             fileMetaMap['contentHashPre'] = content_hash(file_path)
 
             try:
-                subprocess.call([pngcrush, "-brute", "-ow", "-rem", "gAMA", "-rem", "cHRM", "-rem", "iCCP", "-rem", "sRGB", "-rem", "alla", "-rem", "text", file_path],
+                subprocess.call([pngcrush, "-brute", "-ow", "-rem", "allb", "-reduce", file_path],
                                 stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
             except:
                 print("pngcrush is not installed, aborting...")
