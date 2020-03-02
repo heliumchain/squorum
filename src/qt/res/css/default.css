@@ -232,7 +232,7 @@ background-color:#f2f2f2;
 /***************************** Global Qt Objects ***********************************************************/
 
 QPushButton { /* Global Button Style */
-background-color: #3658B8; 
+background-color: #3658B8;
 border-width: 1px;
 border-style: outset;
 border-color: #23409B;

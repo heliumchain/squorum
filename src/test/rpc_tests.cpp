@@ -110,7 +110,7 @@ BOOST_AUTO_TEST_CASE(rpc_rawsign)
     r = CallRPC(std::string("signrawtransaction ")+notsigned+" "+prevout+" "+"[]");
     BOOST_CHECK(find_value(r.get_obj(), "complete").get_bool() == false);
     r = CallRPC(std::string("signrawtransaction ")+notsigned+" "+prevout+" "+"["+privkey1+","+privkey2+"]");
-    BOOST_CHECK(find_value(r.get_obj(), "complete").get_bool() == /*true*/false); // Suspend until a txid becomes available to use 
+    BOOST_CHECK(find_value(r.get_obj(), "complete").get_bool() == /*true*/false); // Suspend until a txid becomes available to use
 }
 
 BOOST_AUTO_TEST_CASE(rpc_format_monetary_values)

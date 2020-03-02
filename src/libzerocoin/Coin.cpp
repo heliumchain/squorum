@@ -212,11 +212,11 @@ void PrivateCoin::mintCoinFast(const CoinDenomination denomination) {
     }
 	// Generate a random number "r" in the range 0...{q-1}
 	CBigNum r = CBigNum::randBignum(this->params->coinCommitmentGroup.groupOrder);
-	
+
 	// Manually compute a Pedersen commitment to the serial number "s" under randomness "r"
 	// C = g^s * h^r mod p
 	CBigNum commitmentValue = this->params->coinCommitmentGroup.g.pow_mod(s, this->params->coinCommitmentGroup.modulus).mul_mod(this->params->coinCommitmentGroup.h.pow_mod(r, this->params->coinCommitmentGroup.modulus), this->params->coinCommitmentGroup.modulus);
-	
+
 	// Repeat this process up to MAX_COINMINT_ATTEMPTS times until
 	// we obtain a prime number
 	for (uint32_t attempt = 0; attempt < MAX_COINMINT_ATTEMPTS; attempt++) {
@@ -236,7 +236,7 @@ void PrivateCoin::mintCoinFast(const CoinDenomination denomination) {
 			// Success! We're done.
 			return;
 		}
-		
+
 		// Generate a new random "r_delta" in 0...{q-1}
 		CBigNum r_delta = CBigNum::randBignum(this->params->coinCommitmentGroup.groupOrder);
 
@@ -246,7 +246,7 @@ void PrivateCoin::mintCoinFast(const CoinDenomination denomination) {
 		r = (r + r_delta) % this->params->coinCommitmentGroup.groupOrder;
 		commitmentValue = commitmentValue.mul_mod(this->params->coinCommitmentGroup.h.pow_mod(r_delta, this->params->coinCommitmentGroup.modulus), this->params->coinCommitmentGroup.modulus);
 	}
-		
+
 	// We only get here if we did not find a coin within
 	// MAX_COINMINT_ATTEMPTS. Throw an exception.
 	throw std::runtime_error("Unable to mint a new Zerocoin (too many attempts)");
