@@ -1858,7 +1858,7 @@ bool CWallet::MintableCoins()
 {
     LOCK(cs_main);
     CAmount nBalance = GetBalance();
-    CAmount nZhlmBalance = GetZerocoinBalance(false);
+//    CAmount nZhlmBalance = GetZerocoinBalance(false);
 
     int chainHeight = chainActive.Height();
 
@@ -1882,7 +1882,7 @@ bool CWallet::MintableCoins()
     }
 
     // zHLM
-    if (nZhlmBalance > 0) {
+/*    if (nZhlmBalance > 0) {
         std::set<CMintMeta> setMints = zhlmTracker->ListMints(true, true, true);
         for (auto mint : setMints) {
             if (mint.nVersion < CZerocoinMint::STAKABLE_VERSION)
@@ -1891,7 +1891,7 @@ bool CWallet::MintableCoins()
                 continue;
            return true;
         }
-    }
+    }*/
 
     return false;
 }
@@ -2373,6 +2373,7 @@ bool CWallet::CreateCoinStake(
     CScript scriptPubKeyKernel;
     bool fKernelFound = false;
     int nAttempts = 0;
+    int nHeightStart = pindexPrev->nHeight;
 
     // Block time.
     nTxNewTime = GetAdjustedTime();
@@ -2453,6 +2454,9 @@ bool CWallet::CreateCoinStake(
             fKernelFound = true;
             break;
         }
+        //new block came in, move on
+        if (chainActive.Height() != nHeightStart)
+            break;
     }
     LogPrint("staking", "%s: attempted staking %d times\n", __func__, nAttempts);
 
@@ -3373,12 +3377,13 @@ void CWallet::AutoCombineDust()
 {
     LOCK2(cs_main, cs_wallet);
     const CBlockIndex* tip = chainActive.Tip();
-    if (tip->nTime < (GetAdjustedTime() - 300) || IsLocked()) {
+    if ((tip->nHeight % 50) || IsLocked()) {
         return;
     }
 
     std::map<CBitcoinAddress, std::vector<COutput> > mapCoinsByAddress = AvailableCoinsByAddress(true, nAutoCombineThreshold * COIN);
 
+    std::unique_ptr<CCoinControl> coinControl;
     //coins are sectioned by address. This combination code only wants to combine inputs that belong to the same address
     for (std::map<CBitcoinAddress, std::vector<COutput> >::iterator it = mapCoinsByAddress.begin(); it != mapCoinsByAddress.end(); it++) {
         std::vector<COutput> vCoins, vRewardCoins;
@@ -3390,7 +3395,7 @@ void CWallet::AutoCombineDust()
         unsigned int txSizeEstimate = 90;
 
         //find masternode rewards that need to be combined
-        CCoinControl* coinControl = new CCoinControl();
+        coinControl.reset(new CCoinControl());
         CAmount nTotalRewardsValue = 0;
         for (const COutput& out : vCoins) {
             if (!out.fSpendable)
@@ -3415,14 +3420,9 @@ void CWallet::AutoCombineDust()
                 break;
             }
         }
-
-        //if no inputs found then return
-        if (!coinControl->HasSelected())
+        if ((!maxSize && nTotalRewardsValue < nAutoCombineThreshold * COIN) or (vRewardCoins.size() <= 2)) {
             continue;
-
-        //we cannot combine one coin with itself
-        if (vRewardCoins.size() <= 1)
-            continue;
+        }
 
         std::vector<std::pair<CScript, CAmount> > vecSend;
         CScript scriptPubKey = GetScriptForDestination(it->first.Get());
@@ -3445,14 +3445,10 @@ void CWallet::AutoCombineDust()
         // 10% safety margin to avoid "Insufficient funds" errors
         vecSend[0].second = nTotalRewardsValue - (nTotalRewardsValue / 10);
 
-        if (!CreateTransaction(vecSend, wtx, keyChange, nFeeRet, strErr, coinControl, ALL_COINS, false, CAmount(0))) {
+        if (!CreateTransaction(vecSend, wtx, keyChange, nFeeRet, strErr, coinControl.get(), ALL_COINS, false, CAmount(0))) {
             LogPrintf("AutoCombineDust createtransaction failed, reason: %s\n", strErr);
             continue;
         }
-
-        //we don't combine below the threshold unless the fees are 0 to avoid paying fees over fees over fees
-        if (!maxSize && nTotalRewardsValue < nAutoCombineThreshold * COIN && nFeeRet > 0)
-            continue;
 
         if (!CommitTransaction(wtx, keyChange)) {
             LogPrintf("AutoCombineDust transaction commit failed\n");
@@ -3461,7 +3457,6 @@ void CWallet::AutoCombineDust()
 
         LogPrintf("AutoCombineDust sent transaction\n");
 
-        delete coinControl;
     }
 }
 
