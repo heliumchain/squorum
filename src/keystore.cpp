@@ -1,6 +1,7 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2014 The Bitcoin developers
 // Copyright (c) 2017 The PIVX developers
+// Copyright (c) 2018-2020 The Helium developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -12,7 +13,6 @@
 #include "script/standard.h"
 #include "util.h"
 
-#include <boost/foreach.hpp>
 
 bool CKeyStore::GetPubKey(const CKeyID& address, CPubKey& vchPubKeyOut) const
 {
@@ -112,4 +112,40 @@ bool CBasicKeyStore::HaveMultiSig() const
 {
     LOCK(cs_KeyStore);
     return (!setMultiSig.empty());
+}
+
+bool CBasicKeyStore::HaveKey(const CKeyID& address) const
+{
+    bool result;
+    {
+        LOCK(cs_KeyStore);
+        result = (mapKeys.count(address) > 0);
+    }
+    return result;
+}
+
+void CBasicKeyStore::GetKeys(std::set<CKeyID>& setAddress) const
+{
+    setAddress.clear();
+    {
+        LOCK(cs_KeyStore);
+        KeyMap::const_iterator mi = mapKeys.begin();
+        while (mi != mapKeys.end()) {
+            setAddress.insert((*mi).first);
+            mi++;
+        }
+    }
+}
+
+bool CBasicKeyStore::GetKey(const CKeyID& address, CKey& keyOut) const
+{
+    {
+        LOCK(cs_KeyStore);
+        KeyMap::const_iterator mi = mapKeys.find(address);
+        if (mi != mapKeys.end()) {
+            keyOut = mi->second;
+            return true;
+        }
+    }
+    return false;
 }

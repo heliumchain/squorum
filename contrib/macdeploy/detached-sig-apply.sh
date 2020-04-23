@@ -3,13 +3,13 @@
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
+export LC_ALL=C
 set -e
 
 UNSIGNED="$1"
 SIGNATURE="$2"
 ARCH=x86_64
 ROOTDIR=dist
-BUNDLE=${ROOTDIR}/Helium-Qt.app
 TEMPDIR=signed.temp
 OUTDIR=signed-app
 

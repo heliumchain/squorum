@@ -1,5 +1,6 @@
 // Copyright (c) 2014-2015 The Dash developers
 // Copyright (c) 2015-2017 The PIVX developers
+// Copyright (c) 2018-2020 The Helium developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -15,15 +16,15 @@ class CObfuScationRelay
 {
 public:
     CTxIn vinMasternode;
-    vector<unsigned char> vchSig;
-    vector<unsigned char> vchSig2;
+    std::vector<unsigned char> vchSig;
+    std::vector<unsigned char> vchSig2;
     int nBlockHeight;
     int nRelayType;
     CTxIn in;
     CTxOut out;
 
     CObfuScationRelay();
-    CObfuScationRelay(CTxIn& vinMasternodeIn, vector<unsigned char>& vchSigIn, int nBlockHeightIn, int nRelayTypeIn, CTxIn& in2, CTxOut& out2);
+    CObfuScationRelay(CTxIn& vinMasternodeIn, std::vector<unsigned char>& vchSigIn, int nBlockHeightIn, int nRelayTypeIn, CTxIn& in2, CTxOut& out2);
 
     ADD_SERIALIZE_METHODS;
 

@@ -1,5 +1,6 @@
 // Copyright (c) 2014 The Bitcoin developers
 // Copyright (c) 2017 The PIVX developers
+// Copyright (c) 2018-2020 The Helium developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -11,7 +12,6 @@
 #include <assert.h>
 #include <boost/variant/apply_visitor.hpp>
 #include <boost/variant/static_visitor.hpp>
-#include <iostream>
 #include <sstream>
 #include <stdint.h>
 #include <string.h>
@@ -76,7 +76,7 @@ std::string DecodeBase58(const char* psz)
 
     for (unsigned int i = 0; i < vch.size(); i++) {
         unsigned char* c = &vch[i];
-        ss << setw(2) << setfill('0') << (int)c[0];
+        ss << std::setw(2) << std::setfill('0') << (int)c[0];
     }
 
     return ss.str();
@@ -190,7 +190,7 @@ bool CBase58Data::SetString(const char* psz, unsigned int nVersionBytes)
     vchData.resize(vchTemp.size() - nVersionBytes);
     if (!vchData.empty())
         memcpy(&vchData[0], &vchTemp[nVersionBytes], vchData.size());
-    OPENSSL_cleanse(&vchTemp[0], vchData.size());
+    memory_cleanse(&vchTemp[0], vchData.size());
     return true;
 }
 

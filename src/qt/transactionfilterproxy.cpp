@@ -1,5 +1,6 @@
 // Copyright (c) 2011-2013 The Bitcoin developers
 // Copyright (c) 2017 The PIVX developers
+// Copyright (c) 2018-2020 The Helium developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -25,7 +26,8 @@ TransactionFilterProxy::TransactionFilterProxy(QObject* parent) : QSortFilterPro
                                                                   watchOnlyFilter(WatchOnlyFilter_All),
                                                                   minAmount(0),
                                                                   limitRows(-1),
-                                                                  showInactive(true)
+                                                                  showInactive(true),
+                                                                  fHideOrphans(false)
 {
 }
 
@@ -42,6 +44,8 @@ bool TransactionFilterProxy::filterAcceptsRow(int sourceRow, const QModelIndex& 
     int status = index.data(TransactionTableModel::StatusRole).toInt();
 
     if (!showInactive && status == TransactionStatus::Conflicted)
+        return false;
+    if (fHideOrphans && isOrphan(status, type))
         return false;
     if (!(TYPE(type) & typeFilter))
         return false;
@@ -101,6 +105,12 @@ void TransactionFilterProxy::setShowInactive(bool showInactive)
     invalidateFilter();
 }
 
+void TransactionFilterProxy::setHideOrphans(bool fHide)
+{
+    this->fHideOrphans = fHide;
+    invalidateFilter();
+}
+
 int TransactionFilterProxy::rowCount(const QModelIndex& parent) const
 {
     if (limitRows != -1) {
@@ -108,4 +118,11 @@ int TransactionFilterProxy::rowCount(const QModelIndex& parent) const
     } else {
         return QSortFilterProxyModel::rowCount(parent);
     }
+}
+
+bool TransactionFilterProxy::isOrphan(const int status, const int type)
+{
+    return ( (type == TransactionRecord::Generated || type == TransactionRecord::StakeMint ||
+            type == TransactionRecord::StakeZHLM || type == TransactionRecord::MNReward)
+            && (status == TransactionStatus::Conflicted || status == TransactionStatus::NotAccepted) );
 }

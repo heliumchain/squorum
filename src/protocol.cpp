@@ -2,6 +2,7 @@
 // Copyright (c) 2009-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
 // Copyright (c) 2017-2018 The PIVX developers
+// Copyright (c) 2018-2020 The Helium developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -33,7 +34,11 @@ static const char* ppszTypeName[] =
         "mn quorum",
         "mn announce",
         "mn ping",
-        "dstx"};
+        "dstx",
+        "pubcoins",
+        "genwit",
+        "accvalue"
+    };
 
 CMessageHeader::CMessageHeader()
 {
@@ -99,7 +104,6 @@ void CAddress::Init()
 {
     nServices = NODE_NETWORK;
     nTime = 100000000;
-    nLastTry = 0;
 }
 
 CInv::CInv()

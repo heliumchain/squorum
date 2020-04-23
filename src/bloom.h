@@ -1,11 +1,13 @@
 // Copyright (c) 2012-2014 The Bitcoin developers
 // Copyright (c) 2017 The PIVX developers
+// Copyright (c) 2018-2020 The Helium developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #ifndef BITCOIN_BLOOM_H
 #define BITCOIN_BLOOM_H
 
+#include "libzerocoin/bignum.h"
 #include "serialize.h"
 
 #include <vector>
@@ -33,11 +35,11 @@ enum bloomflags {
 /**
  * BloomFilter is a probabilistic filter which SPV clients provide
  * so that we can filter the transactions we sends them.
- * 
+ *
  * This allows for significantly more efficient transaction and block downloads.
- * 
+ *
  * Because bloom filters are probabilistic, an SPV node can increase the false-
- * positive rate, making us send them transactions which aren't actually theirs, 
+ * positive rate, making us send them transactions which aren't actually theirs,
  * allowing clients to trade more bandwidth for more privacy by obfuscating which
  * keys are owned by them.
  */
@@ -77,6 +79,8 @@ public:
         READWRITE(nFlags);
     }
 
+    void setNotFull();
+
     void insert(const std::vector<unsigned char>& vKey);
     void insert(const COutPoint& outpoint);
     void insert(const uint256& hash);
@@ -90,6 +94,9 @@ public:
     //! True if the size is <= MAX_BLOOM_FILTER_SIZE and the number of hash functions is <= MAX_HASH_FUNCS
     //! (catch a filter which was just deserialized which was too big)
     bool IsWithinSizeConstraints() const;
+
+    bool Merge(const CBloomFilter& filter);
+    bool MatchesAll() const;
 
     //! Also adds any outputs which match the filter to the filter (to match their spending txes)
     bool IsRelevantAndUpdate(const CTransaction& tx);

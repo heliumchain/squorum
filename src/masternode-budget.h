@@ -1,5 +1,6 @@
 // Copyright (c) 2014-2015 The Dash developers
 // Copyright (c) 2015-2018 The PIVX developers
+// Copyright (c) 2018-2020 The Helium developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -14,9 +15,7 @@
 #include "net.h"
 #include "sync.h"
 #include "util.h"
-#include <boost/lexical_cast.hpp>
 
-using namespace std;
 
 extern CCriticalSection cs_budget;
 
@@ -42,16 +41,13 @@ static const CAmount PROPOSAL_FEE_TX = (50 * COIN);
 static const CAmount BUDGET_FEE_TX_OLD = (50 * COIN);
 static const CAmount BUDGET_FEE_TX = (5 * COIN);
 static const int64_t BUDGET_VOTE_UPDATE_MIN = 60 * 60;
-static map<uint256, int> mapPayment_History;
+static std::map<uint256, int> mapPayment_History;
 
 extern std::vector<CBudgetProposalBroadcast> vecImmatureBudgetProposals;
 extern std::vector<CFinalizedBudgetBroadcast> vecImmatureFinalizedBudgets;
 
 extern CBudgetManager budget;
 void DumpBudgets();
-
-// Define amount of blocks in budget payment cycle
-int GetBudgetPaymentCycleBlocks();
 
 //Check the collateral transaction for the budget proposal/finalized budget
 bool IsBudgetCollateralValid(uint256 nTxCollateralHash, uint256 nExpectedHash, std::string& strError, int64_t& nTime, int& nConf, bool fBudgetFinalization=false);
@@ -183,16 +179,16 @@ class CBudgetManager
 {
 private:
     //hold txes until they mature enough to use
-    // XX42    map<uint256, CTransaction> mapCollateral;
-    map<uint256, uint256> mapCollateralTxids;
+    // XX42    std::map<uint256, CTransaction> mapCollateral;
+    std::map<uint256, uint256> mapCollateralTxids;
 
 public:
     // critical section to protect the inner data structures
     mutable CCriticalSection cs;
 
     // keep track of the scanning errors I've seen
-    map<uint256, CBudgetProposal> mapProposals;
-    map<uint256, CFinalizedBudget> mapFinalizedBudgets;
+    std::map<uint256, CBudgetProposal> mapProposals;
+    std::map<uint256, CFinalizedBudget> mapFinalizedBudgets;
 
     std::map<uint256, CBudgetProposalBroadcast> mapSeenMasternodeBudgetProposals;
     std::map<uint256, CBudgetVote> mapSeenMasternodeBudgetVotes;
@@ -325,7 +321,7 @@ public:
     std::string strBudgetName;
     int nBlockStart;
     std::vector<CTxBudgetPayment> vecBudgetPayments;
-    map<uint256, CFinalizedBudgetVote> mapVotes;
+    std::map<uint256, CFinalizedBudgetVote> mapVotes;
     uint256 nFeeTXHash;
     int64_t nTime;
 
@@ -368,15 +364,15 @@ public:
         return true;
     }
 
-    //check to see if we should vote on this
-    void AutoCheck();
-    //total pivx paid out by this budget
+    // Verify and vote on finalized budget
+    void CheckAndVote();
+    //total helium paid out by this budget
     CAmount GetTotalPayout();
     //vote on this finalized budget as a masternode
     void SubmitVote();
 
     //checks the hashes to make sure we know about them
-    string GetStatus();
+    std::string GetStatus();
 
     uint256 GetHash()
     {
@@ -482,7 +478,7 @@ public:
     int64_t nTime;
     uint256 nFeeTXHash;
 
-    map<uint256, CBudgetVote> mapVotes;
+    std::map<uint256, CBudgetVote> mapVotes;
     //cache object
 
     CBudgetProposal();
@@ -496,14 +492,8 @@ public:
 
     bool IsValid(std::string& strError, bool fCheckCollateral = true);
 
-    bool IsEstablished()
-    {
-        // Proposals must be at least a day old to make it into a budget
-        if (Params().NetworkID() == CBaseChainParams::MAIN) return (nTime < GetTime() - (60 * 60 * 24));
-
-        // For testing purposes - 5 minutes
-        return (nTime < GetTime() - (60 * 5));
-    }
+    bool IsEstablished();
+    bool IsPassing(const CBlockIndex* pindexPrev, int nBlockStartBudget, int nBlockEndBudget, int mnCount);
 
     std::string GetName() { return strProposalName; }
     std::string GetURL() { return strURL; }
@@ -516,16 +506,16 @@ public:
     int GetBlockCurrentCycle();
     int GetBlockEndCycle();
     double GetRatio();
-    int GetYeas();
-    int GetNays();
-    int GetAbstains();
+    int GetYeas() const;
+    int GetNays() const;
+    int GetAbstains() const;
     CAmount GetAmount() { return nAmount; }
     void SetAllotted(CAmount nAllotedIn) { nAlloted = nAllotedIn; }
     CAmount GetAllotted() { return nAlloted; }
 
     void CleanAndRemove(bool fSignatureCheck);
 
-    uint256 GetHash()
+    uint256 GetHash() const
     {
         CHashWriter ss(SER_GETHASH, PROTOCOL_VERSION);
         ss << strProposalName;

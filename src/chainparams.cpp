@@ -2,25 +2,21 @@
 // Copyright (c) 2009-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
 // Copyright (c) 2015-2018 The PIVX developers
-// Copyright (c) 2018 The Helium developers
+// Copyright (c) 2018-2020 The Helium developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #include "libzerocoin/Params.h"
 #include "chainparams.h"
-#include "amount.h"
-#include "base58.h"
 #include "random.h"
 #include "util.h"
-#include "uint256.h"
 #include "utilstrencodings.h"
 
 #include <assert.h>
 
 #include <boost/assign/list_of.hpp>
+#include <limits>
 
-using namespace std;
-using namespace boost::assign;
 
 struct SeedSpec6 {
     uint8_t addr[16];
@@ -32,7 +28,6 @@ struct SeedSpec6 {
 /**
  * Main network
  */
-static bool regenerate = false;
 
 //! Convert the pnSeeds6 array into usable address objects.
 static void convertSeed6(std::vector<CAddress>& vSeedsOut, const SeedSpec6* data, unsigned int count)
@@ -62,12 +57,13 @@ static Checkpoints::MapCheckpoints mapCheckpoints =
     (30000, uint256("8c65cf5033aa6b6ea4254c830c4c77c4de30875e6ba5ee619b31350bc314b7cf"))
     (31331, uint256("f88c7264a05c05033a98c92088613880cd4d210aab12367eb48d5fe3a0189672"))
     (32848, uint256("352431d65a69b3425ce508cfbbff077c8fdc2833a84e6e239f0ba8e7300e9744"))
-    (31562, uint256("7738a178f95139b2cd6b2120b19584cc17a2a28a00962b5d28978cd199427821"));
+    (31562, uint256("7738a178f95139b2cd6b2120b19584cc17a2a28a00962b5d28978cd199427821"))
+    (126438, uint256("7f0c69501d91e4a4ed413bf9942972cf489e79034a0af4a6440fa513c037140d"));
 
 static const Checkpoints::CCheckpointData data = {
     &mapCheckpoints,
-    1538577068, // * UNIX timestamp of last checkpoint block
-    64410,      // * total number of transactions between genesis and last checkpoint
+    1544241064, // * UNIX timestamp of last checkpoint block
+    259966,      // * total number of transactions between genesis and last checkpoint
                 //   (the tx=... number in the SetBestChain debug.log lines)
     2000        // * estimated number of transactions per day after checkpoint
 };
@@ -108,6 +104,17 @@ libzerocoin::ZerocoinParams* CChainParams::Zerocoin_Params(bool useModulusV1) co
     return &ZCParamsDec;
 }
 
+bool CChainParams::HasStakeMinAgeOrDepth(const int contextHeight, const uint32_t contextTime,
+        const int utxoFromBlockHeight, const uint32_t utxoFromBlockTime) const
+{
+    // before stake modifier V2, the age required was 60 * 60 (1 hour) / not required on regtest
+    if (!IsStakeModifierV2(contextHeight))
+        return (NetworkID() == CBaseChainParams::REGTEST || (utxoFromBlockTime + 3600 <= contextTime));
+
+    // after stake modifier V2, we require the utxo to be nStakeMinDepth deep in the chain
+    return (contextHeight - utxoFromBlockHeight >= nStakeMinDepth);
+}
+
 class CMainParams : public CChainParams
 {
 public:
@@ -129,19 +136,23 @@ public:
         bnProofOfWorkLimit = ~uint256(0) >> 20; // Helium starting difficulty is 1 / 2^12
         nSubsidyHalvingInterval = 210240;
         nMaxReorganizationDepth = 100;
-        nEnforceBlockUpgradeMajority = 750;
-        nRejectBlockOutdatedMajority = 950;
-        nToCheckBlockUpgradeMajority = 1000;
-        nMinerThreads = 1;
-        nTargetTimespan = 24 * 60 * 60; // Helium: 1 day
-        nTargetSpacing = 60;  // Helium: 1 minute
+        nEnforceBlockUpgradeMajority = 8100; // 75%
+        nRejectBlockOutdatedMajority = 10260; // 95%
+        nToCheckBlockUpgradeMajority = 10800; // Approximate expected amount of blocks in 7 days (1440*7.5)
+        nMinerThreads = 0;
+        nTargetSpacing = 1 * 60;        // 1 minute
         nMaturity = 100;
+        nStakeMinDepth = 600;
+        nFutureTimeDriftPoW = 7200;
+        nFutureTimeDriftPoS = 180;
         nMasternodeCountDrift = 20;
         nMaxMoneyOut = 21000000 * COIN;
 
         /** Height or Time Based Activations **/
         //nLastPOWBlock = 20160; // 14 days @ 1440 per day (PIVX: 259200, Phore 200)
         nLastPOWBlock = 400; // Short PoW phase before transition to PoS
+        nHeliumBadBlockTime = 1536703158; // Skip nBit validation of Block 401 per PR #915
+        nHeliumBadBlocknBits = 0x1d5480f7; // Skip nBit validation of Block 401 per PR #915
         //if the lowest block height (vSortedByTimestamp[0]) is >= switch height, use new modifier calc
         // nModifierUpdateBlock = 0; // (PIVX: 615800)
         nZerocoinStartHeight = 999999999; // (PIVX: 863787, Phore 90000)
@@ -155,12 +166,15 @@ public:
         nBlockZerocoinV2 = 999999999; // (PIVX: 1153160) //!> The block that zerocoin v2 becomes active - roughly Tuesday, May 8, 2018 4:00:00 AM GMT
         nEnforceNewSporkKey = 1537963200; // (PIVX: 1525158000) //!> Sporks signed after (GMT): Wednesday, September 26,2018 12:00 PM must use the new spork key
         nRejectOldSporkKey = 1537966800; // (PIVX: 1527811200) //!> Fully reject old spork key after (GMT): Wednesday, September 26,2018 12:00 PM
+        nBlockStakeModifierlV2 = 1967000;
+        // Public coin spend enforcement
+        nPublicZCSpends = 1880000;
 
         const char* pszTimestamp = "Bitcoin Block #540723:  000000000000000000200b9c401b3022de17cd305ba6ef9ce5bade07f9f5ebe5";
         CMutableTransaction txNew;
         txNew.vin.resize(1);
         txNew.vout.resize(1);
-        txNew.vin[0].scriptSig = CScript() << 504365040 << CScriptNum(4) << vector<unsigned char>((const unsigned char*)pszTimestamp, (const unsigned char*)pszTimestamp + strlen(pszTimestamp));
+        txNew.vin[0].scriptSig = CScript() << 504365040 << CScriptNum(4) << std::vector<unsigned char>((const unsigned char*)pszTimestamp, (const unsigned char*)pszTimestamp + strlen(pszTimestamp));
         txNew.vout[0].nValue = 1 * COIN;
         txNew.vout[0].scriptPubKey = CScript() << ParseHex("") << OP_CHECKSIG;
         genesis.vtx.push_back(txNew);
@@ -172,43 +186,11 @@ public:
         genesis.nNonce = 6846;
 
         hashGenesisBlock = genesis.GetHash();
-        if (regenerate) {
-            hashGenesisBlock = uint256S("");
-            genesis.nNonce = 0;
-            if (true && (genesis.GetHash() != hashGenesisBlock)) {
-                uint256 hashTarget = CBigNum().SetCompact(genesis.nBits).getuint256();
-                while (genesis.GetHash() > hashTarget)
-                {
-                    ++genesis.nNonce;
-                    if (genesis.nNonce == 0)
-                    {
-                        ++genesis.nTime;
-                    }
-                }
-                std::cout << "// Mainnet ---";
-                std::cout << " nonce: " << genesis.nNonce;
-                std::cout << " time: " << genesis.nTime;
-                std::cout << " hash: 0x" << genesis.GetHash().ToString().c_str();
-                std::cout << " merklehash: 0x"  << genesis.hashMerkleRoot.ToString().c_str() <<  "\n";
-            }
-        } else {
-            LogPrintf("Mainnet ---\n");
-            LogPrintf(" nonce: %u\n", genesis.nNonce);
-            LogPrintf(" time: %u\n", genesis.nTime);
-            LogPrintf(" hash: 0x%s\n", genesis.GetHash().ToString().c_str());
-            LogPrintf(" merklehash: 0x%s\n", genesis.hashMerkleRoot.ToString().c_str());
-            assert(hashGenesisBlock == uint256("0x0000033346b0b31697bcd178789fe1d6d10f96a7fd46d74fbf647d5ea3757348"));
-            assert(genesis.hashMerkleRoot == uint256("0xedee755717c4de66ce52056e36ae0f6e9f0269667fd8a06e3c5367588cbfadbd"));
-        }
-        // Mainnet --- nonce: 6846 time: 1535104494 hash: 0x0000033346b0b31697bcd178789fe1d6d10f96a7fd46d74fbf647d5ea3757348 merklehash: 0xedee755717c4de66ce52056e36ae0f6e9f0269667fd8a06e3c5367588cbfadbd
+        assert(hashGenesisBlock == uint256("0x0000033346b0b31697bcd178789fe1d6d10f96a7fd46d74fbf647d5ea3757348"));
+        assert(genesis.hashMerkleRoot == uint256("0xedee755717c4de66ce52056e36ae0f6e9f0269667fd8a06e3c5367588cbfadbd"));
 
         vSeeds.push_back(CDNSSeedData("knout", "dnsseed.helium.cl"));
-        vSeeds.push_back(CDNSSeedData("seed1", "s1.heliumcoin.info"));
-	vSeeds.push_back(CDNSSeedData("seed2", "s2.heliumcoin.info"));
-	vSeeds.push_back(CDNSSeedData("seed3", "s3.heliumcoin.info"));
-	vSeeds.push_back(CDNSSeedData("seed4", "s4.heliumcoin.info"));
-        vSeeds.push_back(CDNSSeedData("seed5", "s5.heliumcoin.info"));
-	
+
         // Helium addresses start with 'S'
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,63);
         // Helium script addresses start with '3'
@@ -234,6 +216,7 @@ public:
         fHeadersFirstSyncingActive = false;
 
         nPoolMaxTransactions = 3;
+        nBudgetCycleBlocks = 43200; //!< Amount of blocks in a months period of time (using 1 minutes per) = (60*24*30)
         strSporkKey = "0429929bc9edbbdbee4830f004d0265608fbcc4caa9feff1fe58ff97354ddcf125b1c1636663d3f447d6c29d7b04bcb6fc492d2955c567be65ecb63fa2cbe2ce36";
         strSporkKeyOld = "04beb92bb57470a4e6b011a291026c8cb6ce59c20b36ae5128d88b723c198443cb35cb2609eb9054f9fc49aa9f49257026cd1a09afb3fd7e1429086ab708ffb482";
         strObfuscationPoolDummyAddress = "S87q2gC9j6nNrnzCsg4aY6bHMLsT9nUhEw";
@@ -247,20 +230,23 @@ public:
             "8441436038339044149526344321901146575444541784240209246165157233507787077498171257724679629263863563732899121548"
             "31438167899885040445364023527381951378636564391212010397122822120720357";
         nMaxZerocoinSpendsPerTransaction = 7; // Assume about 20kb each
+        nMaxZerocoinPublicSpendsPerTransaction = 637; // Assume about 220 bytes each input
         nMinZerocoinMintFee = 1 * CENT; //high fee required for zerocoin mints
         nMintRequiredConfirmations = 20; //the maximum amount of confirmations until accumulated in 19
         nRequiredAccumulation = 1;
         nDefaultSecurityLevel = 100; //full security level for accumulators
         nZerocoinHeaderVersion = 4; //Block headers must be this version once zerocoin is active
-        nZerocoinRequiredStakeDepth = 200; //The required confirmations for a zpiv to be stakable
+        nZerocoinRequiredStakeDepth = 200; //The required confirmations for a zhlm to be stakable
 
         nBudget_Fee_Confirmations = 6; // Number of confirmations for the finalization fee
+        nProposalEstablishmentTime = 60 * 60 * 24; // Proposals must be at least a day old to make it into a budget
     }
 
     const Checkpoints::CCheckpointData& Checkpoints() const
     {
         return data;
     }
+
 };
 static CMainParams mainParams;
 
@@ -279,15 +265,12 @@ public:
         pchMessageStart[2] = 0x0c;
         pchMessageStart[3] = 0x0e;
         vAlertPubKey = ParseHex("");
-        bnProofOfWorkLimit = ~uint256(0) >> 1; // 0x207fffff, Helium testnet starting difficulty
-        nSubsidyHalvingInterval = 210240;
         nDefaultPort = 19009;
-        nEnforceBlockUpgradeMajority = 51;
-        nRejectBlockOutdatedMajority = 75;
-        nToCheckBlockUpgradeMajority = 100;
-        nMinerThreads = 1;
-        nTargetTimespan = 24 * 60 * 60; // Helium: 1 day
-        nTargetSpacing = 60;  // Helium: 1 minute
+        nEnforceBlockUpgradeMajority = 4320; // 75%
+        nRejectBlockOutdatedMajority = 5472; // 95%
+        nToCheckBlockUpgradeMajority = 5760; // 4 days
+        nMinerThreads = 0;
+        nTargetSpacing = 1 * 60;  // Helium: 1 minute
         nLastPOWBlock = 400;
         nMaturity = 15;
         nMasternodeCountDrift = 2;
@@ -302,52 +285,26 @@ public:
         // nBlockEnforceInvalidUTXO = 0; //Start enforcing the invalid UTXO's
         // nInvalidAmountFiltered = 0; //Amount of invalid coins filtered through exchanges, that should be considered valid
         nBlockZerocoinV2 = 999999999; //!> The block that zerocoin v2 becomes active
-	nEnforceNewSporkKey = 1537963200; // (PIVX: 1525158000) //!> Sporks signed after (GMT): Wednesday, September 26,2018 12:00 PM must use the new spork key
+        nEnforceNewSporkKey = 1537963200; // (PIVX: 1525158000) //!> Sporks signed after (GMT): Wednesday, September 26,2018 12:00 PM must use the new spork key
         nRejectOldSporkKey = 1537966800; // (PIVX: 1527811200) //!> Fully reject old spork key after (GMT): Wednesday, September 26,2018 12:00 PM
+        nBlockStakeModifierlV2 = 1214000;
+        // Public coin spend enforcement
+        nPublicZCSpends = 1106100;
 
         //! Modify the testnet genesis block so the timestamp is valid for a later start.
-        genesis.nTime = 1535103494;
-        genesis.nNonce = 311676;
+        genesis.nTime = 1535104494;
+        genesis.nNonce = 6846;
 
         hashGenesisBlock = genesis.GetHash();
-        if (regenerate) {
-            hashGenesisBlock = uint256S("");
-            genesis.nNonce = 0;
-            if (true && (genesis.GetHash() != hashGenesisBlock)) {
-                uint256 hashTarget = CBigNum().SetCompact(genesis.nBits).getuint256();
-                while (genesis.GetHash() > hashTarget)
-                {
-                    ++genesis.nNonce;
-                    if (genesis.nNonce == 0)
-                    {
-                        ++genesis.nTime;
-                    }
-                }
-                std::cout << "// Testnet ---";
-                std::cout << " nonce: " << genesis.nNonce;
-                std::cout << " time: " << genesis.nTime;
-                std::cout << " hash: 0x" << genesis.GetHash().ToString().c_str();
-                std::cout << " merklehash: 0x"  << genesis.hashMerkleRoot.ToString().c_str() <<  "\n";
-
-            }
-        } else {
-            LogPrintf("Testnet ---\n");
-            LogPrintf(" nonce: %u\n", genesis.nNonce);
-            LogPrintf(" time: %u\n", genesis.nTime);
-            LogPrintf(" hash: 0x%s\n", genesis.GetHash().ToString().c_str());
-            LogPrintf(" merklehash: 0x%s\n", genesis.hashMerkleRoot.ToString().c_str());
-            assert(hashGenesisBlock == uint256("0x0000049f035ee1942b9d3dd10965e7e07929aeaadd2c8855107dfeed05645d3f"));
-            assert(genesis.hashMerkleRoot == uint256("0xedee755717c4de66ce52056e36ae0f6e9f0269667fd8a06e3c5367588cbfadbd"));
-        }
-        // Testnet --- nonce: 311676 time: 1535103494 hash: 0x0000049f035ee1942b9d3dd10965e7e07929aeaadd2c8855107dfeed05645d3f merklehash: 0xedee755717c4de66ce52056e36ae0f6e9f0269667fd8a06e3c5367588cbfadbd
+        assert(hashGenesisBlock == uint256("0x0000033346b0b31697bcd178789fe1d6d10f96a7fd46d74fbf647d5ea3757348"));
 
         vFixedSeeds.clear();
         vSeeds.clear();
-	
+
         vSeeds.push_back(CDNSSeedData("heliumlabs", "seed.heliumlabs.org"));
         vSeeds.push_back(CDNSSeedData("Spread", "node.heliumcha.in"));
-	vSeeds.push_back(CDNSSeedData("Kserv", "149.28.242.177"));
-	vSeeds.push_back(CDNSSeedData("Xojserv", "45.63.83.41"));
+        vSeeds.push_back(CDNSSeedData("Kserv", "149.28.242.177"));
+        vSeeds.push_back(CDNSSeedData("Xojserv", "45.63.83.41"));
 
         // Testnet Helium addresses start with 'm' or 'n'
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,111);
@@ -368,17 +325,19 @@ public:
         fAllowMinDifficultyBlocks = true;
         fDefaultConsistencyChecks = false;
         fRequireStandard = true;
-        fSkipProofOfWorkCheck = false;
         fMineBlocksOnDemand = false;
         fTestnetToBeDeprecatedFieldRPC = true;
 
         nPoolMaxTransactions = 2;
+        nBudgetCycleBlocks = 144; //!< Ten cycles per day on testnet
         strSporkKey = "0429929bc9edbbdbee4830f004d0265608fbcc4caa9feff1fe58ff97354ddcf125b1c1636663d3f447d6c29d7b04bcb6fc492d2955c567be65ecb63fa2cbe2ce36";
         strSporkKeyOld = "04beb92bb57470a4e6b011a291026c8cb6ce59c20b36ae5128d88b723c198443cb35cb2609eb9054f9fc49aa9f49257026cd1a09afb3fd7e1429086ab708ffb482";
         strObfuscationPoolDummyAddress = "m57cqfGRkekRyDRNeJiLtYVEbvhXrNbmox";
         nStartMasternodePayments = 1527634800; //30th May 2018 00:00:00
         nBudget_Fee_Confirmations = 3; // Number of confirmations for the finalization fee. We have to make this very short
                                        // here because we only have a 8 block finalization window on testnet
+
+        nProposalEstablishmentTime = 60 * 5; // Proposals must be at least 5 mns old to make it into a test budget
     }
     const Checkpoints::CCheckpointData& Checkpoints() const
     {
@@ -401,54 +360,37 @@ public:
         pchMessageStart[1] = 0x0a;
         pchMessageStart[2] = 0xc0;
         pchMessageStart[3] = 0x0e;
+        nDefaultPort = 19004;
         nSubsidyHalvingInterval = 150;
         nEnforceBlockUpgradeMajority = 750;
         nRejectBlockOutdatedMajority = 950;
         nToCheckBlockUpgradeMajority = 1000;
         nMinerThreads = 1;
-        nTargetTimespan = 24 * 60 * 60; // Helium: 1 day
-        nTargetSpacing = 60;  // Helium: 1 minute
+        nTargetSpacing = 1 * 60;        // Helium: 1 minutes
         bnProofOfWorkLimit = ~uint256(0) >> 1;
-        nDefaultPort = 19004;
+        nLastPOWBlock = 250;
+        nMaturity = 100;
+        nStakeMinDepth = 0;
+        nMasternodeCountDrift = 4;
+//        nModifierUpdateBlock = 0; //approx Mon, 17 Apr 2017 04:00:00 GMT
+        nMaxMoneyOut = 43199500 * COIN;
+        nZerocoinStartHeight = 300;
+        nBlockZerocoinV2 = 300;
+        nZerocoinStartTime = 1501776000;
+//        nBlockEnforceSerialRange = 1; //Enforce serial range starting this block
+        nBlockRecalculateAccumulators = 999999999; //Trigger a recalculation of accumulators
+//        nBlockFirstFraudulent = 999999999; //First block that bad serials emerged
+        nBlockLastGoodCheckpoint = 999999999; //Last valid accumulator checkpoint
+        nBlockStakeModifierlV2 = std::numeric_limits<int>::max(); // max integer value (never switch on regtest)
+        // Public coin spend enforcement
+        nPublicZCSpends = 350;
 
-        genesis.nTime = 1535104494;
-        genesis.nBits = 0x207fffff;
-        genesis.nNonce = 3;
+        //! Modify the regtest genesis block so the timestamp is valid for a later start.
+        genesis.nTime = 1535103494;
+        genesis.nNonce = 311676;
 
         hashGenesisBlock = genesis.GetHash();
-
-        if (regenerate) {
-            hashGenesisBlock = uint256S("");
-            if (true && (genesis.GetHash() != hashGenesisBlock)) {
-                uint256 hashTarget = CBigNum().SetCompact(genesis.nBits).getuint256();
-                while (genesis.GetHash() > hashTarget)
-                {
-                    ++genesis.nNonce;
-                    if (genesis.nNonce == 0)
-                    {
-                        ++genesis.nTime;
-                    }
-                }
-                std::cout << "// Regtestnet ---";
-                std::cout << " nonce: " << genesis.nNonce;
-                std::cout << " time: " << genesis.nTime;
-                std::cout << " hash: 0x" << genesis.GetHash().ToString().c_str();
-                std::cout << " merklehash: 0x"  << genesis.hashMerkleRoot.ToString().c_str() <<  "\n";
-
-            }
-        } else {
-            LogPrintf("Regtestnet ---\n");
-            LogPrintf(" nonce: %u\n", genesis.nNonce);
-            LogPrintf(" time: %u\n", genesis.nTime);
-            LogPrintf(" hash: 0x%s\n", genesis.GetHash().ToString().c_str());
-            LogPrintf(" merklehash: 0x%s\n", genesis.hashMerkleRoot.ToString().c_str());
-            assert(hashGenesisBlock == uint256("0x73abf6904e8a758c31d715d0c2bf8b36b86403a35bda369ec2fbcac8c2469c4d"));
-            assert(genesis.hashMerkleRoot == uint256("0xedee755717c4de66ce52056e36ae0f6e9f0269667fd8a06e3c5367588cbfadbd"));
-        }
-        // Regtestnet --- nonce: 3 time: 1535104494 hash: 0x73abf6904e8a758c31d715d0c2bf8b36b86403a35bda369ec2fbcac8c2469c4d merklehash: 0xedee755717c4de66ce52056e36ae0f6e9f0269667fd8a06e3c5367588cbfadbd
-
-        if (regenerate)
-            exit(0);
+        assert(hashGenesisBlock == uint256("0x0000049f035ee1942b9d3dd10965e7e07929aeaadd2c8855107dfeed05645d3f"));
 
         vFixedSeeds.clear(); //! Testnet mode doesn't have any fixed seeds.
         vSeeds.clear();      //! Testnet mode doesn't have any DNS seeds.
@@ -458,7 +400,15 @@ public:
         fDefaultConsistencyChecks = true;
         fRequireStandard = false;
         fMineBlocksOnDemand = true;
+        fSkipProofOfWorkCheck = true;
         fTestnetToBeDeprecatedFieldRPC = false;
+
+        /* Spork Key for RegTest:
+        WIF private key: 932HEevBSujW2ud7RfB1YF91AFygbBRQj3de3LyaCRqNzKKgWXi
+        private key hex: bd4960dcbd9e7f2223f24e7164ecb6f1fe96fc3a416f5d3a830ba5720c84b8ca
+        Address: yCvUVd72w7xpimf981m114FSFbmAmne7j9
+        */
+        strSporkKey = "043969b1b0e6f327de37f297a015d37e2235eaaeeb3933deecd8162c075cee0207b13537618bde640879606001a8136091c62ec272dd0133424a178704e6e75bb7";
     }
     const Checkpoints::CCheckpointData& Checkpoints() const
     {
@@ -482,7 +432,6 @@ public:
         vSeeds.clear();      //! Unit test mode doesn't have any DNS seeds.
 
         fMiningRequiresPeers = false;
-        // fSkipProofOfWorkCheck = false;
         fDefaultConsistencyChecks = true;
         fAllowMinDifficultyBlocks = false;
         fMineBlocksOnDemand = true;
@@ -504,7 +453,6 @@ public:
     virtual void setSkipProofOfWorkCheck(bool afSkipProofOfWorkCheck) { fSkipProofOfWorkCheck = afSkipProofOfWorkCheck; }
 };
 static CUnitTestParams unitTestParams;
-
 
 static CChainParams* pCurrentParams = 0;
 

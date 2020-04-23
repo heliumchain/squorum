@@ -1,6 +1,7 @@
 // Copyright (c) 2010 Satoshi Nakamoto
 // Copyright (c) 2009-2014 The Bitcoin developers
 // Copyright (c) 2017 The PIVX developers
+// Copyright (c) 2018-2020 The Helium developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -11,7 +12,7 @@
 #include "net.h"
 #include "pubkey.h"
 #include "timedata.h"
-#include "ui_interface.h"
+#include "guiinterface.h"
 #include "util.h"
 
 #include <algorithm>
@@ -20,12 +21,10 @@
 
 #include <boost/algorithm/string/classification.hpp>
 #include <boost/algorithm/string/replace.hpp>
-#include <boost/foreach.hpp>
 #include <boost/thread.hpp>
 
-using namespace std;
 
-map<uint256, CAlert> mapAlerts;
+std::map<uint256, CAlert> mapAlerts;
 CCriticalSection cs_mapAlerts;
 
 void CUnsignedAlert::SetNull()
@@ -52,7 +51,7 @@ std::string CUnsignedAlert::ToString() const
     for (auto& n: setCancel)
         strSetCancel += strprintf("%d ", n);
     std::string strSetSubVer;
-    BOOST_FOREACH (std::string str, setSubVer)
+    for (std::string str : setSubVer)
         strSetSubVer += "\"" + str + "\" ";
     return strprintf(
         "CAlert(\n"
@@ -161,7 +160,7 @@ CAlert CAlert::getAlertByHash(const uint256& hash)
     CAlert retval;
     {
         LOCK(cs_mapAlerts);
-        map<uint256, CAlert>::iterator mi = mapAlerts.find(hash);
+        std::map<uint256, CAlert>::iterator mi = mapAlerts.find(hash);
         if (mi != mapAlerts.end())
             retval = mi->second;
     }
@@ -198,7 +197,7 @@ bool CAlert::ProcessAlert(bool fThread)
     {
         LOCK(cs_mapAlerts);
         // Cancel previous alerts
-        for (map<uint256, CAlert>::iterator mi = mapAlerts.begin(); mi != mapAlerts.end();) {
+        for (std::map<uint256, CAlert>::iterator mi = mapAlerts.begin(); mi != mapAlerts.end();) {
             const CAlert& alert = (*mi).second;
             if (Cancels(alert)) {
                 LogPrint("alert", "cancelling alert %d\n", alert.nID);
@@ -213,7 +212,7 @@ bool CAlert::ProcessAlert(bool fThread)
         }
 
         // Check if this alert has been cancelled
-        BOOST_FOREACH (PAIRTYPE(const uint256, CAlert) & item, mapAlerts) {
+        for (PAIRTYPE(const uint256, CAlert) & item : mapAlerts) {
             const CAlert& alert = item.second;
             if (alert.Cancels(*this)) {
                 LogPrint("alert", "alert already cancelled by %d\n", alert.nID);
@@ -222,7 +221,7 @@ bool CAlert::ProcessAlert(bool fThread)
         }
 
         // Add to mapAlerts
-        mapAlerts.insert(make_pair(GetHash(), *this));
+        mapAlerts.insert(std::make_pair(GetHash(), *this));
         // Notify UI and -alertnotify if it applies to me
         if (AppliesToMe()) {
             uiInterface.NotifyAlertChanged(GetHash(), CT_NEW);
