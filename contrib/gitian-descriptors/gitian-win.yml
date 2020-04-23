@@ -1,5 +1,5 @@
 ---
-name: "helium-win-1.0"
+name: "helium-win-1.1.0"
 enable_cache: true
 distro: "ubuntu"
 suites:
