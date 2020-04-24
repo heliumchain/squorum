@@ -15,54 +15,54 @@ void URITests::uriTests()
 {
     SendCoinsRecipient rv;
     QUrl uri;
-    uri.setUrl(QString("helium:D72dLgywmL73JyTwQBfuU29CADz9yCJ99v?req-dontexist="));
+    uri.setUrl(QString("helium:Sapor5rpxvaGQ4cW8dptj3zW94MxuAwW4P?req-dontexist="));
     QVERIFY(!GUIUtil::parseBitcoinURI(uri, &rv));
 
-    uri.setUrl(QString("helium:D72dLgywmL73JyTwQBfuU29CADz9yCJ99v?dontexist="));
+    uri.setUrl(QString("helium:Sapor5rpxvaGQ4cW8dptj3zW94MxuAwW4P?dontexist="));
     QVERIFY(GUIUtil::parseBitcoinURI(uri, &rv));
-    QVERIFY(rv.address == QString("D72dLgywmL73JyTwQBfuU29CADz9yCJ99v"));
+    QVERIFY(rv.address == QString("Sapor5rpxvaGQ4cW8dptj3zW94MxuAwW4P"));
     QVERIFY(rv.label == QString());
     QVERIFY(rv.amount == 0);
 
-    uri.setUrl(QString("helium:D72dLgywmL73JyTwQBfuU29CADz9yCJ99v?label=Some Example Address"));
+    uri.setUrl(QString("helium:Sapor5rpxvaGQ4cW8dptj3zW94MxuAwW4P?label=Some Example Address"));
     QVERIFY(GUIUtil::parseBitcoinURI(uri, &rv));
-    QVERIFY(rv.address == QString("D72dLgywmL73JyTwQBfuU29CADz9yCJ99v"));
+    QVERIFY(rv.address == QString("Sapor5rpxvaGQ4cW8dptj3zW94MxuAwW4P"));
     QVERIFY(rv.label == QString("Some Example Address"));
     QVERIFY(rv.amount == 0);
 
-    uri.setUrl(QString("helium:D72dLgywmL73JyTwQBfuU29CADz9yCJ99v?amount=0.001"));
+    uri.setUrl(QString("helium:Sapor5rpxvaGQ4cW8dptj3zW94MxuAwW4P?amount=0.001"));
     QVERIFY(GUIUtil::parseBitcoinURI(uri, &rv));
-    QVERIFY(rv.address == QString("D72dLgywmL73JyTwQBfuU29CADz9yCJ99v"));
+    QVERIFY(rv.address == QString("Sapor5rpxvaGQ4cW8dptj3zW94MxuAwW4P"));
     QVERIFY(rv.label == QString());
     QVERIFY(rv.amount == 100000);
 
-    uri.setUrl(QString("helium:D72dLgywmL73JyTwQBfuU29CADz9yCJ99v?amount=1.001"));
+    uri.setUrl(QString("helium:Sapor5rpxvaGQ4cW8dptj3zW94MxuAwW4P?amount=1.001"));
     QVERIFY(GUIUtil::parseBitcoinURI(uri, &rv));
-    QVERIFY(rv.address == QString("D72dLgywmL73JyTwQBfuU29CADz9yCJ99v"));
+    QVERIFY(rv.address == QString("Sapor5rpxvaGQ4cW8dptj3zW94MxuAwW4P"));
     QVERIFY(rv.label == QString());
     QVERIFY(rv.amount == 100100000);
 
-    uri.setUrl(QString("helium:D72dLgywmL73JyTwQBfuU29CADz9yCJ99v?amount=100&label=Some Example"));
+    uri.setUrl(QString("helium:Sapor5rpxvaGQ4cW8dptj3zW94MxuAwW4P?amount=100&label=Some Example"));
     QVERIFY(GUIUtil::parseBitcoinURI(uri, &rv));
-    QVERIFY(rv.address == QString("D72dLgywmL73JyTwQBfuU29CADz9yCJ99v"));
+    QVERIFY(rv.address == QString("Sapor5rpxvaGQ4cW8dptj3zW94MxuAwW4P"));
     QVERIFY(rv.amount == 10000000000LL);
     QVERIFY(rv.label == QString("Some Example"));
 
-    uri.setUrl(QString("helium:D72dLgywmL73JyTwQBfuU29CADz9yCJ99v?message=Some Example Address"));
+    uri.setUrl(QString("helium:Sapor5rpxvaGQ4cW8dptj3zW94MxuAwW4P?message=Some Example Address"));
     QVERIFY(GUIUtil::parseBitcoinURI(uri, &rv));
-    QVERIFY(rv.address == QString("D72dLgywmL73JyTwQBfuU29CADz9yCJ99v"));
+    QVERIFY(rv.address == QString("Sapor5rpxvaGQ4cW8dptj3zW94MxuAwW4P"));
     QVERIFY(rv.label == QString());
 
-    QVERIFY(GUIUtil::parseBitcoinURI("helium://D72dLgywmL73JyTwQBfuU29CADz9yCJ99v?message=Some Example Address", &rv));
-    QVERIFY(rv.address == QString("D72dLgywmL73JyTwQBfuU29CADz9yCJ99v"));
+    QVERIFY(GUIUtil::parseBitcoinURI("helium://Sapor5rpxvaGQ4cW8dptj3zW94MxuAwW4P?message=Some Example Address", &rv));
+    QVERIFY(rv.address == QString("Sapor5rpxvaGQ4cW8dptj3zW94MxuAwW4P"));
     QVERIFY(rv.label == QString());
 
-    uri.setUrl(QString("helium:D72dLgywmL73JyTwQBfuU29CADz9yCJ99v?req-message=Some Example Address"));
+    uri.setUrl(QString("helium:Sapor5rpxvaGQ4cW8dptj3zW94MxuAwW4P?req-message=Some Example Address"));
     QVERIFY(GUIUtil::parseBitcoinURI(uri, &rv));
 
-    uri.setUrl(QString("helium:D72dLgywmL73JyTwQBfuU29CADz9yCJ99v?amount=1,000&label=Some Example"));
+    uri.setUrl(QString("helium:Sapor5rpxvaGQ4cW8dptj3zW94MxuAwW4P?amount=1,000&label=Some Example"));
     QVERIFY(!GUIUtil::parseBitcoinURI(uri, &rv));
 
-    uri.setUrl(QString("helium:D72dLgywmL73JyTwQBfuU29CADz9yCJ99v?amount=1,000.0&label=Some Example"));
+    uri.setUrl(QString("helium:Sapor5rpxvaGQ4cW8dptj3zW94MxuAwW4P?amount=1,000.0&label=Some Example"));
     QVERIFY(!GUIUtil::parseBitcoinURI(uri, &rv));
 }
