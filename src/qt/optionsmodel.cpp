@@ -7,7 +7,7 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #if defined(HAVE_CONFIG_H)
-#include "config/helium-config.h"
+#include "config/squorum-config.h"
 #endif
 
 #include "optionsmodel.h"
@@ -64,7 +64,7 @@ void OptionsModel::Init()
 
     // Display
     if (!settings.contains("nDisplayUnit"))
-        settings.setValue("nDisplayUnit", BitcoinUnits::HLM);
+        settings.setValue("nDisplayUnit", BitcoinUnits::SQR);
     nDisplayUnit = settings.value("nDisplayUnit").toInt();
 
     if (!settings.contains("strThirdPartyTxUrls"))
@@ -179,7 +179,7 @@ void OptionsModel::Reset()
 
     // Remove all entries from our QSettings object
     settings.clear();
-    resetSettings = true; // Needed in helium.cpp during shotdown to also remove the window positions
+    resetSettings = true; // Needed in squorum.cpp during shotdown to also remove the window positions
 
     // default setting for OptionsModel::StartAtStartup - disabled
     if (GUIUtil::GetStartOnSystemStartup())

@@ -11,7 +11,7 @@
 #include "clientversion.h"
 #include "main.h"
 #include "utiltime.h"
-#include "test/test_helium.h"
+#include "test/test_squorum.h"
 
 #include <cstdio>
 

@@ -125,7 +125,7 @@ bool CBloomFilter::IsWithinSizeConstraints() const
 }
 
 /**
- * Returns true if this filter will match anything. See {@link org.heliumj.core.BloomFilter#setMatchAll()}
+ * Returns true if this filter will match anything. See {@link org.squorumj.core.BloomFilter#setMatchAll()}
  * for when this can be a useful thing to do.
  */
 bool CBloomFilter::MatchesAll() const {

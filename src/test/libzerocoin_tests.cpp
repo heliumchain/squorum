@@ -25,7 +25,7 @@
 #include "libzerocoin/Coin.h"
 #include "libzerocoin/CoinSpend.h"
 #include "libzerocoin/Accumulator.h"
-#include "test_helium.h"
+#include "test_squorum.h"
 
 
 #define COLOR_STR_GREEN   "\033[32m"

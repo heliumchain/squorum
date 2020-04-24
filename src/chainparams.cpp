@@ -133,7 +133,7 @@ public:
         pchMessageStart[3] = 0xe0;
         vAlertPubKey = ParseHex("0x"); // Disabled
         nDefaultPort = 9009;
-        bnProofOfWorkLimit = ~uint256(0) >> 20; // Helium starting difficulty is 1 / 2^12
+        bnProofOfWorkLimit = ~uint256(0) >> 20; // sQuorum starting difficulty is 1 / 2^12
         nSubsidyHalvingInterval = 210240;
         nMaxReorganizationDepth = 100;
         nEnforceBlockUpgradeMajority = 8100; // 75%
@@ -151,8 +151,8 @@ public:
         /** Height or Time Based Activations **/
         //nLastPOWBlock = 20160; // 14 days @ 1440 per day (PIVX: 259200, Phore 200)
         nLastPOWBlock = 400; // Short PoW phase before transition to PoS
-        nHeliumBadBlockTime = 1536703158; // Skip nBit validation of Block 401 per PR #915
-        nHeliumBadBlocknBits = 0x1d5480f7; // Skip nBit validation of Block 401 per PR #915
+        nsQuorumBadBlockTime = 1536703158; // Skip nBit validation of Block 401 per PR #915
+        nsQuorumBadBlocknBits = 0x1d5480f7; // Skip nBit validation of Block 401 per PR #915
         //if the lowest block height (vSortedByTimestamp[0]) is >= switch height, use new modifier calc
         // nModifierUpdateBlock = 0; // (PIVX: 615800)
         nZerocoinStartHeight = 999999999; // (PIVX: 863787, Phore 90000)
@@ -189,19 +189,19 @@ public:
         assert(hashGenesisBlock == uint256("0x0000033346b0b31697bcd178789fe1d6d10f96a7fd46d74fbf647d5ea3757348"));
         assert(genesis.hashMerkleRoot == uint256("0xedee755717c4de66ce52056e36ae0f6e9f0269667fd8a06e3c5367588cbfadbd"));
 
-        vSeeds.push_back(CDNSSeedData("knout", "dnsseed.helium.cl"));
+        vSeeds.push_back(CDNSSeedData("knout", "dnsseed.squorum.cl"));
 
-        // Helium addresses start with 'S'
+        // sQuorum addresses start with 'S'
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,63);
-        // Helium script addresses start with '3'
+        // sQuorum script addresses start with '3'
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,5);
-        // Helium private keys start with '7' (uncompressed) or 'V' (compressed)
+        // sQuorum private keys start with '7' (uncompressed) or 'V' (compressed)
         base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,191);
-        // Helium BIP32 pubkeys start with 'xpub' (Bitcoin defaults)
+        // sQuorum BIP32 pubkeys start with 'xpub' (Bitcoin defaults)
         base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x04)(0x88)(0xB2)(0x1E).convert_to_container<std::vector<unsigned char> >();
-        // Helium BIP32 prvkeys start with 'xprv' (Bitcoin defaults)
+        // sQuorum BIP32 prvkeys start with 'xprv' (Bitcoin defaults)
         base58Prefixes[EXT_SECRET_KEY] = boost::assign::list_of(0x04)(0x88)(0xAD)(0xE4).convert_to_container<std::vector<unsigned char> >();
-        // Helium BIP44 coin type (pending BIP44-capable wallet, use Bitcoin type)
+        // sQuorum BIP44 coin type (pending BIP44-capable wallet, use Bitcoin type)
         base58Prefixes[EXT_COIN_TYPE]  = boost::assign::list_of(0x80)(0x00)(0x00)(0xe2).convert_to_container<std::vector<unsigned char> >();
 
         convertSeed6(vFixedSeeds, pnSeed6_main, ARRAYLEN(pnSeed6_main));
@@ -270,7 +270,7 @@ public:
         nRejectBlockOutdatedMajority = 5472; // 95%
         nToCheckBlockUpgradeMajority = 5760; // 4 days
         nMinerThreads = 0;
-        nTargetSpacing = 1 * 60;  // Helium: 1 minute
+        nTargetSpacing = 1 * 60;  // sQuorum: 1 minute
         nLastPOWBlock = 400;
         nMaturity = 15;
         nMasternodeCountDrift = 2;
@@ -301,22 +301,22 @@ public:
         vFixedSeeds.clear();
         vSeeds.clear();
 
-        vSeeds.push_back(CDNSSeedData("heliumlabs", "seed.heliumlabs.org"));
+        vSeeds.push_back(CDNSSeedData("squorumlabs", "seed.heliumlabs.org"));
         vSeeds.push_back(CDNSSeedData("Spread", "node.heliumcha.in"));
         vSeeds.push_back(CDNSSeedData("Kserv", "149.28.242.177"));
         vSeeds.push_back(CDNSSeedData("Xojserv", "45.63.83.41"));
 
-        // Testnet Helium addresses start with 'm' or 'n'
+        // Testnet sQuorum addresses start with 'm' or 'n'
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,111);
-        // Testnet Helium script addresses start with '2'
+        // Testnet sQuorum script addresses start with '2'
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,196);
         // Testnet private keys start with '9' (uncompressed) or 'c' (compressed)
         base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,239);
-        // Testnet Helium BIP32 pubkeys start with 'tpub' (Bitcoin defaults)
+        // Testnet sQuorum BIP32 pubkeys start with 'tpub' (Bitcoin defaults)
         base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x04)(0x35)(0x87)(0xCF).convert_to_container<std::vector<unsigned char> >();
-        // Testnet Helium BIP32 prvkeys start with 'tprv' (Bitcoin defaults)
+        // Testnet sQuorum BIP32 prvkeys start with 'tprv' (Bitcoin defaults)
         base58Prefixes[EXT_SECRET_KEY] = boost::assign::list_of(0x04)(0x35)(0x83)(0x94).convert_to_container<std::vector<unsigned char> >();
-        // Testnet Helium BIP44 coin type is '1' (All coin's testnet default)
+        // Testnet sQuorum BIP44 coin type is '1' (All coin's testnet default)
         base58Prefixes[EXT_COIN_TYPE]  = boost::assign::list_of(0x80)(0x00)(0x00)(0x01).convert_to_container<std::vector<unsigned char> >();
 
         convertSeed6(vFixedSeeds, pnSeed6_test, ARRAYLEN(pnSeed6_test));
@@ -366,7 +366,7 @@ public:
         nRejectBlockOutdatedMajority = 950;
         nToCheckBlockUpgradeMajority = 1000;
         nMinerThreads = 1;
-        nTargetSpacing = 1 * 60;        // Helium: 1 minutes
+        nTargetSpacing = 1 * 60;        // sQuorum: 1 minutes
         bnProofOfWorkLimit = ~uint256(0) >> 1;
         nLastPOWBlock = 250;
         nMaturity = 100;

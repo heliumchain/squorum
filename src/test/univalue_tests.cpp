@@ -9,7 +9,7 @@
 #include <string>
 #include <map>
 #include <univalue.h>
-#include "test/test_helium.h"
+#include "test/test_squorum.h"
 
 #include <boost/test/unit_test.hpp>
 

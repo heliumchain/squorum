@@ -4,8 +4,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef Helium_CONCURRENTQUEUE_H
-#define Helium_CONCURRENTQUEUE_H
+#ifndef sQuorum_CONCURRENTQUEUE_H
+#define sQuorum_CONCURRENTQUEUE_H
 
 
 #include <mutex>
@@ -49,4 +49,4 @@ public:
     }
 };
 
-#endif //Helium_CONCURRENTQUEUE_H
+#endif //sQuorum_CONCURRENTQUEUE_H

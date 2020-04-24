@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef Helium_QT_PROPOSALFRAME_H
-#define Helium_QT_PROPOSALFRAME_H
+#ifndef sQuorum_QT_PROPOSALFRAME_H
+#define sQuorum_QT_PROPOSALFRAME_H
 
 #include <QFrame>
 #include <QLabel>
@@ -52,4 +52,4 @@ private Q_SLOTS:
     void proposalLink_clicked(const QString &link);
 };
 
-#endif //Helium_QT_PROPOSALFRAME_H
+#endif //sQuorum_QT_PROPOSALFRAME_H

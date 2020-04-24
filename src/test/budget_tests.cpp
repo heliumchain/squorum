@@ -6,7 +6,7 @@
 #include "masternode-budget.h"
 #include "tinyformat.h"
 #include "utilmoneystr.h"
-#include "test_helium.h"
+#include "test_squorum.h"
 
 #include <boost/test/unit_test.hpp>
 

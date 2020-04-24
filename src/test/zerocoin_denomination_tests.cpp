@@ -11,7 +11,7 @@
 #include "txdb.h"
 #include "wallet/wallet.h"
 #include "wallet/walletdb.h"
-#include "test/test_helium.h"
+#include "test/test_squorum.h"
 #include <boost/test/unit_test.hpp>
 #include <iostream>
 

@@ -1,5 +1,5 @@
 /* XPM */
-static char *helium32[] = {
+static char *squorum32[] = {
 /* columns rows colors chars-per-pixel */
 "32 32 107 2 ",
 "   c #000CFF",

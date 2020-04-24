@@ -11,7 +11,7 @@
 #include "uint256.h"
 #include "util.h"
 #include "utilstrencodings.h"
-#include "test_helium.h"
+#include "test_squorum.h"
 
 #include <string>
 #include <vector>

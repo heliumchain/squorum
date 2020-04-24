@@ -15,7 +15,7 @@
 - (NSString *)__bundleIdentifier
 {
     if (self == [NSBundle mainBundle]) {
-        return @"com.heliumpay.Helium-Qt";
+        return @"com.squorumpay.sQuorum-Qt";
     } else {
         return [self __bundleIdentifier];
     }

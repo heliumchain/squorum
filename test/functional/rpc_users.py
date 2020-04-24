@@ -22,10 +22,10 @@ class HTTPBasicsTest (BitcoinTestFramework):
         rpcauth2 = "rpcauth=rt2:f8607b1a88861fac29dfccf9b52ff9f$ff36a0c23c8c62b4846112e50fa888416e94c17bfd4c42f88fd8f55ec6a3137e"
         rpcuser = "rpcuser=rpcuser�"
         rpcpassword = "rpcpassword=rpcpassword�"
-        with open(os.path.join(self.options.tmpdir+"/node0", "helium.conf"), 'a', encoding='utf8') as f:
+        with open(os.path.join(self.options.tmpdir+"/node0", "squorum.conf"), 'a', encoding='utf8') as f:
             f.write(rpcauth+"\n")
             f.write(rpcauth2+"\n")
-        with open(os.path.join(self.options.tmpdir+"/node1", "helium.conf"), 'a', encoding='utf8') as f:
+        with open(os.path.join(self.options.tmpdir+"/node1", "squorum.conf"), 'a', encoding='utf8') as f:
             f.write(rpcuser+"\n")
             f.write(rpcpassword+"\n")
 

@@ -263,7 +263,7 @@ UniValue listunspent(const UniValue& params, bool fHelp)
             const UniValue& input = inputs[inx];
             CBitcoinAddress address(input.get_str());
             if (!address.IsValid())
-                throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, std::string("Invalid Helium address: ") + input.get_str());
+                throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, std::string("Invalid sQuorum address: ") + input.get_str());
             if (setAddress.count(address))
                 throw JSONRPCError(RPC_INVALID_PARAMETER, std::string("Invalid parameter, duplicated address: ") + input.get_str());
             setAddress.insert(address);
@@ -411,7 +411,7 @@ UniValue createrawtransaction(const UniValue& params, bool fHelp)
     for (const std::string& name_ : addrList) {
         CBitcoinAddress address(name_);
         if (!address.IsValid())
-            throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, std::string("Invalid Helium address: ")+name_);
+            throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, std::string("Invalid sQuorum address: ")+name_);
 
         if (setAddress.count(address))
             throw JSONRPCError(RPC_INVALID_PARAMETER, std::string("Invalid parameter, duplicated address: ")+name_);
@@ -916,7 +916,7 @@ UniValue createrawzerocoinstake(const UniValue& params, bool fHelp)
     if (fHelp || params.size() != 1)
         throw std::runtime_error(
             "createrawzerocoinstake mint_input \n"
-            "\nCreates raw zHLM coinstakes (without MN output).\n" +
+            "\nCreates raw zSQR coinstakes (without MN output).\n" +
             HelpRequiringPassphrase() + "\n"
 
             "\nArguments:\n"
@@ -937,7 +937,7 @@ UniValue createrawzerocoinstake(const UniValue& params, bool fHelp)
     LOCK2(cs_main, pwalletMain->cs_wallet);
 
     if(GetAdjustedTime() > GetSporkValue(SPORK_16_ZEROCOIN_MAINTENANCE_MODE))
-        throw JSONRPCError(RPC_WALLET_ERROR, "zHLM is currently disabled due to maintenance.");
+        throw JSONRPCError(RPC_WALLET_ERROR, "zSQR is currently disabled due to maintenance.");
 
     std::string serial_hash = params[0].get_str();
     if (!IsHex(serial_hash))
@@ -954,7 +954,7 @@ UniValue createrawzerocoinstake(const UniValue& params, bool fHelp)
 
     CMutableTransaction coinstake_tx;
 
-    // create the zerocoinmint output (one spent denom + three 1-zHLM denom)
+    // create the zerocoinmint output (one spent denom + three 1-zSQR denom)
     libzerocoin::CoinDenomination staked_denom = input_mint.GetDenomination();
     std::vector<CTxOut> vOutMint(5);
     // Mark coin stake transaction
@@ -962,11 +962,11 @@ UniValue createrawzerocoinstake(const UniValue& params, bool fHelp)
     scriptEmpty.clear();
     vOutMint[0] = CTxOut(0, scriptEmpty);
     CDeterministicMint dMint;
-    if (!pwalletMain->CreateZHLMOutPut(staked_denom, vOutMint[1], dMint))
+    if (!pwalletMain->CreateZSQROutPut(staked_denom, vOutMint[1], dMint))
         throw JSONRPCError(RPC_WALLET_ERROR, "failed to create new zhlm output");
 
     for (int i=2; i<5; i++) {
-        if (!pwalletMain->CreateZHLMOutPut(libzerocoin::ZQ_ONE, vOutMint[i], dMint))
+        if (!pwalletMain->CreateZSQROutPut(libzerocoin::ZQ_ONE, vOutMint[i], dMint))
             throw JSONRPCError(RPC_WALLET_ERROR, "failed to create new zhlm output");
     }
     coinstake_tx.vout = vOutMint;
@@ -998,7 +998,7 @@ UniValue createrawzerocoinpublicspend(const UniValue& params, bool fHelp)
     if (fHelp || params.size() < 1 || params.size() > 2)
         throw std::runtime_error(
             "createrawzerocoinpublicspend mint_input \n"
-            "\nCreates raw zHLM public spend.\n" +
+            "\nCreates raw zSQR public spend.\n" +
             HelpRequiringPassphrase() + "\n"
 
             "\nArguments:\n"
@@ -1029,7 +1029,7 @@ UniValue createrawzerocoinpublicspend(const UniValue& params, bool fHelp)
         address_str = params[1].get_str();
         address = CBitcoinAddress(address_str);
         if(!address.IsValid())
-            throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid Helium address");
+            throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid sQuorum address");
         addr_ptr = &address;
     }
 

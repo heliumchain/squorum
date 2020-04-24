@@ -11,7 +11,7 @@
 #include "checkpoints.h"
 
 #include "uint256.h"
-#include "test_helium.h"
+#include "test_squorum.h"
 
 #include <boost/test/unit_test.hpp>
 

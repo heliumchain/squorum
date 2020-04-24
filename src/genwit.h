@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef Helium_GENWIT_H
-#define Helium_GENWIT_H
+#ifndef sQuorum_GENWIT_H
+#define sQuorum_GENWIT_H
 
 
 #include <iostream>
@@ -59,4 +59,4 @@ private:
 };
 
 
-#endif //Helium_GENWIT_H
+#endif //sQuorum_GENWIT_H

@@ -6,7 +6,7 @@
 #define BITCOIN_ZMQ_ZMQCONFIG_H
 
 #if defined(HAVE_CONFIG_H)
-#include "config/helium-config.h"
+#include "config/squorum-config.h"
 #endif
 
 #include <stdarg.h>

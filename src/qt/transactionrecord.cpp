@@ -46,7 +46,7 @@ QList<TransactionRecord> TransactionRecord::decomposeTransaction(const CWallet* 
     bool fZSpendFromMe = false;
 
     if (wtx.HasZerocoinSpendInputs()) {
-        libzerocoin::CoinSpend zcspend = wtx.HasZerocoinPublicSpendInputs() ? ZHLMModule::parseCoinSpend(wtx.vin[0]) : TxInToZerocoinSpend(wtx.vin[0]);
+        libzerocoin::CoinSpend zcspend = wtx.HasZerocoinPublicSpendInputs() ? ZSQRModule::parseCoinSpend(wtx.vin[0]) : TxInToZerocoinSpend(wtx.vin[0]);
         fZSpendFromMe = wallet->IsMyZerocoinSpend(zcspend.getCoinSerialNumber());
     }
 
@@ -57,9 +57,9 @@ QList<TransactionRecord> TransactionRecord::decomposeTransaction(const CWallet* 
             return parts;
 
         if (wtx.HasZerocoinSpendInputs() && (fZSpendFromMe || wallet->zhlmTracker->HasMintTx(hash))) {
-            //zHLM stake reward
+            //zSQR stake reward
             sub.involvesWatchAddress = false;
-            sub.type = TransactionRecord::StakeZHLM;
+            sub.type = TransactionRecord::StakeZSQR;
             sub.address = mapValue["zerocoinmint"];
             sub.credit = 0;
             for (const CTxOut& out : wtx.vout) {
@@ -68,7 +68,7 @@ QList<TransactionRecord> TransactionRecord::decomposeTransaction(const CWallet* 
             }
             sub.debit -= wtx.vin[0].nSequence * COIN;
         } else if (isminetype mine = wallet->IsMine(wtx.vout[1])) {
-            // HLM stake reward
+            // SQR stake reward
             sub.involvesWatchAddress = mine & ISMINE_WATCH_ONLY;
             sub.type = TransactionRecord::StakeMint;
             sub.address = CBitcoinAddress(address).ToString();
@@ -310,10 +310,10 @@ QList<TransactionRecord> TransactionRecord::decomposeTransaction(const CWallet* 
     return parts;
 }
 
-bool IsZHLMType(TransactionRecord::Type type)
+bool IsZSQRType(TransactionRecord::Type type)
 {
     switch (type) {
-        case TransactionRecord::StakeZHLM:
+        case TransactionRecord::StakeZSQR:
         case TransactionRecord::ZerocoinMint:
         case TransactionRecord::ZerocoinSpend:
         case TransactionRecord::RecvFromZerocoinSpend:
@@ -362,7 +362,7 @@ void TransactionRecord::updateStatus(const CWalletTx& wtx)
         }
     }
     // For generated transactions, determine maturity
-    else if (type == TransactionRecord::Generated || type == TransactionRecord::StakeMint || type == TransactionRecord::StakeZHLM || type == TransactionRecord::MNReward) {
+    else if (type == TransactionRecord::Generated || type == TransactionRecord::StakeMint || type == TransactionRecord::StakeZSQR || type == TransactionRecord::MNReward) {
         if (nBlocksToMaturity > 0) {
             status.status = TransactionStatus::Immature;
             status.matures_in = nBlocksToMaturity;

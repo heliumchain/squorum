@@ -14,7 +14,7 @@
  * for both the daemon and GUI client, to make it harder for attackers to
  * target servers or GUI users specifically.
  */
-const std::string CLIENT_NAME("Helium Core");
+const std::string CLIENT_NAME("sQuorum Core");
 
 /**
  * Client version number

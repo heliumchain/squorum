@@ -162,12 +162,12 @@ set_source_files_properties(${QT_TRANSLATIONS_FILES} PROPERTIES OUTPUT_LOCATION 
 QT5_ADD_TRANSLATION(QM ${QT_TRANSLATIONS_FILES})
 add_custom_target(translations_target ALL DEPENDS ${QM})
 
-QT5_ADD_RESOURCES(QRC_RESOURCE helium.qrc)
-QT5_ADD_RESOURCES(QRC_LOCALE_RESOURCE helium_locale.qrc)
+QT5_ADD_RESOURCES(QRC_RESOURCE squorum.qrc)
+QT5_ADD_RESOURCES(QRC_LOCALE_RESOURCE squorum_locale.qrc)
 
-add_executable(helium-qt helium.cpp ${QM} ${QRC_RESOURCE} ${QRC_LOCALE_RESOURCE})
-add_dependencies(helium-qt translations_target libunivalue libsecp256k1 leveldb leveldb_sse42 memenv)
-target_link_libraries(helium-qt
+add_executable(squorum-qt squorum.cpp ${QM} ${QRC_RESOURCE} ${QRC_LOCALE_RESOURCE})
+add_dependencies(squorum-qt translations_target libunivalue libsecp256k1 leveldb leveldb_sse42 memenv)
+target_link_libraries(squorum-qt
         qt_stuff
         univalue
         SERVER_A UTIL_A WALLET_A CLI_A COMMON_A BITCOIN_CRYPTO_A ZEROCOIN_A
@@ -176,24 +176,24 @@ target_link_libraries(helium-qt
         pthread
         )
 if (${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
-    target_link_libraries(helium-qt "-framework Cocoa")
+    target_link_libraries(squorum-qt "-framework Cocoa")
 endif()
 if(GMP_FOUND)
-    target_link_libraries(helium-qt ${GMP_LIBRARY})
+    target_link_libraries(squorum-qt ${GMP_LIBRARY})
 endif()
 if(ZMQ_FOUND)
-    target_link_libraries(helium-qt ZMQ_A ${ZMQ_LIB})
+    target_link_libraries(squorum-qt ZMQ_A ${ZMQ_LIB})
 endif()
 if (QRCODE_FOUND)
-    target_link_libraries(helium-qt ${QRCODE_LIB})
+    target_link_libraries(squorum-qt ${QRCODE_LIB})
 endif()
 
-QT5_USE_Modules(helium-qt Gui)
-QT5_USE_Modules(helium-qt Core)
-QT5_USE_Modules(helium-qt Widgets)
-QT5_USE_Modules(helium-qt Test)
-QT5_USE_Modules(helium-qt PrintSupport)
-QT5_USE_Modules(helium-qt Network)
+QT5_USE_Modules(squorum-qt Gui)
+QT5_USE_Modules(squorum-qt Core)
+QT5_USE_Modules(squorum-qt Widgets)
+QT5_USE_Modules(squorum-qt Test)
+QT5_USE_Modules(squorum-qt PrintSupport)
+QT5_USE_Modules(squorum-qt Network)
 if (Qt5DBus_FOUND)
-    QT5_USE_Modules(helium-qt DBus)
+    QT5_USE_Modules(squorum-qt DBus)
 endif()

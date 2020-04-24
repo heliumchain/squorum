@@ -10,7 +10,7 @@
 #include "uint256.h"
 #include "version.h"
 #include "random.h"
-#include "test/test_helium.h"
+#include "test/test_squorum.h"
 
 #include <vector>
 

@@ -19,14 +19,14 @@ BEGIN
     BEGIN
         BLOCK "040904E4" // U.S. English - multilingual (hex)
         BEGIN
-            VALUE "CompanyName",        "Helium"
-            VALUE "FileDescription",    "Helium Core (OSS GUI client for Helium)"
+            VALUE "CompanyName",        "sQuorum"
+            VALUE "FileDescription",    "sQuorum Core (OSS GUI client for sQuorum)"
             VALUE "FileVersion",        VER_FILEVERSION_STR
-            VALUE "InternalName",       "helium-qt"
+            VALUE "InternalName",       "squorum-qt"
             VALUE "LegalCopyright",     COPYRIGHT_STR
             VALUE "LegalTrademarks1",   "Distributed under the MIT/X11 software license, see the accompanying file COPYING or http://www.opensource.org/licenses/mit-license.php."
-            VALUE "OriginalFilename",   "helium-qt.exe"
-            VALUE "ProductName",        "Helium Core"
+            VALUE "OriginalFilename",   "squorum-qt.exe"
+            VALUE "ProductName",        "sQuorum Core"
             VALUE "ProductVersion",     VER_PRODUCTVERSION_STR
         END
     END

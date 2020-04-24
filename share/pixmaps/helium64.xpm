@@ -1,5 +1,5 @@
 /* XPM */
-static char *helium64[] = {
+static char *squorum64[] = {
 /* columns rows colors chars-per-pixel */
 "64 64 179 2 ",
 "   c #000BFF",

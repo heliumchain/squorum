@@ -3,8 +3,8 @@
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef ZHLMCONTROLDIALOG_H
-#define ZHLMCONTROLDIALOG_H
+#ifndef ZSQRCONTROLDIALOG_H
+#define ZSQRCONTROLDIALOG_H
 
 #include <QDialog>
 #include <QTreeWidgetItem>
@@ -66,4 +66,4 @@ private Q_SLOTS:
     void ButtonAllClicked();
 };
 
-#endif // ZHLMCONTROLDIALOG_H
+#endif // ZSQRCONTROLDIALOG_H

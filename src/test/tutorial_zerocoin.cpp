@@ -25,7 +25,7 @@
 #include "libzerocoin/Coin.h"
 #include "libzerocoin/CoinSpend.h"
 #include "libzerocoin/Accumulator.h"
-#include "test_helium.h"
+#include "test_squorum.h"
 
 
 #define COINS_TO_ACCUMULATE     5

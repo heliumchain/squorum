@@ -1,10 +1,10 @@
 
-## <summary>policy for helium</summary>
+## <summary>policy for squorum</summary>
 
 
 ########################################
 ## <summary>
-##	Transition to helium.
+##	Transition to squorum.
 ## </summary>
 ## <param name="domain">
 ## <summary>
@@ -12,19 +12,19 @@
 ## </summary>
 ## </param>
 #
-interface(`helium_domtrans',`
+interface(`squorum_domtrans',`
 	gen_require(`
-		type helium_t, helium_exec_t;
+		type squorum_t, squorum_exec_t;
 	')
 
 	corecmd_search_bin($1)
-	domtrans_pattern($1, helium_exec_t, helium_t)
+	domtrans_pattern($1, squorum_exec_t, squorum_t)
 ')
 
 
 ########################################
 ## <summary>
-##	Execute helium server in the helium domain.
+##	Execute squorum server in the squorum domain.
 ## </summary>
 ## <param name="domain">
 ##	<summary>
@@ -32,18 +32,18 @@ interface(`helium_domtrans',`
 ##	</summary>
 ## </param>
 #
-interface(`helium_initrc_domtrans',`
+interface(`squorum_initrc_domtrans',`
 	gen_require(`
-		type helium_initrc_exec_t;
+		type squorum_initrc_exec_t;
 	')
 
-	init_labeled_script_domtrans($1, helium_initrc_exec_t)
+	init_labeled_script_domtrans($1, squorum_initrc_exec_t)
 ')
 
 
 ########################################
 ## <summary>
-##	Search helium lib directories.
+##	Search squorum lib directories.
 ## </summary>
 ## <param name="domain">
 ##	<summary>
@@ -51,18 +51,18 @@ interface(`helium_initrc_domtrans',`
 ##	</summary>
 ## </param>
 #
-interface(`helium_search_lib',`
+interface(`squorum_search_lib',`
 	gen_require(`
-		type helium_var_lib_t;
+		type squorum_var_lib_t;
 	')
 
-	allow $1 helium_var_lib_t:dir search_dir_perms;
+	allow $1 squorum_var_lib_t:dir search_dir_perms;
 	files_search_var_lib($1)
 ')
 
 ########################################
 ## <summary>
-##	Read helium lib files.
+##	Read squorum lib files.
 ## </summary>
 ## <param name="domain">
 ##	<summary>
@@ -70,18 +70,18 @@ interface(`helium_search_lib',`
 ##	</summary>
 ## </param>
 #
-interface(`helium_read_lib_files',`
+interface(`squorum_read_lib_files',`
 	gen_require(`
-		type helium_var_lib_t;
+		type squorum_var_lib_t;
 	')
 
 	files_search_var_lib($1)
-	read_files_pattern($1, helium_var_lib_t, helium_var_lib_t)
+	read_files_pattern($1, squorum_var_lib_t, squorum_var_lib_t)
 ')
 
 ########################################
 ## <summary>
-##	Manage helium lib files.
+##	Manage squorum lib files.
 ## </summary>
 ## <param name="domain">
 ##	<summary>
@@ -89,18 +89,18 @@ interface(`helium_read_lib_files',`
 ##	</summary>
 ## </param>
 #
-interface(`helium_manage_lib_files',`
+interface(`squorum_manage_lib_files',`
 	gen_require(`
-		type helium_var_lib_t;
+		type squorum_var_lib_t;
 	')
 
 	files_search_var_lib($1)
-	manage_files_pattern($1, helium_var_lib_t, helium_var_lib_t)
+	manage_files_pattern($1, squorum_var_lib_t, squorum_var_lib_t)
 ')
 
 ########################################
 ## <summary>
-##	Manage helium lib directories.
+##	Manage squorum lib directories.
 ## </summary>
 ## <param name="domain">
 ##	<summary>
@@ -108,20 +108,20 @@ interface(`helium_manage_lib_files',`
 ##	</summary>
 ## </param>
 #
-interface(`helium_manage_lib_dirs',`
+interface(`squorum_manage_lib_dirs',`
 	gen_require(`
-		type helium_var_lib_t;
+		type squorum_var_lib_t;
 	')
 
 	files_search_var_lib($1)
-	manage_dirs_pattern($1, helium_var_lib_t, helium_var_lib_t)
+	manage_dirs_pattern($1, squorum_var_lib_t, squorum_var_lib_t)
 ')
 
 
 ########################################
 ## <summary>
 ##	All of the rules required to administrate
-##	a helium environment
+##	a squorum environment
 ## </summary>
 ## <param name="domain">
 ##	<summary>
@@ -135,23 +135,23 @@ interface(`helium_manage_lib_dirs',`
 ## </param>
 ## <rolecap/>
 #
-interface(`helium_admin',`
+interface(`squorum_admin',`
 	gen_require(`
-		type helium_t;
-		type helium_initrc_exec_t;
-		type helium_var_lib_t;
+		type squorum_t;
+		type squorum_initrc_exec_t;
+		type squorum_var_lib_t;
 	')
 
-	allow $1 helium_t:process { ptrace signal_perms };
-	ps_process_pattern($1, helium_t)
+	allow $1 squorum_t:process { ptrace signal_perms };
+	ps_process_pattern($1, squorum_t)
 
-	helium_initrc_domtrans($1)
+	squorum_initrc_domtrans($1)
 	domain_system_change_exemption($1)
-	role_transition $2 helium_initrc_exec_t system_r;
+	role_transition $2 squorum_initrc_exec_t system_r;
 	allow $2 system_r;
 
 	files_search_var_lib($1)
-	admin_pattern($1, helium_var_lib_t)
+	admin_pattern($1, squorum_var_lib_t)
 
 ')
 

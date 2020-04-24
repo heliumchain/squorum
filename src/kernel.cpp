@@ -67,7 +67,7 @@ static bool SelectBlockFromCandidates(
         if (fSelected && pindex->GetBlockTime() > nSelectionIntervalStop)
             break;
 
-        /* NOTE: GJH Inappropriate for Helium
+        /* NOTE: GJH Inappropriate for sQuorum
         //if the lowest block height (vSortedByTimestamp[0]) is >= switch height, use new modifier calc
         if (fFirstRun){
             fModifierV2 = pindex->nHeight >= Params().ModifierUpgradeBlock();
@@ -78,7 +78,7 @@ static bool SelectBlockFromCandidates(
         if (mapSelectedBlocks.count(pindex->GetBlockHash()) > 0)
             continue;
 
-        /* NOTE: GJH Inappropriate for Helium
+        /* NOTE: GJH Inappropriate for sQuorum
         // compute the selection hash by hashing an input that is unique to that block
         uint256 hashProof;
         if(fModifierV2)
@@ -89,7 +89,7 @@ static bool SelectBlockFromCandidates(
         uint256 hashProof ;
 
         CDataStream ss(SER_GETHASH, 0);
-        /* NOTE: GJH Inappropriate for Helium
+        /* NOTE: GJH Inappropriate for sQuorum
         ss << hashProof << nStakeModifierPrev;
         */
         ss << pindex->GetBlockHash() << nStakeModifierPrev;
@@ -344,7 +344,7 @@ bool GetHashProofOfStake(const CBlockIndex* pindexPrev, CStakeInput* stake, cons
         LogPrint("staking", "%s :{ nStakeModifier=%s\n"
                             "nStakeModifierHeight=%s\n"
                             "}\n",
-            __func__, HexStr(modifier_ss), ((stake->IsZHLM()) ? "Not available" : std::to_string(stake->getStakeModifierHeight())));
+            __func__, HexStr(modifier_ss), ((stake->IsZSQR()) ? "Not available" : std::to_string(stake->getStakeModifierHeight())));
     }
     return true;
 }
@@ -399,22 +399,22 @@ bool Stake(const CBlockIndex* pindexPrev, CStakeInput* stakeInput, unsigned int 
 bool ContextualCheckZerocoinStake(int nPreviousBlockHeight, CStakeInput* stake)
 {
     if (nPreviousBlockHeight < Params().Zerocoin_Block_V2_Start())
-        return error("%s : zHLM stake block is less than allowed start height", __func__);
+        return error("%s : zSQR stake block is less than allowed start height", __func__);
 
-    if (CZHlmStake* zHLM = dynamic_cast<CZHlmStake*>(stake)) {
-        CBlockIndex* pindexFrom = zHLM->GetIndexFrom();
+    if (CZHlmStake* zSQR = dynamic_cast<CZHlmStake*>(stake)) {
+        CBlockIndex* pindexFrom = zSQR->GetIndexFrom();
         if (!pindexFrom)
-            return error("%s : failed to get index associated with zHLM stake checksum", __func__);
+            return error("%s : failed to get index associated with zSQR stake checksum", __func__);
 
         int depth = (nPreviousBlockHeight + 1) - pindexFrom->nHeight;
         if (depth < Params().Zerocoin_RequiredStakeDepth())
-            return error("%s : zHLM stake does not have required confirmation depth. Current height %d,  stakeInput height %d.", __func__, nPreviousBlockHeight, pindexFrom->nHeight);
+            return error("%s : zSQR stake does not have required confirmation depth. Current height %d,  stakeInput height %d.", __func__, nPreviousBlockHeight, pindexFrom->nHeight);
 
         //The checksum needs to be the exact checksum from 200 blocks ago
         uint256 nCheckpoint200 = chainActive[nPreviousBlockHeight - Params().Zerocoin_RequiredStakeDepth()]->nAccumulatorCheckpoint;
-        uint32_t nChecksum200 = ParseChecksum(nCheckpoint200, libzerocoin::AmountToZerocoinDenomination(zHLM->GetValue()));
-        if (nChecksum200 != zHLM->GetChecksum())
-            return error("%s : accumulator checksum is different than the block 200 blocks previous. stake=%d block200=%d", __func__, zHLM->GetChecksum(), nChecksum200);
+        uint32_t nChecksum200 = ParseChecksum(nCheckpoint200, libzerocoin::AmountToZerocoinDenomination(zSQR->GetValue()));
+        if (nChecksum200 != zSQR->GetChecksum())
+            return error("%s : accumulator checksum is different than the block 200 blocks previous. stake=%d block200=%d", __func__, zSQR->GetChecksum(), nChecksum200);
     } else {
         return error("%s : dynamic_cast of stake ptr failed", __func__);
     }
@@ -439,7 +439,7 @@ bool initStakeInput(const CBlock block, std::unique_ptr<CStakeInput>& stake, int
         stake = std::unique_ptr<CStakeInput>(new CZHlmStake(spend));
 
         if (!ContextualCheckZerocoinStake(nPreviousBlockHeight, stake.get()))
-            return error("%s : staked zHLM fails context checks", __func__);
+            return error("%s : staked zSQR fails context checks", __func__);
     } else {
         // First try finding the previous transaction in database
         uint256 hashBlock;

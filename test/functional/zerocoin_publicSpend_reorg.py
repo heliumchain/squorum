@@ -13,10 +13,10 @@ from io import BytesIO
 import time
 from test_framework.messages import CTransaction, CBlock
 from test_framework.util import bytes_to_hex_str, hex_str_to_bytes, assert_equal
-from fake_stake.base_test import Helium_FakeStakeTest
+from fake_stake.base_test import sQuorum_FakeStakeTest
 
 
-class ZerocoinPublicSpendReorg(Helium_FakeStakeTest):
+class ZerocoinPublicSpendReorg(sQuorum_FakeStakeTest):
 
     def run_test(self):
         self.description = "Covers the reorg with a zc public spend in vtx"

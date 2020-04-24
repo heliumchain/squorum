@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.10)
-project(Helium)
+project(sQuorum)
 
 set(BDB_VER "4.8.30")
 set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/contrib/cmake")
@@ -97,8 +97,8 @@ else()
     )
 endif()
 
-# run configure if helium_config.h doesn't exist
-if (EXISTS	"${CMAKE_CURRENT_SOURCE_DIR}/src/config/helium-config.h")
+# run configure if squorum_config.h doesn't exist
+if (EXISTS	"${CMAKE_CURRENT_SOURCE_DIR}/src/config/squorum-config.h")
 else()
     execute_process(
             COMMAND ${CMAKE_CURRENT_SOURCE_DIR}/configure ${BDB_CONFIGURE_FLAGS} ${BIGNUM_CONFIGURE_FLAGS}
@@ -144,7 +144,7 @@ include_directories(
 )
 
 set(libleveldb_a_headers
-        ${CMAKE_CURRENT_SOURCE_DIR}/src/config/helium-config.h
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/config/squorum-config.h
         ${CMAKE_CURRENT_SOURCE_DIR}/src/leveldb/port/atomic_pointer.h
         ${CMAKE_CURRENT_SOURCE_DIR}/src/leveldb/port/port_example.h
         ${CMAKE_CURRENT_SOURCE_DIR}/src/leveldb/port/port_posix.h
@@ -495,9 +495,9 @@ add_library(UTIL_A STATIC ${BitcoinHeaders} ${UTIL_SOURCES})
 set(CLI_SOURCES ./src/rpc/client.cpp)
 add_library(CLI_A STATIC ${BitcoinHeaders} ${CLI_SOURCES})
 
-add_executable(helium-cli ${CMAKE_CURRENT_SOURCE_DIR}/src/helium-cli.cpp)
-add_dependencies(helium-cli libunivalue)
-target_link_libraries(helium-cli
+add_executable(squorum-cli ${CMAKE_CURRENT_SOURCE_DIR}/src/squorum-cli.cpp)
+add_dependencies(squorum-cli libunivalue)
+target_link_libraries(squorum-cli
         CLI_A
         univalue
         UTIL_A
@@ -505,9 +505,9 @@ target_link_libraries(helium-cli
         ${Boost_LIBRARIES} ${OPENSSL_LIBRARIES} ${LIBEVENT_LIB}
         )
 
-add_executable(helium-tx ${CMAKE_CURRENT_SOURCE_DIR}/src/helium-tx.cpp)
-add_dependencies(helium-tx libunivalue libsecp256k1)
-target_link_libraries(helium-tx
+add_executable(squorum-tx ${CMAKE_CURRENT_SOURCE_DIR}/src/squorum-tx.cpp)
+add_dependencies(squorum-tx libunivalue libsecp256k1)
+target_link_libraries(squorum-tx
         univalue
         COMMON_A
         ZEROCOIN_A
@@ -517,12 +517,12 @@ target_link_libraries(helium-tx
         ${Boost_LIBRARIES} ${OPENSSL_LIBRARIES} ${LIBEVENT_LIB}
         )
 if(GMP_FOUND)
-    target_link_libraries(helium-tx ${GMP_LIBRARY})
+    target_link_libraries(squorum-tx ${GMP_LIBRARY})
 endif()
 
-add_executable(heliumd ${CMAKE_CURRENT_SOURCE_DIR}/src/heliumd.cpp)
-add_dependencies(heliumd libunivalue libsecp256k1 leveldb leveldb_sse42 memenv)
-target_link_libraries(heliumd
+add_executable(squorumd ${CMAKE_CURRENT_SOURCE_DIR}/src/squorumd.cpp)
+add_dependencies(squorumd libunivalue libsecp256k1 leveldb leveldb_sse42 memenv)
+target_link_libraries(squorumd
         SERVER_A
         COMMON_A
         univalue
@@ -534,10 +534,10 @@ target_link_libraries(heliumd
         ${BerkeleyDB_LIBRARIES} ${OPENSSL_LIBRARIES} ${Boost_LIBRARIES} ${LIBEVENT_LIB} miniupnpc pthread
         )
 if(GMP_FOUND)
-    target_link_libraries(heliumd ${GMP_LIBRARY})
+    target_link_libraries(squorumd ${GMP_LIBRARY})
 endif()
 if(ZMQ_FOUND)
-    target_link_libraries(heliumd ZMQ_A ${ZMQ_LIB})
+    target_link_libraries(squorumd ZMQ_A ${ZMQ_LIB})
 endif ()
 
 

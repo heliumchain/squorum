@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef Helium_ACCUMULATORCHECKPOINTS_JSON_H
-#define Helium_ACCUMULATORCHECKPOINTS_JSON_H
+#ifndef sQuorum_ACCUMULATORCHECKPOINTS_JSON_H
+#define sQuorum_ACCUMULATORCHECKPOINTS_JSON_H
 
 #include <string>
 std::string GetMainCheckpoints() {
@@ -476,4 +476,4 @@ std::string GetRegTestCheckpoints() {
     return strRegTestCheckpoints;
 }
 
-#endif //Helium_ACCUMULATORCHECKPOINTS_JSON_H
+#endif //sQuorum_ACCUMULATORCHECKPOINTS_JSON_H
