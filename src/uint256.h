@@ -6,8 +6,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef Helium_UINT256_H
-#define Helium_UINT256_H
+#ifndef sQuorum_UINT256_H
+#define sQuorum_UINT256_H
 
 #include <assert.h>
 #include <cstring>
@@ -411,4 +411,4 @@ inline uint512 uint512S(const std::string& str)
     return rv;
 }
 
-#endif // Helium_UINT256_H
+#endif // sQuorum_UINT256_H

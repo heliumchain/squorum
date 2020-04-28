@@ -8,7 +8,7 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #if defined(HAVE_CONFIG_H)
-#include "config/helium-config.h"
+#include "config/squorum-config.h"
 #endif
 
 #include "util.h"
@@ -90,7 +90,7 @@
 #include <openssl/rand.h>
 
 
-// Helium only features
+// sQuorum only features
 // Masternode
 bool fMasterNode = false;
 std::string strMasterNodePrivKey = "";
@@ -100,7 +100,7 @@ bool fLiteMode = false;
 bool fEnableSwiftTX = true;
 int nSwiftTXDepth = 5;
 // Automatic Zerocoin minting
-bool fEnableZeromint = false; // disabled autominting of HLM->zHLM
+bool fEnableZeromint = false; // disabled autominting of SQR->zSQR
 bool fEnableAutoConvert = false;
 int nZeromintPercentage = 0;
 int nPreferredDenom = 0;
@@ -221,8 +221,8 @@ bool LogAcceptCategory(const char* category)
             const std::vector<std::string>& categories = mapMultiArgs["-debug"];
             ptrCategory.reset(new std::set<std::string>(categories.begin(), categories.end()));
             // thread_specific_ptr automatically deletes the set when the thread ends.
-            // "helium" is a composite category enabling all Helium-related debug output
-            if (ptrCategory->count(std::string("helium"))) {
+            // "squorum" is a composite category enabling all sQuorum-related debug output
+            if (ptrCategory->count(std::string("squorum"))) {
                 ptrCategory->insert(std::string("obfuscation"));
                 ptrCategory->insert(std::string("swiftx"));
                 ptrCategory->insert(std::string("masternode"));
@@ -389,7 +389,7 @@ static std::string FormatException(std::exception* pex, const char* pszThread)
     char pszModule[MAX_PATH] = "";
     GetModuleFileNameA(NULL, pszModule, sizeof(pszModule));
 #else
-    const char* pszModule = "helium";
+    const char* pszModule = "squorum";
 #endif
     if (pex)
         return strprintf(
@@ -410,13 +410,13 @@ void PrintExceptionContinue(std::exception* pex, const char* pszThread)
 boost::filesystem::path GetDefaultDataDir()
 {
     namespace fs = boost::filesystem;
-// Windows < Vista: C:\Documents and Settings\Username\Application Data\Helium
-// Windows >= Vista: C:\Users\Username\AppData\Roaming\Helium
-// Mac: ~/Library/Application Support/Helium
-// Unix: ~/.helium
+// Windows < Vista: C:\Documents and Settings\Username\Application Data\sQuorum
+// Windows >= Vista: C:\Users\Username\AppData\Roaming\sQuorum
+// Mac: ~/Library/Application Support/sQuorum
+// Unix: ~/.squorum
 #ifdef WIN32
     // Windows
-    return GetSpecialFolderPath(CSIDL_APPDATA) / "Helium";
+    return GetSpecialFolderPath(CSIDL_APPDATA) / "sQuorum";
 #else
     fs::path pathRet;
     char* pszHome = getenv("HOME");
@@ -428,10 +428,10 @@ boost::filesystem::path GetDefaultDataDir()
     // Mac
     pathRet /= "Library/Application Support";
     TryCreateDirectory(pathRet);
-    return pathRet / "Helium";
+    return pathRet / "sQuorum";
 #else
     // Unix
-    return pathRet / ".helium";
+    return pathRet / ".squorum";
 #endif
 #endif
 }
@@ -478,7 +478,7 @@ void ClearDatadirCache()
 
 boost::filesystem::path GetConfigFile()
 {
-    boost::filesystem::path pathConfigFile(GetArg("-conf", "helium.conf"));
+    boost::filesystem::path pathConfigFile(GetArg("-conf", "squorum.conf"));
     if (!pathConfigFile.is_complete())
         pathConfigFile = GetDataDir(false) / pathConfigFile;
 
@@ -508,7 +508,7 @@ void ReadConfigFile(std::map<std::string, std::string>& mapSettingsRet,
     setOptions.insert("*");
 
     for (boost::program_options::detail::config_file_iterator it(streamConfig, setOptions), end; it != end; ++it) {
-        // Don't overwrite existing settings so command line settings override helium.conf
+        // Don't overwrite existing settings so command line settings override squorum.conf
         std::string strKey = std::string("-") + it->string_key;
         std::string strValue = it->value[0];
         InterpretNegativeSetting(strKey, strValue);
@@ -523,7 +523,7 @@ void ReadConfigFile(std::map<std::string, std::string>& mapSettingsRet,
 #ifndef WIN32
 boost::filesystem::path GetPidFile()
 {
-    boost::filesystem::path pathPidFile(GetArg("-pid", "heliumd.pid"));
+    boost::filesystem::path pathPidFile(GetArg("-pid", "squorumd.pid"));
     if (!pathPidFile.is_complete()) pathPidFile = GetDataDir() / pathPidFile;
     return pathPidFile;
 }

@@ -1,0 +1,8 @@
+/usr/bin/squorum-cli		--	gen_context(system_u:object_r:squorum_exec_t,s0)
+/usr/sbin/squorumd		--	gen_context(system_u:object_r:squorum_exec_t,s0)
+/usr/lib(64)?/squorum/squorumd		--	gen_context(system_u:object_r:squorum_exec_t,s0)
+
+/etc/squorum(/.*)?		gen_context(system_u:object_r:squorum_conf_t,s0)
+/var/lib/squorum(/.*)?		gen_context(system_u:object_r:squorum_var_lib_t,s0)
+
+(/var)?/run/squorumd(/.*)?   gen_context(system_u:object_r:squorum_var_run_t,s0)

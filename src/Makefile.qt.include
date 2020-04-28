@@ -2,44 +2,44 @@
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-bin_PROGRAMS += qt/helium-qt
+bin_PROGRAMS += qt/squorum-qt
 EXTRA_LIBRARIES += qt/libbitcoinqt.a
 
-# helium qt core #
+# squorum qt core #
 QT_TS = \
-  qt/locale/helium_bg.ts \
-  qt/locale/helium_ca.ts \
-  qt/locale/helium_cs.ts \
-  qt/locale/helium_da.ts \
-  qt/locale/helium_de.ts \
-  qt/locale/helium_en.ts \
-  qt/locale/helium_en_GB.ts \
-  qt/locale/helium_en_US.ts \
-  qt/locale/helium_eo.ts \
-  qt/locale/helium_es.ts \
-  qt/locale/helium_es_ES.ts \
-  qt/locale/helium_fi.ts \
-  qt/locale/helium_fr_FR.ts \
-  qt/locale/helium_hi_IN.ts \
-  qt/locale/helium_hr.ts \
-  qt/locale/helium_hr_HR.ts \
-  qt/locale/helium_it.ts \
-  qt/locale/helium_ja.ts \
-  qt/locale/helium_ko_KR.ts \
-  qt/locale/helium_lt_LT.ts \
-  qt/locale/helium_nl.ts \
-  qt/locale/helium_pl.ts \
-  qt/locale/helium_pt.ts \
-  qt/locale/helium_pt_BR.ts \
-  qt/locale/helium_ro_RO.ts \
-  qt/locale/helium_ru.ts \
-  qt/locale/helium_sk.ts \
-  qt/locale/helium_sv.ts \
-  qt/locale/helium_tr.ts \
-  qt/locale/helium_uk.ts \
-  qt/locale/helium_vi.ts \
-  qt/locale/helium_zh_CN.ts \
-  qt/locale/helium_zh_TW.ts
+  qt/locale/squorum_bg.ts \
+  qt/locale/squorum_ca.ts \
+  qt/locale/squorum_cs.ts \
+  qt/locale/squorum_da.ts \
+  qt/locale/squorum_de.ts \
+  qt/locale/squorum_en.ts \
+  qt/locale/squorum_en_GB.ts \
+  qt/locale/squorum_en_US.ts \
+  qt/locale/squorum_eo.ts \
+  qt/locale/squorum_es.ts \
+  qt/locale/squorum_es_ES.ts \
+  qt/locale/squorum_fi.ts \
+  qt/locale/squorum_fr_FR.ts \
+  qt/locale/squorum_hi_IN.ts \
+  qt/locale/squorum_hr.ts \
+  qt/locale/squorum_hr_HR.ts \
+  qt/locale/squorum_it.ts \
+  qt/locale/squorum_ja.ts \
+  qt/locale/squorum_ko_KR.ts \
+  qt/locale/squorum_lt_LT.ts \
+  qt/locale/squorum_nl.ts \
+  qt/locale/squorum_pl.ts \
+  qt/locale/squorum_pt.ts \
+  qt/locale/squorum_pt_BR.ts \
+  qt/locale/squorum_ro_RO.ts \
+  qt/locale/squorum_ru.ts \
+  qt/locale/squorum_sk.ts \
+  qt/locale/squorum_sv.ts \
+  qt/locale/squorum_tr.ts \
+  qt/locale/squorum_uk.ts \
+  qt/locale/squorum_vi.ts \
+  qt/locale/squorum_zh_CN.ts \
+  qt/locale/squorum_zh_TW.ts
 
 QT_FORMS_UI = \
   qt/forms/addressbookpage.ui \
@@ -65,7 +65,7 @@ QT_FORMS_UI = \
   qt/forms/sendcoinsentry.ui \
   qt/forms/signverifymessagedialog.ui \
   qt/forms/transactiondescdialog.ui \
-  qt/forms/zhlmcontroldialog.ui
+  qt/forms/zsqrcontroldialog.ui
 
 QT_MOC_CPP = \
   qt/moc_addressbookpage.cpp \
@@ -120,23 +120,23 @@ QT_MOC_CPP = \
   qt/moc_walletframe.cpp \
   qt/moc_walletmodel.cpp \
   qt/moc_walletview.cpp \
-  qt/moc_zhlmcontroldialog.cpp
+  qt/moc_zsqrcontroldialog.cpp
 
 BITCOIN_MM = \
   qt/macdockiconhandler.mm \
   qt/macnotificationhandler.mm
 
 QT_MOC = \
-  qt/helium.moc \
+  qt/squorum.moc \
   qt/bitcoinamountfield.moc \
   qt/intro.moc \
   qt/overviewpage.moc \
   qt/rpcconsole.moc
 
-QT_QRC_CPP = qt/qrc_helium.cpp
-QT_QRC = qt/helium.qrc
-QT_QRC_LOCALE_CPP = qt/qrc_helium_locale.cpp
-QT_QRC_LOCALE = qt/helium_locale.qrc
+QT_QRC_CPP = qt/qrc_squorum.cpp
+QT_QRC = qt/squorum.qrc
+QT_QRC_LOCALE_CPP = qt/qrc_squorum_locale.cpp
+QT_QRC_LOCALE = qt/squorum_locale.qrc
 
 PROTOBUF_CC = qt/paymentrequest.pb.cc
 PROTOBUF_H = qt/paymentrequest.pb.h
@@ -202,7 +202,7 @@ BITCOIN_QT_H = \
   qt/walletmodeltransaction.h \
   qt/walletview.h \
   qt/winshutdownmonitor.h \
-  qt/zhlmcontroldialog.h
+  qt/zsqrcontroldialog.h
 
 RES_ICONS = \
   qt/res/icons/add.png \
@@ -264,12 +264,12 @@ RES_ICONS = \
   qt/res/icons/tx_input.png \
   qt/res/icons/tx_output.png \
   qt/res/icons/tx_mined.png \
-  qt/res/icons/unit_helium.png \
-  qt/res/icons/unit_mhelium.png \
-  qt/res/icons/unit_uhelium.png \
-  qt/res/icons/unit_thelium.png \
-  qt/res/icons/unit_tmhelium.png \
-  qt/res/icons/unit_tuhelium.png \
+  qt/res/icons/unit_squorum.png \
+  qt/res/icons/unit_msquorum.png \
+  qt/res/icons/unit_usquorum.png \
+  qt/res/icons/unit_tsquorum.png \
+  qt/res/icons/unit_tmsquorum.png \
+  qt/res/icons/unit_tusquorum.png \
   qt/res/icons/yesvote.png \
   qt/res/icons/novote.png \
   qt/res/icons/abstainvote.png
@@ -336,7 +336,7 @@ BITCOIN_QT_WALLET_CPP = \
   qt/walletmodel.cpp \
   qt/walletmodeltransaction.cpp \
   qt/walletview.cpp \
-  qt/zhlmcontroldialog.cpp
+  qt/zsqrcontroldialog.cpp
 
 BITCOIN_QT_CPP = $(BITCOIN_QT_BASE_CPP)
 if TARGET_WINDOWS
@@ -351,7 +351,7 @@ RES_IMAGES = \
   qt/res/images/splash.png \
   qt/res/images/splash_testnet.png \
   qt/res/images/splash_regtest.png \
-  qt/res/images/helium_logo_horizontal.png \
+  qt/res/images/squorum_logo_horizontal.png \
   qt/res/images/downArrow_dark.png \
   qt/res/images/downArrow_small_dark.png \
   qt/res/images/downArrow_small.png \
@@ -366,7 +366,7 @@ RES_CSS = \
 
 RES_MOVIES = $(wildcard $(srcdir)/qt/res/movies/spinner-*.png)
 
-BITCOIN_RC = qt/res/helium-qt-res.rc
+BITCOIN_RC = qt/res/squorum-qt-res.rc
 
 BITCOIN_QT_INCLUDES = -I$(builddir)/qt -I$(srcdir)/qt -I$(srcdir)/qt/forms \
   -I$(builddir)/qt/forms -DQT_NO_KEYWORDS
@@ -388,71 +388,71 @@ QT_FORMS_H=$(join $(dir $(QT_FORMS_UI)),$(addprefix ui_, $(notdir $(QT_FORMS_UI:
 # Most files will depend on the forms and moc files as includes. Generate them
 # before anything else.
 $(QT_MOC): $(QT_FORMS_H)
-$(qt_libbitcoinqt_a_OBJECTS) $(qt_helium_qt_OBJECTS) : | $(QT_MOC)
+$(qt_libbitcoinqt_a_OBJECTS) $(qt_squorum_qt_OBJECTS) : | $(QT_MOC)
 
 #Generating these with a half-written protobuf header leads to wacky results.
 #This makes sure it's done.
 $(QT_MOC): $(PROTOBUF_H)
 $(QT_MOC_CPP): $(PROTOBUF_H)
 
-# helium-qt binary #
-qt_helium_qt_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(BITCOIN_QT_INCLUDES) \
+# squorum-qt binary #
+qt_squorum_qt_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(BITCOIN_QT_INCLUDES) \
   $(QT_INCLUDES) $(PROTOBUF_CFLAGS) $(QR_CFLAGS)
-qt_helium_qt_CXXFLAGS = $(AM_CXXFLAGS) $(QT_PIE_FLAGS)
+qt_squorum_qt_CXXFLAGS = $(AM_CXXFLAGS) $(QT_PIE_FLAGS)
 
-qt_helium_qt_SOURCES = qt/helium.cpp
+qt_squorum_qt_SOURCES = qt/squorum.cpp
 if TARGET_DARWIN
-  qt_helium_qt_SOURCES += $(BITCOIN_MM)
+  qt_squorum_qt_SOURCES += $(BITCOIN_MM)
 endif
 if TARGET_WINDOWS
-  qt_helium_qt_SOURCES += $(BITCOIN_RC)
+  qt_squorum_qt_SOURCES += $(BITCOIN_RC)
 endif
-qt_helium_qt_LDADD = qt/libbitcoinqt.a $(LIBBITCOIN_SERVER)
+qt_squorum_qt_LDADD = qt/libbitcoinqt.a $(LIBBITCOIN_SERVER)
 if ENABLE_WALLET
-qt_helium_qt_LDADD += $(LIBBITCOIN_UTIL) $(LIBBITCOIN_WALLET)
+qt_squorum_qt_LDADD += $(LIBBITCOIN_UTIL) $(LIBBITCOIN_WALLET)
 endif
 if ENABLE_ZMQ
-qt_helium_qt_LDADD += $(LIBBITCOIN_ZMQ) $(ZMQ_LIBS)
+qt_squorum_qt_LDADD += $(LIBBITCOIN_ZMQ) $(ZMQ_LIBS)
 endif
-qt_helium_qt_LDADD += $(LIBBITCOIN_CLI) $(LIBBITCOIN_COMMON) $(LIBBITCOIN_UTIL) $(LIBBITCOIN_CRYPTO) $(LIBUNIVALUE) $(LIBBITCOIN_ZEROCOIN) $(LIBLEVELDB) $(LIBLEVELDB_SSE42) $(LIBMEMENV) \
+qt_squorum_qt_LDADD += $(LIBBITCOIN_CLI) $(LIBBITCOIN_COMMON) $(LIBBITCOIN_UTIL) $(LIBBITCOIN_CRYPTO) $(LIBUNIVALUE) $(LIBBITCOIN_ZEROCOIN) $(LIBLEVELDB) $(LIBLEVELDB_SSE42) $(LIBMEMENV) \
   $(BOOST_LIBS) $(QT_LIBS) $(QT_DBUS_LIBS) $(QR_LIBS) $(PROTOBUF_LIBS) $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS) $(LIBSECP256K1) \
   $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS)
-qt_helium_qt_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(QT_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
-qt_helium_qt_LIBTOOLFLAGS = $(AM_LIBTOOLFLAGS) --tag CXX
+qt_squorum_qt_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(QT_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+qt_squorum_qt_LIBTOOLFLAGS = $(AM_LIBTOOLFLAGS) --tag CXX
 
 #locale/foo.ts -> locale/foo.qm
 QT_QM=$(QT_TS:.ts=.qm)
 
 SECONDARY: $(QT_QM)
 
-$(srcdir)/qt/heliumstrings.cpp: $(libbitcoin_server_a_SOURCES) $(libbitcoin_wallet_a_SOURCES) $(libbitcoin_common_a_SOURCES) $(libbitcoin_zmq_a_SOURCES) $(libbitcoin_util_a_SOURCES)
+$(srcdir)/qt/squorumstrings.cpp: $(libbitcoin_server_a_SOURCES) $(libbitcoin_wallet_a_SOURCES) $(libbitcoin_common_a_SOURCES) $(libbitcoin_zmq_a_SOURCES) $(libbitcoin_util_a_SOURCES)
 	@test -n $(XGETTEXT) || echo "xgettext is required for updating translations"
 	$(AM_V_GEN) cd $(srcdir); XGETTEXT=$(XGETTEXT) PACKAGE_NAME="$(PACKAGE_NAME)" $(PYTHON) ../share/qt/extract_strings_qt.py $^
 
-translate: $(srcdir)/qt/heliumstrings.cpp $(QT_FORMS_UI) $(QT_FORMS_UI) $(BITCOIN_QT_BASE_CPP) qt/helium.cpp $(BITCOIN_QT_WINDOWS_CPP) $(BITCOIN_QT_WALLET_CPP) $(BITCOIN_QT_H) $(BITCOIN_MM)
+translate: $(srcdir)/qt/squorumstrings.cpp $(QT_FORMS_UI) $(QT_FORMS_UI) $(BITCOIN_QT_BASE_CPP) qt/squorum.cpp $(BITCOIN_QT_WINDOWS_CPP) $(BITCOIN_QT_WALLET_CPP) $(BITCOIN_QT_H) $(BITCOIN_MM)
 	@test -n $(LUPDATE) || echo "lupdate is required for updating translations"
-	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(LUPDATE) $^ -locations relative -no-obsolete -ts $(srcdir)/qt/locale/helium_en.ts
+	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(LUPDATE) $^ -locations relative -no-obsolete -ts $(srcdir)/qt/locale/squorum_en.ts
 
 $(QT_QRC_LOCALE_CPP): $(QT_QRC_LOCALE) $(QT_QM)
 	@test -f $(RCC)
 	@cp -f $< $(@D)/temp_$(<F)
-	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(RCC) -name helium_locale $(@D)/temp_$(<F) | \
+	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(RCC) -name squorum_locale $(@D)/temp_$(<F) | \
 	  $(SED) -e '/^\*\*.*Created:/d' -e '/^\*\*.*by:/d' > $@
 	@rm $(@D)/temp_$(<F)
 
 $(QT_QRC_CPP): $(QT_QRC) $(QT_FORMS_H) $(RES_ICONS) $(RES_IMAGES) $(RES_CSS) $(RES_MOVIES) $(PROTOBUF_H)
 	@test -f $(RCC)
-	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(RCC) -name helium $< | \
+	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(RCC) -name squorum $< | \
 	  $(SED) -e '/^\*\*.*Created:/d' -e '/^\*\*.*by:/d' > $@
 
-CLEAN_QT = $(nodist_qt_libbitcoinqt_a_SOURCES) $(QT_QM) $(QT_FORMS_H) qt/*.gcda qt/*.gcno qt/temp_helium_locale.qrc
+CLEAN_QT = $(nodist_qt_libbitcoinqt_a_SOURCES) $(QT_QM) $(QT_FORMS_H) qt/*.gcda qt/*.gcno qt/temp_squorum_locale.qrc
 
 CLEANFILES += $(CLEAN_QT)
 
-helium_qt_clean: FORCE
-	rm -f $(CLEAN_QT) $(qt_libbitcoinqt_a_OBJECTS) $(qt_helium_qt_OBJECTS) qt/helium-qt$(EXEEXT) $(LIBBITCOINQT)
+squorum_qt_clean: FORCE
+	rm -f $(CLEAN_QT) $(qt_libbitcoinqt_a_OBJECTS) $(qt_squorum_qt_OBJECTS) qt/squorum-qt$(EXEEXT) $(LIBBITCOINQT)
 
-helium_qt : qt/helium-qt$(EXEEXT)
+squorum_qt : qt/squorum-qt$(EXEEXT)
 
 ui_%.h: %.ui
 	@test -f $(UIC)

@@ -7,12 +7,12 @@ reset-files.bash
 *.tar.gz
 
 *.exe
-src/helium
-src/heliumd
-src/helium-cli
-src/helium-tx
-src/test/test_helium
-src/qt/test/test_helium-qt
+src/squorum
+src/squorumd
+src/squorum-cli
+src/squorum-tx
+src/test/test_squorum
+src/qt/test/test_squorum-qt
 
 # autoreconf
 Makefile.in
@@ -38,8 +38,8 @@ confdefs.h
 conftest.cpp
 conftest.err
 libtool
-src/config/helium-config.h
-src/config/helium-config.h.in
+src/config/squorum-config.h
+src/config/squorum-config.h.in
 src/config/stamp-h1
 share/setup.nsi
 share/qt/Info.plist
@@ -65,7 +65,7 @@ src/qt/test/moc*.cpp
 *.o
 *.o-*
 *.patch
-.helium
+.squorum
 *.a
 *.pb.cc
 *.pb.h
@@ -84,13 +84,13 @@ src/qt/test/moc*.cpp
 # Compilation and Qt preprocessor part
 *.qm
 Makefile
-helium-qt
-Helium-Qt.app
+squorum-qt
+sQuorum-Qt.app
 background.tiff*
 
 # Unit-tests
 Makefile.test
-helium-qt_test
+squorum-qt_test
 src/test/buildenv.py
 
 # Resources cpp
@@ -106,7 +106,7 @@ build
 #lcov
 *.gcno
 /*.info
-test_helium.coverage/
+test_squorum.coverage/
 total.coverage/
 coverage_percent.txt
 

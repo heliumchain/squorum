@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef Helium_UINT512_H
-#define Helium_UINT512_H
+#ifndef sQuorum_UINT512_H
+#define sQuorum_UINT512_H
 
 #include "arith_uint256.h"
 #include "uint256.h"
@@ -43,4 +43,4 @@ inline uint512 uint512S(const char* str)
     return rv;
 }
 
-#endif // Helium_UINT512_H
+#endif // sQuorum_UINT512_H

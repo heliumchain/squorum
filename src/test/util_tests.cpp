@@ -12,7 +12,7 @@
 #include "sync.h"
 #include "utilstrencodings.h"
 #include "utilmoneystr.h"
-#include "test/test_helium.h"
+#include "test/test_squorum.h"
 
 #include <stdint.h>
 #include <vector>

@@ -1,0 +1,3 @@
+usr/local/bin/squorumd usr/bin
+usr/local/bin/squorum-cli usr/bin
+debian/examples/squorum.conf etc/squorum

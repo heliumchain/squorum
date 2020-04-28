@@ -12,7 +12,7 @@
 #include "script/interpreter.h"
 #include "util.h"
 #include "version.h"
-#include "test_helium.h"
+#include "test_squorum.h"
 
 #include <iostream>
 

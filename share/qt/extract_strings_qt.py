@@ -10,7 +10,7 @@ import operator
 import os
 import sys
 
-OUT_CPP="qt/heliumstrings.cpp"
+OUT_CPP="qt/squorumstrings.cpp"
 EMPTY=['""']
 
 def parse_po(text):
@@ -74,10 +74,10 @@ f.write("""
 #define UNUSED
 #endif
 """)
-f.write('static const char UNUSED *helium_strings[] = {\n')
+f.write('static const char UNUSED *squorum_strings[] = {\n')
 messages.sort(key=operator.itemgetter(0))
 for (msgid, msgstr) in messages:
     if msgid != EMPTY:
-        f.write('QT_TRANSLATE_NOOP("helium-core", %s),\n' % ('\n'.join(msgid)))
+        f.write('QT_TRANSLATE_NOOP("squorum-core", %s),\n' % ('\n'.join(msgid)))
 f.write('};\n')
 f.close()

@@ -10,7 +10,7 @@
 #define BITCOIN_MAIN_H
 
 #if defined(HAVE_CONFIG_H)
-#include "config/helium-config.h"
+#include "config/squorum-config.h"
 #endif
 
 #include "amount.h"
@@ -21,8 +21,8 @@
 #include "pow.h"
 #include "primitives/block.h"
 #include "primitives/transaction.h"
-#include "zhlm/zerocoin.h"
-#include "zhlm/zhlmmodule.h"
+#include "zsqr/zerocoin.h"
+#include "zsqr/zsqrmodule.h"
 #include "script/script.h"
 #include "script/sigcache.h"
 #include "script/standard.h"
@@ -42,7 +42,7 @@
 #include <vector>
 
 #include "libzerocoin/CoinSpend.h"
-#include "lightzhlmthread.h"
+#include "lightzsqrthread.h"
 
 #include <boost/unordered_map.hpp>
 
@@ -130,7 +130,7 @@ static const unsigned char REJECT_DUST = 0x41;
 static const unsigned char REJECT_INSUFFICIENTFEE = 0x42;
 static const unsigned char REJECT_CHECKPOINT = 0x43;
 
-/** zHLM precomputing variables
+/** zSQR precomputing variables
  * Set the number of included blocks to precompute per cycle. */
 static const int DEFAULT_PRECOMPUTE_LENGTH = 1000;
 static const int MIN_PRECOMPUTE_LENGTH = 500;
@@ -243,7 +243,7 @@ bool GetOutput(const uint256& hash, unsigned int index, CValidationState& state,
 
 // ***TODO***
 double ConvertBitsToDouble(unsigned int nBits);
-int64_t GetMasternodePayment(int nHeight, int64_t blockValue, int nMasternodeCount, bool isZHLMStake);
+int64_t GetMasternodePayment(int nHeight, int64_t blockValue, int nMasternodeCount, bool isZSQRStake);
 unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHeader* pblock, bool fProofOfStake);
 
 bool ActivateBestChain(CValidationState& state, CBlock* pblock = NULL, bool fAlreadyChecked = false);
@@ -364,12 +364,12 @@ bool ContextualCheckZerocoinSpendNoSerialCheck(const CTransaction& tx, const lib
 bool IsTransactionInChain(const uint256& txId, int& nHeightTx, CTransaction& tx);
 bool IsTransactionInChain(const uint256& txId, int& nHeightTx);
 bool IsBlockHashInChain(const uint256& hashBlock);
-/* NOTE: GJH inappropriate for Helium
+/* NOTE: GJH inappropriate for sQuorum
 bool ValidOutPoint(const COutPoint out, int nHeight);
 */
-void RecalculateZHLMSpent();
-void RecalculateZHLMMinted();
-bool RecalculateHLMSupply(int nHeightStart);
+void RecalculateZSQRSpent();
+void RecalculateZSQRMinted();
+bool RecalculateSQRSupply(int nHeightStart);
 bool ReindexAccumulators(std::list<uint256>& listMissingCheckpoints, std::string& strError);
 
 

@@ -1,0 +1,13 @@
+[Desktop Entry]
+Version=1.0
+Name=sQuorum Core
+Comment=sQuorum P2P Cryptocurrency
+Comment[fr]=sQuorum, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=sQuorum, eşten eşe kriptografik sanal para birimi
+Exec=squorum-qt %u
+Terminal=false
+Type=Application
+Icon=squorum128
+MimeType=x-scheme-handler/squorum;
+Categories=Office;Finance;
+StartupWMClass=sQuorum-qt

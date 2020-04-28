@@ -1,0 +1,11 @@
+[Protocol]
+exec=squorum-qt '%u'
+protocol=squorum
+input=none
+output=none
+helper=true
+listing=
+reading=false
+writing=false
+makedir=false
+deleting=false

@@ -1,8 +1,0 @@
-/usr/bin/helium-cli		--	gen_context(system_u:object_r:helium_exec_t,s0)
-/usr/sbin/heliumd		--	gen_context(system_u:object_r:helium_exec_t,s0)
-/usr/lib(64)?/helium/heliumd		--	gen_context(system_u:object_r:helium_exec_t,s0)
-
-/etc/helium(/.*)?		gen_context(system_u:object_r:helium_conf_t,s0)
-/var/lib/helium(/.*)?		gen_context(system_u:object_r:helium_var_lib_t,s0)
-
-(/var)?/run/heliumd(/.*)?   gen_context(system_u:object_r:helium_var_run_t,s0)

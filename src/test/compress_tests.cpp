@@ -4,7 +4,7 @@
 
 #include "compressor.h"
 #include "util.h"
-#include "test/test_helium.h"
+#include "test/test_squorum.h"
 
 #include <stdint.h>
 

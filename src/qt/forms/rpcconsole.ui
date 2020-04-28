@@ -361,7 +361,7 @@
        <item row="18" column="0">
         <widget class="QPushButton" name="openDebugLogfileButton">
          <property name="toolTip">
-          <string>Open the Helium debug log file from the current data directory. This can take a few seconds for large log files.</string>
+          <string>Open the sQuorum debug log file from the current data directory. This can take a few seconds for large log files.</string>
          </property>
          <property name="text">
           <string>&amp;Open</string>
@@ -451,7 +451,7 @@
             <string/>
            </property>
            <property name="icon">
-            <iconset resource="../helium.qrc">
+            <iconset resource="../squorum.qrc">
              <normaloff>:/icons/remove</normaloff>:/icons/remove</iconset>
            </property>
            <property name="shortcut">
@@ -1354,17 +1354,17 @@
         </widget>
        </item>
        <item row="4" column="0">
-        <widget class="QLabel" name="wallet_customzhlmbackuppath_label">
+        <widget class="QLabel" name="wallet_customzsqrbackuppath_label">
          <property name="visible">
           <bool>false</bool>
          </property>
          <property name="text">
-          <string>Custom zHLM Backup Path:</string>
+          <string>Custom zSQR Backup Path:</string>
          </property>
         </widget>
        </item>
        <item row="4" column="1" colspan="3">
-        <widget class="QLabel" name="wallet_customzhlmbackuppath">
+        <widget class="QLabel" name="wallet_customzsqrbackuppath">
          <property name="cursor">
           <cursorShape>IBeamCursor</cursorShape>
          </property>
@@ -1665,7 +1665,7 @@
   </customwidget>
  </customwidgets>
  <resources>
-  <include location="../helium.qrc"/>
+  <include location="../squorum.qrc"/>
  </resources>
  <connections/>
 </ui>

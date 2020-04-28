@@ -7,7 +7,7 @@
 #include "random.h"
 #include "scheduler.h"
 #if defined(HAVE_CONFIG_H)
-#include "config/helium-config.h"
+#include "config/squorum-config.h"
 #else
 #define HAVE_WORKING_BOOST_SLEEP_FOR
 #endif
