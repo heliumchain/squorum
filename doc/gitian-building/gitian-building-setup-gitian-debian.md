@@ -73,7 +73,7 @@ Clone the git repositories for squorum and Gitian.
 git clone https://github.com/devrandom/gitian-builder.git
 git clone https://github.com/heliumchain/helium
 git clone https://github.com/heliumchain/gitian.sigs.git
-git clone https://github.com/squorumchain/squorum-detached-sigs.git
+git clone https://github.com/heliumchain/helium-detached-sigs.git
 ```
 
 Setting up the Gitian image

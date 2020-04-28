@@ -71,7 +71,7 @@ You only need to do this once:
 ./gitian-build.py --setup bubba 0.14.10
 ```
 
-Where `bubba` is your Github name and `0.14.10` is the most recent tag (without `v`). 
+Where `bubba` is your Github name and `0.14.10` is the most recent tag (without `v`).
 
 In order to sign gitian builds on your host machine, which has your PGP key, fork the gitian.sigs repository and clone it on your host machine:
 
@@ -98,9 +98,9 @@ You need to copy these uncommited changes to your host machine, where you can si
 export NAME=bubba
 export VERSION=0.14.10.2
 export BUILD=0.14.10
-gpg --output $VERSION-linux/$NAME/squorum-linux-$BUILD-build.assert.sig --detach-sig $VERSION-linux/$NAME/squorum-linux-$BUILD-build.assert 
-gpg --output $VERSION-osx-unsigned/$NAME/squorum-osx-$BUILD-build.assert.sig --detach-sig 0$VERSION-osx-unsigned/$NAME/squorum-osx-$BUILD-build.assert 
-gpg --output $VERSION-win-unsigned/$NAME/squorum-win-$BUILD-build.assert.sig --detach-sig $VERSION-win-unsigned/$NAME/squorum-win-$BUILD-build.assert 
+gpg --output $VERSION-linux/$NAME/squorum-linux-$BUILD-build.assert.sig --detach-sig $VERSION-linux/$NAME/squorum-linux-$BUILD-build.assert
+gpg --output $VERSION-osx-unsigned/$NAME/squorum-osx-$BUILD-build.assert.sig --detach-sig 0$VERSION-osx-unsigned/$NAME/squorum-osx-$BUILD-build.assert
+gpg --output $VERSION-win-unsigned/$NAME/squorum-win-$BUILD-build.assert.sig --detach-sig $VERSION-win-unsigned/$NAME/squorum-win-$BUILD-build.assert
 ```
 
 Make a PR (both the `.assert` and `.assert.sig` files) to the
