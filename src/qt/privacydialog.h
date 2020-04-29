@@ -47,7 +47,7 @@ public:
 
     void setModel(WalletModel* model);
     void showOutOfSyncWarning(bool fShow);
-    void setZHlmControlLabels(int64_t nAmount, int nQuantity);
+    void setZSqrControlLabels(int64_t nAmount, int nQuantity);
 
 public Q_SLOTS:
     void setBalance(const CAmount& balance, const CAmount& unconfirmedBalance, const CAmount& immatureBalance,
@@ -101,7 +101,7 @@ private Q_SLOTS:
     void on_pushButtonMintReset_clicked();
     void on_pushButtonSpentReset_clicked();
     void on_pushButtonSpendzHLM_clicked();
-    void on_pushButtonZHlmControl_clicked();
+    void on_pushButtonZSqrControl_clicked();
     void on_pushButtonHideDenoms_clicked();
     void on_pushButtonShowDenoms_clicked();
     void on_pasteButton_clicked();

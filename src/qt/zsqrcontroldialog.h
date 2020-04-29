@@ -15,26 +15,26 @@ class CZerocoinMint;
 class WalletModel;
 
 namespace Ui {
-class ZHlmControlDialog;
+class ZSqrControlDialog;
 }
 
-class CZHlmControlWidgetItem : public QTreeWidgetItem
+class CZSqrControlWidgetItem : public QTreeWidgetItem
 {
 public:
-    explicit CZHlmControlWidgetItem(QTreeWidget *parent, int type = Type) : QTreeWidgetItem(parent, type) {}
-    explicit CZHlmControlWidgetItem(int type = Type) : QTreeWidgetItem(type) {}
-    explicit CZHlmControlWidgetItem(QTreeWidgetItem *parent, int type = Type) : QTreeWidgetItem(parent, type) {}
+    explicit CZSqrControlWidgetItem(QTreeWidget *parent, int type = Type) : QTreeWidgetItem(parent, type) {}
+    explicit CZSqrControlWidgetItem(int type = Type) : QTreeWidgetItem(type) {}
+    explicit CZSqrControlWidgetItem(QTreeWidgetItem *parent, int type = Type) : QTreeWidgetItem(parent, type) {}
 
     bool operator<(const QTreeWidgetItem &other) const;
 };
 
-class ZHlmControlDialog : public QDialog
+class ZSqrControlDialog : public QDialog
 {
     Q_OBJECT
 
 public:
-    explicit ZHlmControlDialog(QWidget *parent);
-    ~ZHlmControlDialog();
+    explicit ZSqrControlDialog(QWidget *parent);
+    ~ZSqrControlDialog();
 
     void setModel(WalletModel* model);
 
@@ -43,7 +43,7 @@ public:
     static std::vector<CMintMeta> GetSelectedMints();
 
 private:
-    Ui::ZHlmControlDialog *ui;
+    Ui::ZSqrControlDialog *ui;
     WalletModel* model;
     PrivacyDialog* privacyDialog;
 
@@ -59,7 +59,7 @@ private:
         COLUMN_CONFIRMATIONS,
         COLUMN_ISSPENDABLE
     };
-    friend class CZHlmControlWidgetItem;
+    friend class CZSqrControlWidgetItem;
 
 private Q_SLOTS:
     void updateSelection(QTreeWidgetItem* item, int column);

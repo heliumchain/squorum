@@ -1814,7 +1814,7 @@ bool CWallet::SelectStakeCoins(std::list<std::unique_ptr<CStakeInput> >& listInp
             //add to our stake set
             nAmountSelected += out.tx->vout[out.i].nValue;
 
-            std::unique_ptr<CHlmStake> input(new CHlmStake());
+            std::unique_ptr<CSqrStake> input(new CSqrStake());
             input->SetInput((CTransaction) *out.tx, out.i);
             listInputs.emplace_back(std::move(input));
         }
@@ -1845,7 +1845,7 @@ bool CWallet::SelectStakeCoins(std::list<std::unique_ptr<CStakeInput> >& listInp
             if (meta.nVersion < CZerocoinMint::STAKABLE_VERSION)
                 continue;
             if (meta.nHeight < chainActive.Height() - Params().Zerocoin_RequiredStakeDepth()) {
-                std::unique_ptr<CZHlmStake> input(new CZHlmStake(meta.denom, meta.hashStake));
+                std::unique_ptr<CZSqrStake> input(new CZSqrStake(meta.denom, meta.hashStake));
                 std::listInputs.emplace_back(std::move(input));
             }
         }
@@ -2446,7 +2446,7 @@ bool CWallet::CreateCoinStake(
 
             //Mark mints as spent
             if (stakeInput->IsZHLM()) {
-                CZHlmStake* z = (CZHlmStake*)stakeInput.get();
+                CZSqrStake* z = (CZSqrStake*)stakeInput.get();
                 if (!z->MarkSpent(this, txNew.GetHash()))
                     return error("%s: failed to mark mint as used\n", __func__);
             }
@@ -3831,7 +3831,7 @@ bool CWallet::CreateZerocoinMintTransaction(const CAmount nValue, CMutableTransa
     }
 
     //any change that is less than 0.0100000 will be ignored and given as an extra fee
-    //also assume that a zerocoinspend that is minting the change will not have any change that goes to Hlm
+    //also assume that a zerocoinspend that is minting the change will not have any change that goes to Sqr
     CAmount nChange = nValueIn - nTotalValue; // Fee already accounted for in nTotalValue
     if (nChange > 1 * CENT && !isZCSpendChange) {
         // Fill a vout to ourself using the largest contributing address
@@ -4485,7 +4485,7 @@ std::string CWallet::GetUniqueWalletBackupName(bool fzsqrAuto) const
     return strprintf("wallet%s.dat%s", fzsqrAuto ? "-autozsqrbackup" : "", DateTimeStrFormat(".%Y-%m-%d-%H-%M", GetTime()));
 }
 
-void CWallet::ZHlmBackupWallet()
+void CWallet::ZSqrBackupWallet()
 {
     boost::filesystem::path backupDir = GetDataDir() / "backups";
     boost::filesystem::path backupPath;
@@ -4606,7 +4606,7 @@ std::string CWallet::MintZerocoin(CAmount nValue, CWalletTx& wtxNew, std::vector
 
     //Create a backup of the wallet
     if (fBackupMints)
-        ZHlmBackupWallet();
+        ZSqrBackupWallet();
 
     return "";
 }
@@ -4628,7 +4628,7 @@ bool CWallet::SpendZerocoin(CAmount nAmount, CWalletTx& wtxNew, CZerocoinSpendRe
     }
 
     if (fMintChange && fBackupMints)
-        ZHlmBackupWallet();
+        ZSqrBackupWallet();
 
     CWalletDB walletdb(pwalletMain->strWalletFile);
     if (!CommitTransaction(wtxNew, reserveKey)) {

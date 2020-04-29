@@ -2057,7 +2057,7 @@ https://www.transifex.com/squorum-project/squorum-wallet</translation>
     </message>
     <message>
         <source>zHLM Control</source>
-        <translation>zHlm Kontrolė</translation>
+        <translation>zSqr Kontrolė</translation>
     </message>
     <message>
         <source>zHLM Selected:</source>
@@ -3222,7 +3222,7 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos to pačio nominalo
     </message>
     </context>
 <context>
-    <name>ZHlmControlDialog</name>
+    <name>ZSqrControlDialog</name>
     <message>
         <source>0</source>
         <translation>0</translation>

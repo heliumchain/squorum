@@ -10,7 +10,7 @@
 #include "stakeinput.h"
 #include "wallet/wallet.h"
 
-CZHlmStake::CZHlmStake(const libzerocoin::CoinSpend& spend)
+CZSqrStake::CZSqrStake(const libzerocoin::CoinSpend& spend)
 {
     this->nChecksum = spend.getAccumulatorChecksum();
     this->denom = spend.getDenomination();
@@ -19,7 +19,7 @@ CZHlmStake::CZHlmStake(const libzerocoin::CoinSpend& spend)
     fMint = false;
 }
 
-int CZHlmStake::GetChecksumHeightFromMint()
+int CZSqrStake::GetChecksumHeightFromMint()
 {
     int nHeightChecksum = chainActive.Height() - Params().Zerocoin_RequiredStakeDepth();
 
@@ -30,12 +30,12 @@ int CZHlmStake::GetChecksumHeightFromMint()
     return GetChecksumHeight(nChecksum, denom);
 }
 
-int CZHlmStake::GetChecksumHeightFromSpend()
+int CZSqrStake::GetChecksumHeightFromSpend()
 {
     return GetChecksumHeight(nChecksum, denom);
 }
 
-uint32_t CZHlmStake::GetChecksum()
+uint32_t CZSqrStake::GetChecksum()
 {
     return nChecksum;
 }
@@ -43,7 +43,7 @@ uint32_t CZHlmStake::GetChecksum()
 // The zHLM block index is the first appearance of the accumulator checksum that was used in the spend
 // note that this also means when staking that this checksum should be from a block that is beyond 60 minutes old and
 // 100 blocks deep.
-CBlockIndex* CZHlmStake::GetIndexFrom()
+CBlockIndex* CZSqrStake::GetIndexFrom()
 {
     if (pindexFrom)
         return pindexFrom;
@@ -65,14 +65,14 @@ CBlockIndex* CZHlmStake::GetIndexFrom()
     return pindexFrom;
 }
 
-CAmount CZHlmStake::GetValue()
+CAmount CZSqrStake::GetValue()
 {
     return denom * COIN;
 }
 
 //Use the first accumulator checkpoint that occurs 60 minutes after the block being staked from
 // In case of regtest, next accumulator of 60 blocks after the block being staked from
-bool CZHlmStake::GetModifier(uint64_t& nStakeModifier)
+bool CZSqrStake::GetModifier(uint64_t& nStakeModifier)
 {
     CBlockIndex* pindex = GetIndexFrom();
     if (!pindex)
@@ -98,7 +98,7 @@ bool CZHlmStake::GetModifier(uint64_t& nStakeModifier)
     }
 }
 
-CDataStream CZHlmStake::GetUniqueness()
+CDataStream CZSqrStake::GetUniqueness()
 {
     //The unique identifier for a zHLM is a hash of the serial
     CDataStream ss(SER_GETHASH, 0);
@@ -106,7 +106,7 @@ CDataStream CZHlmStake::GetUniqueness()
     return ss;
 }
 
-bool CZHlmStake::CreateTxIn(CWallet* pwallet, CTxIn& txIn, uint256 hashTxOut)
+bool CZSqrStake::CreateTxIn(CWallet* pwallet, CTxIn& txIn, uint256 hashTxOut)
 {
     CBlockIndex* pindexCheckpoint = GetIndexFrom();
     if (!pindexCheckpoint)
@@ -126,7 +126,7 @@ bool CZHlmStake::CreateTxIn(CWallet* pwallet, CTxIn& txIn, uint256 hashTxOut)
     return true;
 }
 
-bool CZHlmStake::CreateTxOuts(CWallet* pwallet, std::vector<CTxOut>& vout, CAmount nTotal)
+bool CZSqrStake::CreateTxOuts(CWallet* pwallet, std::vector<CTxOut>& vout, CAmount nTotal)
 {
     //Create an output returning the zHLM that was staked
     CTxOut outReward;
@@ -154,12 +154,12 @@ bool CZHlmStake::CreateTxOuts(CWallet* pwallet, std::vector<CTxOut>& vout, CAmou
     return true;
 }
 
-bool CZHlmStake::GetTxFrom(CTransaction& tx)
+bool CZSqrStake::GetTxFrom(CTransaction& tx)
 {
     return false;
 }
 
-bool CZHlmStake::MarkSpent(CWallet *pwallet, const uint256& txid)
+bool CZSqrStake::MarkSpent(CWallet *pwallet, const uint256& txid)
 {
     CzHLMTracker* zsqrTracker = pwallet->zsqrTracker.get();
     CMintMeta meta;
@@ -171,31 +171,31 @@ bool CZHlmStake::MarkSpent(CWallet *pwallet, const uint256& txid)
 }
 
 //!HLM Stake
-bool CHlmStake::SetInput(CTransaction txPrev, unsigned int n)
+bool CSqrStake::SetInput(CTransaction txPrev, unsigned int n)
 {
     this->txFrom = txPrev;
     this->nPosition = n;
     return true;
 }
 
-bool CHlmStake::GetTxFrom(CTransaction& tx)
+bool CSqrStake::GetTxFrom(CTransaction& tx)
 {
     tx = txFrom;
     return true;
 }
 
-bool CHlmStake::CreateTxIn(CWallet* pwallet, CTxIn& txIn, uint256 hashTxOut)
+bool CSqrStake::CreateTxIn(CWallet* pwallet, CTxIn& txIn, uint256 hashTxOut)
 {
     txIn = CTxIn(txFrom.GetHash(), nPosition);
     return true;
 }
 
-CAmount CHlmStake::GetValue()
+CAmount CSqrStake::GetValue()
 {
     return txFrom.vout[nPosition].nValue;
 }
 
-bool CHlmStake::CreateTxOuts(CWallet* pwallet, std::vector<CTxOut>& vout, CAmount nTotal)
+bool CSqrStake::CreateTxOuts(CWallet* pwallet, std::vector<CTxOut>& vout, CAmount nTotal)
 {
     std::vector<valtype> vSolutions;
     txnouttype whichType;
@@ -230,7 +230,7 @@ bool CHlmStake::CreateTxOuts(CWallet* pwallet, std::vector<CTxOut>& vout, CAmoun
     return true;
 }
 
-bool CHlmStake::GetModifier(uint64_t& nStakeModifier)
+bool CSqrStake::GetModifier(uint64_t& nStakeModifier)
 {
     if (this->nStakeModifier == 0) {
         // look for the modifier
@@ -245,7 +245,7 @@ bool CHlmStake::GetModifier(uint64_t& nStakeModifier)
     return true;
 }
 
-CDataStream CHlmStake::GetUniqueness()
+CDataStream CSqrStake::GetUniqueness()
 {
     //The unique identifier for a HLM stake is the outpoint
     CDataStream ss(SER_NETWORK, 0);
@@ -254,7 +254,7 @@ CDataStream CHlmStake::GetUniqueness()
 }
 
 //The block that the UTXO was added to the chain
-CBlockIndex* CHlmStake::GetIndexFrom()
+CBlockIndex* CSqrStake::GetIndexFrom()
 {
     if (pindexFrom)
         return pindexFrom;

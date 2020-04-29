@@ -4513,7 +4513,7 @@ Please be patient...</source>
     </message>
 </context>
 <context>
-    <name>ZHlmControlDialog</name>
+    <name>ZSqrControlDialog</name>
     <message>
         <source>Select zHLM to Spend</source>
         <translation>Изберете zHLM за Изпращане</translation>

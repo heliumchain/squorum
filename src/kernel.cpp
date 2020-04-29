@@ -401,7 +401,7 @@ bool ContextualCheckZerocoinStake(int nPreviousBlockHeight, CStakeInput* stake)
     if (nPreviousBlockHeight < Params().Zerocoin_Block_V2_Start())
         return error("%s : zHLM stake block is less than allowed start height", __func__);
 
-    if (CZHlmStake* zHLM = dynamic_cast<CZHlmStake*>(stake)) {
+    if (CZSqrStake* zHLM = dynamic_cast<CZSqrStake*>(stake)) {
         CBlockIndex* pindexFrom = zHLM->GetIndexFrom();
         if (!pindexFrom)
             return error("%s : failed to get index associated with zHLM stake checksum", __func__);
@@ -436,7 +436,7 @@ bool initStakeInput(const CBlock block, std::unique_ptr<CStakeInput>& stake, int
         if (spend.getSpendType() != libzerocoin::SpendType::STAKE)
             return error("%s : spend is using the wrong SpendType (%d)", __func__, (int)spend.getSpendType());
 
-        stake = std::unique_ptr<CStakeInput>(new CZHlmStake(spend));
+        stake = std::unique_ptr<CStakeInput>(new CZSqrStake(spend));
 
         if (!ContextualCheckZerocoinStake(nPreviousBlockHeight, stake.get()))
             return error("%s : staked zHLM fails context checks", __func__);
@@ -452,7 +452,7 @@ bool initStakeInput(const CBlock block, std::unique_ptr<CStakeInput>& stake, int
         if (!VerifyScript(txin.scriptSig, txPrev.vout[txin.prevout.n].scriptPubKey, STANDARD_SCRIPT_VERIFY_FLAGS, TransactionSignatureChecker(&tx, 0)))
             return error("%s : VerifySignature failed on coinstake %s", __func__, tx.GetHash().ToString().c_str());
 
-        CHlmStake* sqrInput = new CHlmStake();
+        CSqrStake* sqrInput = new CSqrStake();
         sqrInput->SetInput(txPrev, txin.prevout.n);
         stake = std::unique_ptr<CStakeInput>(sqrInput);
     }

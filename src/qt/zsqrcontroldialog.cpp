@@ -11,20 +11,20 @@
 #include "walletmodel.h"
 
 
-std::set<std::string> ZHlmControlDialog::setSelectedMints;
-std::set<CMintMeta> ZHlmControlDialog::setMints;
+std::set<std::string> ZSqrControlDialog::setSelectedMints;
+std::set<CMintMeta> ZSqrControlDialog::setMints;
 
-bool CZHlmControlWidgetItem::operator<(const QTreeWidgetItem &other) const {
+bool CZSqrControlWidgetItem::operator<(const QTreeWidgetItem &other) const {
     int column = treeWidget()->sortColumn();
-    if (column == ZHlmControlDialog::COLUMN_DENOMINATION || column == ZHlmControlDialog::COLUMN_VERSION || column == ZHlmControlDialog::COLUMN_CONFIRMATIONS)
+    if (column == ZSqrControlDialog::COLUMN_DENOMINATION || column == ZSqrControlDialog::COLUMN_VERSION || column == ZSqrControlDialog::COLUMN_CONFIRMATIONS)
         return data(column, Qt::UserRole).toLongLong() < other.data(column, Qt::UserRole).toLongLong();
     return QTreeWidgetItem::operator<(other);
 }
 
 
-ZHlmControlDialog::ZHlmControlDialog(QWidget *parent) :
+ZSqrControlDialog::ZSqrControlDialog(QWidget *parent) :
     QDialog(parent, Qt::WindowSystemMenuHint | Qt::WindowTitleHint | Qt::WindowCloseButtonHint),
-    ui(new Ui::ZHlmControlDialog),
+    ui(new Ui::ZSqrControlDialog),
     model(0)
 {
     ui->setupUi(this);
@@ -38,12 +38,12 @@ ZHlmControlDialog::ZHlmControlDialog(QWidget *parent) :
     connect(ui->pushButtonAll, SIGNAL(clicked()), this, SLOT(ButtonAllClicked()));
 }
 
-ZHlmControlDialog::~ZHlmControlDialog()
+ZSqrControlDialog::~ZSqrControlDialog()
 {
     delete ui;
 }
 
-void ZHlmControlDialog::setModel(WalletModel *model)
+void ZSqrControlDialog::setModel(WalletModel *model)
 {
     this->model = model;
     updateList();
@@ -51,7 +51,7 @@ void ZHlmControlDialog::setModel(WalletModel *model)
 
 
 //Update the tree widget
-void ZHlmControlDialog::updateList()
+void ZSqrControlDialog::updateList()
 {
     // need to prevent the slot from being called each time something is changed
     ui->treeWidget->blockSignals(true);
@@ -61,7 +61,7 @@ void ZHlmControlDialog::updateList()
     QFlags<Qt::ItemFlag> flgTristate = Qt::ItemIsEnabled | Qt::ItemIsUserCheckable | Qt::ItemIsTristate;
     std::map<libzerocoin::CoinDenomination, int> mapDenomPosition;
     for (auto denom : libzerocoin::zerocoinDenomList) {
-        CZHlmControlWidgetItem* itemDenom(new CZHlmControlWidgetItem);
+        CZSqrControlWidgetItem* itemDenom(new CZSqrControlWidgetItem);
         ui->treeWidget->addTopLevelItem(itemDenom);
 
         //keep track of where this is positioned in tree widget
@@ -83,7 +83,7 @@ void ZHlmControlDialog::updateList()
     for (const CMintMeta& mint : setMints) {
         // assign this mint to the correct denomination in the tree view
         libzerocoin::CoinDenomination denom = mint.denom;
-        CZHlmControlWidgetItem *itemMint = new CZHlmControlWidgetItem(ui->treeWidget->topLevelItem(mapDenomPosition.at(denom)));
+        CZSqrControlWidgetItem *itemMint = new CZSqrControlWidgetItem(ui->treeWidget->topLevelItem(mapDenomPosition.at(denom)));
 
         // if the mint is already selected, then it needs to have the checkbox checked
         std::string strPubCoinHash = mint.hashPubcoin.GetHex();
@@ -158,7 +158,7 @@ void ZHlmControlDialog::updateList()
 }
 
 // Update the list when a checkbox is clicked
-void ZHlmControlDialog::updateSelection(QTreeWidgetItem* item, int column)
+void ZSqrControlDialog::updateSelection(QTreeWidgetItem* item, int column)
 {
     // only want updates from non top level items that are available to spend
     if (item->parent() && column == COLUMN_CHECKBOX && !item->isDisabled()){
@@ -180,7 +180,7 @@ void ZHlmControlDialog::updateSelection(QTreeWidgetItem* item, int column)
 }
 
 // Update the Quantity and Amount display
-void ZHlmControlDialog::updateLabels()
+void ZSqrControlDialog::updateLabels()
 {
     int64_t nAmount = 0;
     for (const CMintMeta& mint : setMints) {
@@ -189,14 +189,14 @@ void ZHlmControlDialog::updateLabels()
     }
 
     //update this dialog's labels
-    ui->labelZHlm_int->setText(QString::number(nAmount));
+    ui->labelZSqr_int->setText(QString::number(nAmount));
     ui->labelQuantity_int->setText(QString::number(setSelectedMints.size()));
 
     //update PrivacyDialog labels
-    privacyDialog->setZHlmControlLabels(nAmount, setSelectedMints.size());
+    privacyDialog->setZSqrControlLabels(nAmount, setSelectedMints.size());
 }
 
-std::vector<CMintMeta> ZHlmControlDialog::GetSelectedMints()
+std::vector<CMintMeta> ZSqrControlDialog::GetSelectedMints()
 {
     std::vector<CMintMeta> listReturn;
     for (const CMintMeta& mint : setMints) {
@@ -208,7 +208,7 @@ std::vector<CMintMeta> ZHlmControlDialog::GetSelectedMints()
 }
 
 // select or deselect all of the mints
-void ZHlmControlDialog::ButtonAllClicked()
+void ZSqrControlDialog::ButtonAllClicked()
 {
     ui->treeWidget->blockSignals(true);
     Qt::CheckState state = Qt::Checked;

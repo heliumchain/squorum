@@ -4571,7 +4571,7 @@ Por favor espere...</translation>
     </message>
 </context>
 <context>
-    <name>ZHlmControlDialog</name>
+    <name>ZSqrControlDialog</name>
     <message>
         <source>Select zHLM to Spend</source>
         <translation>Selecciona zHLM para Gastar</translation>

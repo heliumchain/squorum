@@ -2361,7 +2361,7 @@ Om AutoMint in te schakelend verander je 'enablezeromint=0' naar 'enablezeromint
 zHLM are mature when they have more than 20 confirmations AND more than 2 mints of the same denomination after them were minted</source>
         <translation>Beschikbare (volwwassen en uitgeefbaar) zHLM voor besteding
 
-zHlm zijn volwassen wanneer zij meer dan 20 bevestigingen hebben EN meer dan 2 muntages van dezelfde denominaties nadat zij gemunt zijn.</translation>
+zSqr zijn volwassen wanneer zij meer dan 20 bevestigingen hebben EN meer dan 2 muntages van dezelfde denominaties nadat zij gemunt zijn.</translation>
     </message>
     <message>
         <source>0 zHLM</source>
@@ -4715,7 +4715,7 @@ Wees alsjeblieft geduldig...</translation>
     </message>
 </context>
 <context>
-    <name>ZHlmControlDialog</name>
+    <name>ZSqrControlDialog</name>
     <message>
         <source>Select zHLM to Spend</source>
         <translation>Selecteer zHLM om te besteden</translation>

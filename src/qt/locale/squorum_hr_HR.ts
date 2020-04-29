@@ -4527,7 +4527,7 @@ Please be patient...</source>
     </message>
 </context>
 <context>
-    <name>ZHlmControlDialog</name>
+    <name>ZSqrControlDialog</name>
     <message>
         <source>Select zHLM to Spend</source>
         <translation>Odabrani zHLM za utrošiti</translation>

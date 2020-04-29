@@ -324,7 +324,7 @@
     <name>WalletView</name>
     </context>
 <context>
-    <name>ZHlmControlDialog</name>
+    <name>ZSqrControlDialog</name>
     </context>
 <context>
     <name>squorum-core</name>

@@ -4786,7 +4786,7 @@ Proszę być cierpliwym...</translation>
     </message>
 </context>
 <context>
-    <name>ZHlmControlDialog</name>
+    <name>ZSqrControlDialog</name>
     <message>
         <source>Select zHLM to Spend</source>
         <translation>Wybierz zHLM do wydania</translation>

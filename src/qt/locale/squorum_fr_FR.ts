@@ -4790,7 +4790,7 @@ S'il vous plaît soyez patient ...</translation>
     </message>
 </context>
 <context>
-    <name>ZHlmControlDialog</name>
+    <name>ZSqrControlDialog</name>
     <message>
         <source>Select zHLM to Spend</source>
         <translation>Choisir les zHLM à dépenser</translation>

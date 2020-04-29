@@ -2429,7 +2429,7 @@
     </message>
 </context>
 <context>
-    <name>ZHlmControlDialog</name>
+    <name>ZSqrControlDialog</name>
     <message>
         <source>0</source>
         <translation>0</translation>

@@ -4527,7 +4527,7 @@ Please be patient...</source>
     </message>
 </context>
 <context>
-    <name>ZHlmControlDialog</name>
+    <name>ZSqrControlDialog</name>
     <message>
         <source>Select zHLM to Spend</source>
         <translation>사용할 zHLM 선택</translation>

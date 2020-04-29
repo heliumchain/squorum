@@ -4820,7 +4820,7 @@ Var tålmodig...</translation>
     </message>
 </context>
 <context>
-    <name>ZHlmControlDialog</name>
+    <name>ZSqrControlDialog</name>
     <message>
         <source>Select zHLM to Spend</source>
         <translation>Välj zHLM att Spendera</translation>

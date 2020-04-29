@@ -4239,11 +4239,11 @@ Vær tålmodig...</translation>
     </message>
     <message>
         <source>Spent zHLM</source>
-        <translation>Brugt zHlm</translation>
+        <translation>Brugt zSqr</translation>
     </message>
     <message>
         <source>Received HLM from zHLM</source>
-        <translation>Modtaget Hlm fra zHlm</translation>
+        <translation>Modtaget Sqr fra zSqr</translation>
     </message>
     <message>
         <source>Minted Change as zHLM from zHLM Spend</source>
@@ -4470,7 +4470,7 @@ Vær tålmodig...</translation>
     </message>
     <message>
         <source>Received HLM from zHLM</source>
-        <translation>Modtaget Hlm fra zHlm</translation>
+        <translation>Modtaget Sqr fra zSqr</translation>
     </message>
     <message>
         <source>Zerocoin Spend, Change in zHLM</source>
@@ -4542,7 +4542,7 @@ Vær tålmodig...</translation>
     </message>
 </context>
 <context>
-    <name>ZHlmControlDialog</name>
+    <name>ZSqrControlDialog</name>
     <message>
         <source>Select zHLM to Spend</source>
         <translation>Vælg zHLM for at bruge</translation>
@@ -4621,7 +4621,7 @@ Vær tålmodig...</translation>
     </message>
     <message>
         <source>Enable automatic wallet backups triggered after each zHLM minting (0-1, default: %u)</source>
-        <translation>Aktivér automatiske wallet-sikkerhedskopier udløst efter hver zHlm-mintning (0-1, standard: %u)</translation>
+        <translation>Aktivér automatiske wallet-sikkerhedskopier udløst efter hver zSqr-mintning (0-1, standard: %u)</translation>
     </message>
     <message>
         <source>Enable or disable staking functionality for HLM inputs (0-1, default: %u)</source>

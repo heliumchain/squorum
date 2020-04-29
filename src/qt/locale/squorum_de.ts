@@ -4520,7 +4520,7 @@ Bitte haben Sie etwas Geduld...</translation>
     </message>
 </context>
 <context>
-    <name>ZHlmControlDialog</name>
+    <name>ZSqrControlDialog</name>
     <message>
         <source>Select zHLM to Spend</source>
         <translation>Wählen Sie die zHLM aus, die Sie ausgeben möchten</translation>

@@ -6236,7 +6236,7 @@ Please be patient...</source>
     </message>
 </context>
 <context>
-    <name>ZHlmControlDialog</name>
+    <name>ZSqrControlDialog</name>
     <message>
         <location filename="../forms/zsqrcontroldialog.ui" line="+20"/>
         <source>Select zHLM to Spend</source>

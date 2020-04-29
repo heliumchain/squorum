@@ -2250,7 +2250,7 @@ To enable AutoMint change 'enablezeromint=0' to 'enablezeromint=1' in squorum.co
     </message>
     <message>
         <source>zHLM Selected:</source>
-        <translation>zHlm Seçildi:</translation>
+        <translation>zSqr Seçildi:</translation>
     </message>
     <message>
         <source>Quantity Selected:</source>
@@ -4279,7 +4279,7 @@ Lütfen sabırlı olun...</translation>
     </message>
 </context>
 <context>
-    <name>ZHlmControlDialog</name>
+    <name>ZSqrControlDialog</name>
     <message>
         <source>Quantity</source>
         <translation>Adet</translation>

@@ -4703,7 +4703,7 @@ Please be patient...</source>
     </message>
 </context>
 <context>
-    <name>ZHlmControlDialog</name>
+    <name>ZSqrControlDialog</name>
     <message>
         <source>Select zHLM to Spend</source>
         <translation>Выбор zHLM для трат</translation>
@@ -5925,7 +5925,7 @@ Please be patient...</source>
     </message>
     <message>
         <source>Value is below the smallest available denomination (= 1) of zHLM</source>
-        <translation>Значение ниже наименьшего доступного номинала (= 1) zHlm</translation>
+        <translation>Значение ниже наименьшего доступного номинала (= 1) zSqr</translation>
     </message>
     <message>
         <source>Verifying blocks...</source>

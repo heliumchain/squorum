@@ -58,7 +58,7 @@ Other implementations of the zerocoin protocol only allow for spending of one de
 The sQuorum zerocoin implementation is structured in such a way that denominations aren't needed to be known by the average user.
 
 ### Fees
-zHLM transactions require more computation and disk space than typical sQuorum transactions, and as such require a higher transaction fee in order to prevent network spam. Fees are only charged when minting zHlm, each minted denomination is charged a flat rate of 0.01 Hlm. zHlm spends are not charged a transaction fee unless the change is minted into zHlm, see the *Minting Change* section for details on fees for zHlm spends with minted change.
+zHLM transactions require more computation and disk space than typical sQuorum transactions, and as such require a higher transaction fee in order to prevent network spam. Fees are only charged when minting zSqr, each minted denomination is charged a flat rate of 0.01 Sqr. zSqr spends are not charged a transaction fee unless the change is minted into zSqr, see the *Minting Change* section for details on fees for zSqr spends with minted change.
 
 ### Converting HLM to zHLM (*zHLM Mint*)
 **GUI** - Conversion from HLM to zHLM can be done using the `Privacy Dialog` in the QT wallet. Enter the amount of HLM you would like to convert and click `Mint Zerocoin`.

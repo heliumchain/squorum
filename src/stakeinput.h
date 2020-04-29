@@ -40,7 +40,7 @@ public:
 // zHLMStake can take two forms
 // 1) the stake candidate, which is a zcmint that is attempted to be staked
 // 2) a staked zsqr, which is a zcspend that has successfully staked
-class CZHlmStake : public CStakeInput
+class CZSqrStake : public CStakeInput
 {
 private:
     uint32_t nChecksum;
@@ -49,14 +49,14 @@ private:
     uint256 hashSerial;
 
 public:
-    explicit CZHlmStake(libzerocoin::CoinDenomination denom, const uint256& hashSerial)
+    explicit CZSqrStake(libzerocoin::CoinDenomination denom, const uint256& hashSerial)
     {
         this->denom = denom;
         this->hashSerial = hashSerial;
         fMint = true;
     }
 
-    explicit CZHlmStake(const libzerocoin::CoinSpend& spend);
+    explicit CZSqrStake(const libzerocoin::CoinSpend& spend);
 
     CBlockIndex* GetIndexFrom() override;
     bool GetTxFrom(CTransaction& tx) override;
@@ -73,7 +73,7 @@ public:
     uint32_t GetChecksum();
 };
 
-class CHlmStake : public CStakeInput
+class CSqrStake : public CStakeInput
 {
 private:
     CTransaction txFrom;
@@ -84,7 +84,7 @@ private:
     int nStakeModifierHeight = 0;
     int64_t nStakeModifierTime = 0;
 public:
-    CHlmStake(){}
+    CSqrStake(){}
 
     bool SetInput(CTransaction txPrev, unsigned int n);
 

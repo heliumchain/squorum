@@ -46,27 +46,27 @@ frequently tested on them.
 Notable Changes
 ===============
 
-Refactoring of zHlm Spend Validation Code
+Refactoring of zSqr Spend Validation Code
 ---------------------
-zHlm spend validation was too rigid and did not give enough slack for reorganizations. Many staking wallets were unable to reorganize back to the correct blockchain when they had an orphan stake which contained a zHlm spend. zHlm double spending validation has been refactored to properly account for reorganization.
+zSqr spend validation was too rigid and did not give enough slack for reorganizations. Many staking wallets were unable to reorganize back to the correct blockchain when they had an orphan stake which contained a zSqr spend. zSqr double spending validation has been refactored to properly account for reorganization.
 
 Money Supply Calculation Fix
 ---------------------
-Coin supply incorrectly was counting spent zHlm as newly minted coins that are added to the coin supply, thus resulting in innacurate coin supply data.
+Coin supply incorrectly was counting spent zSqr as newly minted coins that are added to the coin supply, thus resulting in innacurate coin supply data.
 
 The coin supply is now correctly calculated. If a new wallet client is synced from scratch or if `-reindex=1` is used then the correct money supply will be calculated. If neither of these two options are used, the wallet client will automatically reindex the money supply calculations upon the first time opening the software after updating to v3.0.4. The reindex takes approximately 10-60 minutes depending on the hardware used. If the reindex is exited mid-process, it will continue where it left off upon restart.
 
 Better Filtering of Transactions in Stake Miner
 ---------------------
-The stake miner code now filters out zHlm double spends that were on rare occasions being slipped into blocks (and being rejected by peers when broadcast to the network).
+The stake miner code now filters out zSqr double spends that were on rare occasions being slipped into blocks (and being rejected by peers when broadcast to the network).
 
 More Responsive Shutdown Requests
 ---------------------
 When computationally expensive accumulator calculations are being performed and the user requests to close the application, the wallet will exit much sooner than before.
 
-More Extensive Display of zHlm Confirmation/Maturity Status
+More Extensive Display of zSqr Confirmation/Maturity Status
 ---------------------
-Within the Privacy Dialog of the QT wallet, the _Zerocoin Stats_ section now displays both the confirmation and maturity status of minted zHlm's. Previously this was only able to be viewed within the zHlm Control dialog. The main Overview tab of the QT wallet now splits zHlm balance into subcategories: _Unconfirmed_, _Immature_, and _Mature_.
+Within the Privacy Dialog of the QT wallet, the _Zerocoin Stats_ section now displays both the confirmation and maturity status of minted zSqr's. Previously this was only able to be viewed within the zSqr Control dialog. The main Overview tab of the QT wallet now splits zSqr balance into subcategories: _Unconfirmed_, _Immature_, and _Mature_.
 
 3.0.4 Change log
 =================
@@ -78,17 +78,17 @@ git merge commit are mentioned.
 
 ### P2P Protocol and Network Code
 - #294 `27c0943` Add additional checks for txid for zsqr spend. (presstab)
-- #301 `b8392cd` Refactor zHlm tx counting code. Add a final check in ConnectBlock() (presstab)
+- #301 `b8392cd` Refactor zSqr tx counting code. Add a final check in ConnectBlock() (presstab)
 - #306 `77dd55c` [Core] Don't send not-validated blocks (Mrs-X)
 - #312 `5d79bea` [Main] Update last checkpoint data (Fuzzbawls)
-- #325 `7d98ebe` Reindex zHlm blocks and correct stats. (presstab)
+- #325 `7d98ebe` Reindex zSqr blocks and correct stats. (presstab)
 - #327 `aa1235a` [Main] Don't limit zHLM spends from getting into the mempool (Fuzzbawls)
 - #329 `19b38b2` Update checkpoints. (presstab)
 - #331 `b1fb710` [Consensus] Bump protocol. Activate via Spork 15. (rejectedpromise)
 
 ### Wallet
 - #308 `bd8a982` [Minting] Clear mempool after invalid block from miner (presstab)
-- #316 `ed192cf` [Minting] Better filtering of zHlm serials in miner. (presstab)
+- #316 `ed192cf` [Minting] Better filtering of zSqr serials in miner. (presstab)
 
 ### GUI
 - #309 `f560ffc` [UI] Better error message when too much inputs are used for spending zHLM (Mrs-X)

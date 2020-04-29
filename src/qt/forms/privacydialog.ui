@@ -521,21 +521,21 @@ font-weight: bold;</string>
                          <number>0</number>
                         </property>
                         <item>
-                         <widget class="QPushButton" name="pushButtonZHlmControl">
+                         <widget class="QPushButton" name="pushButtonZSqrControl">
                           <property name="text">
                            <string>zHLM Control</string>
                           </property>
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLabel" name="labelzHlmSelected">
+                         <widget class="QLabel" name="labelzSqrSelected">
                           <property name="text">
                            <string>zHLM Selected:</string>
                           </property>
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLabel" name="labelzHlmSelected_int">
+                         <widget class="QLabel" name="labelzSqrSelected_int">
                           <property name="text">
                            <string>0</string>
                           </property>

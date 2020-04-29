@@ -1714,8 +1714,8 @@ bool AppInit2()
 
         pwalletMain->InitAutoConvertAddresses();
 
-        bool fEnableZHlmBackups = GetBoolArg("-backupzsqr", true);
-        pwalletMain->setZHlmAutoBackups(fEnableZHlmBackups);
+        bool fEnableZSqrBackups = GetBoolArg("-backupzsqr", true);
+        pwalletMain->setZSqrAutoBackups(fEnableZSqrBackups);
 
         //Load zerocoin mint hashes to memory
         pwalletMain->zsqrTracker->Init();

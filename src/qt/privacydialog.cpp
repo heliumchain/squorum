@@ -299,19 +299,19 @@ void PrivacyDialog::on_pushButtonSpendzHLM_clicked()
     sendzHLM();
 }
 
-void PrivacyDialog::on_pushButtonZHlmControl_clicked()
+void PrivacyDialog::on_pushButtonZSqrControl_clicked()
 {
     if (!walletModel || !walletModel->getOptionsModel())
         return;
 
-    ZHlmControlDialog* zHlmControl = new ZHlmControlDialog(this);
-    zHlmControl->setModel(walletModel);
-    zHlmControl->exec();
+    ZSqrControlDialog* zSqrControl = new ZSqrControlDialog(this);
+    zSqrControl->setModel(walletModel);
+    zSqrControl->exec();
 }
 
-void PrivacyDialog::setZHlmControlLabels(int64_t nAmount, int nQuantity)
+void PrivacyDialog::setZSqrControlLabels(int64_t nAmount, int nQuantity)
 {
-    ui->labelzHlmSelected_int->setText(QString::number(nAmount));
+    ui->labelzSqrSelected_int->setText(QString::number(nAmount));
     ui->labelQuantitySelected_int->setText(QString::number(nQuantity));
 }
 
@@ -415,8 +415,8 @@ void PrivacyDialog::sendzHLM()
     // use mints from zHLM selector if applicable
     std::vector<CMintMeta> vMintsToFetch;
     std::vector<CZerocoinMint> vMintsSelected;
-    if (!ZHlmControlDialog::setSelectedMints.empty()) {
-        vMintsToFetch = ZHlmControlDialog::GetSelectedMints();
+    if (!ZSqrControlDialog::setSelectedMints.empty()) {
+        vMintsToFetch = ZSqrControlDialog::GetSelectedMints();
 
         for (auto& meta : vMintsToFetch) {
             CZerocoinMint mint;
@@ -474,8 +474,8 @@ void PrivacyDialog::sendzHLM()
     }
 
     // Clear zsqr selector in case it was used
-    ZHlmControlDialog::setSelectedMints.clear();
-    ui->labelzHlmSelected_int->setText(QString("0"));
+    ZSqrControlDialog::setSelectedMints.clear();
+    ui->labelzSqrSelected_int->setText(QString("0"));
     ui->labelQuantitySelected_int->setText(QString("0"));
 
     // Some statistics for entertainment

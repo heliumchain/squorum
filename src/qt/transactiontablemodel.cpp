@@ -366,7 +366,7 @@ QString TransactionTableModel::formatTxType(const TransactionRecord* wtx) const
         return tr("Spent zHLM");
     case TransactionRecord::RecvFromZerocoinSpend:
         return tr("Received HLM from zHLM");
-    case TransactionRecord::ZerocoinSpend_Change_zHlm:
+    case TransactionRecord::ZerocoinSpend_Change_zSqr:
         return tr("Minted Change as zHLM from zHLM Spend");
     case TransactionRecord::ZerocoinSpend_FromMe:
         return tr("Converted zHLM to HLM");
@@ -424,7 +424,7 @@ QString TransactionTableModel::formatTxToAddress(const TransactionRecord* wtx, b
     case TransactionRecord::SendToOther:
         return QString::fromStdString(wtx->address) + watchAddress;
     case TransactionRecord::ZerocoinMint:
-    case TransactionRecord::ZerocoinSpend_Change_zHlm:
+    case TransactionRecord::ZerocoinSpend_Change_zSqr:
         return tr("Anonymous (zHLM Transaction)");
     case TransactionRecord::StakeZHLM:
         return tr("Anonymous (zHLM Stake)");

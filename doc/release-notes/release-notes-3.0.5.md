@@ -85,7 +85,7 @@ git merge commit are mentioned.
 
 ### Wallet
 - #308 `bd8a982` [Minting] Clear mempool after invalid block from miner (presstab)
-- #316 `ed192cf` [Minting] Better filtering of zHlm serials in miner. (presstab)
+- #316 `ed192cf` [Minting] Better filtering of zSqr serials in miner. (presstab)
 
 ### GUI
 - #278 `46f4960` [QT] Multisignature GUI (rejectedpromise)

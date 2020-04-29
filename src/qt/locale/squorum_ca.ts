@@ -1888,7 +1888,7 @@
     </message>
     </context>
 <context>
-    <name>ZHlmControlDialog</name>
+    <name>ZSqrControlDialog</name>
     <message>
         <source>Quantity</source>
         <translation>Quantitat</translation>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>ZHlmControlDialog</class>
- <widget class="QDialog" name="ZHlmControlDialog">
+ <class>ZSqrControlDialog</class>
+ <widget class="QDialog" name="ZSqrControlDialog">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -57,14 +57,14 @@
         </widget>
        </item>
        <item row="1" column="0">
-        <widget class="QLabel" name="labelZHlm">
+        <widget class="QLabel" name="labelZSqr">
          <property name="text">
           <string>zHLM</string>
          </property>
         </widget>
        </item>
        <item row="1" column="1">
-        <widget class="QLabel" name="labelZHlm_int">
+        <widget class="QLabel" name="labelZSqr_int">
          <property name="text">
           <string>0</string>
          </property>
@@ -207,7 +207,7 @@
   <connection>
    <sender>buttonBox</sender>
    <signal>accepted()</signal>
-   <receiver>ZHlmControlDialog</receiver>
+   <receiver>ZSqrControlDialog</receiver>
    <slot>accept()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -223,7 +223,7 @@
   <connection>
    <sender>buttonBox</sender>
    <signal>rejected()</signal>
-   <receiver>ZHlmControlDialog</receiver>
+   <receiver>ZSqrControlDialog</receiver>
    <slot>reject()</slot>
    <hints>
     <hint type="sourcelabel">
