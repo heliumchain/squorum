@@ -11,6 +11,7 @@
  **/
 // Copyright (c) 2017-2018 The PIVX developers
 // Copyright (c) 2018-2020 The Helium developers
+// Copyright (c) 2020 The sQuorum developers
 
 #ifndef COINSPEND_H_
 #define COINSPEND_H_
