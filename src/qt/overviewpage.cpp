@@ -194,7 +194,7 @@ void OverviewPage::setBalance(const CAmount& balance, const CAmount& unconfirmed
 
     // HLM Balance
     CAmount nTotalBalance = balance + unconfirmedBalance;
-    CAmount hlmAvailableBalance = balance - immatureBalance - nLockedBalance;
+    CAmount sqrAvailableBalance = balance - immatureBalance - nLockedBalance;
     CAmount nUnlockedBalance = nTotalBalance - nLockedBalance;
 
     // HLM Watch-Only Balance
@@ -209,11 +209,11 @@ void OverviewPage::setBalance(const CAmount& balance, const CAmount& unconfirmed
     QString sPercentage = "";
     getPercentage(nUnlockedBalance, zerocoinBalance, sPercentage, szPercentage);
     // Combined balances
-    CAmount availableTotalBalance = hlmAvailableBalance + matureZerocoinBalance;
+    CAmount availableTotalBalance = sqrAvailableBalance + matureZerocoinBalance;
     CAmount sumTotalBalance = nTotalBalance + zerocoinBalance;
 
     // HLM labels
-    ui->labelBalance->setText(BitcoinUnits::floorHtmlWithUnit(nDisplayUnit, hlmAvailableBalance, false, BitcoinUnits::separatorAlways));
+    ui->labelBalance->setText(BitcoinUnits::floorHtmlWithUnit(nDisplayUnit, sqrAvailableBalance, false, BitcoinUnits::separatorAlways));
     ui->labelUnconfirmed->setText(BitcoinUnits::floorHtmlWithUnit(nDisplayUnit, unconfirmedBalance, false, BitcoinUnits::separatorAlways));
     ui->labelImmature->setText(BitcoinUnits::floorHtmlWithUnit(nDisplayUnit, immatureBalance, false, BitcoinUnits::separatorAlways));
     ui->labelLockedBalance->setText(BitcoinUnits::floorHtmlWithUnit(nDisplayUnit, nLockedBalance, false, BitcoinUnits::separatorAlways));
@@ -256,7 +256,7 @@ void OverviewPage::setBalance(const CAmount& balance, const CAmount& unconfirmed
     bool showWatchOnly = nTotalWatchBalance != 0;
 
     // HLM Available
-    bool showHLMAvailable = settingShowAllBalances || hlmAvailableBalance != nTotalBalance;
+    bool showHLMAvailable = settingShowAllBalances || sqrAvailableBalance != nTotalBalance;
     bool showWatchOnlyHLMAvailable = showHLMAvailable || nAvailableWatchBalance != nTotalWatchBalance;
     ui->labelBalanceText->setVisible(showHLMAvailable || showWatchOnlyHLMAvailable);
     ui->labelBalance->setVisible(showHLMAvailable || showWatchOnlyHLMAvailable);

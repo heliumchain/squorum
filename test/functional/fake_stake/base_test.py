@@ -386,7 +386,7 @@ class sQuorum_FakeStakeTest(BitcoinTestFramework):
             # Try submitblock
             var = self.node.submitblock(bytes_to_hex_str(block.serialize()))
             time.sleep(1)
-            if (not fMustPass and var not in [None, "bad-txns-invalid-zhlm"]) or (fMustPass and var != "inconclusive"):
+            if (not fMustPass and var not in [None, "bad-txns-invalid-zsqr"]) or (fMustPass and var != "inconclusive"):
                 self.log.error("submitblock [fMustPass=%s] result: %s" % (str(fMustPass), str(var)))
                 err_msgs.append("submitblock %d: %s" % (current_block_n, str(var)))
 

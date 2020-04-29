@@ -19,13 +19,13 @@
 #include "utilmoneystr.h"
 #include "wallet.h"
 #include "walletdb.h"
-#include "zhlmchain.h"
+#include "zsqrchain.h"
 
 #include <stdint.h>
 
 #include "libzerocoin/Coin.h"
 #include "spork.h"
-#include "zhlm/deterministicmint.h"
+#include "zsqr/deterministicmint.h"
 #include <boost/assign/list_of.hpp>
 #include <boost/thread/thread.hpp>
 
@@ -2605,7 +2605,7 @@ UniValue listmintedzerocoins(const UniValue& params, bool fHelp)
     EnsureWalletIsUnlocked(true);
 
     CWalletDB walletdb(pwalletMain->strWalletFile);
-    std::set<CMintMeta> setMints = pwalletMain->zhlmTracker->ListMints(true, fMatureOnly, true);
+    std::set<CMintMeta> setMints = pwalletMain->zsqrTracker->ListMints(true, fMatureOnly, true);
 
     int nBestHeight = chainActive.Height();
 
@@ -2629,7 +2629,7 @@ UniValue listmintedzerocoins(const UniValue& params, bool fHelp)
                     uint256 hashStake = mint.GetSerialNumber().getuint256();
                     hashStake = Hash(hashStake.begin(), hashStake.end());
                     m.hashStake = hashStake;
-                    pwalletMain->zhlmTracker->UpdateState(m);
+                    pwalletMain->zsqrTracker->UpdateState(m);
                 }
             }
             objMint.push_back(Pair("hash stake", m.hashStake.GetHex()));       // Confirmations
@@ -2670,7 +2670,7 @@ UniValue listzerocoinamounts(const UniValue& params, bool fHelp)
     EnsureWalletIsUnlocked(true);
 
     CWalletDB walletdb(pwalletMain->strWalletFile);
-    std::set<CMintMeta> setMints = pwalletMain->zhlmTracker->ListMints(true, true, true);
+    std::set<CMintMeta> setMints = pwalletMain->zsqrTracker->ListMints(true, true, true);
 
     std::map<libzerocoin::CoinDenomination, CAmount> spread;
     for (const auto& denom : libzerocoin::zerocoinDenomList)
@@ -2900,7 +2900,7 @@ UniValue spendzerocoin(const UniValue& params, bool fHelp)
         throw JSONRPCError(RPC_WALLET_ERROR, "zHLM old spend only available in regtest for tests purposes");
     }
 
-    return DoZhlmSpend(nAmount, fMintChange, fMinimizeChange, vMintsSelected, address_str, ispublicspend);
+    return DoZsqrSpend(nAmount, fMintChange, fMinimizeChange, vMintsSelected, address_str, ispublicspend);
 }
 
 
@@ -2994,11 +2994,11 @@ UniValue spendzerocoinmints(const UniValue& params, bool fHelp)
             throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid sQuorum address");
     }
 
-    return DoZhlmSpend(nAmount, false, true, vMintsSelected, address_str);
+    return DoZsqrSpend(nAmount, false, true, vMintsSelected, address_str);
 }
 
 
-extern UniValue DoZhlmSpend(const CAmount nAmount, bool fMintChange, bool fMinimizeChange, std::vector<CZerocoinMint>& vMintsSelected, std::string address_str, bool ispublicspend)
+extern UniValue DoZsqrSpend(const CAmount nAmount, bool fMintChange, bool fMinimizeChange, std::vector<CZerocoinMint>& vMintsSelected, std::string address_str, bool ispublicspend)
 {
     // zerocoin MINT is disabled. fMintChange should be false here. Double check
     if (fMintChange && Params().NetworkID() != CBaseChainParams::REGTEST)
@@ -3094,8 +3094,8 @@ UniValue resetmintzerocoin(const UniValue& params, bool fHelp)
     LOCK2(cs_main, pwalletMain->cs_wallet);
 
     CWalletDB walletdb(pwalletMain->strWalletFile);
-    CzHLMTracker* zhlmTracker = pwalletMain->zhlmTracker.get();
-    std::set<CMintMeta> setMints = zhlmTracker->ListMints(false, false, true);
+    CzHLMTracker* zsqrTracker = pwalletMain->zsqrTracker.get();
+    std::set<CMintMeta> setMints = zsqrTracker->ListMints(false, false, true);
     std::vector<CMintMeta> vMintsToFind(setMints.begin(), setMints.end());
     std::vector<CMintMeta> vMintsMissing;
     std::vector<CMintMeta> vMintsToUpdate;
@@ -3106,14 +3106,14 @@ UniValue resetmintzerocoin(const UniValue& params, bool fHelp)
     // update the meta data of mints that were marked for updating
     UniValue arrUpdated(UniValue::VARR);
     for (CMintMeta meta : vMintsToUpdate) {
-        zhlmTracker->UpdateState(meta);
+        zsqrTracker->UpdateState(meta);
         arrUpdated.push_back(meta.hashPubcoin.GetHex());
     }
 
     // delete any mints that were unable to be located on the blockchain
     UniValue arrDeleted(UniValue::VARR);
     for (CMintMeta mint : vMintsMissing) {
-        zhlmTracker->Archive(mint);
+        zsqrTracker->Archive(mint);
         arrDeleted.push_back(mint.hashPubcoin.GetHex());
     }
 
@@ -3147,8 +3147,8 @@ UniValue resetspentzerocoin(const UniValue& params, bool fHelp)
     LOCK2(cs_main, pwalletMain->cs_wallet);
 
     CWalletDB walletdb(pwalletMain->strWalletFile);
-    CzHLMTracker* zhlmTracker = pwalletMain->zhlmTracker.get();
-    std::set<CMintMeta> setMints = zhlmTracker->ListMints(false, false, false);
+    CzHLMTracker* zsqrTracker = pwalletMain->zsqrTracker.get();
+    std::set<CMintMeta> setMints = zsqrTracker->ListMints(false, false, false);
     std::list<CZerocoinSpend> listSpends = walletdb.ListSpentCoins();
     std::list<CZerocoinSpend> listUnconfirmedSpends;
 
@@ -3170,7 +3170,7 @@ UniValue resetspentzerocoin(const UniValue& params, bool fHelp)
     for (CZerocoinSpend spend : listUnconfirmedSpends) {
         for (auto& meta : setMints) {
             if (meta.hashSerial == GetSerialHash(spend.GetSerial())) {
-                zhlmTracker->SetPubcoinNotUsed(meta.hashPubcoin);
+                zsqrTracker->SetPubcoinNotUsed(meta.hashPubcoin);
                 walletdb.EraseZerocoinSpendSerialEntry(spend.GetSerial());
                 RemoveSerialFromDB(spend.GetSerial());
                 UniValue obj(UniValue::VOBJ);
@@ -3285,8 +3285,8 @@ UniValue exportzerocoins(const UniValue& params, bool fHelp)
     if (params.size() == 2)
         denomination = libzerocoin::IntToZerocoinDenomination(params[1].get_int());
 
-    CzHLMTracker* zhlmTracker = pwalletMain->zhlmTracker.get();
-    std::set<CMintMeta> setMints = zhlmTracker->ListMints(!fIncludeSpent, false, false);
+    CzHLMTracker* zsqrTracker = pwalletMain->zsqrTracker.get();
+    std::set<CMintMeta> setMints = zsqrTracker->ListMints(!fIncludeSpent, false, false);
 
     UniValue jsonList(UniValue::VARR);
     for (const CMintMeta& meta : setMints) {
@@ -3401,7 +3401,7 @@ UniValue importzerocoins(const UniValue& params, bool fHelp)
         CZerocoinMint mint(denom, bnValue, bnRandom, bnSerial, fUsed, nVersion, &privkey);
         mint.SetTxHash(txid);
         mint.SetHeight(nHeight);
-        pwalletMain->zhlmTracker->Add(mint, true);
+        pwalletMain->zsqrTracker->Add(mint, true);
         count++;
         nValue += libzerocoin::ZerocoinDenominationToAmount(denom);
     }
@@ -3463,11 +3463,11 @@ UniValue reconsiderzerocoins(const UniValue& params, bool fHelp)
     return arrRet;
 }
 
-UniValue setzhlmseed(const UniValue& params, bool fHelp)
+UniValue setzsqrseed(const UniValue& params, bool fHelp)
 {
     if(fHelp || params.size() != 1)
         throw std::runtime_error(
-            "setzhlmseed \"seed\"\n"
+            "setzsqrseed \"seed\"\n"
             "\nSet the wallet's deterministic zHLM seed to a specific value.\n" +
             HelpRequiringPassphrase() + "\n"
 
@@ -3478,8 +3478,8 @@ UniValue setzhlmseed(const UniValue& params, bool fHelp)
             "\"success\" : b,  (boolean) Whether the seed was successfully set.\n"
 
             "\nExamples\n" +
-            HelpExampleCli("setzhlmseed", "63f793e7895dd30d99187b35fbfb314a5f91af0add9e0a4e5877036d1e392dd5") +
-            HelpExampleRpc("setzhlmseed", "63f793e7895dd30d99187b35fbfb314a5f91af0add9e0a4e5877036d1e392dd5"));
+            HelpExampleCli("setzsqrseed", "63f793e7895dd30d99187b35fbfb314a5f91af0add9e0a4e5877036d1e392dd5") +
+            HelpExampleRpc("setzsqrseed", "63f793e7895dd30d99187b35fbfb314a5f91af0add9e0a4e5877036d1e392dd5"));
 
     EnsureWalletIsUnlocked();
 
@@ -3497,11 +3497,11 @@ UniValue setzhlmseed(const UniValue& params, bool fHelp)
     return ret;
 }
 
-UniValue getzhlmseed(const UniValue& params, bool fHelp)
+UniValue getzsqrseed(const UniValue& params, bool fHelp)
 {
     if(fHelp || !params.empty())
         throw std::runtime_error(
-            "getzhlmseed\n"
+            "getzsqrseed\n"
             "\nCheck archived zHLM list to see if any mints were added to the blockchain.\n" +
             HelpRequiringPassphrase() + "\n"
 
@@ -3509,7 +3509,7 @@ UniValue getzhlmseed(const UniValue& params, bool fHelp)
             "\"seed\" : s,  (string) The deterministic zHLM seed.\n"
 
             "\nExamples\n" +
-            HelpExampleCli("getzhlmseed", "") + HelpExampleRpc("getzhlmseed", ""));
+            HelpExampleCli("getzsqrseed", "") + HelpExampleRpc("getzsqrseed", ""));
 
     EnsureWalletIsUnlocked();
 
@@ -3571,10 +3571,10 @@ UniValue generatemintlist(const UniValue& params, bool fHelp)
     return arrRet;
 }
 
-UniValue dzhlmstate(const UniValue& params, bool fHelp) {
+UniValue dzsqrstate(const UniValue& params, bool fHelp) {
     if (fHelp || params.size() != 0)
         throw std::runtime_error(
-                "dzhlmstate\n"
+                "dzsqrstate\n"
                         "\nThe current state of the mintpool of the deterministic zHLM wallet.\n" +
                 HelpRequiringPassphrase() + "\n"
 
@@ -3585,7 +3585,7 @@ UniValue dzhlmstate(const UniValue& params, bool fHelp) {
     UniValue obj(UniValue::VOBJ);
     int nCount, nCountLastUsed;
     zwallet->GetState(nCount, nCountLastUsed);
-    obj.push_back(Pair("dzhlm_count", nCount));
+    obj.push_back(Pair("dzsqr_count", nCount));
     obj.push_back(Pair("mintpool_count", nCountLastUsed));
 
     return obj;
@@ -3622,11 +3622,11 @@ void static SearchThread(CzHLMWallet* zwallet, int nCountStart, int nCountEnd)
     }
 }
 
-UniValue searchdzhlm(const UniValue& params, bool fHelp)
+UniValue searchdzsqr(const UniValue& params, bool fHelp)
 {
     if(fHelp || params.size() != 3)
         throw std::runtime_error(
-            "searchdzhlm\n"
+            "searchdzsqr\n"
             "\nMake an extended search for deterministically generated zHLM that have not yet been recognized by the wallet.\n" +
             HelpRequiringPassphrase() + "\n"
 
@@ -3636,7 +3636,7 @@ UniValue searchdzhlm(const UniValue& params, bool fHelp)
             "3. \"threads\"     (numeric) How many threads should this operation consume.\n"
 
             "\nExamples\n" +
-            HelpExampleCli("searchdzhlm", "1, 100, 2") + HelpExampleRpc("searchdzhlm", "1, 100, 2"));
+            HelpExampleCli("searchdzsqr", "1, 100, 2") + HelpExampleRpc("searchdzsqr", "1, 100, 2"));
 
     EnsureWalletIsUnlocked();
 
@@ -3652,7 +3652,7 @@ UniValue searchdzhlm(const UniValue& params, bool fHelp)
 
     CzHLMWallet* zwallet = pwalletMain->zwalletMain;
 
-    boost::thread_group* dzhlmThreads = new boost::thread_group();
+    boost::thread_group* dzsqrThreads = new boost::thread_group();
     int nRangePerThread = nRange / nThreads;
 
     int nPrevThreadEnd = nCount - 1;
@@ -3660,12 +3660,12 @@ UniValue searchdzhlm(const UniValue& params, bool fHelp)
         int nStart = nPrevThreadEnd + 1;;
         int nEnd = nStart + nRangePerThread;
         nPrevThreadEnd = nEnd;
-        dzhlmThreads->create_thread(boost::bind(&SearchThread, zwallet, nStart, nEnd));
+        dzsqrThreads->create_thread(boost::bind(&SearchThread, zwallet, nStart, nEnd));
     }
 
-    dzhlmThreads->join_all();
+    dzsqrThreads->join_all();
 
-    zwallet->RemoveMintsFromPool(pwalletMain->zhlmTracker->GetSerialHashes());
+    zwallet->RemoveMintsFromPool(pwalletMain->zsqrTracker->GetSerialHashes());
     zwallet->SyncWithChain(false);
 
     //todo: better response
@@ -3767,7 +3767,7 @@ UniValue spendrawzerocoin(const UniValue& params, bool fHelp)
     std::vector<CZerocoinMint> vMintsSelected = {mint};
     CAmount nAmount = mint.GetDenominationAsAmount();
 
-    return DoZhlmSpend(nAmount, false, true, vMintsSelected, address_str);
+    return DoZsqrSpend(nAmount, false, true, vMintsSelected, address_str);
 }
 
 UniValue clearspendcache(const UniValue& params, bool fHelp)
@@ -3783,14 +3783,14 @@ UniValue clearspendcache(const UniValue& params, bool fHelp)
 
     EnsureWalletIsUnlocked();
 
-    CzHLMTracker* zhlmTracker = pwalletMain->zhlmTracker.get();
+    CzHLMTracker* zsqrTracker = pwalletMain->zsqrTracker.get();
 
     {
         int nTries = 0;
         while (nTries < 100) {
-            TRY_LOCK(zhlmTracker->cs_spendcache, fLocked);
+            TRY_LOCK(zsqrTracker->cs_spendcache, fLocked);
             if (fLocked) {
-                if (zhlmTracker->ClearSpendCache()) {
+                if (zsqrTracker->ClearSpendCache()) {
                     fClearSpendCache = true;
                     CWalletDB walletdb("precomputes.dat", "cr+");
                     walletdb.EraseAllPrecomputes();

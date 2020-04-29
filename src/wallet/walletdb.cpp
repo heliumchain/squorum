@@ -17,7 +17,7 @@
 #include "util.h"
 #include "utiltime.h"
 #include "wallet/wallet.h"
-#include <zhlm/deterministicmint.h>
+#include <zsqr/deterministicmint.h>
 
 #include <boost/filesystem.hpp>
 #include <boost/scoped_ptr.hpp>
@@ -1206,17 +1206,17 @@ bool CWalletDB::ReadZerocoinSpendSerialEntry(const CBigNum& bnSerial)
 bool CWalletDB::WriteDeterministicMint(const CDeterministicMint& dMint)
 {
     uint256 hash = dMint.GetPubcoinHash();
-    return Write(std::make_pair(std::string("dzhlm"), hash), dMint, true);
+    return Write(std::make_pair(std::string("dzsqr"), hash), dMint, true);
 }
 
 bool CWalletDB::ReadDeterministicMint(const uint256& hashPubcoin, CDeterministicMint& dMint)
 {
-    return Read(std::make_pair(std::string("dzhlm"), hashPubcoin), dMint);
+    return Read(std::make_pair(std::string("dzsqr"), hashPubcoin), dMint);
 }
 
 bool CWalletDB::EraseDeterministicMint(const uint256& hashPubcoin)
 {
-    return Erase(std::make_pair(std::string("dzhlm"), hashPubcoin));
+    return Erase(std::make_pair(std::string("dzsqr"), hashPubcoin));
 }
 
 bool CWalletDB::WriteZerocoinMint(const CZerocoinMint& zerocoinMint)
@@ -1276,7 +1276,7 @@ bool CWalletDB::ArchiveDeterministicOrphan(const CDeterministicMint& dMint)
     if (!Write(std::make_pair(std::string("dzco"), dMint.GetPubcoinHash()), dMint))
         return error("%s: write failed", __func__);
 
-    if (!Erase(std::make_pair(std::string("dzhlm"), dMint.GetPubcoinHash())))
+    if (!Erase(std::make_pair(std::string("dzsqr"), dMint.GetPubcoinHash())))
         return error("%s: failed to erase", __func__);
 
     return true;
@@ -1550,7 +1550,7 @@ std::list<CDeterministicMint> CWalletDB::ListDeterministicMints()
         // Read next record
         CDataStream ssKey(SER_DISK, CLIENT_VERSION);
         if (fFlags == DB_SET_RANGE)
-            ssKey << make_pair(std::string("dzhlm"), uint256(0));
+            ssKey << make_pair(std::string("dzsqr"), uint256(0));
         CDataStream ssValue(SER_DISK, CLIENT_VERSION);
         int ret = ReadAtCursor(pcursor, ssKey, ssValue, fFlags);
         fFlags = DB_NEXT;
@@ -1565,7 +1565,7 @@ std::list<CDeterministicMint> CWalletDB::ListDeterministicMints()
         // Unserialize
         std::string strType;
         ssKey >> strType;
-        if (strType != "dzhlm")
+        if (strType != "dzsqr")
             break;
 
         uint256 hashPubcoin;

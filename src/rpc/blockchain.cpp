@@ -16,11 +16,11 @@
 #include "txdb.h"
 #include "util.h"
 #include "utilmoneystr.h"
-#include "zhlm/accumulatormap.h"
-#include "zhlm/accumulators.h"
+#include "zsqr/accumulatormap.h"
+#include "zsqr/accumulators.h"
 #include "wallet/wallet.h"
-#include "zhlm/zhlmmodule.h"
-#include "zhlmchain.h"
+#include "zsqr/zsqrmodule.h"
+#include "zsqrchain.h"
 
 #include <stdint.h>
 #include <fstream>
@@ -141,12 +141,12 @@ UniValue blockToJSON(const CBlock& block, const CBlockIndex* blockindex, bool tx
 
     result.push_back(Pair("moneysupply",ValueFromAmount(blockindex->nMoneySupply)));
 
-    UniValue zhlmObj(UniValue::VOBJ);
+    UniValue zsqrObj(UniValue::VOBJ);
     for (auto denom : libzerocoin::zerocoinDenomList) {
-        zhlmObj.push_back(Pair(std::to_string(denom), ValueFromAmount(blockindex->mapZerocoinSupply.at(denom) * (denom*COIN))));
+        zsqrObj.push_back(Pair(std::to_string(denom), ValueFromAmount(blockindex->mapZerocoinSupply.at(denom) * (denom*COIN))));
     }
-    zhlmObj.push_back(Pair("total", ValueFromAmount(blockindex->GetZerocoinSupply())));
-    result.push_back(Pair("zHLMsupply", zhlmObj));
+    zsqrObj.push_back(Pair("total", ValueFromAmount(blockindex->GetZerocoinSupply())));
+    result.push_back(Pair("zHLMsupply", zsqrObj));
 
     //////////
     ////////// Coin stake data ////////////////

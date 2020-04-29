@@ -17,7 +17,7 @@
 #include "uint256.h"
 #include <streams.h>
 #include <utilstrencodings.h>
-#include "zhlm/zerocoin.h"
+#include "zsqr/zerocoin.h"
 #include "chainparams.h"
 
 static int const COIN_SPEND_PUBLIC_SPEND_VERSION = 3;

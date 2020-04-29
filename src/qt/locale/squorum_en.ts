@@ -1447,7 +1447,7 @@ Address: %4
     </message>
     <message>
         <location line="+8"/>
-        <source>Can vary +/- %1 uhlm per input.</source>
+        <source>Can vary +/- %1 usqr per input.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6238,7 +6238,7 @@ Please be patient...</source>
 <context>
     <name>ZHlmControlDialog</name>
     <message>
-        <location filename="../forms/zhlmcontroldialog.ui" line="+20"/>
+        <location filename="../forms/zsqrcontroldialog.ui" line="+20"/>
         <source>Select zHLM to Spend</source>
         <translation type="unfinished"></translation>
     </message>

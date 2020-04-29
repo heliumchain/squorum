@@ -77,7 +77,7 @@ the code changes and accompanying discussion, both the pull request and
 git merge commit are mentioned.
 
 ### P2P Protocol and Network Code
-- #294 `27c0943` Add additional checks for txid for zhlm spend. (presstab)
+- #294 `27c0943` Add additional checks for txid for zsqr spend. (presstab)
 - #301 `b8392cd` Refactor zHlm tx counting code. Add a final check in ConnectBlock() (presstab)
 - #306 `77dd55c` [Core] Don't send not-validated blocks (Mrs-X)
 - #312 `5d79bea` [Main] Update last checkpoint data (Fuzzbawls)

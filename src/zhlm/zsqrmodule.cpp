@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include "zhlm/zhlmmodule.h"
-#include "zhlmchain.h"
+#include "zsqr/zsqrmodule.h"
+#include "zsqrchain.h"
 #include "libzerocoin/Commitment.h"
 #include "libzerocoin/Coin.h"
 #include "hash.h"
@@ -126,7 +126,7 @@ namespace ZHLMModule {
         }
         if (!ZHLMModule::parseCoinSpend(txIn, tx, prevOut, publicSpend)) {
             return state.Invalid(error("%s: invalid public coin spend parse %s\n", __func__,
-                                       tx.GetHash().GetHex()), REJECT_INVALID, "bad-txns-invalid-zhlm");
+                                       tx.GetHash().GetHex()), REJECT_INVALID, "bad-txns-invalid-zsqr");
         }
         return true;
     }

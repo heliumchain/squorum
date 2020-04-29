@@ -3,9 +3,9 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include "zhlm/accumulators.h"
+#include "zsqr/accumulators.h"
 #include "chain.h"
-#include "zhlm/deterministicmint.h"
+#include "zsqr/deterministicmint.h"
 #include "main.h"
 #include "stakeinput.h"
 #include "wallet/wallet.h"
@@ -161,12 +161,12 @@ bool CZHlmStake::GetTxFrom(CTransaction& tx)
 
 bool CZHlmStake::MarkSpent(CWallet *pwallet, const uint256& txid)
 {
-    CzHLMTracker* zhlmTracker = pwallet->zhlmTracker.get();
+    CzHLMTracker* zsqrTracker = pwallet->zsqrTracker.get();
     CMintMeta meta;
-    if (!zhlmTracker->GetMetaFromStakeHash(hashSerial, meta))
+    if (!zsqrTracker->GetMetaFromStakeHash(hashSerial, meta))
         return error("%s: tracker does not have serialhash", __func__);
 
-    zhlmTracker->SetPubcoinUsed(meta.hashPubcoin, txid);
+    zsqrTracker->SetPubcoinUsed(meta.hashPubcoin, txid);
     return true;
 }
 

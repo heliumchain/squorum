@@ -1082,8 +1082,8 @@ Višestruko slanje: %1</translation>
         <translation>Ova oznaka postaje crvena ako neki primatelj prima iznos manji od %1.</translation>
     </message>
     <message>
-        <source>Can vary +/- %1 uhlm per input.</source>
-        <translation>Može varirati +/- %1 uhlm po unosu.</translation>
+        <source>Can vary +/- %1 usqr per input.</source>
+        <translation>Može varirati +/- %1 usqr po unosu.</translation>
     </message>
     <message>
         <source>(no label)</source>

@@ -1354,7 +1354,7 @@
         </widget>
        </item>
        <item row="4" column="0">
-        <widget class="QLabel" name="wallet_customzhlmbackuppath_label">
+        <widget class="QLabel" name="wallet_customzsqrbackuppath_label">
          <property name="visible">
           <bool>false</bool>
          </property>
@@ -1364,7 +1364,7 @@
         </widget>
        </item>
        <item row="4" column="1" colspan="3">
-        <widget class="QLabel" name="wallet_customzhlmbackuppath">
+        <widget class="QLabel" name="wallet_customzsqrbackuppath">
          <property name="cursor">
           <cursorShape>IBeamCursor</cursorShape>
          </property>

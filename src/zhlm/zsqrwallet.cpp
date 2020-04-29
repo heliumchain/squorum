@@ -3,14 +3,14 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include "zhlmwallet.h"
+#include "zsqrwallet.h"
 #include "main.h"
 #include "txdb.h"
 #include "wallet/walletdb.h"
 #include "init.h"
 #include "wallet/wallet.h"
 #include "deterministicmint.h"
-#include "zhlmchain.h"
+#include "zsqrchain.h"
 
 
 CzHLMWallet::CzHLMWallet(std::string strWalletFile)
@@ -21,7 +21,7 @@ CzHLMWallet::CzHLMWallet(std::string strWalletFile)
     uint256 hashSeed;
     bool fFirstRun = !walletdb.ReadCurrentSeedHash(hashSeed);
 
-    //Check for old db version of storing zhlm seed
+    //Check for old db version of storing zsqr seed
     if (fFirstRun) {
         uint256 seed;
         if (walletdb.ReadZHLMSeed_deprecated(seed)) {
@@ -55,7 +55,7 @@ CzHLMWallet::CzHLMWallet(std::string strWalletFile)
         key.MakeNewKey(true);
         seed = key.GetPrivKey_256();
         seedMaster = seed;
-        LogPrintf("%s: first run of zhlm wallet detected, new seed generated. Seedhash=%s\n", __func__, Hash(seed.begin(), seed.end()).GetHex());
+        LogPrintf("%s: first run of zsqr wallet detected, new seed generated. Seedhash=%s\n", __func__, Hash(seed.begin(), seed.end()).GetHex());
     } else if (!pwalletMain->GetDeterministicSeed(hashSeed, seed)) {
         LogPrintf("%s: failed to get deterministic seed for hashseed %s\n", __func__, hashSeed.GetHex());
         return;
@@ -203,7 +203,7 @@ void CzHLMWallet::SyncWithChain(bool fGenerateMintPool)
             if (ShutdownRequested())
                 return;
 
-            if (pwalletMain->zhlmTracker->HasPubcoinHash(pMint.first)) {
+            if (pwalletMain->zsqrTracker->HasPubcoinHash(pMint.first)) {
                 mintPool.Remove(pMint.first);
                 continue;
             }
@@ -326,8 +326,8 @@ bool CzHLMWallet::SetMintSeen(const CBigNum& bnValue, const int& nHeight, const 
         pwalletMain->AddToWallet(wtx);
     }
 
-    // Add to zhlmTracker which also adds to database
-    pwalletMain->zhlmTracker->Add(dMint, true);
+    // Add to zsqrTracker which also adds to database
+    pwalletMain->zsqrTracker->Add(dMint, true);
 
     //Update the count if it is less than the mint's count
     if (nCountLastUsed < pMint.second) {

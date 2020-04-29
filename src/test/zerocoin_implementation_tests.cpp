@@ -8,16 +8,16 @@
 #include "chainparams.h"
 #include "main.h"
 #include "txdb.h"
-#include "zhlm/deterministicmint.h"
+#include "zsqr/deterministicmint.h"
 #include "key.h"
-#include "zhlm/accumulatorcheckpoints.h"
+#include "zsqr/accumulatorcheckpoints.h"
 #include "libzerocoin/bignum.h"
 #include <boost/test/unit_test.hpp>
 #include <iostream>
-#include <zhlm/accumulators.h>
+#include <zsqr/accumulators.h>
 #include "wallet/wallet.h"
-#include "zhlm/zhlmwallet.h"
-#include "zhlmchain.h"
+#include "zsqr/zsqrwallet.h"
+#include "zsqrchain.h"
 #include "test_squorum.h"
 
 

@@ -11,7 +11,7 @@
 #include "init.h"
 #include "spork.h"
 #include "accumulatorcheckpoints.h"
-#include "zhlmchain.h"
+#include "zsqrchain.h"
 #include "tinyformat.h"
 
 

@@ -45,9 +45,9 @@ Notable Changes
 
 Auto Wallet Backup
 ---------------------
-In addition to the automatic wallet backup that is done at each start of the client, a new automatic backup function has been added that will, by default, create a backup of the wallet file during each zHLM mint operation (zHLM spends which re-mint their change are also included in this). This functionality is controlled by the `-backupzhlm` command-line option, which defaults to `1` (enabled, auto-backup).
+In addition to the automatic wallet backup that is done at each start of the client, a new automatic backup function has been added that will, by default, create a backup of the wallet file during each zHLM mint operation (zHLM spends which re-mint their change are also included in this). This functionality is controlled by the `-backupzsqr` command-line option, which defaults to `1` (enabled, auto-backup).
 
-Users that wish to prevent this behavior (not recommended) can pass `-backupzhlm=0` at the command-line when starting the client, or add `backupzhlm=0` to their `squorum.conf` file.
+Users that wish to prevent this behavior (not recommended) can pass `-backupzsqr=0` at the command-line when starting the client, or add `backupzsqr=0` to their `squorum.conf` file.
 
 zHLM Automint Calculations
 ---------------------
@@ -94,7 +94,7 @@ git merge commit are mentioned.
 
 ### Wallet
 - #271 `5e9a086` [Wallet] Remove unused member wallet in UnlockContext inner class (Jon Spock)
-- #279 `e734010` Add -backupzhlm startup flag. (presstab)
+- #279 `e734010` Add -backupzsqr startup flag. (presstab)
 - #280 `fdc182d` [Wallet] Fix zHlm spending errors. (presstab)
 - #282 `310f216` [Wallet] Count pending zHlm balance for automint. (presstab)
 - #290 `004d7b6` Include both pending and mature zerocoins for automint calculations (presstab)

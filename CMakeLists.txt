@@ -325,7 +325,7 @@ set(SERVER_SOURCES
         ./src/txdb.cpp
         ./src/txmempool.cpp
         ./src/validationinterface.cpp
-        ./src/zhlmchain.cpp
+        ./src/zsqrchain.cpp
         )
 add_library(SERVER_A STATIC ${BitcoinHeaders} ${SERVER_SOURCES})
 
@@ -353,21 +353,21 @@ set(WALLET_SOURCES
         ./src/masternode-sync.cpp
         ./src/masternodeconfig.cpp
         ./src/masternodeman.cpp
-        ./src/zhlm/mintpool.cpp
+        ./src/zsqr/mintpool.cpp
         ./src/wallet/rpcdump.cpp
-        ./src/zhlm/deterministicmint.cpp
-        ./src/zhlm/zerocoin.cpp
+        ./src/zsqr/deterministicmint.cpp
+        ./src/zsqr/zerocoin.cpp
         ./src/wallet/rpcwallet.cpp
         ./src/kernel.cpp
         ./src/wallet/wallet.cpp
         ./src/wallet/wallet_ismine.cpp
         ./src/wallet/walletdb.cpp
-        ./src/zhlm/zhlmwallet.cpp
-        ./src/zhlm/zhlmtracker.cpp
-        ./src/zhlm/zhlmmodule.cpp
+        ./src/zsqr/zsqrwallet.cpp
+        ./src/zsqr/zsqrtracker.cpp
+        ./src/zsqr/zsqrmodule.cpp
         ./src/stakeinput.cpp
         ./src/genwit.cpp
-        ./src/lightzhlmthread.cpp
+        ./src/lightzsqrthread.cpp
         )
 add_library(WALLET_A STATIC ${BitcoinHeaders} ${WALLET_SOURCES})
 
@@ -438,10 +438,10 @@ endif()
 add_library(ZEROCOIN_A STATIC ${ZEROCOIN_SOURCES})
 
 set(COMMON_SOURCES
-        ./src/zhlm/accumulators.cpp
-        ./src/zhlm/accumulatorcheckpoints.cpp
-        ./src/zhlm/accumulatormap.cpp
-        ./src/zhlm/witness.cpp
+        ./src/zsqr/accumulators.cpp
+        ./src/zsqr/accumulatorcheckpoints.cpp
+        ./src/zsqr/accumulatormap.cpp
+        ./src/zsqr/witness.cpp
         ./src/allocators.cpp
         ./src/amount.cpp
         ./src/base58.cpp
@@ -450,9 +450,9 @@ set(COMMON_SOURCES
         ./src/coins.cpp
         ./src/compressor.cpp
         ./src/primitives/block.cpp
-        ./src/zhlm/deterministicmint.cpp
+        ./src/zsqr/deterministicmint.cpp
         ./src/primitives/transaction.cpp
-        ./src/zhlm/zerocoin.cpp
+        ./src/zsqr/zerocoin.cpp
         ./src/core_read.cpp
         ./src/core_write.cpp
         ./src/hash.cpp

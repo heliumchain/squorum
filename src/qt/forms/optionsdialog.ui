@@ -456,8 +456,8 @@ https://www.transifex.com/squorum-project/squorum-wallet</string>
         </layout>
        </item>
        <item>
-        <widget class="QWidget" name="verticalZhlmDisplayWidget" native="true">
-         <layout class="QVBoxLayout" name="verticalZhlmDisplayLayout">
+        <widget class="QWidget" name="verticalZsqrDisplayWidget" native="true">
+         <layout class="QVBoxLayout" name="verticalZsqrDisplayLayout">
           <property name="margin">
            <number>0</number>
           </property>

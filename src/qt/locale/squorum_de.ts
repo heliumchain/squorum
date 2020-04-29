@@ -1085,8 +1085,8 @@ Adresse: %4</translation>
         <translation>Diese Bezeichnung wird rot, wenn ein Empfänger einen Betrag erhält, der kleiner ist als %1.</translation>
     </message>
     <message>
-        <source>Can vary +/- %1 uhlm per input.</source>
-        <translation>Kann um +/- %1 uhlm pro Eingang variieren.</translation>
+        <source>Can vary +/- %1 usqr per input.</source>
+        <translation>Kann um +/- %1 usqr pro Eingang variieren.</translation>
     </message>
     <message>
         <source>(no label)</source>
@@ -5234,7 +5234,7 @@ Bitte haben Sie etwas Geduld...</translation>
     </message>
     <message>
         <source>Display the stake modifier calculations in the debug.log file.</source>
-        <translation>Zeigen Sie die Berechnungen des Pfahlmodifikators in der Datei debug.log an.</translation>
+        <translation>Zeigen Sie die Berechnungen des Pfasqrodifikators in der Datei debug.log an.</translation>
     </message>
     <message>
         <source>Display verbose coin stake messages in the debug.log file.</source>

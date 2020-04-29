@@ -19,15 +19,15 @@
 #include "main.h"
 #include "primitives/block.h"
 #include "primitives/transaction.h"
-#include "zhlm/zerocoin.h"
+#include "zsqr/zerocoin.h"
 #include "guiinterface.h"
 #include "util.h"
 #include "validationinterface.h"
 #include "wallet/wallet_ismine.h"
 #include "wallet/walletdb.h"
-#include "zhlm/zhlmmodule.h"
-#include "zhlm/zhlmwallet.h"
-#include "zhlm/zhlmtracker.h"
+#include "zsqr/zsqrmodule.h"
+#include "zsqr/zsqrwallet.h"
+#include "zsqr/zsqrtracker.h"
 
 #include <algorithm>
 #include <map>
@@ -48,7 +48,7 @@ extern bool bSpendZeroConfChange;
 extern bool bdisableSystemnotifications;
 extern bool fSendFreeTransactions;
 extern bool fPayAtLeastCustomFee;
-extern bool fGlobalUnlockSpendCache; // Bool used for letting the precomputing thread know that zhlmspends need to use the cs_spendcache
+extern bool fGlobalUnlockSpendCache; // Bool used for letting the precomputing thread know that zsqrspends need to use the cs_spendcache
 
 //! -paytxfee default
 static const CAmount DEFAULT_TRANSACTION_FEE = 0;
@@ -228,7 +228,7 @@ public:
     bool DatabaseMint(CDeterministicMint& dMint);
     bool SetMintUnspent(const CBigNum& bnSerial);
     bool UpdateMint(const CBigNum& bnValue, const int& nHeight, const uint256& txid, const libzerocoin::CoinDenomination& denom);
-    std::string GetUniqueWalletBackupName(bool fzhlmAuto) const;
+    std::string GetUniqueWalletBackupName(bool fzsqrAuto) const;
     void InitAutoConvertAddresses();
 
 
@@ -253,7 +253,7 @@ public:
     bool fWalletUnlockAnonymizeOnly;
     std::string strWalletFile;
     bool fBackupMints;
-    std::unique_ptr<CzHLMTracker> zhlmTracker;
+    std::unique_ptr<CzHLMTracker> zsqrTracker;
 
     std::set<int64_t> setKeyPool;
     std::map<CKeyID, CKeyMetadata> mapKeyMetadata;
@@ -341,7 +341,7 @@ public:
     void setZWallet(CzHLMWallet* zwallet)
     {
         zwalletMain = zwallet;
-        zhlmTracker = std::unique_ptr<CzHLMTracker>(new CzHLMTracker(strWalletFile));
+        zsqrTracker = std::unique_ptr<CzHLMTracker>(new CzHLMTracker(strWalletFile));
     }
 
     CzHLMWallet* getZWallet() { return zwalletMain; }

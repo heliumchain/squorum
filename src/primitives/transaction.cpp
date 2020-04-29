@@ -189,7 +189,7 @@ bool CTransaction::HasZerocoinMintOutputs() const
 
 bool CTransaction::HasZerocoinPublicSpendInputs() const
 {
-    // The wallet only allows publicSpend inputs in the same tx and not a combination between hlm and zhlm
+    // The wallet only allows publicSpend inputs in the same tx and not a combination between sqr and zsqr
     for(const CTxIn& txin : vin) {
         if (txin.IsZerocoinPublicSpend())
             return true;

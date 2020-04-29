@@ -1094,8 +1094,8 @@ MultiSend: %1</translation>
         <translation>Этот маркер становится красным если получаемая адресатом сумма меньше, чем %1.</translation>
     </message>
     <message>
-        <source>Can vary +/- %1 uhlm per input.</source>
-        <translation>Может вариироваться +/- %1 uhlm при вводе</translation>
+        <source>Can vary +/- %1 usqr per input.</source>
+        <translation>Может вариироваться +/- %1 usqr при вводе</translation>
     </message>
     <message>
         <source>(no label)</source>

@@ -174,21 +174,21 @@ BITCOIN_CORE_H = \
   wallet/wallet.h \
   wallet/wallet_ismine.h \
   wallet/walletdb.h \
-  zhlmchain.h \
-  zhlm/accumulators.h \
-  zhlm/accumulatorcheckpoints.h \
-  zhlm/accumulatorcheckpoints.json.h \
-  zhlm/accumulatormap.h \
-  zhlm/deterministicmint.h \
-  zhlm/mintpool.h \
-  zhlm/witness.h \
-  zhlm/zerocoin.h \
-  zhlm/zhlmtracker.h \
-  zhlm/zhlmwallet.h \
-  zhlm/zhlmmodule.h \
+  zsqrchain.h \
+  zsqr/accumulators.h \
+  zsqr/accumulatorcheckpoints.h \
+  zsqr/accumulatorcheckpoints.json.h \
+  zsqr/accumulatormap.h \
+  zsqr/deterministicmint.h \
+  zsqr/mintpool.h \
+  zsqr/witness.h \
+  zsqr/zerocoin.h \
+  zsqr/zsqrtracker.h \
+  zsqr/zsqrwallet.h \
+  zsqr/zsqrmodule.h \
   genwit.h \
   concurrentqueue.h \
-  lightzhlmthread.h \
+  lightzsqrthread.h \
   zmq/zmqabstractnotifier.h \
   zmq/zmqconfig.h \
   zmq/zmqnotificationinterface.h \
@@ -236,7 +236,7 @@ libbitcoin_server_a_SOURCES = \
   txdb.cpp \
   txmempool.cpp \
   validationinterface.cpp \
-  zhlmchain.cpp \
+  zsqrchain.cpp \
   $(BITCOIN_CORE_H)
 
 if ENABLE_ZMQ
@@ -273,17 +273,17 @@ libbitcoin_wallet_a_SOURCES = \
   wallet/wallet.cpp \
   wallet/wallet_ismine.cpp \
   wallet/walletdb.cpp \
-  zhlm/deterministicmint.cpp \
-  zhlm/zerocoin.cpp \
-  zhlm/accumulators.cpp \
-  zhlm/mintpool.cpp \
-  zhlm/witness.cpp \
-  zhlm/zhlmwallet.cpp \
-  zhlm/zhlmtracker.cpp \
+  zsqr/deterministicmint.cpp \
+  zsqr/zerocoin.cpp \
+  zsqr/accumulators.cpp \
+  zsqr/mintpool.cpp \
+  zsqr/witness.cpp \
+  zsqr/zsqrwallet.cpp \
+  zsqr/zsqrtracker.cpp \
   stakeinput.cpp \
   genwit.cpp \
-  zhlm/zhlmmodule.cpp \
-  lightzhlmthread.cpp \
+  zsqr/zsqrmodule.cpp \
+  lightzsqrthread.cpp \
   $(BITCOIN_CORE_H)
 
 # crypto primitives library
@@ -359,9 +359,9 @@ endif
 libbitcoin_common_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
 libbitcoin_common_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 libbitcoin_common_a_SOURCES = \
-  zhlm/accumulators.cpp \
-  zhlm/accumulatorcheckpoints.cpp \
-  zhlm/accumulatormap.cpp \
+  zsqr/accumulators.cpp \
+  zsqr/accumulatorcheckpoints.cpp \
+  zsqr/accumulatormap.cpp \
   allocators.cpp \
   amount.cpp \
   base58.cpp \
@@ -370,9 +370,9 @@ libbitcoin_common_a_SOURCES = \
   coins.cpp \
   compressor.cpp \
   primitives/block.cpp \
-  zhlm/deterministicmint.cpp \
+  zsqr/deterministicmint.cpp \
   primitives/transaction.cpp \
-  zhlm/zerocoin.cpp \
+  zsqr/zerocoin.cpp \
   core_read.cpp \
   core_write.cpp \
   hash.cpp \
@@ -541,7 +541,7 @@ CLEANFILES += univalue/*.gcda univalue/*.gcno
 CLEANFILES += wallet/*.gcda wallet/*.gcno
 CLEANFILES += wallet/test/*.gcda wallet/test/*.gcno
 CLEANFILES += zmq/*.gcda zmq/*.gcno
-CLEANFILES += zhlm/*.gcda zhlm/*.gcno
+CLEANFILES += zsqr/*.gcda zsqr/*.gcno
 CLEANFILES += obj/build.h
 
 EXTRA_DIST =

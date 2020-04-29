@@ -1099,8 +1099,8 @@ MultiWysyłlka: %1</translation>
         <translation>Ta etykieta zmienia kolor na czerwony, jeśli odbiorca otrzymuje mniej niż %1.</translation>
     </message>
     <message>
-        <source>Can vary +/- %1 uhlm per input.</source>
-        <translation>Zmienia się +/- %1 uhlm</translation>
+        <source>Can vary +/- %1 usqr per input.</source>
+        <translation>Zmienia się +/- %1 usqr</translation>
     </message>
     <message>
         <source>(no label)</source>

@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include "zhlmchain.h"
-#include "zhlm/zhlmmodule.h"
+#include "zsqrchain.h"
+#include "zsqr/zsqrmodule.h"
 #include "invalid.h"
 #include "main.h"
 #include "txdb.h"

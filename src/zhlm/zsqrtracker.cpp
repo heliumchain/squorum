@@ -3,15 +3,15 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include <zhlm/deterministicmint.h>
-#include "zhlmtracker.h"
+#include <zsqr/deterministicmint.h>
+#include "zsqrtracker.h"
 #include "util.h"
 #include "sync.h"
 #include "main.h"
 #include "txdb.h"
 #include "wallet/walletdb.h"
-#include "zhlm/accumulators.h"
-#include "zhlm/zhlmwallet.h"
+#include "zsqr/accumulators.h"
+#include "zsqr/zsqrwallet.h"
 #include "witness.h"
 
 
@@ -158,7 +158,7 @@ CAmount CzHLMTracker::GetBalance(bool fConfirmedOnly, bool fUnconfirmedOnly) con
     }
 
     {
-        //LOCK(cs_hlmtracker);
+        //LOCK(cs_sqrtracker);
         // Get Unused coins
         for (auto& it : mapSerialHashes) {
             CMintMeta meta = it.second;
@@ -478,7 +478,7 @@ std::set<CMintMeta> CzHLMTracker::ListMints(bool fUnusedOnly, bool fMatureOnly, 
             Add(dMint, false, false, zHLMWallet);
         }
         delete zHLMWallet;
-        LogPrint("zero", "%s: added %d dzhlm from DB\n", __func__, listDeterministicDB.size());
+        LogPrint("zero", "%s: added %d dzsqr from DB\n", __func__, listDeterministicDB.size());
     }
 
     std::vector<CMintMeta> vOverWrite;

@@ -1082,8 +1082,8 @@ Adresse: %4
         <translation>Denne tekstmarkør bliver rød, hvis en modtageradresse modtager et beløb mindre end %1.</translation>
     </message>
     <message>
-        <source>Can vary +/- %1 uhlm per input.</source>
-        <translation>Kan variere +/- %1 ohlm pr input.</translation>
+        <source>Can vary +/- %1 usqr per input.</source>
+        <translation>Kan variere +/- %1 osqr pr input.</translation>
     </message>
     <message>
         <source>(no label)</source>

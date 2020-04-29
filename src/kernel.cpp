@@ -13,7 +13,7 @@
 #include "util.h"
 #include "stakeinput.h"
 #include "utilmoneystr.h"
-#include "zhlmchain.h"
+#include "zsqrchain.h"
 
 // v1 modifier interval.
 static const int64_t OLD_MODIFIER_INTERVAL = 2087;
@@ -452,9 +452,9 @@ bool initStakeInput(const CBlock block, std::unique_ptr<CStakeInput>& stake, int
         if (!VerifyScript(txin.scriptSig, txPrev.vout[txin.prevout.n].scriptPubKey, STANDARD_SCRIPT_VERIFY_FLAGS, TransactionSignatureChecker(&tx, 0)))
             return error("%s : VerifySignature failed on coinstake %s", __func__, tx.GetHash().ToString().c_str());
 
-        CHlmStake* hlmInput = new CHlmStake();
-        hlmInput->SetInput(txPrev, txin.prevout.n);
-        stake = std::unique_ptr<CStakeInput>(hlmInput);
+        CHlmStake* sqrInput = new CHlmStake();
+        sqrInput->SetInput(txPrev, txin.prevout.n);
+        stake = std::unique_ptr<CStakeInput>(sqrInput);
     }
     return true;
 }

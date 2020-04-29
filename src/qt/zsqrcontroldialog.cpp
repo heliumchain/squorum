@@ -3,10 +3,10 @@
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include "zhlmcontroldialog.h"
-#include "ui_zhlmcontroldialog.h"
+#include "zsqrcontroldialog.h"
+#include "ui_zsqrcontroldialog.h"
 
-#include "zhlm/accumulators.h"
+#include "zsqr/accumulators.h"
 #include "main.h"
 #include "walletmodel.h"
 
@@ -109,9 +109,9 @@ void ZHlmControlDialog::updateList()
         itemMint->setData(COLUMN_CONFIRMATIONS, Qt::UserRole, QVariant((qlonglong) nConfirmations));
 
         {
-            LOCK(pwalletMain->zhlmTracker->cs_spendcache);
+            LOCK(pwalletMain->zsqrTracker->cs_spendcache);
 
-            CoinWitnessData *witnessData = pwalletMain->zhlmTracker->GetSpendCache(mint.hashStake);
+            CoinWitnessData *witnessData = pwalletMain->zsqrTracker->GetSpendCache(mint.hashStake);
             if (witnessData->nHeightAccStart > 0  && witnessData->nHeightAccEnd > 0) {
                 int nPercent = std::max(0, std::min(100, (int)((double)(witnessData->nHeightAccEnd - witnessData->nHeightAccStart) / (double)(nBestHeight - witnessData->nHeightAccStart - 220) * 100)));
                 QString percent = QString::number(nPercent) + QString("%");

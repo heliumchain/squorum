@@ -1122,8 +1122,8 @@ MultiSend: %1</translation>
         <translation>Den här etiketten blir röd, ifall någon mottagare får en mängd som är mindre än %1.</translation>
     </message>
     <message>
-        <source>Can vary +/- %1 uhlm per input.</source>
-        <translation>Kan variera med +/- %1 uhlm per inmatning.</translation>
+        <source>Can vary +/- %1 usqr per input.</source>
+        <translation>Kan variera med +/- %1 usqr per inmatning.</translation>
     </message>
     <message>
         <source>(no label)</source>

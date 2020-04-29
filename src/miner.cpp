@@ -25,11 +25,11 @@
 #endif
 #include "validationinterface.h"
 #include "masternode-payments.h"
-#include "zhlm/accumulators.h"
+#include "zsqr/accumulators.h"
 #include "blocksignature.h"
 #include "spork.h"
 #include "invalid.h"
-#include "zhlmchain.h"
+#include "zsqrchain.h"
 
 
 #include <boost/thread.hpp>
@@ -229,8 +229,8 @@ CBlockTemplate* CreateNewBlock(const CScript& scriptPubKeyIn, CWallet* pwallet, 
                 //zerocoinspend has special vin
                 if (hasZerocoinSpends) {
                     //Give a high priority to zerocoinspends to get into the next block
-                    //Priority = (age^6+100000)*amount - gives higher priority to zhlms that have been in mempool long
-                    //and higher priority to zhlms that are large in value
+                    //Priority = (age^6+100000)*amount - gives higher priority to zsqrs that have been in mempool long
+                    //and higher priority to zsqrs that are large in value
                     int64_t nTimeSeen = GetAdjustedTime();
                     double nConfs = 100000;
 
@@ -618,8 +618,8 @@ bool ProcessBlockFound(CBlock* pblock, CWallet& wallet)
     CValidationState state;
     if (!ProcessNewBlock(state, NULL, pblock)) {
         if (pblock->IsZerocoinStake()) {
-            pwalletMain->zhlmTracker->RemovePending(pblock->vtx[1].GetHash());
-            pwalletMain->zhlmTracker->ListMints(true, true, true); //update the state
+            pwalletMain->zsqrTracker->RemovePending(pblock->vtx[1].GetHash());
+            pwalletMain->zsqrTracker->ListMints(true, true, true); //update the state
         }
         return error("sQuorumMiner : ProcessNewBlock, block not accepted");
     }

@@ -1098,8 +1098,8 @@ Adresse : %4
         <translation>Ce label devient rouge si l'un des destinataires reçoit un montant inférieur à %1.</translation>
     </message>
     <message>
-        <source>Can vary +/- %1 uhlm per input.</source>
-        <translation>Peut varier de +/- %1 uhlm par entrée.</translation>
+        <source>Can vary +/- %1 usqr per input.</source>
+        <translation>Peut varier de +/- %1 usqr par entrée.</translation>
     </message>
     <message>
         <source>(no label)</source>

@@ -1094,8 +1094,8 @@ MultiSend: %1</translation>
         <translation>Dit label wordt rood, als een ontvanger een hoeveelheid kleiner dan %1 ontvangt.</translation>
     </message>
     <message>
-        <source>Can vary +/- %1 uhlm per input.</source>
-        <translation>Kan +/-%1 uhlm per invoer variëren.</translation>
+        <source>Can vary +/- %1 usqr per input.</source>
+        <translation>Kan +/-%1 usqr per invoer variëren.</translation>
     </message>
     <message>
         <source>(no label)</source>

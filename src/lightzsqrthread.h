@@ -10,7 +10,7 @@
 
 #include <atomic>
 #include "genwit.h"
-#include "zhlm/accumulators.h"
+#include "zsqr/accumulators.h"
 #include "concurrentqueue.h"
 #include "chainparams.h"
 #include <boost/function.hpp>
@@ -51,12 +51,12 @@ public:
         return true;
     }
 
-    void StartLightZhlmThread(boost::thread_group& threadGroup) {
+    void StartLightZsqrThread(boost::thread_group& threadGroup) {
         LogPrintf("%s thread start\n", "squorum-light-thread");
         threadIns = boost::thread(boost::bind(&CLightWorker::ThreadLightZHLMSimplified, this));
     }
 
-    void StopLightZhlmThread() {
+    void StopLightZsqrThread() {
         threadIns.interrupt();
         LogPrintf("%s thread interrupted\n", "squorum-light-thread");
     }

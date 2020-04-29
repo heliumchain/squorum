@@ -236,7 +236,7 @@ public:
         nRequiredAccumulation = 1;
         nDefaultSecurityLevel = 100; //full security level for accumulators
         nZerocoinHeaderVersion = 4; //Block headers must be this version once zerocoin is active
-        nZerocoinRequiredStakeDepth = 200; //The required confirmations for a zhlm to be stakable
+        nZerocoinRequiredStakeDepth = 200; //The required confirmations for a zsqr to be stakable
 
         nBudget_Fee_Confirmations = 6; // Number of confirmations for the finalization fee
         nProposalEstablishmentTime = 60 * 60 * 24; // Proposals must be at least a day old to make it into a budget
