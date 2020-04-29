@@ -1,10 +1,10 @@
 // Copyright (c) 2017-2018 The PIVX developers
-// Copyright (c) 2018-2020 The Helium developers
+// Copyright (c) 2018-2020 The sQuorum developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef Helium_STAKEINPUT_H
-#define Helium_STAKEINPUT_H
+#ifndef sQuorum_STAKEINPUT_H
+#define sQuorum_STAKEINPUT_H
 
 #include "chain.h"
 #include "streams.h"
@@ -102,4 +102,4 @@ public:
 };
 
 
-#endif //Helium_STAKEINPUT_H
+#endif //sQuorum_STAKEINPUT_H

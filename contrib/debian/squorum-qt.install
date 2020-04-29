@@ -1,6 +1,6 @@
-usr/local/bin/helium-qt usr/bin
-share/pixmaps/helium32.xpm usr/share/pixmaps
-share/pixmaps/helium16.xpm usr/share/pixmaps
-share/pixmaps/helium128.png usr/share/pixmaps
-debian/helium-qt.desktop usr/share/applications
-debian/helium-qt.protocol usr/share/kde4/services/
+usr/local/bin/squorum-qt usr/bin
+share/pixmaps/squorum32.xpm usr/share/pixmaps
+share/pixmaps/squorum16.xpm usr/share/pixmaps
+share/pixmaps/squorum128.png usr/share/pixmaps
+debian/squorum-qt.desktop usr/share/applications
+debian/squorum-qt.protocol usr/share/kde4/services/

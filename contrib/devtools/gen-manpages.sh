@@ -7,10 +7,10 @@ BUILDDIR=${BUILDDIR:-$TOPDIR}
 BINDIR=${BINDIR:-$BUILDDIR/src}
 MANDIR=${MANDIR:-$TOPDIR/doc/man}
 
-BITCOIND=${BITCOIND:-$BINDIR/heliumd}
-BITCOINCLI=${BITCOINCLI:-$BINDIR/helium-cli}
-BITCOINTX=${BITCOINTX:-$BINDIR/helium-tx}
-BITCOINQT=${BITCOINQT:-$BINDIR/qt/helium-qt}
+BITCOIND=${BITCOIND:-$BINDIR/squorumd}
+BITCOINCLI=${BITCOINCLI:-$BINDIR/squorum-cli}
+BITCOINTX=${BITCOINTX:-$BINDIR/squorum-tx}
+BITCOINQT=${BITCOINQT:-$BINDIR/qt/squorum-qt}
 
 [ ! -x $BITCOIND ] && echo "$BITCOIND not found or not executable." && exit 1
 

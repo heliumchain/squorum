@@ -2,7 +2,7 @@
 // Copyright (c) 2009-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
 // Copyright (c) 2015-2018 The PIVX developers
-// Copyright (c) 2018-2020 The Helium developers
+// Copyright (c) 2018-2020 The sQuorum developers
 
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
@@ -15,7 +15,7 @@
 #define BITCOIN_UTIL_H
 
 #if defined(HAVE_CONFIG_H)
-#include "config/helium-config.h"
+#include "config/squorum-config.h"
 #endif
 
 #include "compat.h"
@@ -32,7 +32,7 @@
 #include <boost/thread/exceptions.hpp>
 #include <boost/thread/condition_variable.hpp> // for boost::thread_interrupted
 
-//Helium only features
+//sQuorum only features
 
 extern bool fMasterNode;
 extern bool fLiteMode;
@@ -230,7 +230,7 @@ void RenameThread(const char* name);
 template <typename Callable>
 void TraceThread(const char* name, Callable func)
 {
-    std::string s = strprintf("helium-%s", name);
+    std::string s = strprintf("squorum-%s", name);
     RenameThread(s.c_str());
     try {
         LogPrintf("%s thread start\n", name);

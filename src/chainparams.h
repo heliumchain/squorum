@@ -2,7 +2,7 @@
 // Copyright (c) 2009-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
 // Copyright (c) 2015-2018 The PIVX developers
-// Copyright (c) 2018-2020 The Helium developers
+// Copyright (c) 2018-2020 The sQuorum developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -132,8 +132,8 @@ public:
     /** Height or Time Based Activations **/
     // int ModifierUpgradeBlock() const { return nModifierUpdateBlock; }
     int LAST_POW_BLOCK() const { return nLastPOWBlock; }
-    int HeliumBadBlockTime() const { return nHeliumBadBlockTime; }
-    int HeliumBadBlocknBits() const { return nHeliumBadBlocknBits; }
+    int sQuorumBadBlockTime() const { return nsQuorumBadBlockTime; }
+    int sQuorumBadBlocknBits() const { return nsQuorumBadBlocknBits; }
     int Zerocoin_StartHeight() const { return nZerocoinStartHeight; }
     // int Zerocoin_Block_EnforceSerialRange() const { return nBlockEnforceSerialRange; }
     int Zerocoin_Block_RecalculateAccumulators() const { return nBlockRecalculateAccumulators; }
@@ -162,8 +162,8 @@ protected:
     int nToCheckBlockUpgradeMajority;
     int64_t nTargetSpacing;
     int nLastPOWBlock;
-    int64_t nHeliumBadBlockTime;
-    unsigned int nHeliumBadBlocknBits;
+    int64_t nsQuorumBadBlockTime;
+    unsigned int nsQuorumBadBlocknBits;
     int nMasternodeCountDrift;
     int nMaturity;
     int nStakeMinDepth;

@@ -1,11 +1,11 @@
 Sample configuration files for:
 ```
-SystemD: heliumd.service
-Upstart: heliumd.conf
-OpenRC:  heliumd.openrc
-         heliumd.openrcconf
-CentOS:  heliumd.init
-macOS:    org.helium.heliumd.plist
+SystemD: squorumd.service
+Upstart: squorumd.conf
+OpenRC:  squorumd.openrc
+         squorumd.openrcconf
+CentOS:  squorumd.init
+macOS:    org.squorum.squorumd.plist
 ```
 have been made available to assist packagers in creating node packages here.
 

@@ -1,5 +1,5 @@
 // Copyright (c) 2017-2018 The PIVX developers
-// Copyright (c) 2018-2020 The Helium developers
+// Copyright (c) 2018-2020 The sQuorum developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -86,7 +86,7 @@ PrivacyDialog::PrivacyDialog(QWidget* parent) : QDialog(parent, Qt::WindowSystem
     ui->labelZsupplyText1000->setText(tr("Denom. <b>1000</b>:"));
     ui->labelZsupplyText5000->setText(tr("Denom. <b>5000</b>:"));
 
-    // Helium settings
+    // sQuorum settings
     QSettings settings;
     if (!settings.contains("fMinimizeChange")){
         fMinimizeChange = false;
@@ -493,7 +493,7 @@ void PrivacyDialog::sendzHLM()
 
     CAmount nValueOut = 0;
     for (const CTxOut& txout: wtxNew.vout) {
-        strStats += tr("value out: ") + FormatMoney(txout.nValue).c_str() + " Helium, ";
+        strStats += tr("value out: ") + FormatMoney(txout.nValue).c_str() + " sQuorum, ";
         nValueOut += txout.nValue;
 
         strStats += tr("address: ");

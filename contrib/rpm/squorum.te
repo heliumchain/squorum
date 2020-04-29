@@ -1,81 +1,81 @@
-policy_module(helium, 1.100.1)
+policy_module(squorum, 1.100.1)
 
 ########################################
 #
 # Declarations
 #
 
-type helium_t;
-type helium_exec_t;
-init_daemon_domain(helium_t, helium_exec_t)
+type squorum_t;
+type squorum_exec_t;
+init_daemon_domain(squorum_t, squorum_exec_t)
 
-permissive helium_t;
+permissive squorum_t;
 
-type helium_initrc_exec_t;
-init_script_file(helium_initrc_exec_t)
+type squorum_initrc_exec_t;
+init_script_file(squorum_initrc_exec_t)
 
-type helium_conf_t;
-files_type(helium_conf_t)
+type squorum_conf_t;
+files_type(squorum_conf_t)
 
-type helium_var_lib_t;
-files_type(helium_var_lib_t)
+type squorum_var_lib_t;
+files_type(squorum_var_lib_t)
 
-type helium_var_run_t;
-files_type(helium_var_run_t)
+type squorum_var_run_t;
+files_type(squorum_var_run_t)
 
-type helium_port_t;
-corenet_port(helium_port_t)
+type squorum_port_t;
+corenet_port(squorum_port_t)
 
 ########################################
 #
-# helium local policy
+# squorum local policy
 #
-allow helium_t self:process { fork };
+allow squorum_t self:process { fork };
 
-allow helium_t self:fifo_file rw_fifo_file_perms;
-allow helium_t self:unix_stream_socket create_stream_socket_perms;
+allow squorum_t self:fifo_file rw_fifo_file_perms;
+allow squorum_t self:unix_stream_socket create_stream_socket_perms;
 
-manage_dirs_pattern(helium_t, helium_conf_t, helium_conf_t)
-manage_files_pattern(helium_t, helium_conf_t, helium_conf_t)
+manage_dirs_pattern(squorum_t, squorum_conf_t, squorum_conf_t)
+manage_files_pattern(squorum_t, squorum_conf_t, squorum_conf_t)
 
-manage_dirs_pattern(helium_t, helium_var_lib_t, helium_var_lib_t)
-manage_files_pattern(helium_t, helium_var_lib_t, helium_var_lib_t)
-files_var_lib_filetrans(helium_t, helium_var_lib_t, { dir file })
+manage_dirs_pattern(squorum_t, squorum_var_lib_t, squorum_var_lib_t)
+manage_files_pattern(squorum_t, squorum_var_lib_t, squorum_var_lib_t)
+files_var_lib_filetrans(squorum_t, squorum_var_lib_t, { dir file })
 
-manage_dirs_pattern(helium_t, helium_var_run_t, helium_var_run_t)
-manage_files_pattern(helium_t, helium_var_run_t, helium_var_run_t)
+manage_dirs_pattern(squorum_t, squorum_var_run_t, squorum_var_run_t)
+manage_files_pattern(squorum_t, squorum_var_run_t, squorum_var_run_t)
 
-sysnet_dns_name_resolve(helium_t)
-corenet_all_recvfrom_unlabeled(helium_t)
+sysnet_dns_name_resolve(squorum_t)
+corenet_all_recvfrom_unlabeled(squorum_t)
 
-allow helium_t self:tcp_socket create_stream_socket_perms;
-corenet_tcp_sendrecv_generic_if(helium_t)
-corenet_tcp_sendrecv_generic_node(helium_t)
-corenet_tcp_sendrecv_all_ports(helium_t)
-corenet_tcp_bind_generic_node(helium_t)
-
-gen_require(`
-    type helium_port_t;
-')
-allow helium_t helium_port_t:tcp_socket name_bind;
+allow squorum_t self:tcp_socket create_stream_socket_perms;
+corenet_tcp_sendrecv_generic_if(squorum_t)
+corenet_tcp_sendrecv_generic_node(squorum_t)
+corenet_tcp_sendrecv_all_ports(squorum_t)
+corenet_tcp_bind_generic_node(squorum_t)
 
 gen_require(`
-    type helium_port_t;
+    type squorum_port_t;
 ')
-allow helium_t helium_port_t:tcp_socket name_connect;
+allow squorum_t squorum_port_t:tcp_socket name_bind;
 
-domain_use_interactive_fds(helium_t)
+gen_require(`
+    type squorum_port_t;
+')
+allow squorum_t squorum_port_t:tcp_socket name_connect;
 
-files_read_etc_files(helium_t)
+domain_use_interactive_fds(squorum_t)
 
-miscfiles_read_localization(helium_t)
+files_read_etc_files(squorum_t)
 
-sysnet_dns_name_resolve(helium_t)
+miscfiles_read_localization(squorum_t)
 
-allow helium_t helium_exec_t:file execute_no_trans;
-allow helium_t self:process setsched;
-corecmd_exec_ls(helium_t)
-corenet_tcp_connect_http_port(helium_t)
-dev_read_urand(helium_t)
-fs_getattr_xattr_fs(helium_t)
-kernel_read_system_state(helium_t)
+sysnet_dns_name_resolve(squorum_t)
+
+allow squorum_t squorum_exec_t:file execute_no_trans;
+allow squorum_t self:process setsched;
+corecmd_exec_ls(squorum_t)
+corenet_tcp_connect_http_port(squorum_t)
+dev_read_urand(squorum_t)
+fs_getattr_xattr_fs(squorum_t)
+kernel_read_system_state(squorum_t)

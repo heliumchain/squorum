@@ -16,14 +16,14 @@ BEGIN
     BEGIN
         BLOCK "040904E4" // U.S. English - multilingual (hex)
         BEGIN
-            VALUE "CompanyName",        "Helium"
-            VALUE "FileDescription",    "helium-cli (OSS RPC client for Helium)"
+            VALUE "CompanyName",        "sQuorum"
+            VALUE "FileDescription",    "squorum-cli (OSS RPC client for sQuorum)"
             VALUE "FileVersion",        VER_FILEVERSION_STR
-            VALUE "InternalName",       "helium-cli"
+            VALUE "InternalName",       "squorum-cli"
             VALUE "LegalCopyright",     COPYRIGHT_STR
             VALUE "LegalTrademarks1",   "Distributed under the MIT/X11 software license, see the accompanying file COPYING or http://www.opensource.org/licenses/mit-license.php."
-            VALUE "OriginalFilename",   "helium-cli.exe"
-            VALUE "ProductName",        "helium-cli"
+            VALUE "OriginalFilename",   "squorum-cli.exe"
+            VALUE "ProductName",        "squorum-cli"
             VALUE "ProductVersion",     VER_PRODUCTVERSION_STR
         END
     END

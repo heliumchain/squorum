@@ -1,10 +1,10 @@
 // Copyright (c) 2017-2018 The PIVX developers
-// Copyright (c) 2018-2020 The Helium developers
+// Copyright (c) 2018-2020 The sQuorum developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef Helium_MINTPOOL_H
-#define Helium_MINTPOOL_H
+#ifndef sQuorum_MINTPOOL_H
+#define sQuorum_MINTPOOL_H
 
 #include <map>
 #include <list>
@@ -51,4 +51,4 @@ public:
 };
 
 
-#endif //Helium_MINTPOOL_H
+#endif //sQuorum_MINTPOOL_H

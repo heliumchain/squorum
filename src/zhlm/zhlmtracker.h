@@ -1,10 +1,10 @@
 // Copyright (c) 2018 The PIVX developers
-// Copyright (c) 2018-2020 The Helium developers
+// Copyright (c) 2018-2020 The sQuorum developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef Helium_ZHLMTRACKER_H
-#define Helium_ZHLMTRACKER_H
+#ifndef sQuorum_ZHLMTRACKER_H
+#define sQuorum_ZHLMTRACKER_H
 
 #include "zerocoin.h"
 #include "witness.h"
@@ -56,4 +56,4 @@ public:
     void Clear();
 };
 
-#endif //Helium_ZHLMTRACKER_H
+#endif //sQuorum_ZHLMTRACKER_H

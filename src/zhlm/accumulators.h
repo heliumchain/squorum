@@ -1,10 +1,10 @@
 // Copyright (c) 2017-2018 The PIVX developers
-// Copyright (c) 2018-2020 The Helium developers
+// Copyright (c) 2018-2020 The sQuorum developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef Helium_ACCUMULATORS_H
-#define Helium_ACCUMULATORS_H
+#ifndef sQuorum_ACCUMULATORS_H
+#define sQuorum_ACCUMULATORS_H
 
 #include "libzerocoin/Accumulator.h"
 #include "libzerocoin/Coin.h"
@@ -91,5 +91,5 @@ public:
     searchMintHeightException(const std::string &message) : message(message) {}
 };
 
-#endif //Helium_ACCUMULATORS_H
+#endif //sQuorum_ACCUMULATORS_H
 

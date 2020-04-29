@@ -1,15 +1,15 @@
 #!/bin/sh
 
-# setup helium account, homedir etc
+# setup squorum account, homedir etc
 
 set -e
 
-BCUSER="helium"
-BCHOME="/var/lib/helium"
+BCUSER="squorum"
+BCHOME="/var/lib/squorum"
 
 if [ "$1" = "purge" ]; then
 
-	# The helium user is left in place for now - This is to ensure that a new user
+	# The squorum user is left in place for now - This is to ensure that a new user
 	# will not inherit the users UID/GID and inadvertently gain access to wallets etc
 
 	# The homedir is also left intact to ensure that we don't accidentally delete a
@@ -17,7 +17,7 @@ if [ "$1" = "purge" ]; then
 
 	echo
 	echo "#"
-	echo "#  The helium user (${BCUSER}) and data dir (${BCHOME})"
+	echo "#  The squorum user (${BCUSER}) and data dir (${BCHOME})"
 	echo "#  were left intact."
 	echo "#"
 	echo "#  Make sure to check \"${BCHOME}\" for wallets and other"

@@ -62,12 +62,12 @@
         <translation>Alıcı Adres</translation>
     </message>
     <message>
-        <source>These are your Helium addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Bunlar ödemeleri göndermek için olan Helium adreslerinizdir.Coinleri göndermeden önce her zaman gönderilen miktarı ve adresi kontrol edin</translation>
+        <source>These are your sQuorum addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>Bunlar ödemeleri göndermek için olan sQuorum adreslerinizdir.Coinleri göndermeden önce her zaman gönderilen miktarı ve adresi kontrol edin</translation>
     </message>
     <message>
-        <source>These are your Helium addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
-        <translation>Bunlar ödemeleri almak için olan Helium adreslerinizdirHer işlem için yeni bir adres kullanmanız önerilir.</translation>
+        <source>These are your sQuorum addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <translation>Bunlar ödemeleri almak için olan sQuorum adreslerinizdirHer işlem için yeni bir adres kullanmanız önerilir.</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -246,12 +246,12 @@
         <translation>adres</translation>
     </message>
     <message>
-        <source>Enter a Helium Address that you would like to encrypt using BIP 38. Enter a passphrase in the middle box. Press encrypt to compute the encrypted private key.</source>
-        <translation>BIP 38 ile şifrelemek isteğiniz Helium Adresini giriniz. Ortadaki kutucuğa bir parola giriniz. Şifrelenmiş özel anahtarı hesaplamak için şifrele tuşuna basınız. </translation>
+        <source>Enter a sQuorum Address that you would like to encrypt using BIP 38. Enter a passphrase in the middle box. Press encrypt to compute the encrypted private key.</source>
+        <translation>BIP 38 ile şifrelemek isteğiniz sQuorum Adresini giriniz. Ortadaki kutucuğa bir parola giriniz. Şifrelenmiş özel anahtarı hesaplamak için şifrele tuşuna basınız. </translation>
     </message>
     <message>
-        <source>The Helium address to encrypt</source>
-        <translation>Şifrelenecek Helium adresi</translation>
+        <source>The sQuorum address to encrypt</source>
+        <translation>Şifrelenecek sQuorum adresi</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -282,8 +282,8 @@
         <translation>Geçerli imzayı sistem panosuna kopyala</translation>
     </message>
     <message>
-        <source>Encrypt the private key for this Helium address</source>
-        <translation>Bu Helium adresinin özel anahtarını şifreleyin</translation>
+        <source>Encrypt the private key for this sQuorum address</source>
+        <translation>Bu sQuorum adresinin özel anahtarını şifreleyin</translation>
     </message>
     <message>
         <source>Reset all fields</source>
@@ -633,16 +633,16 @@
         <translation>Sekme tablosu</translation>
     </message>
     <message>
-        <source>Helium Core</source>
-        <translation>Helium CORE</translation>
+        <source>sQuorum Core</source>
+        <translation>sQuorum CORE</translation>
     </message>
     <message>
-        <source>Send coins to a Helium address</source>
-        <translation>Koinleri Helium adresine gönder</translation>
+        <source>Send coins to a sQuorum address</source>
+        <translation>Koinleri sQuorum adresine gönder</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and helium: URIs)</source>
-        <translation>Ödeme talep etme (QR kodları ve helium üretir: URI'ler)</translation>
+        <source>Request payments (generates QR codes and squorum: URIs)</source>
+        <translation>Ödeme talep etme (QR kodları ve squorum üretir: URI'ler)</translation>
     </message>
     <message>
         <source>&amp;Masternodes</source>
@@ -653,24 +653,24 @@
         <translation>Masternodları ara</translation>
     </message>
     <message>
-        <source>&amp;About Helium Core</source>
+        <source>&amp;About sQuorum Core</source>
         <translation>Pıvx core Hakkında</translation>
     </message>
     <message>
-        <source>Show information about Helium Core</source>
+        <source>Show information about sQuorum Core</source>
         <translation>Pıvx Core hakkında bilgi göster</translation>
     </message>
     <message>
-        <source>Modify configuration options for Helium</source>
-        <translation>Helium için yapılandırma seçeneklerini değiştirin</translation>
+        <source>Modify configuration options for sQuorum</source>
+        <translation>sQuorum için yapılandırma seçeneklerini değiştirin</translation>
     </message>
     <message>
-        <source>Sign messages with your Helium addresses to prove you own them</source>
-        <translation>Sahip olduğunuzu kanıtlamak için mesajlarınızı Helium adresleriyle imzalayın</translation>
+        <source>Sign messages with your sQuorum addresses to prove you own them</source>
+        <translation>Sahip olduğunuzu kanıtlamak için mesajlarınızı sQuorum adresleriyle imzalayın</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Helium addresses</source>
-        <translation>Belirtilen Helium adresleriyle imzalanmış olduklarından emin olmak için iletileri doğrulayın</translation>
+        <source>Verify messages to ensure they were signed with specified sQuorum addresses</source>
+        <translation>Belirtilen sQuorum adresleriyle imzalanmış olduklarından emin olmak için iletileri doğrulayın</translation>
     </message>
     <message>
         <source>&amp;BIP38 tool</source>
@@ -701,8 +701,8 @@
         <translation>Açık Masternode yapılandırma dosyası</translation>
     </message>
     <message>
-        <source>Open a Helium: URI or payment request</source>
-        <translation>Bir Helium: URI veya ödeme isteği açın</translation>
+        <source>Open a sQuorum: URI or payment request</source>
+        <translation>Bir sQuorum: URI veya ödeme isteği açın</translation>
     </message>
     <message>
         <source>&amp;Blockchain explorer</source>
@@ -713,12 +713,12 @@
         <translation>Kaşif penceresini engelle</translation>
     </message>
     <message>
-        <source>Show the Helium Core help message to get a list with possible Helium command-line options</source>
-        <translation>Olası Helium komut satırı seçeneklerine sahip bir liste almak için Helium Core yardım mesajını gösterin</translation>
+        <source>Show the sQuorum Core help message to get a list with possible sQuorum command-line options</source>
+        <translation>Olası sQuorum komut satırı seçeneklerine sahip bir liste almak için sQuorum Core yardım mesajını gösterin</translation>
     </message>
     <message>
-        <source>Helium Core client</source>
-        <translation>Helium Core istemci</translation>
+        <source>sQuorum Core client</source>
+        <translation>sQuorum Core istemci</translation>
     </message>
     <message>
         <source>Synchronizing with network...</source>
@@ -848,8 +848,8 @@ Adres: %4
         <translation>TextLabel</translation>
     </message>
     <message>
-        <source>Not all transactions will be shown. To view all transactions you need to set txindex=1 in the configuration file (helium.conf).</source>
-        <translation>Tüm işlemler gösterilmez. Tüm işlemleri görmek için yapılandırma dosyasında txindex = 1 ayarlamanız gerekir (helium.conf).
+        <source>Not all transactions will be shown. To view all transactions you need to set txindex=1 in the configuration file (squorum.conf).</source>
+        <translation>Tüm işlemler gösterilmez. Tüm işlemleri görmek için yapılandırma dosyasında txindex = 1 ayarlamanız gerekir (squorum.conf).
 </translation>
     </message>
 </context>
@@ -1138,8 +1138,8 @@ Adres: %4
         <translation>Gönderen adresini düzenle</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid Helium address.</source>
-        <translation>Girilen "%1" adresi geçerli bir Helium adresi değil.</translation>
+        <source>The entered address "%1" is not a valid sQuorum address.</source>
+        <translation>Girilen "%1" adresi geçerli bir sQuorum adresi değil.</translation>
     </message>
     <message>
         <source>The entered address "%1" is already in the address book.</source>
@@ -1195,16 +1195,16 @@ Adres: %4
         <translation>versiyon</translation>
     </message>
     <message>
-        <source>Helium Core</source>
-        <translation>Helium CORE</translation>
+        <source>sQuorum Core</source>
+        <translation>sQuorum CORE</translation>
     </message>
     <message>
         <source>(%1-bit)</source>
         <translation>(%1-bit)</translation>
     </message>
     <message>
-        <source>About Helium Core</source>
-        <translation>hakkında Helium Core</translation>
+        <source>About sQuorum Core</source>
+        <translation>hakkında sQuorum Core</translation>
     </message>
     <message>
         <source>Command-line options</source>
@@ -1250,16 +1250,16 @@ Adres: %4
         <translation>Hoşgeldiniz</translation>
     </message>
     <message>
-        <source>Welcome to Helium Core.</source>
-        <translation>Helium Core'a hoşgeldiniz.</translation>
+        <source>Welcome to sQuorum Core.</source>
+        <translation>sQuorum Core'a hoşgeldiniz.</translation>
     </message>
     <message>
-        <source>As this is the first time the program is launched, you can choose where Helium Core will store its data.</source>
-        <translation>Program ilk başlatıldığında Helium Core'un verilerini nerede saklayacağını seçebilirsiniz.</translation>
+        <source>As this is the first time the program is launched, you can choose where sQuorum Core will store its data.</source>
+        <translation>Program ilk başlatıldığında sQuorum Core'un verilerini nerede saklayacağını seçebilirsiniz.</translation>
     </message>
     <message>
-        <source>Helium Core will download and store a copy of the Helium block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
-        <translation>Helium Core, Helium blok zincirinin bir kopyasını indirecek ve depolayacaktır. Bu dizinde en az %1GB veri saklanacak ve zamanla büyüyecek. Cüzdan ayrıca bu dizinde saklanır.</translation>
+        <source>sQuorum Core will download and store a copy of the sQuorum block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
+        <translation>sQuorum Core, sQuorum blok zincirinin bir kopyasını indirecek ve depolayacaktır. Bu dizinde en az %1GB veri saklanacak ve zamanla büyüyecek. Cüzdan ayrıca bu dizinde saklanır.</translation>
     </message>
     <message>
         <source>Use the default data directory</source>
@@ -1270,8 +1270,8 @@ Adres: %4
         <translation>Özel bir veri dizini kullanın:</translation>
     </message>
     <message>
-        <source>Helium Core</source>
-        <translation>Helium CORE</translation>
+        <source>sQuorum Core</source>
+        <translation>sQuorum CORE</translation>
     </message>
     <message>
         <source>Error: Specified data directory "%1" cannot be created.</source>
@@ -1412,12 +1412,12 @@ Adres: %4
         <translation>Gönderim adresi girin</translation>
     </message>
     <message>
-        <source>MultiSend allows you to automatically send up to 100% of your stake or masternode reward to a list of other Helium addresses after it matures.
-To Add: enter percentage to give and Helium address to add to the MultiSend vector.
+        <source>MultiSend allows you to automatically send up to 100% of your stake or masternode reward to a list of other sQuorum addresses after it matures.
+To Add: enter percentage to give and sQuorum address to add to the MultiSend vector.
 To Delete: Enter address to delete and press delete.
 MultiSend will not be activated unless you have clicked Activate</source>
-        <translation>ÇokluGönderi, olgunlaştıktan sonra diğer Helium adreslerinin bir listesine staking ya da masternode ödülünüzün 100% 'ünü otomatik olarak göndermenize olanak tanır.
-Eklemek için: Verilecek yüzdeyi ve ÇokluGönderi vektörüne eklemek için Helium adresi girin.
+        <translation>ÇokluGönderi, olgunlaştıktan sonra diğer sQuorum adreslerinin bir listesine staking ya da masternode ödülünüzün 100% 'ünü otomatik olarak göndermenize olanak tanır.
+Eklemek için: Verilecek yüzdeyi ve ÇokluGönderi vektörüne eklemek için sQuorum adresi girin.
 Silme: Silinecek adresi girin ve silmek için basın.
 ÇokluGönderi, Etkinleştir'i tıklamadığınız sürece etkinleştirilmeyecektir</translation>
     </message>
@@ -1773,8 +1773,8 @@ Unutmayın, cüzdan, yeni adresi içeren işlemleri bulmak için blok zinciri ye
         <translation>Doğrulanmamış değişikliğin harcamasını devre dışı bırakırsanız, bir işlemdeki değişiklik&lt;br/&gt;Bu işlem en az bir onay alıncaya kadar kullanılamaz.&lt;br/&gt;Bu aynı zamanda bakiyenizin nasıl hesaplandığını etkiler.</translation>
     </message>
     <message>
-        <source>Automatically open the Helium client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Yönelticideki Helium istemci bağlantı noktasını otomatik olarak açın. Bu, yalnızca yönlendiriciniz UPnP'yi destekliyorsa ve etkinleştirilmişse çalışır.</translation>
+        <source>Automatically open the sQuorum client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Yönelticideki sQuorum istemci bağlantı noktasını otomatik olarak açın. Bu, yalnızca yönlendiriciniz UPnP'yi destekliyorsa ve etkinleştirilmişse çalışır.</translation>
     </message>
     <message>
         <source>Accept connections from outside</source>
@@ -1793,12 +1793,12 @@ Unutmayın, cüzdan, yeni adresi içeren işlemleri bulmak için blok zinciri ye
         <translation>Uzman</translation>
     </message>
     <message>
-        <source>Automatically start Helium after logging in to the system.</source>
-        <translation>Sisteme giriş yaptıktan sonra otomatik olarak Helium'i başlatın.</translation>
+        <source>Automatically start sQuorum after logging in to the system.</source>
+        <translation>Sisteme giriş yaptıktan sonra otomatik olarak sQuorum'i başlatın.</translation>
     </message>
     <message>
-        <source>&amp;Start Helium on system login</source>
-        <translation>&amp; Sistem oturum açma işleminde Helium'i başlat</translation>
+        <source>&amp;Start sQuorum on system login</source>
+        <translation>&amp; Sistem oturum açma işleminde sQuorum'i başlat</translation>
     </message>
     <message>
         <source>Whether to show coin control features or not.</source>
@@ -1825,16 +1825,16 @@ Unutmayın, cüzdan, yeni adresi içeren işlemleri bulmak için blok zinciri ye
         <translation>&amp;ağ</translation>
     </message>
     <message>
-        <source>The user interface language can be set here. This setting will take effect after restarting Helium.</source>
-        <translation>Kullanıcı arabirimi dili burada ayarlanabilir. Bu ayar, Helium yeniden başlatıldıktan sonra geçerli olur.</translation>
+        <source>The user interface language can be set here. This setting will take effect after restarting sQuorum.</source>
+        <translation>Kullanıcı arabirimi dili burada ayarlanabilir. Bu ayar, sQuorum yeniden başlatıldıktan sonra geçerli olur.</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>
         <translation>Map port using &amp;UPnP</translation>
     </message>
     <message>
-        <source>Connect to the Helium network through a SOCKS5 proxy.</source>
-        <translation>Bir SOCKS5 proxy vasıtasıyla Helium ağına bağlanın.</translation>
+        <source>Connect to the sQuorum network through a SOCKS5 proxy.</source>
+        <translation>Bir SOCKS5 proxy vasıtasıyla sQuorum ağına bağlanın.</translation>
     </message>
     <message>
         <source>Proxy &amp;IP:</source>
@@ -1882,9 +1882,9 @@ Unutmayın, cüzdan, yeni adresi içeren işlemleri bulmak için blok zinciri ye
     </message>
     <message>
         <source>Language missing or translation incomplete? Help contributing translations here:
-https://www.transifex.com/helium-project/helium-wallet</source>
+https://www.transifex.com/squorum-project/squorum-wallet</source>
         <translation>Dil eksik veya çeviri tamamlanmamış mı? Katkıda bulunan çevirilere yardımcı olun:
-https://www.transifex.com/helium-project/helium-wallet</translation>
+https://www.transifex.com/squorum-project/squorum-wallet</translation>
     </message>
     <message>
         <source>User Interface Theme:</source>
@@ -2010,8 +2010,8 @@ https://www.transifex.com/helium-project/helium-wallet</translation>
         <translation>Mevcut kilitli bakiye sadece görüntülenebilir adreslerde.</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Helium network after a connection is established, but this process has not completed yet.</source>
-        <translation>Görüntülenen bilgiler güncelliğini yitirmiş olabilir. Bir bağlantı kurulduktan sonra M-cüzdanınız otomatik olarak Helium şebekesiyle senkronize edilir, ancak bu işlem henüz tamamlanmadı.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the sQuorum network after a connection is established, but this process has not completed yet.</source>
+        <translation>Görüntülenen bilgiler güncelliğini yitirmiş olabilir. Bir bağlantı kurulduktan sonra M-cüzdanınız otomatik olarak sQuorum şebekesiyle senkronize edilir, ancak bu işlem henüz tamamlanmadı.</translation>
     </message>
     <message>
         <source>OVERVIEW</source>
@@ -2082,14 +2082,14 @@ AutoMint etkinleştirilirse, bu yüzde, yapılandırılmış AutoMint yüzdesi e
         <translation>AutoMint şu anda etkinleştirilmiş ve</translation>
     </message>
     <message>
-        <source>To disable AutoMint add 'enablezeromint=0' in helium.conf.</source>
-        <translation>AutoMint kapatmak için ekle  'enablezeromint=0'  helium.conf. dosyasına</translation>
+        <source>To disable AutoMint add 'enablezeromint=0' in squorum.conf.</source>
+        <translation>AutoMint kapatmak için ekle  'enablezeromint=0'  squorum.conf. dosyasına</translation>
     </message>
     <message>
         <source>AutoMint is currently disabled.
-To enable AutoMint change 'enablezeromint=0' to 'enablezeromint=1' in helium.conf</source>
+To enable AutoMint change 'enablezeromint=0' to 'enablezeromint=1' in squorum.conf</source>
         <translation>AutoMint şu anda aktif değil.
- AutoMint aktive etmek için  değiştir 'enablezeromint=0' yazan kısmı 'enablezeromint=1' şeklinde helium.conf dosyasında</translation>
+ AutoMint aktive etmek için  değiştir 'enablezeromint=0' yazan kısmı 'enablezeromint=1' şeklinde squorum.conf dosyasında</translation>
     </message>
 </context>
 <context>
@@ -2115,12 +2115,12 @@ To enable AutoMint change 'enablezeromint=0' to 'enablezeromint=1' in helium.con
         <translation>Geçersiz ödeme adresi %1</translation>
     </message>
     <message>
-        <source>Cannot start helium: click-to-pay handler</source>
-        <translation>Helium başlatılamıyor: tıkla ve ödeme işleyicisi</translation>
+        <source>Cannot start squorum: click-to-pay handler</source>
+        <translation>sQuorum başlatılamıyor: tıkla ve ödeme işleyicisi</translation>
     </message>
     <message>
-        <source>URI cannot be parsed! This can be caused by an invalid Helium address or malformed URI parameters.</source>
-        <translation>URI ayrıştırılamaz! Bunun nedeni, geçersiz bir Helium adresi veya hatalı biçimlendirilmiş URI parametrelerinden kaynaklanabilir.</translation>
+        <source>URI cannot be parsed! This can be caused by an invalid sQuorum address or malformed URI parameters.</source>
+        <translation>URI ayrıştırılamaz! Bunun nedeni, geçersiz bir sQuorum adresi veya hatalı biçimlendirilmiş URI parametrelerinden kaynaklanabilir.</translation>
     </message>
     <message>
         <source>Payment request file cannot be read! This can be caused by an invalid payment request file.</source>
@@ -2205,8 +2205,8 @@ To enable AutoMint change 'enablezeromint=0' to 'enablezeromint=1' in helium.con
         <translation>Zerocoin Actions:</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Helium network after a connection is established, but this process has not completed yet.</source>
-        <translation>Görüntülenen bilgiler güncelliğini yitirmiş olabilir. Bir bağlantı kurulduktan sonra M-cüzdanınız otomatik olarak Helium şebekesiyle senkronize edilir, ancak bu işlem henüz tamamlanmadı.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the sQuorum network after a connection is established, but this process has not completed yet.</source>
+        <translation>Görüntülenen bilgiler güncelliğini yitirmiş olabilir. Bir bağlantı kurulduktan sonra M-cüzdanınız otomatik olarak sQuorum şebekesiyle senkronize edilir, ancak bu işlem henüz tamamlanmadı.</translation>
     </message>
     <message>
         <source>Mint Zerocoin</source>
@@ -2289,8 +2289,8 @@ zHLM, 20'den fazla teyit bulunduğunda olgunlaşır ve bundan sonra aynı mezhep
         <translation>şuna öde:</translation>
     </message>
     <message>
-        <source>The Helium address to send the payment to. Creates local payment to yourself when empty.</source>
-        <translation>Ödemeyi göndermek için Helium adresi. Boş olduğunda kendinize yerel ödeme oluşturur.</translation>
+        <source>The sQuorum address to send the payment to. Creates local payment to yourself when empty.</source>
+        <translation>Ödemeyi göndermek için sQuorum adresi. Boş olduğunda kendinize yerel ödeme oluşturur.</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -2601,8 +2601,8 @@ Lütfen sabırlı olun...</translation>
         <translation>Miktar</translation>
     </message>
     <message>
-        <source>Enter a Helium address (e.g. %1)</source>
-        <translation>Gir bir Helium addres (e.g. %1)</translation>
+        <source>Enter a sQuorum address (e.g. %1)</source>
+        <translation>Gir bir sQuorum addres (e.g. %1)</translation>
     </message>
     <message>
         <source>%1 d</source>
@@ -2645,8 +2645,8 @@ Lütfen sabırlı olun...</translation>
         <translation>%1 ms</translation>
     </message>
     <message>
-        <source>Helium Core</source>
-        <translation>Helium CORE</translation>
+        <source>sQuorum Core</source>
+        <translation>sQuorum CORE</translation>
     </message>
     </context>
 <context>
@@ -2743,8 +2743,8 @@ Lütfen sabırlı olun...</translation>
         <translation>Block chain</translation>
     </message>
     <message>
-        <source>Open the Helium debug log file from the current data directory. This can take a few seconds for large log files.</source>
-        <translation>Geçerli veri dizininden Helium hata ayıklama günlük dosyasını açın. Bu, büyük günlük dosyaları için birkaç saniye sürebilir.</translation>
+        <source>Open the sQuorum debug log file from the current data directory. This can take a few seconds for large log files.</source>
+        <translation>Geçerli veri dizininden sQuorum hata ayıklama günlük dosyasını açın. Bu, büyük günlük dosyaları için birkaç saniye sürebilir.</translation>
     </message>
     <message>
         <source>Number of Masternodes</source>
@@ -2927,8 +2927,8 @@ Lütfen sabırlı olun...</translation>
         <translation>Dışa:</translation>
     </message>
     <message>
-        <source>Welcome to the Helium RPC console.</source>
-        <translation>Helium RPC konsola hoşgeldiniz</translation>
+        <source>Welcome to the sQuorum RPC console.</source>
+        <translation>sQuorum RPC konsola hoşgeldiniz</translation>
     </message>
     <message>
         <source>This will delete your local blockchain folders and the wallet will synchronize the complete Blockchain from scratch.&lt;br /&gt;&lt;br /&gt;</source>
@@ -3014,12 +3014,12 @@ Lütfen sabırlı olun...</translation>
         <translation>Miktar:</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Helium network.</source>
-        <translation>Talep açıldığında görüntülenecek ödeme isteğine eklemek için isteğe bağlı bir mesaj. Not: Mesaj, ödemenin Helium şebekesi üzerinden gönderilmeyecektir.</translation>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the sQuorum network.</source>
+        <translation>Talep açıldığında görüntülenecek ödeme isteğine eklemek için isteğe bağlı bir mesaj. Not: Mesaj, ödemenin sQuorum şebekesi üzerinden gönderilmeyecektir.</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened.&lt;br&gt;Note: The message will not be sent with the payment over the Helium network.</source>
-        <translation>Talep açıldığında görüntülenecek, ödeme isteğine eklemek için isteğe bağlı bir mesaj.&lt;br&gt;Not: Mesaj, ödemenin Helium şebekesi üzerinden gönderilmeyecektir.</translation>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened.&lt;br&gt;Note: The message will not be sent with the payment over the sQuorum network.</source>
+        <translation>Talep açıldığında görüntülenecek, ödeme isteğine eklemek için isteğe bağlı bir mesaj.&lt;br&gt;Not: Mesaj, ödemenin sQuorum şebekesi üzerinden gönderilmeyecektir.</translation>
     </message>
     <message>
         <source>Use this form to request payments. All fields are &lt;b&gt;optional&lt;/b&gt;.</source>
@@ -3311,8 +3311,8 @@ Lütfen sabırlı olun...</translation>
         <translation>Özel ücret 1000 uHLM olarak ayarlanırsa ve işlem sadece 250 bayt ise, "kilobayt başına" ücret karşılığında yalnızca 250 uHLM ücreti verilir,&lt;br /&gt;"toplam en az" ise 1000 uHLM ödüyor. Bir kilobayttan daha büyük işlemler için kilobayt ödersiniz.</translation>
     </message>
     <message>
-        <source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks.&lt;br /&gt;But be aware that this can end up in a never confirming transaction once there is more demand for Helium transactions than the network can process.</source>
-        <translation>Yalnızca minimum ücreti ödemek, işlem hacmi bloklardaki alana göre daha az olduğu sürece iyidir.&lt;br /&gt;Ancak, bunun, Helium işlemleri için ağın işleyebileceğinden daha fazla talep olması durumunda, onaylama işleminde asla sonuçlanamayacağına dikkat edin.</translation>
+        <source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks.&lt;br /&gt;But be aware that this can end up in a never confirming transaction once there is more demand for sQuorum transactions than the network can process.</source>
+        <translation>Yalnızca minimum ücreti ödemek, işlem hacmi bloklardaki alana göre daha az olduğu sürece iyidir.&lt;br /&gt;Ancak, bunun, sQuorum işlemleri için ağın işleyebileceğinden daha fazla talep olması durumunda, onaylama işleminde asla sonuçlanamayacağına dikkat edin.</translation>
     </message>
     <message>
         <source>normal</source>
@@ -3407,8 +3407,8 @@ Lütfen sabırlı olun...</translation>
         <translation>Bloğu böl aygıtı multipl adresle çalışmaz Tekrar deneyin</translation>
     </message>
     <message>
-        <source>Warning: Invalid Helium address</source>
-        <translation>Uyarı: Geçersiz Helium adresi</translation>
+        <source>Warning: Invalid sQuorum address</source>
+        <translation>Uyarı: Geçersiz sQuorum adresi</translation>
     </message>
     <message>
         <source>%1 to %2</source>
@@ -3502,8 +3502,8 @@ Lütfen sabırlı olun...</translation>
         <translation>şuna öde:</translation>
     </message>
     <message>
-        <source>The Helium address to send the payment to</source>
-        <translation>Ödemeyi göndermek için Helium adresi</translation>
+        <source>The sQuorum address to send the payment to</source>
+        <translation>Ödemeyi göndermek için sQuorum adresi</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -3542,8 +3542,8 @@ Lütfen sabırlı olun...</translation>
         <translation>Mesaj:</translation>
     </message>
     <message>
-        <source>A message that was attached to the Helium: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Helium network.</source>
-        <translation>Helium e eklenmiş olan bir mesaj: İşleminizle beraber saklanacak olan URI hatırlamanız için. Not: Bu mesaj Helium ağında yayınlanmayacak.</translation>
+        <source>A message that was attached to the sQuorum: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the sQuorum network.</source>
+        <translation>sQuorum e eklenmiş olan bir mesaj: İşleminizle beraber saklanacak olan URI hatırlamanız için. Not: Bu mesaj sQuorum ağında yayınlanmayacak.</translation>
     </message>
     <message>
         <source>This is an unverified payment request.</source>
@@ -3569,8 +3569,8 @@ Lütfen sabırlı olun...</translation>
 <context>
     <name>ShutdownWindow</name>
     <message>
-        <source>Helium Core is shutting down...</source>
-        <translation>Helium Core kapanıyor ...</translation>
+        <source>sQuorum Core is shutting down...</source>
+        <translation>sQuorum Core kapanıyor ...</translation>
     </message>
     <message>
         <source>Do not shut down the computer until this window disappears.</source>
@@ -3592,8 +3592,8 @@ Lütfen sabırlı olun...</translation>
         <translation>Sahip olduğunuzu kanıtlamak için adreslerinizle mesaj imzalayabilirsiniz. Kimlik avı saldırıları sizi kimliğini onlara yazmaya kandırmaya çalışabilir, çünkü belirsiz bir şey imzalamamaya dikkat edin. Kabul ettiğiniz tamamen ayrıntılı ifadeleri yalnızca imzalayın.</translation>
     </message>
     <message>
-        <source>The Helium address to sign the message with</source>
-        <translation>Ile mesaj imzalamak için Helium adresi</translation>
+        <source>The sQuorum address to sign the message with</source>
+        <translation>Ile mesaj imzalamak için sQuorum adresi</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -3624,16 +3624,16 @@ Lütfen sabırlı olun...</translation>
         <translation>Geçerli imzayı sistem panosuna kopyala</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Helium address</source>
-        <translation>Bu Helium adresinin sahibi olduğunuzu kanıtlamak için mesajı imzala</translation>
+        <source>Sign the message to prove you own this sQuorum address</source>
+        <translation>Bu sQuorum adresinin sahibi olduğunuzu kanıtlamak için mesajı imzala</translation>
     </message>
     <message>
-        <source>The Helium address the message was signed with</source>
-        <translation>Mesajın imzalandığı Helium adresi</translation>
+        <source>The sQuorum address the message was signed with</source>
+        <translation>Mesajın imzalandığı sQuorum adresi</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified Helium address</source>
-        <translation>Belirtilen Helium adresi ile imzalanmış olduğundan emin olmak için iletiyi doğrulayın</translation>
+        <source>Verify the message to ensure it was signed with the specified sQuorum address</source>
+        <translation>Belirtilen sQuorum adresi ile imzalanmış olduğundan emin olmak için iletiyi doğrulayın</translation>
     </message>
     <message>
         <source>Sign &amp;Message</source>
@@ -3719,8 +3719,8 @@ Lütfen sabırlı olun...</translation>
 <context>
     <name>SplashScreen</name>
     <message>
-        <source>Helium Core</source>
-        <translation>Helium CORE</translation>
+        <source>sQuorum Core</source>
+        <translation>sQuorum CORE</translation>
     </message>
     <message>
         <source>Version %1</source>
@@ -3735,8 +3735,8 @@ Lütfen sabırlı olun...</translation>
         <translation>The Dash Core developers</translation>
     </message>
     <message>
-        <source>The Helium Core developers</source>
-        <translation>The Helium Core developers</translation>
+        <source>The sQuorum Core developers</source>
+        <translation>The sQuorum Core developers</translation>
     </message>
     <message>
         <source>[testnet]</source>
@@ -4298,7 +4298,7 @@ Lütfen sabırlı olun...</translation>
     </message>
     </context>
 <context>
-    <name>helium-core</name>
+    <name>squorum-core</name>
     <message>
         <source>(1 = keep tx meta data e.g. account owner and payment request information, 2 = drop tx meta data)</source>
         <translation>(1 = tx meta verileri, örneğin hesap sahibi ve ödeme talebi bilgileri, 2 = tx meta verileri bırak)</translation>
@@ -4324,8 +4324,8 @@ Lütfen sabırlı olun...</translation>
         <translation>Hesaplanan akümülatör kontrol noktası, blok indeksiyle kaydedilen kontrol noktası değildir.</translation>
     </message>
     <message>
-        <source>Cannot obtain a lock on data directory %s. Helium Core is probably already running.</source>
-        <translation>Veri dizini %s üzerinde bir kilit elde edemiyor. Helium Core muhtemelen zaten çalışıyor.</translation>
+        <source>Cannot obtain a lock on data directory %s. sQuorum Core is probably already running.</source>
+        <translation>Veri dizini %s üzerinde bir kilit elde edemiyor. sQuorum Core muhtemelen zaten çalışıyor.</translation>
     </message>
     <message>
         <source>Change automatic finalized budget voting behavior. mode=auto: Vote for only exact finalized budget match to my generated budget. (string, default: auto)</source>

@@ -1,4 +1,4 @@
-<TS language="hi_IN" version="2.1">
+﻿<TS language="hi_IN" version="2.1">
 <context>
     <name>AddressBookPage</name>
     <message>
@@ -14,7 +14,7 @@
         <translation>सिक्कों को प्राप्त करने के लिए पता चुनें</translation>
     </message>
     <message>
-        <source>These are your Helium addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <source>These are your sQuorum addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
         <translation>पहले इस्तेमाल किए गए पते को चुनें</translation>
     </message>
     </context>
@@ -327,7 +327,7 @@
     <name>ZHlmControlDialog</name>
     </context>
 <context>
-    <name>helium-core</name>
+    <name>squorum-core</name>
     <message>
         <source>Information</source>
         <translation>जानकारी</translation>

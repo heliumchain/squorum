@@ -1,5 +1,5 @@
-#ifndef Helium_TEST_TEST_Helium_H
-#define Helium_TEST_TEST_Helium_H
+#ifndef sQuorum_TEST_TEST_sQuorum_H
+#define sQuorum_TEST_TEST_sQuorum_H
 
 #include "txdb.h"
 

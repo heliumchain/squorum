@@ -3,10 +3,10 @@
 <plist version="1.0">
 <dict>
 	<key>Label</key>
-	<string>org.helium.heliumd</string>
+	<string>org.squorum.squorumd</string>
 	<key>ProgramArguments</key>
 	<array>
-		<string>/usr/local/bin/heliumd</string>
+		<string>/usr/local/bin/squorumd</string>
 	</array>
 	<key>RunAtLoad</key>
 	<true/>

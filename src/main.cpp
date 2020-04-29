@@ -2,7 +2,7 @@
 // Copyright (c) 2009-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
 // Copyright (c) 2015-2018 The PIVX developers
-// Copyright (c) 2018-2020 The Helium developers
+// Copyright (c) 2018-2020 The sQuorum developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -51,7 +51,7 @@
 
 
 #if defined(NDEBUG)
-#error "Helium cannot be compiled without assertions."
+#error "sQuorum cannot be compiled without assertions."
 #endif
 
 /**
@@ -1450,7 +1450,7 @@ bool AcceptToMemoryPool(CTxMemPool& pool, CValidationState& state, const CTransa
                     return false;
                 }
 
-                /* NOTE: GJH inappropriate for Helium
+                /* NOTE: GJH inappropriate for sQuorum
                 //Check for invalid/fraudulent inputs
                 if (!ValidOutPoint(txin.prevout, chainActive.Height())) {
                     return state.Invalid(error("%s : tried to spend invalid input %s in tx %s", __func__, txin.prevout.ToString(),
@@ -1691,7 +1691,7 @@ bool AcceptableInputs(CTxMemPool& pool, CValidationState& state, const CTransact
                     return false;
                 }
 
-                /* NOTE: GJH inappropriate for Helium
+                /* NOTE: GJH inappropriate for sQuorum
                 // check for invalid/fraudulent inputs
                 if (!ValidOutPoint(txin.prevout, chainActive.Height())) {
                     return state.Invalid(error("%s : tried to spend invalid input %s in tx %s", __func__, txin.prevout.ToString(),
@@ -2071,7 +2071,7 @@ bool IsInitialBlockDownload()
     static bool lockIBDState = false;
     if (lockIBDState)
         return false;
-    /* FIXME: GJH Helium-specific block heights/times */
+    /* FIXME: GJH sQuorum-specific block heights/times */
     bool state = (chainActive.Height() < pindexBestHeader->nHeight - 24 * 6 ||
             pindexBestHeader->GetBlockTime() < GetTime() - nMaxTipAge);
     if (!state)
@@ -2231,7 +2231,7 @@ bool CScriptCheck::operator()()
     return true;
 }
 
-/* NOTE: GJH inappropriate for Helium
+/* NOTE: GJH inappropriate for sQuorum
 CBitcoinAddress addressExp1("DQZzqnSR6PXxagep1byLiRg9ZurCZ5KieQ");
 CBitcoinAddress addressExp2("DTQYdnNqKuEHXyNeeYhPQGGGdqHbXYwjpj");
 
@@ -2297,7 +2297,7 @@ void AddInvalidSpendsToMap(const CBlock& block)
 }
 */
 
-/* NOTE: GJH inappropriate for Helium
+/* NOTE: GJH inappropriate for sQuorum
 bool ValidOutPoint(const COutPoint out, int nHeight)
 {
     bool isInvalid = nHeight >= Params().Block_Enforce_Invalid() && invalid_out::ContainsOutPoint(out);
@@ -2448,7 +2448,7 @@ bool DisconnectBlock(CBlock& block, CValidationState& state, CBlockIndex* pindex
         const CTransaction& tx = block.vtx[i];
 
         /** UNDO ZEROCOIN DATABASING
-         * note we only undo zerocoin databasing in the following statement, value to and from Helium
+         * note we only undo zerocoin databasing in the following statement, value to and from sQuorum
          * addresses should still be handled by the typical bitcoin based undo code
          * */
         if (tx.ContainsZerocoins()) {
@@ -2605,7 +2605,7 @@ static CCheckQueue<CScriptCheck> scriptcheckqueue(128);
 
 void ThreadScriptCheck()
 {
-    RenameThread("helium-scriptch");
+    RenameThread("squorum-scriptch");
     scriptcheckqueue.Thread();
 }
 
@@ -2734,7 +2734,7 @@ bool RecalculateHLMSupply(int nHeightStart)
         if (pindex->nHeight == Params().Zerocoin_Block_RecalculateAccumulators()) {
             LogPrintf("%s : Original money supply=%s\n", __func__, FormatMoney(pindex->nMoneySupply));
 
-            /* NOTE: GJH Inappropriate for Helium
+            /* NOTE: GJH Inappropriate for sQuorum
             pindex->nMoneySupply += Params().InvalidAmountFiltered();
             LogPrintf("%s : Adding filtered funds to supply + %s : supply=%s\n", __func__, FormatMoney(Params().InvalidAmountFiltered()), FormatMoney(pindex->nMoneySupply));
             */
@@ -2757,7 +2757,7 @@ bool RecalculateHLMSupply(int nHeightStart)
 
 bool ReindexAccumulators(std::list<uint256>& listMissingCheckpoints, std::string& strError)
 {
-    // Helium: recalculate Accumulator Checkpoints that failed to database properly
+    // sQuorum: recalculate Accumulator Checkpoints that failed to database properly
     if (!listMissingCheckpoints.empty()) {
         uiInterface.ShowProgress(_("Calculating missing accumulators..."), 0);
         LogPrintf("%s : finding missing checkpoints\n", __func__);
@@ -3027,7 +3027,7 @@ bool ConnectBlock(const CBlock& block, CValidationState& state, CBlockIndex* pin
                 return state.DoS(100, error("ConnectBlock() : inputs missing/spent"),
                     REJECT_INVALID, "bad-txns-inputs-missingorspent");
 
-            /* NOTE: GJH inappropriate for Helium
+            /* NOTE: GJH inappropriate for sQuorum
             // Check that the inputs are not marked as invalid/fraudulent
             for (CTxIn in : tx.vin) {
                 if (!ValidOutPoint(in.prevout, pindex->nHeight)) {
@@ -3222,7 +3222,7 @@ bool ConnectBlock(const CBlock& block, CValidationState& state, CBlockIndex* pin
     nTimeCallbacks += nTime4 - nTime3;
     LogPrint("bench", "    - Callbacks: %.2fms [%.2fs]\n", 0.001 * (nTime4 - nTime3), nTimeCallbacks * 0.000001);
 
-    /* NOTE: GJH Inappropriate for Helium
+    /* NOTE: GJH Inappropriate for sQuorum
     //Continue tracking possible movement of fraudulent funds until they are completely frozen
     if (pindex->nHeight >= Params().Zerocoin_Block_FirstFraudulent() && pindex->nHeight <= Params().Zerocoin_Block_RecalculateAccumulators() + 1)
         AddInvalidSpendsToMap(block);
@@ -4161,7 +4161,7 @@ bool CheckBlock(const CBlock& block, CValidationState& state, bool fCheckPOW, bo
                 nHeight = (*mi).second->nHeight + 1;
         }
 
-        // Helium
+        // sQuorum
         // It is entierly possible that we don't have enough data and this could fail
         // (i.e. the block could indeed be valid). Store the block for later consideration
         // but issue an initial reject message.
@@ -4242,9 +4242,9 @@ bool CheckWork(const CBlock block, CBlockIndex* const pindexPrev)
     }
 
     if (block.nBits != nBitsRequired) {
-        // Helium Specific reference to the block with the wrong threshold was used.
-        if ((block.nTime == (uint32_t) Params().HeliumBadBlockTime()) && (block.nBits == (uint32_t) Params().HeliumBadBlocknBits())) {
-            // accept Helium block minted with incorrect proof of work threshold
+        // sQuorum Specific reference to the block with the wrong threshold was used.
+        if ((block.nTime == (uint32_t) Params().sQuorumBadBlockTime()) && (block.nBits == (uint32_t) Params().sQuorumBadBlocknBits())) {
+            // accept sQuorum block minted with incorrect proof of work threshold
             return true;
         }
 
@@ -5897,7 +5897,7 @@ bool static ProcessMessage(CNode* pfrom, std::string strCommand, CDataStream& vR
             return false;
         }
 
-        // Helium: We use certain sporks during IBD, so check to see if they are
+        // sQuorum: We use certain sporks during IBD, so check to see if they are
         // available. If not, ask the first peer connected for them.
         bool fMissingSporks = !pSporkDB->SporkExists(SPORK_14_NEW_PROTOCOL_ENFORCEMENT) &&
                 !pSporkDB->SporkExists(SPORK_15_NEW_PROTOCOL_ENFORCEMENT_2) &&

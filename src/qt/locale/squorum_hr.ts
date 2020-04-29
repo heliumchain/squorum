@@ -62,12 +62,12 @@
         <translation>Adrese za primanje</translation>
     </message>
     <message>
-        <source>These are your Helium addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>To su vaše Helium adrese za slanje plaćanja. Uvijek provjerite iznos i adresu primatelja prije slanja novca.</translation>
+        <source>These are your sQuorum addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>To su vaše sQuorum adrese za slanje plaćanja. Uvijek provjerite iznos i adresu primatelja prije slanja novca.</translation>
     </message>
     <message>
-        <source>These are your Helium addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
-        <translation>To su vaše Helium adrese za primanje uplata. Preporuča se upotreba nove adrese primanja za svaku transakciju.</translation>
+        <source>These are your sQuorum addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <translation>To su vaše sQuorum adrese za primanje uplata. Preporuča se upotreba nove adrese primanja za svaku transakciju.</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -609,16 +609,16 @@
         <translation>Alatna traka kartica</translation>
     </message>
     <message>
-        <source>Helium Core</source>
-        <translation>Helium Core</translation>
+        <source>sQuorum Core</source>
+        <translation>sQuorum Core</translation>
     </message>
     <message>
-        <source>Send coins to a Helium address</source>
-        <translation>Pošaljite kovanice na Helium adresu</translation>
+        <source>Send coins to a sQuorum address</source>
+        <translation>Pošaljite kovanice na sQuorum adresu</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and helium: URIs)</source>
-        <translation>Zahtjev za plaćanja (generira QR kodove i helium: URI)</translation>
+        <source>Request payments (generates QR codes and squorum: URIs)</source>
+        <translation>Zahtjev za plaćanja (generira QR kodove i squorum: URI)</translation>
     </message>
     <message>
         <source>&amp;Masternodes</source>
@@ -629,24 +629,24 @@
         <translation>Pregledajte masternode</translation>
     </message>
     <message>
-        <source>&amp;About Helium Core</source>
-        <translation>&amp; O Helium Coreu</translation>
+        <source>&amp;About sQuorum Core</source>
+        <translation>&amp; O sQuorum Coreu</translation>
     </message>
     <message>
-        <source>Show information about Helium Core</source>
-        <translation>Prikaz informacija o Helium Coreu</translation>
+        <source>Show information about sQuorum Core</source>
+        <translation>Prikaz informacija o sQuorum Coreu</translation>
     </message>
     <message>
-        <source>Modify configuration options for Helium</source>
-        <translation>Izmijenite opcije konfiguracije za Helium</translation>
+        <source>Modify configuration options for sQuorum</source>
+        <translation>Izmijenite opcije konfiguracije za sQuorum</translation>
     </message>
     <message>
-        <source>Sign messages with your Helium addresses to prove you own them</source>
-        <translation>Potpišite poruke s vašim Helium adresama kako biste dokazali da ih posjedujete</translation>
+        <source>Sign messages with your sQuorum addresses to prove you own them</source>
+        <translation>Potpišite poruke s vašim sQuorum adresama kako biste dokazali da ih posjedujete</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Helium addresses</source>
-        <translation>Potvrdite poruke kako biste bili sigurni da su potpisani s određenim Helium adresama</translation>
+        <source>Verify messages to ensure they were signed with specified sQuorum addresses</source>
+        <translation>Potvrdite poruke kako biste bili sigurni da su potpisani s određenim sQuorum adresama</translation>
     </message>
     <message>
         <source>&amp;BIP38 tool</source>
@@ -673,8 +673,8 @@
         <translation>Otvori konfiguracijsku datoteku za Masternode</translation>
     </message>
     <message>
-        <source>Helium Core client</source>
-        <translation>Helium Core klijent</translation>
+        <source>sQuorum Core client</source>
+        <translation>sQuorum Core klijent</translation>
     </message>
     <message>
         <source>Importing blocks from disk...</source>
@@ -910,15 +910,15 @@
 <context>
     <name>HelpMessageDialog</name>
     <message>
-        <source>Helium Core</source>
-        <translation>Helium Core</translation>
+        <source>sQuorum Core</source>
+        <translation>sQuorum Core</translation>
     </message>
     </context>
 <context>
     <name>Intro</name>
     <message>
-        <source>Helium Core</source>
-        <translation>Helium Core</translation>
+        <source>sQuorum Core</source>
+        <translation>sQuorum Core</translation>
     </message>
     <message>
         <source>Error</source>
@@ -1046,8 +1046,8 @@
         <translation>N/A</translation>
     </message>
     <message>
-        <source>Helium Core</source>
-        <translation>Helium Core</translation>
+        <source>sQuorum Core</source>
+        <translation>sQuorum Core</translation>
     </message>
     </context>
 <context>
@@ -1310,15 +1310,15 @@
 <context>
     <name>ShutdownWindow</name>
     <message>
-        <source>Helium Core is shutting down...</source>
-        <translation>Helium Core se gasi...</translation>
+        <source>sQuorum Core is shutting down...</source>
+        <translation>sQuorum Core se gasi...</translation>
     </message>
     </context>
 <context>
     <name>SignVerifyMessageDialog</name>
     <message>
-        <source>The Helium address to sign the message with</source>
-        <translation>Helium adresa za potpisivanje poruke s</translation>
+        <source>The sQuorum address to sign the message with</source>
+        <translation>sQuorum adresa za potpisivanje poruke s</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -1341,16 +1341,16 @@
         <translation>Kopirajte trenutačni potpis u međuspremnik sustava</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Helium address</source>
-        <translation>Potpišite poruku da biste dokazali da ste vlasnik ove Helium adrese</translation>
+        <source>Sign the message to prove you own this sQuorum address</source>
+        <translation>Potpišite poruku da biste dokazali da ste vlasnik ove sQuorum adrese</translation>
     </message>
     <message>
-        <source>The Helium address the message was signed with</source>
-        <translation>Helium adresa s kojom je potpisana poruka</translation>
+        <source>The sQuorum address the message was signed with</source>
+        <translation>sQuorum adresa s kojom je potpisana poruka</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified Helium address</source>
-        <translation>Potvrdite poruku kako biste bili sigurni da je potpisan s navedenom Helium adresom</translation>
+        <source>Verify the message to ensure it was signed with the specified sQuorum address</source>
+        <translation>Potvrdite poruku kako biste bili sigurni da je potpisan s navedenom sQuorum adresom</translation>
     </message>
     <message>
         <source>Reset all sign message fields</source>
@@ -1396,8 +1396,8 @@
 <context>
     <name>SplashScreen</name>
     <message>
-        <source>Helium Core</source>
-        <translation>Helium Core</translation>
+        <source>sQuorum Core</source>
+        <translation>sQuorum Core</translation>
     </message>
     <message>
         <source>Version %1</source>
@@ -1555,7 +1555,7 @@
     </message>
     </context>
 <context>
-    <name>helium-core</name>
+    <name>squorum-core</name>
     <message>
         <source>Error</source>
         <translation>Greška</translation>

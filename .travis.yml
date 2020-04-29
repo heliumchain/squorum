@@ -14,7 +14,7 @@
 #
 # These caches can be manually removed if necessary. This is one of the very
 # few manual operations that is possible with Travis, and it can be done by a
-# Helium GitHub member via the Travis web interface [0].
+# sQuorum GitHub member via the Travis web interface [0].
 #
 # Travis CI uploads the cache after the script phase of the build [1].
 # However, the build is terminated without saving the chache if it takes over

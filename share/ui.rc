@@ -1,4 +1,4 @@
-bitcoin               ICON    "pixmaps/helium.ico"
+bitcoin               ICON    "pixmaps/squorum.ico"
 
 #include "wx/msw/wx.rc"
 

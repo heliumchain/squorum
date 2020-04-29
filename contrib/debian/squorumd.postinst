@@ -1,15 +1,15 @@
 
 #!/bin/sh
 
-# setup helium account, homedir etc
+# setup squorum account, homedir etc
 
 set -e
 
-BCUSER="helium"
-BCHOME="/var/lib/helium"
+BCUSER="squorum"
+BCHOME="/var/lib/squorum"
 
 if [ "$1" = "configure" ]; then
-	# Add helium user/group - this will gracefully abort if the user already exists.
+	# Add squorum user/group - this will gracefully abort if the user already exists.
 	# A homedir is never created.
 	set +e
 	adduser --system --home "${BCHOME}" --no-create-home --group "${BCUSER}" 2>/dev/null

@@ -1,6 +1,6 @@
 [Protocol]
-exec=helium-qt '%u'
-protocol=helium
+exec=squorum-qt '%u'
+protocol=squorum
 input=none
 output=none
 helper=true

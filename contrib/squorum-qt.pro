@@ -78,7 +78,7 @@ HEADERS += src/activemasternode.h \
            src/crypter.h \
            src/obfuscation-relay.h \
            src/obfuscation.h \
-           src/helium-config.h \
+           src/squorum-config.h \
            src/db.h \
            src/eccryptoverify.h \
            src/ecwrapper.h \
@@ -131,7 +131,7 @@ HEADERS += src/activemasternode.h \
            src/wallet_ismine.h \
            src/walletdb.h \
            src/compat/sanity.h \
-           src/config/helium-config.h \
+           src/config/squorum-config.h \
            src/crypto/common.h \
            src/crypto/hmac_sha256.h \
            src/crypto/hmac_sha512.h \
@@ -332,7 +332,7 @@ HEADERS += src/activemasternode.h \
            src/secp256k1/src/java/org_bitcoin_NativeSecp256k1.h \
            src/crypto/aes_helper.c \
            src/qt/bitcoinamountfield.moc \
-           src/qt/helium.moc \
+           src/qt/squorum.moc \
            src/qt/intro.moc \
            src/qt/overviewpage.moc \
            src/qt/rpcconsole.moc \
@@ -373,9 +373,9 @@ SOURCES += src/activemasternode.cpp \
            src/crypter.cpp \
            src/obfuscation-relay.cpp \
            src/obfuscation.cpp \
-           src/helium-cli.cpp \
-           src/helium-tx.cpp \
-           src/helium.cpp \
+           src/squorum-cli.cpp \
+           src/squorum-tx.cpp \
+           src/squorum.cpp \
            src/db.cpp \
            src/eccryptoverify.cpp \
            src/ecwrapper.cpp \
@@ -470,8 +470,8 @@ SOURCES += src/activemasternode.cpp \
            src/qt/coincontroltreewidget.cpp \
            src/qt/csvmodelwriter.cpp \
            src/qt/obfuscationconfig.cpp \
-           src/qt/helium.cpp \
-           src/qt/heliumstrings.cpp \
+           src/qt/squorum.cpp \
+           src/qt/squorumstrings.cpp \
            src/qt/editaddressdialog.cpp \
            src/qt/guiutil.cpp \
            src/qt/intro.cpp \
@@ -549,7 +549,7 @@ SOURCES += src/activemasternode.cpp \
            src/test/sighash_tests.cpp \
            src/test/sigopcount_tests.cpp \
            src/test/skiplist_tests.cpp \
-           src/test/test_helium.cpp \
+           src/test/test_squorum.cpp \
            src/test/timedata_tests.cpp \
            src/test/transaction_tests.cpp \
            src/test/uint256_tests.cpp \
@@ -640,21 +640,21 @@ SOURCES += src/activemasternode.cpp \
            src/leveldb/helpers/memenv/memenv.cc \
            src/leveldb/helpers/memenv/memenv_test.cc \
            src/secp256k1/src/java/org_bitcoin_NativeSecp256k1.c
-RESOURCES += src/qt/helium.qrc src/qt/helium_locale.qrc
+RESOURCES += src/qt/squorum.qrc src/qt/squorum_locale.qrc
 
-TRANSLATIONS += src/qt/locale/helium_bg.ts \
-                src/qt/locale/helium_de.ts \
-                src/qt/locale/helium_en.ts \
-                src/qt/locale/helium_es.ts \
-                src/qt/locale/helium_fi.ts \
-                src/qt/locale/helium_fr.ts \
-                src/qt/locale/helium_it.ts \
-                src/qt/locale/helium_ja.ts \
-                src/qt/locale/helium_pl.ts \
-                src/qt/locale/helium_pt.ts \
-                src/qt/locale/helium_ru.ts \
-                src/qt/locale/helium_sk.ts \
-                src/qt/locale/helium_sv.ts \
-                src/qt/locale/helium_vi.ts \
-                src/qt/locale/helium_zh_CN.ts \
-                src/qt/locale/helium_zh_TW.ts
+TRANSLATIONS += src/qt/locale/squorum_bg.ts \
+                src/qt/locale/squorum_de.ts \
+                src/qt/locale/squorum_en.ts \
+                src/qt/locale/squorum_es.ts \
+                src/qt/locale/squorum_fi.ts \
+                src/qt/locale/squorum_fr.ts \
+                src/qt/locale/squorum_it.ts \
+                src/qt/locale/squorum_ja.ts \
+                src/qt/locale/squorum_pl.ts \
+                src/qt/locale/squorum_pt.ts \
+                src/qt/locale/squorum_ru.ts \
+                src/qt/locale/squorum_sk.ts \
+                src/qt/locale/squorum_sv.ts \
+                src/qt/locale/squorum_vi.ts \
+                src/qt/locale/squorum_zh_CN.ts \
+                src/qt/locale/squorum_zh_TW.ts

@@ -62,12 +62,12 @@
         <translation>Indirizzi di ricezione</translation>
     </message>
     <message>
-        <source>These are your Helium addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Questi sono gli indirizzi Helium per l'invio di pagamenti. Controlla sempre l'importo e l'indirizzo di ricezione prima di inviare valuta.</translation>
+        <source>These are your sQuorum addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>Questi sono gli indirizzi sQuorum per l'invio di pagamenti. Controlla sempre l'importo e l'indirizzo di ricezione prima di inviare valuta.</translation>
     </message>
     <message>
-        <source>These are your Helium addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
-        <translation>Questi sono gli indirizzi Helium per la ricezione di pagamenti. Si raccomanda di utilizzare un indirizzo diverso per ogni transazione.</translation>
+        <source>These are your sQuorum addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <translation>Questi sono gli indirizzi sQuorum per la ricezione di pagamenti. Si raccomanda di utilizzare un indirizzo diverso per ogni transazione.</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -246,12 +246,12 @@
         <translation>Indirizzo:</translation>
     </message>
     <message>
-        <source>Enter a Helium Address that you would like to encrypt using BIP 38. Enter a passphrase in the middle box. Press encrypt to compute the encrypted private key.</source>
-        <translation>Inserire un indirizzo Helium da crittografare utilizzando BIP 38. Inserire una password nel campo centrale. Cliccare su "cripta" per generare la chiave privata crittografata.</translation>
+        <source>Enter a sQuorum Address that you would like to encrypt using BIP 38. Enter a passphrase in the middle box. Press encrypt to compute the encrypted private key.</source>
+        <translation>Inserire un indirizzo sQuorum da crittografare utilizzando BIP 38. Inserire una password nel campo centrale. Cliccare su "cripta" per generare la chiave privata crittografata.</translation>
     </message>
     <message>
-        <source>The Helium address to encrypt</source>
-        <translation>Indirizzo Helium da crittografare</translation>
+        <source>The sQuorum address to encrypt</source>
+        <translation>Indirizzo sQuorum da crittografare</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -282,8 +282,8 @@
         <translation>Copiare la firma corrente negli Appunti di sistema</translation>
     </message>
     <message>
-        <source>Encrypt the private key for this Helium address</source>
-        <translation>Crittografa la chiave privata per questo indirizzo Helium</translation>
+        <source>Encrypt the private key for this sQuorum address</source>
+        <translation>Crittografa la chiave privata per questo indirizzo sQuorum</translation>
     </message>
     <message>
         <source>Reset all fields</source>
@@ -629,16 +629,16 @@
         <translation>Schede degli strumenti</translation>
     </message>
     <message>
-        <source>Helium Core</source>
-        <translation>Helium Core</translation>
+        <source>sQuorum Core</source>
+        <translation>sQuorum Core</translation>
     </message>
     <message>
-        <source>Send coins to a Helium address</source>
-        <translation>Invia valuta all'indirizzo Helium</translation>
+        <source>Send coins to a sQuorum address</source>
+        <translation>Invia valuta all'indirizzo sQuorum</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and helium: URIs)</source>
-        <translation>Richiedi pagamenti (genera codici QR e helium: URIs)</translation>
+        <source>Request payments (generates QR codes and squorum: URIs)</source>
+        <translation>Richiedi pagamenti (genera codici QR e squorum: URIs)</translation>
     </message>
     <message>
         <source>&amp;Masternodes</source>
@@ -649,24 +649,24 @@
         <translation>Esplora i masternodes</translation>
     </message>
     <message>
-        <source>&amp;About Helium Core</source>
-        <translation>&amp;Informazioni Helium Core</translation>
+        <source>&amp;About sQuorum Core</source>
+        <translation>&amp;Informazioni sQuorum Core</translation>
     </message>
     <message>
-        <source>Show information about Helium Core</source>
-        <translation>Visualizza informazioni su Helium Core</translation>
+        <source>Show information about sQuorum Core</source>
+        <translation>Visualizza informazioni su sQuorum Core</translation>
     </message>
     <message>
-        <source>Modify configuration options for Helium</source>
-        <translation>Modifica le opzioni di configurazione per Helium</translation>
+        <source>Modify configuration options for sQuorum</source>
+        <translation>Modifica le opzioni di configurazione per sQuorum</translation>
     </message>
     <message>
-        <source>Sign messages with your Helium addresses to prove you own them</source>
-        <translation>Firma i messaggi con i tuoi indirizzi Helium per dimostrare di essere il proprietario </translation>
+        <source>Sign messages with your sQuorum addresses to prove you own them</source>
+        <translation>Firma i messaggi con i tuoi indirizzi sQuorum per dimostrare di essere il proprietario </translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Helium addresses</source>
-        <translation>Verifica i messaggi per assicurarsi che siano stati firmati con indirizzi Helium specifici</translation>
+        <source>Verify messages to ensure they were signed with specified sQuorum addresses</source>
+        <translation>Verifica i messaggi per assicurarsi che siano stati firmati con indirizzi sQuorum specifici</translation>
     </message>
     <message>
         <source>&amp;BIP38 tool</source>
@@ -697,8 +697,8 @@
         <translation>Apri file di configurazione del Masternodo</translation>
     </message>
     <message>
-        <source>Open a Helium: URI or payment request</source>
-        <translation>Apri un Helium: URI o richiesta di pagamento</translation>
+        <source>Open a sQuorum: URI or payment request</source>
+        <translation>Apri un sQuorum: URI o richiesta di pagamento</translation>
     </message>
     <message>
         <source>&amp;Blockchain explorer</source>
@@ -709,12 +709,12 @@
         <translation>Finestra Block Explorer</translation>
     </message>
     <message>
-        <source>Show the Helium Core help message to get a list with possible Helium command-line options</source>
-        <translation>Mostra il messaggio di aiuto Helium Core per ottenere un elenco con le possibili opzioni di riga di comando Helium</translation>
+        <source>Show the sQuorum Core help message to get a list with possible sQuorum command-line options</source>
+        <translation>Mostra il messaggio di aiuto sQuorum Core per ottenere un elenco con le possibili opzioni di riga di comando sQuorum</translation>
     </message>
     <message>
-        <source>Helium Core client</source>
-        <translation>Helium Core</translation>
+        <source>sQuorum Core client</source>
+        <translation>sQuorum Core</translation>
     </message>
     <message>
         <source>Synchronizing with network...</source>
@@ -840,8 +840,8 @@ MultiSend: %1</translation>
         <translation>Etichetta</translation>
     </message>
     <message>
-        <source>Not all transactions will be shown. To view all transactions you need to set txindex=1 in the configuration file (helium.conf).</source>
-        <translation>Non tutte le transazioni verranno visualizzate. Per vedere tutte le transazioni è necessario aggiungere txindex=1 nel file di configurazione (helium.conf)</translation>
+        <source>Not all transactions will be shown. To view all transactions you need to set txindex=1 in the configuration file (squorum.conf).</source>
+        <translation>Non tutte le transazioni verranno visualizzate. Per vedere tutte le transazioni è necessario aggiungere txindex=1 nel file di configurazione (squorum.conf)</translation>
     </message>
 </context>
 <context>
@@ -1125,8 +1125,8 @@ MultiSend: %1</translation>
         <translation>Modifica indirizzo di invio</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid Helium address.</source>
-        <translation>L'indirizzo inserito "%1" non è un indirizzo Helium valido.</translation>
+        <source>The entered address "%1" is not a valid sQuorum address.</source>
+        <translation>L'indirizzo inserito "%1" non è un indirizzo sQuorum valido.</translation>
     </message>
     <message>
         <source>The entered address "%1" is already in the address book.</source>
@@ -1182,16 +1182,16 @@ MultiSend: %1</translation>
         <translation>versione</translation>
     </message>
     <message>
-        <source>Helium Core</source>
-        <translation>Helium Core</translation>
+        <source>sQuorum Core</source>
+        <translation>sQuorum Core</translation>
     </message>
     <message>
         <source>(%1-bit)</source>
         <translation>(%1-bit)</translation>
     </message>
     <message>
-        <source>About Helium Core</source>
-        <translation>Informazioni su Helium Core</translation>
+        <source>About sQuorum Core</source>
+        <translation>Informazioni su sQuorum Core</translation>
     </message>
     <message>
         <source>Command-line options</source>
@@ -1237,16 +1237,16 @@ MultiSend: %1</translation>
         <translation>Benvenuto</translation>
     </message>
     <message>
-        <source>Welcome to Helium Core.</source>
+        <source>Welcome to sQuorum Core.</source>
         <translation>Benvenuto in HLMIX Core.</translation>
     </message>
     <message>
-        <source>As this is the first time the program is launched, you can choose where Helium Core will store its data.</source>
-        <translation>Essendo il primo avvio dell'applicazione, puoi scegliere dove Helium Core salverà i propri dati.</translation>
+        <source>As this is the first time the program is launched, you can choose where sQuorum Core will store its data.</source>
+        <translation>Essendo il primo avvio dell'applicazione, puoi scegliere dove sQuorum Core salverà i propri dati.</translation>
     </message>
     <message>
-        <source>Helium Core will download and store a copy of the Helium block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
-        <translation>Helium Core scaricherà e salverà una copia della blockchain Helium. Verranno salvati almeno %1GB di dati in questa cartella, che cresceranno nel tempo. In questa cartella verrà salvato anche il portafoglio.</translation>
+        <source>sQuorum Core will download and store a copy of the sQuorum block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
+        <translation>sQuorum Core scaricherà e salverà una copia della blockchain sQuorum. Verranno salvati almeno %1GB di dati in questa cartella, che cresceranno nel tempo. In questa cartella verrà salvato anche il portafoglio.</translation>
     </message>
     <message>
         <source>Use the default data directory</source>
@@ -1257,8 +1257,8 @@ MultiSend: %1</translation>
         <translation>Utilizza una cartella dati personalizzata:</translation>
     </message>
     <message>
-        <source>Helium Core</source>
-        <translation>Helium Core</translation>
+        <source>sQuorum Core</source>
+        <translation>sQuorum Core</translation>
     </message>
     <message>
         <source>Error: Specified data directory "%1" cannot be created.</source>
@@ -1399,12 +1399,12 @@ MultiSend: %1</translation>
         <translation>Inserire indirizzo destinatario</translation>
     </message>
     <message>
-        <source>MultiSend allows you to automatically send up to 100% of your stake or masternode reward to a list of other Helium addresses after it matures.
-To Add: enter percentage to give and Helium address to add to the MultiSend vector.
+        <source>MultiSend allows you to automatically send up to 100% of your stake or masternode reward to a list of other sQuorum addresses after it matures.
+To Add: enter percentage to give and sQuorum address to add to the MultiSend vector.
 To Delete: Enter address to delete and press delete.
 MultiSend will not be activated unless you have clicked Activate</source>
-        <translation>MultiSend ti permette di inviare automaticamente ad una lista di indirizzi Helium fino al 100% delle ricompense di stake o masternodi, dopo che queste sono mature.
-Per Aggiunger: inserisci la percentuale da inviare e l'indirizzo Helium da aggiungere al vettore MultiSend.
+        <translation>MultiSend ti permette di inviare automaticamente ad una lista di indirizzi sQuorum fino al 100% delle ricompense di stake o masternodi, dopo che queste sono mature.
+Per Aggiunger: inserisci la percentuale da inviare e l'indirizzo sQuorum da aggiungere al vettore MultiSend.
 Per Eliminare: Inserisci l'indirizzo da eliminare e premi elimina.
 MultiSend non verrà attivato a meno che tu non prema su Attiva</translation>
     </message>
@@ -1737,14 +1737,14 @@ Se il conio automatico è attivato questa percentuale si stabilizzerà all'incir
         <translation>Conio automatico è attivo e impostato su</translation>
     </message>
     <message>
-        <source>To disable AutoMint add 'enablezeromint=0' in helium.conf.</source>
-        <translation>Per disabilitare il conio automatico aggiungi 'enablezeromint=0' in helium.conf.</translation>
+        <source>To disable AutoMint add 'enablezeromint=0' in squorum.conf.</source>
+        <translation>Per disabilitare il conio automatico aggiungi 'enablezeromint=0' in squorum.conf.</translation>
     </message>
     <message>
         <source>AutoMint is currently disabled.
-To enable AutoMint change 'enablezeromint=0' to 'enablezeromint=1' in helium.conf</source>
+To enable AutoMint change 'enablezeromint=0' to 'enablezeromint=1' in squorum.conf</source>
         <translation>Conio automatico è correntemente disattivato.
-Per attivare il Conio automatico cambiare 'enablezeromint=0' in 'enablezeromint=1' in helium.conf</translation>
+Per attivare il Conio automatico cambiare 'enablezeromint=0' in 'enablezeromint=1' in squorum.conf</translation>
     </message>
 </context>
 <context>
@@ -1890,8 +1890,8 @@ Gli zHLM sono maturi quando hanno più di 20 conferme E più di 2 conii della st
         <source>Show the current status of automatic zHLM minting.
 
 To change the status (restart required):
-- enable: add 'enablezeromint=1' to helium.conf
-- disable: add 'enablezeromint=0' to helium.conf
+- enable: add 'enablezeromint=1' to squorum.conf
+- disable: add 'enablezeromint=0' to squorum.conf
 
 To change the percentage (no restart required):
 - menu Settings-&gt;Options-&gt;Percentage of autominted zHLM
@@ -1899,8 +1899,8 @@ To change the percentage (no restart required):
 </source>
         <translation>Mostra lo stato corrente del conio automatico zHLM.
 Per cambiare lo stato (riavvio necessario):
-- attivato: aggiungi 'enablezeromint=1' a helium.conf
-- disattivato: aggiungi 'enablezeromint=0' a helium.conf
+- attivato: aggiungi 'enablezeromint=1' a squorum.conf
+- disattivato: aggiungi 'enablezeromint=0' a squorum.conf
 
 Per cambiare la percentuale (riavvio non necessario):
 - menu Impostazioni-&gt;Opzioni-&gt;Percentuale di zHLM da coniare automaticamente
@@ -2082,8 +2082,8 @@ Per cambiare la percentuale (riavvio non necessario):
         <translation>Ammontare</translation>
     </message>
     <message>
-        <source>Helium Core</source>
-        <translation>Helium Core</translation>
+        <source>sQuorum Core</source>
+        <translation>sQuorum Core</translation>
     </message>
     </context>
 <context>
@@ -2345,8 +2345,8 @@ Per cambiare la percentuale (riavvio non necessario):
 <context>
     <name>SignVerifyMessageDialog</name>
     <message>
-        <source>The Helium address to sign the message with</source>
-        <translation>L'indirizzo Helium per firmare il messaggio con</translation>
+        <source>The sQuorum address to sign the message with</source>
+        <translation>L'indirizzo sQuorum per firmare il messaggio con</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -2369,16 +2369,16 @@ Per cambiare la percentuale (riavvio non necessario):
         <translation>Copiare la firma corrente negli Appunti di sistema</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Helium address</source>
-        <translation>Firmare il messaggio per dimostrare di possedere questo indirizzo Helium</translation>
+        <source>Sign the message to prove you own this sQuorum address</source>
+        <translation>Firmare il messaggio per dimostrare di possedere questo indirizzo sQuorum</translation>
     </message>
     <message>
-        <source>The Helium address the message was signed with</source>
-        <translation>L'indirizzo Helium con cui è stato firmato il messaggio</translation>
+        <source>The sQuorum address the message was signed with</source>
+        <translation>L'indirizzo sQuorum con cui è stato firmato il messaggio</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified Helium address</source>
-        <translation>Verificare il messaggio per assicurarsi che sia stato firmato con l'indirizzo Helium specificato </translation>
+        <source>Verify the message to ensure it was signed with the specified sQuorum address</source>
+        <translation>Verificare il messaggio per assicurarsi che sia stato firmato con l'indirizzo sQuorum specificato </translation>
     </message>
     <message>
         <source>Reset all sign message fields</source>
@@ -2416,8 +2416,8 @@ Per cambiare la percentuale (riavvio non necessario):
 <context>
     <name>SplashScreen</name>
     <message>
-        <source>Helium Core</source>
-        <translation>Helium Core</translation>
+        <source>sQuorum Core</source>
+        <translation>sQuorum Core</translation>
     </message>
     </context>
 <context>
@@ -2539,7 +2539,7 @@ Per cambiare la percentuale (riavvio non necessario):
     </message>
     </context>
 <context>
-    <name>helium-core</name>
+    <name>squorum-core</name>
     <message>
         <source>Error</source>
         <translation>Errore</translation>

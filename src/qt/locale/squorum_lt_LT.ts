@@ -62,12 +62,12 @@
         <translation>Gavimo adresai</translation>
     </message>
     <message>
-        <source>These are your Helium addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Tai jūsų Helium adresai mokėjimų išsiuntimams. Visada patikrinkite sumą ir gavėjo adresą prieš siųsdami monetas.</translation>
+        <source>These are your sQuorum addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>Tai jūsų sQuorum adresai mokėjimų išsiuntimams. Visada patikrinkite sumą ir gavėjo adresą prieš siųsdami monetas.</translation>
     </message>
     <message>
-        <source>These are your Helium addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
-        <translation>Tai jūsų Helium adresai mokėjimų gavimams. Rekomenduojama naudoti naują adresą kiekvienam pavedimui.</translation>
+        <source>These are your sQuorum addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <translation>Tai jūsų sQuorum adresai mokėjimų gavimams. Rekomenduojama naudoti naują adresą kiekvienam pavedimui.</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -246,12 +246,12 @@
         <translation>Adresas:</translation>
     </message>
     <message>
-        <source>Enter a Helium Address that you would like to encrypt using BIP 38. Enter a passphrase in the middle box. Press encrypt to compute the encrypted private key.</source>
-        <translation>Įveskite Helium adresą, kurį norėtumėte užšifruoti naudojant BIP 38. Vidiniame laukelyje įrašykite slaptą frazę. Paspauskite užšifruoti, jei norite gauti užšifruotą privatųjį raktą.</translation>
+        <source>Enter a sQuorum Address that you would like to encrypt using BIP 38. Enter a passphrase in the middle box. Press encrypt to compute the encrypted private key.</source>
+        <translation>Įveskite sQuorum adresą, kurį norėtumėte užšifruoti naudojant BIP 38. Vidiniame laukelyje įrašykite slaptą frazę. Paspauskite užšifruoti, jei norite gauti užšifruotą privatųjį raktą.</translation>
     </message>
     <message>
-        <source>The Helium address to encrypt</source>
-        <translation>Helium adresas, kurį norite užšifruoti</translation>
+        <source>The sQuorum address to encrypt</source>
+        <translation>sQuorum adresas, kurį norite užšifruoti</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -282,8 +282,8 @@
         <translation>Kopijuoti dabartinį parašą</translation>
     </message>
     <message>
-        <source>Encrypt the private key for this Helium address</source>
-        <translation>Užšifruoti šio Helium adreso privatų raktą</translation>
+        <source>Encrypt the private key for this sQuorum address</source>
+        <translation>Užšifruoti šio sQuorum adreso privatų raktą</translation>
     </message>
     <message>
         <source>Reset all fields</source>
@@ -629,16 +629,16 @@
         <translation>Skirtukų įrankių juosta</translation>
     </message>
     <message>
-        <source>Helium Core</source>
-        <translation>Helium Core</translation>
+        <source>sQuorum Core</source>
+        <translation>sQuorum Core</translation>
     </message>
     <message>
-        <source>Send coins to a Helium address</source>
-        <translation>Siųsti monetas į Helium adresą</translation>
+        <source>Send coins to a sQuorum address</source>
+        <translation>Siųsti monetas į sQuorum adresą</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and helium: URIs)</source>
-        <translation>Prašyti mokėjimų (sugeneruoja QR kodus ir helium URI)</translation>
+        <source>Request payments (generates QR codes and squorum: URIs)</source>
+        <translation>Prašyti mokėjimų (sugeneruoja QR kodus ir squorum URI)</translation>
     </message>
     <message>
         <source>&amp;Masternodes</source>
@@ -649,24 +649,24 @@
         <translation>Naršyti masternod'us</translation>
     </message>
     <message>
-        <source>&amp;About Helium Core</source>
-        <translation>&amp;Apie Helium Core</translation>
+        <source>&amp;About sQuorum Core</source>
+        <translation>&amp;Apie sQuorum Core</translation>
     </message>
     <message>
-        <source>Show information about Helium Core</source>
-        <translation>Rodyti informaciją apie Helium Core</translation>
+        <source>Show information about sQuorum Core</source>
+        <translation>Rodyti informaciją apie sQuorum Core</translation>
     </message>
     <message>
-        <source>Modify configuration options for Helium</source>
-        <translation>Keisti Helium konfigūravimo parinktis</translation>
+        <source>Modify configuration options for sQuorum</source>
+        <translation>Keisti sQuorum konfigūravimo parinktis</translation>
     </message>
     <message>
-        <source>Sign messages with your Helium addresses to prove you own them</source>
-        <translation>Pasirašykite pranešimus naudodami savo Helium adresus, kad įrodytumėte, kad juos turite</translation>
+        <source>Sign messages with your sQuorum addresses to prove you own them</source>
+        <translation>Pasirašykite pranešimus naudodami savo sQuorum adresus, kad įrodytumėte, kad juos turite</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Helium addresses</source>
-        <translation>Patvirtinkite pranešimus, kad jie būtų pasirašyti su nurodytais Helium adresais</translation>
+        <source>Verify messages to ensure they were signed with specified sQuorum addresses</source>
+        <translation>Patvirtinkite pranešimus, kad jie būtų pasirašyti su nurodytais sQuorum adresais</translation>
     </message>
     <message>
         <source>&amp;BIP38 tool</source>
@@ -697,8 +697,8 @@
         <translation>Atidaryti Masternod'o konfigūracijos failą</translation>
     </message>
     <message>
-        <source>Open a Helium: URI or payment request</source>
-        <translation>Atidaryti Helium: URI arba mokėjimo prašymą</translation>
+        <source>Open a sQuorum: URI or payment request</source>
+        <translation>Atidaryti sQuorum: URI arba mokėjimo prašymą</translation>
     </message>
     <message>
         <source>&amp;Blockchain explorer</source>
@@ -709,12 +709,12 @@
         <translation>Blokų naršyklės langas</translation>
     </message>
     <message>
-        <source>Show the Helium Core help message to get a list with possible Helium command-line options</source>
-        <translation>Rodyti Helium Core žinyną, kad gautumėte sąrašą su galimomis Helium komandinės eilutės parinktimis</translation>
+        <source>Show the sQuorum Core help message to get a list with possible sQuorum command-line options</source>
+        <translation>Rodyti sQuorum Core žinyną, kad gautumėte sąrašą su galimomis sQuorum komandinės eilutės parinktimis</translation>
     </message>
     <message>
-        <source>Helium Core client</source>
-        <translation>Helium Core piniginė</translation>
+        <source>sQuorum Core client</source>
+        <translation>sQuorum Core piniginė</translation>
     </message>
     <message>
         <source>Synchronizing with network...</source>
@@ -844,8 +844,8 @@ MultiSend: %1</translation>
         <translation>Teksto etiketė</translation>
     </message>
     <message>
-        <source>Not all transactions will be shown. To view all transactions you need to set txindex=1 in the configuration file (helium.conf).</source>
-        <translation>Ne visi pavedimai bus rodomi. Norėdami peržiūrėti visus pavedimus, reikia nustatyti txindex = 1 konfigūracijos faile (helium.conf).</translation>
+        <source>Not all transactions will be shown. To view all transactions you need to set txindex=1 in the configuration file (squorum.conf).</source>
+        <translation>Ne visi pavedimai bus rodomi. Norėdami peržiūrėti visus pavedimus, reikia nustatyti txindex = 1 konfigūracijos faile (squorum.conf).</translation>
     </message>
 </context>
 <context>
@@ -1129,8 +1129,8 @@ MultiSend: %1</translation>
         <translation>Keisti siuntimo adresą</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid Helium address.</source>
-        <translation>Įvestas adresas "%1" nėra galiojantis Helium adresas.</translation>
+        <source>The entered address "%1" is not a valid sQuorum address.</source>
+        <translation>Įvestas adresas "%1" nėra galiojantis sQuorum adresas.</translation>
     </message>
     <message>
         <source>The entered address "%1" is already in the address book.</source>
@@ -1186,16 +1186,16 @@ MultiSend: %1</translation>
         <translation>versija</translation>
     </message>
     <message>
-        <source>Helium Core</source>
-        <translation>Helium Core</translation>
+        <source>sQuorum Core</source>
+        <translation>sQuorum Core</translation>
     </message>
     <message>
         <source>(%1-bit)</source>
         <translation>(%1-bitai)</translation>
     </message>
     <message>
-        <source>About Helium Core</source>
-        <translation>Apie Helium Core</translation>
+        <source>About sQuorum Core</source>
+        <translation>Apie sQuorum Core</translation>
     </message>
     <message>
         <source>Command-line options</source>
@@ -1241,16 +1241,16 @@ MultiSend: %1</translation>
         <translation>Sveiki</translation>
     </message>
     <message>
-        <source>Welcome to Helium Core.</source>
-        <translation>Sveiki atvykę į Helium Core</translation>
+        <source>Welcome to sQuorum Core.</source>
+        <translation>Sveiki atvykę į sQuorum Core</translation>
     </message>
     <message>
-        <source>As this is the first time the program is launched, you can choose where Helium Core will store its data.</source>
-        <translation>Kadangi programa paleista pirmą kartą, galite pasirinkti kur Helium Core saugos savo duomenis.</translation>
+        <source>As this is the first time the program is launched, you can choose where sQuorum Core will store its data.</source>
+        <translation>Kadangi programa paleista pirmą kartą, galite pasirinkti kur sQuorum Core saugos savo duomenis.</translation>
     </message>
     <message>
-        <source>Helium Core will download and store a copy of the Helium block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
-        <translation>Helium Core atsisiųs ir saugos Helium blockchain'o kopiją. Šiame kataloge bus saugomas ne mažesnis kaip %1GB duomenų kiekis, kuris laikui bėgant augs. Piniginė taip pat bus saugoma šiame kataloge.</translation>
+        <source>sQuorum Core will download and store a copy of the sQuorum block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
+        <translation>sQuorum Core atsisiųs ir saugos sQuorum blockchain'o kopiją. Šiame kataloge bus saugomas ne mažesnis kaip %1GB duomenų kiekis, kuris laikui bėgant augs. Piniginė taip pat bus saugoma šiame kataloge.</translation>
     </message>
     <message>
         <source>Use the default data directory</source>
@@ -1261,8 +1261,8 @@ MultiSend: %1</translation>
         <translation>Naudoti pasirinktą duomenų katalogą:</translation>
     </message>
     <message>
-        <source>Helium Core</source>
-        <translation>Helium Core</translation>
+        <source>sQuorum Core</source>
+        <translation>sQuorum Core</translation>
     </message>
     <message>
         <source>Error: Specified data directory "%1" cannot be created.</source>
@@ -1403,12 +1403,12 @@ MultiSend: %1</translation>
         <translation>Įveskite adresą kuriam norite siųsti</translation>
     </message>
     <message>
-        <source>MultiSend allows you to automatically send up to 100% of your stake or masternode reward to a list of other Helium addresses after it matures.
-To Add: enter percentage to give and Helium address to add to the MultiSend vector.
+        <source>MultiSend allows you to automatically send up to 100% of your stake or masternode reward to a list of other sQuorum addresses after it matures.
+To Add: enter percentage to give and sQuorum address to add to the MultiSend vector.
 To Delete: Enter address to delete and press delete.
 MultiSend will not be activated unless you have clicked Activate</source>
-        <translation>MultiSend leidžia automatiškai išsiųsti iki 100% jūsų stake'inimo ar masternod'ų atlygio į kitus Helium adresus.
-Norėdami pridėti: įveskite pateiktą procentą ir Helium adresą, kurį norite pridėti prie MultiSend sąrašo.
+        <translation>MultiSend leidžia automatiškai išsiųsti iki 100% jūsų stake'inimo ar masternod'ų atlygio į kitus sQuorum adresus.
+Norėdami pridėti: įveskite pateiktą procentą ir sQuorum adresą, kurį norite pridėti prie MultiSend sąrašo.
 Norėdami ištrinti: įveskite adresą, kurį norite ištrinti, ir paspauskite ištrinti
 MultiSend nebus aktyvuotas, nebent paspausite "Įjungti"</translation>
     </message>
@@ -1706,12 +1706,12 @@ MultiSend nebus aktyvuotas, nebent paspausite "Įjungti"</translation>
         <translation>Ekspertas</translation>
     </message>
     <message>
-        <source>Automatically start Helium after logging in to the system.</source>
-        <translation>Automatiškai paleisti Helium prisijungus prie sistemos.</translation>
+        <source>Automatically start sQuorum after logging in to the system.</source>
+        <translation>Automatiškai paleisti sQuorum prisijungus prie sistemos.</translation>
     </message>
     <message>
-        <source>&amp;Start Helium on system login</source>
-        <translation>&amp;Paleisti Helium sistemai įsijungiant</translation>
+        <source>&amp;Start sQuorum on system login</source>
+        <translation>&amp;Paleisti sQuorum sistemai įsijungiant</translation>
     </message>
     <message>
         <source>Whether to show coin control features or not.</source>
@@ -1738,16 +1738,16 @@ MultiSend nebus aktyvuotas, nebent paspausite "Įjungti"</translation>
         <translation>&amp;Tinklas</translation>
     </message>
     <message>
-        <source>The user interface language can be set here. This setting will take effect after restarting Helium.</source>
-        <translation>Čia galite nustatyti vartotojo sąsajos kalbą. Šis nustatymas įsigalios iš naujo paleidus "Helium".</translation>
+        <source>The user interface language can be set here. This setting will take effect after restarting sQuorum.</source>
+        <translation>Čia galite nustatyti vartotojo sąsajos kalbą. Šis nustatymas įsigalios iš naujo paleidus "sQuorum".</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>
         <translation>Įrašyti prievadą naudojant &amp;UPnP</translation>
     </message>
     <message>
-        <source>Connect to the Helium network through a SOCKS5 proxy.</source>
-        <translation>Jungtis prie Helium tinklo naudojant SOCKS5 tarpinį serverį.</translation>
+        <source>Connect to the sQuorum network through a SOCKS5 proxy.</source>
+        <translation>Jungtis prie sQuorum tinklo naudojant SOCKS5 tarpinį serverį.</translation>
     </message>
     <message>
         <source>Proxy &amp;IP:</source>
@@ -1779,9 +1779,9 @@ MultiSend nebus aktyvuotas, nebent paspausite "Įjungti"</translation>
     </message>
     <message>
         <source>Language missing or translation incomplete? Help contributing translations here:
-https://www.transifex.com/helium-project/helium-wallet</source>
+https://www.transifex.com/squorum-project/squorum-wallet</source>
         <translation>Trūksta kalbos arba vertimas nebaigtas? Padėkite prisidėdami prie vertimų čia:
-https://www.transifex.com/helium-project/helium-wallet</translation>
+https://www.transifex.com/squorum-project/squorum-wallet</translation>
     </message>
     <message>
         <source>Decimal digits</source>
@@ -1891,8 +1891,8 @@ https://www.transifex.com/helium-project/helium-wallet</translation>
         <translation>Dabartinis bendras užrakintas balansas tik žiūrėjimo adresuose</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Helium network after a connection is established, but this process has not completed yet.</source>
-        <translation>Rodoma informacija gali būti pasenusi. Jūsų piniginė automatiškai sinchronizuojasi su Helium tinklu po ryšio aktyvavimo, tačiau šis procesas dar nebaigtas.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the sQuorum network after a connection is established, but this process has not completed yet.</source>
+        <translation>Rodoma informacija gali būti pasenusi. Jūsų piniginė automatiškai sinchronizuojasi su sQuorum tinklu po ryšio aktyvavimo, tačiau šis procesas dar nebaigtas.</translation>
     </message>
     <message>
         <source>OVERVIEW</source>
@@ -1955,8 +1955,8 @@ https://www.transifex.com/helium-project/helium-wallet</translation>
         <translation>AutoMint šiuo metu įgalintas ir nustatytas</translation>
     </message>
     <message>
-        <source>To disable AutoMint add 'enablezeromint=0' in helium.conf.</source>
-        <translation>Norėdami išjungti Automatinį Kalimą pridėkite 'enablezeromint=0' helium.conf faile.</translation>
+        <source>To disable AutoMint add 'enablezeromint=0' in squorum.conf.</source>
+        <translation>Norėdami išjungti Automatinį Kalimą pridėkite 'enablezeromint=0' squorum.conf faile.</translation>
     </message>
     </context>
 <context>
@@ -1970,8 +1970,8 @@ https://www.transifex.com/helium-project/helium-wallet</translation>
         <translation>Netinkamas mokėjimo adresas %1</translation>
     </message>
     <message>
-        <source>Cannot start helium: click-to-pay handler</source>
-        <translation>Nepavyksta paleisti helium: apdorojimo "spustelėjimo ir apmokėjimo" funkcijos klaida</translation>
+        <source>Cannot start squorum: click-to-pay handler</source>
+        <translation>Nepavyksta paleisti squorum: apdorojimo "spustelėjimo ir apmokėjimo" funkcijos klaida</translation>
     </message>
     <message>
         <source>Payment request file cannot be read! This can be caused by an invalid payment request file.</source>
@@ -2024,8 +2024,8 @@ https://www.transifex.com/helium-project/helium-wallet</translation>
         <translation>Zerocoin Veiksmai:</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Helium network after a connection is established, but this process has not completed yet.</source>
-        <translation>Rodoma informacija gali būti pasenusi. Jūsų piniginė automatiškai sinchronizuojasi su Helium tinklu po ryšio aktyvavimo, tačiau šis procesas dar nebaigtas.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the sQuorum network after a connection is established, but this process has not completed yet.</source>
+        <translation>Rodoma informacija gali būti pasenusi. Jūsų piniginė automatiškai sinchronizuojasi su sQuorum tinklu po ryšio aktyvavimo, tačiau šis procesas dar nebaigtas.</translation>
     </message>
     <message>
         <source>Mint Zerocoin</source>
@@ -2412,8 +2412,8 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos to pačio nominalo
         <translation>Suma</translation>
     </message>
     <message>
-        <source>Enter a Helium address (e.g. %1)</source>
-        <translation>Įveskite Helium adresą (pvz. %1)</translation>
+        <source>Enter a sQuorum address (e.g. %1)</source>
+        <translation>Įveskite sQuorum adresą (pvz. %1)</translation>
     </message>
     <message>
         <source>%1 d</source>
@@ -2448,8 +2448,8 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos to pačio nominalo
         <translation>N/A</translation>
     </message>
     <message>
-        <source>Helium Core</source>
-        <translation>Helium Core</translation>
+        <source>sQuorum Core</source>
+        <translation>sQuorum Core</translation>
     </message>
     </context>
 <context>
@@ -2594,8 +2594,8 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos to pačio nominalo
         <translation>Iš:</translation>
     </message>
     <message>
-        <source>Welcome to the Helium RPC console.</source>
-        <translation>Sveiki atvykę į Helium RPC konsolę.</translation>
+        <source>Welcome to the sQuorum RPC console.</source>
+        <translation>Sveiki atvykę į sQuorum RPC konsolę.</translation>
     </message>
     <message>
         <source>never</source>
@@ -2931,8 +2931,8 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos to pačio nominalo
 <context>
     <name>SignVerifyMessageDialog</name>
     <message>
-        <source>The Helium address to sign the message with</source>
-        <translation>Helium adresas, kuriuo pasirašyti žinute</translation>
+        <source>The sQuorum address to sign the message with</source>
+        <translation>sQuorum adresas, kuriuo pasirašyti žinute</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -2955,16 +2955,16 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos to pačio nominalo
         <translation>Kopijuoti dabartinį parašą</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Helium address</source>
-        <translation>Pažymėkite žinutę, kad įrodytumėte, jog jūs šio Helium adreso savininkas</translation>
+        <source>Sign the message to prove you own this sQuorum address</source>
+        <translation>Pažymėkite žinutę, kad įrodytumėte, jog jūs šio sQuorum adreso savininkas</translation>
     </message>
     <message>
-        <source>The Helium address the message was signed with</source>
-        <translation>Helium adresas, kurio buvo pasirašyta žinutė</translation>
+        <source>The sQuorum address the message was signed with</source>
+        <translation>sQuorum adresas, kurio buvo pasirašyta žinutė</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified Helium address</source>
-        <translation>Patikrinkite pranešimą, kad jis būtų pasirašytas su nurodytu Helium adresu</translation>
+        <source>Verify the message to ensure it was signed with the specified sQuorum address</source>
+        <translation>Patikrinkite pranešimą, kad jis būtų pasirašytas su nurodytu sQuorum adresu</translation>
     </message>
     <message>
         <source>Reset all sign message fields</source>
@@ -3002,8 +3002,8 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos to pačio nominalo
 <context>
     <name>SplashScreen</name>
     <message>
-        <source>Helium Core</source>
-        <translation>Helium Core</translation>
+        <source>sQuorum Core</source>
+        <translation>sQuorum Core</translation>
     </message>
     </context>
 <context>
@@ -3233,7 +3233,7 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos to pačio nominalo
     </message>
     </context>
 <context>
-    <name>helium-core</name>
+    <name>squorum-core</name>
     <message>
         <source>(default: %s)</source>
         <translation>(numatytas: %s)</translation>
@@ -3259,8 +3259,8 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos to pačio nominalo
         <translation>Klaida kraunant wallet.dat: Piniginė yra sugadinta</translation>
     </message>
     <message>
-        <source>Error loading wallet.dat: Wallet requires newer version of Helium Core</source>
-        <translation>Klaida kraunant wallet.dat: Piniginė reikalauja naujesnės Helium Core versijos</translation>
+        <source>Error loading wallet.dat: Wallet requires newer version of sQuorum Core</source>
+        <translation>Klaida kraunant wallet.dat: Piniginė reikalauja naujesnės sQuorum Core versijos</translation>
     </message>
     <message>
         <source>Error opening block database</source>
@@ -3435,8 +3435,8 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos to pačio nominalo
         <translation>Piniginė %s yra ne duomenų kataloge %s</translation>
     </message>
     <message>
-        <source>Wallet needed to be rewritten: restart Helium Core to complete</source>
-        <translation>Piniginę reikia perrašyti: paleiskite Helium Core iš naujo</translation>
+        <source>Wallet needed to be rewritten: restart sQuorum Core to complete</source>
+        <translation>Piniginę reikia perrašyti: paleiskite sQuorum Core iš naujo</translation>
     </message>
     <message>
         <source>Wallet options:</source>

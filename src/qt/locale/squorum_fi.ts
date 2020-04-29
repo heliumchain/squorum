@@ -62,12 +62,12 @@
         <translation>Vastaanottavat osoitteet</translation>
     </message>
     <message>
-        <source>These are your Helium addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Nämä ovat sinun Helium osoitteesi maksujen lähetystä varten. Tarkista aina määrä ja vastaanottava osoite ennen kolikoiden lähettämistä.</translation>
+        <source>These are your sQuorum addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>Nämä ovat sinun sQuorum osoitteesi maksujen lähetystä varten. Tarkista aina määrä ja vastaanottava osoite ennen kolikoiden lähettämistä.</translation>
     </message>
     <message>
-        <source>These are your Helium addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
-        <translation>Nämä ovat sinun Helium osoitteesi maksujen vastaanottamista varten. On suositeltavaa käyttää uutta vastaanottavaa osoitetta jokaiselle uudelle rahansiirrolle.</translation>
+        <source>These are your sQuorum addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <translation>Nämä ovat sinun sQuorum osoitteesi maksujen vastaanottamista varten. On suositeltavaa käyttää uutta vastaanottavaa osoitetta jokaiselle uudelle rahansiirrolle.</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -561,16 +561,16 @@
         <translation>&amp;Apua</translation>
     </message>
     <message>
-        <source>Helium Core</source>
-        <translation>Helium Ydin</translation>
+        <source>sQuorum Core</source>
+        <translation>sQuorum Ydin</translation>
     </message>
     <message>
-        <source>Send coins to a Helium address</source>
-        <translation>Lähetä kolikkoja Helium osoitteeseen</translation>
+        <source>Send coins to a sQuorum address</source>
+        <translation>Lähetä kolikkoja sQuorum osoitteeseen</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and helium: URIs)</source>
-        <translation>Pyydä maksuja (Generoi QR koodeja ja helium: URIja)</translation>
+        <source>Request payments (generates QR codes and squorum: URIs)</source>
+        <translation>Pyydä maksuja (Generoi QR koodeja ja squorum: URIja)</translation>
     </message>
     <message>
         <source>&amp;Masternodes</source>
@@ -581,24 +581,24 @@
         <translation>Selaa masternodeja</translation>
     </message>
     <message>
-        <source>&amp;About Helium Core</source>
-        <translation>Helium Core &amp;ytimestä</translation>
+        <source>&amp;About sQuorum Core</source>
+        <translation>sQuorum Core &amp;ytimestä</translation>
     </message>
     <message>
-        <source>Show information about Helium Core</source>
-        <translation>Näytä tietoja Helium Ytimestä</translation>
+        <source>Show information about sQuorum Core</source>
+        <translation>Näytä tietoja sQuorum Ytimestä</translation>
     </message>
     <message>
-        <source>Modify configuration options for Helium</source>
-        <translation>Muokkaa konfiguraatio vaihtoehtoja Helium:lle</translation>
+        <source>Modify configuration options for sQuorum</source>
+        <translation>Muokkaa konfiguraatio vaihtoehtoja sQuorum:lle</translation>
     </message>
     <message>
-        <source>Sign messages with your Helium addresses to prove you own them</source>
+        <source>Sign messages with your sQuorum addresses to prove you own them</source>
         <translation>Allekirjoita viestejä todistaaksesi, että omistat ne.</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Helium addresses</source>
-        <translation>Vahvista viestit varmistaaksesi, että ne allekirjoitettiin tietyllä Helium osoiteella.</translation>
+        <source>Verify messages to ensure they were signed with specified sQuorum addresses</source>
+        <translation>Vahvista viestit varmistaaksesi, että ne allekirjoitettiin tietyllä sQuorum osoiteella.</translation>
     </message>
     <message>
         <source>&amp;BIP38 tool</source>
@@ -629,8 +629,8 @@
         <translation>Avaa Masternode konfiguraatiotiedosto</translation>
     </message>
     <message>
-        <source>Open a Helium: URI or payment request</source>
-        <translation>Avaa Helium: URI tai pyydä maksua</translation>
+        <source>Open a sQuorum: URI or payment request</source>
+        <translation>Avaa sQuorum: URI tai pyydä maksua</translation>
     </message>
     <message>
         <source>&amp;Blockchain explorer</source>
@@ -641,12 +641,12 @@
         <translation>Lohkon tutkija näkymä</translation>
     </message>
     <message>
-        <source>Show the Helium Core help message to get a list with possible Helium command-line options</source>
-        <translation>Näytä Helium Ydin apuviesti saadaksesi lista mahdollisista Helium komentolinja komennoista.</translation>
+        <source>Show the sQuorum Core help message to get a list with possible sQuorum command-line options</source>
+        <translation>Näytä sQuorum Ydin apuviesti saadaksesi lista mahdollisista sQuorum komentolinja komennoista.</translation>
     </message>
     <message>
-        <source>Helium Core client</source>
-        <translation>Helium Ydin asiakasohjelma</translation>
+        <source>sQuorum Core client</source>
+        <translation>sQuorum Ydin asiakasohjelma</translation>
     </message>
     <message>
         <source>Synchronizing with network...</source>
@@ -915,8 +915,8 @@
 <context>
     <name>HelpMessageDialog</name>
     <message>
-        <source>Helium Core</source>
-        <translation>Helium Ydin</translation>
+        <source>sQuorum Core</source>
+        <translation>sQuorum Ydin</translation>
     </message>
     <message>
         <source>Usage:</source>
@@ -934,12 +934,12 @@
         <translation>Tervetuloa</translation>
     </message>
     <message>
-        <source>Welcome to Helium Core.</source>
-        <translation>Tervetuloa Helium Ytimeen.</translation>
+        <source>Welcome to sQuorum Core.</source>
+        <translation>Tervetuloa sQuorum Ytimeen.</translation>
     </message>
     <message>
-        <source>Helium Core</source>
-        <translation>Helium Ydin</translation>
+        <source>sQuorum Core</source>
+        <translation>sQuorum Ydin</translation>
     </message>
     <message>
         <source>Error</source>
@@ -1125,12 +1125,12 @@
         <translation>Ekspertti</translation>
     </message>
     <message>
-        <source>Automatically start Helium after logging in to the system.</source>
-        <translation>Automaattisesti käynnistä Helium kun kirjaudut sisään.</translation>
+        <source>Automatically start sQuorum after logging in to the system.</source>
+        <translation>Automaattisesti käynnistä sQuorum kun kirjaudut sisään.</translation>
     </message>
     <message>
-        <source>&amp;Start Helium on system login</source>
-        <translation>&amp;Aloita Helium järjestelmän kirjautumisessa</translation>
+        <source>&amp;Start sQuorum on system login</source>
+        <translation>&amp;Aloita sQuorum järjestelmän kirjautumisessa</translation>
     </message>
     <message>
         <source>Enable coin &amp;control features</source>
@@ -1149,12 +1149,12 @@
         <translation>&amp;Verkko</translation>
     </message>
     <message>
-        <source>The user interface language can be set here. This setting will take effect after restarting Helium.</source>
+        <source>The user interface language can be set here. This setting will take effect after restarting sQuorum.</source>
         <translation>Käyttöliittymän kielen voi säätää täällä. Tämä asetus tulee voimaan uudelleenkäynnistettyäsi lompakon.</translation>
     </message>
     <message>
-        <source>Connect to the Helium network through a SOCKS5 proxy.</source>
-        <translation>Yhdistä Helium verkkoon SOCKS5 proxyn kautta</translation>
+        <source>Connect to the sQuorum network through a SOCKS5 proxy.</source>
+        <translation>Yhdistä sQuorum verkkoon SOCKS5 proxyn kautta</translation>
     </message>
     <message>
         <source>Proxy &amp;IP:</source>
@@ -1387,8 +1387,8 @@
         <translation>Määrä</translation>
     </message>
     <message>
-        <source>Helium Core</source>
-        <translation>Helium Ydin</translation>
+        <source>sQuorum Core</source>
+        <translation>sQuorum Ydin</translation>
     </message>
     </context>
 <context>
@@ -1445,8 +1445,8 @@
         <translation>Lohko ketju</translation>
     </message>
     <message>
-        <source>Open the Helium debug log file from the current data directory. This can take a few seconds for large log files.</source>
-        <translation>Avaa Helium debug loki nykyisestä sijainnista. Tämä voi kestää muutaman sekunnin suurille lokeille</translation>
+        <source>Open the sQuorum debug log file from the current data directory. This can take a few seconds for large log files.</source>
+        <translation>Avaa sQuorum debug loki nykyisestä sijainnista. Tämä voi kestää muutaman sekunnin suurille lokeille</translation>
     </message>
     <message>
         <source>Number of Masternodes</source>
@@ -1557,8 +1557,8 @@
         <translation>Ulos:</translation>
     </message>
     <message>
-        <source>Welcome to the Helium RPC console.</source>
-        <translation>Tervetuloa Helium RPC konsoliin.</translation>
+        <source>Welcome to the sQuorum RPC console.</source>
+        <translation>Tervetuloa sQuorum RPC konsoliin.</translation>
     </message>
     <message>
         <source>never</source>
@@ -1600,12 +1600,12 @@
         <translation>M&amp;äärä:</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Helium network.</source>
-        <translation>Vaihtoehtoinen viesti joka liitetään maksupyyntöön, joka näytetään kun pyyntö avataan. Huomio: Viestiä ei lähetetä maksun mukana Helium verkolle.</translation>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the sQuorum network.</source>
+        <translation>Vaihtoehtoinen viesti joka liitetään maksupyyntöön, joka näytetään kun pyyntö avataan. Huomio: Viestiä ei lähetetä maksun mukana sQuorum verkolle.</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened.&lt;br&gt;Note: The message will not be sent with the payment over the Helium network.</source>
-        <translation>Vaihtoehtoinen viesti, joka liitetään maksupyyntöö, joka näytetään kun pyyntö avataan. &lt;br&gt; Huomio: Tätä viestiä ei lähetetä maksun mukana Helium  verkolle.</translation>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened.&lt;br&gt;Note: The message will not be sent with the payment over the sQuorum network.</source>
+        <translation>Vaihtoehtoinen viesti, joka liitetään maksupyyntöö, joka näytetään kun pyyntö avataan. &lt;br&gt; Huomio: Tätä viestiä ei lähetetä maksun mukana sQuorum  verkolle.</translation>
     </message>
     <message>
         <source>Use this form to request payments. All fields are &lt;b&gt;optional&lt;/b&gt;.</source>
@@ -1881,8 +1881,8 @@
         <translation>Kopioi taksa</translation>
     </message>
     <message>
-        <source>Warning: Invalid Helium address</source>
-        <translation>Varoitus: Virheellinen Helium osoite</translation>
+        <source>Warning: Invalid sQuorum address</source>
+        <translation>Varoitus: Virheellinen sQuorum osoite</translation>
     </message>
     <message>
         <source>Are you sure you want to send?</source>
@@ -1932,8 +1932,8 @@
         <translation>Tämä on normaali maksu.</translation>
     </message>
     <message>
-        <source>The Helium address to send the payment to</source>
-        <translation>Helium osoite johon maksu lähetetään</translation>
+        <source>The sQuorum address to send the payment to</source>
+        <translation>sQuorum osoite johon maksu lähetetään</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -1975,8 +1975,8 @@
 <context>
     <name>ShutdownWindow</name>
     <message>
-        <source>Helium Core is shutting down...</source>
-        <translation>Helium core sammuu...</translation>
+        <source>sQuorum Core is shutting down...</source>
+        <translation>sQuorum core sammuu...</translation>
     </message>
     <message>
         <source>Do not shut down the computer until this window disappears.</source>
@@ -1994,8 +1994,8 @@
         <translation>Voit allekirjoittaa viestejä osoitteillasi todistaaksesi, että omistat ne. Ole varovainen ettet allekirjoita mitään kummallista, sillä kalasteluyritykset saattavat yrittää huijata sinut luovuttamaan tietoja. Allekirjoita vain täysin yksityiskohtaisia sanomia, jotka hyväksyt.</translation>
     </message>
     <message>
-        <source>The Helium address to sign the message with</source>
-        <translation>Helium osoite, jolla viesti allekirjoitetaan</translation>
+        <source>The sQuorum address to sign the message with</source>
+        <translation>sQuorum osoite, jolla viesti allekirjoitetaan</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -2026,16 +2026,16 @@
         <translation>Kopioi nykyinen allekirjoitus järjestelmän leikepöydälle</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Helium address</source>
-        <translation>Allekirjoita viesti todistaaksesi, että omistat tämän Helium osoitteen</translation>
+        <source>Sign the message to prove you own this sQuorum address</source>
+        <translation>Allekirjoita viesti todistaaksesi, että omistat tämän sQuorum osoitteen</translation>
     </message>
     <message>
-        <source>The Helium address the message was signed with</source>
-        <translation>Helium osoite, jolla viesti allekirjoitettiin</translation>
+        <source>The sQuorum address the message was signed with</source>
+        <translation>sQuorum osoite, jolla viesti allekirjoitettiin</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified Helium address</source>
-        <translation>Vahvista että viesti on allekirjoitettu kyseessä olevalla Helium osoitteella.</translation>
+        <source>Verify the message to ensure it was signed with the specified sQuorum address</source>
+        <translation>Vahvista että viesti on allekirjoitettu kyseessä olevalla sQuorum osoitteella.</translation>
     </message>
     <message>
         <source>Sign &amp;Message</source>
@@ -2117,8 +2117,8 @@
 <context>
     <name>SplashScreen</name>
     <message>
-        <source>Helium Core</source>
-        <translation>Helium Ydin</translation>
+        <source>sQuorum Core</source>
+        <translation>sQuorum Ydin</translation>
     </message>
     <message>
         <source>Version %1</source>
@@ -2133,8 +2133,8 @@
         <translation>Dash Core kehittäjät</translation>
     </message>
     <message>
-        <source>The Helium Core developers</source>
-        <translation>Helium core kehittäjät</translation>
+        <source>The sQuorum Core developers</source>
+        <translation>sQuorum core kehittäjät</translation>
     </message>
     <message>
         <source>[testnet]</source>
@@ -2436,7 +2436,7 @@
     </message>
     </context>
 <context>
-    <name>helium-core</name>
+    <name>squorum-core</name>
     <message>
         <source>Warning: The network does not appear to fully agree! Some miners appear to be experiencing issues.</source>
         <translation>Varoitus: Verkko ei näytä olevan samaa mieltä! Jotkin mainaajat saattavat kokea ongelmia.</translation>
@@ -2482,8 +2482,8 @@
         <translation>Virhe ladattaessa wallet.dat tiedostoa: Lompakko korruptoitunut</translation>
     </message>
     <message>
-        <source>Error loading wallet.dat: Wallet requires newer version of Helium Core</source>
-        <translation>Virhe ladattaessa wallet.dat tiedostoa: Lompakko vaatii uudemman version Helium Coresta</translation>
+        <source>Error loading wallet.dat: Wallet requires newer version of sQuorum Core</source>
+        <translation>Virhe ladattaessa wallet.dat tiedostoa: Lompakko vaatii uudemman version sQuorum Coresta</translation>
     </message>
     <message>
         <source>Error reading from database, shutting down.</source>

@@ -43,12 +43,12 @@
         <file alias="tx_input">res/icons/tx_input.png</file>
         <file alias="tx_output">res/icons/tx_output.png</file>
         <file alias="tx_inout">res/icons/tx_inout.png</file>
-        <file alias="unit_helium">res/icons/unit_helium.png</file>
-        <file alias="unit_mhelium">res/icons/unit_mhelium.png</file>
-        <file alias="unit_uhelium">res/icons/unit_uhelium.png</file>
-        <file alias="unit_thelium">res/icons/unit_thelium.png</file>
-        <file alias="unit_tmhelium">res/icons/unit_tmhelium.png</file>
-        <file alias="unit_tuhelium">res/icons/unit_tuhelium.png</file>
+        <file alias="unit_squorum">res/icons/unit_squorum.png</file>
+        <file alias="unit_msquorum">res/icons/unit_msquorum.png</file>
+        <file alias="unit_usquorum">res/icons/unit_usquorum.png</file>
+        <file alias="unit_tsquorum">res/icons/unit_tsquorum.png</file>
+        <file alias="unit_tmsquorum">res/icons/unit_tmsquorum.png</file>
+        <file alias="unit_tusquorum">res/icons/unit_tusquorum.png</file>
         <file alias="lock_closed">res/icons/lock_closed.png</file>
         <file alias="lock_open">res/icons/lock_open.png</file>
         <file alias="key">res/icons/key.png</file>
@@ -71,7 +71,7 @@
     </qresource>
     <qresource prefix="/images">
         <file alias="about">res/images/about.png</file>
-        <file alias="logo_horizontal">res/images/helium_logo_horizontal.png</file>
+        <file alias="logo_horizontal">res/images/squorum_logo_horizontal.png</file>
         <file alias="downArrow">res/images/downArrow_dark.png</file>
         <file alias="downArrow_small">res/images/downArrow_small_dark.png</file>
         <file alias="downArrow_small_white">res/images/downArrow_small.png</file>

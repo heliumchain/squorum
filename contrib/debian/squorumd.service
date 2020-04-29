@@ -1,23 +1,23 @@
 # It is not recommended to modify this file in-place, because it will
 # be overwritten during package upgrades. If you want to add further
 # options or overwrite existing ones then use
-# $ systemctl edit heliumd.service
+# $ systemctl edit squorumd.service
 # See "man systemd.service" for details.
 
 # Note that almost all daemon options could be specified in
-# /etc/helium/helium.conf
+# /etc/squorum/squorum.conf
 
 [Unit]
-Description=Helium daemon
+Description=sQuorum daemon
 After=network.target
 
 [Service]
-ExecStart=/usr/bin/heliumd -daemon -datadir=/var/lib/helium -conf=/etc/helium/helium.conf -pid=/run/heliumd/heliumd.pid
-# Creates /run/heliumd owned by helium
-RuntimeDirectory=heliumd
-User=helium
+ExecStart=/usr/bin/squorumd -daemon -datadir=/var/lib/squorum -conf=/etc/squorum/squorum.conf -pid=/run/squorumd/squorumd.pid
+# Creates /run/squorumd owned by squorum
+RuntimeDirectory=squorumd
+User=squorum
 Type=forking
-PIDFile=/run/heliumd/heliumd.pid
+PIDFile=/run/squorumd/squorumd.pid
 Restart=on-failure
 
 # Hardening measures

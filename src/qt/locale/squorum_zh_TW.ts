@@ -1,4 +1,4 @@
-<TS language="zh_TW" version="2.1">
+﻿<TS language="zh_TW" version="2.1">
 <context>
     <name>AddressBookPage</name>
     <message>
@@ -43,11 +43,11 @@
     </message>
     <message>
         <source>Choose the address to send coins to</source>
-        <translation>選擇要匯出Helium幣的位址</translation>
+        <translation>選擇要匯出sQuorum幣的位址</translation>
     </message>
     <message>
         <source>Choose the address to receive coins with</source>
-        <translation>選擇要接收Helium幣的位址</translation>
+        <translation>選擇要接收sQuorum幣的位址</translation>
     </message>
     <message>
         <source>C&amp;hoose</source>
@@ -62,12 +62,12 @@
         <translation>接收的位址</translation>
     </message>
     <message>
-        <source>These are your Helium addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>這是你用來付款的 Helium 位址, 送出前, 請務必確認金額及接收位址是否正確.</translation>
+        <source>These are your sQuorum addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>這是你用來付款的 sQuorum 位址, 送出前, 請務必確認金額及接收位址是否正確.</translation>
     </message>
     <message>
-        <source>These are your Helium addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
-        <translation>這是你用來接收款項的 Helium 位址, 建議你每次付款都使用新的位址.</translation>
+        <source>These are your sQuorum addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <translation>這是你用來接收款項的 sQuorum 位址, 建議你每次付款都使用新的位址.</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -553,16 +553,16 @@
         <translation>Tabs 工具列</translation>
     </message>
     <message>
-        <source>Helium Core</source>
-        <translation>Helium Core</translation>
+        <source>sQuorum Core</source>
+        <translation>sQuorum Core</translation>
     </message>
     <message>
-        <source>Send coins to a Helium address</source>
-        <translation>送出錢幣到 Helium 地址</translation>
+        <source>Send coins to a sQuorum address</source>
+        <translation>送出錢幣到 sQuorum 地址</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and helium: URIs)</source>
-        <translation>請求付款 (會產生 QR Code跟 helium 位址)</translation>
+        <source>Request payments (generates QR codes and squorum: URIs)</source>
+        <translation>請求付款 (會產生 QR Code跟 squorum 位址)</translation>
     </message>
     <message>
         <source>&amp;Masternodes</source>
@@ -573,24 +573,24 @@
         <translation>瀏覽 Masternodes</translation>
     </message>
     <message>
-        <source>&amp;About Helium Core</source>
-        <translation>&amp;關於 Helium Core</translation>
+        <source>&amp;About sQuorum Core</source>
+        <translation>&amp;關於 sQuorum Core</translation>
     </message>
     <message>
-        <source>Show information about Helium Core</source>
-        <translation>顯示 Helium Core 相關資訊</translation>
+        <source>Show information about sQuorum Core</source>
+        <translation>顯示 sQuorum Core 相關資訊</translation>
     </message>
     <message>
-        <source>Modify configuration options for Helium</source>
-        <translation>修改 Helium 設定</translation>
+        <source>Modify configuration options for sQuorum</source>
+        <translation>修改 sQuorum 設定</translation>
     </message>
     <message>
-        <source>Sign messages with your Helium addresses to prove you own them</source>
-        <translation>使用你的 Helium 位址對訊息簽章, 來證明你是擁有者</translation>
+        <source>Sign messages with your sQuorum addresses to prove you own them</source>
+        <translation>使用你的 sQuorum 位址對訊息簽章, 來證明你是擁有者</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Helium addresses</source>
-        <translation>驗證訊息簽章與 Helium 位址吻合</translation>
+        <source>Verify messages to ensure they were signed with specified sQuorum addresses</source>
+        <translation>驗證訊息簽章與 sQuorum 位址吻合</translation>
     </message>
     <message>
         <source>&amp;BIP38 tool</source>
@@ -621,8 +621,8 @@
         <translation>打開Masternode設定檔</translation>
     </message>
     <message>
-        <source>Open a Helium: URI or payment request</source>
-        <translation>打開Helium: 位址或付款請求 </translation>
+        <source>Open a sQuorum: URI or payment request</source>
+        <translation>打開sQuorum: 位址或付款請求 </translation>
     </message>
     <message>
         <source>&amp;Blockchain explorer</source>
@@ -633,12 +633,12 @@
         <translation>區塊鏈瀏覽視窗</translation>
     </message>
     <message>
-        <source>Show the Helium Core help message to get a list with possible Helium command-line options</source>
-        <translation>顯示 Helium Core 幫助訊息以取得 Helium 命令列表選項</translation>
+        <source>Show the sQuorum Core help message to get a list with possible sQuorum command-line options</source>
+        <translation>顯示 sQuorum Core 幫助訊息以取得 sQuorum 命令列表選項</translation>
     </message>
     <message>
-        <source>Helium Core client</source>
-        <translation>Helium Core 客戶端</translation>
+        <source>sQuorum Core client</source>
+        <translation>sQuorum Core 客戶端</translation>
     </message>
     </context>
 <context>
@@ -670,15 +670,15 @@
 <context>
     <name>HelpMessageDialog</name>
     <message>
-        <source>Helium Core</source>
-        <translation>Helium Core</translation>
+        <source>sQuorum Core</source>
+        <translation>sQuorum Core</translation>
     </message>
     </context>
 <context>
     <name>Intro</name>
     <message>
-        <source>Helium Core</source>
-        <translation>Helium Core</translation>
+        <source>sQuorum Core</source>
+        <translation>sQuorum Core</translation>
     </message>
     </context>
 <context>
@@ -750,8 +750,8 @@
 <context>
     <name>QObject</name>
     <message>
-        <source>Helium Core</source>
-        <translation>Helium Core</translation>
+        <source>sQuorum Core</source>
+        <translation>sQuorum Core</translation>
     </message>
     </context>
 <context>
@@ -829,8 +829,8 @@
 <context>
     <name>SignVerifyMessageDialog</name>
     <message>
-        <source>The Helium address to sign the message with</source>
-        <translation>對訊息簽名的 Helium 位址</translation>
+        <source>The sQuorum address to sign the message with</source>
+        <translation>對訊息簽名的 sQuorum 位址</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -853,16 +853,16 @@
         <translation>拷貝目前的簽章到系統剪貼簿</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Helium address</source>
-        <translation>使用簽章來證明你是該  Helium 位址的擁有者,</translation>
+        <source>Sign the message to prove you own this sQuorum address</source>
+        <translation>使用簽章來證明你是該  sQuorum 位址的擁有者,</translation>
     </message>
     <message>
-        <source>The Helium address the message was signed with</source>
-        <translation>此訊息之 Helium 位址已簽章於</translation>
+        <source>The sQuorum address the message was signed with</source>
+        <translation>此訊息之 sQuorum 位址已簽章於</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified Helium address</source>
-        <translation>驗證訊息以確保該  Helium 位址已被簽章</translation>
+        <source>Verify the message to ensure it was signed with the specified sQuorum address</source>
+        <translation>驗證訊息以確保該  sQuorum 位址已被簽章</translation>
     </message>
     <message>
         <source>Reset all sign message fields</source>
@@ -900,8 +900,8 @@
 <context>
     <name>SplashScreen</name>
     <message>
-        <source>Helium Core</source>
-        <translation>Helium Core</translation>
+        <source>sQuorum Core</source>
+        <translation>sQuorum Core</translation>
     </message>
     </context>
 <context>
@@ -967,6 +967,6 @@
     <name>ZHlmControlDialog</name>
     </context>
 <context>
-    <name>helium-core</name>
+    <name>squorum-core</name>
     </context>
 </TS>

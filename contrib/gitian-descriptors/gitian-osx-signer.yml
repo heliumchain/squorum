@@ -1,5 +1,5 @@
 ---
-name: "helium-dmg-signer"
+name: "squorum-dmg-signer"
 distro: "ubuntu"
 suites:
 - "bionic"
@@ -11,7 +11,7 @@ remotes:
 - "url": "https://github.com/heliumchain/helium-detached-sigs.git"
   "dir": "signature"
 files:
-- "helium-osx-unsigned.tar.gz"
+- "squorum-osx-unsigned.tar.gz"
 script: |
   set -e -o pipefail
 
@@ -30,8 +30,8 @@ script: |
     chmod +x ${WRAP_DIR}/${prog}
   done
 
-  UNSIGNED=helium-osx-unsigned.tar.gz
-  SIGNED=helium-osx-signed.dmg
+  UNSIGNED=squorum-osx-unsigned.tar.gz
+  SIGNED=squorum-osx-signed.dmg
 
   tar -xf ${UNSIGNED}
   OSX_VOLNAME="$(cat osx_volname)"

@@ -62,12 +62,12 @@
         <translation>Adreces de recepció</translation>
     </message>
     <message>
-        <source>These are your Helium addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Aquestes són les teves adreces Helium per fer enviar pagaments. Sempre comprova l'import i l'adreça de recepció abans d'enviar les monedes.</translation>
+        <source>These are your sQuorum addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>Aquestes són les teves adreces sQuorum per fer enviar pagaments. Sempre comprova l'import i l'adreça de recepció abans d'enviar les monedes.</translation>
     </message>
     <message>
-        <source>These are your Helium addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
-        <translation>Aquestes són les teves adreces Helium per rebre pagaments. Es recomana utilitzar noves adreces de recepció per cada transacció.</translation>
+        <source>These are your sQuorum addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <translation>Aquestes són les teves adreces sQuorum per rebre pagaments. Es recomana utilitzar noves adreces de recepció per cada transacció.</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -417,20 +417,20 @@
         <translation>A&amp;juda</translation>
     </message>
     <message>
-        <source>Helium Core</source>
-        <translation>Helium Core</translation>
+        <source>sQuorum Core</source>
+        <translation>sQuorum Core</translation>
     </message>
     <message>
-        <source>Send coins to a Helium address</source>
-        <translation>Envia monedes a una adreça Helium</translation>
+        <source>Send coins to a sQuorum address</source>
+        <translation>Envia monedes a una adreça sQuorum</translation>
     </message>
     <message>
         <source>&amp;Masternodes</source>
         <translation>&amp;Masternodes</translation>
     </message>
     <message>
-        <source>&amp;About Helium Core</source>
-        <translation>&amp;Sobre Helium Core</translation>
+        <source>&amp;About sQuorum Core</source>
+        <translation>&amp;Sobre sQuorum Core</translation>
     </message>
     <message>
         <source>&amp;BIP38 tool</source>
@@ -453,8 +453,8 @@
         <translation>Obre el fitxer de configuració del Masternode</translation>
     </message>
     <message>
-        <source>Helium Core client</source>
-        <translation>Client Helium core</translation>
+        <source>sQuorum Core client</source>
+        <translation>Client sQuorum core</translation>
     </message>
     <message>
         <source>Synchronizing with network...</source>
@@ -797,8 +797,8 @@
         <translation>Edita l'adreça d'enviament</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid Helium address.</source>
-        <translation>L'adreça introduïda "%1" no és una adreça Helium vàlida.</translation>
+        <source>The entered address "%1" is not a valid sQuorum address.</source>
+        <translation>L'adreça introduïda "%1" no és una adreça sQuorum vàlida.</translation>
     </message>
     <message>
         <source>The entered address "%1" is already in the address book.</source>
@@ -854,16 +854,16 @@
         <translation>versió</translation>
     </message>
     <message>
-        <source>Helium Core</source>
-        <translation>Helium Core</translation>
+        <source>sQuorum Core</source>
+        <translation>sQuorum Core</translation>
     </message>
     <message>
         <source>(%1-bit)</source>
         <translation>(%1-bit)</translation>
     </message>
     <message>
-        <source>About Helium Core</source>
-        <translation>Sobre Helium Core</translation>
+        <source>About sQuorum Core</source>
+        <translation>Sobre sQuorum Core</translation>
     </message>
     <message>
         <source>Command-line options</source>
@@ -909,12 +909,12 @@
         <translation>Benvingut</translation>
     </message>
     <message>
-        <source>Welcome to Helium Core.</source>
-        <translation>Benvingut a Helium Core.</translation>
+        <source>Welcome to sQuorum Core.</source>
+        <translation>Benvingut a sQuorum Core.</translation>
     </message>
     <message>
-        <source>As this is the first time the program is launched, you can choose where Helium Core will store its data.</source>
-        <translation>Al ser el primer cop que s'inicia el programa, pots escollir on es desaran les dades del Helium Core.</translation>
+        <source>As this is the first time the program is launched, you can choose where sQuorum Core will store its data.</source>
+        <translation>Al ser el primer cop que s'inicia el programa, pots escollir on es desaran les dades del sQuorum Core.</translation>
     </message>
     <message>
         <source>Use the default data directory</source>
@@ -925,8 +925,8 @@
         <translation>Usar una carpeta de dades personalitzada:</translation>
     </message>
     <message>
-        <source>Helium Core</source>
-        <translation>Helium Core</translation>
+        <source>sQuorum Core</source>
+        <translation>sQuorum Core</translation>
     </message>
     <message>
         <source>Error: Specified data directory "%1" cannot be created.</source>
@@ -1144,8 +1144,8 @@
         <translation>Expert</translation>
     </message>
     <message>
-        <source>Automatically start Helium after logging in to the system.</source>
-        <translation>Inicia Helium automàticament després d'identificar-te en el sistema.</translation>
+        <source>Automatically start sQuorum after logging in to the system.</source>
+        <translation>Inicia sQuorum automàticament després d'identificar-te en el sistema.</translation>
     </message>
     <message>
         <source>Whether to show coin control features or not.</source>
@@ -1318,8 +1318,8 @@
         <translation>%1 ms</translation>
     </message>
     <message>
-        <source>Helium Core</source>
-        <translation>Helium Core</translation>
+        <source>sQuorum Core</source>
+        <translation>sQuorum Core</translation>
     </message>
     </context>
 <context>
@@ -1642,8 +1642,8 @@
 <context>
     <name>ShutdownWindow</name>
     <message>
-        <source>Helium Core is shutting down...</source>
-        <translation>Helium Core s'està tancant...</translation>
+        <source>sQuorum Core is shutting down...</source>
+        <translation>sQuorum Core s'està tancant...</translation>
     </message>
     <message>
         <source>Do not shut down the computer until this window disappears.</source>
@@ -1708,8 +1708,8 @@
 <context>
     <name>SplashScreen</name>
     <message>
-        <source>Helium Core</source>
-        <translation>Helium Core</translation>
+        <source>sQuorum Core</source>
+        <translation>sQuorum Core</translation>
     </message>
     <message>
         <source>Version %1</source>
@@ -1903,7 +1903,7 @@
     </message>
     </context>
 <context>
-    <name>helium-core</name>
+    <name>squorum-core</name>
     <message>
         <source>Connection options:</source>
         <translation>Opcions de connexió:</translation>

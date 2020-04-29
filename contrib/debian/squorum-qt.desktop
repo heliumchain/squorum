@@ -1,13 +1,13 @@
 [Desktop Entry]
 Version=1.0
-Name=Helium Core
-Comment=Helium P2P Cryptocurrency
-Comment[fr]=Helium, monnaie virtuelle cryptographique pair à pair
-Comment[tr]=Helium, eşten eşe kriptografik sanal para birimi
-Exec=helium-qt %u
+Name=sQuorum Core
+Comment=sQuorum P2P Cryptocurrency
+Comment[fr]=sQuorum, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=sQuorum, eşten eşe kriptografik sanal para birimi
+Exec=squorum-qt %u
 Terminal=false
 Type=Application
-Icon=helium128
-MimeType=x-scheme-handler/helium;
+Icon=squorum128
+MimeType=x-scheme-handler/squorum;
 Categories=Office;Finance;
-StartupWMClass=Helium-qt
+StartupWMClass=sQuorum-qt

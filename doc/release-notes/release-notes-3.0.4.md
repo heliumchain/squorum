@@ -1,19 +1,19 @@
-Helium Core version 3.0.4 is now available from:
+sQuorum Core version 3.0.4 is now available from:
 
-  <https://github.com/heliumchain/helium/releases>
+  <https://github.com/akcryptoguy/squorum/releases>
 
 This is a new minor-revision version release, including various bug fixes and
 performance improvements, as well as updated translations.
 
 Please report bugs using the issue tracker at github:
 
-  <https://github.com/heliumchain/helium/issues>
+  <https://github.com/akcryptoguy/squorum/issues>
 
 
 Mandatory Update
 ==============
 
-Helium Core v3.0.4 is a mandatory update for all users. This release contains various updates/fixes pertaining to the zHLM protocol, supply tracking, block transmission and relaying, as well as usability and quality-of-life updates to the GUI.
+sQuorum Core v3.0.4 is a mandatory update for all users. This release contains various updates/fixes pertaining to the zHLM protocol, supply tracking, block transmission and relaying, as well as usability and quality-of-life updates to the GUI.
 
 Users will have a grace period to update their clients before versions prior to this release are no longer allowed to connect to this (and future) version(s).
 
@@ -21,13 +21,13 @@ Users will have a grace period to update their clients before versions prior to 
 How to Upgrade
 ==============
 
-If you are running an older version, shut it down. Wait until it has completely shut down (which might take a few minutes for older versions), then run the installer (on Windows) or just copy over /Applications/Helium-Qt (on Mac) or heliumd/helium-qt (on Linux).
+If you are running an older version, shut it down. Wait until it has completely shut down (which might take a few minutes for older versions), then run the installer (on Windows) or just copy over /Applications/sQuorum-Qt (on Mac) or squorumd/squorum-qt (on Linux).
 
 
 Compatibility
 ==============
 
-Helium Core is extensively tested on multiple operating systems using
+sQuorum Core is extensively tested on multiple operating systems using
 the Linux kernel, macOS 10.8+, and Windows Vista and later.
 
 Microsoft ended support for Windows XP on [April 8th, 2014](https://www.microsoft.com/en-us/WindowsForBusiness/end-of-xp-support),
@@ -35,7 +35,7 @@ No attempt is made to prevent installing or running the software on Windows XP, 
 can still do so at your own risk but be aware that there are known instabilities and issues.
 Please do not report issues about Windows XP to the issue tracker.
 
-Helium Core should also work on most other Unix-like systems but is not
+sQuorum Core should also work on most other Unix-like systems but is not
 frequently tested on them.
 
 ### :exclamation::exclamation::exclamation: MacOS 10.13 High Sierra :exclamation::exclamation::exclamation:
@@ -103,9 +103,9 @@ git merge commit are mentioned.
 - #298 `3580394` Reorg help to stop travis errors (Jon Spock)
 - #302 `efb648b` [Cleanup] Remove unused variables (rejectedpromise)
 - #307 `dbd801d` Remove hard-coded GIT_ARCHIVE define (Jon Spock)
-- #314 `f1c830a` Fix issue causing crash when heliumd --help was invoked (Jon Spock)
+- #314 `f1c830a` Fix issue causing crash when squorumd --help was invoked (Jon Spock)
 - #326 `8b6a13e` Combine 2 LogPrintf statement to reduce debug.log clutter (Jon Spock)
-- #328 `a6c18c8` [Main] Helium not responding on user quitting app (Aaron Langford)
+- #328 `a6c18c8` [Main] sQuorum not responding on user quitting app (Aaron Langford)
 
 
 Credits
@@ -120,4 +120,4 @@ Thanks to everyone who directly contributed to this release:
 - rejectedpromise
 - aaronlangford31
 
-As well as everyone that helped translating on [Transifex](https://www.transifex.com/helium-project/helium-wallet/).
+As well as everyone that helped translating on [Transifex](https://www.transifex.com/squorum-project/squorum-wallet/).

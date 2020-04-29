@@ -2,7 +2,7 @@
 // Copyright (c) 2009-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
 // Copyright (c) 2015-2018 The PIVX developers
-// Copyright (c) 2018-2019 The Helium developers
+// Copyright (c) 2018-2019 The sQuorum developers
 
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
@@ -3845,7 +3845,7 @@ bool CWallet::CreateZerocoinMintTransaction(const CAmount nValue, CMutableTransa
             reservekey->ReturnKey();
     }
 
-    // Sign if these are helium outputs - NOTE that zHLM outputs are signed later in SoK
+    // Sign if these are squorum outputs - NOTE that zHLM outputs are signed later in SoK
     if (!isZCSpendChange) {
         int nIn = 0;
         for (const std::pair<const CWalletTx*, unsigned int>& coin : setCoins) {
@@ -4786,7 +4786,7 @@ void CWallet::PrecomputeSpends()
     // We don't even need to worry about this code.. no zHLM.
     /*
     LogPrintf("Precomputer started\n");
-    RenameThread("helium-precomputer");
+    RenameThread("squorum-precomputer");
 
     CWalletDB walletdb("precomputes.dat", "cr+");
 

@@ -62,12 +62,12 @@
         <translation>Adresy pro přijetí peněz</translation>
     </message>
     <message>
-        <source>These are your Helium addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Toto jsou Vaše Helium adresy pro poslání platby. Vždy si překontrolujte množství peněz a cílovou adresu než platbu odešlete.</translation>
+        <source>These are your sQuorum addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>Toto jsou Vaše sQuorum adresy pro poslání platby. Vždy si překontrolujte množství peněz a cílovou adresu než platbu odešlete.</translation>
     </message>
     <message>
-        <source>These are your Helium addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
-        <translation>Toto jsou Vaše Helium adresy pro přijetí plateb. Je doporučeno použít novou adresu pro každou novou transakci.</translation>
+        <source>These are your sQuorum addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <translation>Toto jsou Vaše sQuorum adresy pro přijetí plateb. Je doporučeno použít novou adresu pro každou novou transakci.</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -593,16 +593,16 @@
         <translation>Nástrojová lišta záložek</translation>
     </message>
     <message>
-        <source>Helium Core</source>
-        <translation>Helium Core</translation>
+        <source>sQuorum Core</source>
+        <translation>sQuorum Core</translation>
     </message>
     <message>
-        <source>Send coins to a Helium address</source>
-        <translation>Odeslat platbuna Helium adresu</translation>
+        <source>Send coins to a sQuorum address</source>
+        <translation>Odeslat platbuna sQuorum adresu</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and helium: URIs)</source>
-        <translation>Vyžádat platbu (generování QK kódu a helium: URIs)</translation>
+        <source>Request payments (generates QR codes and squorum: URIs)</source>
+        <translation>Vyžádat platbu (generování QK kódu a squorum: URIs)</translation>
     </message>
     <message>
         <source>&amp;Masternodes</source>
@@ -613,24 +613,24 @@
         <translation>Procházet masternody</translation>
     </message>
     <message>
-        <source>&amp;About Helium Core</source>
-        <translation>&amp;O Helium Core</translation>
+        <source>&amp;About sQuorum Core</source>
+        <translation>&amp;O sQuorum Core</translation>
     </message>
     <message>
-        <source>Show information about Helium Core</source>
-        <translation>Zobraz informace o Helium Core</translation>
+        <source>Show information about sQuorum Core</source>
+        <translation>Zobraz informace o sQuorum Core</translation>
     </message>
     <message>
-        <source>Modify configuration options for Helium</source>
-        <translation>Upravit možnosti konfigurace pro Helium</translation>
+        <source>Modify configuration options for sQuorum</source>
+        <translation>Upravit možnosti konfigurace pro sQuorum</translation>
     </message>
     <message>
-        <source>Sign messages with your Helium addresses to prove you own them</source>
-        <translation>Podepsat zprávy Vaší Helium adresou pro prokázaní, že jste jejich vlastníkem</translation>
+        <source>Sign messages with your sQuorum addresses to prove you own them</source>
+        <translation>Podepsat zprávy Vaší sQuorum adresou pro prokázaní, že jste jejich vlastníkem</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Helium addresses</source>
-        <translation>Ověřit zprávy k zajištění, že bylypodepsány vybranými Helium adresami</translation>
+        <source>Verify messages to ensure they were signed with specified sQuorum addresses</source>
+        <translation>Ověřit zprávy k zajištění, že bylypodepsány vybranými sQuorum adresami</translation>
     </message>
     <message>
         <source>&amp;BIP38 tool</source>
@@ -661,8 +661,8 @@
         <translation>Otevřít Masternodový konfigurační soubor</translation>
     </message>
     <message>
-        <source>Open a Helium: URI or payment request</source>
-        <translation>Otevřít Helium: URI nebo platební žádost</translation>
+        <source>Open a sQuorum: URI or payment request</source>
+        <translation>Otevřít sQuorum: URI nebo platební žádost</translation>
     </message>
     <message>
         <source>&amp;Blockchain explorer</source>
@@ -673,12 +673,12 @@
         <translation>Okno blokového průzkumníka</translation>
     </message>
     <message>
-        <source>Show the Helium Core help message to get a list with possible Helium command-line options</source>
-        <translation>Zobrazit Helium Core pomocnou zpráv pro získání seznamu možných parametrů Helium pro příkazy do příkazové řádky</translation>
+        <source>Show the sQuorum Core help message to get a list with possible sQuorum command-line options</source>
+        <translation>Zobrazit sQuorum Core pomocnou zpráv pro získání seznamu možných parametrů sQuorum pro příkazy do příkazové řádky</translation>
     </message>
     <message>
-        <source>Helium Core client</source>
-        <translation>Helium Core klient</translation>
+        <source>sQuorum Core client</source>
+        <translation>sQuorum Core klient</translation>
     </message>
     <message>
         <source>Synchronizing with network...</source>
@@ -808,8 +808,8 @@ MultiSend: %1</translation>
         <translation>TextPopisku</translation>
     </message>
     <message>
-        <source>Not all transactions will be shown. To view all transactions you need to set txindex=1 in the configuration file (helium.conf).</source>
-        <translation>Ne všechny transakce budou zobrazeny. Pro zobrazení všech transackí nastavte v konfiguračním souboru (helium.conf) txindex=1.</translation>
+        <source>Not all transactions will be shown. To view all transactions you need to set txindex=1 in the configuration file (squorum.conf).</source>
+        <translation>Ne všechny transakce budou zobrazeny. Pro zobrazení všech transackí nastavte v konfiguračním souboru (squorum.conf) txindex=1.</translation>
     </message>
 </context>
 <context>
@@ -1069,8 +1069,8 @@ MultiSend: %1</translation>
         <translation>Upravit adresu k odeslání platby</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid Helium address.</source>
-        <translation>Zadaná adresa "%1" není validní Helium adresa.</translation>
+        <source>The entered address "%1" is not a valid sQuorum address.</source>
+        <translation>Zadaná adresa "%1" není validní sQuorum adresa.</translation>
     </message>
     <message>
         <source>The entered address "%1" is already in the address book.</source>
@@ -1126,12 +1126,12 @@ MultiSend: %1</translation>
         <translation>verze</translation>
     </message>
     <message>
-        <source>Helium Core</source>
-        <translation>Helium Core</translation>
+        <source>sQuorum Core</source>
+        <translation>sQuorum Core</translation>
     </message>
     <message>
-        <source>About Helium Core</source>
-        <translation>O Helium Core</translation>
+        <source>About sQuorum Core</source>
+        <translation>O sQuorum Core</translation>
     </message>
     <message>
         <source>Command-line options</source>
@@ -1165,16 +1165,16 @@ MultiSend: %1</translation>
         <translation>Vítejte</translation>
     </message>
     <message>
-        <source>Welcome to Helium Core.</source>
-        <translation>Vítejte v Helium Core.</translation>
+        <source>Welcome to sQuorum Core.</source>
+        <translation>Vítejte v sQuorum Core.</translation>
     </message>
     <message>
-        <source>As this is the first time the program is launched, you can choose where Helium Core will store its data.</source>
-        <translation>Při prvním spuštění programu si můžete vybrat, kam bude Helium Core ukládat svá data.</translation>
+        <source>As this is the first time the program is launched, you can choose where sQuorum Core will store its data.</source>
+        <translation>Při prvním spuštění programu si můžete vybrat, kam bude sQuorum Core ukládat svá data.</translation>
     </message>
     <message>
-        <source>Helium Core will download and store a copy of the Helium block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
-        <translation>Helium Core stáhne a uloží kopii Helium blockchainu. Nejméně %1GB dat bude do této složky uloženo a v průběhu času bude ukládat další data. Peněženka bude v této složce uložena také.</translation>
+        <source>sQuorum Core will download and store a copy of the sQuorum block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
+        <translation>sQuorum Core stáhne a uloží kopii sQuorum blockchainu. Nejméně %1GB dat bude do této složky uloženo a v průběhu času bude ukládat další data. Peněženka bude v této složce uložena také.</translation>
     </message>
     <message>
         <source>Use the default data directory</source>
@@ -1185,8 +1185,8 @@ MultiSend: %1</translation>
         <translation>Použít vlastní složku pro data</translation>
     </message>
     <message>
-        <source>Helium Core</source>
-        <translation>Helium Core</translation>
+        <source>sQuorum Core</source>
+        <translation>sQuorum Core</translation>
     </message>
     <message>
         <source>Error: Specified data directory "%1" cannot be created.</source>
@@ -1468,12 +1468,12 @@ MultiSend: %1</translation>
         <translation>Expert</translation>
     </message>
     <message>
-        <source>Automatically start Helium after logging in to the system.</source>
-        <translation>Automaticky spustit Helium po přihlášení do systému</translation>
+        <source>Automatically start sQuorum after logging in to the system.</source>
+        <translation>Automaticky spustit sQuorum po přihlášení do systému</translation>
     </message>
     <message>
-        <source>&amp;Start Helium on system login</source>
-        <translation>&amp;Spusti Helium při přihlášení do systému</translation>
+        <source>&amp;Start sQuorum on system login</source>
+        <translation>&amp;Spusti sQuorum při přihlášení do systému</translation>
     </message>
     <message>
         <source>Show Masternodes Tab</source>
@@ -1678,8 +1678,8 @@ MultiSend: %1</translation>
         <translation>N/A</translation>
     </message>
     <message>
-        <source>Helium Core</source>
-        <translation>Helium Core</translation>
+        <source>sQuorum Core</source>
+        <translation>sQuorum Core</translation>
     </message>
     </context>
 <context>
@@ -2129,8 +2129,8 @@ MultiSend: %1</translation>
 <context>
     <name>SignVerifyMessageDialog</name>
     <message>
-        <source>The Helium address to sign the message with</source>
-        <translation>Helium adresa pro podepsání zprávy</translation>
+        <source>The sQuorum address to sign the message with</source>
+        <translation>sQuorum adresa pro podepsání zprávy</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -2157,16 +2157,16 @@ MultiSend: %1</translation>
         <translation>Kopírovat aktuální podpis do systémové mezipaměti</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Helium address</source>
-        <translation>Podepsat zprávu k prokázání, že vlastníte tuto Helium adresu</translation>
+        <source>Sign the message to prove you own this sQuorum address</source>
+        <translation>Podepsat zprávu k prokázání, že vlastníte tuto sQuorum adresu</translation>
     </message>
     <message>
-        <source>The Helium address the message was signed with</source>
-        <translation>Helium adresa zprávy byla podpsána</translation>
+        <source>The sQuorum address the message was signed with</source>
+        <translation>sQuorum adresa zprávy byla podpsána</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified Helium address</source>
-        <translation>Verifikujte zprávu pro ujištění, že byla podepsána zmíněnou Helium adresou</translation>
+        <source>Verify the message to ensure it was signed with the specified sQuorum address</source>
+        <translation>Verifikujte zprávu pro ujištění, že byla podepsána zmíněnou sQuorum adresou</translation>
     </message>
     <message>
         <source>Sign &amp;Message</source>
@@ -2208,8 +2208,8 @@ MultiSend: %1</translation>
 <context>
     <name>SplashScreen</name>
     <message>
-        <source>Helium Core</source>
-        <translation>Helium Core</translation>
+        <source>sQuorum Core</source>
+        <translation>sQuorum Core</translation>
     </message>
     </context>
 <context>
@@ -2319,7 +2319,7 @@ MultiSend: %1</translation>
     </message>
     </context>
 <context>
-    <name>helium-core</name>
+    <name>squorum-core</name>
     <message>
         <source>Error</source>
         <translation>Chyba</translation>

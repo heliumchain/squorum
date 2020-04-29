@@ -1,25 +1,25 @@
-# /etc/conf.d/heliumd: config file for /etc/init.d/heliumd
+# /etc/conf.d/squorumd: config file for /etc/init.d/squorumd
 
 # Config file location
-#BITCOIND_CONFIGFILE="/etc/helium/helium.conf"
+#BITCOIND_CONFIGFILE="/etc/squorum/squorum.conf"
 
 # What directory to write pidfile to?  (created and owned by $BITCOIND_USER)
-#BITCOIND_PIDDIR="/var/run/heliumd"
+#BITCOIND_PIDDIR="/var/run/squorumd"
 
 # What filename to give the pidfile
-#BITCOIND_PIDFILE="${BITCOIND_PIDDIR}/heliumd.pid"
+#BITCOIND_PIDFILE="${BITCOIND_PIDDIR}/squorumd.pid"
 
-# Where to write heliumd data (be mindful that the blockchain is large)
-#BITCOIND_DATADIR="/var/lib/heliumd"
+# Where to write squorumd data (be mindful that the blockchain is large)
+#BITCOIND_DATADIR="/var/lib/squorumd"
 
-# User and group to own heliumd process
-#BITCOIND_USER="helium"
-#BITCOIND_GROUP="helium"
+# User and group to own squorumd process
+#BITCOIND_USER="squorum"
+#BITCOIND_GROUP="squorum"
 
-# Path to heliumd executable
-#BITCOIND_BIN="/usr/bin/heliumd"
+# Path to squorumd executable
+#BITCOIND_BIN="/usr/bin/squorumd"
 
-# Nice value to run heliumd under
+# Nice value to run squorumd under
 #BITCOIND_NICE=0
 
 # Additional options (avoid -conf and -datadir, use flags above)

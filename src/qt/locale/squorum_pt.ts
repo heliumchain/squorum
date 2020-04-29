@@ -62,12 +62,12 @@
         <translation>Endereços de recebimento</translation>
     </message>
     <message>
-        <source>These are your Helium addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Esses são seus endereços Helium para onde enviar pagamentos. Confira sempre o montante e os endereços de destino antes de enviar moedas.</translation>
+        <source>These are your sQuorum addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>Esses são seus endereços sQuorum para onde enviar pagamentos. Confira sempre o montante e os endereços de destino antes de enviar moedas.</translation>
     </message>
     <message>
-        <source>These are your Helium addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
-        <translation>Esses são seus endereços Helium onde receber pagamentos. Recomenda-se o uso de um novo endereço para cada transacção.</translation>
+        <source>These are your sQuorum addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <translation>Esses são seus endereços sQuorum onde receber pagamentos. Recomenda-se o uso de um novo endereço para cada transacção.</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -665,8 +665,8 @@
 <context>
     <name>SignVerifyMessageDialog</name>
     <message>
-        <source>The Helium address to sign the message with</source>
-        <translation>Um endereço Helium para assinar a mensagem</translation>
+        <source>The sQuorum address to sign the message with</source>
+        <translation>Um endereço sQuorum para assinar a mensagem</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -697,12 +697,12 @@
         <translation>Copiar a assinatura para a area de trabalho</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Helium address</source>
-        <translation>Assinar a Mensagem para provar que você e dono desse endereço Helium.</translation>
+        <source>Sign the message to prove you own this sQuorum address</source>
+        <translation>Assinar a Mensagem para provar que você e dono desse endereço sQuorum.</translation>
     </message>
     <message>
-        <source>The Helium address the message was signed with</source>
-        <translation>O endereço Helium que foi assinado com</translation>
+        <source>The sQuorum address the message was signed with</source>
+        <translation>O endereço sQuorum que foi assinado com</translation>
     </message>
     <message>
         <source>Reset all sign message fields</source>
@@ -903,7 +903,7 @@
     <name>ZHlmControlDialog</name>
     </context>
 <context>
-    <name>helium-core</name>
+    <name>squorum-core</name>
     <message>
         <source>Delete all wallet transactions and only recover those parts of the blockchain through -rescan on startup</source>
         <translation>Deletar todas as transações da carteira e somente recuperar aquelas partes do blockchain através de -rescan na inicialização</translation>
@@ -1177,8 +1177,8 @@
         <translation>carteira %s reside fora do diretório %s</translation>
     </message>
     <message>
-        <source>Wallet needed to be rewritten: restart Helium Core to complete</source>
-        <translation>Carteira precisa ser reescrita: reinicie o Helium Core para completar.</translation>
+        <source>Wallet needed to be rewritten: restart sQuorum Core to complete</source>
+        <translation>Carteira precisa ser reescrita: reinicie o sQuorum Core para completar.</translation>
     </message>
     <message>
         <source>Wallet options:</source>

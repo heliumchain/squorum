@@ -1,12 +1,12 @@
 // Copyright (c) 2018 The PIVX developers
-// Copyright (c) 2018-2020 The Helium developers
+// Copyright (c) 2018-2020 The sQuorum developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef Helium_INVALID_H
-#define Helium_INVALID_H
+#ifndef sQuorum_INVALID_H
+#define sQuorum_INVALID_H
 
-#endif //Helium_INVALID_H
+#endif //sQuorum_INVALID_H
 
 #include <libzerocoin/bignum.h>
 #include <univalue/include/univalue.h>

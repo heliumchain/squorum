@@ -1,5 +1,5 @@
-#ifndef Helium_WITNESS_H
-#define Helium_WITNESS_H
+#ifndef sQuorum_WITNESS_H
+#define sQuorum_WITNESS_H
 
 
 #include <libzerocoin/Accumulator.h>
@@ -75,4 +75,4 @@ public:
         READWRITE(accumulatorDenom);
     };
 };
-#endif //Helium_WITNESS_H
+#endif //sQuorum_WITNESS_H

@@ -1,4 +1,4 @@
-<TS language="zh_CN" version="2.1">
+﻿<TS language="zh_CN" version="2.1">
 <context>
     <name>AddressBookPage</name>
     <message>
@@ -43,11 +43,11 @@
     </message>
     <message>
         <source>Choose the address to send coins to</source>
-        <translation>选择发送Helium coin的地址</translation>
+        <translation>选择发送sQuorum coin的地址</translation>
     </message>
     <message>
         <source>Choose the address to receive coins with</source>
-        <translation>选择接收Helium coin的地址</translation>
+        <translation>选择接收sQuorum coin的地址</translation>
     </message>
     <message>
         <source>C&amp;hoose</source>
@@ -62,12 +62,12 @@
         <translation>接收地址</translation>
     </message>
     <message>
-        <source>These are your Helium addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>这是用于发送Helium的地址。在发送Helium之前，请认真核查发送金额和接收地址。</translation>
+        <source>These are your sQuorum addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>这是用于发送sQuorum的地址。在发送sQuorum之前，请认真核查发送金额和接收地址。</translation>
     </message>
     <message>
-        <source>These are your Helium addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
-        <translation>这是用于接收Helium的钱包地址。建议每一笔交易都使用一个新的钱包地址。</translation>
+        <source>These are your sQuorum addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <translation>这是用于接收sQuorum的钱包地址。建议每一笔交易都使用一个新的钱包地址。</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -565,16 +565,16 @@
         <translation>标签工具栏</translation>
     </message>
     <message>
-        <source>Helium Core</source>
-        <translation>Helium Core</translation>
+        <source>sQuorum Core</source>
+        <translation>sQuorum Core</translation>
     </message>
     <message>
-        <source>Send coins to a Helium address</source>
-        <translation>发送数字货币到Helium地址</translation>
+        <source>Send coins to a sQuorum address</source>
+        <translation>发送数字货币到sQuorum地址</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and helium: URIs)</source>
-        <translation>请求支付（生成二维码和helium：URIs）</translation>
+        <source>Request payments (generates QR codes and squorum: URIs)</source>
+        <translation>请求支付（生成二维码和squorum：URIs）</translation>
     </message>
     <message>
         <source>&amp;Masternodes</source>
@@ -585,24 +585,24 @@
         <translation>浏览主节点</translation>
     </message>
     <message>
-        <source>&amp;About Helium Core</source>
-        <translation>&amp;A关于Helium Core</translation>
+        <source>&amp;About sQuorum Core</source>
+        <translation>&amp;A关于sQuorum Core</translation>
     </message>
     <message>
-        <source>Show information about Helium Core</source>
-        <translation>显示Helium  Core的相关信息</translation>
+        <source>Show information about sQuorum Core</source>
+        <translation>显示sQuorum  Core的相关信息</translation>
     </message>
     <message>
-        <source>Modify configuration options for Helium</source>
-        <translation>修改Helium的配置选项</translation>
+        <source>Modify configuration options for sQuorum</source>
+        <translation>修改sQuorum的配置选项</translation>
     </message>
     <message>
-        <source>Sign messages with your Helium addresses to prove you own them</source>
-        <translation>使用您的Helium地址验证消息，以证明您拥有他们</translation>
+        <source>Sign messages with your sQuorum addresses to prove you own them</source>
+        <translation>使用您的sQuorum地址验证消息，以证明您拥有他们</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Helium addresses</source>
-        <translation>验证消息确保它已使用指定的Helium地址进行签名</translation>
+        <source>Verify messages to ensure they were signed with specified sQuorum addresses</source>
+        <translation>验证消息确保它已使用指定的sQuorum地址进行签名</translation>
     </message>
     <message>
         <source>&amp;BIP38 tool</source>
@@ -633,8 +633,8 @@
         <translation>打开主节点配置文件</translation>
     </message>
     <message>
-        <source>Open a Helium: URI or payment request</source>
-        <translation>打开Helium：URI或付款请求</translation>
+        <source>Open a sQuorum: URI or payment request</source>
+        <translation>打开sQuorum：URI或付款请求</translation>
     </message>
     <message>
         <source>&amp;Blockchain explorer</source>
@@ -645,12 +645,12 @@
         <translation>区块浏览窗口</translation>
     </message>
     <message>
-        <source>Show the Helium Core help message to get a list with possible Helium command-line options</source>
-        <translation>显示Helium Core帮助信息并获取Helium命令行选项列表</translation>
+        <source>Show the sQuorum Core help message to get a list with possible sQuorum command-line options</source>
+        <translation>显示sQuorum Core帮助信息并获取sQuorum命令行选项列表</translation>
     </message>
     <message>
-        <source>Helium Core client</source>
-        <translation>Helium Core 客户端</translation>
+        <source>sQuorum Core client</source>
+        <translation>sQuorum Core 客户端</translation>
     </message>
     <message>
         <source>Synchronizing with network...</source>
@@ -806,31 +806,31 @@ Address: %4
 <context>
     <name>HelpMessageDialog</name>
     <message>
-        <source>Helium Core</source>
-        <translation>Helium Core</translation>
+        <source>sQuorum Core</source>
+        <translation>sQuorum Core</translation>
     </message>
     <message>
-        <source>About Helium Core</source>
-        <translation>关于Helium Core</translation>
+        <source>About sQuorum Core</source>
+        <translation>关于sQuorum Core</translation>
     </message>
     </context>
 <context>
     <name>Intro</name>
     <message>
-        <source>Welcome to Helium Core.</source>
-        <translation>欢迎使用 Helium Core</translation>
+        <source>Welcome to sQuorum Core.</source>
+        <translation>欢迎使用 sQuorum Core</translation>
     </message>
     <message>
-        <source>As this is the first time the program is launched, you can choose where Helium Core will store its data.</source>
-        <translation>由于这是该程序第一次启动，您可以选择存储Helium Core 数据的位置。</translation>
+        <source>As this is the first time the program is launched, you can choose where sQuorum Core will store its data.</source>
+        <translation>由于这是该程序第一次启动，您可以选择存储sQuorum Core 数据的位置。</translation>
     </message>
     <message>
-        <source>Helium Core will download and store a copy of the Helium block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
-        <translation>Helium Core将下载并存储Helium区块链副本。 至少 %1 GB的数据将存储在此目录中，并且会随着时间的推移而增长。 钱包也将存储在此目录中。</translation>
+        <source>sQuorum Core will download and store a copy of the sQuorum block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
+        <translation>sQuorum Core将下载并存储sQuorum区块链副本。 至少 %1 GB的数据将存储在此目录中，并且会随着时间的推移而增长。 钱包也将存储在此目录中。</translation>
     </message>
     <message>
-        <source>Helium Core</source>
-        <translation>Helium Core</translation>
+        <source>sQuorum Core</source>
+        <translation>sQuorum Core</translation>
     </message>
     <message>
         <source>Error</source>
@@ -920,16 +920,16 @@ Address: %4
         <translation>如果您要禁用未经确认发送，在至少有一个确认之前&lt;br/&gt;不能更改。&lt;br/&gt;这也将影响您的余额计算。</translation>
     </message>
     <message>
-        <source>Automatically open the Helium client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>自动打开路由器上的Helium钱包使用的端口。 这只有当您的路由器支持UPnP并且该享生效时才有用。</translation>
+        <source>Automatically open the sQuorum client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>自动打开路由器上的sQuorum钱包使用的端口。 这只有当您的路由器支持UPnP并且该享生效时才有用。</translation>
     </message>
     <message>
         <source>&amp;Connect through SOCKS5 proxy (default proxy):</source>
         <translation>&amp;使用SOCKS5代理（默认代理）</translation>
     </message>
     <message>
-        <source>&amp;Start Helium on system login</source>
-        <translation>&amp;开机启动Helium</translation>
+        <source>&amp;Start sQuorum on system login</source>
+        <translation>&amp;开机启动sQuorum</translation>
     </message>
     <message>
         <source>Enable coin &amp;control features</source>
@@ -985,7 +985,7 @@ Address: %4
     </message>
     <message>
         <source>Choose the default subdivision unit to show in the interface and when sending coins.</source>
-        <translation>选择显示发送Helium的默认单位。</translation>
+        <translation>选择显示发送sQuorum的默认单位。</translation>
     </message>
     <message>
         <source>Decimal digits</source>
@@ -1063,8 +1063,8 @@ Address: %4
         <translation>您目前的支出余额</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Helium network after a connection is established, but this process has not completed yet.</source>
-        <translation>显示的信息可能已过期。建立连接后，您的钱包会自动与Helium网络同步，但此过程尚未完成。</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the sQuorum network after a connection is established, but this process has not completed yet.</source>
+        <translation>显示的信息可能已过期。建立连接后，您的钱包会自动与sQuorum网络同步，但此过程尚未完成。</translation>
     </message>
     <message>
         <source>Your current balance in watch-only addresses</source>
@@ -1080,8 +1080,8 @@ Address: %4
 <context>
     <name>PrivacyDialog</name>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Helium network after a connection is established, but this process has not completed yet.</source>
-        <translation>显示的信息可能已过期。建立连接后，您的钱包会自动与Helium网络同步，但此过程尚未完成。</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the sQuorum network after a connection is established, but this process has not completed yet.</source>
+        <translation>显示的信息可能已过期。建立连接后，您的钱包会自动与sQuorum网络同步，但此过程尚未完成。</translation>
     </message>
     <message>
         <source>Pay &amp;To:</source>
@@ -1118,8 +1118,8 @@ Address: %4
 <context>
     <name>QObject</name>
     <message>
-        <source>Helium Core</source>
-        <translation>Helium Core</translation>
+        <source>sQuorum Core</source>
+        <translation>sQuorum Core</translation>
     </message>
     </context>
 <context>
@@ -1179,12 +1179,12 @@ Address: %4
         <translation>A&amp;总计</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Helium network.</source>
-        <translation>附加到付款请求的可选消息，将在请求打开时显示。 注意：消息不会在付款时通过Helium网络发送。</translation>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the sQuorum network.</source>
+        <translation>附加到付款请求的可选消息，将在请求打开时显示。 注意：消息不会在付款时通过sQuorum网络发送。</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened.&lt;br&gt;Note: The message will not be sent with the payment over the Helium network.</source>
-        <translation>附加到付款请求的可选消息，将在请求打开时显示。&lt;br&gt; 注意：消息不会在付款时通过Helium网络发送。</translation>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened.&lt;br&gt;Note: The message will not be sent with the payment over the sQuorum network.</source>
+        <translation>附加到付款请求的可选消息，将在请求打开时显示。&lt;br&gt; 注意：消息不会在付款时通过sQuorum网络发送。</translation>
     </message>
     <message>
         <source>&amp;Label:</source>
@@ -1323,8 +1323,8 @@ Address: %4
         <translation>消息:</translation>
     </message>
     <message>
-        <source>A message that was attached to the Helium: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Helium network.</source>
-        <translation>附加到Helium：URI的消息，该消息将与转账信息一起存储以供参考。 注意：此消息不会通过Helium网络发送。</translation>
+        <source>A message that was attached to the sQuorum: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the sQuorum network.</source>
+        <translation>附加到sQuorum：URI的消息，该消息将与转账信息一起存储以供参考。 注意：此消息不会通过sQuorum网络发送。</translation>
     </message>
     <message>
         <source>Enter a label for this address to add it to your address book</source>
@@ -1349,8 +1349,8 @@ Address: %4
         <translation>您可以使用地址签名消息，以证明您拥有他们。 小心不要签名任何您不了解的，因为网络钓鱼攻击可能会试图欺骗您，以让您签名。 只能签署您熟悉并且了解和同意的。</translation>
     </message>
     <message>
-        <source>The Helium address to sign the message with</source>
-        <translation>该Helium地址签名的消息</translation>
+        <source>The sQuorum address to sign the message with</source>
+        <translation>该sQuorum地址签名的消息</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -1377,16 +1377,16 @@ Address: %4
         <translation>将当前签名复制到系统剪贴板</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Helium address</source>
-        <translation>签署消息以证明您拥有此Helium地址</translation>
+        <source>Sign the message to prove you own this sQuorum address</source>
+        <translation>签署消息以证明您拥有此sQuorum地址</translation>
     </message>
     <message>
-        <source>The Helium address the message was signed with</source>
-        <translation>由Helium地址签名的消息</translation>
+        <source>The sQuorum address the message was signed with</source>
+        <translation>由sQuorum地址签名的消息</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified Helium address</source>
-        <translation>验证消息确保它已使用指定的Helium地址进行签名</translation>
+        <source>Verify the message to ensure it was signed with the specified sQuorum address</source>
+        <translation>验证消息确保它已使用指定的sQuorum地址进行签名</translation>
     </message>
     <message>
         <source>Sign &amp;Message</source>
@@ -1464,8 +1464,8 @@ Address: %4
 <context>
     <name>SplashScreen</name>
     <message>
-        <source>Helium Core</source>
-        <translation>Helium Core</translation>
+        <source>sQuorum Core</source>
+        <translation>sQuorum Core</translation>
     </message>
     </context>
 <context>
@@ -1547,14 +1547,14 @@ Address: %4
     <name>ZHlmControlDialog</name>
     </context>
 <context>
-    <name>helium-core</name>
+    <name>squorum-core</name>
     <message>
         <source>Execute command when a relevant alert is received or we see a really long fork (%s in cmd is replaced by message)</source>
         <translation>在收到相关警报时执行命令，或者看到一个很长的分叉（cmd中的%s被消息替换）</translation>
     </message>
     <message>
-        <source>Warning: Please check that your computer's date and time are correct! If your clock is wrong Helium Core will not work properly.</source>
-        <translation>注意：请检查您的电脑的日期和时间是否正确！ 如果您的时间设置不正确，Helium Core将无法正常工作。</translation>
+        <source>Warning: Please check that your computer's date and time are correct! If your clock is wrong sQuorum Core will not work properly.</source>
+        <translation>注意：请检查您的电脑的日期和时间是否正确！ 如果您的时间设置不正确，sQuorum Core将无法正常工作。</translation>
     </message>
     <message>
         <source>Warning: wallet.dat corrupt, data salvaged! Original wallet.dat saved as wallet.{timestamp}.bak in %s; if your balance or transactions are incorrect you should restore from a backup.</source>

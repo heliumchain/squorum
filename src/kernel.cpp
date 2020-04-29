@@ -1,6 +1,6 @@
 // Copyright (c) 2012-2013 The PPCoin developers
 // Copyright (c) 2015-2018 The PIVX developers
-// Copyright (c) 2018-2020 The Helium developers
+// Copyright (c) 2018-2020 The sQuorum developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -67,7 +67,7 @@ static bool SelectBlockFromCandidates(
         if (fSelected && pindex->GetBlockTime() > nSelectionIntervalStop)
             break;
 
-        /* NOTE: GJH Inappropriate for Helium
+        /* NOTE: GJH Inappropriate for sQuorum
         //if the lowest block height (vSortedByTimestamp[0]) is >= switch height, use new modifier calc
         if (fFirstRun){
             fModifierV2 = pindex->nHeight >= Params().ModifierUpgradeBlock();
@@ -78,7 +78,7 @@ static bool SelectBlockFromCandidates(
         if (mapSelectedBlocks.count(pindex->GetBlockHash()) > 0)
             continue;
 
-        /* NOTE: GJH Inappropriate for Helium
+        /* NOTE: GJH Inappropriate for sQuorum
         // compute the selection hash by hashing an input that is unique to that block
         uint256 hashProof;
         if(fModifierV2)
@@ -89,7 +89,7 @@ static bool SelectBlockFromCandidates(
         uint256 hashProof ;
 
         CDataStream ss(SER_GETHASH, 0);
-        /* NOTE: GJH Inappropriate for Helium
+        /* NOTE: GJH Inappropriate for sQuorum
         ss << hashProof << nStakeModifierPrev;
         */
         ss << pindex->GetBlockHash() << nStakeModifierPrev;

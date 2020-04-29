@@ -62,11 +62,11 @@
         <translation>Ricevanta adresojn</translation>
     </message>
     <message>
-        <source>These are your Helium addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Ĉi tiuj estas viaj Helium adreso por sendi pagojn. Ĉiam kontroku la kvanto kaj la ricevanta antaŭ ol sendi monerojn.</translation>
+        <source>These are your sQuorum addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>Ĉi tiuj estas viaj sQuorum adreso por sendi pagojn. Ĉiam kontroku la kvanto kaj la ricevanta antaŭ ol sendi monerojn.</translation>
     </message>
     <message>
-        <source>These are your Helium addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <source>These are your sQuorum addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
         <translation>Ĉi tiuj estas vian adreson por ricevi pagojn. Ĝi rekomendas uzi novajn ricenvantan adreson por ĉiu nova transakcio.</translation>
     </message>
     <message>
@@ -246,11 +246,11 @@
         <translation>Adreso:</translation>
     </message>
     <message>
-        <source>Enter a Helium Address that you would like to encrypt using BIP 38. Enter a passphrase in the middle box. Press encrypt to compute the encrypted private key.</source>
-        <translation>Eniri unu Helium adreso ke vi volus ĉifri per BIP 38. Eniri unu pasfrazon meze skatolo. Klaku ĉifri por komputi la ĉifrita privata ŝlosilo.</translation>
+        <source>Enter a sQuorum Address that you would like to encrypt using BIP 38. Enter a passphrase in the middle box. Press encrypt to compute the encrypted private key.</source>
+        <translation>Eniri unu sQuorum adreso ke vi volus ĉifri per BIP 38. Eniri unu pasfrazon meze skatolo. Klaku ĉifri por komputi la ĉifrita privata ŝlosilo.</translation>
     </message>
     <message>
-        <source>The Helium address to encrypt</source>
+        <source>The sQuorum address to encrypt</source>
         <translation>Adreson por ĉifri</translation>
     </message>
     <message>
@@ -282,8 +282,8 @@
         <translation>Kopiu la aktualan subskribo al la sistemo-poŝo</translation>
     </message>
     <message>
-        <source>Encrypt the private key for this Helium address</source>
-        <translation>Ĉifri la privata ŝlosilo por ĉi tiu Helium adreso</translation>
+        <source>Encrypt the private key for this sQuorum address</source>
+        <translation>Ĉifri la privata ŝlosilo por ĉi tiu sQuorum adreso</translation>
     </message>
     <message>
         <source>Reset all fields</source>
@@ -629,16 +629,16 @@
         <translation>Iloj langeto</translation>
     </message>
     <message>
-        <source>Helium Core</source>
-        <translation>Helium kerno</translation>
+        <source>sQuorum Core</source>
+        <translation>sQuorum kerno</translation>
     </message>
     <message>
-        <source>Send coins to a Helium address</source>
-        <translation>Sendu mono al Helium addreso</translation>
+        <source>Send coins to a sQuorum address</source>
+        <translation>Sendu mono al sQuorum addreso</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and helium: URIs)</source>
-        <translation>Peto pagojn (generas QR kodojn kaj helium: URIs)</translation>
+        <source>Request payments (generates QR codes and squorum: URIs)</source>
+        <translation>Peto pagojn (generas QR kodojn kaj squorum: URIs)</translation>
     </message>
     <message>
         <source>&amp;Masternodes</source>
@@ -649,24 +649,24 @@
         <translation>Foliumi mastro-nodo</translation>
     </message>
     <message>
-        <source>&amp;About Helium Core</source>
-        <translation>&amp;Pri Helium Kerno</translation>
+        <source>&amp;About sQuorum Core</source>
+        <translation>&amp;Pri sQuorum Kerno</translation>
     </message>
     <message>
-        <source>Show information about Helium Core</source>
-        <translation>Montri informon pri Helium Kerno</translation>
+        <source>Show information about sQuorum Core</source>
+        <translation>Montri informon pri sQuorum Kerno</translation>
     </message>
     <message>
-        <source>Modify configuration options for Helium</source>
-        <translation>Modifi agordajn opciojn por Helium</translation>
+        <source>Modify configuration options for sQuorum</source>
+        <translation>Modifi agordajn opciojn por sQuorum</translation>
     </message>
     <message>
-        <source>Sign messages with your Helium addresses to prove you own them</source>
-        <translation>Subskribu mesaĝo per via Helium adreso por pruvi vi posedas ĝin</translation>
+        <source>Sign messages with your sQuorum addresses to prove you own them</source>
+        <translation>Subskribu mesaĝo per via sQuorum adreso por pruvi vi posedas ĝin</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Helium addresses</source>
-        <translation>Kontrolu mesaĝojn por certigi ke ili estas subskribita kun specifita Helium adreso</translation>
+        <source>Verify messages to ensure they were signed with specified sQuorum addresses</source>
+        <translation>Kontrolu mesaĝojn por certigi ke ili estas subskribita kun specifita sQuorum adreso</translation>
     </message>
     <message>
         <source>&amp;BIP38 tool</source>
@@ -697,8 +697,8 @@
         <translation>Malfermi mastro-nodo agord-dosieron</translation>
     </message>
     <message>
-        <source>Open a Helium: URI or payment request</source>
-        <translation>Malfermi unu Helium: URI aŭ pago peto</translation>
+        <source>Open a sQuorum: URI or payment request</source>
+        <translation>Malfermi unu sQuorum: URI aŭ pago peto</translation>
     </message>
     <message>
         <source>&amp;Blockchain explorer</source>
@@ -709,12 +709,12 @@
         <translation>Bloko esplorilo fenestro</translation>
     </message>
     <message>
-        <source>Show the Helium Core help message to get a list with possible Helium command-line options</source>
-        <translation>Montri la Helium Kore help-mesaĝo por havi liston de havebla Helium komandlinion opciojn</translation>
+        <source>Show the sQuorum Core help message to get a list with possible sQuorum command-line options</source>
+        <translation>Montri la sQuorum Kore help-mesaĝo por havi liston de havebla sQuorum komandlinion opciojn</translation>
     </message>
     <message>
-        <source>Helium Core client</source>
-        <translation>Helium Kerno kliento</translation>
+        <source>sQuorum Core client</source>
+        <translation>sQuorum Kerno kliento</translation>
     </message>
     <message>
         <source>Synchronizing with network...</source>
@@ -844,8 +844,8 @@ Muktisendi: %1</translation>
         <translation>Tekstetikedo</translation>
     </message>
     <message>
-        <source>Not all transactions will be shown. To view all transactions you need to set txindex=1 in the configuration file (helium.conf).</source>
-        <translation>Ĉiuj transakcio ne estos montri. Peor vidi ĉiuj transakcio bezonas agordi txindekso=1 en la agordo dosiero (helium.conf).</translation>
+        <source>Not all transactions will be shown. To view all transactions you need to set txindex=1 in the configuration file (squorum.conf).</source>
+        <translation>Ĉiuj transakcio ne estos montri. Peor vidi ĉiuj transakcio bezonas agordi txindekso=1 en la agordo dosiero (squorum.conf).</translation>
     </message>
 </context>
 <context>
@@ -1129,8 +1129,8 @@ Muktisendi: %1</translation>
         <translation>Redaktu sendantan adreson</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid Helium address.</source>
-        <translation>La enirita "%1" adreso ne estas validan Helium adreson.</translation>
+        <source>The entered address "%1" is not a valid sQuorum address.</source>
+        <translation>La enirita "%1" adreso ne estas validan sQuorum adreson.</translation>
     </message>
     <message>
         <source>The entered address "%1" is already in the address book.</source>
@@ -1186,16 +1186,16 @@ Muktisendi: %1</translation>
         <translation>versio</translation>
     </message>
     <message>
-        <source>Helium Core</source>
-        <translation>Helium kerno</translation>
+        <source>sQuorum Core</source>
+        <translation>sQuorum kerno</translation>
     </message>
     <message>
         <source>(%1-bit)</source>
         <translation>(%1-bajto)</translation>
     </message>
     <message>
-        <source>About Helium Core</source>
-        <translation>Pri Helium Kerno</translation>
+        <source>About sQuorum Core</source>
+        <translation>Pri sQuorum Kerno</translation>
     </message>
     <message>
         <source>Command-line options</source>
@@ -1237,16 +1237,16 @@ Muktisendi: %1</translation>
         <translation>Bonvenon</translation>
     </message>
     <message>
-        <source>Welcome to Helium Core.</source>
-        <translation>Bonvenon al la Helium Kerno.</translation>
+        <source>Welcome to sQuorum Core.</source>
+        <translation>Bonvenon al la sQuorum Kerno.</translation>
     </message>
     <message>
-        <source>As this is the first time the program is launched, you can choose where Helium Core will store its data.</source>
-        <translation>Ĉar estas la unuan fojon ke la programo estas lanĉita, vi povas elekti kie Helium kernk storigis sian datumojn. </translation>
+        <source>As this is the first time the program is launched, you can choose where sQuorum Core will store its data.</source>
+        <translation>Ĉar estas la unuan fojon ke la programo estas lanĉita, vi povas elekti kie sQuorum kernk storigis sian datumojn. </translation>
     </message>
     <message>
-        <source>Helium Core will download and store a copy of the Helium block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
-        <translation>Helium kerno elŝutos kaj konservi kopion de la Helium blokĉeno. Almenaŭ %1GB datumoj stokitos en ĉi tiun dosierujo, kaj ĝi kresko kun la tempo. Monujo stokitos en ĉi tiun dosierujo.</translation>
+        <source>sQuorum Core will download and store a copy of the sQuorum block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
+        <translation>sQuorum kerno elŝutos kaj konservi kopion de la sQuorum blokĉeno. Almenaŭ %1GB datumoj stokitos en ĉi tiun dosierujo, kaj ĝi kresko kun la tempo. Monujo stokitos en ĉi tiun dosierujo.</translation>
     </message>
     <message>
         <source>Use the default data directory</source>
@@ -1257,8 +1257,8 @@ Muktisendi: %1</translation>
         <translation>Uzi kutimon datumojn dosierujo:</translation>
     </message>
     <message>
-        <source>Helium Core</source>
-        <translation>Helium kerno</translation>
+        <source>sQuorum Core</source>
+        <translation>sQuorum kerno</translation>
     </message>
     <message>
         <source>Error: Specified data directory "%1" cannot be created.</source>
@@ -1580,8 +1580,8 @@ Muktisendi: %1</translation>
         <translation>&amp;Monujo</translation>
     </message>
     <message>
-        <source>Automatically open the Helium client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Aŭtomate malfermi Helium klienton havenon en la enkursigilo. Tio nur laboras kiam via enkursigilo subtenas UPnP kaj estas ebligita.</translation>
+        <source>Automatically open the sQuorum client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Aŭtomate malfermi sQuorum klienton havenon en la enkursigilo. Tio nur laboras kiam via enkursigilo subtenas UPnP kaj estas ebligita.</translation>
     </message>
     <message>
         <source>Accept connections from outside</source>
@@ -1592,8 +1592,8 @@ Muktisendi: %1</translation>
         <translation>Sperta</translation>
     </message>
     <message>
-        <source>&amp;Start Helium on system login</source>
-        <translation>&amp;Komencu Helium en sistem-ensaluto</translation>
+        <source>&amp;Start sQuorum on system login</source>
+        <translation>&amp;Komencu sQuorum en sistem-ensaluto</translation>
     </message>
     <message>
         <source>&amp;Spend unconfirmed change</source>
@@ -1604,12 +1604,12 @@ Muktisendi: %1</translation>
         <translation>&amp;Reto</translation>
     </message>
     <message>
-        <source>The user interface language can be set here. This setting will take effect after restarting Helium.</source>
-        <translation>La uzanta interfaco lingvo povas esti agordi ĉi tie. Tio agordo efektivigos post rekomenci Helium.</translation>
+        <source>The user interface language can be set here. This setting will take effect after restarting sQuorum.</source>
+        <translation>La uzanta interfaco lingvo povas esti agordi ĉi tie. Tio agordo efektivigos post rekomenci sQuorum.</translation>
     </message>
     <message>
-        <source>Connect to the Helium network through a SOCKS5 proxy.</source>
-        <translation>Konekti al la Helium reto per SOCKS5 prokurilo.</translation>
+        <source>Connect to the sQuorum network through a SOCKS5 proxy.</source>
+        <translation>Konekti al la sQuorum reto per SOCKS5 prokurilo.</translation>
     </message>
     <message>
         <source>Proxy &amp;IP:</source>
@@ -1629,9 +1629,9 @@ Muktisendi: %1</translation>
     </message>
     <message>
         <source>Language missing or translation incomplete? Help contributing translations here:
-https://www.transifex.com/helium-project/helium-wallet</source>
+https://www.transifex.com/squorum-project/squorum-wallet</source>
         <translation>Ĉu mankas lingvon aŭ nekompleta tradukado? Helpu la  tradukcio ĉi tie:
-https://www.transifex.com/helium-project/helium-wallet</translation>
+https://www.transifex.com/squorum-project/squorum-wallet</translation>
     </message>
     <message>
         <source>User Interface Theme:</source>
@@ -1689,8 +1689,8 @@ https://www.transifex.com/helium-project/helium-wallet</translation>
         <translation>Nematura:</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Helium network after a connection is established, but this process has not completed yet.</source>
-        <translation>Montrata informon povas esti malmoderna. Via monujo automate sinkronigis kun la Helium reto post konekcio establas, sed ĉi tio procezo ankoraŭ ne kompletigis.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the sQuorum network after a connection is established, but this process has not completed yet.</source>
+        <translation>Montrata informon povas esti malmoderna. Via monujo automate sinkronigis kun la sQuorum reto post konekcio establas, sed ĉi tio procezo ankoraŭ ne kompletigis.</translation>
     </message>
     <message>
         <source>OVERVIEW</source>
@@ -1738,8 +1738,8 @@ https://www.transifex.com/helium-project/helium-wallet</translation>
 <context>
     <name>PrivacyDialog</name>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Helium network after a connection is established, but this process has not completed yet.</source>
-        <translation>Montrata informon povas esti malmoderna. Via monujo automate sinkronigis kun la Helium reto post konekcio establas, sed ĉi tio procezo ankoraŭ ne kompletigis.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the sQuorum network after a connection is established, but this process has not completed yet.</source>
+        <translation>Montrata informon povas esti malmoderna. Via monujo automate sinkronigis kun la sQuorum reto post konekcio establas, sed ĉi tio procezo ankoraŭ ne kompletigis.</translation>
     </message>
     <message>
         <source>0</source>
@@ -1782,8 +1782,8 @@ https://www.transifex.com/helium-project/helium-wallet</translation>
         <translation>Pagu &amp;Al:</translation>
     </message>
     <message>
-        <source>The Helium address to send the payment to. Creates local payment to yourself when empty.</source>
-        <translation>Helium adreso por alsendi la pago. Kreas lokala pago al vi mem kiam malplenija.</translation>
+        <source>The sQuorum address to send the payment to. Creates local payment to yourself when empty.</source>
+        <translation>sQuorum adreso por alsendi la pago. Kreas lokala pago al vi mem kiam malplenija.</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -1882,8 +1882,8 @@ Nematura: konfirmita, sed malpli ol 1 minto el la samo nomado post ĝin estis mi
         <translation>NEKONATA</translation>
     </message>
     <message>
-        <source>Helium Core</source>
-        <translation>Helium kerno</translation>
+        <source>sQuorum Core</source>
+        <translation>sQuorum kerno</translation>
     </message>
     </context>
 <context>
@@ -1948,8 +1948,8 @@ Nematura: konfirmita, sed malpli ol 1 minto el la samo nomado post ĝin estis mi
         <translation>Rekonstrui indekson</translation>
     </message>
     <message>
-        <source>Welcome to the Helium RPC console.</source>
-        <translation>Bonvenon al la Helium RPC konzolo.</translation>
+        <source>Welcome to the sQuorum RPC console.</source>
+        <translation>Bonvenon al la sQuorum RPC konzolo.</translation>
     </message>
     <message>
         <source>1 &amp;hour</source>
@@ -2196,8 +2196,8 @@ Nematura: konfirmita, sed malpli ol 1 minto el la samo nomado post ĝin estis mi
         <translation>Kopi ŝanĝo</translation>
     </message>
     <message>
-        <source>Warning: Invalid Helium address</source>
-        <translation>Averto: nevalida Helium adreson</translation>
+        <source>Warning: Invalid sQuorum address</source>
+        <translation>Averto: nevalida sQuorum adreson</translation>
     </message>
     <message>
         <source>Are you sure you want to send?</source>
@@ -2223,7 +2223,7 @@ Nematura: konfirmita, sed malpli ol 1 minto el la samo nomado post ĝin estis mi
         <translation>Pagu &amp;Al:</translation>
     </message>
     <message>
-        <source>The Helium address to send the payment to</source>
+        <source>The sQuorum address to send the payment to</source>
         <translation>HLMC adreso por sendi la pago al</translation>
     </message>
     <message>
@@ -2258,8 +2258,8 @@ Nematura: konfirmita, sed malpli ol 1 minto el la samo nomado post ĝin estis mi
 <context>
     <name>ShutdownWindow</name>
     <message>
-        <source>Helium Core is shutting down...</source>
-        <translation>Helium kerno fermanta...</translation>
+        <source>sQuorum Core is shutting down...</source>
+        <translation>sQuorum kerno fermanta...</translation>
     </message>
     </context>
 <context>
@@ -2312,8 +2312,8 @@ Nematura: konfirmita, sed malpli ol 1 minto el la samo nomado post ĝin estis mi
 <context>
     <name>SplashScreen</name>
     <message>
-        <source>Helium Core</source>
-        <translation>Helium kerno</translation>
+        <source>sQuorum Core</source>
+        <translation>sQuorum kerno</translation>
     </message>
     <message>
         <source>The Bitcoin Core developers</source>
@@ -2324,8 +2324,8 @@ Nematura: konfirmita, sed malpli ol 1 minto el la samo nomado post ĝin estis mi
         <translation>La Dash kerno programistoj</translation>
     </message>
     <message>
-        <source>The Helium Core developers</source>
-        <translation>La Helium kerno programistoj</translation>
+        <source>The sQuorum Core developers</source>
+        <translation>La sQuorum kerno programistoj</translation>
     </message>
     </context>
 <context>
@@ -2511,7 +2511,7 @@ Nematura: konfirmita, sed malpli ol 1 minto el la samo nomado post ĝin estis mi
     </message>
     </context>
 <context>
-    <name>helium-core</name>
+    <name>squorum-core</name>
     <message>
         <source>Connect through SOCKS5 proxy</source>
         <translation>Konekti per SOCKS5 prokurilo</translation>

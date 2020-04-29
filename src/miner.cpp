@@ -2,7 +2,7 @@
 // Copyright (c) 2009-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
 // Copyright (c) 2015-2018 The PIVX developers
-// Copyright (c) 2018-2020 The Helium developers
+// Copyright (c) 2018-2020 The sQuorum developers
 
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
@@ -38,7 +38,7 @@
 
 //////////////////////////////////////////////////////////////////////////////
 //
-// HeliumMiner
+// sQuorumMiner
 //
 
 //
@@ -277,7 +277,7 @@ CBlockTemplate* CreateNewBlock(const CScript& scriptPubKeyIn, CWallet* pwallet, 
                     continue;
                 }
 
-                /* NOTE: GJH inappropriate for Helium
+                /* NOTE: GJH inappropriate for sQuorum
                 //Check for invalid/fraudulent inputs. They shouldn't make it through mempool, but check anyways.
                 if (invalid_out::ContainsOutPoint(txin.prevout)) {
                     LogPrintf("%s : found invalid input %s in tx %s", __func__, txin.prevout.ToString(), tx.GetHash().ToString());
@@ -509,7 +509,7 @@ CBlockTemplate* CreateNewBlock(const CScript& scriptPubKeyIn, CWallet* pwallet, 
         IncrementExtraNonce(pblock, pindexPrev, nExtraNonce);
 
         if (fProofOfStake) {
-            LogPrintf("HeliumMiner : proof-of-stake block found %s \n", pblock->GetHash().ToString().c_str());
+            LogPrintf("sQuorumMiner : proof-of-stake block found %s \n", pblock->GetHash().ToString().c_str());
             if (pblock->IsZerocoinStake()) {
                 //Find the key associated with the zerocoin that is being staked
                 libzerocoin::CoinSpend spend = TxInToZerocoinSpend(pblock->vtx[1].vin[0]);
@@ -529,7 +529,7 @@ CBlockTemplate* CreateNewBlock(const CScript& scriptPubKeyIn, CWallet* pwallet, 
                 LogPrintf("%s: Signing new block with UTXO key failed \n", __func__);
                 return NULL;
             }
-            LogPrintf("HeliumMiner : proof-of-stake block was signed %s \n", pblock->GetHash().ToString().c_str());
+            LogPrintf("sQuorumMiner : proof-of-stake block was signed %s \n", pblock->GetHash().ToString().c_str());
         }
 
         CValidationState state;
@@ -601,7 +601,7 @@ bool ProcessBlockFound(CBlock* pblock, CWallet& wallet)
     {
         LOCK(cs_main);
         if (pblock->hashPrevBlock != chainActive.Tip()->GetBlockHash())
-            return error("HeliumMiner : generated block is stale");
+            return error("sQuorumMiner : generated block is stale");
     }
 
 
@@ -621,7 +621,7 @@ bool ProcessBlockFound(CBlock* pblock, CWallet& wallet)
             pwalletMain->zhlmTracker->RemovePending(pblock->vtx[1].GetHash());
             pwalletMain->zhlmTracker->ListMints(true, true, true); //update the state
         }
-        return error("HeliumMiner : ProcessNewBlock, block not accepted");
+        return error("sQuorumMiner : ProcessNewBlock, block not accepted");
     }
 
     for (CNode* node : vNodes) {
@@ -639,9 +639,9 @@ int nMintableLastCheck = 0;
 
 void BitcoinMiner(CWallet* pwallet, bool fProofOfStake)
 {
-    LogPrintf("HeliumMiner started\n");
+    LogPrintf("sQuorumMiner started\n");
     SetThreadPriority(THREAD_PRIORITY_LOWEST);
-    RenameThread("helium-miner");
+    RenameThread("squorum-miner");
 
     // Each thread has its own key and counter
     bool fLastLoopOrphan = false;
@@ -721,7 +721,7 @@ void BitcoinMiner(CWallet* pwallet, bool fProofOfStake)
             continue;
         }
 
-        LogPrintf("Running HeliumMiner with %u transactions in block (%u bytes)\n", pblock->vtx.size(),
+        LogPrintf("Running sQuorumMiner with %u transactions in block (%u bytes)\n", pblock->vtx.size(),
             ::GetSerializeSize(*pblock, SER_NETWORK, PROTOCOL_VERSION));
         //
         // Search
@@ -810,12 +810,12 @@ void static ThreadBitcoinMiner(void* parg)
         BitcoinMiner(pwallet, false);
         boost::this_thread::interruption_point();
     } catch (std::exception& e) {
-        LogPrintf("HeliumMiner exception\n");
+        LogPrintf("sQuorumMiner exception\n");
     } catch (...) {
-        LogPrintf("HeliumMiner exception\n");
+        LogPrintf("sQuorumMiner exception\n");
     }
 
-    LogPrintf("HeliumMiner exiting\n");
+    LogPrintf("sQuorumMiner exiting\n");
 }
 
 void GenerateBitcoins(bool fGenerate, CWallet* pwallet, int nThreads)

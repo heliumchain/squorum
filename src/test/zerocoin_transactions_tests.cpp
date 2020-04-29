@@ -1,5 +1,5 @@
 // Copyright (c) 2017-2018 The PIVX developers
-// Copyright (c) 2018-2020 The Helium developers
+// Copyright (c) 2018-2020 The sQuorum developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -13,7 +13,7 @@
 #include "wallet/walletdb.h"
 #include "txdb.h"
 #include "zhlm/zhlmmodule.h"
-#include "test/test_helium.h"
+#include "test/test_squorum.h"
 #include <boost/test/unit_test.hpp>
 #include <iostream>
 

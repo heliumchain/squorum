@@ -2,7 +2,7 @@
 // Copyright (c) 2009-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
 // Copyright (c) 2015-2018 The PIVX developers
-// Copyright (c) 2018-2019 The Helium developers
+// Copyright (c) 2018-2019 The sQuorum developers
 
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
@@ -267,11 +267,11 @@ UniValue stop(const UniValue& params, bool fHelp)
     if (fHelp || params.size() > 1)
         throw std::runtime_error(
             "stop\n"
-            "\nStop Helium server.");
+            "\nStop sQuorum server.");
     // Event loop will exit after current HTTP requests have been handled, so
     // this reply will get back to the client.
     StartShutdown();
-    return "Helium server stopping";
+    return "sQuorum server stopping";
 }
 
 
@@ -364,35 +364,35 @@ static const CRPCCommand vRPCCommands[] =
         { "hidden",             "waitforblock",           &waitforblock,           true,  true,  false  },
         { "hidden",             "waitforblockheight",     &waitforblockheight,     true,  true,  false  },
 
-        /* Helium features */
-        {"helium", "listmasternodes", &listmasternodes, true, true, false},
-        {"helium", "getmasternodecount", &getmasternodecount, true, true, false},
-        {"helium", "masternodeconnect", &masternodeconnect, true, true, false},
-        {"helium", "createmasternodebroadcast", &createmasternodebroadcast, true, true, false},
-        {"helium", "decodemasternodebroadcast", &decodemasternodebroadcast, true, true, false},
-        {"helium", "relaymasternodebroadcast", &relaymasternodebroadcast, true, true, false},
-        {"helium", "masternodecurrent", &masternodecurrent, true, true, false},
-        {"helium", "masternodedebug", &masternodedebug, true, true, false},
-        {"helium", "startmasternode", &startmasternode, true, true, false},
-        {"helium", "createmasternodekey", &createmasternodekey, true, true, false},
-        {"helium", "getmasternodeoutputs", &getmasternodeoutputs, true, true, false},
-        {"helium", "listmasternodeconf", &listmasternodeconf, true, true, false},
-        {"helium", "getmasternodestatus", &getmasternodestatus, true, true, false},
-        {"helium", "getmasternodewinners", &getmasternodewinners, true, true, false},
-        {"helium", "getmasternodescores", &getmasternodescores, true, true, false},
-        {"helium", "preparebudget", &preparebudget, true, true, false},
-        {"helium", "submitbudget", &submitbudget, true, true, false},
-        {"helium", "mnbudgetvote", &mnbudgetvote, true, true, false},
-        {"helium", "getbudgetvotes", &getbudgetvotes, true, true, false},
-        {"helium", "getnextsuperblock", &getnextsuperblock, true, true, false},
-        {"helium", "getbudgetprojection", &getbudgetprojection, true, true, false},
-        {"helium", "getbudgetinfo", &getbudgetinfo, true, true, false},
-        {"helium", "mnbudgetrawvote", &mnbudgetrawvote, true, true, false},
-        {"helium", "mnfinalbudget", &mnfinalbudget, true, true, false},
-        {"helium", "checkbudgets", &checkbudgets, true, true, false},
-        {"helium", "mnsync", &mnsync, true, true, false},
-        {"helium", "spork", &spork, true, true, false},
-        {"helium", "getpoolinfo", &getpoolinfo, true, true, false},
+        /* sQuorum features */
+        {"squorum", "listmasternodes", &listmasternodes, true, true, false},
+        {"squorum", "getmasternodecount", &getmasternodecount, true, true, false},
+        {"squorum", "masternodeconnect", &masternodeconnect, true, true, false},
+        {"squorum", "createmasternodebroadcast", &createmasternodebroadcast, true, true, false},
+        {"squorum", "decodemasternodebroadcast", &decodemasternodebroadcast, true, true, false},
+        {"squorum", "relaymasternodebroadcast", &relaymasternodebroadcast, true, true, false},
+        {"squorum", "masternodecurrent", &masternodecurrent, true, true, false},
+        {"squorum", "masternodedebug", &masternodedebug, true, true, false},
+        {"squorum", "startmasternode", &startmasternode, true, true, false},
+        {"squorum", "createmasternodekey", &createmasternodekey, true, true, false},
+        {"squorum", "getmasternodeoutputs", &getmasternodeoutputs, true, true, false},
+        {"squorum", "listmasternodeconf", &listmasternodeconf, true, true, false},
+        {"squorum", "getmasternodestatus", &getmasternodestatus, true, true, false},
+        {"squorum", "getmasternodewinners", &getmasternodewinners, true, true, false},
+        {"squorum", "getmasternodescores", &getmasternodescores, true, true, false},
+        {"squorum", "preparebudget", &preparebudget, true, true, false},
+        {"squorum", "submitbudget", &submitbudget, true, true, false},
+        {"squorum", "mnbudgetvote", &mnbudgetvote, true, true, false},
+        {"squorum", "getbudgetvotes", &getbudgetvotes, true, true, false},
+        {"squorum", "getnextsuperblock", &getnextsuperblock, true, true, false},
+        {"squorum", "getbudgetprojection", &getbudgetprojection, true, true, false},
+        {"squorum", "getbudgetinfo", &getbudgetinfo, true, true, false},
+        {"squorum", "mnbudgetrawvote", &mnbudgetrawvote, true, true, false},
+        {"squorum", "mnfinalbudget", &mnfinalbudget, true, true, false},
+        {"squorum", "checkbudgets", &checkbudgets, true, true, false},
+        {"squorum", "mnsync", &mnsync, true, true, false},
+        {"squorum", "spork", &spork, true, true, false},
+        {"squorum", "getpoolinfo", &getpoolinfo, true, true, false},
 
 #ifdef ENABLE_WALLET
         /* Wallet */
@@ -634,7 +634,7 @@ std::vector<std::string> CRPCTable::listCommands() const
 
 std::string HelpExampleCli(std::string methodname, std::string args)
 {
-    return "> helium-cli " + methodname + " " + args + "\n";
+    return "> squorum-cli " + methodname + " " + args + "\n";
 }
 
 std::string HelpExampleRpc(std::string methodname, std::string args)

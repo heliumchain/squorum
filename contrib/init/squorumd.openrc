@@ -2,26 +2,26 @@
 
 # backward compatibility for existing gentoo layout
 #
-if [ -d "/var/lib/helium/.helium" ]; then
-	BITCOIND_DEFAULT_DATADIR="/var/lib/helium/.helium"
+if [ -d "/var/lib/squorum/.squorum" ]; then
+	BITCOIND_DEFAULT_DATADIR="/var/lib/squorum/.squorum"
 else
-	BITCOIND_DEFAULT_DATADIR="/var/lib/heliumd"
+	BITCOIND_DEFAULT_DATADIR="/var/lib/squorumd"
 fi
 
-BITCOIND_CONFIGFILE=${BITCOIND_CONFIGFILE:-/etc/helium/helium.conf}
-BITCOIND_PIDDIR=${BITCOIND_PIDDIR:-/var/run/heliumd}
-BITCOIND_PIDFILE=${BITCOIND_PIDFILE:-${BITCOIND_PIDDIR}/heliumd.pid}
+BITCOIND_CONFIGFILE=${BITCOIND_CONFIGFILE:-/etc/squorum/squorum.conf}
+BITCOIND_PIDDIR=${BITCOIND_PIDDIR:-/var/run/squorumd}
+BITCOIND_PIDFILE=${BITCOIND_PIDFILE:-${BITCOIND_PIDDIR}/squorumd.pid}
 BITCOIND_DATADIR=${BITCOIND_DATADIR:-${BITCOIND_DEFAULT_DATADIR}}
-BITCOIND_USER=${BITCOIND_USER:-${BITCOIN_USER:-helium}
-BITCOIND_GROUP=${BITCOIND_GROUP:-helium}
-BITCOIND_BIN=${BITCOIND_BIN:-/usr/bin/heliumd}
+BITCOIND_USER=${BITCOIND_USER:-${BITCOIN_USER:-squorum}
+BITCOIND_GROUP=${BITCOIND_GROUP:-squorum}
+BITCOIND_BIN=${BITCOIND_BIN:-/usr/bin/squorumd}
 BITCOIND_NICE=${BITCOIND_NICE:-${NICELEVEL:-0}}
 BITCOIND_OPTS="${BITCOIND_OPTS:-${BITCOIN_OPTS}}"
 
-name="Helium Core Daemon"
-description="Helium crypto-currency p2p network daemon"
+name="sQuorum Core Daemon"
+description="sQuorum crypto-currency p2p network daemon"
 
-command="/usr/bin/heliumd"
+command="/usr/bin/squorumd"
 command_args="-pid=\"${BITCOIND_PIDFILE}\" \
 		-conf=\"${BITCOIND_CONFIGFILE}\" \
 		-datadir=\"${BITCOIND_DATADIR}\" \
@@ -71,7 +71,7 @@ checkconfig()
 {
 	if ! grep -qs '^rpcpassword=' "${BITCOIND_CONFIGFILE}" ; then
 		eerror ""
-		eerror "ERROR: You must set a secure rpcpassword to run heliumd."
+		eerror "ERROR: You must set a secure rpcpassword to run squorumd."
 		eerror "The setting must appear in ${BITCOIND_CONFIGFILE}"
 		eerror ""
 		eerror "This password is security critical to securing wallets "
@@ -84,7 +84,7 @@ checkconfig()
 		eerror "It is recommended that you also set alertnotify so you are "
 		eerror "notified of problems:"
 		eerror ""
-		eerror "ie: alertnotify=echo %%s | mail -s \"Helium Alert\"" \
+		eerror "ie: alertnotify=echo %%s | mail -s \"sQuorum Alert\"" \
 			"admin@foo.com"
 		eerror ""
 		return 1

@@ -6,7 +6,7 @@
 
 export LC_ALL=C.UTF-8
 
-cd "build/helium-$HOST" || (echo "could not enter distdir build/helium-$HOST"; exit 1)
+cd "build/squorum-$HOST" || (echo "could not enter distdir build/squorum-$HOST"; exit 1)
 
 if [ "$RUN_UNIT_TESTS" = "true" ]; then
   BEGIN_FOLD unit-tests

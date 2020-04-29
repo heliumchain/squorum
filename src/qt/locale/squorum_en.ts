@@ -80,12 +80,12 @@
     </message>
     <message>
         <location line="+7"/>
-        <source>These are your Helium addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <source>These are your sQuorum addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+4"/>
-        <source>These are your Helium addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <source>These are your sQuorum addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -237,7 +237,7 @@
     </message>
     <message>
         <location line="-43"/>
-        <source>Helium will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your coins from being stolen by malware infecting your computer.</source>
+        <source>sQuorum will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your coins from being stolen by malware infecting your computer.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -326,12 +326,12 @@
     </message>
     <message>
         <location line="-424"/>
-        <source>Enter a Helium Address that you would like to encrypt using BIP 38. Enter a passphrase in the middle box. Press encrypt to compute the encrypted private key.</source>
+        <source>Enter a sQuorum Address that you would like to encrypt using BIP 38. Enter a passphrase in the middle box. Press encrypt to compute the encrypted private key.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+31"/>
-        <source>The Helium address to encrypt</source>
+        <source>The sQuorum address to encrypt</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -375,7 +375,7 @@
     </message>
     <message>
         <location line="+18"/>
-        <source>Encrypt the private key for this Helium address</source>
+        <source>Encrypt the private key for this sQuorum address</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -836,17 +836,17 @@
     <message>
         <location line="-448"/>
         <location line="+938"/>
-        <source>Helium Core</source>
+        <source>sQuorum Core</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="-742"/>
-        <source>Send coins to a Helium address</source>
+        <source>Send coins to a sQuorum address</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+11"/>
-        <source>Request payments (generates QR codes and helium: URIs)</source>
+        <source>Request payments (generates QR codes and squorum: URIs)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -861,27 +861,27 @@
     </message>
     <message>
         <location line="+43"/>
-        <source>&amp;About Helium Core</source>
+        <source>&amp;About sQuorum Core</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Show information about Helium Core</source>
+        <source>Show information about sQuorum Core</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+6"/>
-        <source>Modify configuration options for Helium</source>
+        <source>Modify configuration options for sQuorum</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+16"/>
-        <source>Sign messages with your Helium addresses to prove you own them</source>
+        <source>Sign messages with your sQuorum addresses to prove you own them</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+2"/>
-        <source>Verify messages to ensure they were signed with specified Helium addresses</source>
+        <source>Verify messages to ensure they were signed with specified sQuorum addresses</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -921,7 +921,7 @@
     </message>
     <message>
         <location line="+17"/>
-        <source>Open a Helium: URI or payment request</source>
+        <source>Open a sQuorum: URI or payment request</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -936,17 +936,17 @@
     </message>
     <message>
         <location line="+4"/>
-        <source>Show the Helium Core help message to get a list with possible Helium command-line options</source>
+        <source>Show the sQuorum Core help message to get a list with possible sQuorum command-line options</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+234"/>
-        <source>Helium Core client</source>
+        <source>sQuorum Core client</source>
         <translation type="unfinished"></translation>
     </message>
     <message numerus="yes">
         <location line="+219"/>
-        <source>%n active connection(s) to Helium network</source>
+        <source>%n active connection(s) to sQuorum network</source>
         <translation type="unfinished">
             <numerusform></numerusform>
             <numerusform></numerusform>
@@ -1108,8 +1108,8 @@ Address: %4
         <translation>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;locked&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../helium.cpp" line="+479"/>
-        <source>A fatal error occurred. Helium can no longer continue safely and will quit.</source>
+        <location filename="../squorum.cpp" line="+479"/>
+        <source>A fatal error occurred. sQuorum can no longer continue safely and will quit.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1147,7 +1147,7 @@ Address: %4
     </message>
     <message>
         <location filename="../blockexplorer.cpp" line="+481"/>
-        <source>Not all transactions will be shown. To view all transactions you need to set txindex=1 in the configuration file (helium.conf).</source>
+        <source>Not all transactions will be shown. To view all transactions you need to set txindex=1 in the configuration file (squorum.conf).</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1516,7 +1516,7 @@ Address: %4
     </message>
     <message>
         <location line="+67"/>
-        <source>The entered address &quot;%1&quot; is not a valid Helium address.</source>
+        <source>The entered address &quot;%1&quot; is not a valid sQuorum address.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1630,7 +1630,7 @@ Address: %4
     </message>
     <message>
         <location line="+0"/>
-        <source>Helium Core</source>
+        <source>sQuorum Core</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1641,7 +1641,7 @@ Address: %4
     </message>
     <message>
         <location line="+4"/>
-        <source>About Helium Core</source>
+        <source>About sQuorum Core</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1699,17 +1699,17 @@ Address: %4
     </message>
     <message>
         <location line="+9"/>
-        <source>Welcome to Helium Core.</source>
+        <source>Welcome to sQuorum Core.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+26"/>
-        <source>As this is the first time the program is launched, you can choose where Helium Core will store its data.</source>
+        <source>As this is the first time the program is launched, you can choose where sQuorum Core will store its data.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+10"/>
-        <source>Helium Core will download and store a copy of the Helium block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
+        <source>sQuorum Core will download and store a copy of the sQuorum block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1724,7 +1724,7 @@ Address: %4
     </message>
     <message>
         <location filename="../intro.cpp" line="+77"/>
-        <source>Helium Core</source>
+        <source>sQuorum Core</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1900,8 +1900,8 @@ Address: %4
     </message>
     <message>
         <location line="-106"/>
-        <source>MultiSend allows you to automatically send up to 100% of your stake or masternode reward to a list of other Helium addresses after it matures.
-To Add: enter percentage to give and Helium address to add to the MultiSend vector.
+        <source>MultiSend allows you to automatically send up to 100% of your stake or masternode reward to a list of other sQuorum addresses after it matures.
+To Add: enter percentage to give and sQuorum address to add to the MultiSend vector.
 To Delete: Enter address to delete and press delete.
 MultiSend will not be activated unless you have clicked Activate</source>
         <translation type="unfinished"></translation>
@@ -2388,7 +2388,7 @@ Please be patient after clicking import.</source>
     </message>
     <message>
         <location line="+33"/>
-        <source>Automatically open the Helium client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <source>Automatically open the sQuorum client port on the router. This only works when your router supports UPnP and it is enabled.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2413,12 +2413,12 @@ Please be patient after clicking import.</source>
     </message>
     <message>
         <location line="-131"/>
-        <source>Automatically start Helium after logging in to the system.</source>
+        <source>Automatically start sQuorum after logging in to the system.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>&amp;Start Helium on system login</source>
+        <source>&amp;Start sQuorum on system login</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2453,7 +2453,7 @@ Please be patient after clicking import.</source>
     </message>
     <message>
         <location line="+192"/>
-        <source>The user interface language can be set here. This setting will take effect after restarting Helium.</source>
+        <source>The user interface language can be set here. This setting will take effect after restarting sQuorum.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2468,7 +2468,7 @@ Please be patient after clicking import.</source>
     </message>
     <message>
         <location line="+98"/>
-        <source>Connect to the Helium network through a SOCKS5 proxy.</source>
+        <source>Connect to the sQuorum network through a SOCKS5 proxy.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2529,7 +2529,7 @@ Please be patient after clicking import.</source>
     <message>
         <location line="+34"/>
         <source>Language missing or translation incomplete? Help contributing translations here:
-https://www.transifex.com/helium-project/helium-wallet</source>
+https://www.transifex.com/squorum-project/squorum-wallet</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2708,7 +2708,7 @@ https://www.transifex.com/helium-project/helium-wallet</source>
     <message>
         <location line="-462"/>
         <location line="+616"/>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Helium network after a connection is established, but this process has not completed yet.</source>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the sQuorum network after a connection is established, but this process has not completed yet.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2804,13 +2804,13 @@ If AutoMint is enabled this percentage will settle around the configured AutoMin
     </message>
     <message>
         <location line="+1"/>
-        <source>To disable AutoMint add &apos;enablezeromint=0&apos; in helium.conf.</source>
+        <source>To disable AutoMint add &apos;enablezeromint=0&apos; in squorum.conf.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+3"/>
         <source>AutoMint is currently disabled.
-To enable AutoMint change &apos;enablezeromint=0&apos; to &apos;enablezeromint=1&apos; in helium.conf</source>
+To enable AutoMint change &apos;enablezeromint=0&apos; to &apos;enablezeromint=1&apos; in squorum.conf</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -2850,12 +2850,12 @@ To enable AutoMint change &apos;enablezeromint=0&apos; to &apos;enablezeromint=1
     </message>
     <message>
         <location line="-104"/>
-        <source>Cannot start helium: click-to-pay handler</source>
+        <source>Cannot start squorum: click-to-pay handler</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+110"/>
-        <source>URI cannot be parsed! This can be caused by an invalid Helium address or malformed URI parameters.</source>
+        <source>URI cannot be parsed! This can be caused by an invalid sQuorum address or malformed URI parameters.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2963,7 +2963,7 @@ To enable AutoMint change &apos;enablezeromint=0&apos; to &apos;enablezeromint=1
     </message>
     <message>
         <location line="+10"/>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Helium network after a connection is established, but this process has not completed yet.</source>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the sQuorum network after a connection is established, but this process has not completed yet.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3083,7 +3083,7 @@ zHLM are mature when they have more than 20 confirmations AND more than 2 mints 
     </message>
     <message>
         <location line="+27"/>
-        <source>The Helium address to send the payment to. Creates local payment to yourself when empty.</source>
+        <source>The sQuorum address to send the payment to. Creates local payment to yourself when empty.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3188,8 +3188,8 @@ Immature: confirmed, but less than 1 mint of the same denomination after it was 
         <source>Show the current status of automatic zHLM minting.
 
 To change the status (restart required):
-- enable: add &apos;enablezeromint=1&apos; to helium.conf
-- disable: add &apos;enablezeromint=0&apos; to helium.conf
+- enable: add &apos;enablezeromint=1&apos; to squorum.conf
+- disable: add &apos;enablezeromint=0&apos; to squorum.conf
 
 To change the percentage (no restart required):
 - menu Settings-&gt;Options-&gt;Percentage of autominted zHLM
@@ -3773,7 +3773,7 @@ Please be patient...</source>
     </message>
     <message>
         <location filename="../guiutil.cpp" line="+107"/>
-        <source>Enter a Helium address (e.g. %1)</source>
+        <source>Enter a sQuorum address (e.g. %1)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3833,11 +3833,11 @@ Please be patient...</source>
         <translation>%1 ms</translation>
     </message>
     <message>
-        <location filename="../helium.cpp" line="+75"/>
+        <location filename="../squorum.cpp" line="+75"/>
         <location line="+7"/>
         <location line="+13"/>
         <location line="+19"/>
-        <source>Helium Core</source>
+        <source>sQuorum Core</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3862,7 +3862,7 @@ Please be patient...</source>
     </message>
     <message>
         <location line="+40"/>
-        <source>Helium Core didn&apos;t yet exit safely...</source>
+        <source>sQuorum Core didn&apos;t yet exit safely...</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -4016,7 +4016,7 @@ Please be patient...</source>
     </message>
     <message>
         <location line="+79"/>
-        <source>Open the Helium debug log file from the current data directory. This can take a few seconds for large log files.</source>
+        <source>Open the sQuorum debug log file from the current data directory. This can take a few seconds for large log files.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -4298,7 +4298,7 @@ Please be patient...</source>
     </message>
     <message>
         <location line="-39"/>
-        <source>Welcome to the Helium RPC console.</source>
+        <source>Welcome to the sQuorum RPC console.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -4483,7 +4483,7 @@ Please be patient...</source>
     </message>
     <message>
         <location line="+26"/>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Helium network.</source>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the sQuorum network.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -4493,7 +4493,7 @@ Please be patient...</source>
     </message>
     <message>
         <location line="+182"/>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened.&lt;br&gt;Note: The message will not be sent with the payment over the Helium network.</source>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened.&lt;br&gt;Note: The message will not be sent with the payment over the sQuorum network.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -4877,7 +4877,7 @@ Please be patient...</source>
     <message>
         <location line="+33"/>
         <location line="+13"/>
-        <source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks.&lt;br /&gt;But be aware that this can end up in a never confirming transaction once there is more demand for Helium transactions than the network can process.</source>
+        <source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks.&lt;br /&gt;But be aware that this can end up in a never confirming transaction once there is more demand for sQuorum transactions than the network can process.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -4997,7 +4997,7 @@ Please be patient...</source>
     </message>
     <message>
         <location line="+653"/>
-        <source>Warning: Invalid Helium address</source>
+        <source>Warning: Invalid sQuorum address</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5136,7 +5136,7 @@ Please be patient...</source>
     </message>
     <message>
         <location line="+18"/>
-        <source>The Helium address to send the payment to</source>
+        <source>The sQuorum address to send the payment to</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5190,7 +5190,7 @@ Please be patient...</source>
     </message>
     <message>
         <location line="+10"/>
-        <source>A message that was attached to the Helium: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Helium network.</source>
+        <source>A message that was attached to the sQuorum: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the sQuorum network.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5225,7 +5225,7 @@ Please be patient...</source>
     <name>ShutdownWindow</name>
     <message>
         <location filename="../utilitydialog.cpp" line="+75"/>
-        <source>Helium Core is shutting down...</source>
+        <source>sQuorum Core is shutting down...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5253,7 +5253,7 @@ Please be patient...</source>
     </message>
     <message>
         <location line="+15"/>
-        <source>The Helium address to sign the message with</source>
+        <source>The sQuorum address to sign the message with</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5295,17 +5295,17 @@ Please be patient...</source>
     </message>
     <message>
         <location line="+18"/>
-        <source>Sign the message to prove you own this Helium address</source>
+        <source>Sign the message to prove you own this sQuorum address</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+103"/>
-        <source>The Helium address the message was signed with</source>
+        <source>The sQuorum address the message was signed with</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+34"/>
-        <source>Verify the message to ensure it was signed with the specified Helium address</source>
+        <source>Verify the message to ensure it was signed with the specified sQuorum address</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5420,7 +5420,7 @@ Please be patient...</source>
     <name>SplashScreen</name>
     <message>
         <location filename="../splashscreen.cpp" line="+37"/>
-        <source>Helium Core</source>
+        <source>sQuorum Core</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5445,7 +5445,7 @@ Please be patient...</source>
     </message>
     <message>
         <location line="+1"/>
-        <source>The Helium Core developers</source>
+        <source>The sQuorum Core developers</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6270,9 +6270,9 @@ Please be patient...</source>
     </message>
 </context>
 <context>
-    <name>helium-core</name>
+    <name>squorum-core</name>
     <message>
-        <location filename="../heliumstrings.cpp" line="+15"/>
+        <location filename="../squorumstrings.cpp" line="+15"/>
         <source>(1 = keep tx meta data e.g. account owner and payment request information, 2 = drop tx meta data)</source>
         <translation type="unfinished">(1 = keep tx meta data e.g. account owner and payment request information, 2 = drop tx meta data)</translation>
     </message>
@@ -6303,7 +6303,7 @@ Please be patient...</source>
     </message>
     <message>
         <location line="+2"/>
-        <source>Cannot obtain a lock on data directory %s. Helium Core is probably already running.</source>
+        <source>Cannot obtain a lock on data directory %s. sQuorum Core is probably already running.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6548,7 +6548,7 @@ Please be patient...</source>
     </message>
     <message>
         <location line="+3"/>
-        <source>Unable to bind to %s on this computer. Helium Core is probably already running.</source>
+        <source>Unable to bind to %s on this computer. sQuorum Core is probably already running.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6583,7 +6583,7 @@ Please be patient...</source>
     </message>
     <message>
         <location line="+3"/>
-        <source>Warning: Please check that your computer&apos;s date and time are correct! If your clock is wrong Helium Core will not work properly.</source>
+        <source>Warning: Please check that your computer&apos;s date and time are correct! If your clock is wrong sQuorum Core will not work properly.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6858,7 +6858,7 @@ Please be patient...</source>
     </message>
     <message>
         <location line="+1"/>
-        <source>Error loading wallet.dat: Wallet requires newer version of Helium Core</source>
+        <source>Error loading wallet.dat: Wallet requires newer version of sQuorum Core</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6978,7 +6978,7 @@ Please be patient...</source>
     </message>
     <message>
         <location line="+1"/>
-        <source>Initialization sanity check failed. Helium Core is shutting down.</source>
+        <source>Initialization sanity check failed. sQuorum Core is shutting down.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -7125,7 +7125,7 @@ Please be patient...</source>
     </message>
     <message>
         <location line="+38"/>
-        <source>Disable all Helium specific functionality (Masternodes, Zerocoin, SwiftX, Budgeting) (0-1, default: %u)</source>
+        <source>Disable all sQuorum specific functionality (Masternodes, Zerocoin, SwiftX, Budgeting) (0-1, default: %u)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -7470,7 +7470,7 @@ Please be patient...</source>
     </message>
     <message>
         <location line="+1"/>
-        <source>Copyright (C) 2018-%i The Helium Core Developers</source>
+        <source>Copyright (C) 2018-%i The sQuorum Core Developers</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -7890,7 +7890,7 @@ Please be patient...</source>
     </message>
     <message>
         <location line="+1"/>
-        <source>Wallet needed to be rewritten: restart Helium Core to complete</source>
+        <source>Wallet needed to be rewritten: restart sQuorum Core to complete</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

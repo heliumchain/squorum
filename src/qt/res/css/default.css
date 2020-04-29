@@ -926,7 +926,7 @@ background-image: url(':/images/logo_horizontal');
 background-repeat: no-repeat;
 }
 
-QWidget .QFrame#frame_Header { /* Header with Page-Title and Helium-image */
+QWidget .QFrame#frame_Header { /* Header with Page-Title and sQuorum-image */
 min-width:400px;
 background-color:#ffffff;
 }
@@ -1565,7 +1565,7 @@ QDialog#CoinControlDialog .CoinControlTreeWidget#treeWidget::indicator { /* Coin
 
 }
 
-QDialog#ZHeliumControlDialog .QTreeWidget#treeWidget { /* zHLM Control Widget Container */
+QDialog#ZsQuorumControlDialog .QTreeWidget#treeWidget { /* zHLM Control Widget Container */
 outline:0;
 background-color:#ffffff;
 border:1px solid #333;

@@ -1,7 +1,7 @@
 // Copyright (c) 2011-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
 // Copyright (c) 2015-2017 The PIVX developers
-// Copyright (c) 2018-2020 The Helium developers
+// Copyright (c) 2018-2020 The sQuorum developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -42,11 +42,11 @@ QString BitcoinUnits::id(int unit)
 {
     switch (unit) {
     case HLM:
-        return QString("helium");
+        return QString("squorum");
     case mHLM:
-        return QString("mhelium");
+        return QString("msquorum");
     case uHLM:
-        return QString::fromUtf8("uhelium");
+        return QString::fromUtf8("usquorum");
     default:
         return QString("???");
     }
