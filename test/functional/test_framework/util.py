@@ -302,7 +302,7 @@ def initialize_datadir(dirname, n):
     return datadir
 
 def rpc_auth_pair(n):
-    return 'rpcuser???' + str(n), 'rpcpass???' + str(n)
+    return 'rpcuser�' + str(n), 'rpcpass�' + str(n)
 
 def get_datadir_path(dirname, n):
     return os.path.join(dirname, "node" + str(n))
