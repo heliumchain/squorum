@@ -10,7 +10,8 @@
  * @license    This project is released under the MIT license.
  **/
 // Copyright (c) 2017-2018 The PIVX developers
-// Copyright (c) 2018-2020 The sQuorum developers
+// Copyright (c) 2018-2020 The Helium developers
+// Copyright (c) 2020 The sQuorum developers
 #ifndef ACCUMULATOR_H_
 #define ACCUMULATOR_H_
 
