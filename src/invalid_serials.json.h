@@ -6,8 +6,8 @@
 
 
 
-#ifndef HELIUM_INVALID_SERIALS_JSON_H
-#define HELIUM_INVALID_SERIALS_JSON_H
+#ifndef SQUORUM_INVALID_SERIALS_JSON_H
+#define SQUORUM_INVALID_SERIALS_JSON_H
 
 #include <string>
 
@@ -17,4 +17,4 @@ std::string LoadInvalidSerials()
     return str;
 }
 
-#endif //HELIUM_INVALID_SERIALS_JSON_H
+#endif //SQUORUM_INVALID_SERIALS_JSON_H
