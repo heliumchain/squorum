@@ -83,7 +83,7 @@ Reindex the accumulator database on startup
 .HP
 \fB\-reindexmoneysupply\fR
 .IP
-Reindex the HLM and zHLM money supply statistics on startup
+Reindex the SQR and zSQR money supply statistics on startup
 .HP
 \fB\-resync\fR
 .IP
@@ -262,7 +262,7 @@ Set key pool size to <n> (default: 100)
 .HP
 \fB\-paytxfee=\fR<amt>
 .IP
-Fee (in HLM/kB) to add to transactions you send (default: 0.00)
+Fee (in SQR/kB) to add to transactions you send (default: 0.00)
 .HP
 \fB\-rescan\fR
 .IP
@@ -386,7 +386,7 @@ Maximum tip age in seconds to consider node in initial block download
 .HP
 \fB\-minrelaytxfee=\fR<amt>
 .IP
-Fees (in HLM/Kb) smaller than this are considered zero fee for relaying
+Fees (in SQR/Kb) smaller than this are considered zero fee for relaying
 (default: 0.0001)
 .HP
 \fB\-printtoconsole\fR
@@ -414,11 +414,11 @@ Enable staking functionality (0\-1, default: 1)
 .HP
 \fB\-sqrstake=\fR<n>
 .IP
-Enable or disable staking functionality for HLM inputs (0\-1, default: 1)
+Enable or disable staking functionality for SQR inputs (0\-1, default: 1)
 .HP
 \fB\-zsqrstake=\fR<n>
 .IP
-Enable or disable staking functionality for zHLM inputs (0\-1, default:
+Enable or disable staking functionality for zSQR inputs (0\-1, default:
 1)
 .HP
 \fB\-reservebalance=\fR<amt>
@@ -477,12 +477,12 @@ Preferred Denomination for automatically minted Zerocoin
 .HP
 \fB\-backupzsqr=\fR<n>
 .IP
-Enable automatic wallet backups triggered after each zHLM minting (0\-1,
+Enable automatic wallet backups triggered after each zSQR minting (0\-1,
 default: 1)
 .HP
 \fB\-precompute=\fR<n>
 .IP
-Enable precomputation of zHLM spends and stakes (0\-1, default 1)
+Enable precomputation of zSQR spends and stakes (0\-1, default 1)
 .HP
 \fB\-precomputecachelength=\fR<n>
 .IP
@@ -491,7 +491,7 @@ Set the number of included blocks to precompute per cycle. (minimum:
 .HP
 \fB\-zsqrbackuppath=\fR<dir|file>
 .IP
-Specify custom backup path to add a copy of any automatic zHLM backup.
+Specify custom backup path to add a copy of any automatic zSQR backup.
 If set as dir, every backup generates a timestamped file. If set as
 file, will rewrite to that file every backup. If backuppath is set as
 well, 4 backups will happen

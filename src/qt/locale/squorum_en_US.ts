@@ -176,8 +176,8 @@
         <translation>Are you sure you wish to encrypt your wallet?</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR HLM&lt;/b&gt;!</source>
-        <translation>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR HLM&lt;/b&gt;!</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR SQR&lt;/b&gt;!</source>
+        <translation>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR SQR&lt;/b&gt;!</translation>
     </message>
     <message>
         <source>Wallet encrypted</source>
@@ -2444,8 +2444,8 @@ https://www.transifex.com/squorum-project/squorum-wallet</translation>
         <translation>UTXO Size:</translation>
     </message>
     <message>
-        <source>0 HLM</source>
-        <translation>0 HLM</translation>
+        <source>0 SQR</source>
+        <translation>0 SQR</translation>
     </message>
     <message>
         <source>Transaction Fee:</source>
@@ -2488,12 +2488,12 @@ https://www.transifex.com/squorum-project/squorum-wallet</translation>
         <translation>Confirmation time:</translation>
     </message>
     <message>
-        <source>If the custom fee is set to 1000 uHLMs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 uHLMs in fee,&lt;br /&gt;while "at least" pays 1000 uHLMs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
-        <translation>If the custom fee is set to 1000 uHLMs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 uHLMs in fee,&lt;br /&gt;while "at least" pays 1000 uHLMs. For transactions bigger than a kilobyte both pay by kilobyte.</translation>
+        <source>If the custom fee is set to 1000 uSQRs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 uSQRs in fee,&lt;br /&gt;while "at least" pays 1000 uSQRs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
+        <translation>If the custom fee is set to 1000 uSQRs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 uSQRs in fee,&lt;br /&gt;while "at least" pays 1000 uSQRs. For transactions bigger than a kilobyte both pay by kilobyte.</translation>
     </message>
     <message>
-        <source>If the custom fee is set to 1000 uHLMs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 uHLMs in fee,&lt;br /&gt;while "total at least" pays 1000 uHLMs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
-        <translation>If the custom fee is set to 1000 uHLMs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 uHLMs in fee,&lt;br /&gt;while "total at least" pays 1000 uHLMs. For transactions bigger than a kilobyte both pay by kilobyte.</translation>
+        <source>If the custom fee is set to 1000 uSQRs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 uSQRs in fee,&lt;br /&gt;while "total at least" pays 1000 uSQRs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
+        <translation>If the custom fee is set to 1000 uSQRs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 uSQRs in fee,&lt;br /&gt;while "total at least" pays 1000 uSQRs. For transactions bigger than a kilobyte both pay by kilobyte.</translation>
     </message>
     <message>
         <source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks.&lt;br /&gt;But be aware that this can end up in a never confirming transaction once there is more demand for sQuorum transactions than the network can process.</source>
@@ -3505,12 +3505,12 @@ https://www.transifex.com/squorum-project/squorum-wallet</translation>
         <translation>Execute command when the best block changes (%s in cmd is replaced by block hash)</translation>
     </message>
     <message>
-        <source>Fees (in HLM/Kb) smaller than this are considered zero fee for relaying (default: %s)</source>
-        <translation>Fees (in HLM/Kb) smaller than this are considered zero fee for relaying (default: %s)</translation>
+        <source>Fees (in SQR/Kb) smaller than this are considered zero fee for relaying (default: %s)</source>
+        <translation>Fees (in SQR/Kb) smaller than this are considered zero fee for relaying (default: %s)</translation>
     </message>
     <message>
-        <source>Fees (in HLM/Kb) smaller than this are considered zero fee for transaction creation (default: %s)</source>
-        <translation>Fees (in HLM/Kb) smaller than this are considered zero fee for transaction creation (default: %s)</translation>
+        <source>Fees (in SQR/Kb) smaller than this are considered zero fee for transaction creation (default: %s)</source>
+        <translation>Fees (in SQR/Kb) smaller than this are considered zero fee for transaction creation (default: %s)</translation>
     </message>
     <message>
         <source>Flush database activity from memory pool to disk log every &lt;n&gt; megabytes (default: %u)</source>
@@ -3605,12 +3605,12 @@ https://www.transifex.com/squorum-project/squorum-wallet</translation>
         <translation>Unable to locate enough Obfuscation denominated funds for this transaction.</translation>
     </message>
     <message>
-        <source>Unable to locate enough Obfuscation non-denominated funds for this transaction that are not equal 10000 HLM.</source>
-        <translation>Unable to locate enough Obfuscation non-denominated funds for this transaction that are not equal 10000 HLM.</translation>
+        <source>Unable to locate enough Obfuscation non-denominated funds for this transaction that are not equal 10000 SQR.</source>
+        <translation>Unable to locate enough Obfuscation non-denominated funds for this transaction that are not equal 10000 SQR.</translation>
     </message>
     <message>
-        <source>Unable to locate enough funds for this transaction that are not equal 10000 HLM.</source>
-        <translation>Unable to locate enough funds for this transaction that are not equal 10000 HLM.</translation>
+        <source>Unable to locate enough funds for this transaction that are not equal 10000 SQR.</source>
+        <translation>Unable to locate enough funds for this transaction that are not equal 10000 SQR.</translation>
     </message>
     <message>
         <source>Use separate SOCKS5 proxy to reach peers via Tor hidden services (default: %s)</source>
@@ -3845,8 +3845,8 @@ https://www.transifex.com/squorum-project/squorum-wallet</translation>
         <translation>Failed to read block</translation>
     </message>
     <message>
-        <source>Fee (in HLM/kB) to add to transactions you send (default: %s)</source>
-        <translation>Fee (in HLM/kB) to add to transactions you send (default: %s)</translation>
+        <source>Fee (in SQR/kB) to add to transactions you send (default: %s)</source>
+        <translation>Fee (in SQR/kB) to add to transactions you send (default: %s)</translation>
     </message>
     <message>
         <source>Force safe mode (default: %u)</source>

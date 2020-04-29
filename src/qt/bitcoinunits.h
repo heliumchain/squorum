@@ -58,9 +58,9 @@ public:
       @note Source: https://en.bitcoin.it/wiki/Units . Please add only sensible ones
      */
     enum Unit {
-        HLM,
-        mHLM,
-        uHLM
+        SQR,
+        mSQR,
+        uSQR
     };
 
     enum SeparatorStyle {

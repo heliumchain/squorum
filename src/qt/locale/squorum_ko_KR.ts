@@ -176,8 +176,8 @@
         <translation>지갑을 암호화 하시겠습니까?</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR HLM&lt;/b&gt;!</source>
-        <translation>경고: 지갑 암호화 후 암호를 분실하게 되면 &lt;b&gt;모든 HLM를 잃게 됩니다&lt;/b&gt;!</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR SQR&lt;/b&gt;!</source>
+        <translation>경고: 지갑 암호화 후 암호를 분실하게 되면 &lt;b&gt;모든 SQR를 잃게 됩니다&lt;/b&gt;!</translation>
     </message>
     <message>
         <source>Wallet encrypted</source>
@@ -1608,8 +1608,8 @@ Please be patient after clicking import.</source>
         <translation>주소 / 금액:</translation>
     </message>
     <message>
-        <source>Add destinations to send HLM to</source>
-        <translation>HLM를 보낼 목적지 추가</translation>
+        <source>Add destinations to send SQR to</source>
+        <translation>SQR를 보낼 목적지 추가</translation>
     </message>
     <message>
         <source>Add &amp;Destination</source>
@@ -1959,8 +1959,8 @@ https://www.transifex.com/squorum-project/squorum-wallet</translation>
         <translation>전체 잔액, (현재 전송이 불가능한 코인 포함)</translation>
     </message>
     <message>
-        <source>HLM Balance</source>
-        <translation>HLM 잔액</translation>
+        <source>SQR Balance</source>
+        <translation>SQR 잔액</translation>
     </message>
     <message>
         <source>Pending:</source>
@@ -2027,8 +2027,8 @@ https://www.transifex.com/squorum-project/squorum-wallet</translation>
         <translation>출금 가능 액수:</translation>
     </message>
     <message>
-        <source>Locked HLM or Masternode collaterals. These are excluded from zHLM minting.</source>
-        <translation>잠금 HLM 또는 Masternode collaterals. 이들은 zHLM minting에서 제외됩니다.</translation>
+        <source>Locked SQR or Masternode collaterals. These are excluded from zSQR minting.</source>
+        <translation>잠금 SQR 또는 Masternode collaterals. 이들은 zSQR minting에서 제외됩니다.</translation>
     </message>
     <message>
         <source>Locked:</source>
@@ -2043,10 +2043,10 @@ https://www.transifex.com/squorum-project/squorum-wallet</translation>
         <translation>동기화되지 않음</translation>
     </message>
     <message>
-        <source>Current percentage of zHLM.
+        <source>Current percentage of zSQR.
 If AutoMint is enabled this percentage will settle around the configured AutoMint percentage (default = 10%).
 </source>
-        <translation>현재 zHLM의 백분율 .
+        <translation>현재 zSQR의 백분율 .
 자동 저장 기능이 활성화 된 경우이 비율은 구성된 자동 저장 비율 (기본값 = 10 %)을 기준으로 정해집니다.</translation>
     </message>
     <message>
@@ -2189,8 +2189,8 @@ To enable AutoMint change 'enablezeromint=0' to 'enablezeromint=1' in squorum.co
         <translation>0</translation>
     </message>
     <message>
-        <source>zHLM</source>
-        <translation>zHLM</translation>
+        <source>zSQR</source>
+        <translation>zSQR</translation>
     </message>
     <message>
         <source>Reset Zerocoin Wallet DB. Deletes transactions that did not make it into the blockchain.</source>
@@ -2217,12 +2217,12 @@ To enable AutoMint change 'enablezeromint=0' to 'enablezeromint=1' in squorum.co
         <translation>프라이버시</translation>
     </message>
     <message>
-        <source>zHLM Control</source>
-        <translation>zHLM 컨트롤</translation>
+        <source>zSQR Control</source>
+        <translation>zSQR 컨트롤</translation>
     </message>
     <message>
-        <source>zHLM Selected:</source>
-        <translation>선택된 zHLM :</translation>
+        <source>zSQR Selected:</source>
+        <translation>선택된 zSQR :</translation>
     </message>
     <message>
         <source>Quantity Selected:</source>
@@ -2237,24 +2237,24 @@ To enable AutoMint change 'enablezeromint=0' to 'enablezeromint=1' in squorum.co
         <translation>제로코인 보내기</translation>
     </message>
     <message>
-        <source>Available (mature and spendable) zHLM for spending</source>
-        <translation>전송 가능한 zHLM</translation>
+        <source>Available (mature and spendable) zSQR for spending</source>
+        <translation>전송 가능한 zSQR</translation>
     </message>
     <message>
         <source>Available Balance:</source>
         <translation>가능한 잔액:</translation>
     </message>
     <message>
-        <source>Available (mature and spendable) zHLM for spending
+        <source>Available (mature and spendable) zSQR for spending
 
-zHLM are mature when they have more than 20 confirmations AND more than 2 mints of the same denomination after them were minted</source>
-        <translation>지출에 사용할 수있는 성숙한 소비재 zHLM
+zSQR are mature when they have more than 20 confirmations AND more than 2 mints of the same denomination after them were minted</source>
+        <translation>지출에 사용할 수있는 성숙한 소비재 zSQR
 
-zHLM는 성명서가 20 개 이상 있고 명칭이 동일하지 않은 2 개 이상의 민트가 작성되었을 때 성숙합니다.</translation>
+zSQR는 성명서가 20 개 이상 있고 명칭이 동일하지 않은 2 개 이상의 민트가 작성되었을 때 성숙합니다.</translation>
     </message>
     <message>
-        <source>0 zHLM</source>
-        <translation>0 zHLM</translation>
+        <source>0 zSQR</source>
+        <translation>0 zSQR</translation>
     </message>
     <message>
         <source>Pay &amp;To:</source>
@@ -2262,7 +2262,7 @@ zHLM는 성명서가 20 개 이상 있고 명칭이 동일하지 않은 2 개 �
     </message>
     <message>
         <source>The sQuorum address to send the payment to. Creates local payment to yourself when empty.</source>
-        <translation>HLM를 전송할 sQuorum 주소입니다. 비어있을 때 자신에게 지불할 주소를 생성합니다.</translation>
+        <translation>SQR를 전송할 sQuorum 주소입니다. 비어있을 때 자신에게 지불할 주소를 생성합니다.</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -2313,7 +2313,7 @@ zHLM는 성명서가 20 개 이상 있고 명칭이 동일하지 않은 2 개 �
         <translation>제로코인 상태 :</translation>
     </message>
     <message>
-        <source>Total Balance including unconfirmed and immature zHLM</source>
+        <source>Total Balance including unconfirmed and immature zSQR</source>
         <translation>승인중이거나, 생성중인 제로코인도 포함된 전체 잔액입니다.</translation>
     </message>
     <message>
@@ -2335,24 +2335,24 @@ Immature: confirmed, but less than 1 mint of the same denomination after it was 
 미성숙 : 확인되었지만 발행 된 후 같은 종파 1 개 미만</translation>
     </message>
     <message>
-        <source>Show the current status of automatic zHLM minting.
+        <source>Show the current status of automatic zSQR minting.
 
 To change the status (restart required):
 - enable: add 'enablezeromint=1' to squorum.conf
 - disable: add 'enablezeromint=0' to squorum.conf
 
 To change the percentage (no restart required):
-- menu Settings-&gt;Options-&gt;Percentage of autominted zHLM
+- menu Settings-&gt;Options-&gt;Percentage of autominted zSQR
 
 </source>
-        <translation>현재 zHLM 자동 생성 상태를 보여줍니다.
+        <translation>현재 zSQR 자동 생성 상태를 보여줍니다.
 
 자동생성 상태를 변경하시려면 (지갑 재시작 필요함):
 - 활성화: 'enablezeromint=1' 를 squorum.conf 파일에 추가
 - 비활성화: 'enablezeromint=0' 를 squorum.conf 파일에 추가
 
 자동 생성 비율 변경하시려면 (지갑 재시작 필요없음):
-- 메뉴 설정-&gt;옵션-&gt;zHLM 자동생성 비율
+- 메뉴 설정-&gt;옵션-&gt;zSQR 자동생성 비율
 
 </translation>
     </message>
@@ -2527,12 +2527,12 @@ Please be patient...</source>
 기다려주세요...</translation>
     </message>
     <message>
-        <source>zHLM Spend #: </source>
-        <translation>zHLM 전송 # :</translation>
+        <source>zSQR Spend #: </source>
+        <translation>zSQR 전송 # :</translation>
     </message>
     <message>
-        <source>zHLM Mint</source>
-        <translation>zHLM 생성</translation>
+        <source>zSQR Mint</source>
+        <translation>zSQR 생성</translation>
     </message>
     <message>
         <source> &lt;b&gt;enabled&lt;/b&gt;.</source>
@@ -2547,12 +2547,12 @@ Please be patient...</source>
         <translation> 구성된 목표 비율 : &lt;b&gt;</translation>
     </message>
     <message>
-        <source>zHLM is currently disabled due to maintenance.</source>
-        <translation>zHLM는 현재 점검중이라 사용하실수 없습니다.</translation>
+        <source>zSQR is currently disabled due to maintenance.</source>
+        <translation>zSQR는 현재 점검중이라 사용하실수 없습니다.</translation>
     </message>
     <message>
-        <source>zHLM is currently undergoing maintenance.</source>
-        <translation>zHLM는 현재 점검중입니다.</translation>
+        <source>zSQR is currently undergoing maintenance.</source>
+        <translation>zSQR는 현재 점검중입니다.</translation>
     </message>
     <message>
         <source>Denom. with value &lt;b&gt;1&lt;/b&gt;:</source>
@@ -2993,8 +2993,8 @@ Please be patient...</source>
         <translation>맞춤 백업 경로 :</translation>
     </message>
     <message>
-        <source>Custom zHLM Backup Path:</source>
-        <translation>맞춤 zHLM 백업 경로 :</translation>
+        <source>Custom zSQR Backup Path:</source>
+        <translation>맞춤 zSQR 백업 경로 :</translation>
     </message>
     <message>
         <source>Custom Backups Threshold:</source>
@@ -3442,8 +3442,8 @@ Please be patient...</source>
         <translation>UTXO 크기:</translation>
     </message>
     <message>
-        <source>0 HLM</source>
-        <translation>0 HLM</translation>
+        <source>0 SQR</source>
+        <translation>0 SQR</translation>
     </message>
     <message>
         <source>Transaction Fee:</source>
@@ -3498,12 +3498,12 @@ Please be patient...</source>
         <translation>자동으로 선택됩니다.</translation>
     </message>
     <message>
-        <source>If the custom fee is set to 1000 uHLMs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 uHLMs in fee,&lt;br /&gt;while "at least" pays 1000 uHLMs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
-        <translation>트랜잭션이 250바이트 인 경우 사용자 지정 수수료가 1000 uHLMs로 설정되고,&lt;br /&gt;1000 uHLMs 안에는 최소 "킬로바이트당" 250 uHLMs 만 지불합니다. 1 킬로바이트보다 큰 트랜잭션의 경우 모두 킬로바이트 단위로 지불합니다.</translation>
+        <source>If the custom fee is set to 1000 uSQRs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 uSQRs in fee,&lt;br /&gt;while "at least" pays 1000 uSQRs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
+        <translation>트랜잭션이 250바이트 인 경우 사용자 지정 수수료가 1000 uSQRs로 설정되고,&lt;br /&gt;1000 uSQRs 안에는 최소 "킬로바이트당" 250 uSQRs 만 지불합니다. 1 킬로바이트보다 큰 트랜잭션의 경우 모두 킬로바이트 단위로 지불합니다.</translation>
     </message>
     <message>
-        <source>If the custom fee is set to 1000 uHLMs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 uHLMs in fee,&lt;br /&gt;while "total at least" pays 1000 uHLMs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
-        <translation>트랜잭션이 250바이트 인 경우 사용자 지정 수수료가 1000 uHLMs로 설정되고,&lt;br /&gt;1000 uHLMs 안에는 전체에서 최소 "킬로바이트당" 250 uHLMs 만 지불합니다. 1 킬로바이트보다 큰 트랜잭션의 경우 모두 킬로바이트 단위로 지불합니다.</translation>
+        <source>If the custom fee is set to 1000 uSQRs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 uSQRs in fee,&lt;br /&gt;while "total at least" pays 1000 uSQRs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
+        <translation>트랜잭션이 250바이트 인 경우 사용자 지정 수수료가 1000 uSQRs로 설정되고,&lt;br /&gt;1000 uSQRs 안에는 전체에서 최소 "킬로바이트당" 250 uSQRs 만 지불합니다. 1 킬로바이트보다 큰 트랜잭션의 경우 모두 킬로바이트 단위로 지불합니다.</translation>
     </message>
     <message>
         <source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks.&lt;br /&gt;But be aware that this can end up in a never confirming transaction once there is more demand for sQuorum transactions than the network can process.</source>
@@ -3554,8 +3554,8 @@ Please be patient...</source>
         <translation>&amp;받는 사람 추가</translation>
     </message>
     <message>
-        <source>Anonymized HLM</source>
-        <translation>익명화된 HLM</translation>
+        <source>Anonymized SQR</source>
+        <translation>익명화된 SQR</translation>
     </message>
     <message>
         <source>Balance:</source>
@@ -4195,12 +4195,12 @@ Please be patient...</source>
         <translation>난독화를 통해 수신 됨</translation>
     </message>
     <message>
-        <source>HLM Stake</source>
-        <translation>HLM stake</translation>
+        <source>SQR Stake</source>
+        <translation>SQR stake</translation>
     </message>
     <message>
-        <source>zHLM Stake</source>
-        <translation>zHLM stake</translation>
+        <source>zSQR Stake</source>
+        <translation>zSQR stake</translation>
     </message>
     <message>
         <source>Obfuscation Denominate</source>
@@ -4219,32 +4219,32 @@ Please be patient...</source>
         <translation>난독화 표시 만들기</translation>
     </message>
     <message>
-        <source>Converted HLM to zHLM</source>
-        <translation>HLM를 zHLM로 변환</translation>
+        <source>Converted SQR to zSQR</source>
+        <translation>SQR를 zSQR로 변환</translation>
     </message>
     <message>
-        <source>Spent zHLM</source>
-        <translation>zHLM 사용</translation>
+        <source>Spent zSQR</source>
+        <translation>zSQR 사용</translation>
     </message>
     <message>
-        <source>Received HLM from zHLM</source>
-        <translation>zHLM를 HLM로 받음</translation>
+        <source>Received SQR from zSQR</source>
+        <translation>zSQR를 SQR로 받음</translation>
     </message>
     <message>
-        <source>Minted Change as zHLM from zHLM Spend</source>
-        <translation>zHLM 전송후 남은 zHLM로 잔돈 생성</translation>
+        <source>Minted Change as zSQR from zSQR Spend</source>
+        <translation>zSQR 전송후 남은 zSQR로 잔돈 생성</translation>
     </message>
     <message>
-        <source>Converted zHLM to HLM</source>
-        <translation>zHLM를 HLM로 변환</translation>
+        <source>Converted zSQR to SQR</source>
+        <translation>zSQR를 SQR로 변환</translation>
     </message>
     <message>
-        <source>Anonymous (zHLM Transaction)</source>
-        <translation>Anonymous (zHLM 거래)</translation>
+        <source>Anonymous (zSQR Transaction)</source>
+        <translation>Anonymous (zSQR 거래)</translation>
     </message>
     <message>
-        <source>Anonymous (zHLM Stake)</source>
-        <translation>Anonymous (zHLM 스테이킹)</translation>
+        <source>Anonymous (zSQR Stake)</source>
+        <translation>Anonymous (zSQR 스테이킹)</translation>
     </message>
     <message>
         <source>Sent to</source>
@@ -4454,12 +4454,12 @@ Please be patient...</source>
         <translation>내보내기 성공</translation>
     </message>
     <message>
-        <source>Received HLM from zHLM</source>
-        <translation>zHLM를 HLM로 받음</translation>
+        <source>Received SQR from zSQR</source>
+        <translation>zSQR를 SQR로 받음</translation>
     </message>
     <message>
-        <source>Zerocoin Spend, Change in zHLM</source>
-        <translation>제로코인 전송, 잔돈은 zHLM</translation>
+        <source>Zerocoin Spend, Change in zSQR</source>
+        <translation>제로코인 전송, 잔돈은 zSQR</translation>
     </message>
     <message>
         <source>The transaction history was successfully saved to %1.</source>
@@ -4495,8 +4495,8 @@ Please be patient...</source>
         <translation>코인 전송 </translation>
     </message>
     <message>
-        <source>SwiftX doesn't support sending values that high yet. Transactions are currently limited to %1 HLM.</source>
-        <translation>SwiftTX는 아직 높은 값을 전송하는 것을 지원하지 않습니다. 트랜잭션은 현재 %1 HLM로 제한됩니다.</translation>
+        <source>SwiftX doesn't support sending values that high yet. Transactions are currently limited to %1 SQR.</source>
+        <translation>SwiftTX는 아직 높은 값을 전송하는 것을 지원하지 않습니다. 트랜잭션은 현재 %1 SQR로 제한됩니다.</translation>
     </message>
 </context>
 <context>
@@ -4529,8 +4529,8 @@ Please be patient...</source>
 <context>
     <name>ZSqrControlDialog</name>
     <message>
-        <source>Select zHLM to Spend</source>
-        <translation>사용할 zHLM 선택</translation>
+        <source>Select zSQR to Spend</source>
+        <translation>사용할 zSQR 선택</translation>
     </message>
     <message>
         <source>Quantity</source>
@@ -4541,8 +4541,8 @@ Please be patient...</source>
         <translation>0</translation>
     </message>
     <message>
-        <source>zHLM</source>
-        <translation>zHLM</translation>
+        <source>zSQR</source>
+        <translation>zSQR</translation>
     </message>
     <message>
         <source>Select/Deselect All</source>
@@ -4604,16 +4604,16 @@ Please be patient...</source>
         <translation>MIT 소프트웨어 라이센스에 따라 배포, 첨부 파일 COPYING 또는 &lt;http://www.opensource.org/licenses/mit-license.php&gt; 를 참조하십시오.</translation>
     </message>
     <message>
-        <source>Enable automatic wallet backups triggered after each zHLM minting (0-1, default: %u)</source>
-        <translation>Enable automatic wallet backups triggered after each zHLM minting (0-1, default: %u)</translation>
+        <source>Enable automatic wallet backups triggered after each zSQR minting (0-1, default: %u)</source>
+        <translation>Enable automatic wallet backups triggered after each zSQR minting (0-1, default: %u)</translation>
     </message>
     <message>
-        <source>Enable or disable staking functionality for HLM inputs (0-1, default: %u)</source>
-        <translation>Enable or disable staking functionality for HLM inputs (0-1, default: %u)</translation>
+        <source>Enable or disable staking functionality for SQR inputs (0-1, default: %u)</source>
+        <translation>Enable or disable staking functionality for SQR inputs (0-1, default: %u)</translation>
     </message>
     <message>
-        <source>Enable or disable staking functionality for zHLM inputs (0-1, default: %u)</source>
-        <translation>Enable or disable staking functionality for zHLM inputs (0-1, default: %u)</translation>
+        <source>Enable or disable staking functionality for zSQR inputs (0-1, default: %u)</source>
+        <translation>Enable or disable staking functionality for zSQR inputs (0-1, default: %u)</translation>
     </message>
     <message>
         <source>Enable spork administration functionality with the appropriate private key.</source>
@@ -4648,12 +4648,12 @@ Please be patient...</source>
         <translation>최고 블록이 변경될 경우 명령을 실행하십시오 (명령 내 %s 는 블록 해시로 대체 되었습니다)</translation>
     </message>
     <message>
-        <source>Fees (in HLM/Kb) smaller than this are considered zero fee for relaying (default: %s)</source>
-        <translation>이것보다 작은 수수료 (HLM/Kb)는 중계 수수료가 없는 것으로 간주됩니다 (기본값: %s)</translation>
+        <source>Fees (in SQR/Kb) smaller than this are considered zero fee for relaying (default: %s)</source>
+        <translation>이것보다 작은 수수료 (SQR/Kb)는 중계 수수료가 없는 것으로 간주됩니다 (기본값: %s)</translation>
     </message>
     <message>
-        <source>Fees (in HLM/Kb) smaller than this are considered zero fee for transaction creation (default: %s)</source>
-        <translation>이것보다 작은 수수료 (HLM/Kb)는 트랜잭션 생성 수수료가 없는 것으로 간주됩니다 (기본값: %s)</translation>
+        <source>Fees (in SQR/Kb) smaller than this are considered zero fee for transaction creation (default: %s)</source>
+        <translation>이것보다 작은 수수료 (SQR/Kb)는 트랜잭션 생성 수수료가 없는 것으로 간주됩니다 (기본값: %s)</translation>
     </message>
     <message>
         <source>Flush database activity from memory pool to disk log every &lt;n&gt; megabytes (default: %u)</source>
@@ -4756,12 +4756,12 @@ Please be patient...</source>
         <translation>이 트랜잭션를 위해 난독화 표기된 충분한 금액을 찾을 수 없습니다.</translation>
     </message>
     <message>
-        <source>Unable to locate enough Obfuscation non-denominated funds for this transaction that are not equal 10000 HLM.</source>
-        <translation>이 트랜잭션를 위해 난독화 표기가 안된 충분한 금액을 찾을 수 없습니다. 10000 HLM과 일치하지 않음.</translation>
+        <source>Unable to locate enough Obfuscation non-denominated funds for this transaction that are not equal 10000 SQR.</source>
+        <translation>이 트랜잭션를 위해 난독화 표기가 안된 충분한 금액을 찾을 수 없습니다. 10000 SQR과 일치하지 않음.</translation>
     </message>
     <message>
-        <source>Unable to locate enough funds for this transaction that are not equal 10000 HLM.</source>
-        <translation>트랜잭션에 대한 충분한 금액을 찾을 수 없습니다. 10000 HLM와 같지 않음</translation>
+        <source>Unable to locate enough funds for this transaction that are not equal 10000 SQR.</source>
+        <translation>트랜잭션에 대한 충분한 금액을 찾을 수 없습니다. 10000 SQR와 같지 않음</translation>
     </message>
     <message>
         <source>Use separate SOCKS5 proxy to reach peers via Tor hidden services (default: %s)</source>
@@ -5036,8 +5036,8 @@ Please be patient...</source>
         <translation>블록을 받아오는데 실패했습니다.</translation>
     </message>
     <message>
-        <source>Fee (in HLM/kB) to add to transactions you send (default: %s)</source>
-        <translation>당신이 보내는 트랜잭션에 추가 할 수수료 (HLM/kB) (기본값: %s)</translation>
+        <source>Fee (in SQR/kB) to add to transactions you send (default: %s)</source>
+        <translation>당신이 보내는 트랜잭션에 추가 할 수수료 (SQR/kB) (기본값: %s)</translation>
     </message>
     <message>
         <source>Force safe mode (default: %u)</source>
@@ -5137,11 +5137,11 @@ Please be patient...</source>
     </message>
     <message>
         <source>Percentage of automatically minted Zerocoin  (1-100, default: %u)</source>
-        <translation>자동생성 zHLM 비율  (1-100, default: %u)</translation>
+        <translation>자동생성 zSQR 비율  (1-100, default: %u)</translation>
     </message>
     <message>
-        <source>Reindex the HLM and zHLM money supply statistics</source>
-        <translation>HLM 및 zHLM 공급량 다시 색인</translation>
+        <source>Reindex the SQR and zSQR money supply statistics</source>
+        <translation>SQR 및 zSQR 공급량 다시 색인</translation>
     </message>
     <message>
         <source>Reindexing zerocoin database...</source>
@@ -5216,8 +5216,8 @@ Please be patient...</source>
         <translation>자동생성 제로코인 선호 디노미네이션 (1/5/10/50/100/500/1000/5000) 0사용안됨, 기본값 : %u)</translation>
     </message>
     <message>
-        <source>Specify custom backup path to add a copy of any automatic zHLM backup. If set as dir, every backup generates a timestamped file. If set as file, will rewrite to that file every backup. If backuppath is set as well, 4 backups will happen</source>
-        <translation>Specify custom backup path to add a copy of any automatic zHLM backup. If set as dir, every backup generates a timestamped file. If set as file, will rewrite to that file every backup. If backuppath is set as well, 4 backups will happen</translation>
+        <source>Specify custom backup path to add a copy of any automatic zSQR backup. If set as dir, every backup generates a timestamped file. If set as file, will rewrite to that file every backup. If backuppath is set as well, 4 backups will happen</source>
+        <translation>Specify custom backup path to add a copy of any automatic zSQR backup. If set as dir, every backup generates a timestamped file. If set as file, will rewrite to that file every backup. If backuppath is set as well, 4 backups will happen</translation>
     </message>
     <message>
         <source>Specify custom backup path to add a copy of any wallet backup. If set as dir, every backup generates a timestamped file. If set as file, will rewrite to that file every backup.</source>
@@ -5628,8 +5628,8 @@ Please be patient...</source>
         <translation>sporks와 동기화 중입니다...</translation>
     </message>
     <message>
-        <source>Syncing zHLM wallet...</source>
-        <translation>zHLM 지갑 동기화중...</translation>
+        <source>Syncing zSQR wallet...</source>
+        <translation>zSQR 지갑 동기화중...</translation>
     </message>
     <message>
         <source>The coin spend has been used</source>
@@ -5736,8 +5736,8 @@ Please be patient...</source>
         <translation>JSON-RPC 연결 사용자 이름</translation>
     </message>
     <message>
-        <source>Value is below the smallest available denomination (= 1) of zHLM</source>
-        <translation>Value is below the smallest available denomination (= 1) of zHLM</translation>
+        <source>Value is below the smallest available denomination (= 1) of zSQR</source>
+        <translation>Value is below the smallest available denomination (= 1) of zSQR</translation>
     </message>
     <message>
         <source>Verifying blocks...</source>
@@ -5781,7 +5781,7 @@ Please be patient...</source>
     </message>
     <message>
         <source>You don't have enough Zerocoins in your wallet</source>
-        <translation>지갑에 zHLM 가 부족합니다.</translation>
+        <translation>지갑에 zSQR 가 부족합니다.</translation>
     </message>
     <message>
         <source>You need to rebuild the database using -reindex to change -txindex</source>

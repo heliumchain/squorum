@@ -130,7 +130,7 @@ static const unsigned char REJECT_DUST = 0x41;
 static const unsigned char REJECT_INSUFFICIENTFEE = 0x42;
 static const unsigned char REJECT_CHECKPOINT = 0x43;
 
-/** zHLM precomputing variables
+/** zSQR precomputing variables
  * Set the number of included blocks to precompute per cycle. */
 static const int DEFAULT_PRECOMPUTE_LENGTH = 1000;
 static const int MIN_PRECOMPUTE_LENGTH = 500;
@@ -243,7 +243,7 @@ bool GetOutput(const uint256& hash, unsigned int index, CValidationState& state,
 
 // ***TODO***
 double ConvertBitsToDouble(unsigned int nBits);
-int64_t GetMasternodePayment(int nHeight, int64_t blockValue, int nMasternodeCount, bool isZHLMStake);
+int64_t GetMasternodePayment(int nHeight, int64_t blockValue, int nMasternodeCount, bool isZSQRStake);
 unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHeader* pblock, bool fProofOfStake);
 
 bool ActivateBestChain(CValidationState& state, CBlock* pblock = NULL, bool fAlreadyChecked = false);
@@ -367,9 +367,9 @@ bool IsBlockHashInChain(const uint256& hashBlock);
 /* NOTE: GJH inappropriate for sQuorum
 bool ValidOutPoint(const COutPoint out, int nHeight);
 */
-void RecalculateZHLMSpent();
-void RecalculateZHLMMinted();
-bool RecalculateHLMSupply(int nHeightStart);
+void RecalculateZSQRSpent();
+void RecalculateZSQRMinted();
+bool RecalculateSQRSupply(int nHeightStart);
 bool ReindexAccumulators(std::list<uint256>& listMissingCheckpoints, std::string& strError);
 
 

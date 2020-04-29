@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef sQuorum_ZHLMCHAIN_H
-#define sQuorum_ZHLMCHAIN_H
+#ifndef sQuorum_ZSQRCHAIN_H
+#define sQuorum_ZSQRCHAIN_H
 
 #include "libzerocoin/Coin.h"
 #include "libzerocoin/Denominations.h"
@@ -40,4 +40,4 @@ bool TxOutToPublicCoin(const CTxOut& txout, libzerocoin::PublicCoin& pubCoin, CV
 std::list<libzerocoin::CoinDenomination> ZerocoinSpendListFromBlock(const CBlock& block, bool fFilterInvalid);
 
 
-#endif //sQuorum_ZHLMCHAIN_H
+#endif //sQuorum_ZSQRCHAIN_H

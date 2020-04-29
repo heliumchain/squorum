@@ -40,48 +40,48 @@ frequently tested on them.
 Notable Changes
 ==============
 
-zHLM Updates
+zSQR Updates
 --------------
 
-### zHLM Staking
+### zSQR Staking
 
-zHLM Staking is here! zHLM staking will be activated on the morning of the 8th of May 2018. With the release of zHLM staking, there are effectively 2 versions of zHLM, zHLM minted on the 3.0.6 sQuorum wallet or lower, and zHLM minted on sQuorum wallet version or higher. New features in this release will require the use of zHLM v2, zHLM minted on this wallet release 3.1.0 or later. If you currently hold zHLM v1 and wish to take advantage of zHLM staking and deterministic zHLM, you will need to spend the zHLM v1 to yourself and remint zHLM v2.
-Note: To find your zHLM version, click the privacy tab, then the zHLM Control button then expand the arrows next to the desired denomination.
-
-
-### Deterministic zHLM Seed Keys
-
-zHLM is now associated with a deterministic seed key. With this seed key, users are able to securely backup their zHLM outside of the wallet that the zHLM had been minted on. zHLM can also be transferred from wallet to wallet without the need of transferring the wallet data file.
+zSQR Staking is here! zSQR staking will be activated on the morning of the 8th of May 2018. With the release of zSQR staking, there are effectively 2 versions of zSQR, zSQR minted on the 3.0.6 sQuorum wallet or lower, and zSQR minted on sQuorum wallet version or higher. New features in this release will require the use of zSQR v2, zSQR minted on this wallet release 3.1.0 or later. If you currently hold zSQR v1 and wish to take advantage of zSQR staking and deterministic zSQR, you will need to spend the zSQR v1 to yourself and remint zSQR v2.
+Note: To find your zSQR version, click the privacy tab, then the zSQR Control button then expand the arrows next to the desired denomination.
 
 
-### Updated zHLM minting
+### Deterministic zSQR Seed Keys
 
-zHLM minting now only requires 1 further mint (down from 2) to mature. zHLM mints still require 20 confirmations.  Mints also require that the 'second' mint is at least two checkpoints deep in the chain (this was already the case, but the logic was not as precise).
-
-
-### zHLM Search
-
-Users will now have the ability to search the blockchain for a specific serial # to see if a zHLM denomination has been spent or not.
+zSQR is now associated with a deterministic seed key. With this seed key, users are able to securely backup their zSQR outside of the wallet that the zSQR had been minted on. zSQR can also be transferred from wallet to wallet without the need of transferring the wallet data file.
 
 
+### Updated zSQR minting
 
-HLM/zHLM Staking and Masternode Rewards
+zSQR minting now only requires 1 further mint (down from 2) to mature. zSQR mints still require 20 confirmations.  Mints also require that the 'second' mint is at least two checkpoints deep in the chain (this was already the case, but the logic was not as precise).
+
+
+### zSQR Search
+
+Users will now have the ability to search the blockchain for a specific serial # to see if a zSQR denomination has been spent or not.
+
+
+
+SQR/zSQR Staking and Masternode Rewards
 --------------
 
-### HLM, zHLM and Masternode Payment Schedule
+### SQR, zSQR and Masternode Payment Schedule
 
-To encourage the use of zHLM and increase the sQuorum zerocoin anonymity set, the sQuorum payment schedule has been changed to the following:
+To encourage the use of zSQR and increase the sQuorum zerocoin anonymity set, the sQuorum payment schedule has been changed to the following:
 
-If a user staking zHLM wins the reward for their block, the following zHLM reward will be: 
-- 3 zHLM (3 x 1 denominations) rewarded to the staker, 2 HLM rewarded to the masternode owner and 1 HLM available for the budget. This is a total block reward of 6 HLM, up from 5.
+If a user staking zSQR wins the reward for their block, the following zSQR reward will be: 
+- 3 zSQR (3 x 1 denominations) rewarded to the staker, 2 SQR rewarded to the masternode owner and 1 SQR available for the budget. This is a total block reward of 6 SQR, up from 5.
 
-If a user staking HLM wins the reward, the following amounts will be rewarded: 
-- 2 HLM to the HLM staker, 3 HLM to the Masternode owner and 1 HLM available for the budget. This is a total block reward of 6 HLM, up from 5.
+If a user staking SQR wins the reward, the following amounts will be rewarded: 
+- 2 SQR to the SQR staker, 3 SQR to the Masternode owner and 1 SQR available for the budget. This is a total block reward of 6 SQR, up from 5.
 
 
-### Return change to sender when minting zHLM
+### Return change to sender when minting zSQR
 
-Previously, zHLM minting would send any change to a newly generated "change address". This has caused confusion among some users, and in some cases insufficient backups of the wallet. The wallet will now find the contributing address which contained the most HLM and return the change from a zHLM mint to that address.
+Previously, zSQR minting would send any change to a newly generated "change address". This has caused confusion among some users, and in some cases insufficient backups of the wallet. The wallet will now find the contributing address which contained the most SQR and return the change from a zSQR mint to that address.
 
 
 User Experience
@@ -97,9 +97,9 @@ The overview tab has been simplified greatly to display only balances that are a
 ### Wallet Options
 
 There have been a number of changes to the tasks that you are able to perform from the wallet options. Users will now have the ability to do the following: 
--	Enable and disable the auto zHLM minting feature. This is enabled by default and the enablezeromint=0 setting in the squorum.conf file will overwrite the GUI option.
--	The percentage of autominted zHLM can now be set from 1 to 100, changed from 10 – 100.
--	The stake split threshold can now be set VIA the wallet options. This setting is an advanced feature for those wishing to remain staking regular HLM.
+-	Enable and disable the auto zSQR minting feature. This is enabled by default and the enablezeromint=0 setting in the squorum.conf file will overwrite the GUI option.
+-	The percentage of autominted zSQR can now be set from 1 to 100, changed from 10 – 100.
+-	The stake split threshold can now be set VIA the wallet options. This setting is an advanced feature for those wishing to remain staking regular SQR.
 -	“Unlock for staking and anonymization only” is now selected by default when unlocking the wallet from the User Interface
 
 
@@ -127,7 +127,7 @@ Note: System write permissions must be appropriate for the location the wallet i
 ### Details:
 
 * If path is set to directory, the backup will be named `wallet.dat-<year>-<month>-<day>-<hour>-<minute>-<second>`
-* If zHLM backup, auto generated name is `wallet-autozsqrbackup.dat-<year>-<month>-<day>-<hour>-<minute>-<second>`
+* If zSQR backup, auto generated name is `wallet-autozsqrbackup.dat-<year>-<month>-<day>-<hour>-<minute>-<second>`
 * If path set to file, backup will be named `<filename>.dat`
 * walletbackupthreshold enables the user to select the maximum count of backup files to be written before overwriting existing backups.
 
@@ -188,7 +188,7 @@ This allows for a user (such as a third party integration) to query the blockcha
 ### New RPC command 
 `findserial`
 
-Search the zerocoin database for a zerocoinspend transaction that contains the given serial. This will be a helpful tool for the sQuorum support group, which often times sees users say "I didn't spend that zHLM". This RPC call allows for support to grab the serial, and then find the spend tx on the chain.
+Search the zerocoin database for a zerocoinspend transaction that contains the given serial. This will be a helpful tool for the sQuorum support group, which often times sees users say "I didn't spend that zSQR". This RPC call allows for support to grab the serial, and then find the spend tx on the chain.
 
 
 ### New RPC commands 
@@ -206,11 +206,11 @@ Network Layer 2 Changes (Proposals / Budgets / SwiftX)
 
 ### Monthly Budget Increase
 
-As voted on by the sQuorum masternodes, the monthly budget available to be utilised has been increased to 42,000 HLM / month. This HLM only has the opportunity to be raised once per month (paid to winning proposals) with any unused HLM not created by the blockchain.
+As voted on by the sQuorum masternodes, the monthly budget available to be utilised has been increased to 42,000 SQR / month. This SQR only has the opportunity to be raised once per month (paid to winning proposals) with any unused SQR not created by the blockchain.
 
 ### Budget Finalization Fee
 
-The sQuorum finalization fee for successful proposals has now been reduced, this fee is now 5 HLM down from 50 HLM. The total fee outlay for a successful proposal is now a total of 55 HLM.
+The sQuorum finalization fee for successful proposals has now been reduced, this fee is now 5 SQR down from 50 SQR. The total fee outlay for a successful proposal is now a total of 55 SQR.
 
 
 ### SwiftX Raw Transactions
@@ -248,8 +248,8 @@ When inputting wrong data into the GUI for a SOCKS5 proxy, the wallet would cras
 Minor Enhancements
 --------------
 
--	Enforced v1 zHLM spends to require a security level of 100
--	Updates to zHLM spends to avoid segfaults
+-	Enforced v1 zSQR spends to require a security level of 100
+-	Updates to zSQR spends to avoid segfaults
 -	Updates to configuration will now reflect on the privacy tab
 -	Fixed a  bug that would not start masternodes from the sQuorum-Qt masternodes tab
 -	Updated sQuorum-Qt tooltips
@@ -263,12 +263,12 @@ Minor Enhancements
 Further Reading: Version 2 Zerocoins
 ==============
 
-Several critical security flaws in the zerocoin protocol and sQuorum's zerocoin implementation have been patched. Enough has changed that new zerocoins are distinct from old zerocoins, and have been labelled as *version 2*. When using the zHLM Control dialog in the QT wallet, a user is able to see zHLM marked as version 1 or 2.
+Several critical security flaws in the zerocoin protocol and sQuorum's zerocoin implementation have been patched. Enough has changed that new zerocoins are distinct from old zerocoins, and have been labelled as *version 2*. When using the zSQR Control dialog in the QT wallet, a user is able to see zSQR marked as version 1 or 2.
 
-zPoS (zHLM staking)
+zPoS (zSQR staking)
 --------------
 
-Once a zHLM has over 200 confirmations it becomes available to stake. Staking zHLM will consume the exact zerocoin that is staked and replace it with a freshly minted zerocoin of the same denomination as well as a reward of three 1 denomination zHLM. So for example if a 1,000 zHLM denomination is staked, the protocol replaces that with a fresh 1,000 denomination and three1 denomination zHLMs.
+Once a zSQR has over 200 confirmations it becomes available to stake. Staking zSQR will consume the exact zerocoin that is staked and replace it with a freshly minted zerocoin of the same denomination as well as a reward of three 1 denomination zSQR. So for example if a 1,000 zSQR denomination is staked, the protocol replaces that with a fresh 1,000 denomination and three1 denomination zSQRs.
 
 Secure Spending
 --------------
@@ -280,7 +280,7 @@ The serial troll situation is mitigated in version 2 by requiring that the seria
 Deterministic Zerocoin Generation
 --------------
 
-Zerocoins, or zHLM, are now deterministically generated using a unique 256 bit seed. Each wallet will generate a new seed on its first run. The deterministic seed is used to generate a string of zHLM that can be recalculated at any time using the seed. Deterministic zHLM allows for users to backup all of their future zHLM by simply recording their seed and keeping it in a safe place (similar to backing up a private key for HLM). The zHLM seed needs to remain in the wallet in order to spend the zHLM after it is generated, if the seed is changed then the coins will not be spendable because the wallet will not have the ability to regenerate all of the private zHLM data from the seed. It is important that users record & backup their seed after their first run of the wallet. If the wallet is locked during the first run, then the seed will be generated the first time the wallet is unlocked.
+Zerocoins, or zSQR, are now deterministically generated using a unique 256 bit seed. Each wallet will generate a new seed on its first run. The deterministic seed is used to generate a string of zSQR that can be recalculated at any time using the seed. Deterministic zSQR allows for users to backup all of their future zSQR by simply recording their seed and keeping it in a safe place (similar to backing up a private key for SQR). The zSQR seed needs to remain in the wallet in order to spend the zSQR after it is generated, if the seed is changed then the coins will not be spendable because the wallet will not have the ability to regenerate all of the private zSQR data from the seed. It is important that users record & backup their seed after their first run of the wallet. If the wallet is locked during the first run, then the seed will be generated the first time the wallet is unlocked.
 
 Zerocoin Modulus
 --------------
@@ -294,7 +294,7 @@ sQuorum's zerocoin implementation used the same code from the ZCoin project to i
 Detailed release notes follow. This overview includes changes that affect behavior, not code moves, refactors and string updates. For convenience in locating the code changes and accompanying discussion, both the pull request and git merge commit are mentioned.
 
 ### Core Features
- - #582 `cb1632520` [Core] zHLM v2: zPoS dzHLM ezHLM external backup and budget fixes (too many to list)
+ - #582 `cb1632520` [Core] zSQR v2: zPoS dzSQR ezSQR external backup and budget fixes (too many to list)
  - #558 `c7e6f0f7f` [Core] Remove Gitan-OSX warning for High Sierra builds (Mrs-X)
  - #523 `926c073ea` [Core] Give high priority to zerocoinspends to make it into the next block. (presstab)
  - #535 `5e8875feb` [Core] Minor refacturing + unused variable removed (Mrs-X)
@@ -318,7 +318,7 @@ Detailed release notes follow. This overview includes changes that affect behavi
  - #542 `61156def7` [Network] Remove vfReachable and modify IsReachable to only use vfLimited. (Patrick Strateman)
 
 ### GUI
- - #572 `d9b23fe60` [Qt] Refresh zHLM balance after resetting mints or spends (warrows)
+ - #572 `d9b23fe60` [Qt] Refresh zSQR balance after resetting mints or spends (warrows)
  - #571 `1c8e7cb7b` [Qt] Update privacy tab info about zeromint on config change (warrows)
  - #568 `f226de09e` [Qt] Connect automint icon to the UI automint setting change (warrows)
  - #566 `84f43857c` [Qt] Add automint status bar icon (Fuzzbawls)
@@ -329,7 +329,7 @@ Detailed release notes follow. This overview includes changes that affect behavi
  - #521 `fbb105a00` [Qt] Make "For anonymization and staking only" checked by default (Mrs-X)
  - #508 `2cf3be6bb` [Qt] Fix crash when inputting wrong port for network proxy (warrows)
  - #500 `4c01ba65d` [Qt] Remove duplicate code for updating address book labels. (blondfrogs)
- - #506 `ae72bf4e2` [Qt] Autoscroll to end of zHLM status output (Mrs-X)
+ - #506 `ae72bf4e2` [Qt] Autoscroll to end of zSQR status output (Mrs-X)
  - #499 `6305264f2` [Qt] Send popup simplified + SwiftTX -> SwiftX (Mrs-X)
  - #490 `ba777e4ef` [Qt] Update MultiSend GUI to allow address labels (blondfrogs)
  - #483 `5b1070365` [Qt] Fixed Dynamic Screen Elements Issue for Multisig (blondfrogs)
@@ -361,15 +361,15 @@ Detailed release notes follow. This overview includes changes that affect behavi
  - #170 `027f16c64` [RPC] Convert source tree from json_spirit to UniValue (Fuzzbawls)
 
 ### Wallet
- - #570 `8c8350b59` [Wallet] Add a check on zHLM spend to avoid a segfault (warrows)
+ - #570 `8c8350b59` [Wallet] Add a check on zSQR spend to avoid a segfault (warrows)
  - #565 `80b803201` [Wallet] Increase valid range for automint percentage (Fuzzbawls)
  - #518 `9f6449a70` [Wallet] Combine fees when possible and fix autocombine insufficient funds (warrows)
  - #497 `f21e4456b` [Wallet] Call AutocombineDust less often (warrows)
  - #498 `bfad2a1df` [Wallet] Change the way transaction list is handled (warrows)
  - #477 `93c5f9ff5` [Wallet] Remove potential memory leak (blondfrogs)
  - #488 `d09cf916a` [Wallet] Fixes an autocombinerewards bug with above max size TXs (warrows)
- - #448 `222ef6e6b` [Wallet] Return change to sender when minting zHLM. (presstab)
- - #445 `fc570fc1e` [Wallet] Only require 1 mint to be added before spending zHLM. (presstab)
+ - #448 `222ef6e6b` [Wallet] Return change to sender when minting zSQR. (presstab)
+ - #445 `fc570fc1e` [Wallet] Only require 1 mint to be added before spending zSQR. (presstab)
  
 ### Miscellaneous
  - #559 `d2b017217` [Bug] Segfault with -enableswifttx=0 / -enableswifttx=false (Mrs-X)

@@ -5,8 +5,8 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 //
 
-#ifndef sQuorum_LIGHTZHLMTHREAD_H
-#define sQuorum_LIGHTZHLMTHREAD_H
+#ifndef sQuorum_LIGHTZSQRTHREAD_H
+#define sQuorum_LIGHTZSQRTHREAD_H
 
 #include <atomic>
 #include "genwit.h"
@@ -53,7 +53,7 @@ public:
 
     void StartLightZsqrThread(boost::thread_group& threadGroup) {
         LogPrintf("%s thread start\n", "squorum-light-thread");
-        threadIns = boost::thread(boost::bind(&CLightWorker::ThreadLightZHLMSimplified, this));
+        threadIns = boost::thread(boost::bind(&CLightWorker::ThreadLightZSQRSimplified, this));
     }
 
     void StopLightZsqrThread() {
@@ -63,10 +63,10 @@ public:
 
 private:
 
-    void ThreadLightZHLMSimplified();
+    void ThreadLightZSQRSimplified();
 
     void rejectWork(CGenWit& wit, int blockHeight, uint32_t errorNumber);
 
 };
 
-#endif //sQuorum_LIGHTZHLMTHREAD_H
+#endif //sQuorum_LIGHTZSQRTHREAD_H

@@ -41,7 +41,7 @@ BOOST_AUTO_TEST_CASE(zerocoin_wrapped_serial_spend_test)
     std::string strWalletFile = "unittestwallet.dat";
     CWalletDB walletdb(strWalletFile, "cr+");
     CWallet wallet(strWalletFile);
-    CzHLMWallet *czHLMWallet = new CzHLMWallet(wallet.strWalletFile);
+    CzSQRWallet *czSQRWallet = new CzSQRWallet(wallet.strWalletFile);
 
     // Get the 5 created mints.
     libzerocoin::CoinDenomination denom = libzerocoin::CoinDenomination::ZQ_FIFTY;
@@ -49,8 +49,8 @@ BOOST_AUTO_TEST_CASE(zerocoin_wrapped_serial_spend_test)
     for (unsigned int i = 0; i < TESTS_COINS_TO_ACCUMULATE; i++) {
         libzerocoin::PrivateCoin coin(ZCParams, denom, false);
         CDeterministicMint dMint;
-        czHLMWallet->GenerateDeterministicZHLM(denom, coin, dMint, true);
-        czHLMWallet->UpdateCount();
+        czSQRWallet->GenerateDeterministicZSQR(denom, coin, dMint, true);
+        czSQRWallet->UpdateCount();
         vCoins.emplace_back(coin);
     }
 

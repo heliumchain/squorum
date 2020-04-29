@@ -176,7 +176,7 @@
         <translation>Ĉu vi certas ke vi volas ĉifri vian monujon?</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR HLM&lt;/b&gt;!</source>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR SQR&lt;/b&gt;!</source>
         <translation>Averto: se vi ĉifras vian monujo kaj perdi vian pasfrazon, vi &lt;b&gt;PERDOS VIAN TUTAN MONON&lt;/b&gt;!</translation>
     </message>
     <message>
@@ -1490,8 +1490,8 @@ Muktisendi: %1</translation>
         <translation>Adreso / Kvanto:</translation>
     </message>
     <message>
-        <source>Add destinations to send HLM to</source>
-        <translation>Aldonu destinoj por sendi HLM al</translation>
+        <source>Add destinations to send SQR to</source>
+        <translation>Aldonu destinoj por sendi SQR al</translation>
     </message>
     <message>
         <source>Add &amp;Destination</source>
@@ -1681,8 +1681,8 @@ https://www.transifex.com/squorum-project/squorum-wallet</translation>
         <translation>Via aktuala elspezebla saldo</translation>
     </message>
     <message>
-        <source>HLM Balance</source>
-        <translation>HLM kvanto</translation>
+        <source>SQR Balance</source>
+        <translation>SQR kvanto</translation>
     </message>
     <message>
         <source>Immature:</source>
@@ -1746,20 +1746,20 @@ https://www.transifex.com/squorum-project/squorum-wallet</translation>
         <translation>0</translation>
     </message>
     <message>
-        <source>zHLM</source>
-        <translation>zHLM</translation>
+        <source>zSQR</source>
+        <translation>zSQR</translation>
     </message>
     <message>
         <source>Reset</source>
         <translation>Restarigi</translation>
     </message>
     <message>
-        <source>zHLM Control</source>
-        <translation>zHLM kontrolu</translation>
+        <source>zSQR Control</source>
+        <translation>zSQR kontrolu</translation>
     </message>
     <message>
-        <source>zHLM Selected:</source>
-        <translation>Elektita zHLM</translation>
+        <source>zSQR Selected:</source>
+        <translation>Elektita zSQR</translation>
     </message>
     <message>
         <source>Quantity Selected:</source>
@@ -1770,12 +1770,12 @@ https://www.transifex.com/squorum-project/squorum-wallet</translation>
         <translation>Elspezi zerocoin</translation>
     </message>
     <message>
-        <source>Available (mature and spendable) zHLM for spending</source>
-        <translation>Havebla (matura kaj elspezebla) zHLM por elspezi</translation>
+        <source>Available (mature and spendable) zSQR for spending</source>
+        <translation>Havebla (matura kaj elspezebla) zSQR por elspezi</translation>
     </message>
     <message>
-        <source>0 zHLM</source>
-        <translation>0 zHLM</translation>
+        <source>0 zSQR</source>
+        <translation>0 zSQR</translation>
     </message>
     <message>
         <source>Pay &amp;To:</source>
@@ -2148,8 +2148,8 @@ Nematura: konfirmita, sed malpli ol 1 minto el la samo nomado post ĝin estis mi
         <translation>Se estas aktiva sed ŝanĝo-adreso estas malpleniĝa au nevalida, ŝanĝo sendos al nova generita adreson.</translation>
     </message>
     <message>
-        <source>0 HLM</source>
-        <translation>0 HLM</translation>
+        <source>0 SQR</source>
+        <translation>0 SQR</translation>
     </message>
     <message>
         <source>Open Coin Control...</source>
@@ -2224,7 +2224,7 @@ Nematura: konfirmita, sed malpli ol 1 minto el la samo nomado post ĝin estis mi
     </message>
     <message>
         <source>The sQuorum address to send the payment to</source>
-        <translation>HLMC adreso por sendi la pago al</translation>
+        <translation>SQRC adreso por sendi la pago al</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -2506,8 +2506,8 @@ Nematura: konfirmita, sed malpli ol 1 minto el la samo nomado post ĝin estis mi
         <translation>0</translation>
     </message>
     <message>
-        <source>zHLM</source>
-        <translation>zHLM</translation>
+        <source>zSQR</source>
+        <translation>zSQR</translation>
     </message>
     </context>
 <context>

@@ -176,8 +176,8 @@
         <translation>Weet u zeker dat u uw portemonnee wilt versleutelen?</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR HLM&lt;/b&gt;!</source>
-        <translation>Waarschuwing: Als u uw portemonnee versleutelt en uw wachtwoord vergeet, zult u &lt;b&gt;AL UW HLM VERLIEZEN&lt;/b&gt;!</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR SQR&lt;/b&gt;!</source>
+        <translation>Waarschuwing: Als u uw portemonnee versleutelt en uw wachtwoord vergeet, zult u &lt;b&gt;AL UW SQR VERLIEZEN&lt;/b&gt;!</translation>
     </message>
     <message>
         <source>Wallet encrypted</source>
@@ -1710,8 +1710,8 @@ Waas alsjeblieft geduldig nadat u op importeren hebt geklikt.</translation>
         <translation>Adres / Bedrag:</translation>
     </message>
     <message>
-        <source>Add destinations to send HLM to</source>
-        <translation>Voeg bestemmingen toe om HLM naar te verzenden</translation>
+        <source>Add destinations to send SQR to</source>
+        <translation>Voeg bestemmingen toe om SQR naar te verzenden</translation>
     </message>
     <message>
         <source>Add &amp;Destination</source>
@@ -2069,8 +2069,8 @@ https://www.transifex.com/squorum-project/squorum-wallet</translation>
         <translation>Totaal saldo, inclusief alle niet-beschikbare munten.</translation>
     </message>
     <message>
-        <source>HLM Balance</source>
-        <translation>HLM Saldi</translation>
+        <source>SQR Balance</source>
+        <translation>SQR Saldi</translation>
     </message>
     <message>
         <source>Pending:</source>
@@ -2137,8 +2137,8 @@ https://www.transifex.com/squorum-project/squorum-wallet</translation>
         <translation>Uitgeefbaar:</translation>
     </message>
     <message>
-        <source>Locked HLM or Masternode collaterals. These are excluded from zHLM minting.</source>
-        <translation>Vergrendelde HLM of Masternode onderpanden. Deze zijn uitgesloten van de zHLM muntage.</translation>
+        <source>Locked SQR or Masternode collaterals. These are excluded from zSQR minting.</source>
+        <translation>Vergrendelde SQR of Masternode onderpanden. Deze zijn uitgesloten van de zSQR muntage.</translation>
     </message>
     <message>
         <source>Locked:</source>
@@ -2153,10 +2153,10 @@ https://www.transifex.com/squorum-project/squorum-wallet</translation>
         <translation>niet gesynchroniseerd</translation>
     </message>
     <message>
-        <source>Current percentage of zHLM.
+        <source>Current percentage of zSQR.
 If AutoMint is enabled this percentage will settle around the configured AutoMint percentage (default = 10%).
 </source>
-        <translation>Huidige percentage van zHLM
+        <translation>Huidige percentage van zSQR
 Als AutoMint ingeschakeld is zal deze percentage afhangen van de geconfigureerde AutoMint percentage (standaard = 10%).
 </translation>
     </message>
@@ -2300,8 +2300,8 @@ Om AutoMint in te schakelend verander je 'enablezeromint=0' naar 'enablezeromint
         <translation>0</translation>
     </message>
     <message>
-        <source>zHLM</source>
-        <translation>zHLM</translation>
+        <source>zSQR</source>
+        <translation>zSQR</translation>
     </message>
     <message>
         <source>Reset Zerocoin Wallet DB. Deletes transactions that did not make it into the blockchain.</source>
@@ -2328,12 +2328,12 @@ Om AutoMint in te schakelend verander je 'enablezeromint=0' naar 'enablezeromint
         <translation>PRIVACY</translation>
     </message>
     <message>
-        <source>zHLM Control</source>
-        <translation>zHLM Control</translation>
+        <source>zSQR Control</source>
+        <translation>zSQR Control</translation>
     </message>
     <message>
-        <source>zHLM Selected:</source>
-        <translation>zHLM geselecteerd:</translation>
+        <source>zSQR Selected:</source>
+        <translation>zSQR geselecteerd:</translation>
     </message>
     <message>
         <source>Quantity Selected:</source>
@@ -2348,24 +2348,24 @@ Om AutoMint in te schakelend verander je 'enablezeromint=0' naar 'enablezeromint
         <translation>Besteed Zerocoin</translation>
     </message>
     <message>
-        <source>Available (mature and spendable) zHLM for spending</source>
-        <translation>Beschikbare (volwassen en uitgeefbaar) zHLM voor besteding</translation>
+        <source>Available (mature and spendable) zSQR for spending</source>
+        <translation>Beschikbare (volwassen en uitgeefbaar) zSQR voor besteding</translation>
     </message>
     <message>
         <source>Available Balance:</source>
         <translation>Beschikbaar saldo:</translation>
     </message>
     <message>
-        <source>Available (mature and spendable) zHLM for spending
+        <source>Available (mature and spendable) zSQR for spending
 
-zHLM are mature when they have more than 20 confirmations AND more than 2 mints of the same denomination after them were minted</source>
-        <translation>Beschikbare (volwwassen en uitgeefbaar) zHLM voor besteding
+zSQR are mature when they have more than 20 confirmations AND more than 2 mints of the same denomination after them were minted</source>
+        <translation>Beschikbare (volwwassen en uitgeefbaar) zSQR voor besteding
 
-zSqr zijn volwassen wanneer zij meer dan 20 bevestigingen hebben EN meer dan 2 muntages van dezelfde denominaties nadat zij gemunt zijn.</translation>
+zSQR zijn volwassen wanneer zij meer dan 20 bevestigingen hebben EN meer dan 2 muntages van dezelfde denominaties nadat zij gemunt zijn.</translation>
     </message>
     <message>
-        <source>0 zHLM</source>
-        <translation>0 zHLM</translation>
+        <source>0 zSQR</source>
+        <translation>0 zSQR</translation>
     </message>
     <message>
         <source>Pay &amp;To:</source>
@@ -2424,8 +2424,8 @@ zSqr zijn volwassen wanneer zij meer dan 20 bevestigingen hebben EN meer dan 2 m
         <translation>Zerocoin Statistieken:</translation>
     </message>
     <message>
-        <source>Total Balance including unconfirmed and immature zHLM</source>
-        <translation>Totale Saldi, inclusief onbevestigde en onvolwassen zHLM</translation>
+        <source>Total Balance including unconfirmed and immature zSQR</source>
+        <translation>Totale Saldi, inclusief onbevestigde en onvolwassen zSQR</translation>
     </message>
     <message>
         <source>Total Zerocoin  Balance:</source>
@@ -2446,24 +2446,24 @@ Immature: confirmed, but less than 1 mint of the same denomination after it was 
 Onvolwassen: bevestigd, maar minder dan 1 mint van dezelfde denominatie nadat het gemint was.</translation>
     </message>
     <message>
-        <source>Show the current status of automatic zHLM minting.
+        <source>Show the current status of automatic zSQR minting.
 
 To change the status (restart required):
 - enable: add 'enablezeromint=1' to squorum.conf
 - disable: add 'enablezeromint=0' to squorum.conf
 
 To change the percentage (no restart required):
-- menu Settings-&gt;Options-&gt;Percentage of autominted zHLM
+- menu Settings-&gt;Options-&gt;Percentage of autominted zSQR
 
 </source>
-        <translation>Toon de huidige status van automatische zHLM-markering.
+        <translation>Toon de huidige status van automatische zSQR-markering.
 
 Om de status te wijzigen (opnieuw opstarten vereist):
 - enable: voeg 'enablezeromint = 1' toe aan squorum.conf
 - uitschakelen: voeg 'enablezeromint = 0' toe aan squorum.conf
 
 Om het percentage te wijzigen (geen herstart vereist):
-- menu Instellingen-&gt; Opties-&gt; Percentage van geautomatiseerde zHLM
+- menu Instellingen-&gt; Opties-&gt; Percentage van geautomatiseerde zSQR
 </translation>
     </message>
     <message>
@@ -2511,8 +2511,8 @@ Om het percentage te wijzigen (geen herstart vereist):
         <translation> 0 x</translation>
     </message>
     <message>
-        <source>Show zHLM denominations list</source>
-        <translation>Toon zHLM denominatielijst</translation>
+        <source>Show zSQR denominations list</source>
+        <translation>Toon zSQR denominatielijst</translation>
     </message>
     <message>
         <source>Show Denominations</source>
@@ -2649,12 +2649,12 @@ Please be patient...</source>
 Wees alsjeblieft geduldig...</translation>
     </message>
     <message>
-        <source>zHLM Spend #: </source>
-        <translation>zHLM besteed #:</translation>
+        <source>zSQR Spend #: </source>
+        <translation>zSQR besteed #:</translation>
     </message>
     <message>
-        <source>zHLM Mint</source>
-        <translation>zHLM mint</translation>
+        <source>zSQR Mint</source>
+        <translation>zSQR mint</translation>
     </message>
     <message>
         <source> &lt;b&gt;enabled&lt;/b&gt;.</source>
@@ -2669,12 +2669,12 @@ Wees alsjeblieft geduldig...</translation>
         <translation>Geconfigureerd doelpercentage:&lt;b&gt;</translation>
     </message>
     <message>
-        <source>zHLM is currently disabled due to maintenance.</source>
-        <translation>zHLM is momenteel uitgeschakeld vanwege onderhoud.</translation>
+        <source>zSQR is currently disabled due to maintenance.</source>
+        <translation>zSQR is momenteel uitgeschakeld vanwege onderhoud.</translation>
     </message>
     <message>
-        <source>zHLM is currently undergoing maintenance.</source>
-        <translation>zHLM wordt momenteel onderhouden.</translation>
+        <source>zSQR is currently undergoing maintenance.</source>
+        <translation>zSQR wordt momenteel onderhouden.</translation>
     </message>
     <message>
         <source>Denom. with value &lt;b&gt;1&lt;/b&gt;:</source>
@@ -3167,8 +3167,8 @@ Wees alsjeblieft geduldig...</translation>
         <translation>Aangepast back-up pad:</translation>
     </message>
     <message>
-        <source>Custom zHLM Backup Path:</source>
-        <translation>Aangepast zHLM back-up pad:</translation>
+        <source>Custom zSQR Backup Path:</source>
+        <translation>Aangepast zSQR back-up pad:</translation>
     </message>
     <message>
         <source>Custom Backups Threshold:</source>
@@ -3627,8 +3627,8 @@ Wees alsjeblieft geduldig...</translation>
         <translation>UTXO grootte:</translation>
     </message>
     <message>
-        <source>0 HLM</source>
-        <translation>0 HLM</translation>
+        <source>0 SQR</source>
+        <translation>0 SQR</translation>
     </message>
     <message>
         <source>Transaction Fee:</source>
@@ -3683,12 +3683,12 @@ Wees alsjeblieft geduldig...</translation>
         <translation>Munten automatisch geselecteerd</translation>
     </message>
     <message>
-        <source>If the custom fee is set to 1000 uHLMs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 uHLMs in fee,&lt;br /&gt;while "at least" pays 1000 uHLMs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
-        <translation>Als de aangepaste vergoeding is ingesteld op 1000 uHLMs en de transactie is slechts 250 bytes, dan betaalt per kilobyte alleen 250 uHLM's in vergoeding,&lt;br /&gt;terwijl "minstens" 1000 uHLM's betaalt. Voor transacties die groter zijn dan een kilobyte, betalen beiden per kilobyte.</translation>
+        <source>If the custom fee is set to 1000 uSQRs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 uSQRs in fee,&lt;br /&gt;while "at least" pays 1000 uSQRs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
+        <translation>Als de aangepaste vergoeding is ingesteld op 1000 uSQRs en de transactie is slechts 250 bytes, dan betaalt per kilobyte alleen 250 uSQR's in vergoeding,&lt;br /&gt;terwijl "minstens" 1000 uSQR's betaalt. Voor transacties die groter zijn dan een kilobyte, betalen beiden per kilobyte.</translation>
     </message>
     <message>
-        <source>If the custom fee is set to 1000 uHLMs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 uHLMs in fee,&lt;br /&gt;while "total at least" pays 1000 uHLMs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
-        <translation>Als de aangepaste vergoeding is ingesteld op 1000 uHLMs en de transactie is slechts 250 bytes, dan betaalt per kilobyte alleen 250 uHLM's in vergoeding,&lt;br /&gt;terwijl "totaal minstens" 1000 uHLM's betaalt. Voor transacties die groter zijn dan een kilobyte, betalen beiden per kilobyte.</translation>
+        <source>If the custom fee is set to 1000 uSQRs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 uSQRs in fee,&lt;br /&gt;while "total at least" pays 1000 uSQRs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
+        <translation>Als de aangepaste vergoeding is ingesteld op 1000 uSQRs en de transactie is slechts 250 bytes, dan betaalt per kilobyte alleen 250 uSQR's in vergoeding,&lt;br /&gt;terwijl "totaal minstens" 1000 uSQR's betaalt. Voor transacties die groter zijn dan een kilobyte, betalen beiden per kilobyte.</translation>
     </message>
     <message>
         <source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks.&lt;br /&gt;But be aware that this can end up in a never confirming transaction once there is more demand for sQuorum transactions than the network can process.</source>
@@ -3739,8 +3739,8 @@ Wees alsjeblieft geduldig...</translation>
         <translation>Voeg &amp;ontvanger toe</translation>
     </message>
     <message>
-        <source>Anonymized HLM</source>
-        <translation>Geanonimiseerde HLM</translation>
+        <source>Anonymized SQR</source>
+        <translation>Geanonimiseerde SQR</translation>
     </message>
     <message>
         <source>Balance:</source>
@@ -4379,12 +4379,12 @@ Wees alsjeblieft geduldig...</translation>
         <translation>Verkregen via verduistering</translation>
     </message>
     <message>
-        <source>HLM Stake</source>
-        <translation>HLM Stake</translation>
+        <source>SQR Stake</source>
+        <translation>SQR Stake</translation>
     </message>
     <message>
-        <source>zHLM Stake</source>
-        <translation>zHLM Stake</translation>
+        <source>zSQR Stake</source>
+        <translation>zSQR Stake</translation>
     </message>
     <message>
         <source>Obfuscation Denominate</source>
@@ -4403,32 +4403,32 @@ Wees alsjeblieft geduldig...</translation>
         <translation>Verduistering creëert denominaties</translation>
     </message>
     <message>
-        <source>Converted HLM to zHLM</source>
-        <translation>Geconverteerde HLM naar zHLM</translation>
+        <source>Converted SQR to zSQR</source>
+        <translation>Geconverteerde SQR naar zSQR</translation>
     </message>
     <message>
-        <source>Spent zHLM</source>
-        <translation>Bestede zHLM</translation>
+        <source>Spent zSQR</source>
+        <translation>Bestede zSQR</translation>
     </message>
     <message>
-        <source>Received HLM from zHLM</source>
-        <translation>Ontvangen HLM van zHLM</translation>
+        <source>Received SQR from zSQR</source>
+        <translation>Ontvangen SQR van zSQR</translation>
     </message>
     <message>
-        <source>Minted Change as zHLM from zHLM Spend</source>
-        <translation>Gemint wisselgeld als zHLM van bestede zHLM</translation>
+        <source>Minted Change as zSQR from zSQR Spend</source>
+        <translation>Gemint wisselgeld als zSQR van bestede zSQR</translation>
     </message>
     <message>
-        <source>Converted zHLM to HLM</source>
-        <translation>Geconverteerde zHLM naar HLM</translation>
+        <source>Converted zSQR to SQR</source>
+        <translation>Geconverteerde zSQR naar SQR</translation>
     </message>
     <message>
-        <source>Anonymous (zHLM Transaction)</source>
-        <translation>Anonieme (zHLM transactie)</translation>
+        <source>Anonymous (zSQR Transaction)</source>
+        <translation>Anonieme (zSQR transactie)</translation>
     </message>
     <message>
-        <source>Anonymous (zHLM Stake)</source>
-        <translation>Anonieme (zHLM stake)</translation>
+        <source>Anonymous (zSQR Stake)</source>
+        <translation>Anonieme (zSQR stake)</translation>
     </message>
     <message>
         <source>Sent to</source>
@@ -4642,12 +4642,12 @@ Wees alsjeblieft geduldig...</translation>
         <translation>Exporteren succesvol</translation>
     </message>
     <message>
-        <source>Received HLM from zHLM</source>
-        <translation>Ontvangen HLM van zHLM</translation>
+        <source>Received SQR from zSQR</source>
+        <translation>Ontvangen SQR van zSQR</translation>
     </message>
     <message>
-        <source>Zerocoin Spend, Change in zHLM</source>
-        <translation>Zerocoin besteed, wisselgeld in zHLM</translation>
+        <source>Zerocoin Spend, Change in zSQR</source>
+        <translation>Zerocoin besteed, wisselgeld in zSQR</translation>
     </message>
     <message>
         <source>The transaction history was successfully saved to %1.</source>
@@ -4683,8 +4683,8 @@ Wees alsjeblieft geduldig...</translation>
         <translation>Verzend Munten</translation>
     </message>
     <message>
-        <source>SwiftX doesn't support sending values that high yet. Transactions are currently limited to %1 HLM.</source>
-        <translation>SwiftTX ondersteunt geen verzendwaarden die zo hoog zijn. Transacties zijn momenteel beperkt tot %1 HLM.</translation>
+        <source>SwiftX doesn't support sending values that high yet. Transactions are currently limited to %1 SQR.</source>
+        <translation>SwiftTX ondersteunt geen verzendwaarden die zo hoog zijn. Transacties zijn momenteel beperkt tot %1 SQR.</translation>
     </message>
 </context>
 <context>
@@ -4717,8 +4717,8 @@ Wees alsjeblieft geduldig...</translation>
 <context>
     <name>ZSqrControlDialog</name>
     <message>
-        <source>Select zHLM to Spend</source>
-        <translation>Selecteer zHLM om te besteden</translation>
+        <source>Select zSQR to Spend</source>
+        <translation>Selecteer zSQR om te besteden</translation>
     </message>
     <message>
         <source>Quantity</source>
@@ -4729,8 +4729,8 @@ Wees alsjeblieft geduldig...</translation>
         <translation>0</translation>
     </message>
     <message>
-        <source>zHLM</source>
-        <translation>zHLM</translation>
+        <source>zSQR</source>
+        <translation>zSQR</translation>
     </message>
     <message>
         <source>Select/Deselect All</source>
@@ -4796,16 +4796,16 @@ Wees alsjeblieft geduldig...</translation>
         <translation>Gedistribueerd onder de MIT software licentie, zie het bijgevoegde bestand COPYING of &lt;http://www.opensource.org/licenses/mit-license.php&gt;.</translation>
     </message>
     <message>
-        <source>Enable automatic wallet backups triggered after each zHLM minting (0-1, default: %u)</source>
-        <translation>Schakel automatische portemonnee back-ups in geactiveerd na elke geminte zHLM (0-1, standaard: %u)</translation>
+        <source>Enable automatic wallet backups triggered after each zSQR minting (0-1, default: %u)</source>
+        <translation>Schakel automatische portemonnee back-ups in geactiveerd na elke geminte zSQR (0-1, standaard: %u)</translation>
     </message>
     <message>
-        <source>Enable or disable staking functionality for HLM inputs (0-1, default: %u)</source>
-        <translation>In- of uitschakelen staking functionaliteit voor HLM inputs (0-1, standaard: %u)</translation>
+        <source>Enable or disable staking functionality for SQR inputs (0-1, default: %u)</source>
+        <translation>In- of uitschakelen staking functionaliteit voor SQR inputs (0-1, standaard: %u)</translation>
     </message>
     <message>
-        <source>Enable or disable staking functionality for zHLM inputs (0-1, default: %u)</source>
-        <translation>In- of uitschakelen staking functionaliteit voor zHLM inputs (0-1, standaard: %u)</translation>
+        <source>Enable or disable staking functionality for zSQR inputs (0-1, default: %u)</source>
+        <translation>In- of uitschakelen staking functionaliteit voor zSQR inputs (0-1, standaard: %u)</translation>
     </message>
     <message>
         <source>Enable spork administration functionality with the appropriate private key.</source>
@@ -4840,12 +4840,12 @@ Wees alsjeblieft geduldig...</translation>
         <translation>Uitvoeren commando wanneer het beste blok verandert (%s in cmd is vervangen door block hash)</translation>
     </message>
     <message>
-        <source>Fees (in HLM/Kb) smaller than this are considered zero fee for relaying (default: %s)</source>
-        <translation>Kosten (in HLM/Kb) kleiner dan dit worden beschouwd als zero fee voor heruitzending (standaard: %s)</translation>
+        <source>Fees (in SQR/Kb) smaller than this are considered zero fee for relaying (default: %s)</source>
+        <translation>Kosten (in SQR/Kb) kleiner dan dit worden beschouwd als zero fee voor heruitzending (standaard: %s)</translation>
     </message>
     <message>
-        <source>Fees (in HLM/Kb) smaller than this are considered zero fee for transaction creation (default: %s)</source>
-        <translation>Kosten (in HLM/Kb) kleiner dan dit worden beschouwd als zero fee voor transactie verrichting (standaard: %s)</translation>
+        <source>Fees (in SQR/Kb) smaller than this are considered zero fee for transaction creation (default: %s)</source>
+        <translation>Kosten (in SQR/Kb) kleiner dan dit worden beschouwd als zero fee voor transactie verrichting (standaard: %s)</translation>
     </message>
     <message>
         <source>Flush database activity from memory pool to disk log every &lt;n&gt; megabytes (default: %u)</source>
@@ -4948,12 +4948,12 @@ Wees alsjeblieft geduldig...</translation>
         <translation>Kan niet genoeg verduistering gedenomineerde fondsen voor deze transactie vinden.</translation>
     </message>
     <message>
-        <source>Unable to locate enough Obfuscation non-denominated funds for this transaction that are not equal 10000 HLM.</source>
-        <translation>Kan niet genoeg verduistering niet gedenomineerde fondsen voor deze transactie vinden die niet gelijk zijn aan 10000 HLM.</translation>
+        <source>Unable to locate enough Obfuscation non-denominated funds for this transaction that are not equal 10000 SQR.</source>
+        <translation>Kan niet genoeg verduistering niet gedenomineerde fondsen voor deze transactie vinden die niet gelijk zijn aan 10000 SQR.</translation>
     </message>
     <message>
-        <source>Unable to locate enough funds for this transaction that are not equal 10000 HLM.</source>
-        <translation>Kan niet genoeg fondsen voor deze transactie vinden die niet gelijk zijn aan 10000 HLM.</translation>
+        <source>Unable to locate enough funds for this transaction that are not equal 10000 SQR.</source>
+        <translation>Kan niet genoeg fondsen voor deze transactie vinden die niet gelijk zijn aan 10000 SQR.</translation>
     </message>
     <message>
         <source>Use separate SOCKS5 proxy to reach peers via Tor hidden services (default: %s)</source>
@@ -5232,8 +5232,8 @@ Wees alsjeblieft geduldig...</translation>
         <translation>Mislukt om block te lezen</translation>
     </message>
     <message>
-        <source>Fee (in HLM/kB) to add to transactions you send (default: %s)</source>
-        <translation>Fee (in HLM/kB) om toe te voegen aan transacties die je verzendt (standaard: %s)</translation>
+        <source>Fee (in SQR/kB) to add to transactions you send (default: %s)</source>
+        <translation>Fee (in SQR/kB) om toe te voegen aan transacties die je verzendt (standaard: %s)</translation>
     </message>
     <message>
         <source>Force safe mode (default: %u)</source>
@@ -5336,8 +5336,8 @@ Wees alsjeblieft geduldig...</translation>
         <translation>Percentage automatisch geminte Zerocoin (10-100, standaard: %u)</translation>
     </message>
     <message>
-        <source>Reindex the HLM and zHLM money supply statistics</source>
-        <translation>Indexeer de HLM- en zHLM-geldvoorraadstatistieken opnieuw</translation>
+        <source>Reindex the SQR and zSQR money supply statistics</source>
+        <translation>Indexeer de SQR- en zSQR-geldvoorraadstatistieken opnieuw</translation>
     </message>
     <message>
         <source>Reindexing zerocoin database...</source>
@@ -5412,8 +5412,8 @@ Wees alsjeblieft geduldig...</translation>
         <translation>Voorkeur denominatie voor automatisch minted Zerocoin (1/5/10/50/100/500/1000/5000), 0 voor geen voorkeur. standaard: %u)</translation>
     </message>
     <message>
-        <source>Specify custom backup path to add a copy of any automatic zHLM backup. If set as dir, every backup generates a timestamped file. If set as file, will rewrite to that file every backup. If backuppath is set as well, 4 backups will happen</source>
-        <translation>Specificeer aangepast back-up pad om een kopie van elke automatische zHLM back-up toe te voegen. Indien ingesteld als dir zal elke back-up een bestand genereren met een tijdstempel. Indien ingesteld als file zal elke back-up herschreven worden naar dat bestand. Indien backuppath ook is ingesteld zullen 4 back-ups gedaan worden.</translation>
+        <source>Specify custom backup path to add a copy of any automatic zSQR backup. If set as dir, every backup generates a timestamped file. If set as file, will rewrite to that file every backup. If backuppath is set as well, 4 backups will happen</source>
+        <translation>Specificeer aangepast back-up pad om een kopie van elke automatische zSQR back-up toe te voegen. Indien ingesteld als dir zal elke back-up een bestand genereren met een tijdstempel. Indien ingesteld als file zal elke back-up herschreven worden naar dat bestand. Indien backuppath ook is ingesteld zullen 4 back-ups gedaan worden.</translation>
     </message>
     <message>
         <source>Specify custom backup path to add a copy of any wallet backup. If set as dir, every backup generates a timestamped file. If set as file, will rewrite to that file every backup.</source>
@@ -5824,8 +5824,8 @@ Wees alsjeblieft geduldig...</translation>
         <translation>Synchroniseren sporks...</translation>
     </message>
     <message>
-        <source>Syncing zHLM wallet...</source>
-        <translation>Synchroniseren zHLM portemonnee...</translation>
+        <source>Syncing zSQR wallet...</source>
+        <translation>Synchroniseren zSQR portemonnee...</translation>
     </message>
     <message>
         <source>The coin spend has been used</source>
@@ -5936,8 +5936,8 @@ Wees alsjeblieft geduldig...</translation>
         <translation>Gebruikersnaam voor JSON-RPC verbindingen</translation>
     </message>
     <message>
-        <source>Value is below the smallest available denomination (= 1) of zHLM</source>
-        <translation>Waarde is minder dan de kleinst beschikbare denominatie (=1) van zHLM</translation>
+        <source>Value is below the smallest available denomination (= 1) of zSQR</source>
+        <translation>Waarde is minder dan de kleinst beschikbare denominatie (=1) van zSQR</translation>
     </message>
     <message>
         <source>Verifying blocks...</source>

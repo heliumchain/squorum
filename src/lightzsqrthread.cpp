@@ -10,7 +10,7 @@
 #include "main.h"
 
 /****** Thread ********/
-void CLightWorker::ThreadLightZHLMSimplified() {
+void CLightWorker::ThreadLightZSQRSimplified() {
     RenameThread("squorum-light-thread");
     isWorkerRunning = true;
     while (true) {
@@ -62,7 +62,7 @@ void CLightWorker::ThreadLightZHLMSimplified() {
                         );
 
                     } catch (NotEnoughMintsException e) {
-                        LogPrintStr(std::string("ThreadLightZHLMSimplified: ") + e.message + "\n");
+                        LogPrintStr(std::string("ThreadLightZSQRSimplified: ") + e.message + "\n");
                         rejectWork(genWit, blockHeight, NOT_ENOUGH_MINTS);
                         continue;
                     }

@@ -154,8 +154,8 @@ Several new commands were added in v2.3.1 to replace the two aforementioned comm
 A new RPC command (`getblockindexstats`) has been introduced which serves the purpose of obtaining statistical information on a range of blocks. The information returned is as follows:
   * transaction count (not including coinbase/coinstake txes)
   * transaction count (including coinbase/coinstake txes)
-  * zHLM per-denom mint count
-  * zHLM per-denom spend count
+  * zSQR per-denom mint count
+  * zSQR per-denom spend count
   * total transaction bytes
   * total fees in block range
   * average fee per kB
@@ -193,9 +193,9 @@ Result:
         denom_5: xxxx,         (numeric) number of PUBLIC spends of denom_5 occurred over the block range
          ...                   ... number of PUBLIC spends of other denominations: ..., 10, 50, 100, 500, 1000, 5000
   },
-  txbytes: xxxxx,              (numeric) Sum of the size of all txes (zHLM excluded) over block range
-  ttlfee: xxxxx,               (numeric) Sum of the fee amount of all txes (zHLM mints excluded) over block range
-  ttlfee_all: xxxxx,           (numeric) Sum of the fee amount of all txes (zHLM mints included) over block range
+  txbytes: xxxxx,              (numeric) Sum of the size of all txes (zSQR excluded) over block range
+  ttlfee: xxxxx,               (numeric) Sum of the fee amount of all txes (zSQR mints excluded) over block range
+  ttlfee_all: xxxxx,           (numeric) Sum of the fee amount of all txes (zSQR mints included) over block range
   feeperkb: xxxxx,             (numeric) Average fee per kb (excluding zc txes)
 }
 ```

@@ -176,8 +176,8 @@
         <translation>Jeste li sigurni da želite šifrirati svoj novčanik?</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR HLM&lt;/b&gt;!</source>
-        <translation>Upozorenje: Ako šifrirate svoj novčanik i izgubite zaporku, 1 izgubit ćete sve Vaše HLMove 1 !</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR SQR&lt;/b&gt;!</source>
+        <translation>Upozorenje: Ako šifrirate svoj novčanik i izgubite zaporku, 1 izgubit ćete sve Vaše SQRove 1 !</translation>
     </message>
     <message>
         <source>Wallet encrypted</source>
@@ -714,7 +714,7 @@
     </message>
     <message>
         <source>sQuorum Core client</source>
-        <translation>HLMIX Core Klijent</translation>
+        <translation>SQRIX Core Klijent</translation>
     </message>
     <message>
         <source>Synchronizing with network...</source>
@@ -1605,8 +1605,8 @@ Budite strpljivi nakon što kliknete uvoz.</translation>
         <translation>Adresa / iznos:</translation>
     </message>
     <message>
-        <source>Add destinations to send HLM to</source>
-        <translation>Dodajte odredišta za slanje HLM
+        <source>Add destinations to send SQR to</source>
+        <translation>Dodajte odredišta za slanje SQR
 </translation>
     </message>
     <message>
@@ -1958,8 +1958,8 @@ https://www.transifex.com/squorum-project/squorum-wallet</translation>
         <translation>Ukupni saldo, uključujući sve nedostupne kovanice.</translation>
     </message>
     <message>
-        <source>HLM Balance</source>
-        <translation>HLM Saldo</translation>
+        <source>SQR Balance</source>
+        <translation>SQR Saldo</translation>
     </message>
     <message>
         <source>Pending:</source>
@@ -2026,8 +2026,8 @@ https://www.transifex.com/squorum-project/squorum-wallet</translation>
         <translation>Po potrošiti:</translation>
     </message>
     <message>
-        <source>Locked HLM or Masternode collaterals. These are excluded from zHLM minting.</source>
-        <translation>Zaključani HLM ili Masternode kolateral. Oni su isključeni iz zHLM kovanja.</translation>
+        <source>Locked SQR or Masternode collaterals. These are excluded from zSQR minting.</source>
+        <translation>Zaključani SQR ili Masternode kolateral. Oni su isključeni iz zSQR kovanja.</translation>
     </message>
     <message>
         <source>Locked:</source>
@@ -2042,10 +2042,10 @@ https://www.transifex.com/squorum-project/squorum-wallet</translation>
         <translation>nije sinkronizirano</translation>
     </message>
     <message>
-        <source>Current percentage of zHLM.
+        <source>Current percentage of zSQR.
 If AutoMint is enabled this percentage will settle around the configured AutoMint percentage (default = 10%).
 </source>
-        <translation>Trenutni postotak zHLM.
+        <translation>Trenutni postotak zSQR.
 Ako je omogućeno automatsko navođenje, ovaj postotak će se podmiriti oko konfiguriranog postotka automatskog navođenja (zadano = 10%).
 </translation>
     </message>
@@ -2189,8 +2189,8 @@ Da biste omogućili, promjenite postavke AutoMint 'enablezeromint=0' na 'enablez
         <translation>0</translation>
     </message>
     <message>
-        <source>zHLM</source>
-        <translation>zHLM</translation>
+        <source>zSQR</source>
+        <translation>zSQR</translation>
     </message>
     <message>
         <source>Reset Zerocoin Wallet DB. Deletes transactions that did not make it into the blockchain.</source>
@@ -2217,12 +2217,12 @@ Da biste omogućili, promjenite postavke AutoMint 'enablezeromint=0' na 'enablez
         <translation>PRIVATNOST</translation>
     </message>
     <message>
-        <source>zHLM Control</source>
-        <translation>Upravljanje zHLM</translation>
+        <source>zSQR Control</source>
+        <translation>Upravljanje zSQR</translation>
     </message>
     <message>
-        <source>zHLM Selected:</source>
-        <translation>zHLM Odabrani:</translation>
+        <source>zSQR Selected:</source>
+        <translation>zSQR Odabrani:</translation>
     </message>
     <message>
         <source>Quantity Selected:</source>
@@ -2237,24 +2237,24 @@ Da biste omogućili, promjenite postavke AutoMint 'enablezeromint=0' na 'enablez
         <translation>Potroši Zerocoin</translation>
     </message>
     <message>
-        <source>Available (mature and spendable) zHLM for spending</source>
-        <translation>Dostupni (zreli) zHLM za potrošnju</translation>
+        <source>Available (mature and spendable) zSQR for spending</source>
+        <translation>Dostupni (zreli) zSQR za potrošnju</translation>
     </message>
     <message>
         <source>Available Balance:</source>
         <translation>Dostupna Bilanca:</translation>
     </message>
     <message>
-        <source>Available (mature and spendable) zHLM for spending
+        <source>Available (mature and spendable) zSQR for spending
 
-zHLM are mature when they have more than 20 confirmations AND more than 2 mints of the same denomination after them were minted</source>
-        <translation>Dostupni (zreli) zHLM za potrošnju
+zSQR are mature when they have more than 20 confirmations AND more than 2 mints of the same denomination after them were minted</source>
+        <translation>Dostupni (zreli) zSQR za potrošnju
 
-zHLM su zreli kada imaju više od 20 potvrda I više od 2 mint od iste denominacije nakon što su bili mintani</translation>
+zSQR su zreli kada imaju više od 20 potvrda I više od 2 mint od iste denominacije nakon što su bili mintani</translation>
     </message>
     <message>
-        <source>0 zHLM</source>
-        <translation>0 zHLM</translation>
+        <source>0 zSQR</source>
+        <translation>0 zSQR</translation>
     </message>
     <message>
         <source>Pay &amp;To:</source>
@@ -2313,8 +2313,8 @@ zHLM su zreli kada imaju više od 20 potvrda I više od 2 mint od iste denominac
         <translation>Statistike Zerocoina:</translation>
     </message>
     <message>
-        <source>Total Balance including unconfirmed and immature zHLM</source>
-        <translation>Ukupni saldo uključujući nepotvrđeni i nedovršeni zHLM</translation>
+        <source>Total Balance including unconfirmed and immature zSQR</source>
+        <translation>Ukupni saldo uključujući nepotvrđeni i nedovršeni zSQR</translation>
     </message>
     <message>
         <source>Total Zerocoin  Balance:</source>
@@ -2335,24 +2335,24 @@ Immature: confirmed, but less than 1 mint of the same denomination after it was 
 Nezreli: potvrđeno, ali manje od 1 minta iste denominacije nakon mintanja</translation>
     </message>
     <message>
-        <source>Show the current status of automatic zHLM minting.
+        <source>Show the current status of automatic zSQR minting.
 
 To change the status (restart required):
 - enable: add 'enablezeromint=1' to squorum.conf
 - disable: add 'enablezeromint=0' to squorum.conf
 
 To change the percentage (no restart required):
-- menu Settings-&gt;Options-&gt;Percentage of autominted zHLM
+- menu Settings-&gt;Options-&gt;Percentage of autominted zSQR
 
 </source>
-        <translation>Pokažite trenutačni status automatskog zHLM mintanja.
+        <translation>Pokažite trenutačni status automatskog zSQR mintanja.
 
 Da biste promijenili status (potrebno je ponovno pokretanje):
 - omogući: dodajte 'enablezeromint = 1' u squorum.conf
 - onemogućiti: dodajte 'enablezeromint = 0' na squorum.conf
 
 Promjena postotka (nije potrebno ponovno pokretanje):
-- izbornik Postavke-&gt; Opcije-&gt; Postotak zHLM</translation>
+- izbornik Postavke-&gt; Opcije-&gt; Postotak zSQR</translation>
     </message>
     <message>
         <source>AutoMint Status</source>
@@ -2524,12 +2524,12 @@ Please be patient...</source>
         <translation>Pokretanje ResetMintZerocoin: ponovno skeniranje potpunog blockchain, to će trajati i do 30 minuta, ovisno o vašem hardveru.</translation>
     </message>
     <message>
-        <source>zHLM Spend #: </source>
-        <translation>zHLM utrošeno #: </translation>
+        <source>zSQR Spend #: </source>
+        <translation>zSQR utrošeno #: </translation>
     </message>
     <message>
-        <source>zHLM Mint</source>
-        <translation>zHLM Mint</translation>
+        <source>zSQR Mint</source>
+        <translation>zSQR Mint</translation>
     </message>
     <message>
         <source> &lt;b&gt;enabled&lt;/b&gt;.</source>
@@ -2544,12 +2544,12 @@ Please be patient...</source>
         <translation> Konfigirani ciljani postotak: &lt;b&gt;</translation>
     </message>
     <message>
-        <source>zHLM is currently disabled due to maintenance.</source>
-        <translation>Zbog održavanja zHLM je trenutačno onemogućen.</translation>
+        <source>zSQR is currently disabled due to maintenance.</source>
+        <translation>Zbog održavanja zSQR je trenutačno onemogućen.</translation>
     </message>
     <message>
-        <source>zHLM is currently undergoing maintenance.</source>
-        <translation>Radovi u tijeku na zHLM.</translation>
+        <source>zSQR is currently undergoing maintenance.</source>
+        <translation>Radovi u tijeku na zSQR.</translation>
     </message>
     <message>
         <source>Denom. with value &lt;b&gt;1&lt;/b&gt;:</source>
@@ -2991,8 +2991,8 @@ Please be patient...</source>
         <translation>Put prilagođenog sigurnosnog kopiranja:</translation>
     </message>
     <message>
-        <source>Custom zHLM Backup Path:</source>
-        <translation>Prilagođeni put zHLM sigurnosne kopije:</translation>
+        <source>Custom zSQR Backup Path:</source>
+        <translation>Prilagođeni put zSQR sigurnosne kopije:</translation>
     </message>
     <message>
         <source>Custom Backups Threshold:</source>
@@ -3440,8 +3440,8 @@ Please be patient...</source>
         <translation>Veličina UTXO:</translation>
     </message>
     <message>
-        <source>0 HLM</source>
-        <translation>0 HLM</translation>
+        <source>0 SQR</source>
+        <translation>0 SQR</translation>
     </message>
     <message>
         <source>Transaction Fee:</source>
@@ -3498,12 +3498,12 @@ Please be patient...</source>
         <translation>Kovanice se automatski odabiru</translation>
     </message>
     <message>
-        <source>If the custom fee is set to 1000 uHLMs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 uHLMs in fee,&lt;br /&gt;while "at least" pays 1000 uHLMs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
-        <translation>Ako je prilagođena naknada postavljena na 1000 uHLM-ova, a transakcija je samo 250 bajta, tada "po kilobajtu" se plaća samo 250 uHLM-a, dok se "barem" plaća 1000 uHLM-ova. Za transakcije veće od kilobajta, oboje plaćaju po kilobajtu.</translation>
+        <source>If the custom fee is set to 1000 uSQRs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 uSQRs in fee,&lt;br /&gt;while "at least" pays 1000 uSQRs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
+        <translation>Ako je prilagođena naknada postavljena na 1000 uSQR-ova, a transakcija je samo 250 bajta, tada "po kilobajtu" se plaća samo 250 uSQR-a, dok se "barem" plaća 1000 uSQR-ova. Za transakcije veće od kilobajta, oboje plaćaju po kilobajtu.</translation>
     </message>
     <message>
-        <source>If the custom fee is set to 1000 uHLMs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 uHLMs in fee,&lt;br /&gt;while "total at least" pays 1000 uHLMs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
-        <translation>Ako je prilagođena naknada postavljena na 1000 uHLM, a transakcija je samo 250 bajta, tada "po kilobajtu" plaća se samo 250 uHLM-ova, a "ukupno barem" plaća 1000 uHLM-ova. Za transakcije veće od kilobajta, oboje plaćaju po kilobajtu.</translation>
+        <source>If the custom fee is set to 1000 uSQRs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 uSQRs in fee,&lt;br /&gt;while "total at least" pays 1000 uSQRs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
+        <translation>Ako je prilagođena naknada postavljena na 1000 uSQR, a transakcija je samo 250 bajta, tada "po kilobajtu" plaća se samo 250 uSQR-ova, a "ukupno barem" plaća 1000 uSQR-ova. Za transakcije veće od kilobajta, oboje plaćaju po kilobajtu.</translation>
     </message>
     <message>
         <source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks.&lt;br /&gt;But be aware that this can end up in a never confirming transaction once there is more demand for sQuorum transactions than the network can process.</source>
@@ -3554,8 +3554,8 @@ Please be patient...</source>
         <translation>Dodaj primatelja</translation>
     </message>
     <message>
-        <source>Anonymized HLM</source>
-        <translation>Anonimiziran HLM</translation>
+        <source>Anonymized SQR</source>
+        <translation>Anonimiziran SQR</translation>
     </message>
     <message>
         <source>Balance:</source>
@@ -4195,12 +4195,12 @@ Please be patient...</source>
         <translation>Zaprimljeno preko Zametanja</translation>
     </message>
     <message>
-        <source>HLM Stake</source>
-        <translation>HLM Stake</translation>
+        <source>SQR Stake</source>
+        <translation>SQR Stake</translation>
     </message>
     <message>
-        <source>zHLM Stake</source>
-        <translation>zHLM Stake</translation>
+        <source>zSQR Stake</source>
+        <translation>zSQR Stake</translation>
     </message>
     <message>
         <source>Obfuscation Denominate</source>
@@ -4219,32 +4219,32 @@ Please be patient...</source>
         <translation>Prikrivanje Stvara Denominacije</translation>
     </message>
     <message>
-        <source>Converted HLM to zHLM</source>
-        <translation>Pretvoreni HLM u zHLM</translation>
+        <source>Converted SQR to zSQR</source>
+        <translation>Pretvoreni SQR u zSQR</translation>
     </message>
     <message>
-        <source>Spent zHLM</source>
-        <translation>Utrošeni zHLM</translation>
+        <source>Spent zSQR</source>
+        <translation>Utrošeni zSQR</translation>
     </message>
     <message>
-        <source>Received HLM from zHLM</source>
-        <translation>Primljeni HLM od zHLM</translation>
+        <source>Received SQR from zSQR</source>
+        <translation>Primljeni SQR od zSQR</translation>
     </message>
     <message>
-        <source>Minted Change as zHLM from zHLM Spend</source>
-        <translation>Mintana razlika zHLM od zHLM Utroška</translation>
+        <source>Minted Change as zSQR from zSQR Spend</source>
+        <translation>Mintana razlika zSQR od zSQR Utroška</translation>
     </message>
     <message>
-        <source>Converted zHLM to HLM</source>
-        <translation>Pretvoreni zHLM u HLM</translation>
+        <source>Converted zSQR to SQR</source>
+        <translation>Pretvoreni zSQR u SQR</translation>
     </message>
     <message>
-        <source>Anonymous (zHLM Transaction)</source>
-        <translation>Anonimno (zHLM Transakcija)</translation>
+        <source>Anonymous (zSQR Transaction)</source>
+        <translation>Anonimno (zSQR Transakcija)</translation>
     </message>
     <message>
-        <source>Anonymous (zHLM Stake)</source>
-        <translation>Anonimno (zHLM Stake)</translation>
+        <source>Anonymous (zSQR Stake)</source>
+        <translation>Anonimno (zSQR Stake)</translation>
     </message>
     <message>
         <source>Sent to</source>
@@ -4454,12 +4454,12 @@ Please be patient...</source>
         <translation>Izvoz uspješan</translation>
     </message>
     <message>
-        <source>Received HLM from zHLM</source>
-        <translation>Primljeni HLM od zHLM</translation>
+        <source>Received SQR from zSQR</source>
+        <translation>Primljeni SQR od zSQR</translation>
     </message>
     <message>
-        <source>Zerocoin Spend, Change in zHLM</source>
-        <translation>Zerocoin Utrošeno, Razlika (ostatak) u zHLM</translation>
+        <source>Zerocoin Spend, Change in zSQR</source>
+        <translation>Zerocoin Utrošeno, Razlika (ostatak) u zSQR</translation>
     </message>
     <message>
         <source>The transaction history was successfully saved to %1.</source>
@@ -4495,8 +4495,8 @@ Please be patient...</source>
         <translation>Salji novac</translation>
     </message>
     <message>
-        <source>SwiftX doesn't support sending values that high yet. Transactions are currently limited to %1 HLM.</source>
-        <translation>SwiftX ne podržava slanje visokih vrijednosti. Transakcije su trenutačno ograničene na %1 HLM.</translation>
+        <source>SwiftX doesn't support sending values that high yet. Transactions are currently limited to %1 SQR.</source>
+        <translation>SwiftX ne podržava slanje visokih vrijednosti. Transakcije su trenutačno ograničene na %1 SQR.</translation>
     </message>
 </context>
 <context>
@@ -4529,8 +4529,8 @@ Please be patient...</source>
 <context>
     <name>ZSqrControlDialog</name>
     <message>
-        <source>Select zHLM to Spend</source>
-        <translation>Odabrani zHLM za utrošiti</translation>
+        <source>Select zSQR to Spend</source>
+        <translation>Odabrani zSQR za utrošiti</translation>
     </message>
     <message>
         <source>Quantity</source>
@@ -4541,8 +4541,8 @@ Please be patient...</source>
         <translation>0</translation>
     </message>
     <message>
-        <source>zHLM</source>
-        <translation>zHLM</translation>
+        <source>zSQR</source>
+        <translation>zSQR</translation>
     </message>
     <message>
         <source>Select/Deselect All</source>
@@ -4604,16 +4604,16 @@ Please be patient...</source>
         <translation>Distribuirano pod MIT softverskom licencom, pogledajte priloženu datoteku COPYING ili &lt;http://www.opensource.org/licenses/mit-license.php&gt;.</translation>
     </message>
     <message>
-        <source>Enable automatic wallet backups triggered after each zHLM minting (0-1, default: %u)</source>
-        <translation>Omogući automatsko sigurnosno kopiranje novčanika nakon svakog zHLM mintanja (0-1, default: %u)</translation>
+        <source>Enable automatic wallet backups triggered after each zSQR minting (0-1, default: %u)</source>
+        <translation>Omogući automatsko sigurnosno kopiranje novčanika nakon svakog zSQR mintanja (0-1, default: %u)</translation>
     </message>
     <message>
-        <source>Enable or disable staking functionality for HLM inputs (0-1, default: %u)</source>
-        <translation>Omogući ili onemogući staking funkcionalnosti za HLM unose (0-1, default: %u)</translation>
+        <source>Enable or disable staking functionality for SQR inputs (0-1, default: %u)</source>
+        <translation>Omogući ili onemogući staking funkcionalnosti za SQR unose (0-1, default: %u)</translation>
     </message>
     <message>
-        <source>Enable or disable staking functionality for zHLM inputs (0-1, default: %u)</source>
-        <translation>Omogući ili onemogući staking funkcionalnosti za zHLM unose (0-1, default: %u)</translation>
+        <source>Enable or disable staking functionality for zSQR inputs (0-1, default: %u)</source>
+        <translation>Omogući ili onemogući staking funkcionalnosti za zSQR unose (0-1, default: %u)</translation>
     </message>
     <message>
         <source>Enable spork administration functionality with the appropriate private key.</source>
@@ -4648,12 +4648,12 @@ Please be patient...</source>
         <translation>Izvrši naredbu kada se promijeni najbolji blok (%s u cmd zamjenjuje se blokovskim raspršivanjem)</translation>
     </message>
     <message>
-        <source>Fees (in HLM/Kb) smaller than this are considered zero fee for relaying (default: %s)</source>
-        <translation>Naknade (u HLM / Kb) manje od toga smatraju se nulom naknadom za prosljeđivanje (zadano: %s)</translation>
+        <source>Fees (in SQR/Kb) smaller than this are considered zero fee for relaying (default: %s)</source>
+        <translation>Naknade (u SQR / Kb) manje od toga smatraju se nulom naknadom za prosljeđivanje (zadano: %s)</translation>
     </message>
     <message>
-        <source>Fees (in HLM/Kb) smaller than this are considered zero fee for transaction creation (default: %s)</source>
-        <translation>Naknade (u HLM / Kb) manje od toga smatraju se nulom naknadom za izradu transakcija (zadano: %s)</translation>
+        <source>Fees (in SQR/Kb) smaller than this are considered zero fee for transaction creation (default: %s)</source>
+        <translation>Naknade (u SQR / Kb) manje od toga smatraju se nulom naknadom za izradu transakcija (zadano: %s)</translation>
     </message>
     <message>
         <source>Flush database activity from memory pool to disk log every &lt;n&gt; megabytes (default: %u)</source>
@@ -4756,12 +4756,12 @@ Please be patient...</source>
         <translation>Nije moguće locirati dovoljno sredstava s domenom Prikrivanja za tu transakciju.</translation>
     </message>
     <message>
-        <source>Unable to locate enough Obfuscation non-denominated funds for this transaction that are not equal 10000 HLM.</source>
-        <translation>Nije moguće pronaći dovoljno prikrivenih sredstava koja nisu denominirana za ovu transakciju koja nisu jednaka 10000 HLM.</translation>
+        <source>Unable to locate enough Obfuscation non-denominated funds for this transaction that are not equal 10000 SQR.</source>
+        <translation>Nije moguće pronaći dovoljno prikrivenih sredstava koja nisu denominirana za ovu transakciju koja nisu jednaka 10000 SQR.</translation>
     </message>
     <message>
-        <source>Unable to locate enough funds for this transaction that are not equal 10000 HLM.</source>
-        <translation>Nije moguće pronaći dovoljno sredstava za ovu transakciju koja nije jednaka 10000 HLM.</translation>
+        <source>Unable to locate enough funds for this transaction that are not equal 10000 SQR.</source>
+        <translation>Nije moguće pronaći dovoljno sredstava za ovu transakciju koja nije jednaka 10000 SQR.</translation>
     </message>
     <message>
         <source>Use separate SOCKS5 proxy to reach peers via Tor hidden services (default: %s)</source>
@@ -5033,8 +5033,8 @@ Please be patient...</source>
         <translation>Greška čitanja bloka</translation>
     </message>
     <message>
-        <source>Fee (in HLM/kB) to add to transactions you send (default: %s)</source>
-        <translation>Naknada (u HLM / kB) za dodavanje transakcija koje šaljete (zadano: %s)</translation>
+        <source>Fee (in SQR/kB) to add to transactions you send (default: %s)</source>
+        <translation>Naknada (u SQR / kB) za dodavanje transakcija koje šaljete (zadano: %s)</translation>
     </message>
     <message>
         <source>Force safe mode (default: %u)</source>
@@ -5137,8 +5137,8 @@ Please be patient...</source>
         <translation>Postotak automatskog kovanog Zerocoina (1-100, zadano: %u)</translation>
     </message>
     <message>
-        <source>Reindex the HLM and zHLM money supply statistics</source>
-        <translation>Ponovno indeksirati statistiku HLM i zHLM ponude novca</translation>
+        <source>Reindex the SQR and zSQR money supply statistics</source>
+        <translation>Ponovno indeksirati statistiku SQR i zSQR ponude novca</translation>
     </message>
     <message>
         <source>Reindexing zerocoin database...</source>
@@ -5212,8 +5212,8 @@ Please be patient...</source>
         <translation>Preferirana denominacija za automatski ovjereni Zerocoin (1/5/10/50/100/500/1000/5000), 0 bez preferencije. zadana vrijednost: %u)</translation>
     </message>
     <message>
-        <source>Specify custom backup path to add a copy of any automatic zHLM backup. If set as dir, every backup generates a timestamped file. If set as file, will rewrite to that file every backup. If backuppath is set as well, 4 backups will happen</source>
-        <translation>Navedite put prilagođenog sigurnosnog kopiranja da biste dodali kopiju bilo koje automatske zHLM sigurnosne kopije. Ako je postavljeno kao dir, svaka sigurnosna kopija generira vremensku datoteku. Ako je postavljen kao datoteka, prepisat će na tu datoteku svaku kopiju. Ako je postavljen backuppath, dogodit će se 4 sigurnosne kopije</translation>
+        <source>Specify custom backup path to add a copy of any automatic zSQR backup. If set as dir, every backup generates a timestamped file. If set as file, will rewrite to that file every backup. If backuppath is set as well, 4 backups will happen</source>
+        <translation>Navedite put prilagođenog sigurnosnog kopiranja da biste dodali kopiju bilo koje automatske zSQR sigurnosne kopije. Ako je postavljeno kao dir, svaka sigurnosna kopija generira vremensku datoteku. Ako je postavljen kao datoteka, prepisat će na tu datoteku svaku kopiju. Ako je postavljen backuppath, dogodit će se 4 sigurnosne kopije</translation>
     </message>
     <message>
         <source>Specify custom backup path to add a copy of any wallet backup. If set as dir, every backup generates a timestamped file. If set as file, will rewrite to that file every backup.</source>
@@ -5624,8 +5624,8 @@ Please be patient...</source>
         <translation>Sinkronizacija sporka...</translation>
     </message>
     <message>
-        <source>Syncing zHLM wallet...</source>
-        <translation>Sinkronizacija zHLM novčanika...</translation>
+        <source>Syncing zSQR wallet...</source>
+        <translation>Sinkronizacija zSQR novčanika...</translation>
     </message>
     <message>
         <source>The coin spend has been used</source>
@@ -5732,8 +5732,8 @@ Please be patient...</source>
         <translation>Korisničko ime za JSON-RPC veze</translation>
     </message>
     <message>
-        <source>Value is below the smallest available denomination (= 1) of zHLM</source>
-        <translation>Vrijednost je niža od najmanje dostupne denominacije (= 1) zHLM-a</translation>
+        <source>Value is below the smallest available denomination (= 1) of zSQR</source>
+        <translation>Vrijednost je niža od najmanje dostupne denominacije (= 1) zSQR-a</translation>
     </message>
     <message>
         <source>Verifying blocks...</source>

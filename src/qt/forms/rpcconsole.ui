@@ -1359,7 +1359,7 @@
           <bool>false</bool>
          </property>
          <property name="text">
-          <string>Custom zHLM Backup Path:</string>
+          <string>Custom zSQR Backup Path:</string>
          </property>
         </widget>
        </item>

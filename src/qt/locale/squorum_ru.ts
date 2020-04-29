@@ -180,8 +180,8 @@
         <translation>Вы действительно хотите зашифровать свой кошелек?</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR HLM&lt;/b&gt;!</source>
-        <translation>Внимание: если вы зашифруете свой кошелёк и потеряете от него пароль, то вы &lt;b&gt;ПОТЕРЯЕТЕ ВСЕ СВОИ HLM&lt;/b&gt;!</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR SQR&lt;/b&gt;!</source>
+        <translation>Внимание: если вы зашифруете свой кошелёк и потеряете от него пароль, то вы &lt;b&gt;ПОТЕРЯЕТЕ ВСЕ СВОИ SQR&lt;/b&gt;!</translation>
     </message>
     <message>
         <source>Wallet encrypted</source>
@@ -1686,8 +1686,8 @@ Please be patient after clicking import.</source>
         <translation>Адрес/ Сумма:</translation>
     </message>
     <message>
-        <source>Add destinations to send HLM to</source>
-        <translation>Добавить назначение куда отправить HLM</translation>
+        <source>Add destinations to send SQR to</source>
+        <translation>Добавить назначение куда отправить SQR</translation>
     </message>
     <message>
         <source>Add &amp;Destination</source>
@@ -2049,8 +2049,8 @@ https://www.transifex.com/squorum-project/squorum-wallet</translation>
         <translation>Общий баланс включая все не доступные монеты.</translation>
     </message>
     <message>
-        <source>HLM Balance</source>
-        <translation>Баланс HLM</translation>
+        <source>SQR Balance</source>
+        <translation>Баланс SQR</translation>
     </message>
     <message>
         <source>Pending:</source>
@@ -2117,8 +2117,8 @@ https://www.transifex.com/squorum-project/squorum-wallet</translation>
         <translation>Расходуемый:</translation>
     </message>
     <message>
-        <source>Locked HLM or Masternode collaterals. These are excluded from zHLM minting.</source>
-        <translation>Заблокированно дополнительное обеспечение HLM или Masternode. Они исключены из чеканки zHLM.</translation>
+        <source>Locked SQR or Masternode collaterals. These are excluded from zSQR minting.</source>
+        <translation>Заблокированно дополнительное обеспечение SQR или Masternode. Они исключены из чеканки zSQR.</translation>
     </message>
     <message>
         <source>Locked:</source>
@@ -2133,10 +2133,10 @@ https://www.transifex.com/squorum-project/squorum-wallet</translation>
         <translation>несинронизировано</translation>
     </message>
     <message>
-        <source>Current percentage of zHLM.
+        <source>Current percentage of zSQR.
 If AutoMint is enabled this percentage will settle around the configured AutoMint percentage (default = 10%).
 </source>
-        <translation>Текущий процент zHLM.
+        <translation>Текущий процент zSQR.
 Если АвтоЧеканка включена, этот процент будет применятся к АвтоЧеканке  (по умолчанию = 10%).
 </translation>
     </message>
@@ -2280,8 +2280,8 @@ To enable AutoMint change 'enablezeromint=0' to 'enablezeromint=1' in squorum.co
         <translation>0</translation>
     </message>
     <message>
-        <source>zHLM</source>
-        <translation>zHLM</translation>
+        <source>zSQR</source>
+        <translation>zSQR</translation>
     </message>
     <message>
         <source>Reset Zerocoin Wallet DB. Deletes transactions that did not make it into the blockchain.</source>
@@ -2308,12 +2308,12 @@ To enable AutoMint change 'enablezeromint=0' to 'enablezeromint=1' in squorum.co
         <translation>ПРИВАТНОСТЬ</translation>
     </message>
     <message>
-        <source>zHLM Control</source>
-        <translation>Контроль zHLM</translation>
+        <source>zSQR Control</source>
+        <translation>Контроль zSQR</translation>
     </message>
     <message>
-        <source>zHLM Selected:</source>
-        <translation>Выбрано zHLM:</translation>
+        <source>zSQR Selected:</source>
+        <translation>Выбрано zSQR:</translation>
     </message>
     <message>
         <source>Quantity Selected:</source>
@@ -2328,24 +2328,24 @@ To enable AutoMint change 'enablezeromint=0' to 'enablezeromint=1' in squorum.co
         <translation>Потратить Zerocoin</translation>
     </message>
     <message>
-        <source>Available (mature and spendable) zHLM for spending</source>
-        <translation>Доступный (зрелый и расходуемый) zHLM для расходов</translation>
+        <source>Available (mature and spendable) zSQR for spending</source>
+        <translation>Доступный (зрелый и расходуемый) zSQR для расходов</translation>
     </message>
     <message>
         <source>Available Balance:</source>
         <translation>Доступный Баланс :</translation>
     </message>
     <message>
-        <source>Available (mature and spendable) zHLM for spending
+        <source>Available (mature and spendable) zSQR for spending
 
-zHLM are mature when they have more than 20 confirmations AND more than 2 mints of the same denomination after them were minted</source>
-        <translation>Доступный (зрелый и расходуемый) zHLM для расходов
+zSQR are mature when they have more than 20 confirmations AND more than 2 mints of the same denomination after them were minted</source>
+        <translation>Доступный (зрелый и расходуемый) zSQR для расходов
 
-ZHLM являются зрелыми, когда у них более 20 подтверждений И более 2 чеканок одного и того же наименования после того, как они были отчеканены</translation>
+ZSQR являются зрелыми, когда у них более 20 подтверждений И более 2 чеканок одного и того же наименования после того, как они были отчеканены</translation>
     </message>
     <message>
-        <source>0 zHLM</source>
-        <translation>0 zHLM</translation>
+        <source>0 zSQR</source>
+        <translation>0 zSQR</translation>
     </message>
     <message>
         <source>Pay &amp;To:</source>
@@ -2404,8 +2404,8 @@ ZHLM являются зрелыми, когда у них более 20 под�
         <translation>Zerocoin Stats:</translation>
     </message>
     <message>
-        <source>Total Balance including unconfirmed and immature zHLM</source>
-        <translation>Общий баланс, включая неподтвержденные и незрелые zHLM</translation>
+        <source>Total Balance including unconfirmed and immature zSQR</source>
+        <translation>Общий баланс, включая неподтвержденные и незрелые zSQR</translation>
     </message>
     <message>
         <source>Total Zerocoin  Balance:</source>
@@ -2426,24 +2426,24 @@ Immature: confirmed, but less than 1 mint of the same denomination after it was 
 Незрелый: подтвержден, но менее 1 чеканок того же наименования после того, как он был отчеканен</translation>
     </message>
     <message>
-        <source>Show the current status of automatic zHLM minting.
+        <source>Show the current status of automatic zSQR minting.
 
 To change the status (restart required):
 - enable: add 'enablezeromint=1' to squorum.conf
 - disable: add 'enablezeromint=0' to squorum.conf
 
 To change the percentage (no restart required):
-- menu Settings-&gt;Options-&gt;Percentage of autominted zHLM
+- menu Settings-&gt;Options-&gt;Percentage of autominted zSQR
 
 </source>
-        <translation>Показать текущий статус автоматической чеканки zHLM.
+        <translation>Показать текущий статус автоматической чеканки zSQR.
 
 Чтобы изменить статус (требуется перезагрузка):
 - включить: добавить 'enablezeromint = 1' в squorum.conf
 - отключить: добавить 'enablezeromint = 0' в squorum.conf
 
 Чтобы изменить процент (не требуется перезагрузка):
-- меню Настройки-&gt; Параметры-&gt; Процент авточеканки zHLM
+- меню Настройки-&gt; Параметры-&gt; Процент авточеканки zSQR
 
 </translation>
     </message>
@@ -2492,20 +2492,20 @@ To change the percentage (no restart required):
         <translation>0 x</translation>
     </message>
     <message>
-        <source>Show zHLM denominations list</source>
-        <translation>Показать список номиналов zHLM</translation>
+        <source>Show zSQR denominations list</source>
+        <translation>Показать список номиналов zSQR</translation>
     </message>
     <message>
         <source>Show Denominations</source>
         <translation>Показать номиналы</translation>
     </message>
     <message>
-        <source>zHLM minting is DISABLED</source>
-        <translation>zHLM чеканка ОТКЛЮЧЕНА</translation>
+        <source>zSQR minting is DISABLED</source>
+        <translation>zSQR чеканка ОТКЛЮЧЕНА</translation>
     </message>
     <message>
-        <source>zHLM spending is NOT private (links back to the mint transaction)</source>
-        <translation>Расходы zHLM НЕ являются частными (ссылка на транзакцию чеканки)</translation>
+        <source>zSQR spending is NOT private (links back to the mint transaction)</source>
+        <translation>Расходы zSQR НЕ являются частными (ссылка на транзакцию чеканки)</translation>
     </message>
     <message>
         <source>Denominations with value 5:</source>
@@ -2638,12 +2638,12 @@ Please be patient...</source>
 Будьте терпеливы ...</translation>
     </message>
     <message>
-        <source>zHLM Spend #: </source>
-        <translation>zHLM Тратить #: </translation>
+        <source>zSQR Spend #: </source>
+        <translation>zSQR Тратить #: </translation>
     </message>
     <message>
-        <source>zHLM Mint</source>
-        <translation>Чеканка zHLM</translation>
+        <source>zSQR Mint</source>
+        <translation>Чеканка zSQR</translation>
     </message>
     <message>
         <source> &lt;b&gt;enabled&lt;/b&gt;.</source>
@@ -2658,12 +2658,12 @@ Please be patient...</source>
         <translation> Настроенный целевой процент: &lt;b&gt;</translation>
     </message>
     <message>
-        <source>zHLM is currently disabled due to maintenance.</source>
-        <translation>zHLM в настоящее время отключен для технического обслуживания.</translation>
+        <source>zSQR is currently disabled due to maintenance.</source>
+        <translation>zSQR в настоящее время отключен для технического обслуживания.</translation>
     </message>
     <message>
-        <source>zHLM is currently undergoing maintenance.</source>
-        <translation>В настоящее время zHLM проходит техническое обслуживание.</translation>
+        <source>zSQR is currently undergoing maintenance.</source>
+        <translation>В настоящее время zSQR проходит техническое обслуживание.</translation>
     </message>
     <message>
         <source>Denom. with value &lt;b&gt;1&lt;/b&gt;:</source>
@@ -3132,8 +3132,8 @@ Please be patient...</source>
         <translation>Пользовательский путь резервного копирования:</translation>
     </message>
     <message>
-        <source>Custom zHLM Backup Path:</source>
-        <translation>Пользовательский путь резервного копирования zHLM:</translation>
+        <source>Custom zSQR Backup Path:</source>
+        <translation>Пользовательский путь резервного копирования zSQR:</translation>
     </message>
     <message>
         <source>Custom Backups Threshold:</source>
@@ -3603,12 +3603,12 @@ Please be patient...</source>
         <translation>UTXO Размер:</translation>
     </message>
     <message>
-        <source>0 HLM</source>
-        <translation>0 HLM</translation>
+        <source>0 SQR</source>
+        <translation>0 SQR</translation>
     </message>
     <message>
-        <source>SwiftX technology allows for near instant transactions - A flat fee of 0.01 HLM applies</source>
-        <translation>Технология SwiftX обеспечивает почти мгновенные транзакции - Применяется фиксированная плата в размере 0,01 HLM</translation>
+        <source>SwiftX technology allows for near instant transactions - A flat fee of 0.01 SQR applies</source>
+        <translation>Технология SwiftX обеспечивает почти мгновенные транзакции - Применяется фиксированная плата в размере 0,01 SQR</translation>
     </message>
     <message>
         <source>Transaction Fee:</source>
@@ -3663,12 +3663,12 @@ Please be patient...</source>
         <translation>Монеты автоматически выбираются</translation>
     </message>
     <message>
-        <source>If the custom fee is set to 1000 uHLMs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 uHLMs in fee,&lt;br /&gt;while "at least" pays 1000 uHLMs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
-        <translation>Если пользовательская плата установлена в 1000 uHLMs, а транзакция составляет всего 250 байт, тогда «за килобайт» платит только 250 uHLMs,&lt;br /&gt;а «по крайней мере» платит 1000 uHLM. Для транзакций, превышающих килобайт, оплата за килобайт.</translation>
+        <source>If the custom fee is set to 1000 uSQRs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 uSQRs in fee,&lt;br /&gt;while "at least" pays 1000 uSQRs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
+        <translation>Если пользовательская плата установлена в 1000 uSQRs, а транзакция составляет всего 250 байт, тогда «за килобайт» платит только 250 uSQRs,&lt;br /&gt;а «по крайней мере» платит 1000 uSQR. Для транзакций, превышающих килобайт, оплата за килобайт.</translation>
     </message>
     <message>
-        <source>If the custom fee is set to 1000 uHLMs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 uHLMs in fee,&lt;br /&gt;while "total at least" pays 1000 uHLMs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
-        <translation>Если пользовательская плата установлена в 1000 uHLMs, а транзакция составляет всего 250 байт, тогда «за килобайт» платит только 250 uHLMs,&lt;br /&gt;а «итого как минимум» платит 1000 uHLM. Для транзакций, превышающих килобайт, оплата за килобайт.</translation>
+        <source>If the custom fee is set to 1000 uSQRs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 uSQRs in fee,&lt;br /&gt;while "total at least" pays 1000 uSQRs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
+        <translation>Если пользовательская плата установлена в 1000 uSQRs, а транзакция составляет всего 250 байт, тогда «за килобайт» платит только 250 uSQRs,&lt;br /&gt;а «итого как минимум» платит 1000 uSQR. Для транзакций, превышающих килобайт, оплата за килобайт.</translation>
     </message>
     <message>
         <source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks.&lt;br /&gt;But be aware that this can end up in a never confirming transaction once there is more demand for sQuorum transactions than the network can process.</source>
@@ -3719,8 +3719,8 @@ Please be patient...</source>
         <translation>Добавить &amp;Получателя</translation>
     </message>
     <message>
-        <source>Anonymized HLM</source>
-        <translation>Анонимный HLM</translation>
+        <source>Anonymized SQR</source>
+        <translation>Анонимный SQR</translation>
     </message>
     <message>
         <source>Balance:</source>
@@ -4367,12 +4367,12 @@ Please be patient...</source>
         <translation>Получено через обфускацию</translation>
     </message>
     <message>
-        <source>HLM Stake</source>
-        <translation>Чеканка HLM</translation>
+        <source>SQR Stake</source>
+        <translation>Чеканка SQR</translation>
     </message>
     <message>
-        <source>zHLM Stake</source>
-        <translation>Чеканка zHLM</translation>
+        <source>zSQR Stake</source>
+        <translation>Чеканка zSQR</translation>
     </message>
     <message>
         <source>Obfuscation Denominate</source>
@@ -4391,32 +4391,32 @@ Please be patient...</source>
         <translation>Обфускация Создание конфессий</translation>
     </message>
     <message>
-        <source>Converted HLM to zHLM</source>
-        <translation>Преобразованный HLM в zHLM</translation>
+        <source>Converted SQR to zSQR</source>
+        <translation>Преобразованный SQR в zSQR</translation>
     </message>
     <message>
-        <source>Spent zHLM</source>
-        <translation>потраченный zHLM</translation>
+        <source>Spent zSQR</source>
+        <translation>потраченный zSQR</translation>
     </message>
     <message>
-        <source>Received HLM from zHLM</source>
-        <translation>Полученный HLM от zHLM</translation>
+        <source>Received SQR from zSQR</source>
+        <translation>Полученный SQR от zSQR</translation>
     </message>
     <message>
-        <source>Minted Change as zHLM from zHLM Spend</source>
-        <translation>Созданная Здача zHLM из потраченного zHLM</translation>
+        <source>Minted Change as zSQR from zSQR Spend</source>
+        <translation>Созданная Здача zSQR из потраченного zSQR</translation>
     </message>
     <message>
-        <source>Converted zHLM to HLM</source>
-        <translation>Преобразованный zHLM to HLM</translation>
+        <source>Converted zSQR to SQR</source>
+        <translation>Преобразованный zSQR to SQR</translation>
     </message>
     <message>
-        <source>Anonymous (zHLM Transaction)</source>
-        <translation>Анонимный (транзакция zHLM)</translation>
+        <source>Anonymous (zSQR Transaction)</source>
+        <translation>Анонимный (транзакция zSQR)</translation>
     </message>
     <message>
-        <source>Anonymous (zHLM Stake)</source>
-        <translation>Анонимный (ставка zHLM)</translation>
+        <source>Anonymous (zSQR Stake)</source>
+        <translation>Анонимный (ставка zSQR)</translation>
     </message>
     <message>
         <source>Sent to</source>
@@ -4630,12 +4630,12 @@ Please be patient...</source>
         <translation>Экспортирование произошло успешно</translation>
     </message>
     <message>
-        <source>Received HLM from zHLM</source>
-        <translation>Полученный HLM от zHLM</translation>
+        <source>Received SQR from zSQR</source>
+        <translation>Полученный SQR от zSQR</translation>
     </message>
     <message>
-        <source>Zerocoin Spend, Change in zHLM</source>
-        <translation>Потратить Zerocoin, Преобразовать в zHLM</translation>
+        <source>Zerocoin Spend, Change in zSQR</source>
+        <translation>Потратить Zerocoin, Преобразовать в zSQR</translation>
     </message>
     <message>
         <source>The transaction history was successfully saved to %1.</source>
@@ -4671,8 +4671,8 @@ Please be patient...</source>
         <translation>Отправить Монеты</translation>
     </message>
     <message>
-        <source>SwiftX doesn't support sending values that high yet. Transactions are currently limited to %1 HLM.</source>
-        <translation>SwiftX не поддерживает отправку значений, которые еще высоки. В настоящее время транзакции ограничены %1 HLM.</translation>
+        <source>SwiftX doesn't support sending values that high yet. Transactions are currently limited to %1 SQR.</source>
+        <translation>SwiftX не поддерживает отправку значений, которые еще высоки. В настоящее время транзакции ограничены %1 SQR.</translation>
     </message>
 </context>
 <context>
@@ -4705,8 +4705,8 @@ Please be patient...</source>
 <context>
     <name>ZSqrControlDialog</name>
     <message>
-        <source>Select zHLM to Spend</source>
-        <translation>Выбор zHLM для трат</translation>
+        <source>Select zSQR to Spend</source>
+        <translation>Выбор zSQR для трат</translation>
     </message>
     <message>
         <source>Quantity</source>
@@ -4717,8 +4717,8 @@ Please be patient...</source>
         <translation>0</translation>
     </message>
     <message>
-        <source>zHLM</source>
-        <translation>zHLM</translation>
+        <source>zSQR</source>
+        <translation>zSQR</translation>
     </message>
     <message>
         <source>Select/Deselect All</source>
@@ -4784,16 +4784,16 @@ Please be patient...</source>
         <translation>Распространяется по лицензии программного обеспечения MIT, см. Сопроводительный файл COPYING или &lt;http://www.opensource.org/licenses/mit-license.php&gt;.</translation>
     </message>
     <message>
-        <source>Enable automatic wallet backups triggered after each zHLM minting (0-1, default: %u)</source>
-        <translation>Включить автоматическое резервное копирование кошелька, запускаемое после каждого чеканки zHLM (0-1, по умолчанию: %u)</translation>
+        <source>Enable automatic wallet backups triggered after each zSQR minting (0-1, default: %u)</source>
+        <translation>Включить автоматическое резервное копирование кошелька, запускаемое после каждого чеканки zSQR (0-1, по умолчанию: %u)</translation>
     </message>
     <message>
-        <source>Enable or disable staking functionality for HLM inputs (0-1, default: %u)</source>
-        <translation>Включение или отключение функций разбивки для входов HLM (0-1, по умолчанию: %u)</translation>
+        <source>Enable or disable staking functionality for SQR inputs (0-1, default: %u)</source>
+        <translation>Включение или отключение функций разбивки для входов SQR (0-1, по умолчанию: %u)</translation>
     </message>
     <message>
-        <source>Enable or disable staking functionality for zHLM inputs (0-1, default: %u)</source>
-        <translation>Включение или отключение функций разбивки для входов zHLM (0-1, по умолчанию: %u)</translation>
+        <source>Enable or disable staking functionality for zSQR inputs (0-1, default: %u)</source>
+        <translation>Включение или отключение функций разбивки для входов zSQR (0-1, по умолчанию: %u)</translation>
     </message>
     <message>
         <source>Enable spork administration functionality with the appropriate private key.</source>
@@ -4828,12 +4828,12 @@ Please be patient...</source>
         <translation>Выполнить команду, когда лучший блок изменяется (%s в cmd заменяется блочным хэшем)</translation>
     </message>
     <message>
-        <source>Fees (in HLM/Kb) smaller than this are considered zero fee for relaying (default: %s)</source>
-        <translation>Тарифы (в HLM / Kb), меньшие, чем это, считаются нулевой комиссией за ретрансляцию (по умолчанию: %s)</translation>
+        <source>Fees (in SQR/Kb) smaller than this are considered zero fee for relaying (default: %s)</source>
+        <translation>Тарифы (в SQR / Kb), меньшие, чем это, считаются нулевой комиссией за ретрансляцию (по умолчанию: %s)</translation>
     </message>
     <message>
-        <source>Fees (in HLM/Kb) smaller than this are considered zero fee for transaction creation (default: %s)</source>
-        <translation>Плата (в HLM / Kb) меньше этого считается нулевой комиссией за создание транзакции (по умолчанию: %s)</translation>
+        <source>Fees (in SQR/Kb) smaller than this are considered zero fee for transaction creation (default: %s)</source>
+        <translation>Плата (в SQR / Kb) меньше этого считается нулевой комиссией за создание транзакции (по умолчанию: %s)</translation>
     </message>
     <message>
         <source>Flush database activity from memory pool to disk log every &lt;n&gt; megabytes (default: %u)</source>
@@ -4936,12 +4936,12 @@ Please be patient...</source>
         <translation>Не удалось найти достаточное количество средств, предназначенных для обфускации, для этой транзакции.</translation>
     </message>
     <message>
-        <source>Unable to locate enough Obfuscation non-denominated funds for this transaction that are not equal 10000 HLM.</source>
-        <translation>Невозможно найти достаточное количество средств, не предназначенных для обфускации, для этой транзакции, которые не равны 10000 HLM.</translation>
+        <source>Unable to locate enough Obfuscation non-denominated funds for this transaction that are not equal 10000 SQR.</source>
+        <translation>Невозможно найти достаточное количество средств, не предназначенных для обфускации, для этой транзакции, которые не равны 10000 SQR.</translation>
     </message>
     <message>
-        <source>Unable to locate enough funds for this transaction that are not equal 10000 HLM.</source>
-        <translation>Не удалось найти достаточное количество средств для этой транзакции, которые не равны 10000 HLM.</translation>
+        <source>Unable to locate enough funds for this transaction that are not equal 10000 SQR.</source>
+        <translation>Не удалось найти достаточное количество средств для этой транзакции, которые не равны 10000 SQR.</translation>
     </message>
     <message>
         <source>Use separate SOCKS5 proxy to reach peers via Tor hidden services (default: %s)</source>
@@ -5216,8 +5216,8 @@ Please be patient...</source>
         <translation>Не удалось прочитать блок</translation>
     </message>
     <message>
-        <source>Fee (in HLM/kB) to add to transactions you send (default: %s)</source>
-        <translation>Плата (в HLM / kB) для добавления к транзакциям, которые вы отправляете (по умолчанию: %s)</translation>
+        <source>Fee (in SQR/kB) to add to transactions you send (default: %s)</source>
+        <translation>Плата (в SQR / kB) для добавления к транзакциям, которые вы отправляете (по умолчанию: %s)</translation>
     </message>
     <message>
         <source>Force safe mode (default: %u)</source>
@@ -5320,8 +5320,8 @@ Please be patient...</source>
         <translation>Процент автоматически отчеканенного Zerocoin (1-100, по умолчанию: %u)</translation>
     </message>
     <message>
-        <source>Reindex the HLM and zHLM money supply statistics</source>
-        <translation>Reindex статистика денежной массы HLM и zHLM</translation>
+        <source>Reindex the SQR and zSQR money supply statistics</source>
+        <translation>Reindex статистика денежной массы SQR и zSQR</translation>
     </message>
     <message>
         <source>Reindexing zerocoin database...</source>
@@ -5396,8 +5396,8 @@ Please be patient...</source>
         <translation>Предпочтительный номинал для автоматически чеканившегося Zerocoin (1/5/10/50/100/500/1000/5000), 0 без предпочтений. default: %u)</translation>
     </message>
     <message>
-        <source>Specify custom backup path to add a copy of any automatic zHLM backup. If set as dir, every backup generates a timestamped file. If set as file, will rewrite to that file every backup. If backuppath is set as well, 4 backups will happen</source>
-        <translation>Укажите собственный путь резервного копирования, чтобы добавить копию любой автоматической резервной копии zHLM. Если задано как dir, каждая резервная копия генерирует файл с отметкой времени. Если он установлен как файл, он будет переписывать в этот файл каждую резервную копию. Если также установлен резервный путь, произойдет 4 резервных копии</translation>
+        <source>Specify custom backup path to add a copy of any automatic zSQR backup. If set as dir, every backup generates a timestamped file. If set as file, will rewrite to that file every backup. If backuppath is set as well, 4 backups will happen</source>
+        <translation>Укажите собственный путь резервного копирования, чтобы добавить копию любой автоматической резервной копии zSQR. Если задано как dir, каждая резервная копия генерирует файл с отметкой времени. Если он установлен как файл, он будет переписывать в этот файл каждую резервную копию. Если также установлен резервный путь, произойдет 4 резервных копии</translation>
     </message>
     <message>
         <source>Specify custom backup path to add a copy of any wallet backup. If set as dir, every backup generates a timestamped file. If set as file, will rewrite to that file every backup.</source>
@@ -5816,8 +5816,8 @@ Please be patient...</source>
         <translation>Синхронизация спорков ...</translation>
     </message>
     <message>
-        <source>Syncing zHLM wallet...</source>
-        <translation>Синхронизация zHLM кошелька ...</translation>
+        <source>Syncing zSQR wallet...</source>
+        <translation>Синхронизация zSQR кошелька ...</translation>
     </message>
     <message>
         <source>The coin spend has been used</source>
@@ -5924,8 +5924,8 @@ Please be patient...</source>
         <translation>Имя пользователя для соединений JSON-RPC</translation>
     </message>
     <message>
-        <source>Value is below the smallest available denomination (= 1) of zHLM</source>
-        <translation>Значение ниже наименьшего доступного номинала (= 1) zSqr</translation>
+        <source>Value is below the smallest available denomination (= 1) of zSQR</source>
+        <translation>Значение ниже наименьшего доступного номинала (= 1) zSQR</translation>
     </message>
     <message>
         <source>Verifying blocks...</source>

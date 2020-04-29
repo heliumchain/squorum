@@ -145,7 +145,7 @@
                       <item>
                        <layout class="QHBoxLayout" name="horizontalLayout_3">
                         <item>
-                         <widget class="QLabel" name="labelzHLMActions">
+                         <widget class="QLabel" name="labelzSQRActions">
                           <property name="font">
                            <font>
                             <pointsize>12</pointsize>
@@ -162,7 +162,7 @@
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLabel" name="labelzHLMSyncStatus">
+                         <widget class="QLabel" name="labelzSQRSyncStatus">
                           <property name="toolTip">
                            <string>The displayed information may be out of date. Your wallet automatically synchronizes with the sQuorum network after a connection is established, but this process has not completed yet.</string>
                           </property>
@@ -231,7 +231,7 @@
                               </font>
                              </property>
                              <property name="toolTip">
-                              <string>Total Balance including unconfirmed and immature zHLM</string>
+                              <string>Total Balance including unconfirmed and immature zSQR</string>
                              </property>
                              <property name="text">
                               <string>Total Zerocoin  Balance:</string>
@@ -256,10 +256,10 @@
                               </font>
                              </property>
                              <property name="toolTip">
-                              <string>Total Balance including unconfirmed and immature zHLM</string>
+                              <string>Total Balance including unconfirmed and immature zSQR</string>
                              </property>
                              <property name="text">
-                              <string>0 zHLM</string>
+                              <string>0 zSQR</string>
                              </property>
                              <property name="alignment">
                               <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -308,7 +308,7 @@
                               </font>
                              </property>
                              <property name="text">
-                              <string>0 zHLM</string>
+                              <string>0 zSQR</string>
                              </property>
                             </widget>
                            </item>
@@ -330,7 +330,7 @@
                          <item>
                           <widget class="QPushButton" name="pushButtonShowDenoms">
                            <property name="toolTip">
-                            <string>Show zHLM denominations list</string>
+                            <string>Show zSQR denominations list</string>
                            </property>
                            <property name="text">
                             <string>Show Denominations</string>
@@ -362,7 +362,7 @@
 font-weight: bold;</string>
                           </property>
                           <property name="text">
-                           <string>zHLM minting is DISABLED</string>
+                           <string>zSQR minting is DISABLED</string>
                           </property>
                          </widget>
                         </item>
@@ -493,7 +493,7 @@ font-weight: bold;</string>
 font-weight: bold;</string>
                           </property>
                           <property name="text">
-                           <string>zHLM spending is NOT private (links back to the mint transaction)</string>
+                           <string>zSQR spending is NOT private (links back to the mint transaction)</string>
                           </property>
                          </widget>
                         </item>
@@ -523,14 +523,14 @@ font-weight: bold;</string>
                         <item>
                          <widget class="QPushButton" name="pushButtonZSqrControl">
                           <property name="text">
-                           <string>zHLM Control</string>
+                           <string>zSQR Control</string>
                           </property>
                          </widget>
                         </item>
                         <item>
                          <widget class="QLabel" name="labelzSqrSelected">
                           <property name="text">
-                           <string>zHLM Selected:</string>
+                           <string>zSQR Selected:</string>
                           </property>
                          </widget>
                         </item>
@@ -589,7 +589,7 @@ font-weight: bold;</string>
                       <item>
                        <layout class="QHBoxLayout" name="horizontalLayout_6">
                         <item>
-                         <widget class="QPushButton" name="pushButtonSpendzHLM">
+                         <widget class="QPushButton" name="pushButtonSpendzSQR">
                           <property name="minimumSize">
                            <size>
                             <width>131</width>
@@ -605,9 +605,9 @@ font-weight: bold;</string>
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLabel" name="labelzHLMBalanceText">
+                         <widget class="QLabel" name="labelzSQRBalanceText">
                           <property name="toolTip">
-                           <string>Available (mature and spendable) zHLM for spending</string>
+                           <string>Available (mature and spendable) zSQR for spending</string>
                           </property>
                           <property name="text">
                            <string>Available Balance:</string>
@@ -626,12 +626,12 @@ font-weight: bold;</string>
                            </font>
                           </property>
                           <property name="toolTip">
-                           <string>Available (mature and spendable) zHLM for spending
+                           <string>Available (mature and spendable) zSQR for spending
 
-zHLM are mature when they have more than 20 confirmations AND more than 2 mints of the same denomination after them were minted</string>
+zSQR are mature when they have more than 20 confirmations AND more than 2 mints of the same denomination after them were minted</string>
                           </property>
                           <property name="text">
-                           <string>0 zHLM</string>
+                           <string>0 zSQR</string>
                           </property>
                           <property name="alignment">
                            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -775,7 +775,7 @@ zHLM are mature when they have more than 20 confirmations AND more than 2 mints 
                            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                           </property>
                           <property name="buddy">
-                           <cstring>zHLMpayAmount</cstring>
+                           <cstring>zSQRpayAmount</cstring>
                           </property>
                          </widget>
                         </item>
@@ -785,10 +785,10 @@ zHLM are mature when they have more than 20 confirmations AND more than 2 mints 
                            <number>0</number>
                           </property>
                           <item>
-                           <widget class="QLineEdit" name="zHLMpayAmount"/>
+                           <widget class="QLineEdit" name="zSQRpayAmount"/>
                           </item>
                           <item>
-                           <widget class="QLabel" name="labelzHLM">
+                           <widget class="QLabel" name="labelzSQR">
                             <property name="minimumSize">
                              <size>
                               <width>55</width>
@@ -796,7 +796,7 @@ zHLM are mature when they have more than 20 confirmations AND more than 2 mints 
                              </size>
                             </property>
                             <property name="text">
-                             <string>zHLM</string>
+                             <string>zSQR</string>
                             </property>
                             <property name="alignment">
                              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -880,7 +880,7 @@ zHLM are mature when they have more than 20 confirmations AND more than 2 mints 
                       <item>
                        <layout class="QHBoxLayout" name="horizontalLayout_21">
                         <item>
-                         <widget class="QLabel" name="labelzHLMStats">
+                         <widget class="QLabel" name="labelzSQRStats">
                           <property name="font">
                            <font>
                             <pointsize>12</pointsize>
@@ -960,7 +960,7 @@ zHLM are mature when they have more than 20 confirmations AND more than 2 mints 
                            </font>
                           </property>
                           <property name="toolTip">
-                           <string>Total Balance including unconfirmed and immature zHLM</string>
+                           <string>Total Balance including unconfirmed and immature zSQR</string>
                           </property>
                           <property name="text">
                            <string>Total Zerocoin  Balance:</string>
@@ -998,10 +998,10 @@ zHLM are mature when they have more than 20 confirmations AND more than 2 mints 
                            </font>
                           </property>
                           <property name="toolTip">
-                           <string>Total Balance including unconfirmed and immature zHLM</string>
+                           <string>Total Balance including unconfirmed and immature zSQR</string>
                           </property>
                           <property name="text">
-                           <string>0 zHLM</string>
+                           <string>0 zSQR</string>
                           </property>
                           <property name="alignment">
                            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -1458,14 +1458,14 @@ Immature: confirmed, but less than 1 mint of the same denomination after it was 
                         <item>
                          <widget class="QLabel" name="label_AutoMintStatus">
                           <property name="toolTip">
-                           <string>Show the current status of automatic zHLM minting.
+                           <string>Show the current status of automatic zSQR minting.
 
 To change the status (restart required):
 - enable: add 'enablezeromint=1' to squorum.conf
 - disable: add 'enablezeromint=0' to squorum.conf
 
 To change the percentage (no restart required):
-- menu Settings-&gt;Options-&gt;Percentage of autominted zHLM
+- menu Settings-&gt;Options-&gt;Percentage of autominted zSQR
 
 </string>
                           </property>
@@ -1545,7 +1545,7 @@ To change the percentage (no restart required):
                            </font>
                           </property>
                           <property name="text">
-                           <string>0 zHLM</string>
+                           <string>0 zSQR</string>
                           </property>
                          </widget>
                         </item>
@@ -1576,7 +1576,7 @@ To change the percentage (no restart required):
                         <item>
                          <widget class="QLabel" name="labelZsupplyAmount1">
                           <property name="text">
-                           <string>0 zHLM</string>
+                           <string>0 zSQR</string>
                           </property>
                          </widget>
                         </item>
@@ -1607,7 +1607,7 @@ To change the percentage (no restart required):
                         <item>
                          <widget class="QLabel" name="labelZsupplyAmount5">
                           <property name="text">
-                           <string>0 zHLM</string>
+                           <string>0 zSQR</string>
                           </property>
                          </widget>
                         </item>
@@ -1638,7 +1638,7 @@ To change the percentage (no restart required):
                         <item>
                          <widget class="QLabel" name="labelZsupplyAmount10">
                           <property name="text">
-                           <string>0 zHLM</string>
+                           <string>0 zSQR</string>
                           </property>
                          </widget>
                         </item>
@@ -1669,7 +1669,7 @@ To change the percentage (no restart required):
                         <item>
                          <widget class="QLabel" name="labelZsupplyAmount50">
                           <property name="text">
-                           <string>0 zHLM</string>
+                           <string>0 zSQR</string>
                           </property>
                          </widget>
                         </item>
@@ -1700,7 +1700,7 @@ To change the percentage (no restart required):
                         <item>
                          <widget class="QLabel" name="labelZsupplyAmount100">
                           <property name="text">
-                           <string>0 zHLM</string>
+                           <string>0 zSQR</string>
                           </property>
                          </widget>
                         </item>
@@ -1731,7 +1731,7 @@ To change the percentage (no restart required):
                         <item>
                          <widget class="QLabel" name="labelZsupplyAmount500">
                           <property name="text">
-                           <string>0 zHLM</string>
+                           <string>0 zSQR</string>
                           </property>
                          </widget>
                         </item>
@@ -1762,7 +1762,7 @@ To change the percentage (no restart required):
                         <item>
                          <widget class="QLabel" name="labelZsupplyAmount1000">
                           <property name="text">
-                           <string>0 zHLM</string>
+                           <string>0 zSQR</string>
                           </property>
                          </widget>
                         </item>
@@ -1793,7 +1793,7 @@ To change the percentage (no restart required):
                         <item>
                          <widget class="QLabel" name="labelZsupplyAmount5000">
                           <property name="text">
-                           <string>0 zHLM</string>
+                           <string>0 zSQR</string>
                           </property>
                          </widget>
                         </item>
@@ -1951,7 +1951,7 @@ To change the percentage (no restart required):
          <enum>Qt::ActionsContextMenu</enum>
         </property>
         <property name="text">
-         <string notr="true">0.000???000???00 HLM</string>
+         <string notr="true">0.000???000???00 SQR</string>
         </property>
         <property name="textInteractionFlags">
          <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
@@ -2033,7 +2033,7 @@ To change the percentage (no restart required):
            <enum>Qt::ActionsContextMenu</enum>
           </property>
           <property name="text">
-           <string notr="true">0.00 HLM</string>
+           <string notr="true">0.00 SQR</string>
           </property>
           <property name="textInteractionFlags">
            <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
@@ -2255,7 +2255,7 @@ To change the percentage (no restart required):
          <enum>Qt::ActionsContextMenu</enum>
         </property>
         <property name="text">
-         <string notr="true">0.000???000???00 HLM</string>
+         <string notr="true">0.000???000???00 SQR</string>
         </property>
         <property name="textInteractionFlags">
          <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>

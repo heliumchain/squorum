@@ -13,7 +13,7 @@ Please report bugs using the issue tracker at github:
 Mandatory Update
 ==============
 
-sQuorum Core v3.0.5 is a mandatory update for all users. This release contains various updates/fixes pertaining to the zHLM protocol, supply tracking, block transmission and relaying, as well as usability and quality-of-life updates to the GUI. Users are required to update before block `908000` which is when the accumulators will be refactored. Shortly after that block, zHLM transactions will be enabled. **When zHLM is enabled, autominting will also be enabled.** If you would like to disable automatic conversion of 10% of your HLM balance to zHLM, then you will need to add `enablezeromint=0` to your `squorum.conf` file. For information about where to find your squorum.conf you can visit this link from [sQuorum Support](https://squorum.freshdesk.com/support/solutions/articles/30000004664-where-are-my-wallet-dat-blockchain-and-configuration-conf-files-located-).
+sQuorum Core v3.0.5 is a mandatory update for all users. This release contains various updates/fixes pertaining to the zSQR protocol, supply tracking, block transmission and relaying, as well as usability and quality-of-life updates to the GUI. Users are required to update before block `908000` which is when the accumulators will be refactored. Shortly after that block, zSQR transactions will be enabled. **When zSQR is enabled, autominting will also be enabled.** If you would like to disable automatic conversion of 10% of your SQR balance to zSQR, then you will need to add `enablezeromint=0` to your `squorum.conf` file. For information about where to find your squorum.conf you can visit this link from [sQuorum Support](https://squorum.freshdesk.com/support/solutions/articles/30000004664-where-are-my-wallet-dat-blockchain-and-configuration-conf-files-located-).
 
 Users will have a grace period to update their clients before versions prior to this release are no longer allowed to connect to this (and future) version(s).
 
@@ -48,23 +48,23 @@ Notable Changes
 
 Accumulator Code Refactor
 ---------------------
-The zHLM accumulator code has undergone a major refactor. Accumulators are one of the most essential components of the zerocoin protocol, and also one of the most computationally expensive parts of the protocol. This refactoring speeds up syncing and spending of zHLM by over 5x. The new code also allows for spending of zHLM with only 2 required mints occurring on the network after your mint has been added, whereas before 3 were required. This refactor allows for lighter resource load and a smoother user experience.
+The zSQR accumulator code has undergone a major refactor. Accumulators are one of the most essential components of the zerocoin protocol, and also one of the most computationally expensive parts of the protocol. This refactoring speeds up syncing and spending of zSQR by over 5x. The new code also allows for spending of zSQR with only 2 required mints occurring on the network after your mint has been added, whereas before 3 were required. This refactor allows for lighter resource load and a smoother user experience.
 
 libzerocoin Exploit Fix
 ---------------------
-zHLM relies on a 3rd party library called libzerocoin. All currencies that utilize the zerocoin protocol use libzerocoin, and many of those currencies have been exposed to an exploit which allowed for the creation of multiple zero-knowledge spending proofs for one single zerocoin mint. The sQuorum developers were able properly identify the exploit, track down any fraudulent spending proofs, link the fraudulent spending proofs with their one valid proof that they were mutated from, and remove any mints from the accumulators that were derived from the invalid spends. 
+zSQR relies on a 3rd party library called libzerocoin. All currencies that utilize the zerocoin protocol use libzerocoin, and many of those currencies have been exposed to an exploit which allowed for the creation of multiple zero-knowledge spending proofs for one single zerocoin mint. The sQuorum developers were able properly identify the exploit, track down any fraudulent spending proofs, link the fraudulent spending proofs with their one valid proof that they were mutated from, and remove any mints from the accumulators that were derived from the invalid spends. 
 
-zHLM Maintenance Mode Spork
+zSQR Maintenance Mode Spork
 ---------------------
-Handling the above noted libzerocoin exploit required the sQuorum team to immediately release a patched wallet to as many users as possible which rejected bad spends and also disabled all zHLM transactions in general. The process of releasing a patched wallet in such a small time frame is frustrating and difficult for all members of the sQuorum team and especially users of sQuorum. The sQuorum developers have added a new spork which allows for zHLM transacting to be turned on/off without having to release a patched wallet. This will allow much smoother operation if any problems occur in the future, and should also allow exchanges and 3rd party services to continue to operate even if zHLM is in maintenance mode.
+Handling the above noted libzerocoin exploit required the sQuorum team to immediately release a patched wallet to as many users as possible which rejected bad spends and also disabled all zSQR transactions in general. The process of releasing a patched wallet in such a small time frame is frustrating and difficult for all members of the sQuorum team and especially users of sQuorum. The sQuorum developers have added a new spork which allows for zSQR transacting to be turned on/off without having to release a patched wallet. This will allow much smoother operation if any problems occur in the future, and should also allow exchanges and 3rd party services to continue to operate even if zSQR is in maintenance mode.
 
 Money Supply Indexing
 ---------------------
-The exploit in libzerocoin threw off some of the wallet's internal money supply calculations for both the zHLM supply and the HLM supply. User's wallet's will automatically recalculate the supply on block `908001`. User's also have the ability to recalculate supply using the startup flag `reindexmoneysupply`.
+The exploit in libzerocoin threw off some of the wallet's internal money supply calculations for both the zSQR supply and the SQR supply. User's wallet's will automatically recalculate the supply on block `908001`. User's also have the ability to recalculate supply using the startup flag `reindexmoneysupply`.
 
-More Extensive Tracking of zHLM Supply Through RPC
+More Extensive Tracking of zSQR Supply Through RPC
 ---------------------
-More information has been added to the `getinfo` and `getblock` RPC calls, which now display the total zHLM supply as well as the balance for each zHLM accumulator.
+More information has been added to the `getinfo` and `getblock` RPC calls, which now display the total zSQR supply as well as the balance for each zSQR accumulator.
 
 Multisig GUI
 ---------------------

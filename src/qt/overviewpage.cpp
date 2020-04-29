@@ -35,7 +35,7 @@ class TxViewDelegate : public QAbstractItemDelegate
 {
     Q_OBJECT
 public:
-    TxViewDelegate() : QAbstractItemDelegate(), unit(BitcoinUnits::HLM)
+    TxViewDelegate() : QAbstractItemDelegate(), unit(BitcoinUnits::SQR)
     {
     }
 
@@ -147,7 +147,7 @@ OverviewPage::~OverviewPage()
     delete ui;
 }
 
-void OverviewPage::getPercentage(CAmount nUnlockedBalance, CAmount nZerocoinBalance, QString& sHLMPercentage, QString& szHLMPercentage)
+void OverviewPage::getPercentage(CAmount nUnlockedBalance, CAmount nZerocoinBalance, QString& sSQRPercentage, QString& szSQRPercentage)
 {
     int nPrecision = 2;
     double dzPercentage = 0.0;
@@ -166,8 +166,8 @@ void OverviewPage::getPercentage(CAmount nUnlockedBalance, CAmount nZerocoinBala
 
     double dPercentage = 100.0 - dzPercentage;
 
-    szHLMPercentage = "(" + QLocale(QLocale::system()).toString(dzPercentage, 'f', nPrecision) + " %)";
-    sHLMPercentage = "(" + QLocale(QLocale::system()).toString(dPercentage, 'f', nPrecision) + " %)";
+    szSQRPercentage = "(" + QLocale(QLocale::system()).toString(dzPercentage, 'f', nPrecision) + " %)";
+    sSQRPercentage = "(" + QLocale(QLocale::system()).toString(dPercentage, 'f', nPrecision) + " %)";
 
 }
 
@@ -192,16 +192,16 @@ void OverviewPage::setBalance(const CAmount& balance, const CAmount& unconfirmed
         nWatchOnlyLockedBalance = pwalletMain->GetLockedWatchOnlyBalance();
     }
 
-    // HLM Balance
+    // SQR Balance
     CAmount nTotalBalance = balance + unconfirmedBalance;
     CAmount sqrAvailableBalance = balance - immatureBalance - nLockedBalance;
     CAmount nUnlockedBalance = nTotalBalance - nLockedBalance;
 
-    // HLM Watch-Only Balance
+    // SQR Watch-Only Balance
     CAmount nTotalWatchBalance = watchOnlyBalance + watchUnconfBalance;
     CAmount nAvailableWatchBalance = watchOnlyBalance - watchImmatureBalance - nWatchOnlyLockedBalance;
 
-    // zHLM Balance
+    // zSQR Balance
     CAmount matureZerocoinBalance = zerocoinBalance - unconfirmedZerocoinBalance - immatureZerocoinBalance;
 
     // Percentages
@@ -212,7 +212,7 @@ void OverviewPage::setBalance(const CAmount& balance, const CAmount& unconfirmed
     CAmount availableTotalBalance = sqrAvailableBalance + matureZerocoinBalance;
     CAmount sumTotalBalance = nTotalBalance + zerocoinBalance;
 
-    // HLM labels
+    // SQR labels
     ui->labelBalance->setText(BitcoinUnits::floorHtmlWithUnit(nDisplayUnit, sqrAvailableBalance, false, BitcoinUnits::separatorAlways));
     ui->labelUnconfirmed->setText(BitcoinUnits::floorHtmlWithUnit(nDisplayUnit, unconfirmedBalance, false, BitcoinUnits::separatorAlways));
     ui->labelImmature->setText(BitcoinUnits::floorHtmlWithUnit(nDisplayUnit, immatureBalance, false, BitcoinUnits::separatorAlways));
@@ -231,10 +231,10 @@ void OverviewPage::setBalance(const CAmount& balance, const CAmount& unconfirmed
     ui->labelTotalz->setText(BitcoinUnits::floorHtmlWithUnit(nDisplayUnit, sumTotalBalance, false, BitcoinUnits::separatorAlways));
 
     // Percentage labels
-    ui->labelHLMPercent->setText(sPercentage);
+    ui->labelSQRPercent->setText(sPercentage);
 
     // Adjust bubble-help according to AutoMint settings
-    QString automintHelp = tr("Current percentage of zHLM.\nIf AutoMint is enabled this percentage will settle around the configured AutoMint percentage (default = 10%).\n");
+    QString automintHelp = tr("Current percentage of zSQR.\nIf AutoMint is enabled this percentage will settle around the configured AutoMint percentage (default = 10%).\n");
     bool fEnableZeromint = GetBoolArg("-enablezeromint", false);
     int nZeromintPercentage = GetArg("-zeromintpercentage", 10);
     if (fEnableZeromint) {
@@ -255,37 +255,37 @@ void OverviewPage::setBalance(const CAmount& balance, const CAmount& unconfirmed
 
     bool showWatchOnly = nTotalWatchBalance != 0;
 
-    // HLM Available
-    bool showHLMAvailable = settingShowAllBalances || sqrAvailableBalance != nTotalBalance;
-    bool showWatchOnlyHLMAvailable = showHLMAvailable || nAvailableWatchBalance != nTotalWatchBalance;
-    ui->labelBalanceText->setVisible(showHLMAvailable || showWatchOnlyHLMAvailable);
-    ui->labelBalance->setVisible(showHLMAvailable || showWatchOnlyHLMAvailable);
-    ui->labelWatchAvailable->setVisible(showWatchOnlyHLMAvailable && showWatchOnly);
+    // SQR Available
+    bool showSQRAvailable = settingShowAllBalances || sqrAvailableBalance != nTotalBalance;
+    bool showWatchOnlySQRAvailable = showSQRAvailable || nAvailableWatchBalance != nTotalWatchBalance;
+    ui->labelBalanceText->setVisible(showSQRAvailable || showWatchOnlySQRAvailable);
+    ui->labelBalance->setVisible(showSQRAvailable || showWatchOnlySQRAvailable);
+    ui->labelWatchAvailable->setVisible(showWatchOnlySQRAvailable && showWatchOnly);
 
-    // HLM Pending
-    bool showHLMPending = settingShowAllBalances || unconfirmedBalance != 0;
-    bool showWatchOnlyHLMPending = showHLMPending || watchUnconfBalance != 0;
-    ui->labelPendingText->setVisible(showHLMPending || showWatchOnlyHLMPending);
-    ui->labelUnconfirmed->setVisible(showHLMPending || showWatchOnlyHLMPending);
-    ui->labelWatchPending->setVisible(showWatchOnlyHLMPending && showWatchOnly);
+    // SQR Pending
+    bool showSQRPending = settingShowAllBalances || unconfirmedBalance != 0;
+    bool showWatchOnlySQRPending = showSQRPending || watchUnconfBalance != 0;
+    ui->labelPendingText->setVisible(showSQRPending || showWatchOnlySQRPending);
+    ui->labelUnconfirmed->setVisible(showSQRPending || showWatchOnlySQRPending);
+    ui->labelWatchPending->setVisible(showWatchOnlySQRPending && showWatchOnly);
 
-    // HLM Immature
-    bool showHLMImmature = settingShowAllBalances || immatureBalance != 0;
-    bool showWatchOnlyImmature = showHLMImmature || watchImmatureBalance != 0;
-    ui->labelImmatureText->setVisible(showHLMImmature || showWatchOnlyImmature);
-    ui->labelImmature->setVisible(showHLMImmature || showWatchOnlyImmature); // for symmetry reasons also show immature label when the watch-only one is shown
+    // SQR Immature
+    bool showSQRImmature = settingShowAllBalances || immatureBalance != 0;
+    bool showWatchOnlyImmature = showSQRImmature || watchImmatureBalance != 0;
+    ui->labelImmatureText->setVisible(showSQRImmature || showWatchOnlyImmature);
+    ui->labelImmature->setVisible(showSQRImmature || showWatchOnlyImmature); // for symmetry reasons also show immature label when the watch-only one is shown
     ui->labelWatchImmature->setVisible(showWatchOnlyImmature && showWatchOnly); // show watch-only immature balance
 
-    // HLM Locked
-    bool showHLMLocked = settingShowAllBalances || nLockedBalance != 0;
-    bool showWatchOnlyHLMLocked = showHLMLocked || nWatchOnlyLockedBalance != 0;
-    ui->labelLockedBalanceText->setVisible(showHLMLocked || showWatchOnlyHLMLocked);
-    ui->labelLockedBalance->setVisible(showHLMLocked || showWatchOnlyHLMLocked);
-    ui->labelWatchLocked->setVisible(showWatchOnlyHLMLocked && showWatchOnly);
+    // SQR Locked
+    bool showSQRLocked = settingShowAllBalances || nLockedBalance != 0;
+    bool showWatchOnlySQRLocked = showSQRLocked || nWatchOnlyLockedBalance != 0;
+    ui->labelLockedBalanceText->setVisible(showSQRLocked || showWatchOnlySQRLocked);
+    ui->labelLockedBalance->setVisible(showSQRLocked || showWatchOnlySQRLocked);
+    ui->labelWatchLocked->setVisible(showWatchOnlySQRLocked && showWatchOnly);
 
     // Percent split
     bool showPercentages = ! (zerocoinBalance == 0 && nTotalBalance == 0);
-    ui->labelHLMPercent->setVisible(showPercentages);
+    ui->labelSQRPercent->setVisible(showPercentages);
 
     static int cachedTxLocks = 0;
 
@@ -357,7 +357,7 @@ void OverviewPage::setWalletModel(WalletModel* model)
         connect(model, SIGNAL(notifyWatchonlyChanged(bool)), this, SLOT(updateWatchOnlyLabels(bool)));
     }
 
-    // update the display unit, to not use the default ("HLM")
+    // update the display unit, to not use the default ("SQR")
     updateDisplayUnit();
 
     // Hide orphans

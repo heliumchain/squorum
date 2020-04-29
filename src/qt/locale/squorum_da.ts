@@ -176,8 +176,8 @@
         <translation>Er du sikker på, at du vil kryptere din tegnebog?</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR HLM&lt;/b&gt;!</source>
-        <translation>Advarsel! Hvis du krypterer din tegnebog og mister dit password vil du &lt;b&gt;MISTE ALLE DINE HLM&lt;/b&gt;. Passworded kan ikke genskabes.</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR SQR&lt;/b&gt;!</source>
+        <translation>Advarsel! Hvis du krypterer din tegnebog og mister dit password vil du &lt;b&gt;MISTE ALLE DINE SQR&lt;/b&gt;. Passworded kan ikke genskabes.</translation>
     </message>
     <message>
         <source>Wallet encrypted</source>
@@ -1622,8 +1622,8 @@ Vær tålmodig efter at du har klikket på import.</translation>
         <translation>Adresse / Beløb:</translation>
     </message>
     <message>
-        <source>Add destinations to send HLM to</source>
-        <translation>Tilføj destinationer for at sende HLM til</translation>
+        <source>Add destinations to send SQR to</source>
+        <translation>Tilføj destinationer for at sende SQR til</translation>
     </message>
     <message>
         <source>Add &amp;Destination</source>
@@ -1973,8 +1973,8 @@ https://www.transifex.com/squorum-project/squorum-wallet</translation>
         <translation>Samlet saldo, inklusive alle utilgængelige mønter.</translation>
     </message>
     <message>
-        <source>HLM Balance</source>
-        <translation>HLM Balance</translation>
+        <source>SQR Balance</source>
+        <translation>SQR Balance</translation>
     </message>
     <message>
         <source>Pending:</source>
@@ -2041,8 +2041,8 @@ https://www.transifex.com/squorum-project/squorum-wallet</translation>
         <translation>Brugbare:</translation>
     </message>
     <message>
-        <source>Locked HLM or Masternode collaterals. These are excluded from zHLM minting.</source>
-        <translation>Låste HLM eller Masternode collaterals. Disse er udelukket fra zHLM-mintning.</translation>
+        <source>Locked SQR or Masternode collaterals. These are excluded from zSQR minting.</source>
+        <translation>Låste SQR eller Masternode collaterals. Disse er udelukket fra zSQR-mintning.</translation>
     </message>
     <message>
         <source>Locked:</source>
@@ -2057,10 +2057,10 @@ https://www.transifex.com/squorum-project/squorum-wallet</translation>
         <translation>Ude af synk</translation>
     </message>
     <message>
-        <source>Current percentage of zHLM.
+        <source>Current percentage of zSQR.
 If AutoMint is enabled this percentage will settle around the configured AutoMint percentage (default = 10%).
 </source>
-        <translation>Nuværende procentdel af zHLM
+        <translation>Nuværende procentdel af zSQR
 Hvis AutoMint er aktiveret, vil denne procentdel sætte sig omkring den konfigurerede AutoMint-procent (default = 10%)</translation>
     </message>
     <message>
@@ -2203,8 +2203,8 @@ For at aktivere AutoMint-ændring 'enablezeromint = 0' til 'enablezeromint = 1' 
         <translation>0</translation>
     </message>
     <message>
-        <source>zHLM</source>
-        <translation>zHLM</translation>
+        <source>zSQR</source>
+        <translation>zSQR</translation>
     </message>
     <message>
         <source>Reset Zerocoin Wallet DB. Deletes transactions that did not make it into the blockchain.</source>
@@ -2231,12 +2231,12 @@ For at aktivere AutoMint-ændring 'enablezeromint = 0' til 'enablezeromint = 1' 
         <translation>PRIVATLIV</translation>
     </message>
     <message>
-        <source>zHLM Control</source>
-        <translation>zHLM Control</translation>
+        <source>zSQR Control</source>
+        <translation>zSQR Control</translation>
     </message>
     <message>
-        <source>zHLM Selected:</source>
-        <translation>zHLM Selected:</translation>
+        <source>zSQR Selected:</source>
+        <translation>zSQR Selected:</translation>
     </message>
     <message>
         <source>Quantity Selected:</source>
@@ -2251,24 +2251,24 @@ For at aktivere AutoMint-ændring 'enablezeromint = 0' til 'enablezeromint = 1' 
         <translation>Tilbring Zerocoin</translation>
     </message>
     <message>
-        <source>Available (mature and spendable) zHLM for spending</source>
-        <translation>Tilgængelig (moden og brugt) zHLM for udgifter</translation>
+        <source>Available (mature and spendable) zSQR for spending</source>
+        <translation>Tilgængelig (moden og brugt) zSQR for udgifter</translation>
     </message>
     <message>
         <source>Available Balance:</source>
         <translation>Disponibel saldo:</translation>
     </message>
     <message>
-        <source>Available (mature and spendable) zHLM for spending
+        <source>Available (mature and spendable) zSQR for spending
 
-zHLM are mature when they have more than 20 confirmations AND more than 2 mints of the same denomination after them were minted</source>
-        <translation>Tilgængelig (moden og brugt) zHLM for spending
+zSQR are mature when they have more than 20 confirmations AND more than 2 mints of the same denomination after them were minted</source>
+        <translation>Tilgængelig (moden og brugt) zSQR for spending
 
-zHLM er modne, når de har mere end 20 bekræftelser OG mere end 2 minutter med samme betegnelse, efter at de blev præsenteret</translation>
+zSQR er modne, når de har mere end 20 bekræftelser OG mere end 2 minutter med samme betegnelse, efter at de blev præsenteret</translation>
     </message>
     <message>
-        <source>0 zHLM</source>
-        <translation>0 zHLM</translation>
+        <source>0 zSQR</source>
+        <translation>0 zSQR</translation>
     </message>
     <message>
         <source>Pay &amp;To:</source>
@@ -2327,8 +2327,8 @@ zHLM er modne, når de har mere end 20 bekræftelser OG mere end 2 minutter med 
         <translation>Zerocoin Stats:</translation>
     </message>
     <message>
-        <source>Total Balance including unconfirmed and immature zHLM</source>
-        <translation>Samlet saldo inklusive ubekræftede og umodne zHLM</translation>
+        <source>Total Balance including unconfirmed and immature zSQR</source>
+        <translation>Samlet saldo inklusive ubekræftede og umodne zSQR</translation>
     </message>
     <message>
         <source>Total Zerocoin  Balance:</source>
@@ -2349,24 +2349,24 @@ Immature: confirmed, but less than 1 mint of the same denomination after it was 
 Uplettet: bekræftet, men mindre end 1 minutter med samme betegnelse, efter at den blev mønnet</translation>
     </message>
     <message>
-        <source>Show the current status of automatic zHLM minting.
+        <source>Show the current status of automatic zSQR minting.
 
 To change the status (restart required):
 - enable: add 'enablezeromint=1' to squorum.conf
 - disable: add 'enablezeromint=0' to squorum.conf
 
 To change the percentage (no restart required):
-- menu Settings-&gt;Options-&gt;Percentage of autominted zHLM
+- menu Settings-&gt;Options-&gt;Percentage of autominted zSQR
 
 </source>
-        <translation>Vis den aktuelle status for automatisk zHLM minting.øj
+        <translation>Vis den aktuelle status for automatisk zSQR minting.øj
 
 For at ændre status (genstart kræves):.
 - aktiver: tilføj 'enablezeromint = 1' til squorum.conf
 - deaktiver: tilføj 'enablezeromint = 0' til squorum.conf
 
 For at ændre procentdelen (ingen genstart kræves):.
-- menu Indstillinger-&gt; Indstillinger-&gt; Procentdel af automatiseret zHLM
+- menu Indstillinger-&gt; Indstillinger-&gt; Procentdel af automatiseret zSQR
 </translation>
     </message>
     <message>
@@ -2540,12 +2540,12 @@ Please be patient...</source>
 Vær tålmodig...</translation>
     </message>
     <message>
-        <source>zHLM Spend #: </source>
-        <translation>zHLM Spend #: </translation>
+        <source>zSQR Spend #: </source>
+        <translation>zSQR Spend #: </translation>
     </message>
     <message>
-        <source>zHLM Mint</source>
-        <translation>zHLM Mint</translation>
+        <source>zSQR Mint</source>
+        <translation>zSQR Mint</translation>
     </message>
     <message>
         <source> &lt;b&gt;enabled&lt;/b&gt;.</source>
@@ -2560,12 +2560,12 @@ Vær tålmodig...</translation>
         <translation>Konfigureret målprocent:&lt;b&gt;</translation>
     </message>
     <message>
-        <source>zHLM is currently disabled due to maintenance.</source>
-        <translation>zHLM er i øjeblikket deaktiveret på grund af vedligeholdelse.</translation>
+        <source>zSQR is currently disabled due to maintenance.</source>
+        <translation>zSQR er i øjeblikket deaktiveret på grund af vedligeholdelse.</translation>
     </message>
     <message>
-        <source>zHLM is currently undergoing maintenance.</source>
-        <translation>zHLM er i øjeblikket under opretholdelse.</translation>
+        <source>zSQR is currently undergoing maintenance.</source>
+        <translation>zSQR er i øjeblikket under opretholdelse.</translation>
     </message>
     <message>
         <source>Denom. with value &lt;b&gt;1&lt;/b&gt;:</source>
@@ -3006,8 +3006,8 @@ Vær tålmodig...</translation>
         <translation>Brugerdefineret Backup-sti:</translation>
     </message>
     <message>
-        <source>Custom zHLM Backup Path:</source>
-        <translation>Brugerdefineret zHLM Backup-sti:</translation>
+        <source>Custom zSQR Backup Path:</source>
+        <translation>Brugerdefineret zSQR Backup-sti:</translation>
     </message>
     <message>
         <source>Custom Backups Threshold:</source>
@@ -3458,8 +3458,8 @@ Vær tålmodig...</translation>
         <translation>UTXO størrelse:</translation>
     </message>
     <message>
-        <source>0 HLM</source>
-        <translation>0 HLM</translation>
+        <source>0 SQR</source>
+        <translation>0 SQR</translation>
     </message>
     <message>
         <source>Transaction Fee:</source>
@@ -3514,12 +3514,12 @@ Vær tålmodig...</translation>
         <translation>Mønter vælges automatisk</translation>
     </message>
     <message>
-        <source>If the custom fee is set to 1000 uHLMs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 uHLMs in fee,&lt;br /&gt;while "at least" pays 1000 uHLMs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
-        <translation>Hvis den brugerfastsatte gebyrbetaling er sat til 1000 uHLMs og transaktionen kun fylder 250 bytes, så vil "pr. kilobyte" kun udbetale 250 uHLM i gebyr, &lt;br /&gt; mens "mindst" udbetaler 1000 uHLMs. For transaktioner større end en kilobyte betales i begge tilfælde i forhold til antallet af kilobytes </translation>
+        <source>If the custom fee is set to 1000 uSQRs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 uSQRs in fee,&lt;br /&gt;while "at least" pays 1000 uSQRs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
+        <translation>Hvis den brugerfastsatte gebyrbetaling er sat til 1000 uSQRs og transaktionen kun fylder 250 bytes, så vil "pr. kilobyte" kun udbetale 250 uSQR i gebyr, &lt;br /&gt; mens "mindst" udbetaler 1000 uSQRs. For transaktioner større end en kilobyte betales i begge tilfælde i forhold til antallet af kilobytes </translation>
     </message>
     <message>
-        <source>If the custom fee is set to 1000 uHLMs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 uHLMs in fee,&lt;br /&gt;while "total at least" pays 1000 uHLMs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
-        <translation>Hvis den brugerfastsatte gebyrbetaling er sat til 1000 uHLMs og transaktionen kun fylder 250 bytes, så vil "pr. kilobyte" kun udbetale 250 uHLM i gebyr, &lt;br /&gt; mens "Total-mindst" udbetaler 1000 uHLMs. For transaktioner større end en kilobyte betales i begge tilfælde i forhold til antallet af kilobytes </translation>
+        <source>If the custom fee is set to 1000 uSQRs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 uSQRs in fee,&lt;br /&gt;while "total at least" pays 1000 uSQRs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
+        <translation>Hvis den brugerfastsatte gebyrbetaling er sat til 1000 uSQRs og transaktionen kun fylder 250 bytes, så vil "pr. kilobyte" kun udbetale 250 uSQR i gebyr, &lt;br /&gt; mens "Total-mindst" udbetaler 1000 uSQRs. For transaktioner større end en kilobyte betales i begge tilfælde i forhold til antallet af kilobytes </translation>
     </message>
     <message>
         <source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks.&lt;br /&gt;But be aware that this can end up in a never confirming transaction once there is more demand for sQuorum transactions than the network can process.</source>
@@ -3570,8 +3570,8 @@ Vær tålmodig...</translation>
         <translation>Tilføj &amp;Modtager</translation>
     </message>
     <message>
-        <source>Anonymized HLM</source>
-        <translation>Tilsløret HLM</translation>
+        <source>Anonymized SQR</source>
+        <translation>Tilsløret SQR</translation>
     </message>
     <message>
         <source>Balance:</source>
@@ -4210,12 +4210,12 @@ Vær tålmodig...</translation>
         <translation>Modtaget via tilsløring</translation>
     </message>
     <message>
-        <source>HLM Stake</source>
-        <translation>HLM Stake</translation>
+        <source>SQR Stake</source>
+        <translation>SQR Stake</translation>
     </message>
     <message>
-        <source>zHLM Stake</source>
-        <translation>zHLM Stake</translation>
+        <source>zSQR Stake</source>
+        <translation>zSQR Stake</translation>
     </message>
     <message>
         <source>Obfuscation Denominate</source>
@@ -4234,32 +4234,32 @@ Vær tålmodig...</translation>
         <translation>Opret tilsløret designering</translation>
     </message>
     <message>
-        <source>Converted HLM to zHLM</source>
-        <translation>Konverteret HLM til zHLM</translation>
+        <source>Converted SQR to zSQR</source>
+        <translation>Konverteret SQR til zSQR</translation>
     </message>
     <message>
-        <source>Spent zHLM</source>
-        <translation>Brugt zSqr</translation>
+        <source>Spent zSQR</source>
+        <translation>Brugt zSQR</translation>
     </message>
     <message>
-        <source>Received HLM from zHLM</source>
-        <translation>Modtaget Sqr fra zSqr</translation>
+        <source>Received SQR from zSQR</source>
+        <translation>Modtaget SQR fra zSQR</translation>
     </message>
     <message>
-        <source>Minted Change as zHLM from zHLM Spend</source>
-        <translation>Minted Change som zHLM fra zHLM Spend</translation>
+        <source>Minted Change as zSQR from zSQR Spend</source>
+        <translation>Minted Change som zSQR fra zSQR Spend</translation>
     </message>
     <message>
-        <source>Converted zHLM to HLM</source>
-        <translation>Konverteret HLM til zHLM</translation>
+        <source>Converted zSQR to SQR</source>
+        <translation>Konverteret SQR til zSQR</translation>
     </message>
     <message>
-        <source>Anonymous (zHLM Transaction)</source>
-        <translation>Anonym (zHLM Transaction)</translation>
+        <source>Anonymous (zSQR Transaction)</source>
+        <translation>Anonym (zSQR Transaction)</translation>
     </message>
     <message>
-        <source>Anonymous (zHLM Stake)</source>
-        <translation>Anonym (zHLM Stake)</translation>
+        <source>Anonymous (zSQR Stake)</source>
+        <translation>Anonym (zSQR Stake)</translation>
     </message>
     <message>
         <source>Sent to</source>
@@ -4469,12 +4469,12 @@ Vær tålmodig...</translation>
         <translation>Eksporteret!</translation>
     </message>
     <message>
-        <source>Received HLM from zHLM</source>
-        <translation>Modtaget Sqr fra zSqr</translation>
+        <source>Received SQR from zSQR</source>
+        <translation>Modtaget SQR fra zSQR</translation>
     </message>
     <message>
-        <source>Zerocoin Spend, Change in zHLM</source>
-        <translation>Zerocoin Spend, Ændring i zHLM</translation>
+        <source>Zerocoin Spend, Change in zSQR</source>
+        <translation>Zerocoin Spend, Ændring i zSQR</translation>
     </message>
     <message>
         <source>The transaction history was successfully saved to %1.</source>
@@ -4510,8 +4510,8 @@ Vær tålmodig...</translation>
         <translation>Send mønter</translation>
     </message>
     <message>
-        <source>SwiftX doesn't support sending values that high yet. Transactions are currently limited to %1 HLM.</source>
-        <translation>SwiftTx understøtter ikke afsendelse af så store beløb endnu. Transaktioner er for tiden begrænsede til %1HLM.</translation>
+        <source>SwiftX doesn't support sending values that high yet. Transactions are currently limited to %1 SQR.</source>
+        <translation>SwiftTx understøtter ikke afsendelse af så store beløb endnu. Transaktioner er for tiden begrænsede til %1SQR.</translation>
     </message>
 </context>
 <context>
@@ -4544,8 +4544,8 @@ Vær tålmodig...</translation>
 <context>
     <name>ZSqrControlDialog</name>
     <message>
-        <source>Select zHLM to Spend</source>
-        <translation>Vælg zHLM for at bruge</translation>
+        <source>Select zSQR to Spend</source>
+        <translation>Vælg zSQR for at bruge</translation>
     </message>
     <message>
         <source>Quantity</source>
@@ -4556,8 +4556,8 @@ Vær tålmodig...</translation>
         <translation>0</translation>
     </message>
     <message>
-        <source>zHLM</source>
-        <translation>zHLM</translation>
+        <source>zSQR</source>
+        <translation>zSQR</translation>
     </message>
     <message>
         <source>Select/Deselect All</source>
@@ -4620,16 +4620,16 @@ Vær tålmodig...</translation>
 &lt;http://www.opensource.org/licenses/mit-license.php&gt;. </translation>
     </message>
     <message>
-        <source>Enable automatic wallet backups triggered after each zHLM minting (0-1, default: %u)</source>
-        <translation>Aktivér automatiske wallet-sikkerhedskopier udløst efter hver zSqr-mintning (0-1, standard: %u)</translation>
+        <source>Enable automatic wallet backups triggered after each zSQR minting (0-1, default: %u)</source>
+        <translation>Aktivér automatiske wallet-sikkerhedskopier udløst efter hver zSQR-mintning (0-1, standard: %u)</translation>
     </message>
     <message>
-        <source>Enable or disable staking functionality for HLM inputs (0-1, default: %u)</source>
-        <translation>Aktiver eller deaktiver staking-funktionalitet for HLM-indgange (0-1, standard: %u)</translation>
+        <source>Enable or disable staking functionality for SQR inputs (0-1, default: %u)</source>
+        <translation>Aktiver eller deaktiver staking-funktionalitet for SQR-indgange (0-1, standard: %u)</translation>
     </message>
     <message>
-        <source>Enable or disable staking functionality for zHLM inputs (0-1, default: %u)</source>
-        <translation>Aktiver eller deaktiver staking-funktionalitet for zHLM-indgange (0-1, standard: %u)</translation>
+        <source>Enable or disable staking functionality for zSQR inputs (0-1, default: %u)</source>
+        <translation>Aktiver eller deaktiver staking-funktionalitet for zSQR-indgange (0-1, standard: %u)</translation>
     </message>
     <message>
         <source>Enable spork administration functionality with the appropriate private key.</source>
@@ -4664,12 +4664,12 @@ Vær tålmodig...</translation>
         <translation>Udfør en kommando når den bedste blok ændres (%s in cmd erstattes med blok hashen)</translation>
     </message>
     <message>
-        <source>Fees (in HLM/Kb) smaller than this are considered zero fee for relaying (default: %s)</source>
-        <translation>Gebyrer (in HLM/kb) lavere end dette betragtes som et nul-gebyr for at videresende (default: %s)</translation>
+        <source>Fees (in SQR/Kb) smaller than this are considered zero fee for relaying (default: %s)</source>
+        <translation>Gebyrer (in SQR/kb) lavere end dette betragtes som et nul-gebyr for at videresende (default: %s)</translation>
     </message>
     <message>
-        <source>Fees (in HLM/Kb) smaller than this are considered zero fee for transaction creation (default: %s)</source>
-        <translation>Gebyrer (in HLM/kb) lavere end dette betragtes som et nul-gebyr for at oprette en transaktion (default: %s)</translation>
+        <source>Fees (in SQR/Kb) smaller than this are considered zero fee for transaction creation (default: %s)</source>
+        <translation>Gebyrer (in SQR/kb) lavere end dette betragtes som et nul-gebyr for at oprette en transaktion (default: %s)</translation>
     </message>
     <message>
         <source>Flush database activity from memory pool to disk log every &lt;n&gt; megabytes (default: %u)</source>
@@ -4772,12 +4772,12 @@ Vær tålmodig...</translation>
         <translation>Det er ikke muligt at allokere tilstrækkeligt med tilsløret designeret indestående for at gennemføre denne transaktion.</translation>
     </message>
     <message>
-        <source>Unable to locate enough Obfuscation non-denominated funds for this transaction that are not equal 10000 HLM.</source>
-        <translation>Det er ikke muligt at allokere tilstrækkeligt med tilsløret  ikke-designeret indestående for at gennemføre denne transaktion, der ikke ækvivalerer 10000 HLM.</translation>
+        <source>Unable to locate enough Obfuscation non-denominated funds for this transaction that are not equal 10000 SQR.</source>
+        <translation>Det er ikke muligt at allokere tilstrækkeligt med tilsløret  ikke-designeret indestående for at gennemføre denne transaktion, der ikke ækvivalerer 10000 SQR.</translation>
     </message>
     <message>
-        <source>Unable to locate enough funds for this transaction that are not equal 10000 HLM.</source>
-        <translation>Det var ikke muligt at allokere tilstrækkelige midler til denne transaktion som er forskellig fra 10000 HLM.</translation>
+        <source>Unable to locate enough funds for this transaction that are not equal 10000 SQR.</source>
+        <translation>Det var ikke muligt at allokere tilstrækkelige midler til denne transaktion som er forskellig fra 10000 SQR.</translation>
     </message>
     <message>
         <source>Use separate SOCKS5 proxy to reach peers via Tor hidden services (default: %s)</source>
@@ -5052,8 +5052,8 @@ Vær tålmodig...</translation>
         <translation>Læsning af blokken mislykkedes</translation>
     </message>
     <message>
-        <source>Fee (in HLM/kB) to add to transactions you send (default: %s)</source>
-        <translation>Gebyr (i HLM/kB) som skal tilføjes transaktionen der sendes (default: %s)</translation>
+        <source>Fee (in SQR/kB) to add to transactions you send (default: %s)</source>
+        <translation>Gebyr (i SQR/kB) som skal tilføjes transaktionen der sendes (default: %s)</translation>
     </message>
     <message>
         <source>Force safe mode (default: %u)</source>
@@ -5156,8 +5156,8 @@ Vær tålmodig...</translation>
         <translation>Procentdel af automatisk mintede Zerocoin (10-100, standard: %u)</translation>
     </message>
     <message>
-        <source>Reindex the HLM and zHLM money supply statistics</source>
-        <translation>Reindex HLM og zHLM pengemængde statistikker</translation>
+        <source>Reindex the SQR and zSQR money supply statistics</source>
+        <translation>Reindex SQR og zSQR pengemængde statistikker</translation>
     </message>
     <message>
         <source>Reindexing zerocoin database...</source>
@@ -5232,8 +5232,8 @@ Vær tålmodig...</translation>
         <translation>Foretrukken Betegnelse for automatisk mintede Zerocoin (1/5/10/50/100/500/1000/5000), 0 uden præference. standard: %u)</translation>
     </message>
     <message>
-        <source>Specify custom backup path to add a copy of any automatic zHLM backup. If set as dir, every backup generates a timestamped file. If set as file, will rewrite to that file every backup. If backuppath is set as well, 4 backups will happen</source>
-        <translation>Angiv brugerdefineret backup-vej for at tilføje en kopi af enhver zHLM-backup. Hvis det er angivet som dig, genererer hver backup en tidsstempelet fil. Hvis den er angivet som fil, ønsker man at omskrive til den pågældende fil hver backup. Hvis backupath er indstillet, vil der ske 4 sikkerhedskopier</translation>
+        <source>Specify custom backup path to add a copy of any automatic zSQR backup. If set as dir, every backup generates a timestamped file. If set as file, will rewrite to that file every backup. If backuppath is set as well, 4 backups will happen</source>
+        <translation>Angiv brugerdefineret backup-vej for at tilføje en kopi af enhver zSQR-backup. Hvis det er angivet som dig, genererer hver backup en tidsstempelet fil. Hvis den er angivet som fil, ønsker man at omskrive til den pågældende fil hver backup. Hvis backupath er indstillet, vil der ske 4 sikkerhedskopier</translation>
     </message>
     <message>
         <source>Specify custom backup path to add a copy of any wallet backup. If set as dir, every backup generates a timestamped file. If set as file, will rewrite to that file every backup.</source>
@@ -5644,8 +5644,8 @@ Vær tålmodig...</translation>
         <translation>Synkroniserer sporks...</translation>
     </message>
     <message>
-        <source>Syncing zHLM wallet...</source>
-        <translation>Syncing zHLM wallet ..</translation>
+        <source>Syncing zSQR wallet...</source>
+        <translation>Syncing zSQR wallet ..</translation>
     </message>
     <message>
         <source>The coin spend has been used</source>
@@ -5752,8 +5752,8 @@ Vær tålmodig...</translation>
         <translation>Brugernavn til JSON-RPC forbindelser</translation>
     </message>
     <message>
-        <source>Value is below the smallest available denomination (= 1) of zHLM</source>
-        <translation>Værdien er under den mindste tilgængelige værdi (= 1) for zHLM</translation>
+        <source>Value is below the smallest available denomination (= 1) of zSQR</source>
+        <translation>Værdien er under den mindste tilgængelige værdi (= 1) for zSQR</translation>
     </message>
     <message>
         <source>Verifying blocks...</source>

@@ -40,7 +40,7 @@ uint32_t CZSqrStake::GetChecksum()
     return nChecksum;
 }
 
-// The zHLM block index is the first appearance of the accumulator checksum that was used in the spend
+// The zSQR block index is the first appearance of the accumulator checksum that was used in the spend
 // note that this also means when staking that this checksum should be from a block that is beyond 60 minutes old and
 // 100 blocks deep.
 CBlockIndex* CZSqrStake::GetIndexFrom()
@@ -100,7 +100,7 @@ bool CZSqrStake::GetModifier(uint64_t& nStakeModifier)
 
 CDataStream CZSqrStake::GetUniqueness()
 {
-    //The unique identifier for a zHLM is a hash of the serial
+    //The unique identifier for a zSQR is a hash of the serial
     CDataStream ss(SER_GETHASH, 0);
     ss << hashSerial;
     return ss;
@@ -128,23 +128,23 @@ bool CZSqrStake::CreateTxIn(CWallet* pwallet, CTxIn& txIn, uint256 hashTxOut)
 
 bool CZSqrStake::CreateTxOuts(CWallet* pwallet, std::vector<CTxOut>& vout, CAmount nTotal)
 {
-    //Create an output returning the zHLM that was staked
+    //Create an output returning the zSQR that was staked
     CTxOut outReward;
     libzerocoin::CoinDenomination denomStaked = libzerocoin::AmountToZerocoinDenomination(this->GetValue());
     CDeterministicMint dMint;
-    if (!pwallet->CreateZHLMOutPut(denomStaked, outReward, dMint))
-        return error("%s: failed to create zHLM output", __func__);
+    if (!pwallet->CreateZSQROutPut(denomStaked, outReward, dMint))
+        return error("%s: failed to create zSQR output", __func__);
     vout.emplace_back(outReward);
 
     //Add new staked denom to our wallet
     if (!pwallet->DatabaseMint(dMint))
-        return error("%s: failed to database the staked zHLM", __func__);
+        return error("%s: failed to database the staked zSQR", __func__);
 
     for (unsigned int i = 0; i < 3; i++) {
         CTxOut out;
         CDeterministicMint dMintReward;
-        if (!pwallet->CreateZHLMOutPut(libzerocoin::CoinDenomination::ZQ_ONE, out, dMintReward))
-            return error("%s: failed to create zHLM output", __func__);
+        if (!pwallet->CreateZSQROutPut(libzerocoin::CoinDenomination::ZQ_ONE, out, dMintReward))
+            return error("%s: failed to create zSQR output", __func__);
         vout.emplace_back(out);
 
         if (!pwallet->DatabaseMint(dMintReward))
@@ -161,7 +161,7 @@ bool CZSqrStake::GetTxFrom(CTransaction& tx)
 
 bool CZSqrStake::MarkSpent(CWallet *pwallet, const uint256& txid)
 {
-    CzHLMTracker* zsqrTracker = pwallet->zsqrTracker.get();
+    CzSQRTracker* zsqrTracker = pwallet->zsqrTracker.get();
     CMintMeta meta;
     if (!zsqrTracker->GetMetaFromStakeHash(hashSerial, meta))
         return error("%s: tracker does not have serialhash", __func__);
@@ -170,7 +170,7 @@ bool CZSqrStake::MarkSpent(CWallet *pwallet, const uint256& txid)
     return true;
 }
 
-//!HLM Stake
+//!SQR Stake
 bool CSqrStake::SetInput(CTransaction txPrev, unsigned int n)
 {
     this->txFrom = txPrev;
@@ -247,7 +247,7 @@ bool CSqrStake::GetModifier(uint64_t& nStakeModifier)
 
 CDataStream CSqrStake::GetUniqueness()
 {
-    //The unique identifier for a HLM stake is the outpoint
+    //The unique identifier for a SQR stake is the outpoint
     CDataStream ss(SER_NETWORK, 0);
     ss << nPosition << txFrom.GetHash();
     return ss;

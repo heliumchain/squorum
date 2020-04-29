@@ -176,8 +176,8 @@
         <translation>Confermi di voler crittografare il portafoglio?</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR HLM&lt;/b&gt;!</source>
-        <translation>Attenzione: Se crittografi il portafoglio e poi perdi la parola d'ordine, &lt;b&gt;PERDERAI TUTTI I TUOI HLM&lt;7b&gt;!</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR SQR&lt;/b&gt;!</source>
+        <translation>Attenzione: Se crittografi il portafoglio e poi perdi la parola d'ordine, &lt;b&gt;PERDERAI TUTTI I TUOI SQR&lt;7b&gt;!</translation>
     </message>
     <message>
         <source>Wallet encrypted</source>
@@ -1079,7 +1079,7 @@ MultiSend: %1</translation>
     </message>
     <message>
         <source>Can vary +/- %1 usqr per input.</source>
-        <translation>Può variare di +/- %1 uHLM per input.</translation>
+        <translation>Può variare di +/- %1 uSQR per input.</translation>
     </message>
     <message>
         <source>(no label)</source>
@@ -1238,7 +1238,7 @@ MultiSend: %1</translation>
     </message>
     <message>
         <source>Welcome to sQuorum Core.</source>
-        <translation>Benvenuto in HLMIX Core.</translation>
+        <translation>Benvenuto in SQRIX Core.</translation>
     </message>
     <message>
         <source>As this is the first time the program is launched, you can choose where sQuorum Core will store its data.</source>
@@ -1673,8 +1673,8 @@ MultiSend non verrà attivato a meno che tu non prema su Attiva</translation>
         <translation>Saldo totale, inclusi tutte le monete non disponibili.</translation>
     </message>
     <message>
-        <source>HLM Balance</source>
-        <translation>Bilancio HLM</translation>
+        <source>SQR Balance</source>
+        <translation>Bilancio SQR</translation>
     </message>
     <message>
         <source>Immature:</source>
@@ -1713,8 +1713,8 @@ MultiSend non verrà attivato a meno che tu non prema su Attiva</translation>
         <translation>Spendibili:</translation>
     </message>
     <message>
-        <source>Locked HLM or Masternode collaterals. These are excluded from zHLM minting.</source>
-        <translation>HLM bloccati o collaterali Masternodo. Questi sono esclusi dal conio di zHLM.</translation>
+        <source>Locked SQR or Masternode collaterals. These are excluded from zSQR minting.</source>
+        <translation>SQR bloccati o collaterali Masternodo. Questi sono esclusi dal conio di zSQR.</translation>
     </message>
     <message>
         <source>Locked:</source>
@@ -1725,10 +1725,10 @@ MultiSend non verrà attivato a meno che tu non prema su Attiva</translation>
         <translation>Transazioni recenti</translation>
     </message>
     <message>
-        <source>Current percentage of zHLM.
+        <source>Current percentage of zSQR.
 If AutoMint is enabled this percentage will settle around the configured AutoMint percentage (default = 10%).
 </source>
-        <translation>Percentuale corrente di zHLM.
+        <translation>Percentuale corrente di zSQR.
 Se il conio automatico è attivato questa percentuale si stabilizzerà all'incirca sulla percentuale stabilita per il conio automatico (percentuale prestabilita = 10%).
 </translation>
     </message>
@@ -1792,8 +1792,8 @@ Per attivare il Conio automatico cambiare 'enablezeromint=0' in 'enablezeromint=
         <translation>0</translation>
     </message>
     <message>
-        <source>zHLM</source>
-        <translation>zHLM</translation>
+        <source>zSQR</source>
+        <translation>zSQR</translation>
     </message>
     <message>
         <source>Reset</source>
@@ -1804,12 +1804,12 @@ Per attivare il Conio automatico cambiare 'enablezeromint=0' in 'enablezeromint=
         <translation>PRIVACY</translation>
     </message>
     <message>
-        <source>zHLM Control</source>
-        <translation>Controllo zHLM</translation>
+        <source>zSQR Control</source>
+        <translation>Controllo zSQR</translation>
     </message>
     <message>
-        <source>zHLM Selected:</source>
-        <translation>zHLM selezionati:</translation>
+        <source>zSQR Selected:</source>
+        <translation>zSQR selezionati:</translation>
     </message>
     <message>
         <source>Quantity Selected:</source>
@@ -1820,23 +1820,23 @@ Per attivare il Conio automatico cambiare 'enablezeromint=0' in 'enablezeromint=
         <translation>Spendi Zerocoin</translation>
     </message>
     <message>
-        <source>Available (mature and spendable) zHLM for spending</source>
-        <translation>zHLM disponibili disponibili per essere spesi (maturi e spendibili)</translation>
+        <source>Available (mature and spendable) zSQR for spending</source>
+        <translation>zSQR disponibili disponibili per essere spesi (maturi e spendibili)</translation>
     </message>
     <message>
         <source>Available Balance:</source>
         <translation>Bilancio Disponibile:</translation>
     </message>
     <message>
-        <source>Available (mature and spendable) zHLM for spending
+        <source>Available (mature and spendable) zSQR for spending
 
-zHLM are mature when they have more than 20 confirmations AND more than 2 mints of the same denomination after them were minted</source>
-        <translation>zHLM disponibili disponibili per essere spesi (maturi e spendibili)
-Gli zHLM sono maturi quando hanno più di 20 conferme E più di 2 conii della stessa denominazione dopo che sono stati coniati</translation>
+zSQR are mature when they have more than 20 confirmations AND more than 2 mints of the same denomination after them were minted</source>
+        <translation>zSQR disponibili disponibili per essere spesi (maturi e spendibili)
+Gli zSQR sono maturi quando hanno più di 20 conferme E più di 2 conii della stessa denominazione dopo che sono stati coniati</translation>
     </message>
     <message>
-        <source>0 zHLM</source>
-        <translation>0 zHLM</translation>
+        <source>0 zSQR</source>
+        <translation>0 zSQR</translation>
     </message>
     <message>
         <source>Pay &amp;To:</source>
@@ -1879,31 +1879,31 @@ Gli zHLM sono maturi quando hanno più di 20 conferme E più di 2 conii della st
         <translation>Statistiche Zerocoin:</translation>
     </message>
     <message>
-        <source>Total Balance including unconfirmed and immature zHLM</source>
-        <translation>Saldo totale inclusi zHLM non confermati e non maturi</translation>
+        <source>Total Balance including unconfirmed and immature zSQR</source>
+        <translation>Saldo totale inclusi zSQR non confermati e non maturi</translation>
     </message>
     <message>
         <source>Total Zerocoin  Balance:</source>
         <translation>Saldo totale Zerocoin:</translation>
     </message>
     <message>
-        <source>Show the current status of automatic zHLM minting.
+        <source>Show the current status of automatic zSQR minting.
 
 To change the status (restart required):
 - enable: add 'enablezeromint=1' to squorum.conf
 - disable: add 'enablezeromint=0' to squorum.conf
 
 To change the percentage (no restart required):
-- menu Settings-&gt;Options-&gt;Percentage of autominted zHLM
+- menu Settings-&gt;Options-&gt;Percentage of autominted zSQR
 
 </source>
-        <translation>Mostra lo stato corrente del conio automatico zHLM.
+        <translation>Mostra lo stato corrente del conio automatico zSQR.
 Per cambiare lo stato (riavvio necessario):
 - attivato: aggiungi 'enablezeromint=1' a squorum.conf
 - disattivato: aggiungi 'enablezeromint=0' a squorum.conf
 
 Per cambiare la percentuale (riavvio non necessario):
-- menu Impostazioni-&gt;Opzioni-&gt;Percentuale di zHLM da coniare automaticamente
+- menu Impostazioni-&gt;Opzioni-&gt;Percentuale di zSQR da coniare automaticamente
 
 </translation>
     </message>
@@ -2044,8 +2044,8 @@ Per cambiare la percentuale (riavvio non necessario):
         <translation>Differenza:</translation>
     </message>
     <message>
-        <source>zHLM Mint</source>
-        <translation>Conio zHLM</translation>
+        <source>zSQR Mint</source>
+        <translation>Conio zSQR</translation>
     </message>
     <message>
         <source>AutoMint Status:</source>
@@ -2534,8 +2534,8 @@ Per cambiare la percentuale (riavvio non necessario):
         <translation>0</translation>
     </message>
     <message>
-        <source>zHLM</source>
-        <translation>zHLM</translation>
+        <source>zSQR</source>
+        <translation>zSQR</translation>
     </message>
     </context>
 <context>

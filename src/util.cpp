@@ -100,7 +100,7 @@ bool fLiteMode = false;
 bool fEnableSwiftTX = true;
 int nSwiftTXDepth = 5;
 // Automatic Zerocoin minting
-bool fEnableZeromint = false; // disabled autominting of HLM->zHLM
+bool fEnableZeromint = false; // disabled autominting of SQR->zSQR
 bool fEnableAutoConvert = false;
 int nZeromintPercentage = 0;
 int nPreferredDenom = 0;

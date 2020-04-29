@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef sQuorum_ZHLMTRACKER_H
-#define sQuorum_ZHLMTRACKER_H
+#ifndef sQuorum_ZSQRTRACKER_H
+#define sQuorum_ZSQRTRACKER_H
 
 #include "zerocoin.h"
 #include "witness.h"
@@ -12,9 +12,9 @@
 #include <list>
 
 class CDeterministicMint;
-class CzHLMWallet;
+class CzSQRWallet;
 
-class CzHLMTracker
+class CzSQRTracker
 {
 private:
     bool fInitialized;
@@ -24,9 +24,9 @@ private:
     std::map<uint256, std::unique_ptr<CoinWitnessData> > mapStakeCache; //serialhash, witness value, height
     bool UpdateStatusInternal(const std::set<uint256>& setMempool, CMintMeta& mint);
 public:
-    CzHLMTracker(std::string strWalletFile);
-    ~CzHLMTracker();
-    void Add(const CDeterministicMint& dMint, bool isNew = false, bool isArchived = false, CzHLMWallet* zHLMWallet = NULL);
+    CzSQRTracker(std::string strWalletFile);
+    ~CzSQRTracker();
+    void Add(const CDeterministicMint& dMint, bool isNew = false, bool isArchived = false, CzSQRWallet* zSQRWallet = NULL);
     void Add(const CZerocoinMint& mint, bool isNew = false, bool isArchived = false);
     bool Archive(CMintMeta& meta);
     bool HasPubcoin(const CBigNum& bnValue) const;
@@ -56,4 +56,4 @@ public:
     void Clear();
 };
 
-#endif //sQuorum_ZHLMTRACKER_H
+#endif //sQuorum_ZSQRTRACKER_H

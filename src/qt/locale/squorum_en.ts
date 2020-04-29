@@ -226,7 +226,7 @@
     </message>
     <message>
         <location line="+0"/>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR HLM&lt;/b&gt;!</source>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR SQR&lt;/b&gt;!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2222,7 +2222,7 @@ Please be patient after clicking import.</source>
     </message>
     <message>
         <location line="+13"/>
-        <source>Add destinations to send HLM to</source>
+        <source>Add destinations to send SQR to</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2677,7 +2677,7 @@ https://www.transifex.com/squorum-project/squorum-wallet</source>
     </message>
     <message>
         <location line="+71"/>
-        <source>HLM Balance</source>
+        <source>SQR Balance</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2771,7 +2771,7 @@ https://www.transifex.com/squorum-project/squorum-wallet</source>
     <message>
         <location line="+191"/>
         <location line="+19"/>
-        <source>Locked HLM or Masternode collaterals. These are excluded from zHLM minting.</source>
+        <source>Locked SQR or Masternode collaterals. These are excluded from zSQR minting.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2792,7 +2792,7 @@ https://www.transifex.com/squorum-project/squorum-wallet</source>
     </message>
     <message>
         <location line="+104"/>
-        <source>Current percentage of zHLM.
+        <source>Current percentage of zSQR.
 If AutoMint is enabled this percentage will settle around the configured AutoMint percentage (default = 10%).
 </source>
         <translation type="unfinished"></translation>
@@ -2979,7 +2979,7 @@ To enable AutoMint change &apos;enablezeromint=0&apos; to &apos;enablezeromint=1
     </message>
     <message>
         <location line="+229"/>
-        <source>zHLM</source>
+        <source>zSQR</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3014,12 +3014,12 @@ To enable AutoMint change &apos;enablezeromint=0&apos; to &apos;enablezeromint=1
     </message>
     <message>
         <location line="+462"/>
-        <source>zHLM Control</source>
+        <source>zSQR Control</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+7"/>
-        <source>zHLM Selected:</source>
+        <source>zSQR Selected:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3044,7 +3044,7 @@ To enable AutoMint change &apos;enablezeromint=0&apos; to &apos;enablezeromint=1
     </message>
     <message>
         <location line="+7"/>
-        <source>Available (mature and spendable) zHLM for spending</source>
+        <source>Available (mature and spendable) zSQR for spending</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3054,9 +3054,9 @@ To enable AutoMint change &apos;enablezeromint=0&apos; to &apos;enablezeromint=1
     </message>
     <message>
         <location line="+16"/>
-        <source>Available (mature and spendable) zHLM for spending
+        <source>Available (mature and spendable) zSQR for spending
 
-zHLM are mature when they have more than 20 confirmations AND more than 2 mints of the same denomination after them were minted</source>
+zSQR are mature when they have more than 20 confirmations AND more than 2 mints of the same denomination after them were minted</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3073,7 +3073,7 @@ zHLM are mature when they have more than 20 confirmations AND more than 2 mints 
         <location line="+31"/>
         <location line="+31"/>
         <location line="+31"/>
-        <source>0 zHLM</source>
+        <source>0 zSQR</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3151,7 +3151,7 @@ zHLM are mature when they have more than 20 confirmations AND more than 2 mints 
         <location line="+25"/>
         <location line="+704"/>
         <location line="+38"/>
-        <source>Total Balance including unconfirmed and immature zHLM</source>
+        <source>Total Balance including unconfirmed and immature zSQR</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3185,14 +3185,14 @@ Immature: confirmed, but less than 1 mint of the same denomination after it was 
     </message>
     <message>
         <location line="+40"/>
-        <source>Show the current status of automatic zHLM minting.
+        <source>Show the current status of automatic zSQR minting.
 
 To change the status (restart required):
 - enable: add &apos;enablezeromint=1&apos; to squorum.conf
 - disable: add &apos;enablezeromint=0&apos; to squorum.conf
 
 To change the percentage (no restart required):
-- menu Settings-&gt;Options-&gt;Percentage of autominted zHLM
+- menu Settings-&gt;Options-&gt;Percentage of autominted zSQR
 
 </source>
         <translation type="unfinished"></translation>
@@ -3262,7 +3262,7 @@ To change the percentage (no restart required):
     </message>
     <message>
         <location line="-1092"/>
-        <source>Show zHLM denominations list</source>
+        <source>Show zSQR denominations list</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3272,12 +3272,12 @@ To change the percentage (no restart required):
     </message>
     <message>
         <location line="+29"/>
-        <source>zHLM minting is DISABLED</source>
+        <source>zSQR minting is DISABLED</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+131"/>
-        <source>zHLM spending is NOT private (links back to the mint transaction)</source>
+        <source>zSQR spending is NOT private (links back to the mint transaction)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3448,12 +3448,12 @@ Please be patient...</source>
     </message>
     <message>
         <location line="+152"/>
-        <source>zHLM Spend #: </source>
+        <source>zSQR Spend #: </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+16"/>
-        <source>zHLM Mint</source>
+        <source>zSQR Mint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3473,12 +3473,12 @@ Please be patient...</source>
     </message>
     <message>
         <location line="+17"/>
-        <source>zHLM is currently disabled due to maintenance.</source>
+        <source>zSQR is currently disabled due to maintenance.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="-533"/>
-        <source>zHLM is currently undergoing maintenance.</source>
+        <source>zSQR is currently undergoing maintenance.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -4198,7 +4198,7 @@ Please be patient...</source>
     </message>
     <message>
         <location line="+29"/>
-        <source>Custom zHLM Backup Path:</source>
+        <source>Custom zSQR Backup Path:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -4791,12 +4791,12 @@ Please be patient...</source>
     </message>
     <message>
         <location line="+7"/>
-        <source>0 HLM</source>
+        <source>0 SQR</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+149"/>
-        <source>SwiftX technology allows for near instant transactions - A flat fee of 0.01 HLM applies</source>
+        <source>SwiftX technology allows for near instant transactions - A flat fee of 0.01 SQR applies</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -4866,12 +4866,12 @@ Please be patient...</source>
     </message>
     <message>
         <location line="+1026"/>
-        <source>If the custom fee is set to 1000 uHLMs and the transaction is only 250 bytes, then &quot;per kilobyte&quot; only pays 250 uHLMs in fee,&lt;br /&gt;while &quot;at least&quot; pays 1000 uHLMs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
+        <source>If the custom fee is set to 1000 uSQRs and the transaction is only 250 bytes, then &quot;per kilobyte&quot; only pays 250 uSQRs in fee,&lt;br /&gt;while &quot;at least&quot; pays 1000 uSQRs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+16"/>
-        <source>If the custom fee is set to 1000 uHLMs and the transaction is only 250 bytes, then &quot;per kilobyte&quot; only pays 250 uHLMs in fee,&lt;br /&gt;while &quot;total at least&quot; pays 1000 uHLMs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
+        <source>If the custom fee is set to 1000 uSQRs and the transaction is only 250 bytes, then &quot;per kilobyte&quot; only pays 250 uSQRs in fee,&lt;br /&gt;while &quot;total at least&quot; pays 1000 uSQRs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -4937,7 +4937,7 @@ Please be patient...</source>
     </message>
     <message>
         <location line="+35"/>
-        <source>Anonymized HLM</source>
+        <source>Anonymized SQR</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5817,12 +5817,12 @@ Please be patient...</source>
     </message>
     <message>
         <location line="+7"/>
-        <source>HLM Stake</source>
+        <source>SQR Stake</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+2"/>
-        <source>zHLM Stake</source>
+        <source>zSQR Stake</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5847,37 +5847,37 @@ Please be patient...</source>
     </message>
     <message>
         <location line="+4"/>
-        <source>Converted HLM to zHLM</source>
+        <source>Converted SQR to zSQR</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+2"/>
-        <source>Spent zHLM</source>
+        <source>Spent zSQR</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+2"/>
-        <source>Received HLM from zHLM</source>
+        <source>Received SQR from zSQR</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+2"/>
-        <source>Minted Change as zHLM from zHLM Spend</source>
+        <source>Minted Change as zSQR from zSQR Spend</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+2"/>
-        <source>Converted zHLM to HLM</source>
+        <source>Converted zSQR to SQR</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+56"/>
-        <source>Anonymous (zHLM Transaction)</source>
+        <source>Anonymous (zSQR Transaction)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+2"/>
-        <source>Anonymous (zHLM Stake)</source>
+        <source>Anonymous (zSQR Stake)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6146,12 +6146,12 @@ Please be patient...</source>
     </message>
     <message>
         <location line="-310"/>
-        <source>Received HLM from zHLM</source>
+        <source>Received SQR from zSQR</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>Zerocoin Spend, Change in zHLM</source>
+        <source>Zerocoin Spend, Change in zSQR</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6198,7 +6198,7 @@ Please be patient...</source>
     <message>
         <location line="-18"/>
         <location line="+9"/>
-        <source>SwiftX doesn&apos;t support sending values that high yet. Transactions are currently limited to %1 HLM.</source>
+        <source>SwiftX doesn&apos;t support sending values that high yet. Transactions are currently limited to %1 SQR.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -6239,7 +6239,7 @@ Please be patient...</source>
     <name>ZSqrControlDialog</name>
     <message>
         <location filename="../forms/zsqrcontroldialog.ui" line="+20"/>
-        <source>Select zHLM to Spend</source>
+        <source>Select zSQR to Spend</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6255,7 +6255,7 @@ Please be patient...</source>
     </message>
     <message>
         <location line="-7"/>
-        <source>zHLM</source>
+        <source>zSQR</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6343,17 +6343,17 @@ Please be patient...</source>
     </message>
     <message>
         <location line="+2"/>
-        <source>Enable automatic wallet backups triggered after each zHLM minting (0-1, default: %u)</source>
+        <source>Enable automatic wallet backups triggered after each zSQR minting (0-1, default: %u)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>Enable or disable staking functionality for HLM inputs (0-1, default: %u)</source>
+        <source>Enable or disable staking functionality for SQR inputs (0-1, default: %u)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+2"/>
-        <source>Enable or disable staking functionality for zHLM inputs (0-1, default: %u)</source>
+        <source>Enable or disable staking functionality for zSQR inputs (0-1, default: %u)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6398,12 +6398,12 @@ Please be patient...</source>
     </message>
     <message>
         <location line="+8"/>
-        <source>Fees (in HLM/Kb) smaller than this are considered zero fee for relaying (default: %s)</source>
+        <source>Fees (in SQR/Kb) smaller than this are considered zero fee for relaying (default: %s)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>Fees (in HLM/Kb) smaller than this are considered zero fee for transaction creation (default: %s)</source>
+        <source>Fees (in SQR/Kb) smaller than this are considered zero fee for transaction creation (default: %s)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6558,12 +6558,12 @@ Please be patient...</source>
     </message>
     <message>
         <location line="+2"/>
-        <source>Unable to locate enough Obfuscation non-denominated funds for this transaction that are not equal 10000 HLM.</source>
+        <source>Unable to locate enough Obfuscation non-denominated funds for this transaction that are not equal 10000 SQR.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>Unable to locate enough funds for this transaction that are not equal 10000 HLM.</source>
+        <source>Unable to locate enough funds for this transaction that are not equal 10000 SQR.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6813,7 +6813,7 @@ Please be patient...</source>
     </message>
     <message>
         <location line="+1"/>
-        <source>Enable precomputation of zHLM spends and stakes (0-1, default %u)</source>
+        <source>Enable precomputation of zSQR spends and stakes (0-1, default %u)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6928,7 +6928,7 @@ Please be patient...</source>
     </message>
     <message>
         <location line="+4"/>
-        <source>Fee (in HLM/kB) to add to transactions you send (default: %s)</source>
+        <source>Fee (in SQR/kB) to add to transactions you send (default: %s)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -7058,22 +7058,22 @@ Please be patient...</source>
     </message>
     <message>
         <location line="+9"/>
-        <source>Recalculating HLM supply...</source>
+        <source>Recalculating SQR supply...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Recalculating minted ZHLM...</source>
+        <source>Recalculating minted ZSQR...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Recalculating spent ZHLM...</source>
+        <source>Recalculating spent ZSQR...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+2"/>
-        <source>Reindex the HLM and zHLM money supply statistics</source>
+        <source>Reindex the SQR and zSQR money supply statistics</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -7170,7 +7170,7 @@ Please be patient...</source>
     </message>
     <message>
         <location line="+27"/>
-        <source>Specify custom backup path to add a copy of any automatic zHLM backup. If set as dir, every backup generates a timestamped file. If set as file, will rewrite to that file every backup. If backuppath is set as well, 4 backups will happen</source>
+        <source>Specify custom backup path to add a copy of any automatic zSQR backup. If set as dir, every backup generates a timestamped file. If set as file, will rewrite to that file every backup. If backuppath is set as well, 4 backups will happen</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -7730,7 +7730,7 @@ Please be patient...</source>
     </message>
     <message>
         <location line="+1"/>
-        <source>Syncing zHLM wallet...</source>
+        <source>Syncing zSQR wallet...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -7870,7 +7870,7 @@ Please be patient...</source>
     </message>
     <message>
         <location line="+1"/>
-        <source>Value is below the smallest available denomination (= 1) of zHLM</source>
+        <source>Value is below the smallest available denomination (= 1) of zSQR</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

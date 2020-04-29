@@ -176,8 +176,8 @@
         <translation>Ar tikrai norite užšifruoti savo piniginę?</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR HLM&lt;/b&gt;!</source>
-        <translation>Įspėjimas: jei užšifruosite savo piniginę ir prarasite slaptafrazę, jūs &lt;b&gt;PRARASITE VISUS SAVO HLM&lt;/b&gt;!</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR SQR&lt;/b&gt;!</source>
+        <translation>Įspėjimas: jei užšifruosite savo piniginę ir prarasite slaptafrazę, jūs &lt;b&gt;PRARASITE VISUS SAVO SQR&lt;/b&gt;!</translation>
     </message>
     <message>
         <source>Wallet encrypted</source>
@@ -1580,8 +1580,8 @@ MultiSend nebus aktyvuotas, nebent paspausite "Įjungti"</translation>
         <translation>Adresas / Suma:</translation>
     </message>
     <message>
-        <source>Add destinations to send HLM to</source>
-        <translation>Pridėkite vietas, kurioms norite siųsti HLM</translation>
+        <source>Add destinations to send SQR to</source>
+        <translation>Pridėkite vietas, kurioms norite siųsti SQR</translation>
     </message>
     <message>
         <source>Add &amp;Destination</source>
@@ -1867,8 +1867,8 @@ https://www.transifex.com/squorum-project/squorum-wallet</translation>
         <translation>Bendras balansas, įskaitant visas nepasiekiamas monetas.</translation>
     </message>
     <message>
-        <source>HLM Balance</source>
-        <translation>HLM Balansas</translation>
+        <source>SQR Balance</source>
+        <translation>SQR Balansas</translation>
     </message>
     <message>
         <source>Pending:</source>
@@ -1935,8 +1935,8 @@ https://www.transifex.com/squorum-project/squorum-wallet</translation>
         <translation>Prienamas išleidimui:</translation>
     </message>
     <message>
-        <source>Locked HLM or Masternode collaterals. These are excluded from zHLM minting.</source>
-        <translation>Užrakinti HLM arba Masternode užstatai. Jie yra neįtraukti į zHLM kalimą.</translation>
+        <source>Locked SQR or Masternode collaterals. These are excluded from zSQR minting.</source>
+        <translation>Užrakinti SQR arba Masternode užstatai. Jie yra neįtraukti į zSQR kalimą.</translation>
     </message>
     <message>
         <source>Locked:</source>
@@ -2036,8 +2036,8 @@ https://www.transifex.com/squorum-project/squorum-wallet</translation>
         <translation>0</translation>
     </message>
     <message>
-        <source>zHLM</source>
-        <translation>zHLM</translation>
+        <source>zSQR</source>
+        <translation>zSQR</translation>
     </message>
     <message>
         <source>Reset</source>
@@ -2056,12 +2056,12 @@ https://www.transifex.com/squorum-project/squorum-wallet</translation>
         <translation>PRIVATUMAS</translation>
     </message>
     <message>
-        <source>zHLM Control</source>
-        <translation>zSqr Kontrolė</translation>
+        <source>zSQR Control</source>
+        <translation>zSQR Kontrolė</translation>
     </message>
     <message>
-        <source>zHLM Selected:</source>
-        <translation>Pasirinkta zHLM:</translation>
+        <source>zSQR Selected:</source>
+        <translation>Pasirinkta zSQR:</translation>
     </message>
     <message>
         <source>Quantity Selected:</source>
@@ -2080,8 +2080,8 @@ https://www.transifex.com/squorum-project/squorum-wallet</translation>
         <translation>Prieinamas Balansas: </translation>
     </message>
     <message>
-        <source>0 zHLM</source>
-        <translation>0 zHLM</translation>
+        <source>0 zSQR</source>
+        <translation>0 zSQR</translation>
     </message>
     <message>
         <source>Pay &amp;To:</source>
@@ -2120,8 +2120,8 @@ https://www.transifex.com/squorum-project/squorum-wallet</translation>
         <translation>Zerocoin Statistika:</translation>
     </message>
     <message>
-        <source>Total Balance including unconfirmed and immature zHLM</source>
-        <translation>Bendras balansas, įskaitant nepatvirtintą ir nesubrendusį zHLM</translation>
+        <source>Total Balance including unconfirmed and immature zSQR</source>
+        <translation>Bendras balansas, įskaitant nepatvirtintą ir nesubrendusį zSQR</translation>
     </message>
     <message>
         <source>Total Zerocoin  Balance:</source>
@@ -2290,12 +2290,12 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos to pačio nominalo
         <translation>Konvertavimo Statusas: Geras</translation>
     </message>
     <message>
-        <source>zHLM Spend #: </source>
-        <translation>zHLM Išleidimas #:</translation>
+        <source>zSQR Spend #: </source>
+        <translation>zSQR Išleidimas #:</translation>
     </message>
     <message>
-        <source>zHLM Mint</source>
-        <translation>zHLM Konvertavimas</translation>
+        <source>zSQR Mint</source>
+        <translation>zSQR Konvertavimas</translation>
     </message>
     <message>
         <source> &lt;b&gt;enabled&lt;/b&gt;.</source>
@@ -2774,8 +2774,8 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos to pačio nominalo
         <translation>Pasirinktinio pakeitimo adresas</translation>
     </message>
     <message>
-        <source>0 HLM</source>
-        <translation>0 HLM</translation>
+        <source>0 SQR</source>
+        <translation>0 SQR</translation>
     </message>
     <message>
         <source>Transaction Fee:</source>
@@ -3228,8 +3228,8 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos to pačio nominalo
         <translation>0</translation>
     </message>
     <message>
-        <source>zHLM</source>
-        <translation>zHLM</translation>
+        <source>zSQR</source>
+        <translation>zSQR</translation>
     </message>
     </context>
 <context>

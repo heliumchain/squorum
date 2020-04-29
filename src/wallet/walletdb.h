@@ -180,14 +180,14 @@ public:
     bool ReadZerocoinSpendSerialEntry(const CBigNum& bnSerial);
     bool WriteCurrentSeedHash(const uint256& hashSeed);
     bool ReadCurrentSeedHash(uint256& hashSeed);
-    bool WriteZHLMSeed(const uint256& hashSeed, const std::vector<unsigned char>& seed);
-    bool ReadZHLMSeed(const uint256& hashSeed, std::vector<unsigned char>& seed);
-    bool ReadZHLMSeed_deprecated(uint256& seed);
-    bool EraseZHLMSeed();
-    bool EraseZHLMSeed_deprecated();
+    bool WriteZSQRSeed(const uint256& hashSeed, const std::vector<unsigned char>& seed);
+    bool ReadZSQRSeed(const uint256& hashSeed, std::vector<unsigned char>& seed);
+    bool ReadZSQRSeed_deprecated(uint256& seed);
+    bool EraseZSQRSeed();
+    bool EraseZSQRSeed_deprecated();
 
-    bool WriteZHLMCount(const uint32_t& nCount);
-    bool ReadZHLMCount(uint32_t& nCount);
+    bool WriteZSQRCount(const uint32_t& nCount);
+    bool ReadZSQRCount(uint32_t& nCount);
     std::map<uint256, std::vector<std::pair<uint256, uint32_t> > > MapMintPool();
     bool WriteMintPoolPair(const uint256& hashMasterSeed, const uint256& hashPubcoin, const uint32_t& nCount);
 
