@@ -190,7 +190,8 @@ public:
         assert(hashGenesisBlock == uint256("0x0000033346b0b31697bcd178789fe1d6d10f96a7fd46d74fbf647d5ea3757348"));
         assert(genesis.hashMerkleRoot == uint256("0xedee755717c4de66ce52056e36ae0f6e9f0269667fd8a06e3c5367588cbfadbd"));
 
-        vSeeds.push_back(CDNSSeedData("knout", "dnsseed.squorum.cl"));
+        vSeeds.push_back(CDNSSeedData("knout", "dnsseed.helium.cl"));
+        vSeeds.push_back(CDNSSeedData("akcryptoguy", "sqrseed.nodevalet.io"));
 
         // sQuorum addresses start with 'S'
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,63);
