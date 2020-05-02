@@ -2057,7 +2057,7 @@ https://www.transifex.com/squorum-project/squorum-wallet</translation>
     </message>
     <message>
         <source>zSQR Control</source>
-        <translation>zSqr Kontrolė</translation>
+        <translation>zSQR Kontrolė</translation>
     </message>
     <message>
         <source>zSQR Selected:</source>

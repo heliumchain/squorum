@@ -5925,7 +5925,7 @@ Please be patient...</source>
     </message>
     <message>
         <source>Value is below the smallest available denomination (= 1) of zSQR</source>
-        <translation>Значение ниже наименьшего доступного номинала (= 1) zSqr</translation>
+        <translation>Значение ниже наименьшего доступного номинала (= 1) zSQR</translation>
     </message>
     <message>
         <source>Verifying blocks...</source>

@@ -4239,11 +4239,11 @@ Vær tålmodig...</translation>
     </message>
     <message>
         <source>Spent zSQR</source>
-        <translation>Brugt zSqr</translation>
+        <translation>Brugt zSQR</translation>
     </message>
     <message>
         <source>Received SQR from zSQR</source>
-        <translation>Modtaget Sqr fra zSqr</translation>
+        <translation>Modtaget SQR fra zSQR</translation>
     </message>
     <message>
         <source>Minted Change as zSQR from zSQR Spend</source>
@@ -4470,7 +4470,7 @@ Vær tålmodig...</translation>
     </message>
     <message>
         <source>Received SQR from zSQR</source>
-        <translation>Modtaget Sqr fra zSqr</translation>
+        <translation>Modtaget SQR fra zSQR</translation>
     </message>
     <message>
         <source>Zerocoin Spend, Change in zSQR</source>
@@ -4621,7 +4621,7 @@ Vær tålmodig...</translation>
     </message>
     <message>
         <source>Enable automatic wallet backups triggered after each zSQR minting (0-1, default: %u)</source>
-        <translation>Aktivér automatiske wallet-sikkerhedskopier udløst efter hver zSqr-mintning (0-1, standard: %u)</translation>
+        <translation>Aktivér automatiske wallet-sikkerhedskopier udløst efter hver zSQR-mintning (0-1, standard: %u)</translation>
     </message>
     <message>
         <source>Enable or disable staking functionality for SQR inputs (0-1, default: %u)</source>
