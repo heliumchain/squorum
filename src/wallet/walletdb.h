@@ -2,6 +2,7 @@
 // Copyright (c) 2009-2013 The Bitcoin developers
 // Copyright (c) 2016-2018 The PIVX developers
 // Copyright (c) 2018-2020 The Helium developers
+// Copyright (c) 2020 The sQuorum developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -12,10 +13,10 @@
 #include "wallet/db.h"
 #include "key.h"
 #include "keystore.h"
-#include "zhlm/zerocoin.h"
+#include "zsqr/zerocoin.h"
 #include "libzerocoin/Accumulator.h"
 #include "libzerocoin/Denominations.h"
-#include "zhlm/zhlmtracker.h"
+#include "zsqr/zsqrtracker.h"
 
 #include <list>
 #include <stdint.h>
@@ -180,14 +181,14 @@ public:
     bool ReadZerocoinSpendSerialEntry(const CBigNum& bnSerial);
     bool WriteCurrentSeedHash(const uint256& hashSeed);
     bool ReadCurrentSeedHash(uint256& hashSeed);
-    bool WriteZHLMSeed(const uint256& hashSeed, const std::vector<unsigned char>& seed);
-    bool ReadZHLMSeed(const uint256& hashSeed, std::vector<unsigned char>& seed);
-    bool ReadZHLMSeed_deprecated(uint256& seed);
-    bool EraseZHLMSeed();
-    bool EraseZHLMSeed_deprecated();
+    bool WriteZSQRSeed(const uint256& hashSeed, const std::vector<unsigned char>& seed);
+    bool ReadZSQRSeed(const uint256& hashSeed, std::vector<unsigned char>& seed);
+    bool ReadZSQRSeed_deprecated(uint256& seed);
+    bool EraseZSQRSeed();
+    bool EraseZSQRSeed_deprecated();
 
-    bool WriteZHLMCount(const uint32_t& nCount);
-    bool ReadZHLMCount(uint32_t& nCount);
+    bool WriteZSQRCount(const uint32_t& nCount);
+    bool ReadZSQRCount(uint32_t& nCount);
     std::map<uint256, std::vector<std::pair<uint256, uint32_t> > > MapMintPool();
     bool WriteMintPoolPair(const uint256& hashMasterSeed, const uint256& hashPubcoin, const uint32_t& nCount);
 

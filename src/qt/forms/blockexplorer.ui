@@ -168,7 +168,7 @@
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources>
-  <include location="../helium.qrc"/>
+  <include location="../squorum.qrc"/>
  </resources>
  <connections/>
 </ui>

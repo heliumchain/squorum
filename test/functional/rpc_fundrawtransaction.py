@@ -201,9 +201,9 @@ class RawTransactionsTest(BitcoinTestFramework):
 
         try:
             self.nodes[2].fundrawtransaction(rawtx, {'changeAddress': 'foobar'})
-            raise AssertionError("Accepted invalid helium address")
+            raise AssertionError("Accepted invalid squorum address")
         except JSONRPCException as e:
-            assert("changeAddress must be a valid helium address" in e.error['message'])
+            assert("changeAddress must be a valid squorum address" in e.error['message'])
 
 
         ############################################################

@@ -4,7 +4,7 @@
 
 #include "hash.h"
 #include "utilstrencodings.h"
-#include "test/test_helium.h"
+#include "test/test_squorum.h"
 
 #include <vector>
 

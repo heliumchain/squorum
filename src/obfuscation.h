@@ -1,6 +1,7 @@
 // Copyright (c) 2014-2015 The Dash developers
 // Copyright (c) 2015-2017 The PIVX developers
 // Copyright (c) 2018-2020 The Helium developers
+// Copyright (c) 2020 The sQuorum developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -204,7 +205,7 @@ public:
 class CObfuScationSigner
 {
 public:
-    /// Is the inputs associated with this public key? (and there is 10000 HLM - checking if valid masternode)
+    /// Is the inputs associated with this public key? (and there is 10000 SQR - checking if valid masternode)
     bool IsVinAssociatedWithPubkey(CTxIn& vin, CPubKey& pubkey);
     /// Set the private/public key values, returns true if successful
     bool GetKeysFromSecret(std::string strSecret, CKey& keyRet, CPubKey& pubkeyRet);

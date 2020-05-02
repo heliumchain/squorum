@@ -3,6 +3,7 @@
 // Copyright (c) 2014-2015 The Dash developers
 // Copyright (c) 2015-2018 The PIVX developers
 // Copyright (c) 2018-2020 The Helium developers
+// Copyright (c) 2020 The sQuorum developers
 
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
@@ -25,11 +26,11 @@
 #endif
 #include "validationinterface.h"
 #include "masternode-payments.h"
-#include "zhlm/accumulators.h"
+#include "zsqr/accumulators.h"
 #include "blocksignature.h"
 #include "spork.h"
 #include "invalid.h"
-#include "zhlmchain.h"
+#include "zsqrchain.h"
 
 
 #include <boost/thread.hpp>
@@ -38,7 +39,7 @@
 
 //////////////////////////////////////////////////////////////////////////////
 //
-// HeliumMiner
+// sQuorumMiner
 //
 
 //
@@ -229,8 +230,8 @@ CBlockTemplate* CreateNewBlock(const CScript& scriptPubKeyIn, CWallet* pwallet, 
                 //zerocoinspend has special vin
                 if (hasZerocoinSpends) {
                     //Give a high priority to zerocoinspends to get into the next block
-                    //Priority = (age^6+100000)*amount - gives higher priority to zhlms that have been in mempool long
-                    //and higher priority to zhlms that are large in value
+                    //Priority = (age^6+100000)*amount - gives higher priority to zsqrs that have been in mempool long
+                    //and higher priority to zsqrs that are large in value
                     int64_t nTimeSeen = GetAdjustedTime();
                     double nConfs = 100000;
 
@@ -244,7 +245,7 @@ CBlockTemplate* CreateNewBlock(const CScript& scriptPubKeyIn, CWallet* pwallet, 
 
                     double nTimePriority = std::pow(GetAdjustedTime() - nTimeSeen, 6);
 
-                    // zHLM spends can have very large priority, use non-overflowing safe functions
+                    // zSQR spends can have very large priority, use non-overflowing safe functions
                     dPriority = double_safe_addition(dPriority, (nTimePriority * nConfs));
                     dPriority = double_safe_multiplication(dPriority, nTotalIn);
 
@@ -277,7 +278,7 @@ CBlockTemplate* CreateNewBlock(const CScript& scriptPubKeyIn, CWallet* pwallet, 
                     continue;
                 }
 
-                /* NOTE: GJH inappropriate for Helium
+                /* NOTE: GJH inappropriate for sQuorum
                 //Check for invalid/fraudulent inputs. They shouldn't make it through mempool, but check anyways.
                 if (invalid_out::ContainsOutPoint(txin.prevout)) {
                     LogPrintf("%s : found invalid input %s in tx %s", __func__, txin.prevout.ToString(), tx.GetHash().ToString());
@@ -294,7 +295,7 @@ CBlockTemplate* CreateNewBlock(const CScript& scriptPubKeyIn, CWallet* pwallet, 
 
                 int nConf = nHeight - coins->nHeight;
 
-                // zHLM spends can have very large priority, use non-overflowing safe functions
+                // zSQR spends can have very large priority, use non-overflowing safe functions
                 dPriority = double_safe_addition(dPriority, ((double)nValueIn * nConf));
 
             }
@@ -367,7 +368,7 @@ CBlockTemplate* CreateNewBlock(const CScript& scriptPubKeyIn, CWallet* pwallet, 
             if (!view.HaveInputs(tx))
                 continue;
 
-            // double check that there are no double spent zHLM spends in this block or tx
+            // double check that there are no double spent zSQR spends in this block or tx
             if (tx.HasZerocoinSpendInputs()) {
                 int nHeightTx = 0;
                 if (IsTransactionInChain(tx.GetHash(), nHeightTx))
@@ -382,7 +383,7 @@ CBlockTemplate* CreateNewBlock(const CScript& scriptPubKeyIn, CWallet* pwallet, 
                             libzerocoin::ZerocoinParams* params = Params().Zerocoin_Params(false);
                             PublicCoinSpend publicSpend(params);
                             CValidationState state;
-                            if (!ZHLMModule::ParseZerocoinPublicSpend(txIn, tx, state, publicSpend)){
+                            if (!ZSQRModule::ParseZerocoinPublicSpend(txIn, tx, state, publicSpend)){
                                 throw std::runtime_error("Invalid public spend parse");
                             }
                             spend = &publicSpend;
@@ -403,7 +404,7 @@ CBlockTemplate* CreateNewBlock(const CScript& scriptPubKeyIn, CWallet* pwallet, 
                         vTxSerials.emplace_back(spend->getCoinSerialNumber());
                     }
                 }
-                //This zHLM serial has already been included in the block, do not add this tx.
+                //This zSQR serial has already been included in the block, do not add this tx.
                 if (fDoubleSerial)
                     continue;
             }
@@ -486,7 +487,7 @@ CBlockTemplate* CreateNewBlock(const CScript& scriptPubKeyIn, CWallet* pwallet, 
             uint256 nCheckpoint;
             uint256 hashBlockLastAccumulated = chainActive[nHeight - (nHeight % 10) - 10]->GetBlockHash();
             if (nHeight >= pCheckpointCache.first || pCheckpointCache.second.first != hashBlockLastAccumulated) {
-                //For the period before v2 activation, zHLM will be disabled and previous block's checkpoint is all that will be needed
+                //For the period before v2 activation, zSQR will be disabled and previous block's checkpoint is all that will be needed
                 pCheckpointCache.second.second = pindexPrev->nAccumulatorCheckpoint;
                 if (pindexPrev->nHeight + 1 >= Params().Zerocoin_Block_V2_Start()) {
                     AccumulatorMap mapAccumulators(Params().Zerocoin_Params(false));
@@ -509,27 +510,27 @@ CBlockTemplate* CreateNewBlock(const CScript& scriptPubKeyIn, CWallet* pwallet, 
         IncrementExtraNonce(pblock, pindexPrev, nExtraNonce);
 
         if (fProofOfStake) {
-            LogPrintf("HeliumMiner : proof-of-stake block found %s \n", pblock->GetHash().ToString().c_str());
+            LogPrintf("sQuorumMiner : proof-of-stake block found %s \n", pblock->GetHash().ToString().c_str());
             if (pblock->IsZerocoinStake()) {
                 //Find the key associated with the zerocoin that is being staked
                 libzerocoin::CoinSpend spend = TxInToZerocoinSpend(pblock->vtx[1].vin[0]);
                 CBigNum bnSerial = spend.getCoinSerialNumber();
                 CKey key;
                 if (!pwallet->GetZerocoinKey(bnSerial, key)) {
-                    LogPrintf("%s: failed to find zHLM with serial %s, unable to sign block\n", __func__, bnSerial.GetHex());
+                    LogPrintf("%s: failed to find zSQR with serial %s, unable to sign block\n", __func__, bnSerial.GetHex());
                     return NULL;
                 }
 
-                //Sign block with the zHLM key
+                //Sign block with the zSQR key
                 if (!SignBlockWithKey(*pblock, key)) {
-                    LogPrintf("%s: Signing new block with zHLM key failed \n", __func__);
+                    LogPrintf("%s: Signing new block with zSQR key failed \n", __func__);
                     return NULL;
                 }
             } else if (!SignBlock(*pblock, *pwallet)) {
                 LogPrintf("%s: Signing new block with UTXO key failed \n", __func__);
                 return NULL;
             }
-            LogPrintf("HeliumMiner : proof-of-stake block was signed %s \n", pblock->GetHash().ToString().c_str());
+            LogPrintf("sQuorumMiner : proof-of-stake block was signed %s \n", pblock->GetHash().ToString().c_str());
         }
 
         CValidationState state;
@@ -601,7 +602,7 @@ bool ProcessBlockFound(CBlock* pblock, CWallet& wallet)
     {
         LOCK(cs_main);
         if (pblock->hashPrevBlock != chainActive.Tip()->GetBlockHash())
-            return error("HeliumMiner : generated block is stale");
+            return error("sQuorumMiner : generated block is stale");
     }
 
 
@@ -618,10 +619,10 @@ bool ProcessBlockFound(CBlock* pblock, CWallet& wallet)
     CValidationState state;
     if (!ProcessNewBlock(state, NULL, pblock)) {
         if (pblock->IsZerocoinStake()) {
-            pwalletMain->zhlmTracker->RemovePending(pblock->vtx[1].GetHash());
-            pwalletMain->zhlmTracker->ListMints(true, true, true); //update the state
+            pwalletMain->zsqrTracker->RemovePending(pblock->vtx[1].GetHash());
+            pwalletMain->zsqrTracker->ListMints(true, true, true); //update the state
         }
-        return error("HeliumMiner : ProcessNewBlock, block not accepted");
+        return error("sQuorumMiner : ProcessNewBlock, block not accepted");
     }
 
     for (CNode* node : vNodes) {
@@ -639,9 +640,9 @@ int nMintableLastCheck = 0;
 
 void BitcoinMiner(CWallet* pwallet, bool fProofOfStake)
 {
-    LogPrintf("HeliumMiner started\n");
+    LogPrintf("sQuorumMiner started\n");
     SetThreadPriority(THREAD_PRIORITY_LOWEST);
-    RenameThread("helium-miner");
+    RenameThread("squorum-miner");
 
     // Each thread has its own key and counter
     bool fLastLoopOrphan = false;
@@ -721,7 +722,7 @@ void BitcoinMiner(CWallet* pwallet, bool fProofOfStake)
             continue;
         }
 
-        LogPrintf("Running HeliumMiner with %u transactions in block (%u bytes)\n", pblock->vtx.size(),
+        LogPrintf("Running sQuorumMiner with %u transactions in block (%u bytes)\n", pblock->vtx.size(),
             ::GetSerializeSize(*pblock, SER_NETWORK, PROTOCOL_VERSION));
         //
         // Search
@@ -810,12 +811,12 @@ void static ThreadBitcoinMiner(void* parg)
         BitcoinMiner(pwallet, false);
         boost::this_thread::interruption_point();
     } catch (std::exception& e) {
-        LogPrintf("HeliumMiner exception\n");
+        LogPrintf("sQuorumMiner exception\n");
     } catch (...) {
-        LogPrintf("HeliumMiner exception\n");
+        LogPrintf("sQuorumMiner exception\n");
     }
 
-    LogPrintf("HeliumMiner exiting\n");
+    LogPrintf("sQuorumMiner exiting\n");
 }
 
 void GenerateBitcoins(bool fGenerate, CWallet* pwallet, int nThreads)

@@ -2,6 +2,7 @@
 // Copyright (c) 2014-2015 The Dash developers
 // Copyright (c) 2015-2017 The PIVX developers
 // Copyright (c) 2018 The Helium developers
+// Copyright (c) 2020 The sQuorum developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -17,7 +18,7 @@ OpenURIDialog::OpenURIDialog(QWidget* parent) : QDialog(parent, Qt::WindowSystem
                                                 ui(new Ui::OpenURIDialog)
 {
     ui->setupUi(this);
-    ui->uriEdit->setPlaceholderText("helium:");
+    ui->uriEdit->setPlaceholderText("squorum:");
 }
 
 OpenURIDialog::~OpenURIDialog()
@@ -47,5 +48,5 @@ void OpenURIDialog::on_selectFileButton_clicked()
     if (filename.isEmpty())
         return;
     QUrl fileUri = QUrl::fromLocalFile(filename);
-    ui->uriEdit->setText("helium:?r=" + QUrl::toPercentEncoding(fileUri.toString()));
+    ui->uriEdit->setText("squorum:?r=" + QUrl::toPercentEncoding(fileUri.toString()));
 }

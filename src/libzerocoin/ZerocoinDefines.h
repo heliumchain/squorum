@@ -11,6 +11,7 @@
 **/
 // Copyright (c) 2017 The PIVX developers
 // Copyright (c) 2018-2020 The Helium developers
+// Copyright (c) 2020 The sQuorum developers
 
 #ifndef ZEROCOIN_DEFINES_H_
 #define ZEROCOIN_DEFINES_H_

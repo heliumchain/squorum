@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 # Copyright (c) 2016-2018 The Bitcoin Core developers
 # Copyright (c) 2018-2020 The Helium developers
+# Copyright (c) 2020 The sQuorum developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -17,7 +18,7 @@ import os
 
 EXCLUDE = [
     # auto generated:
-    'src/qt/heliumstrings.cpp',
+    'src/qt/squorumstrings.cpp',
     'src/chainparamsseeds.h',
     # other external copyrights:
     'src/tinyformat.h',
@@ -444,7 +445,7 @@ Usage:
     $ ./copyright_header.py update <base_directory>
 
 Arguments:
-    <base_directory> - The base directory of a helium source code repository.
+    <base_directory> - The base directory of a squorum source code repository.
 """
 
 def print_file_action_message(filename, action):

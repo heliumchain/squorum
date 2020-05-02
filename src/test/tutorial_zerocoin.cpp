@@ -11,6 +11,7 @@
 **/
 // Copyright (c) 2017-2018 The PIVX developers
 // Copyright (c) 2018-2020 The Helium developers
+// Copyright (c) 2020 The sQuorum developers
 
 #include <boost/test/unit_test.hpp>
 #include <string>
@@ -25,7 +26,7 @@
 #include "libzerocoin/Coin.h"
 #include "libzerocoin/CoinSpend.h"
 #include "libzerocoin/Accumulator.h"
-#include "test_helium.h"
+#include "test_squorum.h"
 
 
 #define COINS_TO_ACCUMULATE     5

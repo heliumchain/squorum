@@ -3,6 +3,7 @@
 // Copyright (c) 2014-2015 The Dash developers
 // Copyright (c) 2015-2018 The PIVX developers
 // Copyright (c) 2018-2019 The Helium developers
+// Copyright (c) 2020 The sQuorum developers
 
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
@@ -19,13 +20,13 @@
 #include "utilmoneystr.h"
 #include "wallet.h"
 #include "walletdb.h"
-#include "zhlmchain.h"
+#include "zsqrchain.h"
 
 #include <stdint.h>
 
 #include "libzerocoin/Coin.h"
 #include "spork.h"
-#include "zhlm/deterministicmint.h"
+#include "zsqr/deterministicmint.h"
 #include <boost/assign/list_of.hpp>
 #include <boost/thread/thread.hpp>
 
@@ -84,7 +85,7 @@ UniValue getnewaddress(const UniValue& params, bool fHelp)
     if (fHelp || params.size() > 1)
         throw std::runtime_error(
             "getnewaddress ( \"account\" )\n"
-            "\nReturns a new Helium address for receiving payments.\n"
+            "\nReturns a new sQuorum address for receiving payments.\n"
             "If 'account' is specified (recommended), it is added to the address book \n"
             "so payments received with the address will be credited to 'account'.\n"
 
@@ -158,7 +159,7 @@ UniValue getaccountaddress(const UniValue& params, bool fHelp)
     if (fHelp || params.size() != 1)
         throw std::runtime_error(
             "getaccountaddress \"account\"\n"
-            "\nReturns the current Helium address for receiving payments to this account.\n"
+            "\nReturns the current sQuorum address for receiving payments to this account.\n"
             "\nArguments:\n"
             "1. \"account\"       (string, required) The account name for the address. It can also be set to the empty string \"\" to represent the default account. The account does not need to exist, it will be created and a new address created  if there is no account by the given name.\n"
 
@@ -185,7 +186,7 @@ UniValue getrawchangeaddress(const UniValue& params, bool fHelp)
     if (fHelp || params.size() > 1)
         throw std::runtime_error(
             "getrawchangeaddress\n"
-            "\nReturns a new Helium address, for receiving change.\n"
+            "\nReturns a new sQuorum address, for receiving change.\n"
             "This is for use with raw transactions, NOT normal use.\n"
 
             "\nResult:\n"
@@ -216,7 +217,7 @@ UniValue setaccount(const UniValue& params, bool fHelp)
 {
     if (fHelp || params.size() < 1 || params.size() > 2)
         throw std::runtime_error(
-            "setaccount \"heliumaddress\" \"account\"\n"
+            "setaccount \"squorumaddress\" \"account\"\n"
             "\nSets the account associated with the given address.\n"
 
             "\nArguments:\n"
@@ -230,7 +231,7 @@ UniValue setaccount(const UniValue& params, bool fHelp)
 
     CBitcoinAddress address(params[0].get_str());
     if (!address.IsValid())
-        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid Helium address");
+        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid sQuorum address");
 
 
     std::string strAccount;
@@ -257,7 +258,7 @@ UniValue getaccount(const UniValue& params, bool fHelp)
 {
     if (fHelp || params.size() != 1)
         throw std::runtime_error(
-            "getaccount \"heliumaddress\"\n"
+            "getaccount \"squorumaddress\"\n"
             "\nReturns the account associated with the given address.\n"
 
             "\nArguments:\n"
@@ -272,7 +273,7 @@ UniValue getaccount(const UniValue& params, bool fHelp)
 
     CBitcoinAddress address(params[0].get_str());
     if (!address.IsValid())
-        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid Helium address");
+        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid sQuorum address");
 
     std::string strAccount;
     std::map<CTxDestination, CAddressBookData>::iterator mi = pwalletMain->mapAddressBook.find(address.Get());
@@ -332,7 +333,7 @@ void SendMoney(const CTxDestination& address, CAmount nValue, CWalletTx& wtxNew,
         throw JSONRPCError(RPC_WALLET_ERROR, strError);
     }
 
-    // Parse Helium address
+    // Parse sQuorum address
     CScript scriptPubKey = GetScriptForDestination(address);
 
     // Create and send the transaction
@@ -352,13 +353,13 @@ UniValue sendtoaddress(const UniValue& params, bool fHelp)
 {
     if (fHelp || params.size() < 2 || params.size() > 4)
         throw std::runtime_error(
-            "sendtoaddress \"heliumaddress\" amount ( \"comment\" \"comment-to\" )\n"
+            "sendtoaddress \"squorumaddress\" amount ( \"comment\" \"comment-to\" )\n"
             "\nSend an amount to a given address. The amount is a real and is rounded to the nearest 0.00000001\n" +
             HelpRequiringPassphrase() + "\n"
 
             "\nArguments:\n"
             "1. \"address\"  (string, required) The address to send to.\n"
-            "2. \"amount\"      (numeric, required) The amount in HLM to send. eg 0.1\n"
+            "2. \"amount\"      (numeric, required) The amount in SQR to send. eg 0.1\n"
             "3. \"comment\"     (string, optional) A comment used to store what the transaction is for. \n"
             "                             This is not part of the transaction, just kept in your wallet.\n"
             "4. \"comment-to\"  (string, optional) A comment to store the name of the person or organization \n"
@@ -377,7 +378,7 @@ UniValue sendtoaddress(const UniValue& params, bool fHelp)
 
     CBitcoinAddress address(params[0].get_str());
     if (!address.IsValid())
-        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid Helium address");
+        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid sQuorum address");
 
     // Amount
     CAmount nAmount = AmountFromValue(params[1]);
@@ -400,13 +401,13 @@ UniValue sendtoaddressix(const UniValue& params, bool fHelp)
 {
     if (fHelp || params.size() < 2 || params.size() > 4)
         throw std::runtime_error(
-            "sendtoaddressix \"heliumaddress\" amount ( \"comment\" \"comment-to\" )\n"
+            "sendtoaddressix \"squorumaddress\" amount ( \"comment\" \"comment-to\" )\n"
             "\nSend an amount to a given address. The amount is a real and is rounded to the nearest 0.00000001\n" +
             HelpRequiringPassphrase() + "\n"
 
             "\nArguments:\n"
             "1. \"address\"  (string, required) The address to send to.\n"
-            "2. \"amount\"      (numeric, required) The amount in HLM to send. eg 0.1\n"
+            "2. \"amount\"      (numeric, required) The amount in SQR to send. eg 0.1\n"
             "3. \"comment\"     (string, optional) A comment used to store what the transaction is for. \n"
             "                             This is not part of the transaction, just kept in your wallet.\n"
             "4. \"comment-to\"  (string, optional) A comment to store the name of the person or organization \n"
@@ -425,7 +426,7 @@ UniValue sendtoaddressix(const UniValue& params, bool fHelp)
 
     CBitcoinAddress address(params[0].get_str());
     if (!address.IsValid())
-        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid Helium address");
+        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid sQuorum address");
 
     // Amount
     CAmount nAmount = AmountFromValue(params[1]);
@@ -458,7 +459,7 @@ UniValue listaddressgroupings(const UniValue& params, bool fHelp)
             "  [\n"
             "    [\n"
             "      \"address\",     (string) The address\n"
-            "      amount,                 (numeric) The amount in HLM\n"
+            "      amount,                 (numeric) The amount in SQR\n"
             "      \"account\"             (string, optional) The account\n"
             "    ]\n"
             "    ,...\n"
@@ -494,7 +495,7 @@ UniValue signmessage(const UniValue& params, bool fHelp)
 {
     if (fHelp || params.size() != 2)
         throw std::runtime_error(
-            "signmessage \"heliumaddress\" \"message\"\n"
+            "signmessage \"squorumaddress\" \"message\"\n"
             "\nSign a message with the private key of an address" +
             HelpRequiringPassphrase() + "\n"
 
@@ -549,15 +550,15 @@ UniValue getreceivedbyaddress(const UniValue& params, bool fHelp)
 {
     if (fHelp || params.size() < 1 || params.size() > 2)
         throw std::runtime_error(
-            "getreceivedbyaddress \"heliumaddress\" ( minconf )\n"
-            "\nReturns the total amount received by the given heliumaddress in transactions with at least minconf confirmations.\n"
+            "getreceivedbyaddress \"squorumaddress\" ( minconf )\n"
+            "\nReturns the total amount received by the given squorumaddress in transactions with at least minconf confirmations.\n"
 
             "\nArguments:\n"
             "1. \"address\"  (string, required) The address for transactions.\n"
             "2. minconf             (numeric, optional, default=1) Only include transactions confirmed at least this many times.\n"
 
             "\nResult:\n"
-            "amount   (numeric) The total amount in HLM received at this address.\n"
+            "amount   (numeric) The total amount in SQR received at this address.\n"
 
             "\nExamples:\n"
             "\nThe amount from transactions with at least 1 confirmation\n" +
@@ -574,7 +575,7 @@ UniValue getreceivedbyaddress(const UniValue& params, bool fHelp)
     // address
     CBitcoinAddress address = CBitcoinAddress(params[0].get_str());
     if (!address.IsValid())
-        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid Helium address");
+        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid sQuorum address");
     CScript scriptPubKey = GetScriptForDestination(address.Get());
     if (!IsMine(*pwalletMain, scriptPubKey))
         throw JSONRPCError(RPC_WALLET_ERROR, "Address not found in wallet");
@@ -613,7 +614,7 @@ UniValue getreceivedbyaccount(const UniValue& params, bool fHelp)
             "2. minconf          (numeric, optional, default=1) Only include transactions confirmed at least this many times.\n"
 
             "\nResult:\n"
-            "amount              (numeric) The total amount in HLM received for this account.\n"
+            "amount              (numeric) The total amount in SQR received for this account.\n"
 
             "\nExamples:\n"
             "\nAmount received by the default account with at least 1 confirmation\n" +
@@ -702,7 +703,7 @@ UniValue getbalance(const UniValue& params, bool fHelp)
             "3. includeWatchonly (bool, optional, default=false) Also include balance in watchonly addresses (see 'importaddress')\n"
 
             "\nResult:\n"
-            "amount              (numeric) The total amount in HLM received for this account.\n"
+            "amount              (numeric) The total amount in SQR received for this account.\n"
 
             "\nExamples:\n"
             "\nThe total amount in the server across all accounts\n" +
@@ -785,7 +786,7 @@ UniValue movecmd(const UniValue& params, bool fHelp)
             "\nArguments:\n"
             "1. \"fromaccount\"   (string, required) The name of the account to move funds from. May be the default account using \"\".\n"
             "2. \"toaccount\"     (string, required) The name of the account to move funds to. May be the default account using \"\".\n"
-            "3. amount            (numeric, required) Quantity of HLM to move between accounts.\n"
+            "3. amount            (numeric, required) Quantity of SQR to move between accounts.\n"
             "4. minconf           (numeric, optional, default=1) Only use funds with at least this many confirmations.\n"
             "5. \"comment\"       (string, optional) An optional comment, stored in the wallet only.\n"
 
@@ -793,9 +794,9 @@ UniValue movecmd(const UniValue& params, bool fHelp)
             "true|false           (boolean) true if successful.\n"
 
             "\nExamples:\n"
-            "\nMove 0.01 HLM from the default account to the account named tabby\n" +
+            "\nMove 0.01 SQR from the default account to the account named tabby\n" +
             HelpExampleCli("move", "\"\" \"tabby\" 0.01") +
-            "\nMove 0.01 HLM from timotei to akiko with a comment\n" +
+            "\nMove 0.01 SQR from timotei to akiko with a comment\n" +
             HelpExampleCli("move", "\"timotei\" \"akiko\" 0.01 1 \"happy birthday!\"") +
             "\nAs a json rpc call\n" +
             HelpExampleRpc("move", "\"timotei\", \"akiko\", 0.01, 1, \"happy birthday!\""));
@@ -849,15 +850,15 @@ UniValue sendfrom(const UniValue& params, bool fHelp)
 {
     if (fHelp || params.size() < 3 || params.size() > 6)
         throw std::runtime_error(
-            "sendfrom \"fromaccount\" \"toheliumaddress\" amount ( minconf \"comment\" \"comment-to\" )\n"
-            "\nSent an amount from an account to a helium address.\n"
+            "sendfrom \"fromaccount\" \"tosquorumaddress\" amount ( minconf \"comment\" \"comment-to\" )\n"
+            "\nSent an amount from an account to a squorum address.\n"
             "The amount is a real and is rounded to the nearest 0.00000001." +
             HelpRequiringPassphrase() + "\n"
 
             "\nArguments:\n"
             "1. \"fromaccount\"       (string, required) The name of the account to send funds from. May be the default account using \"\".\n"
             "2. \"topaddress\"  (string, required) The address to send funds to.\n"
-            "3. amount                (numeric, required) The amount in HLM. (transaction fee is added on top).\n"
+            "3. amount                (numeric, required) The amount in SQR. (transaction fee is added on top).\n"
             "4. minconf               (numeric, optional, default=1) Only use funds with at least this many confirmations.\n"
             "5. \"comment\"           (string, optional) A comment used to store what the transaction is for. \n"
             "                                     This is not part of the transaction, just kept in your wallet.\n"
@@ -869,7 +870,7 @@ UniValue sendfrom(const UniValue& params, bool fHelp)
             "\"transactionid\"        (string) The transaction id.\n"
 
             "\nExamples:\n"
-            "\nSend 0.01 HLM from the default account to the address, must have at least 1 confirmation\n" +
+            "\nSend 0.01 SQR from the default account to the address, must have at least 1 confirmation\n" +
             HelpExampleCli("sendfrom", "\"\" \"SMJRSsuU9zfyrvxVaAEFQqK4MxZg6vgeS6\" 0.01") +
             "\nSend 0.01 from the tabby account to the given address, funds must have at least 6 confirmations\n" +
             HelpExampleCli("sendfrom", "\"tabby\" \"SMJRSsuU9zfyrvxVaAEFQqK4MxZg6vgeS6\" 0.01 6 \"donation\" \"seans outpost\"") +
@@ -881,7 +882,7 @@ UniValue sendfrom(const UniValue& params, bool fHelp)
     std::string strAccount = AccountFromValue(params[0]);
     CBitcoinAddress address(params[1].get_str());
     if (!address.IsValid())
-        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid Helium address");
+        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid sQuorum address");
     CAmount nAmount = AmountFromValue(params[2]);
     int nMinDepth = 1;
     if (params.size() > 3)
@@ -919,7 +920,7 @@ UniValue sendmany(const UniValue& params, bool fHelp)
             "1. \"fromaccount\"         (string, required) The account to send the funds from, can be \"\" for the default account\n"
             "2. \"amounts\"             (string, required) A json object with addresses and amounts\n"
             "    {\n"
-            "      \"address\":amount   (numeric) The address is the key, the numeric amount in HLM is the value\n"
+            "      \"address\":amount   (numeric) The address is the key, the numeric amount in SQR is the value\n"
             "      ,...\n"
             "    }\n"
             "3. minconf                 (numeric, optional, default=1) Only use the balance confirmed at least this many times.\n"
@@ -958,7 +959,7 @@ UniValue sendmany(const UniValue& params, bool fHelp)
     for (const std::string& name_ : keys) {
         CBitcoinAddress address(name_);
         if (!address.IsValid())
-            throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, std::string("Invalid Helium address: ")+name_);
+            throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, std::string("Invalid sQuorum address: ")+name_);
 
         if (setAddress.count(address))
             throw JSONRPCError(RPC_INVALID_PARAMETER, std::string("Invalid parameter, duplicated address: ")+name_);
@@ -1000,14 +1001,14 @@ UniValue addmultisigaddress(const UniValue& params, bool fHelp)
         throw std::runtime_error(
             "addmultisigaddress nrequired [\"key\",...] ( \"account\" )\n"
             "\nAdd a nrequired-to-sign multisignature address to the wallet.\n"
-            "Each key is a Helium address or hex-encoded public key.\n"
+            "Each key is a sQuorum address or hex-encoded public key.\n"
             "If 'account' is specified, assign address to that account.\n"
 
             "\nArguments:\n"
             "1. nrequired        (numeric, required) The number of required signatures out of the n keys or addresses.\n"
-            "2. \"keysobject\"   (string, required) A json array of helium addresses or hex-encoded public keys\n"
+            "2. \"keysobject\"   (string, required) A json array of squorum addresses or hex-encoded public keys\n"
             "     [\n"
-            "       \"address\"  (string) helium address or hex-encoded public key\n"
+            "       \"address\"  (string) squorum address or hex-encoded public key\n"
             "       ...,\n"
             "     ]\n"
             "3. \"account\"      (string, optional) An account to assign the addresses to.\n"
@@ -1185,7 +1186,7 @@ UniValue listreceivedbyaddress(const UniValue& params, bool fHelp)
             "    \"involvesWatchonly\" : \"true\",    (bool) Only returned if imported addresses were involved in transaction\n"
             "    \"address\" : \"receivingaddress\",  (string) The receiving address\n"
             "    \"account\" : \"accountname\",       (string) The account of the receiving address. The default account is \"\".\n"
-            "    \"amount\" : x.xxx,                  (numeric) The total amount in HLM received by the address\n"
+            "    \"amount\" : x.xxx,                  (numeric) The total amount in SQR received by the address\n"
             "    \"confirmations\" : n                (numeric) The number of confirmations of the most recent transaction included\n"
             "    \"bcconfirmations\" : n              (numeric) The number of blockchain confirmations of the most recent transaction included\n"
             "  }\n"
@@ -1343,11 +1344,11 @@ UniValue listtransactions(const UniValue& params, bool fHelp)
             "                                                transaction between accounts, and not associated with an address,\n"
             "                                                transaction id or block. 'send' and 'receive' transactions are \n"
             "                                                associated with an address, transaction id and block details\n"
-            "    \"amount\": x.xxx,          (numeric) The amount in HLM. This is negative for the 'send' category, and for the\n"
+            "    \"amount\": x.xxx,          (numeric) The amount in SQR. This is negative for the 'send' category, and for the\n"
             "                                         'move' category for moves outbound. It is positive for the 'receive' category,\n"
             "                                         and for the 'move' category for inbound funds.\n"
             "    \"vout\" : n,               (numeric) the vout value\n"
-            "    \"fee\": x.xxx,             (numeric) The amount of the fee in HLM. This is negative and only available for the \n"
+            "    \"fee\": x.xxx,             (numeric) The amount of the fee in SQR. This is negative and only available for the \n"
             "                                         'send' category of transactions.\n"
             "    \"confirmations\": n,       (numeric) The number of confirmations for the transaction. Available for 'send' and \n"
             "                                         'receive' category of transactions.\n"
@@ -1534,10 +1535,10 @@ UniValue listsinceblock(const UniValue& params, bool fHelp)
             "    \"account\":\"accountname\",       (string) The account name associated with the transaction. Will be \"\" for the default account.\n"
             "    \"address\":\"address\",    (string) The address of the transaction. Not present for move transactions (category = move).\n"
             "    \"category\":\"send|receive\",     (string) The transaction category. 'send' has negative amounts, 'receive' has positive amounts.\n"
-            "    \"amount\": x.xxx,          (numeric) The amount in HLM. This is negative for the 'send' category, and for the 'move' category for moves \n"
+            "    \"amount\": x.xxx,          (numeric) The amount in SQR. This is negative for the 'send' category, and for the 'move' category for moves \n"
             "                                          outbound. It is positive for the 'receive' category, and for the 'move' category for inbound funds.\n"
             "    \"vout\" : n,               (numeric) the vout value\n"
-            "    \"fee\": x.xxx,             (numeric) The amount of the fee in HLM. This is negative and only available for the 'send' category of transactions.\n"
+            "    \"fee\": x.xxx,             (numeric) The amount of the fee in SQR. This is negative and only available for the 'send' category of transactions.\n"
             "    \"confirmations\": n,       (numeric) The number of confirmations for the transaction. Available for 'send' and 'receive' category of transactions.\n"
             "    \"bcconfirmations\" : n,    (numeric) The number of blockchain confirmations for the transaction. Available for 'send' and 'receive' category of transactions.\n"
             "    \"blockhash\": \"hashvalue\",     (string) The block hash containing the transaction. Available for 'send' and 'receive' category of transactions.\n"
@@ -1617,7 +1618,7 @@ UniValue gettransaction(const UniValue& params, bool fHelp)
 
             "\nResult:\n"
             "{\n"
-            "  \"amount\" : x.xxx,        (numeric) The transaction amount in HLM\n"
+            "  \"amount\" : x.xxx,        (numeric) The transaction amount in SQR\n"
             "  \"confirmations\" : n,     (numeric) The number of confirmations\n"
             "  \"bcconfirmations\" : n,   (numeric) The number of blockchain confirmations\n"
             "  \"blockhash\" : \"hash\",  (string) The block hash\n"
@@ -1631,7 +1632,7 @@ UniValue gettransaction(const UniValue& params, bool fHelp)
             "      \"account\" : \"accountname\",  (string) The account name involved in the transaction, can be \"\" for the default account.\n"
             "      \"address\" : \"address\",   (string) The address involved in the transaction\n"
             "      \"category\" : \"send|receive\",    (string) The category, either 'send' or 'receive'\n"
-            "      \"amount\" : x.xxx                  (numeric) The amount in HLM\n"
+            "      \"amount\" : x.xxx                  (numeric) The amount in SQR\n"
             "      \"vout\" : n,                       (numeric) the vout value\n"
             "    }\n"
             "    ,...\n"
@@ -1752,7 +1753,7 @@ UniValue walletpassphrase(const UniValue& params, bool fHelp)
         throw std::runtime_error(
             "walletpassphrase \"passphrase\" timeout ( anonymizeonly )\n"
             "\nStores the wallet decryption key in memory for 'timeout' seconds.\n"
-            "This is needed prior to performing transactions related to private keys such as sending HLM\n"
+            "This is needed prior to performing transactions related to private keys such as sending SQR\n"
             "\nArguments:\n"
             "1. \"passphrase\"     (string, required) The wallet passphrase\n"
             "2. timeout            (numeric, required) The time to keep the decryption key in seconds.\n"
@@ -1916,7 +1917,7 @@ UniValue encryptwallet(const UniValue& params, bool fHelp)
             "\nExamples:\n"
             "\nEncrypt you wallet\n" +
             HelpExampleCli("encryptwallet", "\"my pass phrase\"") +
-            "\nNow set the passphrase to use the wallet, such as for signing or sending HLM\n" +
+            "\nNow set the passphrase to use the wallet, such as for signing or sending SQR\n" +
             HelpExampleCli("walletpassphrase", "\"my pass phrase\"") +
             "\nNow we can so something like sign\n" +
             HelpExampleCli("signmessage", "\"address\" \"test message\"") +
@@ -1950,7 +1951,7 @@ UniValue encryptwallet(const UniValue& params, bool fHelp)
     // slack space in .dat files; that is bad if the old data is
     // unencrypted private keys. So:
     StartShutdown();
-    return "wallet encrypted; Helium Core server stopping, restart to run with encrypted wallet. The keypool has been flushed, you need to make a new backup.";
+    return "wallet encrypted; sQuorum Core server stopping, restart to run with encrypted wallet. The keypool has been flushed, you need to make a new backup.";
 }
 
 UniValue lockunspent(const UniValue& params, bool fHelp)
@@ -1960,7 +1961,7 @@ UniValue lockunspent(const UniValue& params, bool fHelp)
             "lockunspent unlock [{\"txid\":\"txid\",\"vout\":n},...]\n"
             "\nUpdates list of temporarily unspendable outputs.\n"
             "Temporarily lock (unlock=false) or unlock (unlock=true) specified transaction outputs.\n"
-            "A locked transaction output will not be chosen by automatic coin selection, when spending HLMs.\n"
+            "A locked transaction output will not be chosen by automatic coin selection, when spending SQRs.\n"
             "Locks are stored in memory only. Nodes start with zero locked outputs, and the locked output list\n"
             "is always cleared (by virtue of process exit) when a node stops or fails.\n"
             "Also see the listunspent call\n"
@@ -2089,7 +2090,7 @@ UniValue settxfee(const UniValue& params, bool fHelp)
             "\nSet the transaction fee per kB.\n"
 
             "\nArguments:\n"
-            "1. amount         (numeric, required) The transaction fee in HLM/kB rounded to the nearest 0.00000001\n"
+            "1. amount         (numeric, required) The transaction fee in SQR/kB rounded to the nearest 0.00000001\n"
             "\nResult\n"
             "true|false        (boolean) Returns true if successful\n"
             "\nExamples:\n" +
@@ -2116,14 +2117,14 @@ UniValue getwalletinfo(const UniValue& params, bool fHelp)
             "\nResult:\n"
             "{\n"
             "  \"walletversion\": xxxxx,     (numeric) the wallet version\n"
-            "  \"balance\": xxxxxxx,         (numeric) the total HLM balance of the wallet\n"
-            "  \"unconfirmed_balance\": xxx, (numeric) the total unconfirmed balance of the wallet in HLM\n"
-            "  \"immature_balance\": xxxxxx, (numeric) the total immature balance of the wallet in HLM\n"
+            "  \"balance\": xxxxxxx,         (numeric) the total SQR balance of the wallet\n"
+            "  \"unconfirmed_balance\": xxx, (numeric) the total unconfirmed balance of the wallet in SQR\n"
+            "  \"immature_balance\": xxxxxx, (numeric) the total immature balance of the wallet in SQR\n"
             "  \"txcount\": xxxxxxx,         (numeric) the total number of transactions in the wallet\n"
             "  \"keypoololdest\": xxxxxx,    (numeric) the timestamp (seconds since GMT epoch) of the oldest pre-generated key in the key pool\n"
             "  \"keypoolsize\": xxxx,        (numeric) how many new keys are pre-generated\n"
             "  \"unlocked_until\": ttt,      (numeric) the timestamp in seconds since epoch (midnight Jan 1 1970 GMT) that the wallet is unlocked for transfers, or 0 if the wallet is locked\n"
-            "  \"paytxfee\": x.xxxx,         (numeric) the transaction fee configuration, set in HLM/kB\n"
+            "  \"paytxfee\": x.xxxx,         (numeric) the transaction fee configuration, set in SQR/kB\n"
             "  \"automintaddresses\": status (boolean) the status of automint addresses (true if enabled, false if disabled)\n"
             "}\n"
 
@@ -2473,7 +2474,7 @@ UniValue multisend(const UniValue& params, bool fHelp)
             "The MultiSend transaction is sent when the staked coins mature (100 confirmations)\n"
             "****************************************************************\n"
             "TO CREATE OR ADD TO THE MULTISEND VECTOR:\n"
-            "multisend <Helium Address> <percent>\n"
+            "multisend <sQuorum Address> <percent>\n"
             "This will add a new address to the MultiSend vector\n"
             "Percent is a whole number 1 to 100.\n"
             "****************************************************************\n"
@@ -2492,7 +2493,7 @@ UniValue multisend(const UniValue& params, bool fHelp)
     std::string strAddress = params[0].get_str();
     CBitcoinAddress address(strAddress);
     if (!address.IsValid())
-        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid HLM address");
+        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid SQR address");
     if (std::stoi(params[1].get_str().c_str()) < 0)
         throw JSONRPCError(RPC_INVALID_PARAMETER, "Invalid parameter, expected valid percentage");
     if (pwalletMain->IsLocked())
@@ -2537,11 +2538,11 @@ UniValue getzerocoinbalance(const UniValue& params, bool fHelp)
     if (fHelp || params.size() != 0)
         throw std::runtime_error(
             "getzerocoinbalance\n"
-            "\nReturn the wallet's total zHLM balance.\n" +
+            "\nReturn the wallet's total zSQR balance.\n" +
             HelpRequiringPassphrase() + "\n"
 
             "\nResult:\n"
-            "amount         (numeric) Total zHLM balance.\n"
+            "amount         (numeric) Total zSQR balance.\n"
 
             "\nExamples:\n" +
             HelpExampleCli("getzerocoinbalance", "") + HelpExampleRpc("getzerocoinbalance", ""));
@@ -2565,7 +2566,7 @@ UniValue listmintedzerocoins(const UniValue& params, bool fHelp)
     if (fHelp || params.size() > 2)
         throw std::runtime_error(
             "listmintedzerocoins (fVerbose) (fMatureOnly)\n"
-            "\nList all zHLM mints in the wallet.\n" +
+            "\nList all zSQR mints in the wallet.\n" +
             HelpRequiringPassphrase() + "\n"
 
             "\nArguments:\n"
@@ -2583,7 +2584,7 @@ UniValue listmintedzerocoins(const UniValue& params, bool fHelp)
             "  {\n"
             "    \"serial hash\": \"xxx\",   (string) Mint serial hash in hex format.\n"
             "    \"version\": n,   (numeric) Zerocoin version number.\n"
-            "    \"zHLM ID\": \"xxx\",   (string) Pubcoin in hex format.\n"
+            "    \"zSQR ID\": \"xxx\",   (string) Pubcoin in hex format.\n"
             "    \"denomination\": n,   (numeric) Coin denomination.\n"
             "    \"mint height\": n     (numeric) Height of the block containing this mint.\n"
             "    \"confirmations\": n   (numeric) Number of confirmations.\n"
@@ -2605,7 +2606,7 @@ UniValue listmintedzerocoins(const UniValue& params, bool fHelp)
     EnsureWalletIsUnlocked(true);
 
     CWalletDB walletdb(pwalletMain->strWalletFile);
-    std::set<CMintMeta> setMints = pwalletMain->zhlmTracker->ListMints(true, fMatureOnly, true);
+    std::set<CMintMeta> setMints = pwalletMain->zsqrTracker->ListMints(true, fMatureOnly, true);
 
     int nBestHeight = chainActive.Height();
 
@@ -2616,7 +2617,7 @@ UniValue listmintedzerocoins(const UniValue& params, bool fHelp)
             UniValue objMint(UniValue::VOBJ);
             objMint.push_back(Pair("serial hash", m.hashSerial.GetHex()));  // Serial hash
             objMint.push_back(Pair("version", m.nVersion));                 // Zerocoin version
-            objMint.push_back(Pair("zHLM ID", m.hashPubcoin.GetHex()));     // PubCoin
+            objMint.push_back(Pair("zSQR ID", m.hashPubcoin.GetHex()));     // PubCoin
             int denom = libzerocoin::ZerocoinDenominationToInt(m.denom);
             objMint.push_back(Pair("denomination", denom));                 // Denomination
             objMint.push_back(Pair("mint height", m.nHeight));              // Mint Height
@@ -2629,7 +2630,7 @@ UniValue listmintedzerocoins(const UniValue& params, bool fHelp)
                     uint256 hashStake = mint.GetSerialNumber().getuint256();
                     hashStake = Hash(hashStake.begin(), hashStake.end());
                     m.hashStake = hashStake;
-                    pwalletMain->zhlmTracker->UpdateState(m);
+                    pwalletMain->zsqrTracker->UpdateState(m);
                 }
             }
             objMint.push_back(Pair("hash stake", m.hashStake.GetHex()));       // Confirmations
@@ -2670,7 +2671,7 @@ UniValue listzerocoinamounts(const UniValue& params, bool fHelp)
     EnsureWalletIsUnlocked(true);
 
     CWalletDB walletdb(pwalletMain->strWalletFile);
-    std::set<CMintMeta> setMints = pwalletMain->zhlmTracker->ListMints(true, true, true);
+    std::set<CMintMeta> setMints = pwalletMain->zsqrTracker->ListMints(true, true, true);
 
     std::map<libzerocoin::CoinDenomination, CAmount> spread;
     for (const auto& denom : libzerocoin::zerocoinDenomList)
@@ -2694,7 +2695,7 @@ UniValue listspentzerocoins(const UniValue& params, bool fHelp)
     if (fHelp || params.size() != 0)
         throw std::runtime_error(
             "listspentzerocoins\n"
-            "\nList all the spent zHLM mints in the wallet.\n" +
+            "\nList all the spent zSQR mints in the wallet.\n" +
             HelpRequiringPassphrase() + "\n"
 
             "\nResult:\n"
@@ -2726,11 +2727,11 @@ UniValue mintzerocoin(const UniValue& params, bool fHelp)
     if (fHelp || params.size() < 1 || params.size() > 2)
         throw std::runtime_error(
             "mintzerocoin amount ( utxos )\n"
-            "\nMint the specified zHLM amount\n" +
+            "\nMint the specified zSQR amount\n" +
             HelpRequiringPassphrase() + "\n"
 
             "\nArguments:\n"
-            "1. amount      (numeric, required) Enter an amount of Helium to convert to zHLM\n"
+            "1. amount      (numeric, required) Enter an amount of sQuorum to convert to zSQR\n"
             "2. utxos       (string, optional) A json array of objects.\n"
             "                   Each object needs the txid (string) and vout (numeric)\n"
             "  [\n"
@@ -2764,7 +2765,7 @@ UniValue mintzerocoin(const UniValue& params, bool fHelp)
 
 
     if (Params().NetworkID() != CBaseChainParams::REGTEST)
-        throw JSONRPCError(RPC_WALLET_ERROR, "zHLM minting is DISABLED");
+        throw JSONRPCError(RPC_WALLET_ERROR, "zSQR minting is DISABLED");
 
     LOCK2(cs_main, pwalletMain->cs_wallet);
 
@@ -2778,7 +2779,7 @@ UniValue mintzerocoin(const UniValue& params, bool fHelp)
 
     int64_t nTime = GetTimeMillis();
     if(GetAdjustedTime() > GetSporkValue(SPORK_16_ZEROCOIN_MAINTENANCE_MODE))
-        throw JSONRPCError(RPC_WALLET_ERROR, "zHLM is currently disabled due to maintenance.");
+        throw JSONRPCError(RPC_WALLET_ERROR, "zSQR is currently disabled due to maintenance.");
 
     EnsureWalletIsUnlocked(true);
 
@@ -2841,7 +2842,7 @@ UniValue spendzerocoin(const UniValue& params, bool fHelp)
     if (fHelp || params.size() > 4 || params.size() < 3)
         throw std::runtime_error(
             "spendzerocoin amount mintchange minimizechange ( \"address\" )\n"
-            "\nSpend zHLM to a HLM address.\n" +
+            "\nSpend zSQR to a SQR address.\n" +
             HelpRequiringPassphrase() + "\n"
 
             "\nArguments:\n"
@@ -2868,7 +2869,7 @@ UniValue spendzerocoin(const UniValue& params, bool fHelp)
             "  ],\n"
             "  \"outputs\": [                 (array) JSON array of output objects.\n"
             "    {\n"
-            "      \"value\": amount,         (numeric) Value in HLM.\n"
+            "      \"value\": amount,         (numeric) Value in SQR.\n"
             "      \"address\": \"xxx\"         (string) address or \"zerocoinmint\" for reminted change.\n"
             "    }\n"
             "    ,...\n"
@@ -2882,14 +2883,14 @@ UniValue spendzerocoin(const UniValue& params, bool fHelp)
     LOCK2(cs_main, pwalletMain->cs_wallet);
 
     if(GetAdjustedTime() > GetSporkValue(SPORK_16_ZEROCOIN_MAINTENANCE_MODE))
-        throw JSONRPCError(RPC_WALLET_ERROR, "zHLM is currently disabled due to maintenance.");
+        throw JSONRPCError(RPC_WALLET_ERROR, "zSQR is currently disabled due to maintenance.");
 
     EnsureWalletIsUnlocked();
 
     CAmount nAmount = AmountFromValue(params[0]);   // Spending amount
-    bool fMintChange = params[1].get_bool();        // Mint change to zHLM
+    bool fMintChange = params[1].get_bool();        // Mint change to zSQR
     if (fMintChange && Params().NetworkID() != CBaseChainParams::REGTEST)
-        throw JSONRPCError(RPC_WALLET_ERROR, "zHLM minting is DISABLED, cannot mint change");
+        throw JSONRPCError(RPC_WALLET_ERROR, "zSQR minting is DISABLED, cannot mint change");
     bool fMinimizeChange = params[2].get_bool();    // Minimize change
     std::string address_str = params.size() > 3 ? params[3].get_str() : "";
     bool ispublicspend = params.size() > 4 ? params[3].get_bool() : true;
@@ -2897,10 +2898,10 @@ UniValue spendzerocoin(const UniValue& params, bool fHelp)
     std::vector<CZerocoinMint> vMintsSelected;
 
     if (!ispublicspend && Params().NetworkID() != CBaseChainParams::REGTEST) {
-        throw JSONRPCError(RPC_WALLET_ERROR, "zHLM old spend only available in regtest for tests purposes");
+        throw JSONRPCError(RPC_WALLET_ERROR, "zSQR old spend only available in regtest for tests purposes");
     }
 
-    return DoZhlmSpend(nAmount, fMintChange, fMinimizeChange, vMintsSelected, address_str, ispublicspend);
+    return DoZsqrSpend(nAmount, fMintChange, fMinimizeChange, vMintsSelected, address_str, ispublicspend);
 }
 
 
@@ -2909,7 +2910,7 @@ UniValue spendzerocoinmints(const UniValue& params, bool fHelp)
     if (fHelp || params.size() < 1 || params.size() > 2)
         throw std::runtime_error(
             "spendzerocoinmints mints_list (\"address\") \n"
-            "\nSpend zHLM mints to a HLM address.\n" +
+            "\nSpend zSQR mints to a SQR address.\n" +
             HelpRequiringPassphrase() + "\n"
 
             "\nArguments:\n"
@@ -2932,8 +2933,8 @@ UniValue spendzerocoinmints(const UniValue& params, bool fHelp)
             "  ],\n"
             "  \"outputs\": [                 (array) JSON array of output objects.\n"
             "    {\n"
-            "      \"value\": amount,         (numeric) Value in HLM.\n"
-            "      \"address\": \"xxx\"         (string) HLM address or \"zerocoinmint\" for reminted change.\n"
+            "      \"value\": amount,         (numeric) Value in SQR.\n"
+            "      \"address\": \"xxx\"         (string) SQR address or \"zerocoinmint\" for reminted change.\n"
             "    }\n"
             "    ,...\n"
             "  ]\n"
@@ -2946,7 +2947,7 @@ UniValue spendzerocoinmints(const UniValue& params, bool fHelp)
     LOCK2(cs_main, pwalletMain->cs_wallet);
 
     if(GetAdjustedTime() > GetSporkValue(SPORK_16_ZEROCOIN_MAINTENANCE_MODE))
-        throw JSONRPCError(RPC_WALLET_ERROR, "zHLM is currently disabled due to maintenance.");
+        throw JSONRPCError(RPC_WALLET_ERROR, "zSQR is currently disabled due to maintenance.");
 
     std::string address_str = "";
     if (params.size() > 1) {
@@ -2991,18 +2992,18 @@ UniValue spendzerocoinmints(const UniValue& params, bool fHelp)
         // to avoid type confusion from the JSON interpreter
         address = CBitcoinAddress(params[3].get_str());
         if(!address.IsValid())
-            throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid Helium address");
+            throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid sQuorum address");
     }
 
-    return DoZhlmSpend(nAmount, false, true, vMintsSelected, address_str);
+    return DoZsqrSpend(nAmount, false, true, vMintsSelected, address_str);
 }
 
 
-extern UniValue DoZhlmSpend(const CAmount nAmount, bool fMintChange, bool fMinimizeChange, std::vector<CZerocoinMint>& vMintsSelected, std::string address_str, bool ispublicspend)
+extern UniValue DoZsqrSpend(const CAmount nAmount, bool fMintChange, bool fMinimizeChange, std::vector<CZerocoinMint>& vMintsSelected, std::string address_str, bool ispublicspend)
 {
     // zerocoin MINT is disabled. fMintChange should be false here. Double check
     if (fMintChange && Params().NetworkID() != CBaseChainParams::REGTEST)
-        throw JSONRPCError(RPC_WALLET_ERROR, "zHLM minting is DISABLED, cannot mint change");
+        throw JSONRPCError(RPC_WALLET_ERROR, "zSQR minting is DISABLED, cannot mint change");
 
     int64_t nTimeStart = GetTimeMillis();
     CBitcoinAddress address = CBitcoinAddress(); // Optional sending address. Dummy initialization here.
@@ -3013,7 +3014,7 @@ extern UniValue DoZhlmSpend(const CAmount nAmount, bool fMintChange, bool fMinim
     if(address_str != "") { // Spend to supplied destination address
         address = CBitcoinAddress(address_str);
         if(!address.IsValid())
-            throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid Helium address");
+            throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid sQuorum address");
         fSuccess = pwalletMain->SpendZerocoin(nAmount, wtx, receipt, vMintsSelected, fMintChange, fMinimizeChange, &address, ispublicspend);
     } else                   // Spend to newly generated local address
         fSuccess = pwalletMain->SpendZerocoin(nAmount, wtx, receipt, vMintsSelected, fMintChange, fMinimizeChange, nullptr, ispublicspend);
@@ -3094,8 +3095,8 @@ UniValue resetmintzerocoin(const UniValue& params, bool fHelp)
     LOCK2(cs_main, pwalletMain->cs_wallet);
 
     CWalletDB walletdb(pwalletMain->strWalletFile);
-    CzHLMTracker* zhlmTracker = pwalletMain->zhlmTracker.get();
-    std::set<CMintMeta> setMints = zhlmTracker->ListMints(false, false, true);
+    CzSQRTracker* zsqrTracker = pwalletMain->zsqrTracker.get();
+    std::set<CMintMeta> setMints = zsqrTracker->ListMints(false, false, true);
     std::vector<CMintMeta> vMintsToFind(setMints.begin(), setMints.end());
     std::vector<CMintMeta> vMintsMissing;
     std::vector<CMintMeta> vMintsToUpdate;
@@ -3106,14 +3107,14 @@ UniValue resetmintzerocoin(const UniValue& params, bool fHelp)
     // update the meta data of mints that were marked for updating
     UniValue arrUpdated(UniValue::VARR);
     for (CMintMeta meta : vMintsToUpdate) {
-        zhlmTracker->UpdateState(meta);
+        zsqrTracker->UpdateState(meta);
         arrUpdated.push_back(meta.hashPubcoin.GetHex());
     }
 
     // delete any mints that were unable to be located on the blockchain
     UniValue arrDeleted(UniValue::VARR);
     for (CMintMeta mint : vMintsMissing) {
-        zhlmTracker->Archive(mint);
+        zsqrTracker->Archive(mint);
         arrDeleted.push_back(mint.hashPubcoin.GetHex());
     }
 
@@ -3147,8 +3148,8 @@ UniValue resetspentzerocoin(const UniValue& params, bool fHelp)
     LOCK2(cs_main, pwalletMain->cs_wallet);
 
     CWalletDB walletdb(pwalletMain->strWalletFile);
-    CzHLMTracker* zhlmTracker = pwalletMain->zhlmTracker.get();
-    std::set<CMintMeta> setMints = zhlmTracker->ListMints(false, false, false);
+    CzSQRTracker* zsqrTracker = pwalletMain->zsqrTracker.get();
+    std::set<CMintMeta> setMints = zsqrTracker->ListMints(false, false, false);
     std::list<CZerocoinSpend> listSpends = walletdb.ListSpentCoins();
     std::list<CZerocoinSpend> listUnconfirmedSpends;
 
@@ -3170,7 +3171,7 @@ UniValue resetspentzerocoin(const UniValue& params, bool fHelp)
     for (CZerocoinSpend spend : listUnconfirmedSpends) {
         for (auto& meta : setMints) {
             if (meta.hashSerial == GetSerialHash(spend.GetSerial())) {
-                zhlmTracker->SetPubcoinNotUsed(meta.hashPubcoin);
+                zsqrTracker->SetPubcoinNotUsed(meta.hashPubcoin);
                 walletdb.EraseZerocoinSpendSerialEntry(spend.GetSerial());
                 RemoveSerialFromDB(spend.GetSerial());
                 UniValue obj(UniValue::VOBJ);
@@ -3252,12 +3253,12 @@ UniValue exportzerocoins(const UniValue& params, bool fHelp)
 
             "\nArguments:\n"
             "1. \"include_spent\"        (bool, required) Include mints that have already been spent\n"
-            "2. \"denomination\"         (integer, optional) Export a specific denomination of zHLM\n"
+            "2. \"denomination\"         (integer, optional) Export a specific denomination of zSQR\n"
 
             "\nResult:\n"
             "[                   (array of json object)\n"
             "  {\n"
-            "    \"id\": \"serial hash\",  (string) the mint's zHLM serial hash \n"
+            "    \"id\": \"serial hash\",  (string) the mint's zSQR serial hash \n"
             "    \"d\": n,         (numeric) the mint's zerocoin denomination \n"
             "    \"p\": \"pubcoin\", (string) The public coin\n"
             "    \"s\": \"serial\",  (string) The secret serial number\n"
@@ -3265,8 +3266,8 @@ UniValue exportzerocoins(const UniValue& params, bool fHelp)
             "    \"t\": \"txid\",    (string) The txid that the coin was minted in\n"
             "    \"h\": n,         (numeric) The height the tx was added to the blockchain\n"
             "    \"u\": used,      (boolean) Whether the mint has been spent\n"
-            "    \"v\": version,   (numeric) The version of the zHLM\n"
-            "    \"k\": \"privkey\"  (string) The zHLM private key (V2+ zHLM only)\n"
+            "    \"v\": version,   (numeric) The version of the zSQR\n"
+            "    \"k\": \"privkey\"  (string) The zSQR private key (V2+ zSQR only)\n"
             "  }\n"
             "  ,...\n"
             "]\n"
@@ -3285,8 +3286,8 @@ UniValue exportzerocoins(const UniValue& params, bool fHelp)
     if (params.size() == 2)
         denomination = libzerocoin::IntToZerocoinDenomination(params[1].get_int());
 
-    CzHLMTracker* zhlmTracker = pwalletMain->zhlmTracker.get();
-    std::set<CMintMeta> setMints = zhlmTracker->ListMints(!fIncludeSpent, false, false);
+    CzSQRTracker* zsqrTracker = pwalletMain->zsqrTracker.get();
+    std::set<CMintMeta> setMints = zsqrTracker->ListMints(!fIncludeSpent, false, false);
 
     UniValue jsonList(UniValue::VARR);
     for (const CMintMeta& meta : setMints) {
@@ -3337,7 +3338,7 @@ UniValue importzerocoins(const UniValue& params, bool fHelp)
             "\nResult:\n"
             "{\n"
             "  \"added\": n,        (numeric) The quantity of zerocoin mints that were added\n"
-            "  \"value\": amount    (numeric) The total zHLM value of zerocoin mints that were added\n"
+            "  \"value\": amount    (numeric) The total zSQR value of zerocoin mints that were added\n"
             "}\n"
 
             "\nExamples\n" +
@@ -3401,7 +3402,7 @@ UniValue importzerocoins(const UniValue& params, bool fHelp)
         CZerocoinMint mint(denom, bnValue, bnRandom, bnSerial, fUsed, nVersion, &privkey);
         mint.SetTxHash(txid);
         mint.SetHeight(nHeight);
-        pwalletMain->zhlmTracker->Add(mint, true);
+        pwalletMain->zsqrTracker->Add(mint, true);
         count++;
         nValue += libzerocoin::ZerocoinDenominationToAmount(denom);
     }
@@ -3417,7 +3418,7 @@ UniValue reconsiderzerocoins(const UniValue& params, bool fHelp)
     if(fHelp || !params.empty())
         throw std::runtime_error(
             "reconsiderzerocoins\n"
-            "\nCheck archived zHLM list to see if any mints were added to the blockchain.\n" +
+            "\nCheck archived zSQR list to see if any mints were added to the blockchain.\n" +
             HelpRequiringPassphrase() + "\n"
 
             "\nResult:\n"
@@ -3463,30 +3464,30 @@ UniValue reconsiderzerocoins(const UniValue& params, bool fHelp)
     return arrRet;
 }
 
-UniValue setzhlmseed(const UniValue& params, bool fHelp)
+UniValue setzsqrseed(const UniValue& params, bool fHelp)
 {
     if(fHelp || params.size() != 1)
         throw std::runtime_error(
-            "setzhlmseed \"seed\"\n"
-            "\nSet the wallet's deterministic zHLM seed to a specific value.\n" +
+            "setzsqrseed \"seed\"\n"
+            "\nSet the wallet's deterministic zSQR seed to a specific value.\n" +
             HelpRequiringPassphrase() + "\n"
 
             "\nArguments:\n"
-            "1. \"seed\"        (string, required) The deterministic zHLM seed.\n"
+            "1. \"seed\"        (string, required) The deterministic zSQR seed.\n"
 
             "\nResult\n"
             "\"success\" : b,  (boolean) Whether the seed was successfully set.\n"
 
             "\nExamples\n" +
-            HelpExampleCli("setzhlmseed", "63f793e7895dd30d99187b35fbfb314a5f91af0add9e0a4e5877036d1e392dd5") +
-            HelpExampleRpc("setzhlmseed", "63f793e7895dd30d99187b35fbfb314a5f91af0add9e0a4e5877036d1e392dd5"));
+            HelpExampleCli("setzsqrseed", "63f793e7895dd30d99187b35fbfb314a5f91af0add9e0a4e5877036d1e392dd5") +
+            HelpExampleRpc("setzsqrseed", "63f793e7895dd30d99187b35fbfb314a5f91af0add9e0a4e5877036d1e392dd5"));
 
     EnsureWalletIsUnlocked();
 
     uint256 seed;
     seed.SetHex(params[0].get_str());
 
-    CzHLMWallet* zwallet = pwalletMain->getZWallet();
+    CzSQRWallet* zwallet = pwalletMain->getZWallet();
     bool fSuccess = zwallet->SetMasterSeed(seed, true);
     if (fSuccess)
         zwallet->SyncWithChain();
@@ -3497,23 +3498,23 @@ UniValue setzhlmseed(const UniValue& params, bool fHelp)
     return ret;
 }
 
-UniValue getzhlmseed(const UniValue& params, bool fHelp)
+UniValue getzsqrseed(const UniValue& params, bool fHelp)
 {
     if(fHelp || !params.empty())
         throw std::runtime_error(
-            "getzhlmseed\n"
-            "\nCheck archived zHLM list to see if any mints were added to the blockchain.\n" +
+            "getzsqrseed\n"
+            "\nCheck archived zSQR list to see if any mints were added to the blockchain.\n" +
             HelpRequiringPassphrase() + "\n"
 
             "\nResult\n"
-            "\"seed\" : s,  (string) The deterministic zHLM seed.\n"
+            "\"seed\" : s,  (string) The deterministic zSQR seed.\n"
 
             "\nExamples\n" +
-            HelpExampleCli("getzhlmseed", "") + HelpExampleRpc("getzhlmseed", ""));
+            HelpExampleCli("getzsqrseed", "") + HelpExampleRpc("getzsqrseed", ""));
 
     EnsureWalletIsUnlocked();
 
-    CzHLMWallet* zwallet = pwalletMain->getZWallet();
+    CzSQRWallet* zwallet = pwalletMain->getZWallet();
     uint256 seed = zwallet->GetMasterSeed();
 
     UniValue ret(UniValue::VOBJ);
@@ -3527,12 +3528,12 @@ UniValue generatemintlist(const UniValue& params, bool fHelp)
     if(fHelp || params.size() != 2)
         throw std::runtime_error(
             "generatemintlist\n"
-            "\nShow mints that are derived from the deterministic zHLM seed.\n" +
+            "\nShow mints that are derived from the deterministic zSQR seed.\n" +
             HelpRequiringPassphrase() + "\n"
 
             "\nArguments\n"
-            "1. \"count\"  : n,  (numeric) Which sequential zHLM to start with.\n"
-            "2. \"range\"  : n,  (numeric) How many zHLM to generate.\n"
+            "1. \"count\"  : n,  (numeric) Which sequential zSQR to start with.\n"
+            "2. \"range\"  : n,  (numeric) How many zSQR to generate.\n"
 
             "\nResult:\n"
             "[\n"
@@ -3552,7 +3553,7 @@ UniValue generatemintlist(const UniValue& params, bool fHelp)
 
     int nCount = params[0].get_int();
     int nRange = params[1].get_int();
-    CzHLMWallet* zwallet = pwalletMain->zwalletMain;
+    CzSQRWallet* zwallet = pwalletMain->zwalletMain;
 
     UniValue arrRet(UniValue::VARR);
     for (int i = nCount; i < nCount + nRange; i++) {
@@ -3571,28 +3572,28 @@ UniValue generatemintlist(const UniValue& params, bool fHelp)
     return arrRet;
 }
 
-UniValue dzhlmstate(const UniValue& params, bool fHelp) {
+UniValue dzsqrstate(const UniValue& params, bool fHelp) {
     if (fHelp || params.size() != 0)
         throw std::runtime_error(
-                "dzhlmstate\n"
-                        "\nThe current state of the mintpool of the deterministic zHLM wallet.\n" +
+                "dzsqrstate\n"
+                        "\nThe current state of the mintpool of the deterministic zSQR wallet.\n" +
                 HelpRequiringPassphrase() + "\n"
 
                         "\nExamples\n" +
                 HelpExampleCli("mintpoolstatus", "") + HelpExampleRpc("mintpoolstatus", ""));
 
-    CzHLMWallet* zwallet = pwalletMain->zwalletMain;
+    CzSQRWallet* zwallet = pwalletMain->zwalletMain;
     UniValue obj(UniValue::VOBJ);
     int nCount, nCountLastUsed;
     zwallet->GetState(nCount, nCountLastUsed);
-    obj.push_back(Pair("dzhlm_count", nCount));
+    obj.push_back(Pair("dzsqr_count", nCount));
     obj.push_back(Pair("mintpool_count", nCountLastUsed));
 
     return obj;
 }
 
 
-void static SearchThread(CzHLMWallet* zwallet, int nCountStart, int nCountEnd)
+void static SearchThread(CzSQRWallet* zwallet, int nCountStart, int nCountEnd)
 {
     LogPrintf("%s: start=%d end=%d\n", __func__, nCountStart, nCountEnd);
     CWalletDB walletDB(pwalletMain->strWalletFile);
@@ -3609,7 +3610,7 @@ void static SearchThread(CzHLMWallet* zwallet, int nCountStart, int nCountEnd)
             CBigNum bnSerial;
             CBigNum bnRandomness;
             CKey key;
-            zwallet->SeedToZHLM(zerocoinSeed, bnValue, bnSerial, bnRandomness, key);
+            zwallet->SeedToZSQR(zerocoinSeed, bnValue, bnSerial, bnRandomness, key);
 
             uint256 hashPubcoin = GetPubCoinHash(bnValue);
             zwallet->AddToMintPool(std::make_pair(hashPubcoin, i), true);
@@ -3622,21 +3623,21 @@ void static SearchThread(CzHLMWallet* zwallet, int nCountStart, int nCountEnd)
     }
 }
 
-UniValue searchdzhlm(const UniValue& params, bool fHelp)
+UniValue searchdzsqr(const UniValue& params, bool fHelp)
 {
     if(fHelp || params.size() != 3)
         throw std::runtime_error(
-            "searchdzhlm\n"
-            "\nMake an extended search for deterministically generated zHLM that have not yet been recognized by the wallet.\n" +
+            "searchdzsqr\n"
+            "\nMake an extended search for deterministically generated zSQR that have not yet been recognized by the wallet.\n" +
             HelpRequiringPassphrase() + "\n"
 
             "\nArguments\n"
-            "1. \"count\"       (numeric) Which sequential zHLM to start with.\n"
-            "2. \"range\"       (numeric) How many zHLM to generate.\n"
+            "1. \"count\"       (numeric) Which sequential zSQR to start with.\n"
+            "2. \"range\"       (numeric) How many zSQR to generate.\n"
             "3. \"threads\"     (numeric) How many threads should this operation consume.\n"
 
             "\nExamples\n" +
-            HelpExampleCli("searchdzhlm", "1, 100, 2") + HelpExampleRpc("searchdzhlm", "1, 100, 2"));
+            HelpExampleCli("searchdzsqr", "1, 100, 2") + HelpExampleRpc("searchdzsqr", "1, 100, 2"));
 
     EnsureWalletIsUnlocked();
 
@@ -3650,9 +3651,9 @@ UniValue searchdzhlm(const UniValue& params, bool fHelp)
 
     int nThreads = params[2].get_int();
 
-    CzHLMWallet* zwallet = pwalletMain->zwalletMain;
+    CzSQRWallet* zwallet = pwalletMain->zwalletMain;
 
-    boost::thread_group* dzhlmThreads = new boost::thread_group();
+    boost::thread_group* dzsqrThreads = new boost::thread_group();
     int nRangePerThread = nRange / nThreads;
 
     int nPrevThreadEnd = nCount - 1;
@@ -3660,12 +3661,12 @@ UniValue searchdzhlm(const UniValue& params, bool fHelp)
         int nStart = nPrevThreadEnd + 1;;
         int nEnd = nStart + nRangePerThread;
         nPrevThreadEnd = nEnd;
-        dzhlmThreads->create_thread(boost::bind(&SearchThread, zwallet, nStart, nEnd));
+        dzsqrThreads->create_thread(boost::bind(&SearchThread, zwallet, nStart, nEnd));
     }
 
-    dzhlmThreads->join_all();
+    dzsqrThreads->join_all();
 
-    zwallet->RemoveMintsFromPool(pwalletMain->zhlmTracker->GetSerialHashes());
+    zwallet->RemoveMintsFromPool(pwalletMain->zsqrTracker->GetSerialHashes());
     zwallet->SyncWithChain(false);
 
     //todo: better response
@@ -3699,7 +3700,7 @@ UniValue createautomintaddress(const UniValue& params, bool fHelp)
                 HelpRequiringPassphrase() + "\n"
 
                 "\nResult\n"
-                "\"address\"     (string) Helium address for auto minting\n" +
+                "\"address\"     (string) sQuorum address for auto minting\n" +
                 HelpExampleCli("createautomintaddress", "") +
                 HelpExampleRpc("createautomintaddress", ""));
 
@@ -3721,7 +3722,7 @@ UniValue spendrawzerocoin(const UniValue& params, bool fHelp)
             "2. \"randomnessHex\"    (string, required) A zerocoin randomness value (hex)\n"
             "3. denom                (numeric, required) A zerocoin denomination (decimal)\n"
             "4. \"priv key\"         (string, required) The private key associated with this coin (hex)\n"
-            "5. \"address\"          (string, optional) Helium address to spend to. If not specified, spend to change add.\n"
+            "5. \"address\"          (string, optional) sQuorum address to spend to. If not specified, spend to change add.\n"
 
             "\nResult:\n"
                 "\"txid\"             (string) The transaction txid in hex\n"
@@ -3733,7 +3734,7 @@ UniValue spendrawzerocoin(const UniValue& params, bool fHelp)
     LOCK2(cs_main, pwalletMain->cs_wallet);
 
     if (GetAdjustedTime() > GetSporkValue(SPORK_16_ZEROCOIN_MAINTENANCE_MODE))
-            throw JSONRPCError(RPC_WALLET_ERROR, "zHLM is currently disabled due to maintenance.");
+            throw JSONRPCError(RPC_WALLET_ERROR, "zSQR is currently disabled due to maintenance.");
 
     CBigNum serial;
     serial.SetHex(params[0].get_str());
@@ -3767,7 +3768,7 @@ UniValue spendrawzerocoin(const UniValue& params, bool fHelp)
     std::vector<CZerocoinMint> vMintsSelected = {mint};
     CAmount nAmount = mint.GetDenominationAsAmount();
 
-    return DoZhlmSpend(nAmount, false, true, vMintsSelected, address_str);
+    return DoZsqrSpend(nAmount, false, true, vMintsSelected, address_str);
 }
 
 UniValue clearspendcache(const UniValue& params, bool fHelp)
@@ -3775,7 +3776,7 @@ UniValue clearspendcache(const UniValue& params, bool fHelp)
     if(fHelp || params.size() != 0)
         throw std::runtime_error(
             "clearspendcache\n"
-            "\nClear the pre-computed zHLM spend cache, and database.\n" +
+            "\nClear the pre-computed zSQR spend cache, and database.\n" +
             HelpRequiringPassphrase() + "\n"
 
             "\nExamples\n" +
@@ -3783,14 +3784,14 @@ UniValue clearspendcache(const UniValue& params, bool fHelp)
 
     EnsureWalletIsUnlocked();
 
-    CzHLMTracker* zhlmTracker = pwalletMain->zhlmTracker.get();
+    CzSQRTracker* zsqrTracker = pwalletMain->zsqrTracker.get();
 
     {
         int nTries = 0;
         while (nTries < 100) {
-            TRY_LOCK(zhlmTracker->cs_spendcache, fLocked);
+            TRY_LOCK(zsqrTracker->cs_spendcache, fLocked);
             if (fLocked) {
-                if (zhlmTracker->ClearSpendCache()) {
+                if (zsqrTracker->ClearSpendCache()) {
                     fClearSpendCache = true;
                     CWalletDB walletdb("precomputes.dat", "cr+");
                     walletdb.EraseAllPrecomputes();

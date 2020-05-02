@@ -1,5 +1,6 @@
 // Copyright (c) 2017-2018 The PIVX developers
 // Copyright (c) 2018-2020 The Helium developers
+// Copyright (c) 2020 The sQuorum developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -12,8 +13,8 @@
 #include "wallet/wallet.h"
 #include "wallet/walletdb.h"
 #include "txdb.h"
-#include "zhlm/zhlmmodule.h"
-#include "test/test_helium.h"
+#include "zsqr/zsqrmodule.h"
+#include "test/test_squorum.h"
 #include <boost/test/unit_test.hpp>
 #include <iostream>
 
@@ -31,7 +32,7 @@ BOOST_AUTO_TEST_CASE(zerocoin_spend_test)
 
     bool fFirstRun;
     cWallet.LoadWallet(fFirstRun);
-    cWallet.zhlmTracker = std::unique_ptr<CzHLMTracker>(new CzHLMTracker(cWallet.strWalletFile));
+    cWallet.zsqrTracker = std::unique_ptr<CzSQRTracker>(new CzSQRTracker(cWallet.strWalletFile));
     CMutableTransaction tx;
     CWalletTx* wtx = new CWalletTx(&cWallet, tx);
     bool fMintChange=true;
@@ -43,7 +44,7 @@ BOOST_AUTO_TEST_CASE(zerocoin_spend_test)
     CZerocoinSpendReceipt receipt;
     cWallet.SpendZerocoin(nAmount, *wtx, receipt, vMints, fMintChange, fMinimizeChange);
 
-    BOOST_CHECK_MESSAGE(receipt.GetStatus() == ZHLM_TRX_FUNDS_PROBLEMS, strprintf("Failed Invalid Amount Check: %s", receipt.GetStatusMessage()));
+    BOOST_CHECK_MESSAGE(receipt.GetStatus() == ZSQR_TRX_FUNDS_PROBLEMS, strprintf("Failed Invalid Amount Check: %s", receipt.GetStatusMessage()));
 
     nAmount = 1;
     CZerocoinSpendReceipt receipt2;
@@ -52,7 +53,7 @@ BOOST_AUTO_TEST_CASE(zerocoin_spend_test)
     // if using "wallet.dat", instead of "unlocked.dat" need this
     /// BOOST_CHECK_MESSAGE(vString == "Error: Wallet locked, unable to create transaction!"," Locked Wallet Check Failed");
 
-    BOOST_CHECK_MESSAGE(receipt2.GetStatus() == ZHLM_TRX_FUNDS_PROBLEMS, strprintf("Failed Invalid Amount Check: %s", receipt.GetStatusMessage()));
+    BOOST_CHECK_MESSAGE(receipt2.GetStatus() == ZSQR_TRX_FUNDS_PROBLEMS, strprintf("Failed Invalid Amount Check: %s", receipt.GetStatusMessage()));
 
 }
 
@@ -94,17 +95,17 @@ BOOST_AUTO_TEST_CASE(zerocoin_public_spend_test)
     tx.vout[0].scriptPubKey = GetScriptForDestination(CBitcoinAddress("D9Ti4LEhF1n6dR2hGd2SyNADD51AVgva6q").Get());
 
     CTxIn in;
-    if (!ZHLMModule::createInput(in, mint, tx.GetHash())){
+    if (!ZSQRModule::createInput(in, mint, tx.GetHash())){
         BOOST_CHECK_MESSAGE(false, "Failed to create zc input");
     }
 
     PublicCoinSpend publicSpend(ZCParams);
-    if (!ZHLMModule::validateInput(in, out, tx, publicSpend)){
+    if (!ZSQRModule::validateInput(in, out, tx, publicSpend)){
         BOOST_CHECK_MESSAGE(false, "Failed to validate zc input");
     }
 
     PublicCoinSpend publicSpendTest(ZCParams);
-    BOOST_CHECK_MESSAGE(ZHLMModule::parseCoinSpend(in, tx, out, publicSpendTest), "Failed to parse public spend");
+    BOOST_CHECK_MESSAGE(ZSQRModule::parseCoinSpend(in, tx, out, publicSpendTest), "Failed to parse public spend");
     libzerocoin::CoinSpend *spend = &publicSpendTest;
 
     BOOST_CHECK_MESSAGE(publicSpendTest.HasValidSignature(), "Failed to validate public spend signature");
@@ -113,7 +114,7 @@ BOOST_AUTO_TEST_CASE(zerocoin_public_spend_test)
     // Verify that fails with a different denomination
     in.nSequence = 500;
     PublicCoinSpend publicSpend2(ZCParams);
-    BOOST_CHECK_MESSAGE(!ZHLMModule::validateInput(in, out, tx, publicSpend2), "Different denomination");
+    BOOST_CHECK_MESSAGE(!ZSQRModule::validateInput(in, out, tx, publicSpend2), "Different denomination");
 
 }
 

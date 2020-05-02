@@ -2,6 +2,7 @@
 // Copyright (c) 2014-2015 The Dash developers
 // Copyright (c) 2015-2018 The PIVX developers
 // Copyright (c) 2018-2020 The Helium developers
+// Copyright (c) 2020 The sQuorum developers
 
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
@@ -291,7 +292,7 @@ RPCConsole::RPCConsole(QWidget* parent) : QDialog(parent, Qt::WindowSystemMenuHi
     ui->openSSLVersion->setText(SSLeay_version(SSLEAY_VERSION));
 #ifdef ENABLE_WALLET
     std::string strPathCustom = GetArg("-backuppath", "");
-    std::string strzHLMPathCustom = GetArg("-zhlmbackuppath", "");
+    std::string strzSQRPathCustom = GetArg("-zsqrbackuppath", "");
     int nCustomBackupThreshold = GetArg("-custombackupthreshold", DEFAULT_CUSTOMBACKUPTHRESHOLD);
 
     if(!strPathCustom.empty()) {
@@ -300,13 +301,13 @@ RPCConsole::RPCConsole(QWidget* parent) : QDialog(parent, Qt::WindowSystemMenuHi
         ui->wallet_custombackuppath->show();
     }
 
-    if(!strzHLMPathCustom.empty()) {
-        ui->wallet_customzhlmbackuppath->setText(QString::fromStdString(strzHLMPathCustom));
-        ui->wallet_customzhlmbackuppath_label->setVisible(true);
-        ui->wallet_customzhlmbackuppath->setVisible(true);
+    if(!strzSQRPathCustom.empty()) {
+        ui->wallet_customzsqrbackuppath->setText(QString::fromStdString(strzSQRPathCustom));
+        ui->wallet_customzsqrbackuppath_label->setVisible(true);
+        ui->wallet_customzsqrbackuppath->setVisible(true);
     }
 
-    if((!strPathCustom.empty() || !strzHLMPathCustom.empty()) && nCustomBackupThreshold > 0) {
+    if((!strPathCustom.empty() || !strzSQRPathCustom.empty()) && nCustomBackupThreshold > 0) {
         ui->wallet_custombackupthreshold->setText(QString::fromStdString(std::to_string(nCustomBackupThreshold)));
         ui->wallet_custombackupthreshold_label->setVisible(true);
         ui->wallet_custombackupthreshold->setVisible(true);
@@ -642,7 +643,7 @@ void RPCConsole::clear()
     QString clsKey = "Ctrl-L";
 #endif
 
-    message(CMD_REPLY, (tr("Welcome to the Helium RPC console.") + "<br>" +
+    message(CMD_REPLY, (tr("Welcome to the sQuorum RPC console.") + "<br>" +
                         tr("Use up and down arrows to navigate history, and %1 to clear screen.").arg("<b>"+clsKey+"</b>") + "<br>" +
                         tr("Type <b>help</b> for an overview of available commands.") +
                         "<br><span class=\"secwarning\"><br>" +

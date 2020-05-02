@@ -2,6 +2,7 @@
 // Copyright (c) 2009-2014 The Bitcoin developers
 // Copyright (c) 2015-2018 The PIVX developers
 // Copyright (c) 2018-2019 The Helium developers
+// Copyright (c) 2020 The sQuorum developers
 
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
@@ -10,7 +11,7 @@
 #define BITCOIN_RPCSERVER_H
 
 #include "amount.h"
-#include "zhlm/zerocoin.h"
+#include "zsqr/zerocoin.h"
 #include "rpc/protocol.h"
 #include "uint256.h"
 
@@ -181,7 +182,7 @@ extern std::string HelpExampleCli(std::string methodname, std::string args);
 extern std::string HelpExampleRpc(std::string methodname, std::string args);
 
 extern void EnsureWalletIsUnlocked(bool fAllowAnonOnly = false);
-extern UniValue DoZhlmSpend(const CAmount nAmount, bool fMintChange, bool fMinimizeChange, std::vector<CZerocoinMint>& vMintsSelected, std::string address_str, bool isPublicSpend = true);
+extern UniValue DoZsqrSpend(const CAmount nAmount, bool fMintChange, bool fMinimizeChange, std::vector<CZerocoinMint>& vMintsSelected, std::string address_str, bool isPublicSpend = true);
 
 extern UniValue getconnectioncount(const UniValue& params, bool fHelp); // in rpc/net.cpp
 extern UniValue getpeerinfo(const UniValue& params, bool fHelp);
@@ -269,11 +270,11 @@ extern UniValue importzerocoins(const UniValue& params, bool fHelp);
 extern UniValue exportzerocoins(const UniValue& params, bool fHelp);
 extern UniValue reconsiderzerocoins(const UniValue& params, bool fHelp);
 extern UniValue getspentzerocoinamount(const UniValue& params, bool fHelp);
-extern UniValue setzhlmseed(const UniValue& params, bool fHelp);
-extern UniValue getzhlmseed(const UniValue& params, bool fHelp);
+extern UniValue setzsqrseed(const UniValue& params, bool fHelp);
+extern UniValue getzsqrseed(const UniValue& params, bool fHelp);
 extern UniValue generatemintlist(const UniValue& params, bool fHelp);
-extern UniValue searchdzhlm(const UniValue& params, bool fHelp);
-extern UniValue dzhlmstate(const UniValue& params, bool fHelp);
+extern UniValue searchdzsqr(const UniValue& params, bool fHelp);
+extern UniValue dzsqrstate(const UniValue& params, bool fHelp);
 extern UniValue clearspendcache(const UniValue& params, bool fHelp);
 extern UniValue enableautomintaddress(const UniValue& params, bool fHelp);
 extern UniValue createautomintaddress(const UniValue& params, bool fHelp);

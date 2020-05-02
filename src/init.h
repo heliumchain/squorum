@@ -2,6 +2,7 @@
 // Copyright (c) 2009-2014 The Bitcoin developers
 // Copyright (c) 2017 The PIVX developers
 // Copyright (c) 2018-2020 The Helium developers
+// Copyright (c) 2020 The sQuorum developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -12,7 +13,7 @@
 
 class CScheduler;
 class CWallet;
-class CzHLMWallet;
+class CzSQRWallet;
 
 namespace boost
 {
@@ -20,7 +21,7 @@ class thread_group;
 } // namespace boost
 
 extern CWallet* pwalletMain;
-extern CzHLMWallet* zwalletMain;
+extern CzSQRWallet* zwalletMain;
 
 void StartShutdown();
 bool ShutdownRequested();

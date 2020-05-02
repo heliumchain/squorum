@@ -2,6 +2,7 @@
 // Copyright (c) 2014-2015 The Dash developers
 // Copyright (c) 2015-2017 The PIVX developers
 // Copyright (c) 2018-2020 The Helium developers
+// Copyright (c) 2020 The sQuorum developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -20,18 +21,18 @@ BitcoinUnits::BitcoinUnits(QObject* parent) : QAbstractListModel(parent),
 QList<BitcoinUnits::Unit> BitcoinUnits::availableUnits()
 {
     QList<BitcoinUnits::Unit> unitlist;
-    unitlist.append(HLM);
-    unitlist.append(mHLM);
-    unitlist.append(uHLM);
+    unitlist.append(SQR);
+    unitlist.append(mSQR);
+    unitlist.append(uSQR);
     return unitlist;
 }
 
 bool BitcoinUnits::valid(int unit)
 {
     switch (unit) {
-    case HLM:
-    case mHLM:
-    case uHLM:
+    case SQR:
+    case mSQR:
+    case uSQR:
         return true;
     default:
         return false;
@@ -41,12 +42,12 @@ bool BitcoinUnits::valid(int unit)
 QString BitcoinUnits::id(int unit)
 {
     switch (unit) {
-    case HLM:
-        return QString("helium");
-    case mHLM:
-        return QString("mhelium");
-    case uHLM:
-        return QString::fromUtf8("uhelium");
+    case SQR:
+        return QString("squorum");
+    case mSQR:
+        return QString("msquorum");
+    case uSQR:
+        return QString::fromUtf8("usquorum");
     default:
         return QString("???");
     }
@@ -56,23 +57,23 @@ QString BitcoinUnits::name(int unit)
 {
     if (Params().NetworkID() == CBaseChainParams::MAIN) {
         switch (unit) {
-        case HLM:
-            return QString("HLM");
-        case mHLM:
-            return QString("mHLM");
-        case uHLM:
-            return QString::fromUtf8("μHLM");
+        case SQR:
+            return QString("SQR");
+        case mSQR:
+            return QString("mSQR");
+        case uSQR:
+            return QString::fromUtf8("μSQR");
         default:
             return QString("???");
         }
     } else {
         switch (unit) {
-        case HLM:
-            return QString("tHLM");
-        case mHLM:
-            return QString("mtHLM");
-        case uHLM:
-            return QString::fromUtf8("μtHLM");
+        case SQR:
+            return QString("tSQR");
+        case mSQR:
+            return QString("mtSQR");
+        case uSQR:
+            return QString::fromUtf8("μtSQR");
         default:
             return QString("???");
         }
@@ -83,23 +84,23 @@ QString BitcoinUnits::description(int unit)
 {
     if (Params().NetworkID() == CBaseChainParams::MAIN) {
         switch (unit) {
-        case HLM:
-            return QString("HLM");
-        case mHLM:
-            return QString("Milli-HLM (1 / 1" THIN_SP_UTF8 "000)");
-        case uHLM:
-            return QString("Micro-HLM (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+        case SQR:
+            return QString("SQR");
+        case mSQR:
+            return QString("Milli-SQR (1 / 1" THIN_SP_UTF8 "000)");
+        case uSQR:
+            return QString("Micro-SQR (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
         default:
             return QString("???");
         }
     } else {
         switch (unit) {
-        case HLM:
-            return QString("TestHLMs");
-        case mHLM:
-            return QString("Milli-TestHLM (1 / 1" THIN_SP_UTF8 "000)");
-        case uHLM:
-            return QString("Micro-TestHLM (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+        case SQR:
+            return QString("TestSQRs");
+        case mSQR:
+            return QString("Milli-TestSQR (1 / 1" THIN_SP_UTF8 "000)");
+        case uSQR:
+            return QString("Micro-TestSQR (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
         default:
             return QString("???");
         }
@@ -109,11 +110,11 @@ QString BitcoinUnits::description(int unit)
 qint64 BitcoinUnits::factor(int unit)
 {
     switch (unit) {
-    case HLM:
+    case SQR:
         return 100000000;
-    case mHLM:
+    case mSQR:
         return 100000;
-    case uHLM:
+    case uSQR:
         return 100;
     default:
         return 100000000;
@@ -123,11 +124,11 @@ qint64 BitcoinUnits::factor(int unit)
 int BitcoinUnits::decimals(int unit)
 {
     switch (unit) {
-    case HLM:
+    case SQR:
         return 8;
-    case mHLM:
+    case mSQR:
         return 5;
-    case uHLM:
+    case uSQR:
         return 2;
     default:
         return 0;

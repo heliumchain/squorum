@@ -1,5 +1,6 @@
 // Copyright (c) 2017-2018 The PIVX developers
 // Copyright (c) 2018-2019 The Helium developers
+// Copyright (c) 2020 The sQuorum developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -417,7 +418,7 @@ bool MultisigDialog::createMultisigTransaction(std::vector<CTxIn> vUserIn, std::
         }
 
         if(totalIn < totalOut){
-            throw std::runtime_error("Not enough HLM provided as input to complete transaction (including fee).");
+            throw std::runtime_error("Not enough SQR provided as input to complete transaction (including fee).");
         }
 
         //calculate change amount
@@ -482,7 +483,7 @@ bool MultisigDialog::createMultisigTransaction(std::vector<CTxIn> vUserIn, std::
             tx.vout.at(changeIndex).nValue -= fee;
             feeStringRet = strprintf("%d",((double)fee)/COIN).c_str();
         }else{
-            throw std::runtime_error("Not enough HLM provided to cover fee");
+            throw std::runtime_error("Not enough SQR provided to cover fee");
         }
 
         //clear junk from script sigs

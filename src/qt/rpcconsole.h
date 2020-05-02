@@ -1,6 +1,7 @@
 // Copyright (c) 2011-2014 The Bitcoin developers
 // Copyright (c) 2017-2018 The PIVX developers
 // Copyright (c) 2018-2020 The Helium developers
+// Copyright (c) 2020 The sQuorum developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -105,7 +106,7 @@ public Q_SLOTS:
     void showPeers();
     /** Switch to wallet-repair tab and show */
     void showRepair();
-    /** Open external (default) editor with helium.conf */
+    /** Open external (default) editor with squorum.conf */
     void showConfEditor();
     /** Open external (default) editor with masternode.conf */
     void showMNConfEditor();

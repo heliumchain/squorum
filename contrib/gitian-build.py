@@ -1,52 +1,145 @@
 #!/usr/bin/env python3
+# Copyright (c) 2018-2019 The Bitcoin Core developers
+# Copyright (c) 2019 The PIVX developers
+# Copyright (c) 2020 The Helium developers
+# Copyright (c) 2020 The sQuorum developers
+# Distributed under the MIT software license, see the accompanying
+# file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 import argparse
 import os
 import subprocess
 import sys
 
-def setup():
+
+def setup_linux():
     global args, workdir
-    programs = ['ruby', 'git', 'make', 'wget', 'curl']
-    if args.kvm:
-        programs += ['apt-cacher-ng', 'python-vm-builder', 'qemu-kvm', 'qemu-utils']
-    elif args.docker and not os.path.isfile('/lib/systemd/system/docker.service'):
-        dockers = ['docker.io', 'docker-ce']
-        for i in dockers:
-            return_code = subprocess.call(['sudo', 'apt-get', 'install', '-qq', i])
-            if return_code == 0:
-                break
-        if return_code != 0:
-            print('Cannot find any way to install Docker.', file=sys.stderr)
+    if os.path.isfile('/usr/bin/apt-get'):
+        programs = ['ruby', 'git', 'make', 'wget', 'curl']
+        if args.kvm:
+            programs += ['apt-cacher-ng', 'python-vm-builder', 'qemu-kvm', 'qemu-utils']
+        elif args.docker:
+            if not os.path.isfile('/lib/systemd/system/docker.service'):
+                dockers = ['docker.io', 'docker-ce']
+                for i in dockers:
+                    return_code = subprocess.call(['sudo', 'apt-get', 'install', '-qq', i])
+                    if return_code == 0:
+                        subprocess.check_call(['sudo', 'usermod', '-aG', 'docker', os.environ['USER']])
+                        print('Docker installed, restart your computer and re-run this script to continue the setup process.')
+                        sys.exit(0)
+                if return_code != 0:
+                    print('Cannot find any way to install Docker.', file=sys.stderr)
+                    sys.exit(1)
+        else:
+            programs += ['apt-cacher-ng', 'lxc', 'debootstrap']
+        subprocess.check_call(['sudo', 'apt-get', 'install', '-qq'] + programs)
+        setup_repos()
+    elif args.is_fedora:
+        pkgmgr = 'dnf'
+        repourl = 'https://download.docker.com/linux/fedora/docker-ce.repo'
+    elif args.is_centos:
+        pkgmgr = 'yum'
+        repourl = 'https://download.docker.com/linux/centos/docker-ce.repo'
+
+    if args.is_fedora or args.is_centos:
+        programs = ['ruby', 'make', 'wget', 'curl']
+        if args.kvm:
+            print('KVM not supported with Fedora/CentOS yet.')
             sys.exit(1)
+        elif args.docker:
+            if not os.path.isfile('/lib/systemd/system/docker.service'):
+                user = os.environ['USER']
+                dockers = ['docker-ce', 'docker-ce-cli', 'containerd.io']
+                if args.is_fedora:
+                    subprocess.check_call(['sudo', pkgmgr, 'install', '-y', 'dnf-plugins-core'])
+                    subprocess.check_call(['sudo', pkgmgr, 'config-manager', '--add-repo', repourl])
+                elif args.is_centos:
+                    reqs = ['yum-utils', 'device-mapper-persistent-data', 'lvm2']
+                    subprocess.check_call(['sudo', pkgmgr, 'install', '-y'] + reqs)
+                    subprocess.check_call(['sudo', 'yum-config-manager', '--add-repo', repourl])
+                subprocess.check_call(['sudo', pkgmgr, 'install', '-y'] + dockers)
+                subprocess.check_call(['sudo', 'usermod', '-aG', 'docker', user])
+                subprocess.check_call(['sudo', 'systemctl', 'enable', 'docker'])
+                print('Docker installed, restart your computer and re-run this script to continue the setup process.')
+                sys.exit(0)
+            subprocess.check_call(['sudo', 'systemctl', 'start', 'docker'])
+        else:
+            print('LXC not supported with Fedora/CentOS yet.')
+            sys.exit(1)
+
+        if args.is_fedora:
+            programs += ['git']
+        if args.is_centos:
+            # CentOS ships with an insanely outdated version of git that is no longer compatible with gitian builds
+            # Check current version and update if necessary
+            oldgit = b'2.' not in subprocess.check_output(['git', '--version'])
+            if oldgit:
+                subprocess.check_call(['sudo', pkgmgr, 'remove', '-y', 'git*'])
+                subprocess.check_call(['sudo', pkgmgr, 'install', '-y', 'https://centos7.iuscommunity.org/ius-release.rpm'])
+                programs += ['git2u-all']
+        subprocess.check_call(['sudo', pkgmgr, 'install', '-y'] + programs)
+        setup_repos()
     else:
-        programs += ['apt-cacher-ng', 'lxc', 'debootstrap']
-    subprocess.check_call(['sudo', 'apt-get', 'install', '-qq'] + programs)
+        print('Unsupported system/OS type.')
+        sys.exit(1)
+
+
+def setup_darwin():
+    global args, workdir
+    programs = []
+    if not os.path.isfile('/usr/local/bin/wget'):
+        programs += ['wget']
+    if not os.path.isfile('/usr/local/bin/git'):
+        programs += ['git']
+    if not os.path.isfile('/usr/local/bin/gsha256sum'):
+        programs += ['coreutils']
+    if args.docker:
+        print('Experimental setup for macOS host')
+        if len(programs) > 0:
+            subprocess.check_call(['brew', 'install'] + programs)
+            os.environ['PATH'] = '/usr/local/opt/coreutils/libexec/gnubin' + os.pathsep + os.environ['PATH']
+    elif args.kvm or not args.docker:
+        print('KVM and LXC are not supported under macOS at this time.')
+        sys.exit(0)
+    setup_repos()
+
+
+def setup_repos():
     if not os.path.isdir('gitian.sigs'):
         subprocess.check_call(['git', 'clone', 'https://github.com/heliumchain/gitian.sigs.git'])
-    if not os.path.isdir('helium-detached-sigs'):
-        subprocess.check_call(['git', 'clone', 'https://github.com/heliumchain/helium-detached-sigs.git'])
+    if not os.path.isdir('squorum-detached-sigs'):
+        subprocess.check_call(['git', 'clone', 'https://github.com/heliumchain/helium-detached-sigs.git', 'squorum-detached-sigs'])
     if not os.path.isdir('gitian-builder'):
         subprocess.check_call(['git', 'clone', 'https://github.com/devrandom/gitian-builder.git'])
-    if not os.path.isdir('helium'):
-        subprocess.check_call(['git', 'clone', 'https://github.com/heliumchain/helium.git'])
+    if not os.path.isdir('squorum'):
+        subprocess.check_call(['git', 'clone', 'https://github.com/heliumchain/helium.git', 'squorum'])
     os.chdir('gitian-builder')
     make_image_prog = ['bin/make-base-vm', '--suite', 'bionic', '--arch', 'amd64']
     if args.docker:
         make_image_prog += ['--docker']
     elif not args.kvm:
         make_image_prog += ['--lxc']
+    if args.host_os == 'darwin':
+        subprocess.check_call(['sed', '-i.old', '/50cacher/d', 'bin/make-base-vm'])
+    if args.host_os == 'linux':
+        if args.is_fedora or args.is_centos or args.is_wsl:
+            subprocess.check_call(['sed', '-i', '/50cacher/d', 'bin/make-base-vm'])
     subprocess.check_call(make_image_prog)
+    subprocess.check_call(['git', 'checkout', 'bin/make-base-vm'])
     os.chdir(workdir)
-    if args.is_bionic and not args.kvm and not args.docker:
-        subprocess.check_call(['sudo', 'sed', '-i', 's/lxcbr0/br0/', '/etc/default/lxc-net'])
-        print('Reboot is required')
-        sys.exit(0)
+    if args.host_os == 'linux':
+        if args.is_bionic and not args.kvm and not args.docker:
+            subprocess.check_call(['sudo', 'sed', '-i', 's/lxcbr0/br0/', '/etc/default/lxc-net'])
+            print('Reboot is required')
+
+    print('Setup complete!')
+    sys.exit(0)
+
 
 def build():
     global args, workdir
 
-    os.makedirs('helium-binaries/' + args.version, exist_ok=True)
+    os.makedirs('squorum-binaries/' + args.version, exist_ok=True)
     print('\nBuilding Dependencies\n')
     os.chdir('gitian-builder')
     os.makedirs('inputs', exist_ok=True)
@@ -55,27 +148,27 @@ def build():
     subprocess.check_call(['wget', '-N', '-P', 'inputs', 'https://bitcoincore.org/cfields/osslsigncode-Backports-to-1.7.1.patch'])
     subprocess.check_call(["echo 'a8c4e9cafba922f89de0df1f2152e7be286aba73f78505169bc351a7938dd911 inputs/osslsigncode-Backports-to-1.7.1.patch' | sha256sum -c"], shell=True)
     subprocess.check_call(["echo 'f9a8cdb38b9c309326764ebc937cba1523a3a751a7ab05df3ecc99d18ae466c9 inputs/osslsigncode-1.7.1.tar.gz' | sha256sum -c"], shell=True)
-    subprocess.check_call(['make', '-C', '../helium/depends', 'download', 'SOURCES_PATH=' + os.getcwd() + '/cache/common'])
+    subprocess.check_call(['make', '-C', '../squorum/depends', 'download', 'SOURCES_PATH=' + os.getcwd() + '/cache/common'])
 
     if args.linux:
         print('\nCompiling ' + args.version + ' Linux')
-        subprocess.check_call(['bin/gbuild', '-j', args.jobs, '-m', args.memory, '--commit', 'helium='+args.commit, '--url', 'helium='+args.url, '../helium/contrib/gitian-descriptors/gitian-linux.yml'])
-        subprocess.check_call(['bin/gsign', '-p', args.sign_prog, '--signer', args.signer, '--release', args.version+'-linux', '--destination', '../gitian.sigs/', '../helium/contrib/gitian-descriptors/gitian-linux.yml'])
-        subprocess.check_call('mv build/out/helium-*.tar.gz build/out/src/helium-*.tar.gz ../helium-binaries/'+args.version, shell=True)
+        subprocess.check_call(['bin/gbuild', '-j', args.jobs, '-m', args.memory, '--commit', 'squorum='+args.commit, '--url', 'squorum='+args.url, '../squorum/contrib/gitian-descriptors/gitian-linux.yml'])
+        subprocess.check_call(['bin/gsign', '-p', args.sign_prog, '--signer', args.signer, '--release', args.version+'-linux', '--destination', '../gitian.sigs/', '../squorum/contrib/gitian-descriptors/gitian-linux.yml'])
+        subprocess.check_call('mv build/out/squorum-*.tar.gz build/out/src/squorum-*.tar.gz ../squorum-binaries/'+args.version, shell=True)
 
     if args.windows:
         print('\nCompiling ' + args.version + ' Windows')
-        subprocess.check_call(['bin/gbuild', '-j', args.jobs, '-m', args.memory, '--commit', 'helium='+args.commit, '--url', 'helium='+args.url, '../helium/contrib/gitian-descriptors/gitian-win.yml'])
-        subprocess.check_call(['bin/gsign', '-p', args.sign_prog, '--signer', args.signer, '--release', args.version+'-win-unsigned', '--destination', '../gitian.sigs/', '../helium/contrib/gitian-descriptors/gitian-win.yml'])
-        subprocess.check_call('mv build/out/helium-*-win-unsigned.tar.gz inputs/', shell=True)
-        subprocess.check_call('mv build/out/helium-*.zip build/out/helium-*.exe build/out/src/helium-*.tar.gz ../helium-binaries/'+args.version, shell=True)
+        subprocess.check_call(['bin/gbuild', '-j', args.jobs, '-m', args.memory, '--commit', 'squorum='+args.commit, '--url', 'squorum='+args.url, '../squorum/contrib/gitian-descriptors/gitian-win.yml'])
+        subprocess.check_call(['bin/gsign', '-p', args.sign_prog, '--signer', args.signer, '--release', args.version+'-win-unsigned', '--destination', '../gitian.sigs/', '../squorum/contrib/gitian-descriptors/gitian-win.yml'])
+        subprocess.check_call('mv build/out/squorum-*-win-unsigned.tar.gz inputs/', shell=True)
+        subprocess.check_call('mv build/out/squorum-*.zip build/out/squorum-*.exe build/out/src/squorum-*.tar.gz ../squorum-binaries/'+args.version, shell=True)
 
     if args.macos:
         print('\nCompiling ' + args.version + ' MacOS')
-        subprocess.check_call(['bin/gbuild', '-j', args.jobs, '-m', args.memory, '--commit', 'helium='+args.commit, '--url', 'helium='+args.url, '../helium/contrib/gitian-descriptors/gitian-osx.yml'])
-        subprocess.check_call(['bin/gsign', '-p', args.sign_prog, '--signer', args.signer, '--release', args.version+'-osx-unsigned', '--destination', '../gitian.sigs/', '../helium/contrib/gitian-descriptors/gitian-osx.yml'])
-        subprocess.check_call('mv build/out/helium-*-osx-unsigned.tar.gz inputs/', shell=True)
-        subprocess.check_call('mv build/out/helium-*.tar.gz build/out/helium-*.dmg build/out/src/helium-*.tar.gz ../helium-binaries/'+args.version, shell=True)
+        subprocess.check_call(['bin/gbuild', '-j', args.jobs, '-m', args.memory, '--commit', 'squorum='+args.commit, '--url', 'squorum='+args.url, '../squorum/contrib/gitian-descriptors/gitian-osx.yml'])
+        subprocess.check_call(['bin/gsign', '-p', args.sign_prog, '--signer', args.signer, '--release', args.version+'-osx-unsigned', '--destination', '../gitian.sigs/', '../squorum/contrib/gitian-descriptors/gitian-osx.yml'])
+        subprocess.check_call('mv build/out/squorum-*-osx-unsigned.tar.gz inputs/', shell=True)
+        subprocess.check_call('mv build/out/squorum-*.tar.gz build/out/squorum-*.dmg build/out/src/squorum-*.tar.gz ../squorum-binaries/'+args.version, shell=True)
 
     os.chdir(workdir)
 
@@ -88,34 +181,43 @@ def build():
         subprocess.check_call(['git', 'commit', '-m', 'Add '+args.version+' unsigned sigs for '+args.signer])
         os.chdir(workdir)
 
+
 def sign():
     global args, workdir
     os.chdir('gitian-builder')
 
-    if args.windows:
-        print('\nSigning ' + args.version + ' Windows')
-        subprocess.check_call('cp inputs/helium-' + args.version + '-win-unsigned.tar.gz inputs/helium-win-unsigned.tar.gz', shell=True)
-        subprocess.check_call(['bin/gbuild', '--skip-image', '--upgrade', '--commit', 'signature='+args.commit, '../helium/contrib/gitian-descriptors/gitian-win-signer.yml'])
-        subprocess.check_call(['bin/gsign', '-p', args.sign_prog, '--signer', args.signer, '--release', args.version+'-win-signed', '--destination', '../gitian.sigs/', '../helium/contrib/gitian-descriptors/gitian-win-signer.yml'])
-        subprocess.check_call('mv build/out/helium-*win64-setup.exe ../helium-binaries/'+args.version, shell=True)
-        subprocess.check_call('mv build/out/helium-*win32-setup.exe ../helium-binaries/'+args.version, shell=True)
+    # TODO: Skip making signed windows sigs until we actually start producing signed windows binaries
+    #print('\nSigning ' + args.version + ' Windows')
+    #subprocess.check_call('cp inputs/squorum-' + args.version + '-win-unsigned.tar.gz inputs/squorum-win-unsigned.tar.gz', shell=True)
+    #subprocess.check_call(['bin/gbuild', '--skip-image', '--upgrade', '--commit', 'signature='+args.commit, '../squorum/contrib/gitian-descriptors/gitian-win-signer.yml'])
+    #subprocess.check_call(['bin/gsign', '-p', args.sign_prog, '--signer', args.signer, '--release', args.version+'-win-signed', '--destination', '../gitian.sigs/', '../squorum/contrib/gitian-descriptors/gitian-win-signer.yml'])
+    #subprocess.check_call('mv build/out/squorum-*win64-setup.exe ../squorum-binaries/'+args.version, shell=True)
+    #subprocess.check_call('mv build/out/squorum-*win32-setup.exe ../squorum-binaries/'+args.version, shell=True)
 
-    if args.macos:
-        print('\nSigning ' + args.version + ' MacOS')
-        subprocess.check_call('cp inputs/helium-' + args.version + '-osx-unsigned.tar.gz inputs/helium-osx-unsigned.tar.gz', shell=True)
-        subprocess.check_call(['bin/gbuild', '--skip-image', '--upgrade', '--commit', 'signature='+args.commit, '../helium/contrib/gitian-descriptors/gitian-osx-signer.yml'])
-        subprocess.check_call(['bin/gsign', '-p', args.sign_prog, '--signer', args.signer, '--release', args.version+'-osx-signed', '--destination', '../gitian.sigs/', '../helium/contrib/gitian-descriptors/gitian-osx-signer.yml'])
-        subprocess.check_call('mv build/out/helium-osx-signed.dmg ../helium-binaries/'+args.version+'/helium-'+args.version+'-osx.dmg', shell=True)
+    print('\nSigning ' + args.version + ' MacOS')
+    subprocess.check_call('cp inputs/squorum-' + args.version + '-osx-unsigned.tar.gz inputs/squorum-osx-unsigned.tar.gz', shell=True)
+    subprocess.check_call(['bin/gbuild', '--skip-image', '--upgrade', '--commit', 'signature='+args.commit, '../squorum/contrib/gitian-descriptors/gitian-osx-signer.yml'])
+    subprocess.check_call(['bin/gsign', '-p', args.sign_prog, '--signer', args.signer, '--release', args.version+'-osx-signed', '--destination', '../gitian.sigs/', '../squorum/contrib/gitian-descriptors/gitian-osx-signer.yml'])
+    subprocess.check_call('mv build/out/squorum-osx-signed.dmg ../squorum-binaries/'+args.version+'/squorum-'+args.version+'-osx.dmg', shell=True)
 
     os.chdir(workdir)
 
     if args.commit_files:
-        print('\nCommitting '+args.version+' Signed Sigs\n')
         os.chdir('gitian.sigs')
-        subprocess.check_call(['git', 'add', args.version+'-win-signed/'+args.signer])
-        subprocess.check_call(['git', 'add', args.version+'-osx-signed/'+args.signer])
-        subprocess.check_call(['git', 'commit', '-a', '-m', 'Add '+args.version+' signed binary sigs for '+args.signer])
+        commit = False
+        if os.path.isfile(args.version+'-win-signed/'+args.signer+'/squorum-win-signer-build.assert.sig'):
+            subprocess.check_call(['git', 'add', args.version+'-win-signed/'+args.signer])
+            commit = True
+        if os.path.isfile(args.version+'-osx-signed/'+args.signer+'/squorum-dmg-signer-build.assert.sig'):
+            subprocess.check_call(['git', 'add', args.version+'-osx-signed/'+args.signer])
+            commit = True
+        if commit:
+            print('\nCommitting '+args.version+' Signed Sigs\n')
+            subprocess.check_call(['git', 'commit', '-a', '-m', 'Add '+args.version+' signed binary sigs for '+args.signer])
+        else:
+            print('\nNothing to commit\n')
         os.chdir(workdir)
+
 
 def verify():
     global args, workdir
@@ -123,32 +225,34 @@ def verify():
     os.chdir('gitian-builder')
 
     print('\nVerifying v'+args.version+' Linux\n')
-    if subprocess.call(['bin/gverify', '-v', '-d', '../gitian.sigs/', '-r', args.version+'-linux', '../helium/contrib/gitian-descriptors/gitian-linux.yml']):
+    if subprocess.call(['bin/gverify', '-v', '-d', '../gitian.sigs/', '-r', args.version+'-linux', '../squorum/contrib/gitian-descriptors/gitian-linux.yml']):
         print('Verifying v'+args.version+' Linux FAILED\n')
         rc = 1
 
     print('\nVerifying v'+args.version+' Windows\n')
-    if subprocess.call(['bin/gverify', '-v', '-d', '../gitian.sigs/', '-r', args.version+'-win-unsigned', '../helium/contrib/gitian-descriptors/gitian-win.yml']):
+    if subprocess.call(['bin/gverify', '-v', '-d', '../gitian.sigs/', '-r', args.version+'-win-unsigned', '../squorum/contrib/gitian-descriptors/gitian-win.yml']):
         print('Verifying v'+args.version+' Windows FAILED\n')
         rc = 1
 
     print('\nVerifying v'+args.version+' MacOS\n')
-    if subprocess.call(['bin/gverify', '-v', '-d', '../gitian.sigs/', '-r', args.version+'-win-signed', '../helium/contrib/gitian-descriptors/gitian-osx.yml']):
+    if subprocess.call(['bin/gverify', '-v', '-d', '../gitian.sigs/', '-r', args.version+'-osx-unsigned', '../squorum/contrib/gitian-descriptors/gitian-osx.yml']):
         print('Verifying v'+args.version+' MacOS FAILED\n')
         rc = 1
 
-    print('\nVerifying v'+args.version+' Signed Windows\n')
-    if subprocess.call(['bin/gverify', '-v', '-d', '../gitian.sigs/', '-r', args.version+'-win-signed', '../helium/contrib/gitian-descriptors/gitian-win-signer.yml']):
-        print('Verifying v'+args.version+' Signed Windows FAILED\n')
-        rc = 1
+    # TODO: Skip checking signed windows sigs until we actually start producing signed windows binaries
+    #print('\nVerifying v'+args.version+' Signed Windows\n')
+    #if subprocess.call(['bin/gverify', '-v', '-d', '../gitian.sigs/', '-r', args.version+'-win-signed', '../squorum/contrib/gitian-descriptors/gitian-win-signer.yml']):
+    #    print('Verifying v'+args.version+' Signed Windows FAILED\n')
+    #    rc = 1
 
     print('\nVerifying v'+args.version+' Signed MacOS\n')
-    if subprocess.call(['bin/gverify', '-v', '-d', '../gitian.sigs/', '-r', args.version+'-osx-signed', '../helium/contrib/gitian-descriptors/gitian-osx-signer.yml']):
+    if subprocess.call(['bin/gverify', '-v', '-d', '../gitian.sigs/', '-r', args.version+'-osx-signed', '../squorum/contrib/gitian-descriptors/gitian-osx-signer.yml']):
         print('Verifying v'+args.version+' Signed MacOS FAILED\n')
         rc = 1
 
     os.chdir(workdir)
     return rc
+
 
 def main():
     global args, workdir
@@ -175,7 +279,26 @@ def main():
     args = parser.parse_args()
     workdir = os.getcwd()
 
-    args.is_bionic = b'bionic' in subprocess.check_output(['lsb_release', '-cs'])
+    args.host_os = sys.platform
+
+    if args.host_os == 'win32' or args.host_os == 'cygwin':
+        raise Exception('Error: Native Windows is not supported by this script, use WSL')
+
+    if args.host_os == 'linux':
+        if os.environ['USER'] == 'root':
+            raise Exception('Error: Do not run this script as the root user')
+        args.is_bionic = False
+        args.is_fedora = False
+        args.is_centos = False
+        args.is_wsl    = False
+        if os.path.isfile('/usr/bin/lsb_release'):
+            args.is_bionic = b'bionic' in subprocess.check_output(['lsb_release', '-cs'])
+        if os.path.isfile('/etc/fedora-release'):
+            args.is_fedora = True
+        if os.path.isfile('/etc/centos-release'):
+            args.is_centos = True
+        if os.path.isfile('/proc/version') and open('/proc/version', 'r').read().find('Microsoft'):
+            args.is_wsl = True
 
     if args.kvm and args.docker:
         raise Exception('Error: cannot have both kvm and docker')
@@ -195,7 +318,10 @@ def main():
             os.environ['LXC_GUEST_IP'] = '10.0.3.5'
 
     if args.setup:
-        setup()
+        if args.host_os == 'linux':
+            setup_linux()
+        elif args.host_os == 'darwin':
+            setup_darwin()
 
     if args.buildsign:
         args.build = True
@@ -203,6 +329,9 @@ def main():
 
     if not args.build and not args.sign and not args.verify:
         sys.exit(0)
+
+    if args.host_os == 'darwin':
+        os.environ['PATH'] = '/usr/local/opt/coreutils/libexec/gnubin' + os.pathsep + os.environ['PATH']
 
     args.linux = 'l' in args.os
     args.windows = 'w' in args.os
@@ -214,6 +343,8 @@ def main():
         args.macos = False
 
     args.sign_prog = 'true' if args.detach_sign else 'gpg --detach-sign'
+    if args.detach_sign:
+        args.commit_files = False
 
     script_name = os.path.basename(sys.argv[0])
     if not args.signer:
@@ -230,10 +361,14 @@ def main():
         raise Exception('Cannot have both commit and pull')
     args.commit = ('' if args.commit else 'v') + args.version
 
-    os.chdir('helium')
+    os.chdir('squorum')
     if args.pull:
         subprocess.check_call(['git', 'fetch', args.url, 'refs/pull/'+args.version+'/merge'])
-        os.chdir('../gitian-builder/inputs/helium')
+        if not os.path.isdir('../gitian-builder/inputs/squorum'):
+            os.makedirs('../gitian-builder/inputs/squorum')
+        os.chdir('../gitian-builder/inputs/squorum')
+        if not os.path.isdir('.git'):
+            subprocess.check_call(['git', 'init'])
         subprocess.check_call(['git', 'fetch', args.url, 'refs/pull/'+args.version+'/merge'])
         args.commit = subprocess.check_output(['git', 'show', '-s', '--format=%H', 'FETCH_HEAD'], universal_newlines=True, encoding='utf8').strip()
         args.version = 'pull-' + args.version
@@ -257,6 +392,7 @@ def main():
         subprocess.check_call(['git', 'pull'])
         os.chdir(workdir)
         sys.exit(verify())
+
 
 if __name__ == '__main__':
     main()

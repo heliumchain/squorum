@@ -1,6 +1,7 @@
 // Copyright (c) 2011-2014 The Bitcoin developers
 // Copyright (c) 2017-2018 The PIVX developers
 // Copyright (c) 2018-2020 The Helium developers
+// Copyright (c) 2020 The sQuorum developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -137,7 +138,7 @@ public Q_SLOTS:
     /** Show progress dialog e.g. for rescan */
     void showProgress(const QString& title, int nProgress);
 
-    /** Update selected HLM amount from transactionview */
+    /** Update selected SQR amount from transactionview */
     void trxAmount(QString amount);
 
 Q_SIGNALS:

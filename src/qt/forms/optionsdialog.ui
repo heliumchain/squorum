@@ -30,10 +30,10 @@
        <item>
         <widget class="QCheckBox" name="bitcoinAtStartup">
          <property name="toolTip">
-          <string>Automatically start Helium after logging in to the system.</string>
+          <string>Automatically start sQuorum after logging in to the system.</string>
          </property>
          <property name="text">
-          <string>&amp;Start Helium on system login</string>
+          <string>&amp;Start sQuorum on system login</string>
          </property>
         </widget>
        </item>
@@ -220,7 +220,7 @@
        <item>
         <widget class="QCheckBox" name="mapPortUpnp">
          <property name="toolTip">
-          <string>Automatically open the Helium client port on the router. This only works when your router supports UPnP and it is enabled.</string>
+          <string>Automatically open the sQuorum client port on the router. This only works when your router supports UPnP and it is enabled.</string>
          </property>
          <property name="text">
           <string>Map port using &amp;UPnP</string>
@@ -240,7 +240,7 @@
        <item>
         <widget class="QCheckBox" name="connectSocks">
          <property name="toolTip">
-          <string>Connect to the Helium network through a SOCKS5 proxy.</string>
+          <string>Connect to the sQuorum network through a SOCKS5 proxy.</string>
          </property>
          <property name="text">
           <string>&amp;Connect through SOCKS5 proxy (default proxy):</string>
@@ -406,7 +406,7 @@
          <item>
           <widget class="QValueComboBox" name="lang">
            <property name="toolTip">
-            <string>The user interface language can be set here. This setting will take effect after restarting Helium.</string>
+            <string>The user interface language can be set here. This setting will take effect after restarting sQuorum.</string>
            </property>
           </widget>
          </item>
@@ -428,7 +428,7 @@
          </property>
          <property name="text">
           <string>Language missing or translation incomplete? Help contributing translations here:
-https://www.transifex.com/helium-project/helium-wallet</string>
+https://www.transifex.com/squorum-project/squorum-wallet</string>
          </property>
          <property name="wordWrap">
           <bool>true</bool>
@@ -456,8 +456,8 @@ https://www.transifex.com/helium-project/helium-wallet</string>
         </layout>
        </item>
        <item>
-        <widget class="QWidget" name="verticalZhlmDisplayWidget" native="true">
-         <layout class="QVBoxLayout" name="verticalZhlmDisplayLayout">
+        <widget class="QWidget" name="verticalZsqrDisplayWidget" native="true">
+         <layout class="QVBoxLayout" name="verticalZsqrDisplayLayout">
           <property name="margin">
            <number>0</number>
           </property>

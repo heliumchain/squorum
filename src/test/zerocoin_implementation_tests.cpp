@@ -1,5 +1,6 @@
 // Copyright (c) 2017-2018 The PIVX developers
 // Copyright (c) 2018-2020 The Helium developers
+// Copyright (c) 2020 The sQuorum developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -8,17 +9,17 @@
 #include "chainparams.h"
 #include "main.h"
 #include "txdb.h"
-#include "zhlm/deterministicmint.h"
+#include "zsqr/deterministicmint.h"
 #include "key.h"
-#include "zhlm/accumulatorcheckpoints.h"
+#include "zsqr/accumulatorcheckpoints.h"
 #include "libzerocoin/bignum.h"
 #include <boost/test/unit_test.hpp>
 #include <iostream>
-#include <zhlm/accumulators.h>
+#include <zsqr/accumulators.h>
 #include "wallet/wallet.h"
-#include "zhlm/zhlmwallet.h"
-#include "zhlmchain.h"
-#include "test_helium.h"
+#include "zsqr/zsqrwallet.h"
+#include "zsqrchain.h"
+#include "test_squorum.h"
 
 
 extern bool DecodeHexTx(CTransaction& tx, const std::string& strHexTx);
@@ -475,7 +476,7 @@ BOOST_AUTO_TEST_CASE(deterministic_tests)
     CWalletDB walletdb(strWalletFile, "cr+");
 
     CWallet wallet(strWalletFile);
-    CzHLMWallet zWallet(wallet.strWalletFile);
+    CzSQRWallet zWallet(wallet.strWalletFile);
     zWallet.SetMasterSeed(seedMaster);
     wallet.setZWallet(&zWallet);
 
@@ -487,7 +488,7 @@ BOOST_AUTO_TEST_CASE(deterministic_tests)
     for (int i = 0; i < nTests; i++) {
         libzerocoin::PrivateCoin coin(Params().Zerocoin_Params(false), denom, false);
         CDeterministicMint dMint;
-        zWallet.GenerateDeterministicZHLM(denom, coin, dMint);
+        zWallet.GenerateDeterministicZSQR(denom, coin, dMint);
         vCoins.emplace_back(coin);
     }
 

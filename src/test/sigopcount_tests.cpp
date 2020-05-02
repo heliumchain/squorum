@@ -1,6 +1,7 @@
 // Copyright (c) 2012-2013 The Bitcoin Core developers
 // Copyright (c) 2017 The PIVX developers
 // Copyright (c) 2018-2020 The Helium developers
+// Copyright (c) 2020 The sQuorum developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -9,7 +10,7 @@
 #include "script/script.h"
 #include "script/standard.h"
 #include "uint256.h"
-#include "test_helium.h"
+#include "test_squorum.h"
 
 #include <vector>
 

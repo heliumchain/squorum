@@ -1,10 +1,11 @@
 // Copyright (c) 2018 The PIVX developers
 // Copyright (c) 2018 The Helium developers
+// Copyright (c) 2020 The sQuorum developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef HELIUM_INVALID_OUTPOINTS_JSON_H
-#define HELIUM_INVALID_OUTPOINTS_JSON_H
+#ifndef SQUORUM_INVALID_OUTPOINTS_JSON_H
+#define SQUORUM_INVALID_OUTPOINTS_JSON_H
 #include <string>
 
 std::string LoadInvalidOutPoints()
@@ -13,4 +14,4 @@ std::string LoadInvalidOutPoints()
     return str;
 }
 
-#endif //HELIUM_INVALID_OUTPOINTS_JSON_H
+#endif //SQUORUM_INVALID_OUTPOINTS_JSON_H

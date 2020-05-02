@@ -2,6 +2,7 @@
 // Copyright (c) 2014-2015 The Dash developers
 // Copyright (c) 2015-2018 The PIVX developers
 // Copyright (c) 2018-2020 The Helium developers
+// Copyright (c) 2020 The sQuorum developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -12,7 +13,7 @@
 #include "swifttx.h"
 #include "timedata.h"
 #include "wallet/wallet.h"
-#include "zhlmchain.h"
+#include "zsqrchain.h"
 #include "main.h"
 
 #include <iostream>
@@ -46,7 +47,7 @@ QList<TransactionRecord> TransactionRecord::decomposeTransaction(const CWallet* 
     bool fZSpendFromMe = false;
 
     if (wtx.HasZerocoinSpendInputs()) {
-        libzerocoin::CoinSpend zcspend = wtx.HasZerocoinPublicSpendInputs() ? ZHLMModule::parseCoinSpend(wtx.vin[0]) : TxInToZerocoinSpend(wtx.vin[0]);
+        libzerocoin::CoinSpend zcspend = wtx.HasZerocoinPublicSpendInputs() ? ZSQRModule::parseCoinSpend(wtx.vin[0]) : TxInToZerocoinSpend(wtx.vin[0]);
         fZSpendFromMe = wallet->IsMyZerocoinSpend(zcspend.getCoinSerialNumber());
     }
 
@@ -56,10 +57,10 @@ QList<TransactionRecord> TransactionRecord::decomposeTransaction(const CWallet* 
         if (!wtx.HasZerocoinSpendInputs() && !ExtractDestination(wtx.vout[1].scriptPubKey, address))
             return parts;
 
-        if (wtx.HasZerocoinSpendInputs() && (fZSpendFromMe || wallet->zhlmTracker->HasMintTx(hash))) {
-            //zHLM stake reward
+        if (wtx.HasZerocoinSpendInputs() && (fZSpendFromMe || wallet->zsqrTracker->HasMintTx(hash))) {
+            //zSQR stake reward
             sub.involvesWatchAddress = false;
-            sub.type = TransactionRecord::StakeZHLM;
+            sub.type = TransactionRecord::StakeZSQR;
             sub.address = mapValue["zerocoinmint"];
             sub.credit = 0;
             for (const CTxOut& out : wtx.vout) {
@@ -68,7 +69,7 @@ QList<TransactionRecord> TransactionRecord::decomposeTransaction(const CWallet* 
             }
             sub.debit -= wtx.vin[0].nSequence * COIN;
         } else if (isminetype mine = wallet->IsMine(wtx.vout[1])) {
-            // HLM stake reward
+            // SQR stake reward
             sub.involvesWatchAddress = mine & ISMINE_WATCH_ONLY;
             sub.type = TransactionRecord::StakeMint;
             sub.address = CBitcoinAddress(address).ToString();
@@ -100,7 +101,7 @@ QList<TransactionRecord> TransactionRecord::decomposeTransaction(const CWallet* 
                 isminetype mine = wallet->IsMine(txout);
                 TransactionRecord sub(hash, nTime);
                 sub.involvesWatchAddress = mine & ISMINE_WATCH_ONLY;
-                sub.type = TransactionRecord::ZerocoinSpend_Change_zHlm;
+                sub.type = TransactionRecord::ZerocoinSpend_Change_zSqr;
                 sub.address = mapValue["zerocoinmint"];
                 if (!fFeeAssigned) {
                     sub.debit -= (wtx.GetZerocoinSpent() - wtx.GetValueOut());
@@ -310,14 +311,14 @@ QList<TransactionRecord> TransactionRecord::decomposeTransaction(const CWallet* 
     return parts;
 }
 
-bool IsZHLMType(TransactionRecord::Type type)
+bool IsZSQRType(TransactionRecord::Type type)
 {
     switch (type) {
-        case TransactionRecord::StakeZHLM:
+        case TransactionRecord::StakeZSQR:
         case TransactionRecord::ZerocoinMint:
         case TransactionRecord::ZerocoinSpend:
         case TransactionRecord::RecvFromZerocoinSpend:
-        case TransactionRecord::ZerocoinSpend_Change_zHlm:
+        case TransactionRecord::ZerocoinSpend_Change_zSqr:
         case TransactionRecord::ZerocoinSpend_FromMe:
             return true;
         default:
@@ -362,7 +363,7 @@ void TransactionRecord::updateStatus(const CWalletTx& wtx)
         }
     }
     // For generated transactions, determine maturity
-    else if (type == TransactionRecord::Generated || type == TransactionRecord::StakeMint || type == TransactionRecord::StakeZHLM || type == TransactionRecord::MNReward) {
+    else if (type == TransactionRecord::Generated || type == TransactionRecord::StakeMint || type == TransactionRecord::StakeZSQR || type == TransactionRecord::MNReward) {
         if (nBlocksToMaturity > 0) {
             status.status = TransactionStatus::Immature;
             status.matures_in = nBlocksToMaturity;

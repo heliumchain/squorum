@@ -1,10 +1,11 @@
 // Copyright (c) 2017 The PIVX developers
 // Copyright (c) 2018-2020 The Helium developers
+// Copyright (c) 2020 The sQuorum developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef Helium_CSPORKDB_H
-#define Helium_CSPORKDB_H
+#ifndef sQuorum_CSPORKDB_H
+#define sQuorum_CSPORKDB_H
 
 #include <boost/filesystem/path.hpp>
 #include "leveldbwrapper.h"
@@ -26,4 +27,4 @@ public:
 };
 
 
-#endif //Helium_CSPORKDB_H
+#endif //sQuorum_CSPORKDB_H

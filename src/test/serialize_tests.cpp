@@ -5,7 +5,7 @@
 #include "serialize.h"
 #include "streams.h"
 #include "hash.h"
-#include "test/test_helium.h"
+#include "test/test_squorum.h"
 
 #include <stdint.h>
 

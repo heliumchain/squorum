@@ -5,10 +5,10 @@
 """Test bitcoind with different proxy configuration.
 
 Test plan:
-- Start heliumd's with different proxy configurations
+- Start squorumd's with different proxy configurations
 - Use addnode to initiate connections
 - Verify that proxies are connected to, and the right connection command is given
-- Proxy configurations to test on heliumd side:
+- Proxy configurations to test on squorumd side:
     - `-proxy` (proxy everything)
     - `-onion` (proxy just onions)
     - `-proxyrandomize` Circuit randomization
@@ -18,8 +18,8 @@ Test plan:
     - proxy on IPv6
 
 - Create various proxies (as threads)
-- Create heliumds that connect to them
-- Manipulate the heliumds using addnode (onetry) an observe effects
+- Create squorumds that connect to them
+- Manipulate the squorumds using addnode (onetry) an observe effects
 
 addnode connect to IPv4
 addnode connect to IPv6

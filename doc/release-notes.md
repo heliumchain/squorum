@@ -8,7 +8,7 @@ Please report bugs using the issue tracker at github: <https://github.com/helium
 Mandatory Update
 ==============
 
-Helium Core v1.0.0 is a mandatory update for all users. This release contains new consensus rules and improvements that are not backwards compatible with older versions. Users will need to update their clients before enforcement of this update goes into effect.
+sQuorum Core v1.0.0 is a mandatory update for all users. This release contains new consensus rules and improvements that are not backwards compatible with older versions. Users will need to update their clients before enforcement of this update goes into effect.
 
 Update enforcement goes into effect at the following times:
 
@@ -19,19 +19,19 @@ Masternodes will need to be restarted once both the masternode daemon and the co
 How to Upgrade
 ==============
 
-If you are running an older version, shut it down. Wait until it has completely shut down (which might take a few minutes for older versions), then run the installer (on Windows) or just copy over /Applications/Helium-Qt (on Mac) or heliumd/helium-qt (on Linux).
+If you are running an older version, shut it down. Wait until it has completely shut down (which might take a few minutes for older versions), then run the installer (on Windows) or just copy over /Applications/sQuorum-Qt (on Mac) or squorumd/squorum-qt (on Linux).
 
 
 Compatibility
 ==============
 
-Helium Core is extensively tested on multiple operating systems using the Linux kernel, macOS 10.10+, and Windows 7 and later.
+sQuorum Core is extensively tested on multiple operating systems using the Linux kernel, macOS 10.10+, and Windows 7 and later.
 
 Microsoft ended support for Windows XP on [April 8th, 2014](https://www.microsoft.com/en-us/WindowsForBusiness/end-of-xp-support), No attempt is made to prevent installing or running the software on Windows XP, you can still do so at your own risk but be aware that there are known instabilities and issues. Please do not report issues about Windows XP to the issue tracker.
 
-Apple released it's last Mountain Lion update August 13, 2015, and officially ended support on [December 14, 2015](http://news.fnal.gov/2015/10/mac-os-x-mountain-lion-10-8-end-of-life-december-14/). Helium Core software starting with v3.2.0 will no longer run on MacOS versions prior to Yosemite (10.10). Please do not report issues about MacOS versions prior to Yosemite to the issue tracker.
+Apple released it's last Mountain Lion update August 13, 2015, and officially ended support on [December 14, 2015](http://news.fnal.gov/2015/10/mac-os-x-mountain-lion-10-8-end-of-life-december-14/). sQuorum Core software starting with v3.2.0 will no longer run on MacOS versions prior to Yosemite (10.10). Please do not report issues about MacOS versions prior to Yosemite to the issue tracker.
 
-Helium Core should also work on most other Unix-like systems but is not frequently tested on them.
+sQuorum Core should also work on most other Unix-like systems but is not frequently tested on them.
 
 
 Notable Changes
@@ -41,13 +41,13 @@ Notable Changes
 
 ### Switch to libsecp256k1 signature verification
 
-Here is the long overdue update for Helium to let go of OpenSSL in its consensus code. The rationale behind it is to avoid depending on an external and changing library where our consensus code is affected. This is security and consensus critical. Helium users will experience quicker block validations and sync times as block transactions are verified under libsecp256k1.
+Here is the long overdue update for sQuorum to let go of OpenSSL in its consensus code. The rationale behind it is to avoid depending on an external and changing library where our consensus code is affected. This is security and consensus critical. sQuorum users will experience quicker block validations and sync times as block transactions are verified under libsecp256k1.
 
 The recent [CVE-2018-0495](https://www.nccgroup.trust/us/our-research/technical-advisory-return-of-the-hidden-number-problem/) brings into question a potential vulnerability with OpenSSL (and other crypto libraries) that libsecp256k1 is not susceptible to.
 
 ### Minimum Supported MacOS Version
 
-The minimum supported version of MacOS (OSX) has been moved from 10.8 Mountain Lion to 10.10 Yosemite. Users still running a MacOS version prior to Yosemite will need to upgrade their OS if they wish to continue using the latest version(s) of the Helium Core wallet.
+The minimum supported version of MacOS (OSX) has been moved from 10.8 Mountain Lion to 10.10 Yosemite. Users still running a MacOS version prior to Yosemite will need to upgrade their OS if they wish to continue using the latest version(s) of the sQuorum Core wallet.
 
 ### Fake Stake
 
@@ -57,11 +57,11 @@ A full report provided by PIVX developers is available on the [Helium Website](h
 
 ### BIP65 (CHECKLOCKTIMEVERIFY) Soft-Fork
 
-Helium Core v3.2.0 introduces new consensus rules for scripting pathways to support the [BIP65](https://github.com/bitcoin/bips/blob/master/bip-0065.mediawiki) standard. This is being carried out as a soft-fork in order to provide ample time for stakers to update their wallet version.
+sQuorum Core v3.2.0 introduces new consensus rules for scripting pathways to support the [BIP65](https://github.com/bitcoin/bips/blob/master/bip-0065.mediawiki) standard. This is being carried out as a soft-fork in order to provide ample time for stakers to update their wallet version.
 
 ### Regression Test Suite
 
-The RegTest network mode has been re-worked to once again allow for the generation of on-demand PoW and PoS blocks. Additionally, many of the existing functional test scripts have been adapted for use with Helium, and we now have a solid testing base for highly customizable tests to be written.
+The RegTest network mode has been re-worked to once again allow for the generation of on-demand PoW and PoS blocks. Additionally, many of the existing functional test scripts have been adapted for use with sQuorum, and we now have a solid testing base for highly customizable tests to be written.
 
 With this, the old `setgenerate` RPC command no longer functions in regtest mode, instead a new `generate` command has been introduced that is more suited for use in regtest mode.
 
@@ -145,7 +145,7 @@ The `getwalletinfo` RPC command now outputs the configured transaction fee (`pay
 
 ### Removal of Deprecated Commands
 
-The `masternode` and `mnbudget` RPC commands, which were marked as deprecated in Helium Core v2.3.1 (September 19, 2017), have now been completely removed from Helium Core.
+The `masternode` and `mnbudget` RPC commands, which were marked as deprecated in sQuorum Core v2.3.1 (September 19, 2017), have now been completely removed from sQuorum Core.
 
 Several new commands were added in v2.3.1 to replace the two aforementioned commands, reference the [v2.3.1 Release Notes](https://github.com/heliumchain/helium/blob/master/doc/release-notes/release-notes-2.3.1.md#rpc-changes) for further details.
 
@@ -154,8 +154,8 @@ Several new commands were added in v2.3.1 to replace the two aforementioned comm
 A new RPC command (`getblockindexstats`) has been introduced which serves the purpose of obtaining statistical information on a range of blocks. The information returned is as follows:
   * transaction count (not including coinbase/coinstake txes)
   * transaction count (including coinbase/coinstake txes)
-  * zHLM per-denom mint count
-  * zHLM per-denom spend count
+  * zSQR per-denom mint count
+  * zSQR per-denom spend count
   * total transaction bytes
   * total fees in block range
   * average fee per kB
@@ -193,9 +193,9 @@ Result:
         denom_5: xxxx,         (numeric) number of PUBLIC spends of denom_5 occurred over the block range
          ...                   ... number of PUBLIC spends of other denominations: ..., 10, 50, 100, 500, 1000, 5000
   },
-  txbytes: xxxxx,              (numeric) Sum of the size of all txes (zHLM excluded) over block range
-  ttlfee: xxxxx,               (numeric) Sum of the fee amount of all txes (zHLM mints excluded) over block range
-  ttlfee_all: xxxxx,           (numeric) Sum of the fee amount of all txes (zHLM mints included) over block range
+  txbytes: xxxxx,              (numeric) Sum of the size of all txes (zSQR excluded) over block range
+  ttlfee: xxxxx,               (numeric) Sum of the fee amount of all txes (zSQR mints excluded) over block range
+  ttlfee_all: xxxxx,           (numeric) Sum of the fee amount of all txes (zSQR mints included) over block range
   feeperkb: xxxxx,             (numeric) Average fee per kb (excluding zc txes)
 }
 ```
@@ -216,7 +216,7 @@ Several changes have been introduced to the travis script in order to make the o
 
 ### Completely Disallow Qt4
 
-Compiling the Helium Core wallet against Qt4 hasn't been supported for quite some time now, but the build system still recognized Qt4 as a valid option if Qt5 couldn't be found. This has now been remedied and Qt4 will no longer be considered valid during the `configure` pre-compilation phase.
+Compiling the sQuorum Core wallet against Qt4 hasn't been supported for quite some time now, but the build system still recognized Qt4 as a valid option if Qt5 couldn't be found. This has now been remedied and Qt4 will no longer be considered valid during the `configure` pre-compilation phase.
 
 ### Further OpenSSL Deprecation
 
@@ -249,4 +249,4 @@ Note that it is still required to have relevant dependencies installed on the sy
 When the configure step fails because of an unsupported OpenSSL (or other library), it now displays more information on using an override flag to compile anyways. The long term plan is to ensure that the consensus code doesn't depend on OpenSSL in any way and then remove this configure step and related override flag.
 
 
-As well as everyone that helped translating on [Transifex](https://www.transifex.com/helium-project/helium-wallet/), the QA team during Testing and the Node hosts supporting our Testnet.
+As well as everyone that helped translating on [Transifex](https://www.transifex.com/squorum-project/squorum-wallet/), the QA team during Testing and the Node hosts supporting our Testnet.

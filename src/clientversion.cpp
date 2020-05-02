@@ -1,6 +1,7 @@
 // Copyright (c) 2012-2017 The Bitcoin Core developers
 // Copyright (c) 2016-2017 The PIVX developers
 // Copyright (c) 2018-2020 The Helium developers
+// Copyright (c) 2020 The sQuorum developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -14,7 +15,7 @@
  * for both the daemon and GUI client, to make it harder for attackers to
  * target servers or GUI users specifically.
  */
-const std::string CLIENT_NAME("Helium Core");
+const std::string CLIENT_NAME("sQuorum Core");
 
 /**
  * Client version number

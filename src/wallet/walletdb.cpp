@@ -3,6 +3,7 @@
 // Copyright (c) 2014-2015 The Dash developers
 // Copyright (c) 2015-2018 The PIVX developers
 // Copyright (c) 2018-2019 The Helium developers
+// Copyright (c) 2020 The sQuorum developers
 
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
@@ -17,7 +18,7 @@
 #include "util.h"
 #include "utiltime.h"
 #include "wallet/wallet.h"
-#include <zhlm/deterministicmint.h>
+#include <zsqr/deterministicmint.h>
 
 #include <boost/filesystem.hpp>
 #include <boost/scoped_ptr.hpp>
@@ -903,7 +904,7 @@ DBErrors CWalletDB::ZapWalletTx(CWallet* pwallet, std::vector<CWalletTx>& vWtx)
 void ThreadFlushWalletDB(const std::string& strFile)
 {
     // Make this thread recognisable as the wallet flushing thread
-    RenameThread("helium-wallet");
+    RenameThread("squorum-wallet");
 
     static bool fOneThread;
     if (fOneThread)
@@ -1206,17 +1207,17 @@ bool CWalletDB::ReadZerocoinSpendSerialEntry(const CBigNum& bnSerial)
 bool CWalletDB::WriteDeterministicMint(const CDeterministicMint& dMint)
 {
     uint256 hash = dMint.GetPubcoinHash();
-    return Write(std::make_pair(std::string("dzhlm"), hash), dMint, true);
+    return Write(std::make_pair(std::string("dzsqr"), hash), dMint, true);
 }
 
 bool CWalletDB::ReadDeterministicMint(const uint256& hashPubcoin, CDeterministicMint& dMint)
 {
-    return Read(std::make_pair(std::string("dzhlm"), hashPubcoin), dMint);
+    return Read(std::make_pair(std::string("dzsqr"), hashPubcoin), dMint);
 }
 
 bool CWalletDB::EraseDeterministicMint(const uint256& hashPubcoin)
 {
-    return Erase(std::make_pair(std::string("dzhlm"), hashPubcoin));
+    return Erase(std::make_pair(std::string("dzsqr"), hashPubcoin));
 }
 
 bool CWalletDB::WriteZerocoinMint(const CZerocoinMint& zerocoinMint)
@@ -1276,7 +1277,7 @@ bool CWalletDB::ArchiveDeterministicOrphan(const CDeterministicMint& dMint)
     if (!Write(std::make_pair(std::string("dzco"), dMint.GetPubcoinHash()), dMint))
         return error("%s: write failed", __func__);
 
-    if (!Erase(std::make_pair(std::string("dzhlm"), dMint.GetPubcoinHash())))
+    if (!Erase(std::make_pair(std::string("dzsqr"), dMint.GetPubcoinHash())))
         return error("%s: failed to erase", __func__);
 
     return true;
@@ -1321,7 +1322,7 @@ bool CWalletDB::ReadCurrentSeedHash(uint256& hashSeed)
     return Read(std::string("seedhash"), hashSeed);
 }
 
-bool CWalletDB::WriteZHLMSeed(const uint256& hashSeed, const std::vector<unsigned char>& seed)
+bool CWalletDB::WriteZSQRSeed(const uint256& hashSeed, const std::vector<unsigned char>& seed)
 {
     if (!WriteCurrentSeedHash(hashSeed))
         return error("%s: failed to write current seed hash", __func__);
@@ -1329,13 +1330,13 @@ bool CWalletDB::WriteZHLMSeed(const uint256& hashSeed, const std::vector<unsigne
     return Write(std::make_pair(std::string("dzs"), hashSeed), seed);
 }
 
-bool CWalletDB::EraseZHLMSeed()
+bool CWalletDB::EraseZSQRSeed()
 {
     uint256 hash;
     if(!ReadCurrentSeedHash(hash)){
         return error("Failed to read a current seed hash");
     }
-    if(!WriteZHLMSeed(hash, ToByteVector(base_uint<256>(0) << 256))) {
+    if(!WriteZSQRSeed(hash, ToByteVector(base_uint<256>(0) << 256))) {
         return error("Failed to write empty seed to wallet");
     }
     if(!WriteCurrentSeedHash(0)) {
@@ -1345,27 +1346,27 @@ bool CWalletDB::EraseZHLMSeed()
     return true;
 }
 
-bool CWalletDB::EraseZHLMSeed_deprecated()
+bool CWalletDB::EraseZSQRSeed_deprecated()
 {
     return Erase(std::string("dzs"));
 }
 
-bool CWalletDB::ReadZHLMSeed(const uint256& hashSeed, std::vector<unsigned char>& seed)
+bool CWalletDB::ReadZSQRSeed(const uint256& hashSeed, std::vector<unsigned char>& seed)
 {
     return Read(std::make_pair(std::string("dzs"), hashSeed), seed);
 }
 
-bool CWalletDB::ReadZHLMSeed_deprecated(uint256& seed)
+bool CWalletDB::ReadZSQRSeed_deprecated(uint256& seed)
 {
     return Read(std::string("dzs"), seed);
 }
 
-bool CWalletDB::WriteZHLMCount(const uint32_t& nCount)
+bool CWalletDB::WriteZSQRCount(const uint32_t& nCount)
 {
     return Write(std::string("dzc"), nCount);
 }
 
-bool CWalletDB::ReadZHLMCount(uint32_t& nCount)
+bool CWalletDB::ReadZSQRCount(uint32_t& nCount)
 {
     return Read(std::string("dzc"), nCount);
 }
@@ -1550,7 +1551,7 @@ std::list<CDeterministicMint> CWalletDB::ListDeterministicMints()
         // Read next record
         CDataStream ssKey(SER_DISK, CLIENT_VERSION);
         if (fFlags == DB_SET_RANGE)
-            ssKey << make_pair(std::string("dzhlm"), uint256(0));
+            ssKey << make_pair(std::string("dzsqr"), uint256(0));
         CDataStream ssValue(SER_DISK, CLIENT_VERSION);
         int ret = ReadAtCursor(pcursor, ssKey, ssValue, fFlags);
         fFlags = DB_NEXT;
@@ -1565,7 +1566,7 @@ std::list<CDeterministicMint> CWalletDB::ListDeterministicMints()
         // Unserialize
         std::string strType;
         ssKey >> strType;
-        if (strType != "dzhlm")
+        if (strType != "dzsqr")
             break;
 
         uint256 hashPubcoin;

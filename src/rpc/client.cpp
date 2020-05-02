@@ -3,6 +3,7 @@
 // Copyright (c) 2014-2015 The Dash developers
 // Copyright (c) 2015-2018 The PIVX developers
 // Copyright (c) 2018-2019 The Helium developers
+// Copyright (c) 2020 The sQuorum developers
 
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
@@ -146,9 +147,9 @@ static const CRPCConvertParam vRPCConvertParams[] =
         {"getspentzerocoinamount", 1},
         {"generatemintlist", 0},
         {"generatemintlist", 1},
-        {"searchdzhlm", 0},
-        {"searchdzhlm", 1},
-        {"searchdzhlm", 2},
+        {"searchdzsqr", 0},
+        {"searchdzsqr", 1},
+        {"searchdzsqr", 2},
         {"getaccumulatorvalues", 0},
         {"getaccumulatorwitness",2},
         {"getmintsvalues", 2},

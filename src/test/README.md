@@ -5,44 +5,44 @@ and tests weren't explicitly disabled.
 
 After configuring, they can be run with `make check`.
 
-To run the heliumd tests manually, launch `src/test/test_helium`. To recompile
+To run the squorumd tests manually, launch `src/test/test_squorum`. To recompile
 after a test file was modified, run `make` and then run the test again. If you
 modify a non-test file, use `make -C src/test` to recompile only what's needed
-to run the heliumd tests.
+to run the squorumd tests.
 
-To add more heliumd tests, add `BOOST_AUTO_TEST_CASE` functions to the existing
+To add more squorumd tests, add `BOOST_AUTO_TEST_CASE` functions to the existing
 .cpp files in the `test/` directory or add new .cpp files that
 implement new BOOST_FIXTURE_TEST_SUITE sections.
 
-To run the helium-qt tests manually, launch `src/qt/test/test_helium-qt`
+To run the squorum-qt tests manually, launch `src/qt/test/test_squorum-qt`
 
-To add more helium-qt tests, add them to the `src/qt/test/` directory and
+To add more squorum-qt tests, add them to the `src/qt/test/` directory and
 the `src/qt/test/test_main.cpp` file.
 
 ### Running individual tests
 
-test_helium has some built-in command-line arguments; for
+test_squorum has some built-in command-line arguments; for
 example, to run just the getarg_tests verbosely:
 
-    test_helium --log_level=all --run_test=getarg_tests
+    test_squorum --log_level=all --run_test=getarg_tests
 
 ... or to run just the doubledash test:
 
-    test_helium --run_test=getarg_tests/doubledash
+    test_squorum --run_test=getarg_tests/doubledash
 
-Run `test_helium --help` for the full list.
+Run `test_squorum --help` for the full list.
 
 ### Note on adding test cases
 
 The sources in this directory are unit test cases.  Boost includes a
-unit testing framework, and since helium already uses boost, it makes
+unit testing framework, and since squorum already uses boost, it makes
 sense to simply use this framework rather than require developers to
 configure some other framework (we want as few impediments to creating
 unit tests as possible).
 
-The build system is setup to compile an executable called `test_helium`
+The build system is setup to compile an executable called `test_squorum`
 that runs all of the unit tests.  The main source file is called
-test_helium.cpp, which simply includes other files that contain the
+test_squorum.cpp, which simply includes other files that contain the
 actual unit tests (outside of a couple required preprocessor
 directives). To add a new unit test file to our test suite you need
 to add the file to `src/Makefile.test.include`. The pattern is to

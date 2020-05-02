@@ -1,6 +1,7 @@
 // Copyright (c) 2014 The Bitcoin developers
 // Copyright (c) 2017 The PIVX developers
 // Copyright (c) 2018-2020 The Helium developers
+// Copyright (c) 2020 The sQuorum developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -11,8 +12,8 @@
 #include <vector>
 
 /**
- * CBaseChainParams defines the base parameters (shared between helium-cli and heliumd)
- * of a given instance of the Helium system.
+ * CBaseChainParams defines the base parameters (shared between squorum-cli and squorumd)
+ * of a given instance of the sQuorum system.
  */
 class CBaseChainParams
 {

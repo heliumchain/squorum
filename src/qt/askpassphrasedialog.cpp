@@ -2,6 +2,7 @@
 // Copyright (c) 2014-2015 The Dash developers
 // Copyright (c) 2015-2018 The PIVX developers
 // Copyright (c) 2018-2020 The Helium developers
+// Copyright (c) 2020 The sQuorum developers
 
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
@@ -77,15 +78,15 @@ AskPassphraseDialog::AskPassphraseDialog(Mode mode, QWidget* parent, WalletModel
     }
 
     // Set checkbox "For anonymization, automint, and staking only" depending on from where we were called
-    if (context == Context::Unlock_Menu || context == Context::Mint_zHLM || context == Context::BIP_38 || context == Context::UI_Vote) {
+    if (context == Context::Unlock_Menu || context == Context::Mint_zSQR || context == Context::BIP_38 || context == Context::UI_Vote) {
         ui->anonymizationCheckBox->setChecked(true);
     }
     else {
         ui->anonymizationCheckBox->setChecked(false);
     }
 
-    // It doesn't make sense to show the checkbox for sending HLM because you wouldn't check it anyway.
-    if (context == Context::Send_HLM || context == Context::Send_zHLM) {
+    // It doesn't make sense to show the checkbox for sending SQR because you wouldn't check it anyway.
+    if (context == Context::Send_SQR || context == Context::Send_zSQR) {
         ui->anonymizationCheckBox->hide();
     }
 
@@ -125,7 +126,7 @@ void AskPassphraseDialog::accept()
             break;
         }
         QMessageBox::StandardButton retval = QMessageBox::question(this, tr("Confirm wallet encryption"),
-            tr("Warning: If you encrypt your wallet and lose your passphrase, you will <b>LOSE ALL OF YOUR HLM</b>!") + "<br><br>" + tr("Are you sure you wish to encrypt your wallet?"),
+            tr("Warning: If you encrypt your wallet and lose your passphrase, you will <b>LOSE ALL OF YOUR SQR</b>!") + "<br><br>" + tr("Are you sure you wish to encrypt your wallet?"),
             QMessageBox::Yes | QMessageBox::Cancel,
             QMessageBox::Cancel);
         if (retval == QMessageBox::Yes) {
@@ -133,7 +134,7 @@ void AskPassphraseDialog::accept()
                 if (model->setWalletEncrypted(true, newpass1)) {
                     QMessageBox::warning(this, tr("Wallet encrypted"),
                         "<qt>" +
-                            tr("Helium will close now to finish the encryption process. "
+                            tr("sQuorum will close now to finish the encryption process. "
                                "Remember that encrypting your wallet cannot fully protect "
                                "your coins from being stolen by malware infecting your computer.") +
                             "<br><br><b>" +
