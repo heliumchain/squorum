@@ -611,7 +611,9 @@ std::string LicenseInfo()
            "\n" +
            FormatParagraph(strprintf(_("Copyright (C) 2015-%i The Pivx Core Developers"), COPYRIGHT_YEAR)) + "\n" +
            "\n" +
-           FormatParagraph(strprintf(_("Copyright (C) 2018-%i The sQuorum Core Developers"), COPYRIGHT_YEAR)) + "\n" +
+           FormatParagraph(_("Copyright (C) 2018-2020 The Helium Core Developers")) + "\n" +
+           "\n" +
+           FormatParagraph(strprintf(_("Copyright (C) 2020-%i The sQuorum Core Developers"), COPYRIGHT_YEAR)) + "\n" +
            "\n" +
            FormatParagraph(_("This is experimental software.")) + "\n" +
            "\n" +
