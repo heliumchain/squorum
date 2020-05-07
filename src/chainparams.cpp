@@ -59,12 +59,13 @@ static Checkpoints::MapCheckpoints mapCheckpoints =
     (31331, uint256("f88c7264a05c05033a98c92088613880cd4d210aab12367eb48d5fe3a0189672"))
     (32848, uint256("352431d65a69b3425ce508cfbbff077c8fdc2833a84e6e239f0ba8e7300e9744"))
     (31562, uint256("7738a178f95139b2cd6b2120b19584cc17a2a28a00962b5d28978cd199427821"))
-    (126438, uint256("7f0c69501d91e4a4ed413bf9942972cf489e79034a0af4a6440fa513c037140d"));
+    (126438, uint256("7f0c69501d91e4a4ed413bf9942972cf489e79034a0af4a6440fa513c037140d"))
+    (862000, uint256("18f02da3b76f9d66474a890438344b0587a2f2b2272e845fa940e4e2cf83ca3c"));
 
 static const Checkpoints::CCheckpointData data = {
     &mapCheckpoints,
-    1544241064, // * UNIX timestamp of last checkpoint block
-    259966,      // * total number of transactions between genesis and last checkpoint
+    1588866189, // * UNIX timestamp of last checkpoint block
+    1790696,      // * total number of transactions between genesis and last checkpoint
                 //   (the tx=... number in the SetBestChain debug.log lines)
     2000        // * estimated number of transactions per day after checkpoint
 };
@@ -159,17 +160,17 @@ public:
         nZerocoinStartHeight = 999999999; // (PIVX: 863787, Phore 90000)
         nZerocoinStartTime = 4101895950; // December 25, 2099 9:32:30 AM GMT-06:00
         // nBlockEnforceSerialRange = 90003; //Enforce serial range starting this block (Phore 90003)
-        nBlockRecalculateAccumulators = 999999; // (PIVX: 895400, Phore 90005) //Trigger a recalculation of accumulators
+        nBlockRecalculateAccumulators = 999999999; // (PIVX: 895400, Phore 90005) //Trigger a recalculation of accumulators
         // nBlockFirstFraudulent = 90002; // (PIVX: 908000, Phore 90002) //First block that bad serials emerged
-        nBlockLastGoodCheckpoint = 999999; // (PIVX: 891730, Phore 90005) //Last valid accumulator checkpoint
+        nBlockLastGoodCheckpoint = 999999999; // (PIVX: 891730, Phore 90005) //Last valid accumulator checkpoint
         // nBlockEnforceInvalidUTXO = 0; // (PIVX: 902850) //Start enforcing the invalid UTXO's
         // nInvalidAmountFiltered = 268200*COIN; // (PIVX: 268200) //Amount of invalid coins filtered through exchanges, that should be considered valid
         nBlockZerocoinV2 = 999999999; // (PIVX: 1153160) //!> The block that zerocoin v2 becomes active - roughly Tuesday, May 8, 2018 4:00:00 AM GMT
         nEnforceNewSporkKey = 1537963200; // (PIVX: 1525158000) //!> Sporks signed after (GMT): Wednesday, September 26,2018 12:00 PM must use the new spork key
         nRejectOldSporkKey = 1537966800; // (PIVX: 1527811200) //!> Fully reject old spork key after (GMT): Wednesday, September 26,2018 12:00 PM
-        nBlockStakeModifierlV2 = 1967000;
+        nBlockStakeModifierlV2 = 1000000;
         // Public coin spend enforcement
-        nPublicZCSpends = 1880000;
+        nPublicZCSpends = 999999999;
 
         const char* pszTimestamp = "Bitcoin Block #540723:  000000000000000000200b9c401b3022de17cd305ba6ef9ce5bade07f9f5ebe5";
         CMutableTransaction txNew;
@@ -290,9 +291,9 @@ public:
         nBlockZerocoinV2 = 999999999; //!> The block that zerocoin v2 becomes active
         nEnforceNewSporkKey = 1537963200; // (PIVX: 1525158000) //!> Sporks signed after (GMT): Wednesday, September 26,2018 12:00 PM must use the new spork key
         nRejectOldSporkKey = 1537966800; // (PIVX: 1527811200) //!> Fully reject old spork key after (GMT): Wednesday, September 26,2018 12:00 PM
-        nBlockStakeModifierlV2 = 1214000;
+        nBlockStakeModifierlV2 = 1000;
         // Public coin spend enforcement
-        nPublicZCSpends = 1106100;
+        nPublicZCSpends = 999999999;
 
         //! Modify the testnet genesis block so the timestamp is valid for a later start.
         genesis.nTime = 1535104494;
