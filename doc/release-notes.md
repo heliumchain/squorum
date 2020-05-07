@@ -57,7 +57,7 @@ A full report provided by PIVX developers is available on the [Helium Website](h
 
 ### BIP65 (CHECKLOCKTIMEVERIFY) Soft-Fork
 
-sQuorum Core v3.2.0 introduces new consensus rules for scripting pathways to support the [BIP65](https://github.com/bitcoin/bips/blob/master/bip-0065.mediawiki) standard. This is being carried out as a soft-fork in order to provide ample time for stakers to update their wallet version.
+sQuorum Core v1.0.0 introduces new consensus rules for scripting pathways to support the [BIP65](https://github.com/bitcoin/bips/blob/master/bip-0065.mediawiki) standard. This is being carried out as a soft-fork in order to provide ample time for stakers to update their wallet version.
 
 ### Regression Test Suite
 
@@ -71,7 +71,7 @@ A new 256-bit modifier for the proof of stake protocol has been defined, `CBlock
 It is computed at every block, by taking the hash of the modifier of previous block along with the coinstake input.
 To meet the protocol, the PoS kernel must comprise the modifier of the previous block.
 
-Changeover enforcement of this new modifier is set to occur at block `1214000` for testnet and block `1967000` for mainnet.
+Changeover enforcement of this new modifier is set to occur at block `1000` for testnet and block `1000000` for mainnet.
 
 ### Block index batch writing
 
@@ -96,10 +96,6 @@ Due to an increase in social engineering attacks/scams that rely on users relayi
 The options dialog now contains a checkbox option to hide the display of orphan stakes from both the overview and transaction history sections. Further, a right-click context menu option has been introduced in the transaction history tab to achieve the same effect.
 
 **Note:** This option only affects the visual display of orphan stakes, and will not prevent them nor remove them from the underlying wallet database.
-
-### Transaction Type Recoloring
-
-The color of various transaction types has been reworked to provide better visual feedback. Staking and masternode rewards are now purple, orphan stakes are now light gray, other rejected transactions are in red, and normal receive/send transactions are black.
 
 ### Receive Tab Changes
 
