@@ -159,17 +159,17 @@ public:
         nZerocoinStartHeight = 999999999; // (PIVX: 863787, Phore 90000)
         nZerocoinStartTime = 4101895950; // December 25, 2099 9:32:30 AM GMT-06:00
         // nBlockEnforceSerialRange = 90003; //Enforce serial range starting this block (Phore 90003)
-        nBlockRecalculateAccumulators = 999999; // (PIVX: 895400, Phore 90005) //Trigger a recalculation of accumulators
+        nBlockRecalculateAccumulators = 999999999; // (PIVX: 895400, Phore 90005) //Trigger a recalculation of accumulators
         // nBlockFirstFraudulent = 90002; // (PIVX: 908000, Phore 90002) //First block that bad serials emerged
-        nBlockLastGoodCheckpoint = 999999; // (PIVX: 891730, Phore 90005) //Last valid accumulator checkpoint
+        nBlockLastGoodCheckpoint = 999999999; // (PIVX: 891730, Phore 90005) //Last valid accumulator checkpoint
         // nBlockEnforceInvalidUTXO = 0; // (PIVX: 902850) //Start enforcing the invalid UTXO's
         // nInvalidAmountFiltered = 268200*COIN; // (PIVX: 268200) //Amount of invalid coins filtered through exchanges, that should be considered valid
         nBlockZerocoinV2 = 999999999; // (PIVX: 1153160) //!> The block that zerocoin v2 becomes active - roughly Tuesday, May 8, 2018 4:00:00 AM GMT
         nEnforceNewSporkKey = 1537963200; // (PIVX: 1525158000) //!> Sporks signed after (GMT): Wednesday, September 26,2018 12:00 PM must use the new spork key
         nRejectOldSporkKey = 1537966800; // (PIVX: 1527811200) //!> Fully reject old spork key after (GMT): Wednesday, September 26,2018 12:00 PM
-        nBlockStakeModifierlV2 = 1967000;
+        nBlockStakeModifierlV2 = 1000000;
         // Public coin spend enforcement
-        nPublicZCSpends = 1880000;
+        nPublicZCSpends = 999999999;
 
         const char* pszTimestamp = "Bitcoin Block #540723:  000000000000000000200b9c401b3022de17cd305ba6ef9ce5bade07f9f5ebe5";
         CMutableTransaction txNew;
@@ -290,9 +290,9 @@ public:
         nBlockZerocoinV2 = 999999999; //!> The block that zerocoin v2 becomes active
         nEnforceNewSporkKey = 1537963200; // (PIVX: 1525158000) //!> Sporks signed after (GMT): Wednesday, September 26,2018 12:00 PM must use the new spork key
         nRejectOldSporkKey = 1537966800; // (PIVX: 1527811200) //!> Fully reject old spork key after (GMT): Wednesday, September 26,2018 12:00 PM
-        nBlockStakeModifierlV2 = 1214000;
+        nBlockStakeModifierlV2 = 1000;
         // Public coin spend enforcement
-        nPublicZCSpends = 1106100;
+        nPublicZCSpends = 999999999;
 
         //! Modify the testnet genesis block so the timestamp is valid for a later start.
         genesis.nTime = 1535104494;
