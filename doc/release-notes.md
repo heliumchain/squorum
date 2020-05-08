@@ -126,6 +126,10 @@ The options/settings UI dialog has been cleaned up to no longer show settings th
 
 The long term viability of acceptable zero-fee transaction conditions is in need of review. As such, we are temporarily disabling the ability to create zero-fee transactions.
 
+### Removal of zerocoin section from GUI
+
+sQuorum does not support the use of zerocoin transactions, and this section has been removed from the GUI and wallet options.
+
 ### Show latest block hash and datadir information tab
 
 A QoL addition has been made to the Information tab of the UI's console window, which adds the display of both the current data directory and the latest block hash seen by the client.
