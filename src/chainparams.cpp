@@ -194,6 +194,7 @@ public:
         vSeeds.push_back(CDNSSeedData("knout", "dnsseed.helium.cl"));
         vSeeds.push_back(CDNSSeedData("akcryptoguy", "sqrseed.nodevalet.io"));
         vSeeds.push_back(CDNSSeedData("NodeMasters", "squorum.seednodes.net"));
+        vSeeds.push_back(CDNSSeedData("NodeMasters", "squorum-france.seednodes.net"));
 
         // sQuorum addresses start with 'S'
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,63);
