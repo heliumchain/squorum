@@ -12,15 +12,28 @@ sQuorum Core v1.0.0 is a mandatory update for all users. This release contains n
 
 Update enforcement goes into effect at the following times:
 
-    Mainnet: Friday, August 30, 2019 4:00:00 PM GMT
+    Mainnet: Saturday, May 30, 2020 4:00:00 PM GMT
 
 Masternodes will need to be restarted once both the masternode daemon and the controller wallet have been upgraded.
 
 How to Upgrade
 ==============
 
-If you are running an older version, shut it down. Wait until it has completely shut down (which might take a few minutes for older versions), then run the installer (on Windows) or just copy over /Applications/sQuorum-Qt (on Mac) or squorumd/squorum-qt (on Linux).
+If you are running an older version, make a backup of your wallet.dat file and then shut down the wallet. Wait until it has completely shut down (which might take a few minutes for older versions), then run the installer to install the updated wallet.
 
+If you had never installed the Helium Core client, then you are finished.
+
+If you had previously been running Helium Core and used the default data folder and configuration file, you should rename the Helium data folder to sQuorum and rename the helium.conf configuration file to squorum.conf to access your old data Helium.
+
+**Where are these data files located on my computer?**
+
+Windows < Vista: C:\Documents and Settings\\%Username%\Application Data\Helium (sQuorum)
+
+Windows >= Vista: C:\Users\\%Username%\AppData\Roaming\Helium (sQuorum)
+
+Mac: ~/Library/Application Support/Helium (sQuorum)
+
+Unix: ~/.helium (squorum)
 
 Compatibility
 ==============
@@ -29,7 +42,7 @@ sQuorum Core is extensively tested on multiple operating systems using the Linux
 
 Microsoft ended support for Windows XP on [April 8th, 2014](https://www.microsoft.com/en-us/WindowsForBusiness/end-of-xp-support), No attempt is made to prevent installing or running the software on Windows XP, you can still do so at your own risk but be aware that there are known instabilities and issues. Please do not report issues about Windows XP to the issue tracker.
 
-Apple released it's last Mountain Lion update August 13, 2015, and officially ended support on [December 14, 2015](http://news.fnal.gov/2015/10/mac-os-x-mountain-lion-10-8-end-of-life-december-14/). sQuorum Core software starting with v3.2.0 will no longer run on MacOS versions prior to Yosemite (10.10). Please do not report issues about MacOS versions prior to Yosemite to the issue tracker.
+Apple released it's last Mountain Lion update August 13, 2015, and officially ended support on [December 14, 2015](http://news.fnal.gov/2015/10/mac-os-x-mountain-lion-10-8-end-of-life-december-14/). sQuorum Core software starting with v1.0 will no longer run on MacOS versions prior to Yosemite (10.10). Please do not report issues about MacOS versions prior to Yosemite to the issue tracker.
 
 sQuorum Core should also work on most other Unix-like systems but is not frequently tested on them.
 
