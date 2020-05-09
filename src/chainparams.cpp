@@ -278,6 +278,7 @@ public:
         nTargetSpacing = 1 * 60;  // sQuorum: 1 minute
         nLastPOWBlock = 400;
         nMaturity = 15;
+        nStakeMinDepth = 100;
         nMasternodeCountDrift = 2;
         // nModifierUpdateBlock = 0; //approx Mon, 17 Apr 2017 04:00:00 GMT
         nMaxMoneyOut = 21000000 * COIN;
