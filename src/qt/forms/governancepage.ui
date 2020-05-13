@@ -123,9 +123,9 @@
                <item>
                 <widget class="QScrollArea" name="scrollArea">
                  <property name="sizePolicy">
-                  <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
+                  <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
                    <horstretch>0</horstretch>
-                   <verstretch>1</verstretch>
+                   <verstretch>0</verstretch>
                   </sizepolicy>
                  </property>
                  <property name="frameShape">
@@ -151,14 +151,14 @@
                    <rect>
                     <x>0</x>
                     <y>0</y>
-                    <width>742</width>
-                    <height>282</height>
+                    <width>660</width>
+                    <height>320</height>
                    </rect>
                   </property>
                   <property name="sizePolicy">
-                   <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+                   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                     <horstretch>0</horstretch>
-                    <verstretch>1</verstretch>
+                    <verstretch>0</verstretch>
                    </sizepolicy>
                   </property>
                   <layout class="QVBoxLayout" name="proposalGrid">
@@ -180,10 +180,13 @@
                  <property name="orientation">
                   <enum>Qt::Vertical</enum>
                  </property>
+                 <property name="sizeType">
+                  <enum>QSizePolicy::Minimum</enum>
+                 </property>
                  <property name="sizeHint" stdset="0">
                   <size>
                    <width>20</width>
-                   <height>40</height>
+                   <height>0</height>
                   </size>
                  </property>
                 </spacer>

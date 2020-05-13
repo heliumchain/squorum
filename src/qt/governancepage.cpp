@@ -121,11 +121,13 @@ void GovernancePage::updateProposalList()
         if (extendedProposal == pbudgetProposal)
             proposalFrame->extend();
         proposalFrame->setMaximumHeight(150);
-        ui->proposalGrid->addWidget(proposalFrame, nRow);
+        ui->proposalGrid->addWidget(proposalFrame);
 
         ++nRow;
     }
 
+    QSpacerItem* spacer = new QSpacerItem(1,1, QSizePolicy::Expanding, QSizePolicy::Expanding);
+    ui->proposalGrid->addSpacerItem(spacer);
     ui->next_superblock_value->setText(QString::number(nBlockStart));
     ui->blocks_before_super_value->setText(QString::number(nBlocksLeft));
     ui->time_before_super_value->setText(QString::number(nBlocksLeft/60/24));
