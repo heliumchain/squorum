@@ -119,7 +119,6 @@ BASE_SCRIPTS= [
     #'wallet_listsinceblock.py',
     #'p2p_leak.py',
     'wallet_encryption.py',
-    #'feature_cltv.py',
     #'wallet_resendwallettransactions.py',
     #'feature_minchainwork.py',
     #'p2p_fingerprint.py',
@@ -135,6 +134,7 @@ EXTENDED_SCRIPTS = [
     # Longest test should go first, to favor running tests in parallel
     # vv Tests less than 20m vv
     #'feature_fee_estimation.py',
+    'feature_cltv.py',
     # vv Tests less than 5m vv
     # vv Tests less than 2m vv
     #'p2p_timeouts.py',
