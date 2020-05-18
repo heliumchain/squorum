@@ -664,7 +664,7 @@ TrxValidationStatus CBudgetManager::IsTransactionValid(const CTransaction& txNew
     TrxValidationStatus transactionStatus = TrxValidationStatus::InValid;
     int nHighestCount = 0;
     int nFivePercent = mnodeman.CountEnabled(ActiveProtocol()) / 20;
-    std::vector<CFinalizedBudget*> ret;
+    //std::vector<CFinalizedBudget*> ret;
 
     LogPrint("mnbudget","CBudgetManager::IsTransactionValid - checking %lli finalized budgets\n", mapFinalizedBudgets.size());
 
@@ -1195,7 +1195,7 @@ void CBudgetManager::ProcessMessage(CNode* pfrom, std::string& strCommand, CData
         mapSeenFinalizedBudgetVotes.insert(std::make_pair(vote.GetHash(), vote));
         if (!vote.SignatureValid(true)) {
             if (masternodeSync.IsSynced()) {
-                LogPrintf("CBudgetManager::ProcessMessage() : fbvote - signature from masternode %s invalid\n", HexStr(pmn->pubKeyMasternode));
+                LogPrintf("CBudgetManager::ProcessMessage() : fbvote - signature from masternode %s invalid\n", pmn->vin.prevout.hash.ToString());
                 Misbehaving(pfrom->GetId(), 20);
             }
             // it could just be a non-synced masternode
@@ -1208,9 +1208,9 @@ void CBudgetManager::ProcessMessage(CNode* pfrom, std::string& strCommand, CData
             vote.Relay();
             masternodeSync.AddedBudgetItem(vote.GetHash());
 
-            LogPrint("mnbudget","fbvote - new finalized budget vote - %s from masternode %s\n", vote.GetHash().ToString(), HexStr(pmn->pubKeyMasternode));
+            LogPrint("mnbudget","fbvote - new finalized budget vote - %s from masternode %s\n", vote.GetHash().ToString(), pmn->vin.prevout.hash.ToString());
         } else {
-            LogPrint("mnbudget","fbvote - rejected finalized budget vote - %s from masternode %s - %s\n", vote.GetHash().ToString(), HexStr(pmn->pubKeyMasternode), strError);
+            LogPrint("mnbudget","fbvote - rejected finalized budget vote - %s from masternode %s - %s\n", vote.GetHash().ToString(), pmn->vin.prevout.hash.ToString(), strError);
         }
     }
 }
@@ -1782,9 +1782,6 @@ bool CBudgetVote::Sign(CKey& keyMasternode, CPubKey& pubKeyMasternode)
 
 bool CBudgetVote::SignatureValid(bool fSignatureCheck)
 {
-    std::string errorMessage;
-    std::string strMessage = vin.prevout.ToStringShort() + nProposalHash.ToString() + std::to_string(nVote) + std::to_string(nTime);
-
     CMasternode* pmn = mnodeman.Find(vin);
 
     if (pmn == NULL) {
@@ -1795,6 +1792,9 @@ bool CBudgetVote::SignatureValid(bool fSignatureCheck)
     }
 
     if (!fSignatureCheck) return true;
+
+    std::string errorMessage;
+    std::string strMessage = vin.prevout.ToStringShort() + nProposalHash.ToString() + std::to_string(nVote) + std::to_string(nTime);
 
     if (!obfuScationSigner.VerifyMessage(pmn->pubKeyMasternode, vchSig, strMessage, errorMessage)) {
         LogPrint("mnbudget","CBudgetVote::SignatureValid() - Verify message failed\n");
@@ -1825,7 +1825,7 @@ CFinalizedBudget::CFinalizedBudget(const CFinalizedBudget& other)
     nFeeTXHash = other.nFeeTXHash;
     nTime = other.nTime;
     fValid = true;
-    fAutoChecked = false;
+    fAutoChecked = other.fAutoChecked;
 }
 
 bool CFinalizedBudget::AddOrUpdateVote(CFinalizedBudgetVote& vote, std::string& strError)
@@ -1890,10 +1890,11 @@ void CFinalizedBudget::CheckAndVote()
         LogPrint("mnbudget","CFinalizedBudget::AutoCheck fMasterNode=%d fAutoChecked=%d\n", fMasterNode, fAutoChecked);
         return;
     }
-
+    static int rnd = -1;
+    if (rnd == -1) { rnd = rand() % 4;}
     // Do this 1 in 4 blocks -- spread out the voting activity
     // -- this function is only called every fourteenth block, so this is really 1 in 56 blocks
-    if (rand() % 4 != 0) {
+    if ((pindexPrev->nHeight / 14) % 4 != rnd) {
         LogPrint("mnbudget","CFinalizedBudget::AutoCheck - waiting\n");
         return;
     }
@@ -2312,18 +2313,18 @@ bool CFinalizedBudgetVote::Sign(CKey& keyMasternode, CPubKey& pubKeyMasternode)
 
 bool CFinalizedBudgetVote::SignatureValid(bool fSignatureCheck)
 {
-    std::string errorMessage;
-
-    std::string strMessage = vin.prevout.ToStringShort() + nBudgetHash.ToString() + std::to_string(nTime);
-
     CMasternode* pmn = mnodeman.Find(vin);
 
     if (pmn == NULL) {
-        LogPrint("mnbudget","CFinalizedBudgetVote::SignatureValid() - Unknown Masternode %s\n", strMessage);
+        LogPrint("mnbudget","CFinalizedBudgetVote::SignatureValid() - Unknown Masternode %s\n", vin.prevout.hash.ToString());
         return false;
     }
 
     if (!fSignatureCheck) return true;
+
+    std::string errorMessage;
+
+    std::string strMessage = vin.prevout.ToStringShort() + nBudgetHash.ToString() + std::to_string(nTime);
 
     if (!obfuScationSigner.VerifyMessage(pmn->pubKeyMasternode, vchSig, strMessage, errorMessage)) {
         LogPrint("mnbudget","CFinalizedBudgetVote::SignatureValid() - Verify message failed %s %s\n", strMessage, errorMessage);
