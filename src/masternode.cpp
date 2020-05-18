@@ -662,7 +662,7 @@ bool CMasternodeBroadcast::Sign(CKey& keyCollateralAddress)
     sigTime = GetAdjustedTime();
 
     std::string strMessage;
-    if(chainActive.Height() < Params().Zerocoin_Block_V2_Start())
+    if (!Params().IsStakeModifierV2(chainActive.Height()))
     	strMessage = GetOldStrMessage();
     else
     	strMessage = GetNewStrMessage();
