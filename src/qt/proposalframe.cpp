@@ -92,7 +92,7 @@ void ProposalFrame::refresh()
         strProposalURL->setObjectName(QStringLiteral("strProposalURL"));
         QString strURL = QString::fromStdString(proposal->GetURL());
         QString strClick = tr("Open proposal page in browser");
-        strProposalURL->setText("<a href=\"" + strURL + "\">" + strClick + "</a>");
+        strProposalURL->setText("<a href=\"" + strURL + "\">" + strURL + "</a>");
         strProposalURL->setTextFormat(Qt::RichText);
         strProposalURL->setTextInteractionFlags(Qt::TextBrowserInteraction);
         strProposalURL->setOpenExternalLinks(false);
