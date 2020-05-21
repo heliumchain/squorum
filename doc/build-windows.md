@@ -73,7 +73,7 @@ If you want to build the windows installer with `make deploy` you need [NSIS](ht
 
 Acquire the source in the usual way:
 
-    git clone https://github.com/heliumchain/helium.git
+    git clone https://github.com/heliumchain/squorum.git
     cd squorum
 
 ## Building for 64-bit Windows

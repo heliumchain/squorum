@@ -1,13 +1,13 @@
 sQuorum Core version 3.0.5 is now available from:
 
-  <https://github.com/heliumchain/helium/releases>
+  <https://github.com/heliumchain/squorum/releases>
 
 This is a new minor-revision version release, including various bug fixes and
 performance improvements, as well as updated translations.
 
 Please report bugs using the issue tracker at github:
 
-  <https://github.com/heliumchain/helium/issues>
+  <https://github.com/heliumchain/squorum/issues>
 
 
 Mandatory Update

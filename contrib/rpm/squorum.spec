@@ -24,18 +24,18 @@ URL:		https://squorum.org/
 Source0:	https://squorum.org/bin/squorum-core-%{version}/squorum-%{version}.tar.gz
 Source1:	http://download.oracle.com/berkeley-db/db-%{bdbv}.NC.tar.gz
 
-Source10:	https://raw.githubusercontent.com/heliumchain/helium/v%{version}/contrib/debian/examples/squorum.conf
+Source10:	https://raw.githubusercontent.com/heliumchain/squorum/v%{version}/contrib/debian/examples/squorum.conf
 
 #man pages
-Source20:	https://raw.githubusercontent.com/heliumchain/helium/v%{version}/doc/man/squorumd.1
-Source21:	https://raw.githubusercontent.com/heliumchain/helium/v%{version}/doc/man/squorum-cli.1
-Source22:	https://raw.githubusercontent.com/heliumchain/helium/v%{version}/doc/man/squorum-qt.1
+Source20:	https://raw.githubusercontent.com/heliumchain/squorum/v%{version}/doc/man/squorumd.1
+Source21:	https://raw.githubusercontent.com/heliumchain/squorum/v%{version}/doc/man/squorum-cli.1
+Source22:	https://raw.githubusercontent.com/heliumchain/squorum/v%{version}/doc/man/squorum-qt.1
 
 #selinux
-Source30:	https://raw.githubusercontent.com/heliumchain/helium/v%{version}/contrib/rpm/squorum.te
+Source30:	https://raw.githubusercontent.com/heliumchain/squorum/v%{version}/contrib/rpm/squorum.te
 # Source31 - what about squorum-tx and bench_squorum ???
-Source31:	https://raw.githubusercontent.com/heliumchain/helium/v%{version}/contrib/rpm/squorum.fc
-Source32:	https://raw.githubusercontent.com/heliumchain/helium/v%{version}/contrib/rpm/squorum.if
+Source31:	https://raw.githubusercontent.com/heliumchain/squorum/v%{version}/contrib/rpm/squorum.fc
+Source32:	https://raw.githubusercontent.com/heliumchain/squorum/v%{version}/contrib/rpm/squorum.if
 
 Source100:	https://upload.wikimedia.org/wikipedia/commons/4/46/Bitcoin.svg
 

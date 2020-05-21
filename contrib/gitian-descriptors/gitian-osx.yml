@@ -29,7 +29,7 @@ packages:
 - "python3-setuptools"
 - "fonts-tuffy"
 remotes:
-- "url": "https://github.com/heliumchain/helium.git"
+- "url": "https://github.com/heliumchain/squorum.git"
   "dir": "squorum"
 files:
 - "MacOSX10.11.sdk.tar.gz"

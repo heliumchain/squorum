@@ -1,8 +1,8 @@
-Helium Core version *1.0.0* is now available from:  <https://github.com/heliumchain/helium/releases>
+Helium Core version *1.0.0* is now available from:  <https://github.com/heliumchain/squorum/releases>
 
 This is a new major version release, including various bug fixes and performance improvements.
 
-Please report bugs using the issue tracker at github: <https://github.com/heliumchain/helium/issues>
+Please report bugs using the issue tracker at github: <https://github.com/heliumchain/squorum/issues>
 
 
 Mandatory Update
@@ -160,7 +160,7 @@ The `getwalletinfo` RPC command now outputs the configured transaction fee (`pay
 
 The `masternode` and `mnbudget` RPC commands, which were marked as deprecated in sQuorum Core v2.3.1 (September 19, 2017), have now been completely removed from sQuorum Core.
 
-Several new commands were added in v2.3.1 to replace the two aforementioned commands, reference the [v2.3.1 Release Notes](https://github.com/heliumchain/helium/blob/master/doc/release-notes/release-notes-2.3.1.md#rpc-changes) for further details.
+Several new commands were added in v2.3.1 to replace the two aforementioned commands, reference the [v2.3.1 Release Notes](https://github.com/heliumchain/squorum/blob/master/doc/release-notes/release-notes-2.3.1.md#rpc-changes) for further details.
 
 ### New `getblockindexstats` Command
 

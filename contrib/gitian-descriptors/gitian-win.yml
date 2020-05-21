@@ -24,7 +24,7 @@ packages:
 - "python3"
 - "rename"
 remotes:
-- "url": "https://github.com/heliumchain/helium.git"
+- "url": "https://github.com/heliumchain/squorum.git"
   "dir": "squorum"
 files: []
 script: |
