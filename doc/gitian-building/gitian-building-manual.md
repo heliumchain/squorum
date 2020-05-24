@@ -1,10 +1,10 @@
 Getting and building the inputs
 --------------------------------
 
-At this point you have two options, you can either use the automated script (found in [https://github.com/heliumchain/helium/blob/master/contrib/gitian-build.py](https://github.com/heliumchain/helium/blob/master/contrib/gitian-build.py), only works in Debian/Ubuntu) or you could manually do everything by following this guide.
+At this point you have two options, you can either use the automated script (found in [https://github.com/heliumchain/squorum/blob/master/contrib/gitian-build.py](https://github.com/heliumchain/squorum/blob/master/contrib/gitian-build.py), only works in Debian/Ubuntu) or you could manually do everything by following this guide.
 If you are using the automated script, then run it with the `--setup` command. Afterwards, run it with the `--build` command (example: `contrib/gitian-build.py -b signer 0.15.0`). Otherwise ignore this.
 
-Follow the instructions in [https://github.com/heliumchain/helium/blob/master/doc/release-process.md](https://github.com/heliumchain/helium/blob/master/doc/release-process.md#fetch-and-create-inputs-first-time-or-when-dependency-versions-change)
+Follow the instructions in [https://github.com/heliumchain/squorum/blob/master/doc/release-process.md](https://github.com/heliumchain/squorum/blob/master/doc/release-process.md#fetch-and-create-inputs-first-time-or-when-dependency-versions-change)
 in the squorum repository under 'Fetch and create inputs' to install sources which require
 manual intervention. Also optionally follow the next step: 'Seed the Gitian sources cache
 and offline git repositories' which will fetch the remaining files required for building
@@ -14,7 +14,7 @@ Building sQuorum Core
 ----------------
 
 To build sQuorum Core (for Linux, OS X and Windows) just follow the steps under 'perform
-Gitian builds' in [https://github.com/heliumchain/helium/blob/master/doc/release-process.md](https://github.com/heliumchain/helium/blob/master/doc/release-process.md#setup-and-perform-gitian-builds) in the helium repository.
+Gitian builds' in [https://github.com/heliumchain/squorum/blob/master/doc/release-process.md](https://github.com/heliumchain/squorum/blob/master/doc/release-process.md#setup-and-perform-gitian-builds) in the helium repository.
 
 This may take some time as it will build all the dependencies needed for each descriptor.
 These dependencies will be cached after a successful build to avoid rebuilding them when possible.
@@ -33,7 +33,7 @@ Output from `gbuild` will look something like
     remote: Total 57959 (delta 0), reused 0 (delta 0), pack-reused 57958
     Receiving objects: 100% (57959/57959), 53.76 MiB | 484.00 KiB/s, done.
     Resolving deltas: 100% (41590/41590), done.
-    From https://github.com/heliumchain/helium
+    From https://github.com/heliumchain/squorum
     ... (new tags, new branch etc)
     --- Building for trusty amd64 ---
     Stopping target if it is up
@@ -59,7 +59,7 @@ and inputs.
 
 For example:
 ```bash
-URL=https://github.com/heliumchain/helium.git
+URL=https://github.com/heliumchain/squorum.git
 COMMIT=2014_03_windows_unicode_path
 ./bin/gbuild --commit squorum=${COMMIT} --url squorum=${URL} ../squorum/contrib/gitian-descriptors/gitian-linux.yml
 ./bin/gbuild --commit squorum=${COMMIT} --url squorum=${URL} ../squorum/contrib/gitian-descriptors/gitian-win.yml
@@ -109,7 +109,7 @@ Then when building, override the remote URLs that gbuild would otherwise pull fr
 ```bash
 
 cd /some/root/path/
-git clone https://github.com/heliumchain/helium-detached-sigs.git
+git clone https://github.com/heliumchain/squorum-detached-sigs.git
 
 BTCPATH=/some/root/path/squorum
 SIGPATH=/some/root/path/squorum-detached-sigs

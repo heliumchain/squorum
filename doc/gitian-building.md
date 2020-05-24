@@ -51,7 +51,7 @@ Please refer to the following documents to set up the operating systems and Giti
 
 Non-Debian / Ubuntu, Manual and Offline Building
 ------------------------------------------------
-The instructions below use the automated script [gitian-build.py](https://github.com/heliumchain/helium/blob/master/contrib/gitian-build.py) which only works in Debian/Ubuntu. For manual steps and instructions for fully offline signing, see [this guide](./gitian-building/gitian-building-manual.md).
+The instructions below use the automated script [gitian-build.py](https://github.com/heliumchain/squorum/blob/master/contrib/gitian-build.py) which only works in Debian/Ubuntu. For manual steps and instructions for fully offline signing, see [this guide](./gitian-building/gitian-building-manual.md).
 
 MacOS code signing
 ------------------

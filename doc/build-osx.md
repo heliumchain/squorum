@@ -43,7 +43,7 @@ Build sQuorum Core
 
 1. Clone the sQuorum Core source code:
 
-        git clone https://github.com/heliumchain/helium
+        git clone https://github.com/heliumchain/squorum
         cd squorum
 
 2.  Make the Homebrew OpenSSL headers visible to the configure script  (do ```brew info openssl``` to find out why this is necessary, or if you use Homebrew with installation folders different from the default).

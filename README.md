@@ -1,7 +1,7 @@
 sQuorum Core integration/staging repository
 =====================================
 
-[![Build Status](https://travis-ci.org/heliumchain/helium.svg?branch=squorum-1.0)](https://travis-ci.org/heliumchain/helium) [![GitHub tag](https://img.shields.io/github/tag/heliumchain/helium.svg)](https://github.com/heliumchain/helium/tree/v0.16.0)
+[![Build Status](https://travis-ci.org/heliumchain/squorum.svg?branch=squorum-1.0)](https://travis-ci.org/heliumchain/squorum) [![GitHub tag](https://img.shields.io/github/tag/heliumchain/squorum.svg)](https://github.com/heliumchain/squorum/tree/v0.16.0)
 
 sQuorum is an open source crypto-currency focused on fast private transactions with low transaction fees & environmental footprint.  It utilizes a custom Proof of Stake protocol for securing its network and uses an innovative variable seesaw reward mechanism that dynamically balances 90% of its block reward size between masternodes and staking nodes and 10% dedicated for budget proposals. The goal of sQuorum is to achieve a decentralized sustainable crypto currency with near instant full-time private transactions, fair governance and community intelligence.
 - Fast transactions featuring guaranteed zero confirmation transactions, called _SwiftX_.

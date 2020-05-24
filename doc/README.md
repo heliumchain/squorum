@@ -26,7 +26,7 @@ Drag sQuorum-Qt to your applications folder, and then run sQuorum-Qt.
 
 ### Need Help?
 
-* See the documentation at the [Helium Wiki](https://github.com/heliumchain/helium/wiki)
+* See the documentation at the [Helium Wiki](https://github.com/heliumchain/squorum/wiki)
 for help and more information.
 * Ask for help on [BitcoinTalk](https://bitcointalk.org/index.php?topic=1262920.0) or on the [sQuorum Forum](http://forum.squorumlabs.org/).
 * Join our Discord server [Discord Server](https://discord.heliumchain.org)

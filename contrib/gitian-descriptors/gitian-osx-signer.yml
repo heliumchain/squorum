@@ -8,7 +8,7 @@ architectures:
 packages:
 - "faketime"
 remotes:
-- "url": "https://github.com/heliumchain/helium-detached-sigs.git"
+- "url": "https://github.com/heliumchain/squorum-detached-sigs.git"
   "dir": "signature"
 files:
 - "squorum-osx-unsigned.tar.gz"

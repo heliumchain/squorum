@@ -29,8 +29,8 @@ Build-Depends: debhelper,
  dh-systemd
 Standards-Version: 3.9.2
 Homepage: http://www.heliumchain.org
-Vcs-Git: git://github.com/heliumchain/helium
-Vcs-Browser: http://github.com/heliumchain/helium
+Vcs-Git: git://github.com/heliumchain/squorum
+Vcs-Browser: http://github.com/heliumchain/squorum
 
 Package: squorumd
 Architecture: any
