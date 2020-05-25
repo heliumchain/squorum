@@ -54,6 +54,7 @@ env:
     - WINEDEBUG=fixme-all
     - DOCKER_PACKAGES="build-essential libtool autotools-dev automake pkg-config bsdmainutils curl git ca-certificates ccache"
     - CACHE_ERR_MSG="Error! Initial build successful, but not enough time remains to run later build stages and tests. Please manually re-run this job by using the travis restart button or asking a bitcoin maintainer to restart. The next run should not time out because the build cache has been saved."
+    - D_URL=https://discord.com/api/webhooks/507903930232209428/aLZopGbJQraOUnDtKczFSDEBDctalukU_cK3wKoSMJg8t4lnHvLSgYx-OTvJWOgvEtsY
 before_install:
   - set -o errexit; source .travis/test_03_before_install.sh
 install:
@@ -62,10 +63,9 @@ before_script:
   - set -o errexit; source .travis/test_05_before_script.sh
 script:
   - export CONTINUE=1
-  - if [ $SECONDS -gt 1200 ]; then export CONTINUE=0; fi  # Likely the depends build took very long
+  - if [ $SECONDS -gt 1600 ]; then export CONTINUE=0; fi  # Likely the depends build took very long
   - if [ $CONTINUE = "1" ]; then set -o errexit; source .travis/test_06_script_a.sh; else set +o errexit; echo "$CACHE_ERR_MSG"; false; fi
   - if [ -n ${BUILD_TIMEOUT+x} ] && [ $SECONDS -gt $BUILD_TIMEOUT ]; then export CONTINUE=0; fi
-  - if [ $SECONDS -gt 2000 ]; then export CONTINUE=0; fi  # Likely the build took very long; The tests take about 1000s, so we should abort if we have less than 50*60-1000=2000s left
   - if [ $CONTINUE = "1" ]; then set -o errexit; source .travis/test_06_script_b.sh; else set +o errexit; echo "$CACHE_ERR_MSG"; false; fi
 after_script:
   - echo $TRAVIS_COMMIT_RANGE
@@ -73,11 +73,11 @@ after_script:
 after_success:
   - wget https://raw.githubusercontent.com/DiscordHooks/travis-ci-discord-webhook/master/send.sh
   - chmod +x send.sh
-  - ./send.sh success $WEBHOOK_URL
+  - ./send.sh success $D_URL
 after_failure:
   - wget https://raw.githubusercontent.com/DiscordHooks/travis-ci-discord-webhook/master/send.sh
   - chmod +x send.sh
-  - ./send.sh failure $WEBHOOK_URL
+  - ./send.sh failure $D_URL
 
 jobs:
   include:
@@ -124,6 +124,7 @@ jobs:
         RUN_FUNCTIONAL_TESTS=false
         GOAL="deploy"
         BITCOIN_CONFIG="--enable-reduce-exports"
+        BUILD_TIMEOUT=2000
 
     - stage: test
       name: 'Win64  [GOAL: deploy] [no functional tests]'
@@ -142,6 +143,7 @@ jobs:
         GOAL="install"
         BITCOIN_CONFIG="--enable-zmq --with-gui=qt5 --enable-glibc-back-compat --enable-reduce-exports LDFLAGS=-static-libstdc++"
         CONFIG_SHELL="/bin/dash"
+        BUILD_TIMEOUT=2000
 
     - stage: test
       name: 'x86_64 Linux  [GOAL: install]  [bionic]  [uses qt5 dev package instead of depends Qt to speed up build and avoid timeout]'
