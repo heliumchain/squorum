@@ -1,4 +1,4 @@
-Helium Core version *1.0.0* is now available from:  <https://github.com/heliumchain/squorum/releases>
+sQuorum Core version *1.0.0* is now available from:  <https://github.com/heliumchain/squorum/releases>
 
 This is a new major version release, including various bug fixes and performance improvements.
 
@@ -66,7 +66,7 @@ The minimum supported version of MacOS (OSX) has been moved from 10.8 Mountain L
 
 On Janurary 22 2019, Decentralized Systems Lab out of the University of Illinois published a study entitled “[‘Fake Stake’ attacks on chain-based Proof-of-Stake cryptocurrencies](https://medium.com/@dsl_uiuc/fake-stake-attacks-on-chain-based-proof-of-stake-cryptocurrencies-b8b05723f806)”, which outlined a type of Denial of Service attack that could take place on a number of Proof of Stake based networks by exhausting a client's RAM or Disk resources.
 
-A full report provided by PIVX developers is available on the [Helium Website](https://helium.org/fake-stake-official-helium-report/), which includes additional findings, mitigation details, and resources for testing. This type of attack has no risk to users' privacy and does not affect their holdings.
+A full report provided by PIVX developers is available on the [PIVX Website](https://pivx.org/fake-stake-official-pivx-report/), which includes additional findings, mitigation details, and resources for testing. This type of attack has no risk to users' privacy and does not affect their holdings.
 
 ### BIP65 (CHECKLOCKTIMEVERIFY) Soft-Fork
 
@@ -160,7 +160,7 @@ The `getwalletinfo` RPC command now outputs the configured transaction fee (`pay
 
 The `masternode` and `mnbudget` RPC commands, which were marked as deprecated in PIVX Core v2.3.1 (September 19, 2017), have been completely removed from sQuorum Core.
 
-Several new commands were added in v2.3.1 to replace the two aforementioned commands, reference the [v2.3.1 Release Notes](https://github.com/heliumchain/squorum/blob/master/doc/release-notes/release-notes-2.3.1.md#rpc-changes) for further details.
+Several new commands were added in PIVX Core v2.3.1 to replace the two aforementioned commands, reference the [v2.3.1 Release Notes](https://github.com/heliumchain/squorum/blob/master/doc/release-notes/release-notes-2.3.1.md#rpc-changes) for further details.
 
 ### New `getblockindexstats` Command
 
