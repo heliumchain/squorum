@@ -158,7 +158,7 @@ The `getwalletinfo` RPC command now outputs the configured transaction fee (`pay
 
 ### Removal of Deprecated Commands
 
-The `masternode` and `mnbudget` RPC commands, which were marked as deprecated in sQuorum Core v2.3.1 (September 19, 2017), have now been completely removed from sQuorum Core.
+The `masternode` and `mnbudget` RPC commands, which were marked as deprecated in PIVX Core v2.3.1 (September 19, 2017), have been completely removed from sQuorum Core.
 
 Several new commands were added in v2.3.1 to replace the two aforementioned commands, reference the [v2.3.1 Release Notes](https://github.com/heliumchain/squorum/blob/master/doc/release-notes/release-notes-2.3.1.md#rpc-changes) for further details.
 
