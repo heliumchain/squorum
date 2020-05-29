@@ -228,9 +228,7 @@ bool LogAcceptCategory(const char* category)
                 ptrCategory->insert(std::string("swiftx"));
                 ptrCategory->insert(std::string("masternode"));
                 ptrCategory->insert(std::string("mnpayments"));
-                ptrCategory->insert(std::string("zero"));
                 ptrCategory->insert(std::string("mnbudget"));
-                ptrCategory->insert(std::string("precompute"));
                 ptrCategory->insert(std::string("staking"));
             }
         }
