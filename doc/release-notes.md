@@ -12,7 +12,7 @@ sQuorum Core v1.0.0 is a mandatory update for all users. This release contains n
 
 Update enforcement goes into effect at the following times:
 
-    Mainnet: Saturday, May 30, 2020 4:00:00 PM GMT
+    Mainnet: Saturday, June 30, 2020 4:00:00 PM GMT
 
 Masternodes will need to be restarted once both the masternode daemon and the controller wallet have been upgraded.
 
