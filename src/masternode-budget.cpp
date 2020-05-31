@@ -1786,7 +1786,7 @@ bool CBudgetVote::SignatureValid(bool fSignatureCheck)
 
     if (pmn == NULL) {
         if (fDebug){
-            LogPrint("mnbudget","CBudgetVote::SignatureValid() - Unknown Masternode - %s\n", vin.prevout.hash.ToString());
+            LogPrint("debug","CBudgetVote::SignatureValid() - Unknown Masternode - %s\n", vin.prevout.hash.ToString());
         }
         return false;
     }
@@ -2316,7 +2316,7 @@ bool CFinalizedBudgetVote::SignatureValid(bool fSignatureCheck)
     CMasternode* pmn = mnodeman.Find(vin);
 
     if (pmn == NULL) {
-        LogPrint("mnbudget","CFinalizedBudgetVote::SignatureValid() - Unknown Masternode %s\n", vin.prevout.hash.ToString());
+        LogPrint("debug","CFinalizedBudgetVote::SignatureValid() - Unknown Masternode %s\n", vin.prevout.hash.ToString());
         return false;
     }
 
