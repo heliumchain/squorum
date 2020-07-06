@@ -57,7 +57,7 @@ static const int MAX_URI_LENGTH = 255;
 #define SPINNER_FRAMES 35
 
 #define QAPP_ORG_NAME "sQuorum"
-#define QAPP_ORG_DOMAIN "heliumchain.org"
+#define QAPP_ORG_DOMAIN "squorum.net"
 #define QAPP_APP_NAME_DEFAULT "sQuorum-Qt"
 #define QAPP_APP_NAME_TESTNET "sQuorum-Qt-testnet"
 

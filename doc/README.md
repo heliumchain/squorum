@@ -3,7 +3,7 @@ sQuorum Core
 
 Setup
 ---------------------
-[Helium Core](http://heliumchain.org/wallet) is the original Helium client and it builds the backbone of the network. However, it downloads and stores the entire history of Helium transactions; depending on the speed of your computer and network connection, the synchronization process can take anywhere from a few hours to a day or more. Thankfully you only have to do this once.
+[sQuorum Core](http://squorum.net/wallet) is the original sQuorum client and it builds the backbone of the network. However, it downloads and stores the entire history of sQuorum transactions; depending on the speed of your computer and network connection, the synchronization process can take anywhere from a few hours to a day or more. Thankfully you only have to do this once.
 
 Running
 ---------------------
@@ -29,7 +29,7 @@ Drag sQuorum-Qt to your applications folder, and then run sQuorum-Qt.
 * See the documentation at the [Helium Wiki](https://github.com/heliumchain/squorum/wiki)
 for help and more information.
 * Ask for help on [BitcoinTalk](https://bitcointalk.org/index.php?topic=1262920.0) or on the [sQuorum Forum](http://forum.squorumlabs.org/).
-* Join our Discord server [Discord Server](https://discord.heliumchain.org)
+* Join our sQuorum Community [sQuorum Community](https://squorum.net/community/)
 
 Building
 ---------------------

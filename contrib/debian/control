@@ -28,7 +28,7 @@ Build-Depends: debhelper,
  libzmq3-dev,
  dh-systemd
 Standards-Version: 3.9.2
-Homepage: http://www.heliumchain.org
+Homepage: http://squorum.net
 Vcs-Git: git://github.com/heliumchain/squorum
 Vcs-Browser: http://github.com/heliumchain/squorum
 
