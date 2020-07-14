@@ -145,6 +145,16 @@ void ProposalFrame::refresh()
         QLabel* noVotes = new QLabel();
         noVotes->setText(QString::number(proposal->GetNays()));
 
+        int mnCount = mnodeman.CountEnabled();
+        int votesNeeded = 0;
+        int voteGap = 0;
+        if (mnCount > 0) {
+            voteGap = ceil( (mnCount / 10) - (proposal->GetYeas() - proposal->GetNays()) );
+            votesNeeded = (voteGap < 0) ? 0 : voteGap;
+        }
+        QLabel* labelvotesNeeded = new QLabel();
+        labelvotesNeeded->setText(tr("Votes Needed:") + QString::number(votesNeeded));
+
         proposalVotes->addWidget(yesButton);
         proposalVotes->addWidget(labelYesVotes);
         proposalVotes->addWidget(yesVotes);
@@ -156,6 +166,8 @@ void ProposalFrame::refresh()
         proposalVotes->addWidget(labelNoVotes);
         proposalVotes->addWidget(noVotes);
         proposalVotes->addWidget(noButton);
+        proposalVotes->addStretch();
+        proposalVotes->addWidget(labelvotesNeeded);
         proposalItem->addLayout(proposalVotes);
     } else
     {
