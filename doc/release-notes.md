@@ -84,7 +84,7 @@ A new 256-bit modifier for the proof of stake protocol has been defined, `CBlock
 It is computed at every block, by taking the hash of the modifier of previous block along with the coinstake input.
 To meet the protocol, the PoS kernel must comprise the modifier of the previous block.
 
-Changeover enforcement of this new modifier is set to occur at block `1000` for testnet and block `1000000` for mainnet.
+Changeover enforcement of this new modifier is set to occur at block `1000` for testnet and block `1130000` for mainnet.
 
 ### Block index batch writing
 
