@@ -6,7 +6,9 @@ sQuorum Core integration/staging repository
 
 ## What we believe
 
-We believe in the power of community and that a community that shares knowledge, skills and experience is a strong community. 
+We believe in the power of community.
+
+We believe that a community that shares knowledge, skills and experience is a strong community.
 
 We believe that an open source approach to solving a problem results in a high-quality solution that has a higher chance of solving real world problems.
 
