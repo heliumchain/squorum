@@ -144,6 +144,7 @@ public:
     // int Block_Enforce_Invalid() const { return nBlockEnforceInvalidUTXO; }
     int Zerocoin_Block_V2_Start() const { return nBlockZerocoinV2; }
     bool IsStakeModifierV2(const int nHeight) const { return nHeight >= nBlockStakeModifierlV2; }
+    int BIP65ActivationHeight() const { return nBIP65ActivationHeight; }
 
     int Zerocoin_Block_Public_Spend_Enabled() const { return nPublicZCSpends; }
 
@@ -210,6 +211,7 @@ protected:
     int nZerocoinStartTime;
     int nZerocoinRequiredStakeDepth;
     int64_t nProposalEstablishmentTime;
+    int nBIP65ActivationHeight;
 
     // // int nBlockEnforceSerialRange;
     int nBlockRecalculateAccumulators;

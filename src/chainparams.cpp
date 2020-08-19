@@ -169,6 +169,7 @@ public:
         nEnforceNewSporkKey = 1537963200; // (PIVX: 1525158000) //!> Sporks signed after (GMT): Wednesday, September 26,2018 12:00 PM must use the new spork key
         nRejectOldSporkKey = 1537966800; // (PIVX: 1527811200) //!> Fully reject old spork key after (GMT): Wednesday, September 26,2018 12:00 PM
         nBlockStakeModifierlV2 = 1130000;
+        nBIP65ActivationHeight = 1000000;
         // Public coin spend enforcement
         nPublicZCSpends = 999999999;
 
@@ -294,6 +295,7 @@ public:
         nEnforceNewSporkKey = 1537963200; // (PIVX: 1525158000) //!> Sporks signed after (GMT): Wednesday, September 26,2018 12:00 PM must use the new spork key
         nRejectOldSporkKey = 1537966800; // (PIVX: 1527811200) //!> Fully reject old spork key after (GMT): Wednesday, September 26,2018 12:00 PM
         nBlockStakeModifierlV2 = 1000;
+        nBIP65ActivationHeight = 1000;
         // Public coin spend enforcement
         nPublicZCSpends = 999999999;
 
