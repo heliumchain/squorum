@@ -2379,10 +2379,10 @@ bool CWallet::CreateCoinStake(
     // Block time.
     nTxNewTime = GetAdjustedTime();
     // If the block time is in the future, then starts there.
-    if (pindexPrev->nTime > nTxNewTime) {
+/*    if (pindexPrev->nTime > nTxNewTime) {
         nTxNewTime = pindexPrev->nTime;
     }
-
+*/
     for (std::unique_ptr<CStakeInput>& stakeInput : listInputs) {
         nCredit = 0;
         // Make sure the wallet is unlocked and shutdown hasn't been requested
