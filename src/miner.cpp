@@ -641,7 +641,7 @@ int nMintableLastCheck = 0;
 void BitcoinMiner(CWallet* pwallet, bool fProofOfStake)
 {
     LogPrintf("sQuorumMiner started\n");
-    SetThreadPriority(THREAD_PRIORITY_LOWEST);
+    //SetThreadPriority(THREAD_PRIORITY_LOWEST);
     RenameThread("squorum-miner");
 
     // Each thread has its own key and counter
@@ -712,12 +712,12 @@ void BitcoinMiner(CWallet* pwallet, bool fProofOfStake)
 
         //Stake miner main
         if (fProofOfStake) {
-            SetThreadPriority(THREAD_PRIORITY_NORMAL);
+            //SetThreadPriority(THREAD_PRIORITY_NORMAL);
             if (!ProcessBlockFound(pblock, *pwallet)) {
                 fLastLoopOrphan = true;
                 continue;
             }
-            SetThreadPriority(THREAD_PRIORITY_LOWEST);
+            //SetThreadPriority(THREAD_PRIORITY_LOWEST);
 
             continue;
         }
@@ -807,6 +807,7 @@ void static ThreadBitcoinMiner(void* parg)
 {
     boost::this_thread::interruption_point();
     CWallet* pwallet = (CWallet*)parg;
+    SetThreadPriority(THREAD_PRIORITY_LOWEST);
     try {
         BitcoinMiner(pwallet, false);
         boost::this_thread::interruption_point();
