@@ -143,7 +143,7 @@ CBlockTemplate* CreateNewBlock(const CScript& scriptPubKeyIn, CWallet* pwallet, 
         if (fZerocoinActive)
             pblock->nVersion = 5;
         else
-            pblock->nVersion = 3;
+            pblock->nVersion = 4;
 
         pblock->nVersion = GetArg("-blockversion", pblock->nVersion);
     }
