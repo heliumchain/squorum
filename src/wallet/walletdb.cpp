@@ -1486,7 +1486,7 @@ bool CWalletDB::ErasePrecompute(const uint256& hash)
 std::map<uint256, std::vector<std::pair<uint256, uint32_t> > > CWalletDB::MapMintPool()
 {
     std::map<uint256, std::vector<std::pair<uint256, uint32_t> > > mapPool;
-    Dbc* pcursor = GetCursor();
+/*    Dbc* pcursor = GetCursor();
     if (!pcursor)
         throw std::runtime_error(std::string(__func__)+" : cannot create DB cursor");
     unsigned int fFlags = DB_SET_RANGE;
@@ -1534,7 +1534,7 @@ std::map<uint256, std::vector<std::pair<uint256, uint32_t> > > CWalletDB::MapMin
         }
     }
 
-    pcursor->close();
+    pcursor->close();*/
 
     return mapPool;
 }
@@ -1542,7 +1542,7 @@ std::map<uint256, std::vector<std::pair<uint256, uint32_t> > > CWalletDB::MapMin
 std::list<CDeterministicMint> CWalletDB::ListDeterministicMints()
 {
     std::list<CDeterministicMint> listMints;
-    Dbc* pcursor = GetCursor();
+/*    Dbc* pcursor = GetCursor();
     if (!pcursor)
         throw std::runtime_error(std::string(__func__)+" : cannot create DB cursor");
     unsigned int fFlags = DB_SET_RANGE;
@@ -1578,14 +1578,14 @@ std::list<CDeterministicMint> CWalletDB::ListDeterministicMints()
         listMints.emplace_back(mint);
     }
 
-    pcursor->close();
+    pcursor->close();*/
     return listMints;
 }
 
 std::list<CZerocoinMint> CWalletDB::ListMintedCoins()
 {
     std::list<CZerocoinMint> listPubCoin;
-    Dbc* pcursor = GetCursor();
+/*    Dbc* pcursor = GetCursor();
     if (!pcursor)
         throw std::runtime_error(std::string(__func__)+" : cannot create DB cursor");
     unsigned int fFlags = DB_SET_RANGE;
@@ -1623,14 +1623,14 @@ std::list<CZerocoinMint> CWalletDB::ListMintedCoins()
         listPubCoin.emplace_back(mint);
     }
 
-    pcursor->close();
+    pcursor->close();*/
     return listPubCoin;
 }
 
 std::list<CZerocoinSpend> CWalletDB::ListSpentCoins()
 {
     std::list<CZerocoinSpend> listCoinSpend;
-    Dbc* pcursor = GetCursor();
+/*    Dbc* pcursor = GetCursor();
     if (!pcursor)
         throw std::runtime_error(std::string(__func__)+" : cannot create DB cursor");
     unsigned int fFlags = DB_SET_RANGE;
@@ -1666,7 +1666,7 @@ std::list<CZerocoinSpend> CWalletDB::ListSpentCoins()
         listCoinSpend.push_back(zerocoinSpendItem);
     }
 
-    pcursor->close();
+    pcursor->close();*/
     return listCoinSpend;
 }
 
@@ -1685,7 +1685,7 @@ std::list<CBigNum> CWalletDB::ListSpentCoinsSerial()
 std::list<CZerocoinMint> CWalletDB::ListArchivedZerocoins()
 {
     std::list<CZerocoinMint> listMints;
-    Dbc* pcursor = GetCursor();
+/*    Dbc* pcursor = GetCursor();
     if (!pcursor)
         throw std::runtime_error(std::string(__func__)+" : cannot create DB cursor");
     unsigned int fFlags = DB_SET_RANGE;
@@ -1721,14 +1721,14 @@ std::list<CZerocoinMint> CWalletDB::ListArchivedZerocoins()
         listMints.push_back(mint);
     }
 
-    pcursor->close();
+    pcursor->close();*/
     return listMints;
 }
 
 std::list<CDeterministicMint> CWalletDB::ListArchivedDeterministicMints()
 {
     std::list<CDeterministicMint> listMints;
-    Dbc* pcursor = GetCursor();
+/*    Dbc* pcursor = GetCursor();
     if (!pcursor)
         throw std::runtime_error(std::string(__func__)+" : cannot create DB cursor");
     unsigned int fFlags = DB_SET_RANGE;
@@ -1764,6 +1764,6 @@ std::list<CDeterministicMint> CWalletDB::ListArchivedDeterministicMints()
         listMints.emplace_back(dMint);
     }
 
-    pcursor->close();
+    pcursor->close();*/
     return listMints;
 }
