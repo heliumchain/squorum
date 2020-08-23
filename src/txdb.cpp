@@ -299,7 +299,7 @@ CZerocoinDB::CZerocoinDB(size_t nCacheSize, bool fMemory, bool fWipe) : CLevelDB
 
 bool CZerocoinDB::WriteCoinMintBatch(const std::vector<std::pair<libzerocoin::PublicCoin, uint256> >& mintInfo)
 {
-    CLevelDBBatch batch;
+/*    CLevelDBBatch batch;
     size_t count = 0;
     for (std::vector<std::pair<libzerocoin::PublicCoin, uint256> >::const_iterator it=mintInfo.begin(); it != mintInfo.end(); it++) {
         libzerocoin::PublicCoin pubCoin = it->first;
@@ -309,7 +309,8 @@ bool CZerocoinDB::WriteCoinMintBatch(const std::vector<std::pair<libzerocoin::Pu
     }
 
     LogPrint("zero", "Writing %u coin mints to db.\n", (unsigned int)count);
-    return WriteBatch(batch, true);
+    return WriteBatch(batch, true);*/
+    return true;
 }
 
 bool CZerocoinDB::ReadCoinMint(const CBigNum& bnPubcoin, uint256& hashTx)
@@ -330,7 +331,7 @@ bool CZerocoinDB::EraseCoinMint(const CBigNum& bnPubcoin)
 
 bool CZerocoinDB::WriteCoinSpendBatch(const std::vector<std::pair<libzerocoin::CoinSpend, uint256> >& spendInfo)
 {
-    CLevelDBBatch batch;
+/*    CLevelDBBatch batch;
     size_t count = 0;
     for (std::vector<std::pair<libzerocoin::CoinSpend, uint256> >::const_iterator it=spendInfo.begin(); it != spendInfo.end(); it++) {
         CBigNum bnSerial = it->first.getCoinSerialNumber();
@@ -342,7 +343,8 @@ bool CZerocoinDB::WriteCoinSpendBatch(const std::vector<std::pair<libzerocoin::C
     }
 
     LogPrint("zero", "Writing %u coin spends to db.\n", (unsigned int)count);
-    return WriteBatch(batch, true);
+    return WriteBatch(batch, true);*/
+    return true;
 }
 
 bool CZerocoinDB::ReadCoinSpend(const CBigNum& bnSerial, uint256& txHash)

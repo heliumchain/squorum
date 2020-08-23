@@ -1545,7 +1545,7 @@ CAmount CWallet::GetUnconfirmedBalance() const
         LOCK2(cs_main, cs_wallet);
         for (std::map<uint256, CWalletTx>::const_iterator it = mapWallet.begin(); it != mapWallet.end(); ++it) {
             const CWalletTx* pcoin = &(*it).second;
-            if (!IsFinalTx(*pcoin) || (!pcoin->IsTrusted() && pcoin->GetDepthInMainChain() == 0))
+            if (!pcoin->IsTrusted() && pcoin->GetDepthInMainChain() == 0 && pcoin->InMempool())
                 nTotal += pcoin->GetAvailableCredit();
         }
     }
@@ -1587,7 +1587,7 @@ CAmount CWallet::GetUnconfirmedWatchOnlyBalance() const
         LOCK2(cs_main, cs_wallet);
         for (std::map<uint256, CWalletTx>::const_iterator it = mapWallet.begin(); it != mapWallet.end(); ++it) {
             const CWalletTx* pcoin = &(*it).second;
-            if (!IsFinalTx(*pcoin) || (!pcoin->IsTrusted() && pcoin->GetDepthInMainChain() == 0))
+            if (!pcoin->IsTrusted() && pcoin->GetDepthInMainChain() == 0 && pcoin->InMempool())
                 nTotal += pcoin->GetAvailableWatchOnlyCredit();
         }
     }
@@ -1653,6 +1653,11 @@ void CWallet::AvailableCoins(
             int nDepth = pcoin->GetDepthInMainChain(false);
             // do not use IX for inputs that have less then 6 blockchain confirmations
             if (fUseIX && nDepth < 6)
+                continue;
+
+            // We should not consider coins which aren't at least in our mempool
+            // It's possible for these to be conflicted via ancestors which we may never be able to detect
+            if (nDepth == 0 && !pcoin->InMempool())
                 continue;
 
             // We should not consider coins which aren't at least in our mempool
@@ -2379,10 +2384,10 @@ bool CWallet::CreateCoinStake(
     // Block time.
     nTxNewTime = GetAdjustedTime();
     // If the block time is in the future, then starts there.
-    if (pindexPrev->nTime > nTxNewTime) {
+/*    if (pindexPrev->nTime > nTxNewTime) {
         nTxNewTime = pindexPrev->nTime;
     }
-
+*/
     for (std::unique_ptr<CStakeInput>& stakeInput : listInputs) {
         nCredit = 0;
         // Make sure the wallet is unlocked and shutdown hasn't been requested

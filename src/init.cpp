@@ -1722,8 +1722,8 @@ bool AppInit2()
 
         //Load zerocoin mint hashes to memory
         pwalletMain->zsqrTracker->Init();
-        zwalletMain->LoadMintPoolFromDB();
-        zwalletMain->SyncWithChain();
+        //zwalletMain->LoadMintPoolFromDB();
+        //zwalletMain->SyncWithChain();
     }  // (!fDisableWallet)
 #else  // ENABLE_WALLET
     LogPrintf("No wallet compiled in!\n");

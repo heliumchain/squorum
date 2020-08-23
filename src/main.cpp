@@ -1575,12 +1575,12 @@ bool AcceptToMemoryPool(CTxMemPool& pool, CValidationState& state, const CTransa
                          nFees, ::minRelayTxFee.GetFee(nSize) * 10000);
         }
 
-        bool fCLTVHasMajority = CBlockIndex::IsSuperMajority(5, chainActive.Tip(), Params().EnforceBlockUpgradeMajority());
+        bool fCLTVIsActivated = chainActive.Tip()->nHeight >= Params().BIP65ActivationHeight();
 
         // Check against previous transactions
         // This is done last to help prevent CPU exhaustion denial-of-service attacks.
         int flags = STANDARD_SCRIPT_VERIFY_FLAGS;
-        if (fCLTVHasMajority)
+        if (fCLTVIsActivated)
             flags |= SCRIPT_VERIFY_CHECKLOCKTIMEVERIFY;
         if (!CheckInputs(tx, state, view, true, flags, true)) {
             return error("AcceptToMemoryPool: : ConnectInputs failed %s", hash.ToString());
@@ -1596,7 +1596,7 @@ bool AcceptToMemoryPool(CTxMemPool& pool, CValidationState& state, const CTransa
         // invalid blocks, however allowing such transactions into the mempool
         // can be exploited as a DoS attack.
         flags = MANDATORY_SCRIPT_VERIFY_FLAGS;
-        if (fCLTVHasMajority)
+        if (fCLTVIsActivated)
             flags |= SCRIPT_VERIFY_CHECKLOCKTIMEVERIFY;
         if (!CheckInputs(tx, state, view, true, flags, true)) {
             return error("AcceptToMemoryPool: : BUG! PLEASE REPORT THIS! ConnectInputs failed against MANDATORY but not STANDARD flags %s", hash.ToString());
@@ -1785,12 +1785,12 @@ bool AcceptableInputs(CTxMemPool& pool, CValidationState& state, const CTransact
                 hash.ToString(),
                 nFees, ::minRelayTxFee.GetFee(nSize) * 10000);
 
-        bool fCLTVHasMajority = CBlockIndex::IsSuperMajority(5, chainActive.Tip(), Params().EnforceBlockUpgradeMajority());
+        bool fCLTVIsActivated = chainActive.Tip()->nHeight >= Params().BIP65ActivationHeight();
 
         // Check against previous transactions
         // This is done last to help prevent CPU exhaustion denial-of-service attacks.
         int flags = STANDARD_SCRIPT_VERIFY_FLAGS;
-        if (fCLTVHasMajority)
+        if (fCLTVIsActivated)
             flags |= SCRIPT_VERIFY_CHECKLOCKTIMEVERIFY;
         if (!CheckInputs(tx, state, view, false, flags, true)) {
             return error("AcceptableInputs: : ConnectInputs failed %s", hash.ToString());
@@ -2906,28 +2906,9 @@ bool ConnectBlock(const CBlock& block, CValidationState& state, CBlockIndex* pin
     bool fScriptChecks = pindex->nHeight >= Checkpoints::GetTotalBlocksEstimate();
 
     // If scripts won't be checked anyways, don't bother seeing if CLTV is activated
-    bool fCLTVHasMajority = false;
+    bool fCLTVIsActivated = false;
     if (fScriptChecks && pindex->pprev) {
-        fCLTVHasMajority = CBlockIndex::IsSuperMajority(5, pindex->pprev, Params().EnforceBlockUpgradeMajority());
-    }
-
-    // Do not allow blocks that contain transactions which 'overwrite' older transactions,
-    // unless those are already completely spent.
-    // If such overwrites are allowed, coinbases and transactions depending upon those
-    // can be duplicated to remove the ability to spend the first instance -- even after
-    // being sent to another address.
-    // See BIP30 and http://r6.ca/blog/20120206T005236Z.html for more information.
-    // This logic is not necessary for memory pool transactions, as AcceptToMemoryPool
-    // already refuses previously-known transaction ids entirely.
-    // This rule was originally applied all blocks whose timestamp was after March 15, 2012, 0:00 UTC.
-    // Now that the whole chain is irreversibly beyond that time it is applied to all blocks except the
-    // two in the chain that violate it. This prevents exploiting the issue against nodes in their
-    // initial block download.
-    for (const CTransaction& tx : block.vtx) {
-        const CCoins* coins = view.AccessCoins(tx.GetHash());
-        if (coins && !coins->IsPruned())
-            return state.DoS(100, error("ConnectBlock() : tried to overwrite transaction"),
-                REJECT_INVALID, "bad-txns-BIP30");
+        fCLTVIsActivated = pindex->pprev->nHeight >= Params().BIP65ActivationHeight();
     }
 
     CCheckQueueControl<CScriptCheck> control(fScriptChecks && nScriptCheckThreads ? &scriptcheckqueue : NULL);
@@ -3068,7 +3049,7 @@ bool ConnectBlock(const CBlock& block, CValidationState& state, CBlockIndex* pin
 
             std::vector<CScriptCheck> vChecks;
             unsigned int flags = SCRIPT_VERIFY_P2SH | SCRIPT_VERIFY_DERSIG;
-            if (fCLTVHasMajority)
+            if (fCLTVIsActivated)
                 flags |= SCRIPT_VERIFY_CHECKLOCKTIMEVERIFY;
 
             if (!CheckInputs(tx, state, view, fScriptChecks, flags, false, nScriptCheckThreads ? &vChecks : NULL))
@@ -3197,11 +3178,11 @@ bool ConnectBlock(const CBlock& block, CValidationState& state, CBlockIndex* pin
     }
 
     // Flush spend/mint info to disk
-    if (!zerocoinDB->WriteCoinSpendBatch(vSpends)) return state.Abort(("Failed to record coin serials to database"));
-    if (!zerocoinDB->WriteCoinMintBatch(vMints)) return state.Abort(("Failed to record new mints to database"));
+    //if (!zerocoinDB->WriteCoinSpendBatch(vSpends)) return state.Abort(("Failed to record coin serials to database"));
+    //if (!zerocoinDB->WriteCoinMintBatch(vMints)) return state.Abort(("Failed to record new mints to database"));
 
     //Record accumulator checksums
-    DatabaseChecksums(mapAccumulators);
+    //DatabaseChecksums(mapAccumulators);
 
     if (fTxIndex)
         if (!pblocktree->WriteTxIndex(vPos))
@@ -4290,11 +4271,13 @@ bool ContextualCheckBlockHeader(const CBlockHeader& block, CValidationState& sta
     if (pcheckpoint && nHeight < pcheckpoint->nHeight)
         return state.DoS(0, error("%s : forked chain older than last checkpoint (height %d)", __func__, nHeight));
 
-    // Reject block.nVersion=1, ..., CURRENT_VERSION-1 blocks when 95% (75% on testnet) of the network has upgraded:
-    for (int version = 2; version <= CBlockHeader::CURRENT_VERSION; version++) {
-        if (block.nVersion < version && CBlockIndex::IsSuperMajority(version, pindexPrev, Params().RejectBlockOutdatedMajority())) {
-            return state.Invalid(error("%s : rejected nVersion=%d block", __func__, block.nVersion), REJECT_OBSOLETE, "bad-version");
-        }
+    // Reject outdated version blocks
+    if ((block.nVersion < 4 && nHeight >= 1) ||
+        (block.nVersion < 5 && nHeight >= Params().BIP65ActivationHeight()) ||
+        (block.nVersion < 6 && Params().IsStakeModifierV2(nHeight)))
+    {
+        std::string stringErr = strprintf("rejected block version %d at height %d", block.nVersion, nHeight);
+        return state.Invalid(error("%s : %s", __func__, stringErr), REJECT_OBSOLETE, stringErr);
     }
 
     return true;
@@ -4337,13 +4320,12 @@ bool ContextualCheckBlock(const CBlock& block, CValidationState& state, CBlockIn
         }
 
     // Enforce block.nVersion=2 rule that the coinbase starts with serialized block height
-    // if 750 of the last 1,000 blocks are version 2 or greater (51/100 if testnet):
-    if (block.nVersion >= 2 &&
-        CBlockIndex::IsSuperMajority(2, pindexPrev, Params().EnforceBlockUpgradeMajority())) {
+    if (pindexPrev) { // pindexPrev is only null on the first block which is a version 1 block.
         CScript expect = CScript() << nHeight;
         if (block.vtx[0].vin[0].scriptSig.size() < expect.size() ||
             !std::equal(expect.begin(), expect.end(), block.vtx[0].vin[0].scriptSig.begin())) {
-            return state.DoS(100, error("%s : block height mismatch in coinbase", __func__), REJECT_INVALID, "bad-cb-height");
+            return state.DoS(100, error("%s : block height mismatch in coinbase", __func__), REJECT_INVALID,
+                             "bad-cb-height");
         }
     }
     LogPrint("debug", "ContextualCheckBlock returning true");
@@ -4704,18 +4686,6 @@ bool AcceptBlock(CBlock& block, CValidationState& state, CBlockIndex** ppindex, 
     }
 
     return true;
-}
-
-bool CBlockIndex::IsSuperMajority(int minVersion, const CBlockIndex* pstart, unsigned int nRequired)
-{
-    unsigned int nToCheck = Params().ToCheckBlockUpgradeMajority();
-    unsigned int nFound = 0;
-    for (unsigned int i = 0; i < nToCheck && nFound < nRequired && pstart != NULL; i++) {
-        if (pstart->nVersion >= minVersion)
-            ++nFound;
-        pstart = pstart->pprev;
-    }
-    return (nFound >= nRequired);
 }
 
 /** Turn the lowest '1' bit in the binary representation of a number into a '0'. */
@@ -6784,12 +6754,12 @@ bool static ProcessMessage(CNode* pfrom, std::string strCommand, CDataStream& vR
 int ActiveProtocol()
 {
     // SPORK_14 is used for 71030 (v1.0+)
-    if (IsSporkActive(SPORK_14_NEW_PROTOCOL_ENFORCEMENT))
-            return MIN_PEER_PROTO_VERSION_AFTER_ENFORCEMENT;
-
-    // SPORK_15 was used for 71020 (v0.15+), commented out now.
-    //if (IsSporkActive(SPORK_15_NEW_PROTOCOL_ENFORCEMENT_2))
+    //if (IsSporkActive(SPORK_14_NEW_PROTOCOL_ENFORCEMENT))
     //        return MIN_PEER_PROTO_VERSION_AFTER_ENFORCEMENT;
+
+    // SPORK_15 is used for 71031
+    if (IsSporkActive(SPORK_15_NEW_PROTOCOL_ENFORCEMENT_2))
+            return MIN_PEER_PROTO_VERSION_AFTER_ENFORCEMENT;
 
     return MIN_PEER_PROTO_VERSION_BEFORE_ENFORCEMENT;
 }

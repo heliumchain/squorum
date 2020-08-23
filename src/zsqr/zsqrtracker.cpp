@@ -463,7 +463,7 @@ bool CzSQRTracker::UpdateStatusInternal(const std::set<uint256>& setMempool, CMi
 
 std::set<CMintMeta> CzSQRTracker::ListMints(bool fUnusedOnly, bool fMatureOnly, bool fUpdateStatus, bool fWrongSeed, bool fExcludeV1)
 {
-    CWalletDB walletdb(strWalletFile);
+/*    CWalletDB walletdb(strWalletFile);
     if (fUpdateStatus) {
         std::list<CZerocoinMint> listMintsDB = walletdb.ListMintedCoins();
         for (auto& mint : listMintsDB)
@@ -482,9 +482,9 @@ std::set<CMintMeta> CzSQRTracker::ListMints(bool fUnusedOnly, bool fMatureOnly, 
         LogPrint("zero", "%s: added %d dzsqr from DB\n", __func__, listDeterministicDB.size());
     }
 
-    std::vector<CMintMeta> vOverWrite;
+    std::vector<CMintMeta> vOverWrite;*/
     std::set<CMintMeta> setMints;
-    std::set<uint256> setMempool;
+/*    std::set<uint256> setMempool;
     {
         LOCK(mempool.cs);
         mempool.getTransactions(setMempool);
@@ -526,7 +526,7 @@ std::set<CMintMeta> CzSQRTracker::ListMints(bool fUnusedOnly, bool fMatureOnly, 
 
     //overwrite any updates
     for (CMintMeta& meta : vOverWrite)
-        UpdateState(meta);
+        UpdateState(meta);*/
 
     return setMints;
 }

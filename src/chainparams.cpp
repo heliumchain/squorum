@@ -60,12 +60,13 @@ static Checkpoints::MapCheckpoints mapCheckpoints =
     (32848, uint256("352431d65a69b3425ce508cfbbff077c8fdc2833a84e6e239f0ba8e7300e9744"))
     (31562, uint256("7738a178f95139b2cd6b2120b19584cc17a2a28a00962b5d28978cd199427821"))
     (126438, uint256("7f0c69501d91e4a4ed413bf9942972cf489e79034a0af4a6440fa513c037140d"))
-    (862000, uint256("18f02da3b76f9d66474a890438344b0587a2f2b2272e845fa940e4e2cf83ca3c"));
+    (862000, uint256("18f02da3b76f9d66474a890438344b0587a2f2b2272e845fa940e4e2cf83ca3c"))
+    (1011360, uint256("a3b68cc2be16360617c1fb6d672ad16f66e8f2c1cae5441c198a8c8121249a6c"));
 
 static const Checkpoints::CCheckpointData data = {
     &mapCheckpoints,
-    1588866189, // * UNIX timestamp of last checkpoint block
-    1790696,      // * total number of transactions between genesis and last checkpoint
+    1597873950, // * UNIX timestamp of last checkpoint block
+    2133199,      // * total number of transactions between genesis and last checkpoint
                 //   (the tx=... number in the SetBestChain debug.log lines)
     2000        // * estimated number of transactions per day after checkpoint
 };
@@ -138,9 +139,6 @@ public:
         bnProofOfWorkLimit = ~uint256(0) >> 20; // sQuorum starting difficulty is 1 / 2^12
         nSubsidyHalvingInterval = 210240;
         nMaxReorganizationDepth = 100;
-        nEnforceBlockUpgradeMajority = 8100; // 75%
-        nRejectBlockOutdatedMajority = 10260; // 95%
-        nToCheckBlockUpgradeMajority = 10800; // Approximate expected amount of blocks in 7 days (1440*7.5)
         nMinerThreads = 0;
         nTargetSpacing = 1 * 60;        // 1 minute
         nMaturity = 100;
@@ -169,6 +167,7 @@ public:
         nEnforceNewSporkKey = 1537963200; // (PIVX: 1525158000) //!> Sporks signed after (GMT): Wednesday, September 26,2018 12:00 PM must use the new spork key
         nRejectOldSporkKey = 1537966800; // (PIVX: 1527811200) //!> Fully reject old spork key after (GMT): Wednesday, September 26,2018 12:00 PM
         nBlockStakeModifierlV2 = 1130000;
+        nBIP65ActivationHeight = 1000000;
         // Public coin spend enforcement
         nPublicZCSpends = 999999999;
 
@@ -271,9 +270,6 @@ public:
         pchMessageStart[3] = 0x0e;
         vAlertPubKey = ParseHex("");
         nDefaultPort = 19009;
-        nEnforceBlockUpgradeMajority = 4320; // 75%
-        nRejectBlockOutdatedMajority = 5472; // 95%
-        nToCheckBlockUpgradeMajority = 5760; // 4 days
         nMinerThreads = 0;
         nTargetSpacing = 1 * 60;  // sQuorum: 1 minute
         nLastPOWBlock = 400;
@@ -294,6 +290,7 @@ public:
         nEnforceNewSporkKey = 1537963200; // (PIVX: 1525158000) //!> Sporks signed after (GMT): Wednesday, September 26,2018 12:00 PM must use the new spork key
         nRejectOldSporkKey = 1537966800; // (PIVX: 1527811200) //!> Fully reject old spork key after (GMT): Wednesday, September 26,2018 12:00 PM
         nBlockStakeModifierlV2 = 1000;
+        nBIP65ActivationHeight = 1000;
         // Public coin spend enforcement
         nPublicZCSpends = 999999999;
 
@@ -368,9 +365,6 @@ public:
         pchMessageStart[3] = 0x0e;
         nDefaultPort = 19004;
         nSubsidyHalvingInterval = 150;
-        nEnforceBlockUpgradeMajority = 750;
-        nRejectBlockOutdatedMajority = 950;
-        nToCheckBlockUpgradeMajority = 1000;
         nMinerThreads = 1;
         nTargetSpacing = 1 * 60;        // sQuorum: 1 minutes
         bnProofOfWorkLimit = ~uint256(0) >> 1;
@@ -451,9 +445,6 @@ public:
 
     //! Published setters to allow changing values in unit test cases
     virtual void setSubsidyHalvingInterval(int anSubsidyHalvingInterval) { nSubsidyHalvingInterval = anSubsidyHalvingInterval; }
-    virtual void setEnforceBlockUpgradeMajority(int anEnforceBlockUpgradeMajority) { nEnforceBlockUpgradeMajority = anEnforceBlockUpgradeMajority; }
-    virtual void setRejectBlockOutdatedMajority(int anRejectBlockOutdatedMajority) { nRejectBlockOutdatedMajority = anRejectBlockOutdatedMajority; }
-    virtual void setToCheckBlockUpgradeMajority(int anToCheckBlockUpgradeMajority) { nToCheckBlockUpgradeMajority = anToCheckBlockUpgradeMajority; }
     virtual void setDefaultConsistencyChecks(bool afDefaultConsistencyChecks) { fDefaultConsistencyChecks = afDefaultConsistencyChecks; }
     virtual void setAllowMinDifficultyBlocks(bool afAllowMinDifficultyBlocks) { fAllowMinDifficultyBlocks = afAllowMinDifficultyBlocks; }
     virtual void setSkipProofOfWorkCheck(bool afSkipProofOfWorkCheck) { fSkipProofOfWorkCheck = afSkipProofOfWorkCheck; }

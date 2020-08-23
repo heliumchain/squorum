@@ -68,18 +68,7 @@ int GetChecksumHeight(uint32_t nChecksum, libzerocoin::CoinDenomination denomina
 
 bool GetAccumulatorValueFromChecksum(uint32_t nChecksum, bool fMemoryOnly, CBigNum& bnAccValue)
 {
-    if (mapAccumulatorValues.count(nChecksum)) {
-        bnAccValue = mapAccumulatorValues.at(nChecksum);
-        return true;
-    }
-
-    if (fMemoryOnly)
-        return false;
-
-    if (!zerocoinDB->ReadAccumulatorValue(nChecksum, bnAccValue)) {
-        bnAccValue = 0;
-    }
-
+    bnAccValue = 0;
     return true;
 }
 

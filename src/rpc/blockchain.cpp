@@ -860,21 +860,25 @@ UniValue verifychain(const UniValue& params, bool fHelp)
 }
 
 /** Implementation of IsSuperMajority with better feedback */
-static UniValue SoftForkMajorityDesc(int minVersion, CBlockIndex* pindex, int nRequired)
+static UniValue SoftForkMajorityDesc(int version, CBlockIndex* pindex)
 {
-    int nFound = 0;
-    CBlockIndex* pstart = pindex;
-    for (int i = 0; i < Params().ToCheckBlockUpgradeMajority() && pstart != NULL; i++)
-    {
-        if (pstart->nVersion >= minVersion)
-            ++nFound;
-        pstart = pstart->pprev;
-    }
     UniValue rv(UniValue::VOBJ);
-    rv.push_back(Pair("status", nFound >= nRequired));
-    rv.push_back(Pair("found", nFound));
-    rv.push_back(Pair("required", nRequired));
-    rv.push_back(Pair("window", Params().ToCheckBlockUpgradeMajority()));
+    bool activated = false;
+    switch(version) {
+    case 1:
+    case 2:
+    case 3:
+    case 4:
+        activated = pindex->nHeight >= 1;
+        break;
+    case 5:
+        activated = pindex->nHeight >= Params().BIP65ActivationHeight();
+        break;
+    case 6:
+        activated = Params().IsStakeModifierV2(pindex->nHeight);
+        break;
+    }
+    rv.push_back(Pair("status", activated));
     return rv;
 }
 static UniValue SoftForkDesc(const std::string &name, int version, CBlockIndex* pindex)
@@ -882,8 +886,7 @@ static UniValue SoftForkDesc(const std::string &name, int version, CBlockIndex* 
     UniValue rv(UniValue::VOBJ);
     rv.push_back(Pair("id", name));
     rv.push_back(Pair("version", version));
-    rv.push_back(Pair("enforce", SoftForkMajorityDesc(version, pindex, Params().EnforceBlockUpgradeMajority())));
-    rv.push_back(Pair("reject", SoftForkMajorityDesc(version, pindex, Params().RejectBlockOutdatedMajority())));
+    rv.push_back(Pair("reject", SoftForkMajorityDesc(version, pindex)));
     return rv;
 }
 
@@ -907,13 +910,9 @@ UniValue getblockchaininfo(const UniValue& params, bool fHelp)
             "     {\n"
             "        \"id\": \"xxxx\",        (string) name of softfork\n"
             "        \"version\": xx,         (numeric) block version\n"
-            "        \"enforce\": {           (object) progress toward enforcing the softfork rules for new-version blocks\n"
+            "        \"reject\": {           (object) progress toward rejecting pre-softfork blocks\n"
             "           \"status\": xx,       (boolean) true if threshold reached\n"
-            "           \"found\": xx,        (numeric) number of blocks with the new version found\n"
-            "           \"required\": xx,     (numeric) number of blocks required to trigger\n"
-            "           \"window\": xx,       (numeric) maximum size of examined window of recent blocks\n"
             "        },\n"
-            "        \"reject\": { ... }      (object) progress toward rejecting pre-softfork blocks (same fields as \"enforce\")\n"
             "     }, ...\n"
             "  ]\n"
             "}\n"
@@ -1688,4 +1687,3 @@ UniValue getblockindexstats(const UniValue& params, bool fHelp) {
     return ret;
 
 }
-

@@ -80,7 +80,7 @@ enum BlockStatus {
      */
     BLOCK_VALID_TRANSACTIONS = 3,
 
-    //! Outputs do not overspend inputs, no double spends, coinbase output ok, immature coinbase spends, BIP30.
+    //! Outputs do not overspend inputs, no double spends, coinbase output ok, immature coinbase spends.
     //! Implies all parents are also at least CHAIN.
     BLOCK_VALID_CHAIN = 4,
 
@@ -384,13 +384,6 @@ public:
         if (fGeneratedStakeModifier)
             nFlags |= BLOCK_STAKE_MODIFIER;
     }
-
-    /**
-     * Returns true if there are nRequired or more blocks of minVersion or above
-     * in the last Params().ToCheckBlockUpgradeMajority() blocks, starting at pstart
-     * and going backwards.
-     */
-    static bool IsSuperMajority(int minVersion, const CBlockIndex* pstart, unsigned int nRequired);
 
     std::string ToString() const
     {
